@@ -42,6 +42,9 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
     public function get_help_url() {
         return 'https://wphtmega.com/docs/general-widgets/image-comparison-widget/';
     }
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(
@@ -586,12 +589,12 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
 
                 <div <?php echo $this->get_render_attribute_string( 'image_comparison_before_attr' ); ?> >
                     <?php
-                        $image1 = wp_get_attachment_image_url( $settings['before_image']['id'], $settings['before_image_size_size']);
+                        $image1 = wp_get_attachment_image_url( $settings['before_image']['id'], $settings['before_image_size_size'] );
                         if ( ! $image1 ) {
                             $image1 = $settings['before_image']['url'];
                         }
                         ?>
-                        <img src="<?php echo esc_url( $image1 ); ?>" class="no-lazy-htmega" alt="<?php echo esc_attr( $settings['before_image']['alt']); ?>">
+                        <img src="<?php echo esc_url( $image1 ); ?>" class="no-lazy-htmega" alt="<?php echo isset($settings['before_image']['alt'] ) ? esc_attr( $settings['before_image']['alt']) : ""; ?>">
                         
                     <div <?php echo $this->get_render_attribute_string( 'image_comparison_after_attr' ); ?> >
                         <?php
@@ -601,7 +604,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                             $image2 = $settings['after_image']['url'];
                         }
                         ?>
-                        <img src="<?php echo esc_url( $image2 ); ?>" class="no-lazy-htmega" alt="<?php echo esc_attr( $settings['after_image']['alt']); ?>">
+                        <img src="<?php echo esc_url( $image2 ); ?>" class="no-lazy-htmega" alt="<?php echo isset( $settings['after_image']['alt'] ) ? esc_attr( $settings['after_image']['alt'] ) : "" ; ?>">
                     </div>
                 </div>
 

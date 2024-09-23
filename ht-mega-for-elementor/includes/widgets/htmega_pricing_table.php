@@ -40,7 +40,9 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             'htmega-widgets',
         ];
     }
-
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls()
     {
 

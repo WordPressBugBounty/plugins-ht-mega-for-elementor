@@ -40,7 +40,9 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             'htmega-widgets-scripts',
         ];
     }
-
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(
@@ -555,7 +557,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                     if ( $settings['content_source'] == 'sidebar' && !empty( $settings['sidebars_id'] ) ) {
                         dynamic_sidebar( $settings['sidebars_id'] );
                     } elseif ( $settings['content_source'] == 'elementor' && !empty( $settings['template_id'] )) {
-                        echo Plugin::instance()->frontend->get_builder_content_for_display( $settings['template_id'] ) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        echo htmega_get_template_content_by_id( $settings['template_id'] ) ;// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     }
                 ?>
             </div>

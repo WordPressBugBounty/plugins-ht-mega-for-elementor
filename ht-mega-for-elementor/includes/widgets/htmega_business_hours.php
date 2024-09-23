@@ -34,6 +34,9 @@ class HTMega_Elementor_Widget_Business_Hours extends Widget_Base {
     public function get_help_url() {
         return 'https://wphtmega.com/docs/creative-widgets/business-hours-widget/';
     }
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(

@@ -33,6 +33,9 @@ class HTMega_Elementor_Widget_Section_Title extends Widget_Base {
     public function get_help_url() {
         return 'https://wphtmega.com/docs/general-widgets/section-title-widget/';
     }
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(

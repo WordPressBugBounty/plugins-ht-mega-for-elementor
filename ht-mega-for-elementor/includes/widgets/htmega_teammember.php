@@ -40,6 +40,9 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
     public function get_help_url() {
         return 'https://wphtmega.com/docs/general-widgets/team-member-widget/';
     }
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         // Team Content tab Start

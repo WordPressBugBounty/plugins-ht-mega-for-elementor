@@ -1200,22 +1200,18 @@ class Options_Field {
                             'name'   => __( 'Search Page Template.', 'htmega-addons' ),
                             'desc'    => __( 'You can select search page from here.', 'htmega-addons' ),
                             'type'    => 'select',
-                            'default' => 'select',
-                            'options' => array(
-                                'select'=>'Select Template',
-                            ),
+                            'default' => '0',
+                            'options' => htmega_elementor_template(),
                             'is_pro' => true,
                             'condition' => [ ['condition_key' => 'themebuilder_enable', 'condition_value' => 'on'] ]
                         ),
                         array(
                             'id'    => 'error_pagep',
                             'name'   => __( '404 Page Template.', 'htmega-addons' ),
-                            'desc'    => __( 'You can select 404 page from here. <span>( Pro )</span>', 'htmega-addons' ),
+                            'desc'    => __( 'You can select 404 page from here.', 'htmega-addons' ),
                             'type'    => 'select',
-                            'default' => 'select',
-                            'options' => array(
-                                'select'=>'Select Template',
-                            ),
+                            'default' => '0',
+                            'options' => htmega_elementor_template(),
                             'is_pro' => true,
                             'condition' => [ ['condition_key' => 'themebuilder_enable', 'condition_value' => 'on'] ]
                         ),
@@ -1224,10 +1220,8 @@ class Options_Field {
                             'name'   => __( 'Coming Soon Page Template.', 'htmega-addons' ),
                             'desc'    => __( 'You can select coming soon page from here.', 'htmega-addons' ),
                             'type'    => 'select',
-                            'default' => 'select',
-                            'options' => array(
-                                'select'=>'Select Template',
-                            ),
+                            'default' => '0',
+                            'options' => htmega_elementor_template(),
                             'is_pro' => true,
                             'condition' => [ ['condition_key' => 'themebuilder_enable', 'condition_value' => 'on'] ]
                         ),
@@ -1400,7 +1394,86 @@ class Options_Field {
                             'label_off' => __( 'Off', 'htmega-addons' ),
                             'is_pro' => true,
                         ),
-
+                        array(
+                            'id'    => 'rpbar_background_color',
+                            'name'   => __( 'Background Color', 'htmega-addons' ),
+                            'desc'    => __( 'Set the reading progress bar background color.', 'htmega-addons' ),
+                            'class' => 'htmega-action-field-left',
+                            'type'    => 'color',
+                            'default' => '#000000',
+                            'is_pro' => true,
+                            'condition' => [
+                                ['condition_key' => 'rpbar_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'rpbar_globalp', 'condition_value' => 'on']
+                            ]
+        
+                        ),
+                        array(
+                            'id'    => 'rpbar_fill_color',
+                            'name'   => __( 'Fill Color', 'htmega-addons' ),
+                            'desc'    => __( 'Set the fill color.', 'htmega-addons' ),
+                            'class' => 'htmega-action-field-left',
+                            'type'    => 'color',
+                            'default' => '#D43A6B',
+                            'is_pro' => true,
+                            'condition' => [
+                                ['condition_key' => 'rpbar_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'rpbar_globalp', 'condition_value' => 'on']
+                            ]
+        
+                        ),
+                        array(
+                            'id'    => 'rpbar_select_to_show_pages',
+                            'name'   => __( 'Select Pages', 'htmega-addons' ),
+                            'desc'    => __( 'Select the option where you want to display it.', 'htmega-addons' ),
+                            'type'    => 'select',
+                            'default' => 'all',
+                            'is_pro' => true,
+                            'options' => [
+                                'posts' => __('All Posts', 'htmega-addons'),
+                                'pages' => __('All Pages', 'htmega-addons'),
+                                'all' => __('All Posts & Pages', 'htmega-addons'),
+                            ],
+                            'condition' => [
+                                ['condition_key' => 'rpbar_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'rpbar_globalp', 'condition_value' => 'on']
+                            ]
+        
+                        ),
+                        array(
+                            'id'  => 'rpbar_loading_height',
+                            'name' => __( 'Loading Progress Bar Height', 'htmega-addons' ),
+                            'desc'  => __( 'Specify the height of the loading progress bar.', 'htmega-addons' ),
+                            'min'               => 1,
+                            'max'               => 100,
+                            'step'              => '1',
+                            'type'              => 'number',
+                            'default'           => '5',
+                            'is_pro' => true,
+                            'sanitize_callback' => 'floatval',
+                            'condition' => [
+                                ['condition_key' => 'rpbar_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'rpbar_globalp', 'condition_value' => 'on']
+                            ]
+                        ),
+                        array(
+                            'id'    => 'rpbar_position',
+                            'name'   => __( 'Position', 'htmega-addons' ),
+                            'desc'    => __( 'Choose the loading bar position to display the progress bar at the top or bottom.', 'htmega-addons' ),
+                            'type'    => 'select',
+                            'default' => 'top',
+                            'is_pro' => true,
+                            'options' => [
+                                'top' => __('Top', 'htmega-addons'),
+                                'bottom' => __('Bottom', 'htmega-addons'),
+                            ],
+                            'condition' => [
+                                ['condition_key' => 'rpbar_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'rpbar_globalp', 'condition_value' => 'on']
+                            ]
+        
+                        ),
+    
                     )
                 ),
                 array(
@@ -1433,6 +1506,107 @@ class Options_Field {
                             'label_off' => __( 'Off', 'htmega-addons' ),
                             'is_pro' => true,
                         ),
+                        array(
+                            'id'    => 'stt_select_to_show_pages',
+                            'name'   => __( 'Select Pages', 'htmega-addons' ),
+                            'desc'    => __( 'Select the option where you would like to display it.', 'htmega-addons' ),
+                            'type'    => 'select',
+                            'default' => 'all',
+                            'is_pro' => true,
+                            'options' => [
+                                'posts' => __('All Posts', 'htmega-addons'),
+                                'pages' => __('All Pages', 'htmega-addons'),
+                                'all' => __('All Posts & Pages', 'htmega-addons'),
+                            ],
+                            'condition' => [
+                                ['condition_key' => 'stt_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'stt_globalp', 'condition_value' => 'on']
+                            ]
+                            
+                        ),
+                        array(
+                            'id'    => 'stt_position',
+                            'name'   => __( 'Position', 'htmega-addons' ),
+                            'desc'    => __( 'Choose the position to display the Scroll To Top button on the left or right.', 'htmega-addons' ),
+                            'type'    => 'select',
+                            'default' => 'right',
+                            'options' => [
+                                'left' => __('Bottom Left', 'htmega-addons'),
+                                'right' => __('Bottom Right', 'htmega-addons'),
+                            ],
+                            'is_pro' => true,
+                            'condition' => [
+                                ['condition_key' => 'stt_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'stt_globalp', 'condition_value' => 'on']
+                            ]
+                        ),
+                        array(
+                            'id'  => 'stt_bottom_space',
+                            'name' => __( 'Bottom Space', 'htmega-addons' ),
+                            'desc'  => __( 'Specify the bottom spacing for the Scroll To Top button.', 'htmega-addons' ),
+                            'step'              => '1',
+                            'type'              => 'number',
+                            'default'           => '30',
+                            'sanitize_callback' => 'floatval',
+                            'is_pro' => true,
+                            'condition' => [
+                                ['condition_key' => 'stt_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'stt_globalp', 'condition_value' => 'on']
+                            ]
+                        ),
+                        array(
+                            'id'    => 'stt_color',
+                            'name'   => __( 'Color', 'htmega-addons' ),
+                            'desc'    => __( 'Set the button icon/text color.', 'htmega-addons' ),
+                            'class' => 'htmega-action-field-left',
+                            'type'    => 'color',
+                            'default' => '#ffffff',
+                            'is_pro' => true,
+                            'condition' => [
+                                ['condition_key' => 'stt_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'stt_globalp', 'condition_value' => 'on']
+                            ]
+                        ),
+                        array(
+                            'id'    => 'stt_bg_color',
+                            'name'   => __( 'Background Color', 'htmega-addons' ),
+                            'desc'    => __( 'Set the button background color.', 'htmega-addons' ),
+                            'class' => 'htmega-action-field-left',
+                            'type'    => 'color',
+                            'default' => '#000000',
+                            'is_pro' => true,
+                            'condition' => [
+                                ['condition_key' => 'stt_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'stt_globalp', 'condition_value' => 'on']
+                            ]
+        
+                        ),
+                        array(
+                            'id'    => 'stt_color_hover',
+                            'name'   => __( 'Hover Color', 'htmega-addons' ),
+                            'desc'    => __( 'Set the button icon/text hover color.', 'htmega-addons' ),
+                            'class' => 'htmega-action-field-left',
+                            'type'    => 'color',
+                            'default' => '#ffffff',
+                            'is_pro' => true,
+                            'condition' => [
+                                ['condition_key' => 'stt_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'stt_globalp', 'condition_value' => 'on']
+                            ]
+                        ),
+                        array(
+                            'id'    => 'stt_bg_color_hover',
+                            'name'   => __( 'Hover Background Color', 'htmega-addons' ),
+                            'desc'    => __( 'Set the button hover background color.', 'htmega-addons' ),
+                            'class' => 'htmega-action-field-left',
+                            'type'    => 'color',
+                            'default' => '#000000',
+                            'is_pro' => true,
+                            'condition' => [
+                                ['condition_key' => 'stt_enable', 'condition_value' => 'on'],
+                                ['condition_key' => 'stt_globalp', 'condition_value' => 'on']
+                            ]
+                        )
                     )
                 ),
                

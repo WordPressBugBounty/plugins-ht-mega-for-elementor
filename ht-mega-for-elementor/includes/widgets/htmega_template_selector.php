@@ -69,7 +69,7 @@ class HTMega_Elementor_Widget_Template_Selector extends Widget_Base {
         $settings   = $this->get_settings_for_display();
 
         if ( !empty( $settings['template_id'] )) {
-            echo Plugin::instance()->frontend->get_builder_content_for_display( $settings['template_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo htmega_get_template_content_by_id( $settings['template_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }else{
             echo '<div class="htmega_error">'.esc_html__( 'No selected template', 'htmega-addons' ).'<div/>';
         }

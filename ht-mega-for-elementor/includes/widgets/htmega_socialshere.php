@@ -40,7 +40,9 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             'htmega-goodshare',
         ];
     }
-
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(

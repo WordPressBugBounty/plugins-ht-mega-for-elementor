@@ -168,7 +168,7 @@ class HTMegaBuilder_Header_Footer{
     public function header_content_elementor() {
         $templateid = $this->header_id;
         if( !empty( $templateid ) ){
-            echo Elementor::instance()->frontend->get_builder_content_for_display( $templateid );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo htmega_get_template_content_by_id( $templateid );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
     }
 
@@ -178,7 +178,7 @@ class HTMegaBuilder_Header_Footer{
     public function footer_content_elementor() {
         $templateid = $this->footer_id;
         if( !empty( $templateid ) ){
-            echo Elementor::instance()->frontend->get_builder_content_for_display( $templateid ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo htmega_get_template_content_by_id( $templateid ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
     }
 

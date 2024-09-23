@@ -169,7 +169,6 @@ class HTMega_Menu_Nav_Walker extends Walker_Nav_Menu {
   // Item Builder Content
   private function getItemBuilderContent( $template_id ){
     static $elementor = null;
-    $elementor = Elementor::instance();
-    return $elementor->frontend->get_builder_content_for_display( $template_id );
+    return htmega_get_template_content_by_id( $template_id );
   }
 }

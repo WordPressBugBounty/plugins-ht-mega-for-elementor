@@ -41,7 +41,9 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             'htmega-widgets-scripts',
         ];
     }
-
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(

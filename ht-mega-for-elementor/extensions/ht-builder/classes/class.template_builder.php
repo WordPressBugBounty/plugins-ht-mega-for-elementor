@@ -100,7 +100,7 @@ class HTMegaBuilder_Custom_Template_Layout{
     public function single_blog_content_elementor( $post ) {
         $templateid = $this->custom_template_id( 'single_blog_page' );
         if( !empty( $templateid ) ){
-            echo Elementor::instance()->frontend->get_builder_content_for_display( $templateid ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo htmega_get_template_content_by_id( $templateid ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }else{
             the_content();
         }
@@ -112,7 +112,7 @@ class HTMegaBuilder_Custom_Template_Layout{
     public function blog_content_elementor( $post ) {
         $templateid = $this->custom_template_id( 'archive_blog_page' );
         if( !empty( $templateid ) ){
-            echo Elementor::instance()->frontend->get_builder_content_for_display( $templateid ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo htmega_get_template_content_by_id( $templateid ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }else{
             the_content();
         }

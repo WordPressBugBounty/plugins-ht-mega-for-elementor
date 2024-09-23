@@ -34,6 +34,9 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
     public function get_help_url() {
         return 'https://wphtmega.com/docs/creative-widgets/toggle-widget/';
     }
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(
@@ -410,7 +413,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                 <div class="htmega-toggle-content-<?php echo esc_attr( $id );?>" style="display: none;">
                     <?php
                         if ( $settings['content_source'] == "elementor" && !empty( $settings['template_id'] )) {
-                            echo Plugin::instance()->frontend->get_builder_content_for_display( $settings['template_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            echo htmega_get_template_content_by_id( $settings['template_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         }else{
                             if( !empty( $settings['custom_content'] ) ){
                                 echo '<div class="htmega_custom_content">'.wp_kses_post( $settings['custom_content'] ).'</div>';

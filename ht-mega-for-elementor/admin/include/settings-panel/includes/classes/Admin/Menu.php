@@ -129,14 +129,17 @@ class Menu {
         // update existing data to new theme builder module settings default option
         $updated_theme_builder_options = [
             "themebuilder" =>  wp_json_encode([
-                "themebuilder_enable"   => htmega_get_option('themebuilder', 'htmega_advance_element_tabs'),
-                "single_blog_page"           => htmega_get_option('single_blog_page', 'htmegabuilder_templatebuilder_tabs','0'),
-                "archive_blog_page"     => htmega_get_option('archive_blog_page', 'htmegabuilder_templatebuilder_tabs','0'),
-                "header_page"             => htmega_get_option('header_page', 'htmegabuilder_templatebuilder_tabs','0'),
-                "footer_page"          => htmega_get_option('footer_page', 'htmegabuilder_templatebuilder_tabs','0'),
-                "search_page"       => htmega_get_option('search_page', 'htmegabuilder_templatebuilder_tabs','0'),
-                "error_page" => htmega_get_option('error_page', 'htmegabuilder_templatebuilder_tabs','0'),
-                "coming_soon_page"            => htmega_get_option('coming_soon_page', 'htmegabuilder_templatebuilder_tabs','0'),
+                "themebuilder_enable" => htmega_get_option('themebuilder', 'htmega_advance_element_tabs'),
+                "single_blog_page"    => htmega_get_option('single_blog_page', 'htmegabuilder_templatebuilder_tabs','0'),
+                "archive_blog_page"   => htmega_get_option('archive_blog_page', 'htmegabuilder_templatebuilder_tabs','0'),
+                "header_page"         => htmega_get_option('header_page', 'htmegabuilder_templatebuilder_tabs','0'),
+                "footer_page"         => htmega_get_option('footer_page', 'htmegabuilder_templatebuilder_tabs','0'),
+                "search_page"         => htmega_get_option('search_page', 'htmegabuilder_templatebuilder_tabs','0'),
+                "error_page"          => htmega_get_option('error_page', 'htmegabuilder_templatebuilder_tabs','0'),
+                "coming_soon_page"    => htmega_get_option('coming_soon_page', 'htmegabuilder_templatebuilder_tabs','0'),
+                "search_pagep"        => '0',
+                "error_pagep"         => '0',
+                "coming_soon_pagep"   => '0',
             ]),
         ];
         // megamenu modules defautl option's value update

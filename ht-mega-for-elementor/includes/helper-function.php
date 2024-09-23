@@ -1080,3 +1080,22 @@ function htmega_custom_class_modify_wp_rocket_excludes($current_excludes) {
     return $current_excludes;
 }
 add_filter('rocket_maybe_disable_iframes_lazyload_helper', 'htmega_custom_class_modify_wp_rocket_excludes');
+
+/**
+ * Get template content by id
+ * @since 2.6.6
+ * @param [type] $template_id
+ * @return string
+ */
+if ( !function_exists('htmega_get_template_content_by_id') ) {
+    function htmega_get_template_content_by_id($template_id) {
+        $template_post = get_post( $template_id );
+        
+        // Check if the post exists and its status is 'publish'
+        if ( $template_post && $template_post->post_status === 'publish' ) {
+            return \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
+        } else {
+            return esc_html__( 'Template not published or does not exist', 'htmega-addons');
+        }
+    }
+}

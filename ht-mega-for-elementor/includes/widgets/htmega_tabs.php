@@ -32,7 +32,9 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             'htmega-widgets',
         ];
     }
-
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(
@@ -1159,7 +1161,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                                 esc_attr( $id.$i ), 
                                 ($item['content_source'] == 'custom' && !empty( $item['custom_content'])) ? 
                                     wp_kses_post( $item['custom_content'] ) : 
-                                    Plugin::instance()->frontend->get_builder_content_for_display( $item['template_id'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                    htmega_get_template_content_by_id( $item['template_id'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                 'elementor-repeater-item-'.esc_attr( $item['_id']) 
                             );
                         }

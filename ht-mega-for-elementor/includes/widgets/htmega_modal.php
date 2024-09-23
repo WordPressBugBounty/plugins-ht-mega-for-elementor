@@ -34,6 +34,9 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
     public function get_help_url() {
         return 'https://wphtmega.com/docs/general-widgets/modal-widget/';
     }
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         $this->start_controls_section(
@@ -1098,7 +1101,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                                 echo '<div class="htb-modal-body">'.wp_kses_post( $settings['custom_content'] ).'</div>';
                             } elseif ( $settings['content_source'] == "elementor" && !empty( $template_id )) {
                                 
-                                echo '<div class="htb-modal-body">'.Plugin::instance()->frontend->get_builder_content_for_display( $template_id ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                echo '<div class="htb-modal-body">'.htmega_get_template_content_by_id( $template_id ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             }
                         ?>
 

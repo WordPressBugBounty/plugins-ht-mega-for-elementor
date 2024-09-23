@@ -803,7 +803,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
                             echo '<div class="blockquote_content">'.wp_kses_post( $settings['custom_content'] ).'</div>';
                         } elseif ( $settings['content_source'] == "elementor" && !empty( $settings['template_id'] )) {
                             $template_id = absint( $settings['template_id'] );
-                            echo Plugin::instance()->frontend->get_builder_content_for_display( $template_id ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            echo htmega_get_template_content_by_id( $template_id ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         }
                         if( !empty( $settings['blockquote_by'] ) ){
                             echo '<cite class="quote-by"> '.esc_html( $settings['blockquote_by']).' </cite>';

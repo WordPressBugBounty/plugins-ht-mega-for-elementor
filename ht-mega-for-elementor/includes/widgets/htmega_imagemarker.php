@@ -34,7 +34,9 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             'elementor-icons-shared-0-css','elementor-icons-fa-brands','elementor-icons-fa-regular','elementor-icons-fa-solid','htmega-widgets',
         ];
     }
-
+    protected function is_dynamic_content():bool {
+		return false;
+	}
     protected function register_controls() {
 
         // Marker Content section
