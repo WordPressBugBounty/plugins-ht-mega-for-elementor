@@ -287,7 +287,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 'type'=>Controls_Manager::ICONS,
                 'default' => [
                     'value'=>'fas fa-pencil-alt',
-                    'library'=>'solid',
+                    'library'=>'fa-solid',
                 ],
                 'condition' => [
                     'htmega_pricing_header_top' => 'icon',
@@ -429,7 +429,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-pencil',
-                    'library' => 'solid',
+                    'library' => 'fa-solid',
                 ],
                 'condition' => [
                     'htmega_pricing_style' => '2',
@@ -650,7 +650,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 'type'    => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-angle-double-right',
-                    'library' => 'solid',
+                    'library' => 'fa-solid',
                 ],
             ]
         );
@@ -1953,6 +1953,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-body ul li' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .htmega-pricing-body ul li svg path' => 'fill: {{VALUE}}',
                 ]
             ]
         );

@@ -241,8 +241,8 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                     'label'   => __( 'Icon', 'htmega-addons' ),
                     'type'    => Controls_Manager::ICONS,
                     'default' => [
-                        'value'=>'fab fa-facebook-f',
-                        'library'=>'solid',
+                        'value'=>'fab fa-facebook-square',
+                        'library'=>'fa-solid',
                     ],
                 ]
             );

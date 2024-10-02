@@ -399,7 +399,29 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     ],
                 ]
             );
-
+            $this->add_responsive_control(
+                'button_icon_size',
+                [
+                    'label' => __( 'Font Size', 'htmega-addons' ),
+                    'type' => Controls_Manager::SLIDER,
+                    'size_units' => [ 'px', '%' ],
+                    'range' => [
+                        'px' => [
+                            'min' => 0,
+                            'max' => 100,
+                            'step' => 1,
+                        ],
+                        '%' => [
+                            'min' => 0,
+                            'max' => 100,
+                        ],
+                    ],
+                    'selectors' => [
+                        '{{WRAPPER}} .htmega-doublebutton a i' => 'font-size: {{SIZE}}{{UNIT}};',
+                        '{{WRAPPER}} .htmega-doublebutton a svg' => 'width: {{SIZE}}{{UNIT}};',
+                    ],
+                ]
+            );
             $this->start_controls_tabs('doule_button_style_tabs');
 
                 // Button Default Normal style start
@@ -493,6 +515,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                             'default'   =>'#ffffff',
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );
@@ -589,6 +612,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                             'default'   =>'#ffffff',
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one:hover' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one:hover svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );
@@ -666,6 +690,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                             'default'   =>'#ffffff',
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );
@@ -761,6 +786,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                             'default'   =>'#ffffff',
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two:hover' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two:hover svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );

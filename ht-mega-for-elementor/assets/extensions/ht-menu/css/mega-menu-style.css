@@ -44,6 +44,8 @@ position: relative;
 line-height: 30px;
 margin-left: 5px;
 float: right;
+display: flex;
+align-items: center;
 }
 .htmega-menu-container ul li ul.sub-menu,.htmega-menu-container ul li ul.sub-menu li{
   display: block;
@@ -382,7 +384,9 @@ margin-right: 5px;
 .htmega-verticle-menu ul > li > a > span.htmenu-icon {
 float: right;
 }
-
+.htmega-verticle-menu ul > li > a > span.htmenu-icon svg{
+  width: 14px;
+}
 .htmega-verticle-menu .htmega_mega_menu ul.sub-menu{
   display: none;
 }

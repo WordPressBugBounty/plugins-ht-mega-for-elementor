@@ -269,7 +269,7 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-plus',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'show_light_box' =>'yes',
@@ -311,7 +311,7 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fab fa-instagram',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'show_flow_button' =>'yes',
@@ -368,7 +368,7 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-left',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'slider_on' => 'yes',
@@ -384,7 +384,7 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-right',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'slider_on' => 'yes',

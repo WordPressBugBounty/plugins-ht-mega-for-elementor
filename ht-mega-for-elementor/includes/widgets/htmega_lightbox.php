@@ -164,7 +164,7 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-plus',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' =>[
                         'lightbox_toggler_type!' =>'button'
@@ -403,6 +403,7 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
                     ],
                     'selectors' => [
                         '{{WRAPPER}} .htmega-lightbox .image-popup-vertical-fit i' => 'font-size: {{SIZE}}{{UNIT}};',
+                       '{{WRAPPER}} .htmega-lightbox .image-popup-vertical-fit svg' => 'width: {{SIZE}}{{UNIT}};',
                     ],
                     'condition'=>[
                         'zoom_icon[value]!'=>'',
@@ -433,8 +434,7 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
                         'size' => 30,
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .htmega-lightbox .image-popup-vertical-fit i' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
-                        '{{WRAPPER}} .htmega-lightbox .image-popup-vertical-fit svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                        '{{WRAPPER}} .htmega-lightbox .image-popup-vertical-fit' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                     ],
                     'condition'=>[
                         'zoom_icon[value]!'=>'',

@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor, elementor addons, elementor widgets, elementor templates, addons, elementor slider, elementor page builder, mega menu, addons for elementor, post grid, elements, header footer builder
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 2.6.6
+Stable tag: 2.6.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -529,6 +529,17 @@ Visit [HasThemes](https://hasthemes.com/) for more details about HTML, Shopify a
 
 == Changelog ==
 
+= Version 2.6.7 - Date: 2024-10-02 =
+* Added: Compatibility with Inline Font Icons
+* Added: Button Icon Font Size option in Double button widget.
+* Added: Options to update the mobile menu background color and close icon color in the Nav Menu Widget.
+* Fixed: Menu color and menu close issue on mobile devices in the Nav Menu Widget.
+* Fixed: Button's SVG Icon Color issue in 404 Content Widget.
+* Fixed: Button's SVG Icon Size issue in Lightbox Widget.
+* Fixed: SVG Icon Color issue in Social Share Widget.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+
 = Version 2.6.6 - Date: 2024-09-23 =
 * Added: Compatibility with Element Caching
 * Fixed: A few minor issues.
@@ -811,60 +822,6 @@ Visit [HasThemes](https://hasthemes.com/) for more details about HTML, Shopify a
 = Version: 2.1.4 - Date: 2023-04-29 =
 * Added: Slider and Thumbnail Inner space control option in Slider Thumbnail Gallery Widget
 * Fixed: A few minor issues
-
-= Version: 2.1.3 - Date: 2023-04-16 =
-* Added: Icon box shadow option in Counter Widget
-* Added: Tab Menu icon type image option in Tabs Widget
-* Added: Tab Menu area width control option in Tabs Widget
-* Fixed: Scrolling issue in Scroll Navigation Widget
-* Fixed: Brand Logo border display issue in Brand Widget
-* Fixed: Image overlay color issue in Image Masonry Widget
-* Fixed: Item space issue in Image Masonry Widget
-* Fixed: A few minor issues
-
-= Version: 2.1.2 - Date: 2023-04-01 =
-* Added: Option for sync with template library
-* Added: Header top icon style option in Pricing Table Widget
-* Fixed: Icon position issue in Call to Action Widget
-* Fixed: A few minor issues
-* Tested: Compatibility with the latest version of Elementor
-* Tested: Compatibility with the latest version of WordPress
-
-= Version: 2.1.1 - Date: 2023-03-22 =
-* Added: Box Shadow control option in Service Widget's Icon Style
-* Added: Meta Separator Color option in Post Carousel Widget
-* Fixed: Image bottom white space issue in Image Grid Widget
-* Fixed: Undefined index issue in inline Navigation Widget
-* Fixed: A few minor issues
-
-= Version: 2.1.0 - Date: 2023-03-15 =
-* Added: Mobile Menu icon's background, border, border radius, and padding controls in Nav Menu Widget
-* Added: Box Shadow control option in Service Widget
-* Fixed: Popup first loading issue in Search Widget
-* Fixed: Dropdown issue in inline Navigation Widget
-* Fixed: A few minor issues
-
-= Version: 2.0.9 - Date: 2023-03-06 =
-* Added: Input box icon color and background option, input fields focus style in User Register Widget
-* Added: Input fields focus style in User Login Widget
-* Fixed: After label text display issue in Image Comparison Widget
-* Fixed: A few minor issues
-
-= Version: 2.0.8 - Date: 2023-02-25 =
-* Improved: Display options functionality in Data Table Widget
-* Fixed: A few minor issues
-
-= Version: 2.0.7 - Date: 2023-02-14 =
-* Added: Title tag update option, content display option, read more button option in Post Grid Widget
-* Improved: Display options functionality in Image Marker Widget
-* Fixed: Date Format issue in Custom Event Widget
-* Fixed: Data invalid issue in Instagram Widget
-* Fixed: A few minor issues
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version: 2.0.6 - Date: 2023-01-31 =
-* Added: Default tab active option and compatible to add nested tab content in tabs Widget
-* Fixed: A few minor issues.
 
 
 

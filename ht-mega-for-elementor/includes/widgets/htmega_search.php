@@ -112,7 +112,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-search',
-                        'library'=>'solid',
+                        'library'=>'fa-solid',
                     ],
                     'condition' => [
                         'search_btn_icon_type' => 'icon',

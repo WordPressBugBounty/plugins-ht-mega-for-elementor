@@ -539,10 +539,11 @@ class HTMega_Elementor_Widget_Button extends Widget_Base {
                     $this->add_control(
                         'htmega_button_icon_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-button .htb-btn .htmega_button_icon' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-button .htb-btn .htmega_button_icon svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );
@@ -623,10 +624,11 @@ class HTMega_Elementor_Widget_Button extends Widget_Base {
                     $this->add_control(
                         'htmega_button_iconhover_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-button .htb-btn:hover .htmega_button_icon' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-button .htb-btn:hover .htmega_button_icon svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );

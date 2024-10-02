@@ -330,7 +330,7 @@
     border-top: 1px solid #EAEAEA;
 }
 .htmega-admin-option-content {
-    width: 60%;
+  width: calc(100% - 78px);
 }
 .htmega-admin-option-label {
     font-size: 14px;
@@ -350,8 +350,14 @@
     display: flex;
     align-self: center;
     flex-wrap: wrap;
-    width: 40%;
-    padding-left: 30px;
+    /* width: 40%; */
+    padding-left: 15px;
+}
+.htmega-opt-col-1 .htmega-admin-option-field {
+       width: 40%;
+}
+.htmega-opt-col-1 .htmega-admin-option-content {
+       width: 60%;
 }
 .htmega-admin-option-field input {
     font-size: 13px;
@@ -537,9 +543,9 @@
     background-color: #FFFFFF;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
 }
-.htmega-admin-field-element .htmega-admin-option-field,.htmega-admin-field-element .htmega-admin-option-content{
+/* .htmega-admin-field-element .htmega-admin-option-field,.htmega-admin-field-element .htmega-admin-option-content{
     width: auto;
-}
+} */
 
 /* Pro badge */
 .htmega-admin-pro-badge {
@@ -673,6 +679,10 @@
     .htoptions-sidebar-adds-area,  #htmega-opt-admin-app {
         width: 100%;
     }
+    .htoption-rating-area {
+      align-items: flex-start;
+      flex-direction: column;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (max-width: 767px) {
@@ -709,6 +719,10 @@
     .htmega-navigation-menu {
         padding: 0 30px;
     }
+    .htoption-rating-area {
+      align-items: flex-start;
+      flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -721,6 +735,10 @@
   .htmega-navigation-menu li a {
       padding: 15px 5px;
   }
+  .htoption-rating-area {
+    align-items: flex-start;
+    flex-direction: column;
+}
 }
 
 

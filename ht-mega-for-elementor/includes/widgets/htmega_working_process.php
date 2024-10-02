@@ -160,7 +160,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fa fa-pencil-alt',
-                        'library'=>'solid',
+                        'library'=>'fa-solid',
                     ],
                     'condition' => [
                         'process_icon_type' => 'icon',

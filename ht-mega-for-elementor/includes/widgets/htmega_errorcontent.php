@@ -153,7 +153,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                             'type' => Controls_Manager::ICONS,
                             'default' => [
                                 'value' => 'fas fa-star',
-                                'library' => 'solid',
+                                'library' => 'fa-solid',
                             ],
                         ]
                     );
@@ -201,7 +201,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                             'type' => Controls_Manager::ICONS,
                             'default' => [
                                 'value' => 'fas fa-star',
-                                'library' => 'solid',
+                                'library' => 'fa-solid',
                             ],
                         ]
                     );
@@ -559,6 +559,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-not-found .content a.page-back-btn svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );
@@ -645,6 +646,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn:hover' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-not-found .content a.page-back-btn:hover svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );

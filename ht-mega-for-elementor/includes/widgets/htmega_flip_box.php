@@ -467,7 +467,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     'type'    => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fab fa-facebook-f',
-                        'library'=>'solid',
+                        'library'=>'fa-solid',
                     ],
                 ]
             );

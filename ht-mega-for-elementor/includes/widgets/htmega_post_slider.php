@@ -276,7 +276,7 @@ class HTMega_Elementor_Widget_Post_Slider extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fas fa-angle-left',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'slider_on' => 'yes',
@@ -292,7 +292,7 @@ class HTMega_Elementor_Widget_Post_Slider extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fas fa-angle-right',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'slider_on' => 'yes',

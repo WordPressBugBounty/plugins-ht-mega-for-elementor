@@ -97,7 +97,7 @@ class HTMega_Elementor_Widget_Popover extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-home',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'popover_button_type' => [ 'icon' ]

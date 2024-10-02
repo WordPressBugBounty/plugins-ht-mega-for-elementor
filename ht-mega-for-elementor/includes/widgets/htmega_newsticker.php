@@ -225,7 +225,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default'=>[
                         'value'=>'fas fa-angle-left',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' =>[
                         'navigation_show' =>'yes',
@@ -240,7 +240,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default'=>[
                         'value'=>'fas fa-angle-right',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' =>[
                         'navigation_show' =>'yes',

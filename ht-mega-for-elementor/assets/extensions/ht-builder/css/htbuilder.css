@@ -52,7 +52,13 @@ ul.htmeta-info li a{
   padding: 0 25px;
   transition: 0.4s;
 }
-
+.htbuilder-search-form button.htbuilder-submit svg{
+  width: 16px;
+  height: auto;
+}
+.htbuilder-search-form button.htbuilder-submit svg path {
+  fill: #fff;
+}
 /* Archive Post */
 .htbuilder-post-area *{
   box-sizing: border-box;
@@ -334,23 +340,33 @@ ul.htmeta-info li a{
   opacity: 1;
   visibility: visible;
 }
-
-/* Social Share */
-.htbuilder-social-share ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.htbuilder-mobile-menu ul li a {
+  padding: 3px 0;
+  display: inline-block;
 }
-.htbuilder-social-share ul li{
-    display: inline-block;
-    font-size: 16px;
-    line-height: 42px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    text-align: center;
-    transition: all 0.5s ease 0s;
-    border: 1px solid #ccc;
-    cursor: pointer;
+/* Social Share */
+.htbuilder-social-share ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.htbuilder-social-share ul li {
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  text-align: center;
+  transition: all 0.5s ease 0s;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.htbuilder-social-share ul li svg{
+  width: 16px;
+  height: auto;
 }
 .htbuilder-social-share ul li:hover{
     background: #444;
@@ -410,8 +426,6 @@ ul.htmeta-info li a{
 .htcustom-lavel,.htnavigation_title,.htnavigation_arrow{
     transition: 0.4s;
 }
-.htnavigation {}
-
 .htnavigation a {
   align-items: center;
   display: flex;
@@ -425,7 +439,10 @@ ul.htmeta-info li a{
 .htnavigation_arrow {
   padding-right: 12px;
 }
-
+.htnavigation_arrow svg {
+  height: auto;
+  width: 15px;
+}
 .htnext .htnavigation_arrow{
     padding-right: 0;
     padding-left: 12px;

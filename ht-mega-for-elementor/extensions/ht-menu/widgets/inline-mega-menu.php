@@ -49,7 +49,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                     'label_block' => true,
                     'default'     => [
                         'value' => 'fa fa-angle-down',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                 )
             );

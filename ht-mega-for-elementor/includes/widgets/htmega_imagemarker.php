@@ -178,7 +178,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-info',
-                        'library'=>'solid',
+                        'library'=>'fa-solid',
                     ],
                 ]
             );

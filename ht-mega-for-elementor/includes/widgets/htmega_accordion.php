@@ -322,7 +322,7 @@ protected function is_dynamic_content():bool {
                     'type'        => Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fas fa-plus',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'accordiantstyle' => ['five','one'],
@@ -337,7 +337,7 @@ protected function is_dynamic_content():bool {
                     'type'        => Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fas fa-minus',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'condition' => [
                         'accordiantstyle' => ['five','one'],

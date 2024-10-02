@@ -33,17 +33,11 @@ class HTMega_Icon_manager extends Icons_Manager{
     }
 
     public static function render_icon( $icon, $attributes = [], $tag = 'i' ) {
-        if ( empty( $icon['library'] ) ) {
-            return false;
-        }
-        $output = '';
-        // handler SVG Icon
-        if ( 'svg' === $icon['library'] ) {
-            $output = self::render_svg_icon( $icon['value'] );
-        } else {
-            $output = self::render_icon_html( $icon, $attributes, $tag );
-        }
-        return $output;
+        ob_start(); 
+        Icons_Manager::render_icon(  $icon, $attributes = [], $tag = 'i' );
+        
+        $icon_html = ob_get_clean(); 
+        return $icon_html;
     }
 
 }

@@ -33,7 +33,7 @@
             wrapper.removeClass('htbuilder-overlay-active');
         });
         
-        $('.htbody-overlay').on('click', function() {
+        $('.htbuilder-overlay').on('click', function() {
             container.removeClass('inside');
             wrapper.removeClass('htbuilder-overlay-active');
         });
@@ -68,5 +68,12 @@
     };
     htbuildermobilemenu();
 
-    
+    $(window).on('resize', function() {
+       
+        // ON DESKTOP, IF RESIZE WINDOW, WE NEED TO HIDE MOBILE MENU
+        if ( window.innerWidth >= 1024 ){ 
+            $(".htbuilder-mobile-menu-area").removeClass('inside');
+            $("body").removeClass('htbuilder-overlay-active');
+        }
+      });
 })(jQuery);

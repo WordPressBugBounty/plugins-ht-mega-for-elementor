@@ -174,7 +174,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                             'label'     => __( 'Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
-                                '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li a' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li a,{{WRAPPER}} .htbuilder-mobile-menu ul li a, {{WRAPPER}} .htbuilder-mobile-menu-area .menu-expand' => 'color: {{VALUE}};',
                             ],
                             'default'=>'#636363',
                         ]
@@ -259,7 +259,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                             'label'     => __( 'Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
-                                '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu > li:hover > a' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu > li:hover > a,{{WRAPPER}} .htbuilder-mobile-menu ul li:hover > a, {{WRAPPER}} .htbuilder-mobile-menu-area .menu-expand:hover' => 'color: {{VALUE}};',
                             ],
                             'default'=>'#d94f5c',
                         ]
@@ -312,7 +312,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                             'label'     => __( 'Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
-                                '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li.current-menu-item a' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li.current-menu-item a, {{WRAPPER}} .htbuilder-mobile-menu ul li.current_page_item > a' => 'color: {{VALUE}};',
                             ],
                             'default'=>'#d94f5c',
                         ]
@@ -563,10 +563,47 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 	'center'	=> __('Center', 'htmega-addons'),
                 	'right'	=> __('Right', 'htmega-addons'),
                 ],
-                'default' =>'center',
+                'default' =>'Left',
+            ]
+        );
+        $this->add_control(
+            'mobilemenu_close_icon_color',
+            [
+                'label'     => __( 'Close Icon Color', 'htmega-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .htbuilder-mobile-close' => 'color: {{VALUE}};',
+                ],
+                'separator' =>'before',
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'close_icon_background',
+                'label' => __( 'Background', 'htmega-addons' ),
+                'types' => [ 'classic', 'gradient' ],
+                'selector' => '{{WRAPPER}} .htbuilder-mobile-close',
             ]
         );
 
+        $this->add_control(
+            'menu_area_bg_heading',
+            [
+                'label' => __( 'Menu inner Background', 'htmega-pro' ),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'inside_area_background',
+                'label' => __( 'Background', 'htmega-addons' ),
+                'types' => [ 'classic', 'gradient' ],
+                'selector' => '{{WRAPPER}} .htbuilder-mobile-menu-area',
+            ]
+        );
         $this->end_controls_section();
 
     }

@@ -258,7 +258,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-info-circle',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                 ]
             );

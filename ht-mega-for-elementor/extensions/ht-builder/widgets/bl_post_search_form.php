@@ -82,7 +82,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fa fa-search',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                     'recommended' => [
                         'fa-solid' => [

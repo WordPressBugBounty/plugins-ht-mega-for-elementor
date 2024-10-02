@@ -738,6 +738,9 @@ body:has( .htmega_mega_menu ){
     justify-content: center;
     align-items: center;
   }
+  .htmega-accourdion-title .htmega-items-hedding .accourdion-icon svg {
+    width: 14px;
+  }
   .htmega-accourdion-title .htmega-items-hedding .close-accourdion {
     opacity: 1;
     visibility: visible;
@@ -2316,6 +2319,10 @@ body:has( .htmega_mega_menu ){
       font-size: 16px;
       padding: 5px 0;
   }
+  .htmega-pricing-style-1 .htmega-pricing-body ul li svg path{
+    fill: #f1f1f1;
+}
+.htmega-pricing-style-1 .htmega-pricing-body ul li svg path
   a.price_btn{
     text-decoration: none;
   }
@@ -6037,20 +6044,21 @@ ul.htmega-testimonial-rating * {
     transform:translate(-50%,-50%);
     text-align: center;
     border: 1px solid #fff;
-    display: inline-block;
+    display: flex;
     border-radius: 100%;
     left: 50%;
-  }
-  .htmega-lightbox .htmega-lightbox-action a i {
+    align-items: center;
+    justify-content: center;
     width: 30px;
     height: 30px;
-    display: inline-block;
-    line-height: 30px;
+  }
+  .htmega-lightbox .htmega-lightbox-action a i {
     color: #fff;
     font-size: 25px;
-    text-align: center;
   }
+
   .image-popup-vertical-fit svg {
+    fill: #fff;
     width: 20px;
   }
   
@@ -6087,7 +6095,7 @@ ul.htmega-testimonial-rating * {
   .mfp-iframe-holder .mfp-close{
     width: auto !important;
   }
-
+.htmega-lightbox .image-popup-vertical-fit
   
   /*
   * Video Player
@@ -6671,7 +6679,9 @@ ul.htmega-testimonial-rating * {
     right: 0;
     bottom: 0;
   }
-  
+blockquote .blockquote_icon svg{
+    width: 15px;
+}
   /*Blockquote Style 01*/
   .htmega-blockquote blockquote {
       background: #f4f4f4;
@@ -9881,6 +9891,9 @@ ul.htmega-testimonial-rating * {
     height: 100%;
     transition: 0.4s ease-in-out;
     word-break: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .htmega-indicator-type-image .htmega-image-marker-icon{
     line-height: 0;
@@ -10870,7 +10883,7 @@ justify-content: center;
   .htmega-not-found .content a.page-back-btn {
       background: #c0d2ff;
       height: 62px;
-      display: inline-block;
+      display: inline-flex;
       padding: 0 40px;
       line-height: 62px;
       border-radius: 31px;
@@ -10879,6 +10892,8 @@ justify-content: center;
       font-weight: 500;
       transition: 0.4s ease-in-out;
       text-decoration: none;
+      align-items: center;
+      justify-content: center;
   }
   
   .htmega-not-found .content a.page-back-btn:hover {
@@ -10895,10 +10910,8 @@ justify-content: center;
   
   .htmega-not-found .content a.page-back-btn svg {
     width: 20px;
-    margin-top: 18px;
-    float: left;
     margin-right: 8px;
-    display: inline-block;
+    fill: #131e3a;
   }
   
   /* 404 Animation css*/
@@ -13659,6 +13672,14 @@ justify-content: center;
     width: 30px;
     height: 30px;
 }
+/* .call_to_action_button_one_icon_progression,.call_to_action_button_two_icon_progression{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.htmega-call-to-action .action-btn {
+    display: inline-flex;
+} */
 .htmega-callto-action-title{
     position: relative;
 }
@@ -15007,6 +15028,9 @@ justify-content: center;
 
     a.htmega-doule-btn span {
         transition: all 0s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
   /* Double Button Skew Bg */

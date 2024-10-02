@@ -96,7 +96,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-home',
-                        'library'=>'solid',
+                        'library'=>'fa-solid',
                     ],
                     'condition' => [
                         'tooltip_type' => [ 'icon' ]

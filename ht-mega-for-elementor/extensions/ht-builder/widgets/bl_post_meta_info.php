@@ -341,7 +341,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                         ],
                         [
                             'metaname' => 'time',
-                            'icon' => 'fa fa-clock-o',
+                            'icon' => 'far fa-clock',
                         ],
                         [
                             'metaname' => 'comments',
@@ -583,7 +583,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                     'custom' => $custom_time_format,
                 ];
                 $item_data['text'] = get_the_time( $format_options[ $repeater_item['time_format'] ] );
-                $item_data['icon']['value'] = 'fa fa-clock-o';
+                $item_data['icon']['value'] = 'far fa-clock';
                 $item_data['icon']['library'] = 'fa-regular';
         }
 

@@ -117,7 +117,7 @@ class HTMega_Elementor_Widget_Pricing_List_View extends Widget_Base {
                     'type'    => Controls_Manager::ICONS,
                     'default' =>[
                         'value'=>'fas fa-shopping-basket',
-                        'library'=>'solid',
+                        'library'=>'fa-solid',
                     ],
                 ]
             );
@@ -632,7 +632,7 @@ class HTMega_Elementor_Widget_Pricing_List_View extends Widget_Base {
                         'type' => Controls_Manager::ICONS,
                         'default'=> [
                             'value'=>'fas fa-facebook',
-                            'library'=>'solid',
+                            'library'=>'fa-solid',
                         ],
                         'condition'=>[
                             'field_type'=>'col',

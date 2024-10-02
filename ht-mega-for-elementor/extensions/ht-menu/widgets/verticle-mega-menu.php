@@ -50,7 +50,7 @@ class HTMegaMenu_Verticle_Menu extends Widget_Base {
                     'label_block' => true,
                     'default'     => [
                         'value' => 'fa fa-angle-down',
-                        'library' => 'solid',
+                        'library' => 'fa-solid',
                     ],
                 )
             );

@@ -293,8 +293,8 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     'label' => __( 'Previous icon', 'htmega-addons' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
-                        'value'=>'fa fa-angle-left',
-                        'library'=>'solid',
+                        'value'=>'fas fa-angle-left',
+                        'library'=>'fa-solid',
                     ],
                     'condition' => [
                         'slider_on' => 'yes',
@@ -309,8 +309,8 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     'label' => __( 'Next icon', 'htmega-addons' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
-                        'value'=>'fa fa-angle-right',
-                        'library'=>'solid',
+                        'value'=>'fas fa-angle-right',
+                        'library'=>'fa-solid',
                     ],
                     'condition' => [
                         'slider_on' => 'yes',

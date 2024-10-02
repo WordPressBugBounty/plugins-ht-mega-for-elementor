@@ -692,7 +692,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-social-share ul li' => 'color: {{VALUE}};',
-                            '{{WRAPPER}} .htmega-social-style-1 ul li svg path' => 'fill: {{VALUE}};',
+                            '{{WRAPPER}} .htmega-social-style-1 ul li svg path,{{WRAPPER}} .htmega-social-share ul li svg path' => 'fill: {{VALUE}};',
                         ],
                     ]
                 );
@@ -724,6 +724,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-social-share ul li:hover' => 'color: {{VALUE}};',
+                            '{{WRAPPER}} .htmega-social-share ul li:hover svg path' => 'fill: {{VALUE}};',
                         ],
                     ]
                 );

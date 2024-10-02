@@ -149,7 +149,7 @@ class HTMega_Elementor_Widget_Section_Title extends Widget_Base {
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-pencil-alt',
-                        'library'=>'solid',
+                        'library'=>'fa-solid',
                     ],
                     'condition' => [
                         'section_icon_type' => 'icon',

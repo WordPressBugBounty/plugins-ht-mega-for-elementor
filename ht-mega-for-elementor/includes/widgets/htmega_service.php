@@ -124,7 +124,7 @@ class HTMega_Elementor_Widget_Service extends Widget_Base {
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-pencil-alt',
-                        'library'=>'solid',
+                        'library'=>'fa-solid',
                     ],
                     'condition' => [
                         'htmega_service_icon_type' => 'icon',
