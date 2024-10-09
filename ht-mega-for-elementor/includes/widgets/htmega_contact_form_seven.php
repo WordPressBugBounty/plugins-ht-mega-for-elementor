@@ -957,6 +957,90 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->end_controls_section(); // Input submit button style tab end
         // Input error style tab start
         $this->start_controls_section(
+            'htmega_loading_spinner_style',
+            [
+                'label'     => __( 'Loading Spinner', 'htmega-addons' ),
+                'tab'       => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+            $this->add_control(
+                'htmega_hide_spinenr',
+                [
+                    'label' => esc_html__( 'Hide Spinner', 'htmega-pro' ),
+                    'type' => Controls_Manager::SWITCHER,
+                    'return_value' => 'none',
+                    'selectors' => [
+                        '{{WRAPPER}} .wpcf7-spinner'  => 'display: {{VALUE}};',
+                    ],
+                ]
+            );
+            $this->add_control(
+                'htmega_spinner_color',
+                [
+                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'type'      => Controls_Manager::COLOR,
+                    'selectors' => [
+                        '{{WRAPPER}} .wpcf7-spinner'  => 'background-color: {{VALUE}};',
+                    ],
+                    'condition' => [
+                        'htmega_hide_spinenr' => '',
+                    ],
+                ],
+            );
+            $this->add_responsive_control(
+                'spinner_x_postion',
+                [
+                    'label' => __( 'Position X', 'htmega-pro' ),
+                    'type' => Controls_Manager::SLIDER,
+                    'size_units' => [ 'px'],
+                    'range' => [
+                        'px' => [
+                            'min' => -500,
+                            'max' => 500,
+                            'step' => 1,
+                        ],
+                    ],
+                    'default' => [
+                        'unit' => 'px',
+                        'size' => '0',
+                    ],
+                    'selectors' => [
+                        '{{WRAPPER}} .wpcf7-spinner' => 'left: {{SIZE}}{{UNIT}};',
+                    ],
+                    'condition' => [
+                        'htmega_hide_spinenr' => '',
+                    ],
+                ]
+            );
+            $this->add_responsive_control(
+                'spinner_y_postion',
+                [
+                    'label' => __( 'Position Y', 'htmega-pro' ),
+                    'type' => Controls_Manager::SLIDER,
+                    'size_units' => [ 'px' ],
+                    'range' => [
+                        'px' => [
+                            'min' => -200,
+                            'max' => 200,
+                            'step' => 1,
+                        ]
+                    ],
+                    'default' => [
+                        'unit' => 'px',
+                        'size' => '0',
+                    ],
+                    'selectors' => [
+                        '{{WRAPPER}} .wpcf7-spinner' => 'top: {{SIZE}}{{UNIT}};',
+                    ],
+                    'condition' => [
+                        'htmega_hide_spinenr' => '',
+                    ],
+                ]
+            );
+        $this->end_controls_section(); // Input error style tab end
+        // Input error style tab start
+        $this->start_controls_section(
             'htmega_input_error_style',
             [
                 'label'     => __( 'Errors and Feedback Style', 'htmega-addons' ),
@@ -1035,6 +1119,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 ]
             );            
         $this->end_controls_section(); // Input error style tab end
+
     }
 
     protected function render( $instance = [] ) {

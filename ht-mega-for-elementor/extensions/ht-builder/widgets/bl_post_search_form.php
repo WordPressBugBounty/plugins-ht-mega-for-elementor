@@ -230,9 +230,40 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                             'name'      => 'post_search_button_typography',
                             'label'     => __( 'Typography', 'htmega-addons' ),
                             'selector'  => '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit',
+                            'condition' => [
+                                'button_type' => 'text',
+                            ],
                         )
                     );
-
+                    $this->add_responsive_control(
+                        'post_search_button_icon_size',
+                        [
+                            'label' => __( 'Iocn Size', 'htmega-pro' ),
+                            'type' => Controls_Manager::SLIDER,
+                            'size_units' => [ 'px', '%' ],
+                            'range' => [
+                                'px' => [
+                                    'min' => 0,
+                                    'max' => 100,
+                                    'step' => 1,
+                                ],
+                                '%' => [
+                                    'min' => 0,
+                                    'max' => 100,
+                                ],
+                            ],
+                            'default' => [
+                                'unit' => 'px',
+                            ],
+                            'selectors' => [
+                                '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit i' => 'font-size: {{SIZE}}{{UNIT}};',
+                                '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit svg' => 'width: {{SIZE}}{{UNIT}};',
+                            ],
+                            'condition' => [
+                                'button_type' => 'icon',
+                            ],
+                        ]
+                    );
                     $this->add_group_control(
                         Group_Control_Border::get_type(),
                         [

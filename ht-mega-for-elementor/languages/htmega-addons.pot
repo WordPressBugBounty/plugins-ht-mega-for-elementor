@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HT Mega – Absolute Addons for Elementor.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 09:47+0000\n"
+"POT-Creation-Date: 2024-10-09 09:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1759,7 +1759,7 @@ msgstr ""
 #: extensions/ht-builder/widgets/bl_post_comments.php:245
 #: extensions/ht-builder/widgets/bl_post_comments.php:295
 #: extensions/ht-builder/widgets/bl_post_search_form.php:219
-#: extensions/ht-builder/widgets/bl_post_search_form.php:293
+#: extensions/ht-builder/widgets/bl_post_search_form.php:324
 #: extensions/ht-menu/menu/templates.php:179
 #: extensions/wc-sales-notification/admin/setting.php:188
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:1399
@@ -2092,8 +2092,8 @@ msgstr ""
 #: includes/widgets/htmega_contact_form_seven.php:695
 #: includes/widgets/htmega_contact_form_seven.php:886
 #: includes/widgets/htmega_contact_form_seven.php:948
-#: includes/widgets/htmega_contact_form_seven.php:988
-#: includes/widgets/htmega_contact_form_seven.php:1022
+#: includes/widgets/htmega_contact_form_seven.php:1072
+#: includes/widgets/htmega_contact_form_seven.php:1106
 #: includes/widgets/htmega_countdown.php:541
 #: includes/widgets/htmega_countdown.php:553
 #: includes/widgets/htmega_countdown.php:802
@@ -2374,8 +2374,8 @@ msgstr ""
 #: extensions/ht-builder/widgets/bl_post_comments.php:266
 #: extensions/ht-builder/widgets/bl_post_comments.php:307
 #: extensions/ht-builder/widgets/bl_post_search_form.php:155
-#: extensions/ht-builder/widgets/bl_post_search_form.php:240
-#: extensions/ht-builder/widgets/bl_post_search_form.php:305
+#: extensions/ht-builder/widgets/bl_post_search_form.php:271
+#: extensions/ht-builder/widgets/bl_post_search_form.php:336
 #: extensions/ht-builder/widgets/bl_site_logo.php:114
 #: extensions/ht-builder/widgets/bl_site_title.php:95
 #: extensions/ht-menu/widgets/inline-mega-menu.php:184
@@ -2745,7 +2745,7 @@ msgstr ""
 #: extensions/ht-builder/widgets/bl_post_archive_title.php:103
 #: extensions/ht-builder/widgets/bl_post_author_info.php:188
 #: extensions/ht-builder/widgets/bl_post_search_form.php:163
-#: extensions/ht-builder/widgets/bl_post_search_form.php:248
+#: extensions/ht-builder/widgets/bl_post_search_form.php:279
 #: extensions/ht-builder/widgets/bl_site_logo.php:123
 #: extensions/ht-builder/widgets/bl_site_title.php:104
 #: extensions/ht-menu/widgets/inline-mega-menu.php:171
@@ -3852,8 +3852,9 @@ msgstr ""
 #: includes/widgets/htmega_call_to_action.php:1149
 #: includes/widgets/htmega_carousel.php:576
 #: includes/widgets/htmega_carousel.php:779
-#: includes/widgets/htmega_contact_form_seven.php:970
-#: includes/widgets/htmega_contact_form_seven.php:1004
+#: includes/widgets/htmega_contact_form_seven.php:981
+#: includes/widgets/htmega_contact_form_seven.php:1054
+#: includes/widgets/htmega_contact_form_seven.php:1088
 #: includes/widgets/htmega_countdown.php:693
 #: includes/widgets/htmega_countdown.php:755
 #: includes/widgets/htmega_countdown.php:928
@@ -4118,7 +4119,7 @@ msgstr ""
 #: extensions/ht-builder/widgets/bl_post_meta_info.php:465
 #: extensions/ht-builder/widgets/bl_post_search_form.php:134
 #: extensions/ht-builder/widgets/bl_post_search_form.php:208
-#: extensions/ht-builder/widgets/bl_post_search_form.php:282
+#: extensions/ht-builder/widgets/bl_post_search_form.php:313
 #: extensions/ht-builder/widgets/bl_site_title.php:74
 #: extensions/ht-menu/menu/templates.php:114
 #: extensions/ht-menu/menu/templates.php:135
@@ -5357,7 +5358,7 @@ msgstr ""
 msgid "Errors and Confirmation Style"
 msgstr ""
 
-#: includes/widgets/htmega_contact_form_seven.php:962
+#: includes/widgets/htmega_contact_form_seven.php:1046
 msgid "Errors and Feedback Style"
 msgstr ""
 
@@ -5608,7 +5609,7 @@ msgstr ""
 msgid "Feed Limit"
 msgstr ""
 
-#: includes/widgets/htmega_contact_form_seven.php:996
+#: includes/widgets/htmega_contact_form_seven.php:1080
 msgid "Feedback Style"
 msgstr ""
 
@@ -6516,7 +6517,7 @@ msgstr ""
 #: extensions/ht-builder/widgets/bl_post_archive.php:919
 #: extensions/ht-builder/widgets/bl_post_comments.php:277
 #: extensions/ht-builder/widgets/bl_post_meta_info.php:433
-#: extensions/ht-builder/widgets/bl_post_search_form.php:275
+#: extensions/ht-builder/widgets/bl_post_search_form.php:306
 #: extensions/ht-menu/widgets/inline-mega-menu.php:569
 #: extensions/ht-menu/widgets/inline-mega-menu.php:898
 #: extensions/ht-menu/widgets/verticle-mega-menu.php:468
@@ -8179,6 +8180,10 @@ msgstr ""
 msgid "Loading Progress Bar Height"
 msgstr ""
 
+#: includes/widgets/htmega_contact_form_seven.php:962
+msgid "Loading Spinner"
+msgstr ""
+
 #: extensions/wc-sales-notification/admin/setting.php:114
 msgid "Loading Time"
 msgstr ""
@@ -8508,7 +8513,7 @@ msgstr ""
 #: includes/widgets/htmega_contact_form_seven.php:571
 #: includes/widgets/htmega_contact_form_seven.php:728
 #: includes/widgets/htmega_contact_form_seven.php:872
-#: includes/widgets/htmega_contact_form_seven.php:1029
+#: includes/widgets/htmega_contact_form_seven.php:1113
 #: includes/widgets/htmega_countdown.php:597
 #: includes/widgets/htmega_countdown.php:844
 #: includes/widgets/htmega_countdown.php:1004
@@ -10394,7 +10399,7 @@ msgstr ""
 #: extensions/ht-builder/widgets/bl_post_archive.php:768
 #: extensions/ht-builder/widgets/bl_post_archive_title.php:115
 #: extensions/ht-builder/widgets/bl_post_search_form.php:175
-#: extensions/ht-builder/widgets/bl_post_search_form.php:260
+#: extensions/ht-builder/widgets/bl_post_search_form.php:291
 #: extensions/ht-builder/widgets/bl_site_logo.php:136
 #: extensions/ht-builder/widgets/bl_site_title.php:116
 #: extensions/ht-menu/widgets/inline-mega-menu.php:159
@@ -10661,7 +10666,7 @@ msgstr ""
 msgid "Please select Contact Form"
 msgstr ""
 
-#: includes/widgets/htmega_contact_form_seven.php:1052
+#: includes/widgets/htmega_contact_form_seven.php:1137
 msgid "Please Select contact form."
 msgstr ""
 
@@ -11716,7 +11721,7 @@ msgstr ""
 #: includes/widgets/htmega_search.php:99 includes/widgets/htmega_search.php:100
 #: includes/widgets/htmega_search.php:1031
 #: extensions/ht-builder/widgets/bl_post_search_form.php:112
-#: extensions/ht-builder/widgets/bl_post_search_form.php:328
+#: extensions/ht-builder/widgets/bl_post_search_form.php:359
 #: admin/include/templates/library/templates.php:95
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:485
 msgid "Search"
