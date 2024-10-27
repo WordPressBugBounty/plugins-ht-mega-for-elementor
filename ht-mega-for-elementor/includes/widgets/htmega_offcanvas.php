@@ -29,17 +29,6 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
         return 'https://wphtmega.com/docs/creative-widgets/off-canvas-widget/';
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
-    public function get_script_depends() {
-        return [
-            'htmega-widgets-scripts',
-        ];
-    }
     protected function is_dynamic_content():bool {
 		return false;
 	}

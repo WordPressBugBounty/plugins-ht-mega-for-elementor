@@ -24,14 +24,13 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
 
     public function get_style_depends() {
         return [
-            'elementor-icons-shared-0-css','elementor-icons-fa-brands','elementor-icons-fa-regular','elementor-icons-fa-solid','slick','htmega-widgets',
+            'elementor-icons-shared-0-css','elementor-icons-fa-brands','elementor-icons-fa-regular','elementor-icons-fa-solid','slick'
         ];
     }
 
     public function get_script_depends() {
         return [
-            'slick',
-            'htmega-widgets-scripts',
+            'slick'
         ];
     }
     public function get_keywords() {

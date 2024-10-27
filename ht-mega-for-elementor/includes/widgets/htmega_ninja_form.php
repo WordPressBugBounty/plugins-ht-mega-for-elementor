@@ -29,12 +29,6 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
 		return 'https://wphtmega.com/docs/forms-widgets/ninja-form-widget/';
 	}
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function htmega_ninja_forms_list() {
         $form_options = array();
         if ( class_exists( 'Ninja_Forms' ) ) {

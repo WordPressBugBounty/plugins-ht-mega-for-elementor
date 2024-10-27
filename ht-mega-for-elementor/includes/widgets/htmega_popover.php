@@ -18,18 +18,6 @@ class HTMega_Elementor_Widget_Popover extends Widget_Base {
         return 'htmega-icon eicon-info-box';
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
-    public function get_script_depends() {
-        return [
-            'htmega-widgets-scripts',
-        ];
-    }
-
     public function get_categories() {
         return [ 'htmega-addons' ];
     }

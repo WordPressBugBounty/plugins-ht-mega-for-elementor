@@ -3,6 +3,7 @@
 final class HTMega_Addons_Elementor {
     
     const MINIMUM_ELEMENTOR_VERSION = '2.5.0';
+    const MINIMUM_HTMEGA_PRO_VERSION = '1.9.5';
     const MINIMUM_PHP_VERSION = '7.0';
 
     /**
@@ -183,11 +184,10 @@ final class HTMega_Addons_Elementor {
      */
     public function admin_htmega_pro_version_compatibily() {
 
-        if ( is_plugin_active('htmega-pro/htmega_pro.php') && ( version_compare( HTMEGA_VERSION_PRO, '1.8.3' ) >= 0 ) ) {
+        if ( version_compare( HTMEGA_VERSION_PRO, self::MINIMUM_HTMEGA_PRO_VERSION, '>=' ) ) {
             return;
         }
-        
-        $message = '<p>' . __( 'To ensure smooth functionality of <strong>HT MEGA Addons for Elementor</strong>, it\'s essential to have the most recent version of <strong>HT Mega Pro</strong>. Please make sure to update <strong>HT Mega Pro</strong> to ensure seamless compatibility with this version.', 'htmega-addons' ) . '</p>';
+        $message = '<p>' . __( 'To ensure smooth functionality of <strong>HT MEGA Addons for Elementor</strong>, please update to version '. self::MINIMUM_HTMEGA_PRO_VERSION .' or greater of <strong>HT Mega Pro</strong> for seamless compatibility.', 'htmega-addons' ) . '</p>';
 
         \HasTech_Notices::set_notice(
             [
@@ -344,12 +344,15 @@ final class HTMega_Addons_Elementor {
      */
     public function includes() {
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/helper-function.php' );
+        require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.assests-cache.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.assests.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'admin/admin-init.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/widgets_control.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.htmega-icon-manager.php' );
+        require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.updater.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'admin/include/custom-control/preset-manage.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'admin/include/custom-control/preset-select.php' );
+
         if('yes' === get_option('woocommerce_enable_ajax_add_to_cart')){
             require_once ( HTMEGA_ADDONS_PL_PATH.'includes/class.single-product-ajax-addto-cart.php' );
         }

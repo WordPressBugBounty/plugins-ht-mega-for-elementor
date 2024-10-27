@@ -20,12 +20,6 @@ class HTMega_Elementor_Widget_Section_Title extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return ['heading','section title','title','htmega', 'ht mega'];
     }

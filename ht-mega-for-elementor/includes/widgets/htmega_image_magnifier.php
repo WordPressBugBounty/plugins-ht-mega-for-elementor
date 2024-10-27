@@ -23,8 +23,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
 
     public function get_style_depends() {
         return [
-            'magnifier',
-            'htmega-widgets',
+            'magnifier'
         ];
     }
 

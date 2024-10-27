@@ -28,12 +28,6 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function on_export( $element ) {
         unset( $element['settings']['product_id'] );
 

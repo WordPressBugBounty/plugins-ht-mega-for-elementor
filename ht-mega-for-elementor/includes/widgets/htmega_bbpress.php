@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_Bbpress extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return [ 'bbpress', 'bbpress widget', 'forum', 'reply','htmega','htmega' ];
     }

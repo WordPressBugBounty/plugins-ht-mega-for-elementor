@@ -37,6 +37,10 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
 
             add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
+            // delete asset cache when save or delete post
+            add_action( 'elementor/editor/after_save', [ $this, 'cache_widgets_asset' ], 10, 2 );
+		    add_action( 'after_delete_post', [ $this, 'delete_cache' ] );
+
         }
 
         /**
@@ -52,8 +56,16 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/htbbootstrap.css',
                     'version' => HTMEGA_VERSION
                 ],
-                'htmega-widgets' => [
-                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/htmega-widgets.css',
+                'htmega-global-style' => [
+                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/htmega-global-style.css',
+                    'version' => HTMEGA_VERSION
+                ],
+                'htmega-global-style-min' => [
+                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/htmega-global-style.min.css',
+                    'version' => HTMEGA_VERSION
+                ],
+                'htmega-widgets-style' => [
+                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/widgets/htmega-widgets-style.min.css',
                     'version' => HTMEGA_VERSION
                 ],
                 'htmega-animation' => [
@@ -61,7 +73,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                     'version' => HTMEGA_VERSION
                 ],
                 'htmega-weather' => [
-                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/htmega-weather.css',
+                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/widgets/weather/style.css',
                     'version' => HTMEGA_VERSION
                 ],
                 'regular-weather-icon' => [
@@ -87,27 +99,27 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'compare-image' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/compare-image.css',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'htmega-widgets' ]
+                    'deps'    => [ 'htmega-global-style' ]
                 ],
                 'justify-gallery' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/justify-gallery.css',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'htmega-widgets' ]
+                    'deps'    => [ 'htmega-global-style' ]
                 ],
                 'datatables' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/datatables.min.css',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'htmega-widgets' ]
+                    'deps'    => [ 'htmega-global-style' ]
                 ],
                 'magnifier' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/magnifier.css',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'htmega-widgets' ]
+                    'deps'    => [ 'htmega-global-style' ]
                 ],
                 'animated-heading' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/animated-text.css',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'htmega-widgets' ]
+                    'deps'    => [ 'htmega-global-style' ]
                 ],
                 'htmega-keyframes' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/htmega-keyframes.css',
@@ -172,6 +184,11 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 ],
                 'htmega-widgets-scripts' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/htmega-widgets-active.js',
+                    'version' => HTMEGA_VERSION,
+                    'deps'    => [ 'jquery' ]
+                ],
+                'htmega-widgets-scripts-min' => [
+                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/htmega-widgets-active.min.js',
                     'version' => HTMEGA_VERSION,
                     'deps'    => [ 'jquery' ]
                 ],
@@ -394,8 +411,10 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
 
             // Localize Scripts for frontend
             wp_localize_script( 'htmega-widgets-scripts', 'HTMEGAF', $localize_data_frontend );
+            wp_localize_script( 'htmega-widgets-scripts-min', 'HTMEGAF', $localize_data_frontend );
             if( is_plugin_active('htmega-pro/htmega_pro.php') ){
                 wp_localize_script( 'htmega-pro-slick-active', 'HTMEGAF', $localize_data_frontend );
+                wp_localize_script( 'htmega-pro-active', 'HTMEGAF', $localize_data_frontend );
             }
             // admin js ajax request nonce
             $localize_data_admin['admin_ajax_nonce'] = wp_create_nonce( "htmega-admin-ajax-request" );
@@ -544,20 +563,46 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
          * [enqueue_scripts]
          * @return [void] Frontend Scripts
          */
-        public function enqueue_scripts(){
-
+        public function enqueue_scripts( ){
+           
             // CSS
             wp_enqueue_style( 'htbbootstrap' );
             wp_enqueue_style( 'font-awesome' );
             wp_enqueue_style( 'htmega-animation' );
             wp_enqueue_style( 'htmega-keyframes' );
+            
 
             // JS
             wp_enqueue_script( 'htmega-popper' );
             wp_enqueue_script( 'htbbootstrap' );
             wp_enqueue_script( 'waypoints' ); 
 
+
+            if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                wp_enqueue_style( 'htmega-global-style' );
+                wp_enqueue_script( 'htmega-widgets-scripts' ); 
+            } else {
+                wp_enqueue_style( 'htmega-global-style-min' );
+                wp_enqueue_script( 'htmega-widgets-scripts' );
+            }
+
+            if ( ! htmega_is_editing_mode() ) {
+                $post_id = get_the_ID();
+                $assets_cache = new HTMega_Elementor_Assests_Cache( $post_id );
+                $assets_cache -> combine_ht_mega_css_files();
+            } else {
+                wp_enqueue_style( 'htmega-widgets-style' );
+            }
+
+            $regenerate_elementor_file = get_option( 'htmega_elementor_regenerate_file' );
+            
+            if ( ! $regenerate_elementor_file ){
+                \Elementor\Plugin::$instance->files_manager->clear_cache();
+                update_option( 'htmega_elementor_regenerate_file', HTMEGA_VERSION );
+            }
+            
         }
+
         /**
          * get_promotional_widget_list function
          *
@@ -777,6 +822,25 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
         return $promotional_widgets;
        }
 
+       public static function delete_cache( $post_id ) {
+            // Delete to regenerate cache file
+            $assets_cache = new HTMega_Elementor_Assests_Cache( $post_id );
+            $assets_cache->delete();
+        }
+
+        public static function cache_widgets_asset( $post_id, $data ) {
+            if ( ! self::is_published_post( $post_id ) ) {
+                return;
+            }
+
+            // Delete to regenerate cache file
+            $assets_cache = new HTMega_Elementor_Assests_Cache( $post_id );
+            $assets_cache->delete();
+        }
+
+        public static function is_published_post( $post_id ) {
+            return get_post_status( $post_id ) === 'publish';
+        }
     }
 
     HTMega_Elementor_Addons_Assests::instance();

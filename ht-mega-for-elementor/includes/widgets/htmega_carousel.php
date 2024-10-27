@@ -23,15 +23,13 @@ class HTMega_Elementor_Widget_Carousel extends Widget_Base {
 
     public function get_style_depends() {
         return [
-            'slick',
-            'htmega-widgets',
+            'slick'
         ];
     }
 
     public function get_script_depends() {
         return [
-            'slick',
-            'htmega-widgets-scripts',
+            'slick'
         ];
     }
     public function get_keywords() {

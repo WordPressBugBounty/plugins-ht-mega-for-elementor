@@ -22,17 +22,6 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
-    public function get_script_depends() {
-        return [
-            'htmega-widgets-scripts',
-        ];
-    }
     public function get_keywords() {
         return [ 'htmega', 'ht mega', 'team', 'team member', 'member', 'person', 'agent','crew', 'staff', 'client' ];
     }

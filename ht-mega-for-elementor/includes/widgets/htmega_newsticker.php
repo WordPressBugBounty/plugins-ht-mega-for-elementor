@@ -22,16 +22,9 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_script_depends() {
         return [
-            'htmega-newsticker',
-            'htmega-widgets-scripts',
+            'htmega-newsticker'
         ];
     }
     public function get_keywords() {

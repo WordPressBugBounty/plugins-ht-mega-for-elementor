@@ -22,11 +22,6 @@ class HTMega_Elementor_Widget_Business_Hours extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['business hours', 'business times', 'business open hours', 'htmega', 'ht mega', 'addons'];
     }

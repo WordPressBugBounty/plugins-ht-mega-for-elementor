@@ -29,11 +29,6 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
 		return 'https://wphtmega.com/docs/forms-widgets/gravity-forms-widget/';
 	}
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
 
     public function htmega_gravity_forms_options() {
         if ( class_exists( 'GFCommon' ) ) {

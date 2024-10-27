@@ -21,18 +21,11 @@ class HTMega_Elementor_Widget_Image_Masonry extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_script_depends() {
         return [
             'masonry',
             'isotope',
-            'htmega-widgets-scripts',
-            'imagesloaded',
+            'imagesloaded'
         ];
     }
 

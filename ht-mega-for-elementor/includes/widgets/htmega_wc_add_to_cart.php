@@ -21,13 +21,6 @@ class HTMega_Elementor_Widget_WC_Add_to_Cart extends Widget_Button {
     public function get_categories() {
         return [ 'htmega-addons' ];
     }
-
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_script_depends() {
         return ['htmega-single-product-ajax-cart'];
     }

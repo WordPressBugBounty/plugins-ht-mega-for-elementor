@@ -20,11 +20,6 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['blockquote', 'quote', 'quote content', 'htmega', 'ht mega', 'addons'];
     }

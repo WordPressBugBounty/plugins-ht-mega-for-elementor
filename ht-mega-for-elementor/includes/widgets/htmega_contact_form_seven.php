@@ -29,12 +29,6 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
 		return 'https://wphtmega.com/docs/forms-widgets/contact-form-widget/';
 	}
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
 
     protected function register_controls() {
 

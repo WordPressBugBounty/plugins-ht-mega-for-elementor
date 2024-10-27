@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_Image_Grid extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return [ 'image grid', 'image gallery','gallery image','image column','htmega','ht mega' ];
     }

@@ -21,16 +21,9 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_script_depends() {
         return [
             'htmega-countdown',
-            'htmega-widgets-scripts',
         ];
     }
 

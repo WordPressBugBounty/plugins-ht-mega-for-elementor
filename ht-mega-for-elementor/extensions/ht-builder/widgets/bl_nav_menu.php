@@ -39,8 +39,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
 
     public function get_style_depends() {
         return [
-            'mean-menu',
-            'htmega-widgets',
+            'mean-menu'
         ];
     }
 

@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_Button extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_script_depends() {
         return ['counterup', 'htmega-admin'];
     }

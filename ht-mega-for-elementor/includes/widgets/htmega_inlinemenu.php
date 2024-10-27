@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_InlineMenu extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     private function get_available_menus() {
 
         $menus = wp_get_nav_menus();

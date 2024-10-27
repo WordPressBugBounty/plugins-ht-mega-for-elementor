@@ -19,11 +19,6 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
     public function get_categories() {
         return [ 'htmega-addons' ];
     }
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['call to action', 'call to', 'contact us', 'htmega', 'ht mega', 'addons'];
     }

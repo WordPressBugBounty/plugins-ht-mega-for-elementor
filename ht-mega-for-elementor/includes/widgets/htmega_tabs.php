@@ -26,15 +26,6 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
     public function get_categories() {
         return [ 'htmega-addons' ];
     }
-
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-    protected function is_dynamic_content():bool {
-		return false;
-	}
     protected function register_controls() {
 
         $this->start_controls_section(

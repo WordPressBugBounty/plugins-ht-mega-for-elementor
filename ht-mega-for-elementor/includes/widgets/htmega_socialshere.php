@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return ['social share', 'elementor social share','share button', 'social', 'share', 'facebook', 'twitter', 'instagram', 'linkedin'];
     }

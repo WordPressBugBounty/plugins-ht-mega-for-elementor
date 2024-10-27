@@ -20,11 +20,6 @@ class HTMega_Elementor_Widget_Add_Banner extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['banner', 'product banner', 'adds', 'htmega', 'ht mega', 'addons'];
     }

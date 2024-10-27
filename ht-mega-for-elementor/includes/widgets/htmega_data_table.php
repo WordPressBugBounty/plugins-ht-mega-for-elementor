@@ -33,7 +33,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
     }
 
     public function get_style_depends() {
-        return [ 'datatables', 'htmega-widgets', ];
+        return [ 'datatables' ];
     }
 
     protected function register_controls() {

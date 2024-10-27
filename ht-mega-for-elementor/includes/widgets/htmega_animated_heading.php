@@ -23,8 +23,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
 
     public function get_style_depends() {
         return [
-            'animated-heading',
-            'htmega-widgets',
+            'animated-heading'
         ];
     }
 

@@ -20,11 +20,6 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['htmega', 'ht mega', 'woocommerce', 'product categories', 'category', 'button', 'addons','widget'];
     }

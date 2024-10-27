@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
     public function get_categories() {
         return [ 'htmega-addons' ];
     }
-
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['htmega', 'ht mega', 'vertical timeline', 'timeline', 'content', 'addons','widget'];
     }

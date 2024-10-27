@@ -29,23 +29,13 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_script_depends() {
         return [
             'jquery-easing',
             'jquery-mousewheel',
-            'vaccordion',
-            'htmega-widgets-scripts',
+            'vaccordion'
         ];
     }
-protected function is_dynamic_content():bool {
-		return false;
-	}
     protected function register_controls() {
 
         $this->start_controls_section(

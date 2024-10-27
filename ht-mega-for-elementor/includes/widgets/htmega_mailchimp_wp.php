@@ -29,12 +29,6 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
         return 'https://wphtmega.com/docs/3rd-party-plugin-widgets/mailchimp-for-wp-widget/';
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     protected function register_controls() {
 
         $this->start_controls_section(

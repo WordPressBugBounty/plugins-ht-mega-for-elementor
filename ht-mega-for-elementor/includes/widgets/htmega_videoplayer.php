@@ -19,15 +19,13 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
     public function get_style_depends() {
         return [
             'ytplayer',
-            'magnific-popup',
-            'htmega-widgets',
+            'magnific-popup'
         ];
     }
     public function get_script_depends() {
         return [
             'ytplayer',
-            'magnific-popup',
-            'htmega-widgets-scripts',
+            'magnific-popup'
         ];
     }
     public function get_categories() {

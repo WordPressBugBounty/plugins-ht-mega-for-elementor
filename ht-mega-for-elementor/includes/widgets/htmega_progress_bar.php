@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return ['progress bar','skill bar','bar', 'chart', 'ht mega', 'htmega'];
     }
@@ -37,8 +31,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
 
     public function get_script_depends() {
         return [
-            'easy-pie-chart',
-            'htmega-widgets-scripts',
+            'easy-pie-chart'
         ];
     }
     protected function is_dynamic_content():bool {

@@ -31,7 +31,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
 
     public function get_style_depends() {
         return [
-            'elementor-icons-fa-brands','elementor-icons-fa-regular','elementor-icons-fa-solid','htmega-widgets',
+            'elementor-icons-fa-brands','elementor-icons-fa-regular','elementor-icons-fa-solid'
         ];
     }
 

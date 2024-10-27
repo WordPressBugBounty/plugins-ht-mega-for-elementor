@@ -20,12 +20,6 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return ['content','switcher', 'toggle', 'switcher content','htmega', 'ht mega', 'addons','widget'];
     }
@@ -33,9 +27,6 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
     public function get_help_url() {
         return 'https://wphtmega.com/docs/creative-widgets/switcher-widget/';
     }
-    protected function is_dynamic_content():bool {
-		return false;
-	}
     protected function register_controls() {
 
         $this->start_controls_section(

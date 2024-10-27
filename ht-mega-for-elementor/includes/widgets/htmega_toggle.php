@@ -22,11 +22,6 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['htmega', 'ht mega', 'toggle', 'toggle button', 'content', 'addons','widget'];
     }

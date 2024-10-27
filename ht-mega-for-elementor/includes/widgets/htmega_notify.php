@@ -29,16 +29,9 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         return 'https://wphtmega.com/docs/creative-widgets/notification-widget/';
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_script_depends() {
         return [
-            'htmega-notify',
-            'htmega-widgets-scripts',
+            'htmega-notify'
         ];
     }
     protected function is_dynamic_content():bool {

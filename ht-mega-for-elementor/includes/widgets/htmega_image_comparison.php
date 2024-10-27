@@ -24,14 +24,12 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
     public function get_style_depends() {
         return [
             'compare-image',
-            'htmega-widgets',
         ];
     }
 
     public function get_script_depends() {
         return [
             'beerslider',
-            'htmega-widgets-scripts',
         ];
     }
 

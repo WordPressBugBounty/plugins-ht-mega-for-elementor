@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return [ 'easy downloads', 'download', 'easy digital downloads', 'widget','ht mega','htmega addons' ];
     }

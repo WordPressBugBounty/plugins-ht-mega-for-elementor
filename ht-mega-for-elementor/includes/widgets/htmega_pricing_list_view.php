@@ -29,11 +29,6 @@ class HTMega_Elementor_Widget_Pricing_List_View extends Widget_Base {
         return 'https://wphtmega.com/docs/general-widgets/pricing-list-view-widget-2/';
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     protected function is_dynamic_content():bool {
 		return false;
 	}

@@ -29,12 +29,6 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
 		return 'https://wphtmega.com/docs/forms-widgets/quform-widget/';
 	}
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function htmega_quform_list() {
         if ( class_exists( 'Quform' ) ) {
             $quform = \Quform::getService('repository');

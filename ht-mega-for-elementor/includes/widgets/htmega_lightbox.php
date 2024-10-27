@@ -22,15 +22,13 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
 
     public function get_style_depends() {
         return [
-            'magnific-popup',
-            'htmega-widgets',
+            'magnific-popup'
         ];
     }
 
     public function get_script_depends() {
         return [
-            'magnific-popup',
-            'htmega-widgets-scripts',
+            'magnific-popup'
         ];
     }
     public function get_keywords() {

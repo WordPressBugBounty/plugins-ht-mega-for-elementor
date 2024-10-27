@@ -21,11 +21,6 @@ class HTMega_Elementor_Widget_Instragram_Feed extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['instagram', 'instagram feed', 'instagram grid', 'htmega', 'social media', 'ht mega', 'addons', 'widget'];
     }

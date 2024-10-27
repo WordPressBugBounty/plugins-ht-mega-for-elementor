@@ -21,18 +21,11 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_script_depends() {
         return [
             // 'counterup',
             'waypoints',
-            'jquery-numerator',
-            'htmega-widgets-scripts',
+            'jquery-numerator'
         ];
     }
     public function get_keywords() {

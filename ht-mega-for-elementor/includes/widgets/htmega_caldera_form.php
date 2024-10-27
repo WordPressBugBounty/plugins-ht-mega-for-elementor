@@ -27,11 +27,6 @@ class HTMega_Elementor_Widget_Caldera_Form extends Widget_Base {
     public function get_help_url() {
 		return 'https://wphtmega.com/docs/forms-widgets/caldera-forms-widget/';
 	}
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
 
     protected function register_controls() {
 

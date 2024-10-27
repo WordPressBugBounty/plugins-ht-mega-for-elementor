@@ -23,11 +23,6 @@ class HTMega_Elementor_Widget_PostGrid extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return [ 'post grid', 'post grid layout','custom post grid','post','htmega addons' ];
     }

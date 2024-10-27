@@ -22,11 +22,6 @@ class HTMega_Elementor_Widget_Service extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['service box','info box','content box','icon box','image box','htmega', 'ht mega'];
     }
@@ -1242,7 +1237,7 @@ class HTMega_Elementor_Widget_Service extends Widget_Base {
                     }else{
                         if( !empty( $settings['service_link']['url'] ) ){
 
-                            if( 'svg' == $settings['service_icon']['library']){
+                            if( isset( $settings['service_icon']['library'] ) && 'svg' == $settings['service_icon']['library'] ) {
 
                             echo '<a href="'.esc_url($settings['service_link']['url']).'"><div class="icon"> <div class="htmega-svg-icon-box">'.HTMega_Icon_manager::render_icon( $settings['service_icon'], [ 'aria-hidden' => 'true' ] ).'</div></div></a>';
                              } else{
@@ -1250,7 +1245,7 @@ class HTMega_Elementor_Widget_Service extends Widget_Base {
                             }
 
                         }else{
-                            if( 'svg' == $settings['service_icon']['library']){
+                            if( isset( $settings['service_icon']['library'] ) && 'svg' == $settings['service_icon']['library'] ) {
                             echo '<div class="icon"><div class="htmega-svg-icon-box">'.HTMega_Icon_manager::render_icon( $settings['service_icon'], [ 'aria-hidden' => 'true' ] ).'</div></div>';
                             } else {
                                 echo '<div class="icon">'.HTMega_Icon_manager::render_icon( $settings['service_icon'], [ 'aria-hidden' => 'true' ] ).'</div>';

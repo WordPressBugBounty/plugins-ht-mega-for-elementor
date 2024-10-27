@@ -29,12 +29,6 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
 		return 'https://wphtmega.com/docs/forms-widgets/wp-forms-widget/';
 	}
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function htmega_wpforms_forms(){
         $formlist = array();
         $forms_args = array( 'posts_per_page' => -1, 'post_type'=> 'wpforms' );

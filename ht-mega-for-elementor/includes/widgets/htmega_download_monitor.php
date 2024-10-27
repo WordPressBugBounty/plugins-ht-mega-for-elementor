@@ -21,12 +21,6 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return [ 'download', 'download monitor', 'widget','ht mega','htmega addons' ];
     }

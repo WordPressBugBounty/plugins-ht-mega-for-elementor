@@ -29,12 +29,6 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         return 'https://wphtmega.com/docs/general-widgets/page-not-found-content-widget/';
     }
 
-    public function get_style_depends() {
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     protected function register_controls() {
 
         $this->start_controls_section(

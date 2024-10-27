@@ -31,20 +31,15 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
 
     public function get_style_depends(){
         return [
-            'swiper',
-            'htmega-widgets',
+            'swiper'
         ];
     }
 
     public function get_script_depends() {
         return [
-            'swiper',
-            'htmega-widgets-scripts',
+            'swiper'
         ];
     }
-    protected function is_dynamic_content():bool {
-		return false;
-	}
     protected function register_controls() {
 
         $this->start_controls_section(

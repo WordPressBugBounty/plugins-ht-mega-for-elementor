@@ -22,12 +22,6 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
-
     public function get_keywords() {
         return ['flip box', 'flip content', 'content box', 'flip item', 'htmega', 'ht mega', 'addons','widget'];
     }

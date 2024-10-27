@@ -8,6 +8,18 @@ function htmega_get_elementor() {
     return \Elementor\Plugin::instance();
 }
 
+// elementor editor mode check
+function htmega_is_editor_mode() {
+    return \Elementor\Plugin::$instance->editor->is_edit_mode();
+}
+// elementor editing mode
+if( !function_exists('htmega_is_editing_mode') ){
+    function htmega_is_editing_mode() {
+        return ( htmega_get_elementor()->editor->is_edit_mode() ||
+        htmega_get_elementor()->preview->is_preview_mode() ||
+        is_preview() );
+    }
+}
 /**
  * [htmega_get_elementor_option]
  * @param  [string] $key Option Key

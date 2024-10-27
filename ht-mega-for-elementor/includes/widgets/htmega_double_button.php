@@ -21,11 +21,6 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         return [ 'htmega-addons' ];
     }
 
-    public function get_style_depends(){
-        return [
-            'htmega-widgets',
-        ];
-    }
     public function get_keywords() {
         return ['button', 'double button', 'buttons', 'dual button', 'creative button', 'advanced button', 'htmega', 'ht mega', 'addons','widget'];
     }
