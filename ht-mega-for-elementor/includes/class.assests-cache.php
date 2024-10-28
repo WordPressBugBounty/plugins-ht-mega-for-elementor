@@ -85,7 +85,14 @@ if ( ! class_exists( 'HTMega_Elementor_Assests_Cache' ) ) {
         }
 
         public function get_widgets_used_on_page( $post_id ) {
+            if ( ! $post_id ) {
+                return false;
+            }
+
             $document = \Elementor\Plugin::$instance->documents->get( $post_id );
+            if ( ! $document ) {
+                return false;
+            }
             $elements_data = $document->get_elements_data();
 
             function find_unique_htmega_widgets( $elements, &$unique_widgets, &$processed_templates = [], $depth = 0, $max_depth = 5 ) {

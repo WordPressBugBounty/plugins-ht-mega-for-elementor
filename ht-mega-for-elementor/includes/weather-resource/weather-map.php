@@ -7,7 +7,7 @@ class WeatherMap{
     /**
 	 * API info URL
 	 */
-    private static $open_wateher_url = 'https://api.openweathermap.org/data/2.5/';
+    private static $open_wateher_url = 'https://api.openweathermap.org/data/3.0/';
 
     /**
      * Send Api request

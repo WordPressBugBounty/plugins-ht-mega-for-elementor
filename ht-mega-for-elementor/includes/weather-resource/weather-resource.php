@@ -72,7 +72,7 @@ class weatherResource{
 
     public function get_country_by_lat_long($lat, $long, $appid){
 
-        $url = 'https://api.openweathermap.org/data/2.5/weather?&lat='. $lat .'&lon='. $long .'&appid='. $appid;
+        $url = 'https://api.openweathermap.org/data/3.0/weather?&lat='. $lat .'&lon='. $long .'&appid='. $appid;
 
         $city= wp_remote_get( $url );
 
@@ -142,7 +142,7 @@ class weatherResource{
         $day['pressure'] 		= isset($forecast_item->pressure) ? round($forecast_item->pressure) : false;
         $day['humidity'] 		= isset($forecast_item->humidity) ? round($forecast_item->humidity) : false;
         $day['wind_speed'] 		= isset($forecast_item->wind_speed) ?  $forecast_item->wind_speed : false;
-        $day['wind_direction'] 	= isset($forecast_day->wind_deg) ? $this->wind_label[ fmod((($forecast_day->wind_deg + 11) / 22.5),16) ]  : false;
+        $day['wind_direction'] 	= isset($forecast_item->wind_deg) ? $this->wind_label[ fmod((($forecast_item->wind_deg + 11) / 22.5),16) ]  : false;
             
         // WEATHER DESCRIPTIONS
         if( isset($forecast_item->weather[0]) ){
