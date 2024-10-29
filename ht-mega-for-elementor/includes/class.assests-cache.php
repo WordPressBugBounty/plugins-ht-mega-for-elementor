@@ -94,76 +94,67 @@ if ( ! class_exists( 'HTMega_Elementor_Assests_Cache' ) ) {
                 return false;
             }
             $elements_data = $document->get_elements_data();
+            $unique_htmega_widgets = [];
+            $this->find_unique_htmega_widgets( $elements_data, $unique_htmega_widgets );
+            return ! empty( array_keys( $unique_htmega_widgets ) ) ? array_keys( $unique_htmega_widgets ) : [];
+        }
+        
+        private function find_unique_htmega_widgets( $elements, &$unique_widgets, &$processed_templates = [], $depth = 0, $max_depth = 5 ) {
+            // Exit if we've reached the maximum recursion depth
+            if ( $depth > $max_depth ) {
+                return;
+            }
 
-            function find_unique_htmega_widgets( $elements, &$unique_widgets, &$processed_templates = [], $depth = 0, $max_depth = 5 ) {
-                // Exit if we've reached the maximum recursion depth
-                if ( $depth > $max_depth ) {
-                    return;
-                }
-            
-                if ( $elements ) {
-                    foreach ( $elements as $element ) {
-                        // Check if the element is an HT Mega widget
-                        if ( isset( $element['widgetType'] ) && strpos( $element['widgetType'], 'htmega' ) !== false ) {
-                            $unique_widgets[$element['widgetType']] = true;
-                        }
-            
-                        // Loop through settings to check for dynamic template keys
-                        if ( isset( $element['settings'] ) ) {
-                            foreach ( $element['settings'] as $setting_key => $setting_value ) {
-            
-                                // Check if the setting is a repeater field (an array of data)
-                                if ( is_array( $setting_value ) ) {
-                                    // If it's an array (repeater), loop through each item
-                                    foreach ( $setting_value as $repeater_item ) {
-                                        if ( is_array( $repeater_item ) ) {
-                                            // Check for numeric template IDs inside the repeater item
-                                            foreach ( $repeater_item as $repeater_key => $repeater_value ) {
-                                                if ( is_numeric( $repeater_value ) && !in_array( $repeater_value, $processed_templates ) ) {
-                                                    // Avoid processing the same template more than once
-                                                    $processed_templates[] = $repeater_value;
-            
-                                                    // Attempt to get the template document
-                                                    $template_document = \Elementor\Plugin::$instance->documents->get( $repeater_value );
-                                                    if ( $template_document ) {
-                                                        // Recursively find widgets within the template
-                                                        $template_elements_data = $template_document->get_elements_data();
-                                                        find_unique_htmega_widgets( $template_elements_data, $unique_widgets, $processed_templates, $depth + 1, $max_depth );
-                                                    }
+            if ( $elements ) {
+                foreach ( $elements as $element ) {
+                    // Check if the element is an HT Mega widget
+                    if ( isset( $element['widgetType'] ) && strpos( $element['widgetType'], 'htmega' ) !== false ) {
+                        $unique_widgets[$element['widgetType']] = true;
+                    }
+
+                    // Loop through settings to check for dynamic template keys
+                    if ( isset( $element['settings'] ) ) {
+                        foreach ( $element['settings'] as $setting_key => $setting_value ) {
+
+                            if ( is_array( $setting_value ) ) {
+                                // If it's an array (repeater), loop through each item
+                                foreach ( $setting_value as $repeater_item ) {
+                                    if ( is_array( $repeater_item ) ) {
+                                        // Check for numeric template IDs inside the repeater item
+                                        foreach ( $repeater_item as $repeater_key => $repeater_value ) {
+                                            if ( is_numeric( $repeater_value ) && !in_array( $repeater_value, $processed_templates ) ) {
+                                                $processed_templates[] = $repeater_value;
+
+                                                $template_document = \Elementor\Plugin::$instance->documents->get( $repeater_value );
+                                                if ( $template_document ) {
+                                                    $template_elements_data = $template_document->get_elements_data();
+                                                    $this->find_unique_htmega_widgets( $template_elements_data, $unique_widgets, $processed_templates, $depth + 1, $max_depth );
                                                 }
                                             }
                                         }
                                     }
-                                } elseif ( is_numeric( $setting_value ) && !in_array( $setting_value, $processed_templates ) ) {
-                                    // Avoid processing the same template more than once
-                                    $processed_templates[] = $setting_value;
-            
-                                    // If the setting value is a numeric ID (template ID), process it directly
-                                    $template_document = \Elementor\Plugin::$instance->documents->get( $setting_value );
-                                    if ( $template_document ) {
-                                        // Recursively find widgets within the template
-                                        $template_elements_data = $template_document->get_elements_data();
-                                        find_unique_htmega_widgets( $template_elements_data, $unique_widgets, $processed_templates, $depth + 1, $max_depth );
-                                    }
+                                }
+                            } elseif ( is_numeric( $setting_value ) && !in_array( $setting_value, $processed_templates ) ) {
+                                // Avoid processing the same template more than once
+                                $processed_templates[] = $setting_value;
+                                
+                                $template_document = \Elementor\Plugin::$instance->documents->get( $setting_value );
+                                if ( $template_document ) {
+                                    // Recursively find widgets within the template
+                                    $template_elements_data = $template_document->get_elements_data();
+                                    $this->find_unique_htmega_widgets( $template_elements_data, $unique_widgets, $processed_templates, $depth + 1, $max_depth );
                                 }
                             }
                         }
-            
-                        // Recursively check the current element's inner elements
-                        if ( isset( $element['elements'] ) && ! empty( $element['elements'] ) ) {
-                            find_unique_htmega_widgets( $element['elements'], $unique_widgets, $processed_templates, $depth + 1, $max_depth );
-                        }
+                    }
+
+                    // Recursively check the current element's inner elements
+                    if ( isset( $element['elements'] ) && ! empty( $element['elements'] ) ) {
+                        $this->find_unique_htmega_widgets( $element['elements'], $unique_widgets, $processed_templates, $depth + 1, $max_depth );
                     }
                 }
             }
-            
-
-            $unique_htmega_widgets = [];
-            find_unique_htmega_widgets( $elements_data, $unique_htmega_widgets );
-            return ! empty( array_keys( $unique_htmega_widgets ) ) ? array_keys( $unique_htmega_widgets ) : [];
         }
-        
-
 
 
         protected function get_widget_css( $widget ) {

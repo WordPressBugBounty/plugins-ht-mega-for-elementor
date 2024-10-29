@@ -588,8 +588,13 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
 
             if ( ! htmega_is_editing_mode() ) {
                 $post_id = get_the_ID();
-                $assets_cache = new HTMega_Elementor_Assests_Cache( $post_id );
-                $assets_cache -> combine_ht_mega_css_files();
+
+                if ( htmega_is_elementor_page( $post_id ) ) {
+                 
+                    $assets_cache = new HTMega_Elementor_Assests_Cache( $post_id );
+                    $assets_cache -> combine_ht_mega_css_files();
+                }
+
             } else {
                 wp_enqueue_style( 'htmega-widgets-style' );
             }

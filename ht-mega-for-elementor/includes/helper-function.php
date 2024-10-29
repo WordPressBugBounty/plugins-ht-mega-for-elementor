@@ -1111,3 +1111,10 @@ if ( !function_exists('htmega_get_template_content_by_id') ) {
         }
     }
 }
+
+if ( ! function_exists('htmega_is_elementor_page') ) {
+    function htmega_is_elementor_page( $post_id ) {
+        $elementor = get_post_meta( $post_id, '_elementor_edit_mode', true );
+        return $elementor;
+    }
+}
