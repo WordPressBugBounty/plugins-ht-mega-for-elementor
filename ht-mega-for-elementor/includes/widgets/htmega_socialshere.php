@@ -42,7 +42,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
         $this->start_controls_section(
             'social_media_sheres',
             [
-                'label' => __( 'Social Share', 'htmega-addons' ),
+                'label' => esc_html__( 'Social Share', 'htmega-addons' ),
             ]
         );
         
@@ -51,41 +51,41 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $repeater->add_control(
                 'htmega_social_media',
                 [
-                    'label' => __( 'Social Media', 'htmega-addons' ),
+                    'label' => esc_html__( 'Social Media', 'htmega-addons' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'facebook',
                     'options' => [
-                        'facebook'      => __( 'Facebook', 'htmega-addons' ),
-                        'twitter'       => __( 'Twitter', 'htmega-addons' ),
-                        'googleplus'    => __( 'Google+', 'htmega-addons' ),
-                        'pinterest'     => __( 'Pinterest', 'htmega-addons' ),
-                        'linkedin'      => __( 'Linkedin', 'htmega-addons' ),
-                        'tumblr'        => __( 'tumblr', 'htmega-addons' ),
-                        'vkontakte'     => __( 'Vkontakte', 'htmega-addons' ),
-                        'odnoklassniki' => __( 'Odnoklassniki', 'htmega-addons' ),
-                        'moimir'        => __( 'Moimir', 'htmega-addons' ),
-                        'livejournal'   => __( 'Live journal', 'htmega-addons' ),
-                        'blogger'       => __( 'Blogger', 'htmega-addons' ),
-                        'digg'          => __( 'Digg', 'htmega-addons' ),
-                        'evernote'      => __( 'Evernote', 'htmega-addons' ),
-                        'reddit'        => __( 'Reddit', 'htmega-addons' ),
-                        'delicious'     => __( 'Delicious', 'htmega-addons' ),
-                        'stumbleupon'   => __( 'Stumbleupon', 'htmega-addons' ),
-                        'pocket'        => __( 'Pocket', 'htmega-addons' ),
-                        'surfingbird'   => __( 'Surfingbird', 'htmega-addons' ),
-                        'liveinternet'  => __( 'Liveinternet', 'htmega-addons' ),
-                        'buffer'        => __( 'Buffer', 'htmega-addons' ),
-                        'instapaper'    => __( 'Instapaper', 'htmega-addons' ),
-                        'xing'          => __( 'Xing', 'htmega-addons' ),
-                        'wordpress'     => __( 'WordPress', 'htmega-addons' ),
-                        'baidu'         => __( 'Baidu', 'htmega-addons' ),
-                        'renren'        => __( 'Renren', 'htmega-addons' ),
-                        'weibo'         => __( 'Weibo', 'htmega-addons' ),
-                        'skype'         => __( 'Skype', 'htmega-addons' ),
-                        'telegram'      => __( 'Telegram', 'htmega-addons' ),
-                        'viber'         => __( 'Viber', 'htmega-addons' ),
-                        'whatsapp'      => __( 'Whatsapp', 'htmega-addons' ),
-                        'line'          => __( 'Line', 'htmega-addons' ),
+                        'facebook'      => esc_html__( 'Facebook', 'htmega-addons' ),
+                        'twitter'       => esc_html__( 'Twitter', 'htmega-addons' ),
+                        'googleplus'    => esc_html__( 'Google+', 'htmega-addons' ),
+                        'pinterest'     => esc_html__( 'Pinterest', 'htmega-addons' ),
+                        'linkedin'      => esc_html__( 'Linkedin', 'htmega-addons' ),
+                        'tumblr'        => esc_html__( 'tumblr', 'htmega-addons' ),
+                        'vkontakte'     => esc_html__( 'Vkontakte', 'htmega-addons' ),
+                        'odnoklassniki' => esc_html__( 'Odnoklassniki', 'htmega-addons' ),
+                        'moimir'        => esc_html__( 'Moimir', 'htmega-addons' ),
+                        'livejournal'   => esc_html__( 'Live journal', 'htmega-addons' ),
+                        'blogger'       => esc_html__( 'Blogger', 'htmega-addons' ),
+                        'digg'          => esc_html__( 'Digg', 'htmega-addons' ),
+                        'evernote'      => esc_html__( 'Evernote', 'htmega-addons' ),
+                        'reddit'        => esc_html__( 'Reddit', 'htmega-addons' ),
+                        'delicious'     => esc_html__( 'Delicious', 'htmega-addons' ),
+                        'stumbleupon'   => esc_html__( 'Stumbleupon', 'htmega-addons' ),
+                        'pocket'        => esc_html__( 'Pocket', 'htmega-addons' ),
+                        'surfingbird'   => esc_html__( 'Surfingbird', 'htmega-addons' ),
+                        'liveinternet'  => esc_html__( 'Liveinternet', 'htmega-addons' ),
+                        'buffer'        => esc_html__( 'Buffer', 'htmega-addons' ),
+                        'instapaper'    => esc_html__( 'Instapaper', 'htmega-addons' ),
+                        'xing'          => esc_html__( 'Xing', 'htmega-addons' ),
+                        'wordpress'     => esc_html__( 'WordPress', 'htmega-addons' ),
+                        'baidu'         => esc_html__( 'Baidu', 'htmega-addons' ),
+                        'renren'        => esc_html__( 'Renren', 'htmega-addons' ),
+                        'weibo'         => esc_html__( 'Weibo', 'htmega-addons' ),
+                        'skype'         => esc_html__( 'Skype', 'htmega-addons' ),
+                        'telegram'      => esc_html__( 'Telegram', 'htmega-addons' ),
+                        'viber'         => esc_html__( 'Viber', 'htmega-addons' ),
+                        'whatsapp'      => esc_html__( 'Whatsapp', 'htmega-addons' ),
+                        'line'          => esc_html__( 'Line', 'htmega-addons' ),
                     ],
                 ]
             );
@@ -114,7 +114,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $repeater->add_control(
                 'normal_style_area_heading',
                 [
-                    'label' => __( 'Normal Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Normal Style', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -124,7 +124,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'social_rep_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'htmega-addons' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}',
                 ]
@@ -134,7 +134,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'social_rep_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}',
                 ]
             );
@@ -142,7 +142,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $repeater->add_control(
                 'hover_style_area_heading',
                 [
-                    'label' => __( 'Hover Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Hover Style', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -152,7 +152,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'social_rep_hover_background',
-                    'label' => __( 'Hover Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Hover Background', 'htmega-addons' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover',
                 ]
@@ -162,7 +162,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'social_rep_hover_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover',
                 ]
             );
@@ -172,14 +172,14 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 $repeater->start_controls_tab(
                     'social_rep_style',
                     [
-                        'label' => __( 'Title', 'htmega-addons' ),
+                        'label' => esc_html__( 'Title', 'htmega-addons' ),
                     ]
                 );
 
                     $repeater->add_control(
                         'social_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   => '#000000',
                             'selectors' => [
@@ -191,7 +191,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     $repeater->add_control(
                         'social_text_hover_color',
                         [
-                            'label'     => __( 'Hover color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Hover color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
@@ -205,14 +205,14 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 $repeater->start_controls_tab(
                     'social_rep_icon_style',
                     [
-                        'label' => __( 'Icon', 'htmega-addons' ),
+                        'label' => esc_html__( 'Icon', 'htmega-addons' ),
                     ]
                 );
                     
                     $repeater->add_control(
                         'normal_style_icon_heading',
                         [
-                            'label' => __( 'Normal Style', 'htmega-addons' ),
+                            'label' => esc_html__( 'Normal Style', 'htmega-addons' ),
                             'type' => Controls_Manager::HEADING,
                             'separator' => 'before',
                         ]
@@ -221,7 +221,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     $repeater->add_control(
                         'social_icon_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}} i' => 'color: {{VALUE}};',
@@ -234,7 +234,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'social_rep_icon_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'htmega-addons' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}} i',
                         ]
@@ -244,7 +244,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'social_rep_icon_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}} i',
                         ]
                     );
@@ -264,7 +264,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     $repeater->add_control(
                         'hover_style_icon_heading',
                         [
-                            'label' => __( 'Hover Style', 'htmega-addons' ),
+                            'label' => esc_html__( 'Hover Style', 'htmega-addons' ),
                             'type' => Controls_Manager::HEADING,
                         ]
                     );
@@ -273,10 +273,11 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     $repeater->add_control(
                         'social_icon_hover_color',
                         [
-                            'label'     => __( 'Hover color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Hover color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover i' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover svg path' => 'fill: {{VALUE}};',
                             ],
                         ]
                     );
@@ -285,7 +286,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'social_rep_icon_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'htmega-addons' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover i',
                         ]
@@ -295,7 +296,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'social_rep_icon_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover i',
                         ]
                     );
@@ -313,17 +314,17 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     'default' => [
                         [
                             'htmega_social_media' => 'facebook',
-                            'htmega_social_title' => __( 'Facebook', 'htmega-addons' ),
+                            'htmega_social_title' => esc_html__( 'Facebook', 'htmega-addons' ),
                             'htmega_social_icon' => 'fab fa-facebook-square',
                         ],
                         [
                             'htmega_social_media' => 'twitter',
-                            'htmega_social_title' => __( 'Twitter', 'htmega-addons' ),
+                            'htmega_social_title' => esc_html__( 'Twitter', 'htmega-addons' ),
                             'htmega_social_icon' => 'fab fa-twitter',
                         ],
                         [
                             'htmega_social_media' => 'googleplus',
-                            'htmega_social_title' => __( 'Google Plus', 'htmega-addons' ),
+                            'htmega_social_title' => esc_html__( 'Google Plus', 'htmega-addons' ),
                             'htmega_social_icon' => 'fab fa-google-plus-g',
                         ],
                     ],
@@ -363,19 +364,19 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_responsive_control(
                 'social_icon_alignment',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => esc_html__( 'Alignment', 'htmega-addons' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'htmega-addons' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'htmega-addons' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'htmega-addons' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -392,7 +393,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
         $this->start_controls_section(
             'htmega_socialshere_style_section',
             [
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => esc_html__( 'Style', 'htmega-addons' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -400,7 +401,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_responsive_control(
                 'social_shere_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -412,7 +413,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_responsive_control(
                 'social_shere_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -440,7 +441,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'social_shere_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-social-share li',
                 ]
             );
@@ -449,7 +450,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'social_shere_margin_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => esc_html__( 'Box Shadow', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-social-share ul li',
                 ]
             );
@@ -457,10 +458,10 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_control(
                 'icon_control_offset_toggle',
                 [
-                    'label' => __( 'Icon Settings', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Settings', 'htmega-addons' ),
                     'type' => Controls_Manager::POPOVER_TOGGLE,
-                    'label_off' => __( 'None', 'htmega-addons' ),
-                    'label_on' => __( 'Custom', 'htmega-addons' ),
+                    'label_off' => esc_html__( 'None', 'htmega-addons' ),
+                    'label_on' => esc_html__( 'Custom', 'htmega-addons' ),
                     'return_value' => 'yes',
                     'condition'    => [
                         'social_view!' => 'title',
@@ -473,7 +474,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_control(
                 'icon_fontsize',
                 [
-                    'label' => __( 'Icon Font Size', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Font Size', 'htmega-addons' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -502,7 +503,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_control(
                 'icon_height',
                 [
-                    'label' => __( 'Icon Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Height', 'htmega-addons' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -526,7 +527,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_control(
                 'icon_line_height',
                 [
-                    'label' => __( 'Line Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Line Height', 'htmega-addons' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -550,7 +551,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_control(
                 'icon_width',
                 [
-                    'label' => __( 'Icon Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Width', 'htmega-addons' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -575,7 +576,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'social_icon_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-social-share li i,{{WRAPPER}} .htmega-social-share li svg',
                 ]
             );
@@ -584,7 +585,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'social_icon_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'htmega-addons' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-social-share li i,{{WRAPPER}} .htmega-social-share li svg',
                 ]
@@ -607,7 +608,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_control(
                 'share_button_line_height',
                 [
-                    'label' => __( 'Button Line Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Button Line Height', 'htmega-addons' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -633,7 +634,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_control(
                 'normal_style_title_heading',
                 [
-                    'label' => __( 'Title Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Title Style', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
@@ -645,7 +646,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->add_responsive_control(
                 'social_shere_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -674,7 +675,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->start_controls_tab(
                 'social_share_normal_style',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => esc_html__( 'Normal', 'htmega-addons' ),
                 ]
             );
 
@@ -682,7 +683,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                 $this->add_control(
                     'social_shere_color',
                     [
-                        'label'     => __( 'color', 'htmega-addons' ),
+                        'label'     => esc_html__( 'Color', 'htmega-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-social-share ul li' => 'color: {{VALUE}};',
@@ -695,7 +696,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'social_shere_background',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => esc_html__( 'Background', 'htmega-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .htmega-social-share li',
                     ]
@@ -707,14 +708,14 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->start_controls_tab(
                 'social_share_hover_style',
                 [
-                    'label' => __( 'Hover', 'htmega-addons' ),
+                    'label' => esc_html__( 'Hover', 'htmega-addons' ),
                 ]
             );
 
                 $this->add_control(
                     'social_shere_hover_color',
                     [
-                        'label'     => __( 'color', 'htmega-addons' ),
+                        'label'     => esc_html__( 'Color', 'htmega-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-social-share ul li:hover' => 'color: {{VALUE}};',
@@ -727,7 +728,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'social_shere_hover_background',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => esc_html__( 'Background', 'htmega-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .htmega-social-share li:hover',
                     ]

@@ -594,6 +594,18 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 [
                     'name' => 'counter_title_typography',
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-title',
+                    'fields_options' => [
+                        'font_size' => [
+                            'selectors' => [
+                                '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-title' => 'font-size: {{SIZE}}{{UNIT}}!important',
+                            ],
+                        ],
+                        'line_height' => [
+                            'selectors' => [
+                                '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-title' => 'line-height: {{SIZE}}{{UNIT}}!important',
+                            ],
+                        ],
+                    ]
                 ]
             );
 

@@ -2106,7 +2106,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 'label'     => __('Color', 'htmega-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .htmega-pricing-body a.price_btn , {{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn , {{WRAPPER}} .htmega-pricing-style-4 .htmega-pricing-footer a.price_btn' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .htmega-pricing-body a.price_btn, {{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn , {{WRAPPER}} .htmega-pricing-style-4 .htmega-pricing-footer a.price_btn' => 'color: {{VALUE}}',
                 ]
             ]
         );
@@ -2117,7 +2117,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 'name' => 'pricing_footer_background',
                 'label' => __('Background', 'htmega-addons'),
                 'types' => ['classic', 'gradient'],
-                'selector' => '{{WRAPPER}} .htmega-pricing-body a.price_btn,{{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn span,{{WRAPPER}} .htmega-pricing-style-4 .htmega-pricing-footer a.price_btn , {{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn',
+                'selector' => '{{WRAPPER}} .htmega-pricing-body a.price_btn,{{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn span,{{WRAPPER}} .htmega-pricing-style-4 .htmega-pricing-footer a.price_btn, {{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn',
             ]
         );
 
@@ -2181,7 +2181,10 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 'label'     => __('Color', 'htmega-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .htmega-pricing-footer a.price_btn:hover' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .htmega-pricing-footer a.price_btn:hover,
+                    {{WRAPPER}} .htmega-pricing-body a.price_btn:hover, 
+                    {{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn:hover,
+                     {{WRAPPER}} .htmega-pricing-style-4 .htmega-pricing-footer a.price_btn:hover' => 'color: {{VALUE}}',
                 ]
             ]
         );
@@ -2313,7 +2316,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . $currencysymbol . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . $currencysymbol . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
@@ -2363,7 +2366,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title( $settings['htmega_price'] ) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
@@ -2433,7 +2436,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title( $settings['htmega_price'] ) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
@@ -2493,7 +2496,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title( $settings['htmega_price'] ) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
@@ -2552,7 +2555,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title( $settings['htmega_price'] ) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
@@ -2562,7 +2565,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title( $settings['htmega_price'] ) . '</span>';
+                                echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
@@ -2602,7 +2605,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
@@ -2612,7 +2615,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
@@ -2667,7 +2670,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if ( !empty($settings['htmega_price']) ) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
@@ -2677,7 +2680,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
@@ -2739,7 +2742,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if ( !empty($settings['htmega_price']) ) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
@@ -2749,7 +2752,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
@@ -2794,7 +2797,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . htmega_kses_title($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
@@ -2804,7 +2807,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . htmega_kses_title($settings['htmega_price']) . '</span>';
+                                echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';

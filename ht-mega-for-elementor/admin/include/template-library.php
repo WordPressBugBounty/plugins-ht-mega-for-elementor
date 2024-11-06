@@ -137,7 +137,7 @@ class HTMega_Template_Library{
 
         if ( ! $transient || $force_update ) {
             $info = self::request_remote_templates_info( $force_update );
-            set_transient( self::TRANSIENT_KEY, $info);
+            set_transient( self::TRANSIENT_KEY, $info, 30 * DAY_IN_SECONDS );
         }
     }
 

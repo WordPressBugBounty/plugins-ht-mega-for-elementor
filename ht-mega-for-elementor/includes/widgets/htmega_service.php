@@ -605,6 +605,9 @@ class HTMega_Elementor_Widget_Service extends Widget_Base {
                         '{{WRAPPER}} .htmega-service-style-3 .icon' => 'width: {{SIZE}}{{UNIT}};',
                         '{{WRAPPER}} .htmega-service-style-7 .icon' => 'width: {{SIZE}}{{UNIT}};',
                     ],
+                    'condition' => [
+                        'htmega_service_style' => ['6','3','7'],
+                    ],
                 ]
             );
 
@@ -626,6 +629,9 @@ class HTMega_Elementor_Widget_Service extends Widget_Base {
                         '{{WRAPPER}} .htmega-service-style-6 .icon' => 'height: {{SIZE}}{{UNIT}}; line-height: {{SIZE}}{{UNIT}};',
                         '{{WRAPPER}} .htmega-service-style-3 .icon' => 'height: {{SIZE}}{{UNIT}}; line-height: {{SIZE}}{{UNIT}};',
                         '{{WRAPPER}} .htmega-service-style-7 .icon' => 'height: {{SIZE}}{{UNIT}};',
+                    ],
+                    'condition' => [
+                        'htmega_service_style' => ['6','3','7'],
                     ],
                 ]
             );
@@ -706,7 +712,10 @@ class HTMega_Elementor_Widget_Service extends Widget_Base {
                             'name' => 'service_icon_background',
                             'label' => __( 'Background', 'htmega-addons' ),
                             'types' => [ 'classic', 'gradient' ],
-                            'selector' => '{{WRAPPER}} .htmega-service .icon i, {{WRAPPER}} .htmega-service .htmega-svg-icon-box',
+                            'selector' => '{{WRAPPER}} .htmega-service .icon i, 
+                            {{WRAPPER}} .htmega-service-style-3 .icon,
+                            {{WRAPPER}} .htmega-service-style-4 .icon,
+                            {{WRAPPER}} .htmega-service .htmega-svg-icon-box',
                         ]
                     );
 
