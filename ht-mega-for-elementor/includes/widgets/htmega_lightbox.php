@@ -405,7 +405,6 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
                     ],
                     'condition'=>[
                         'zoom_icon[value]!'=>'',
-                        'zoom_icon[library]!'=>'svg',
                     ],
                 ]
             );

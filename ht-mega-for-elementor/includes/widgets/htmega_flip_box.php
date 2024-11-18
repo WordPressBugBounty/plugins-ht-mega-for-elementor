@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Flip Box', 'htmega-addons' );
+        return esc_html__( 'Flip Box', 'htmega-addons' );
     }
 
     public function get_icon() {
@@ -38,22 +38,22 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flipbox_content_layout',
             [
-                'label' => __( 'Layout', 'htmega-addons' ),
+                'label' => esc_html__( 'Layout', 'htmega-addons' ),
             ]
         );
 
             $this->add_control(
                 'flipbox_layout',
                 [
-                    'label' => __( 'Layout', 'htmega-addons' ),
+                    'label' => esc_html__( 'Layout', 'htmega-addons' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Layout One', 'htmega-addons' ),
-                        '2'   => __( 'Layout Two', 'htmega-addons' ),
-                        '3'   => __( 'Layout Three', 'htmega-addons' ),
-                        '4'   => __( 'Layout Four', 'htmega-addons' ),
-                        '5'   => __( 'Layout Five', 'htmega-addons' ),
+                        '1'   => esc_html__( 'Layout One', 'htmega-addons' ),
+                        '2'   => esc_html__( 'Layout Two', 'htmega-addons' ),
+                        '3'   => esc_html__( 'Layout Three', 'htmega-addons' ),
+                        '4'   => esc_html__( 'Layout Four', 'htmega-addons' ),
+                        '5'   => esc_html__( 'Layout Five', 'htmega-addons' ),
                     ],
                 ]
             );
@@ -64,7 +64,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flipbox_content_front',
             [
-                'label' => __( 'Front', 'htmega-addons' ),
+                'label' => esc_html__( 'Front', 'htmega-addons' ),
             ]
             );
             $this->add_control(
@@ -98,23 +98,23 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_content_type',
                 [
-                    'label'   => __( 'Icon Type', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Icon Type', 'htmega-addons' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'none' => [
-                            'title' => __( 'None', 'htmega-addons' ),
+                            'title' => esc_html__( 'None', 'htmega-addons' ),
                             'icon'  => 'eicon-ban',
                         ],
                         'number' => [
-                            'title' => __( 'Number', 'htmega-addons' ),
+                            'title' => esc_html__( 'Number', 'htmega-addons' ),
                             'icon'  => 'eicon-counter',
                         ],
                         'image' => [
-                            'title' => __( 'Image', 'htmega-addons' ),
+                            'title' => esc_html__( 'Image', 'htmega-addons' ),
                             'icon'  => 'eicon-image-bold',
                         ],
                         'icon' => [
-                            'title' => __( 'Icon', 'htmega-addons' ),
+                            'title' => esc_html__( 'Icon', 'htmega-addons' ),
                             'icon'  => 'eicon-info-circle',
                         ],
                     ],
@@ -125,18 +125,18 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_front_title',
                 [
-                    'label'         => __( 'Title', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Title', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXT,
-                    'default'       => __( 'Flip Box Heading', 'htmega-addons' ),
-                    'placeholder'   => __( 'Type your title here', 'htmega-addons' ),
+                    'default'       => esc_html__( 'Flip Box Heading', 'htmega-addons' ),
+                    'placeholder'   => esc_html__( 'Type your title here', 'htmega-addons' ),
                 ]
             );
             $this->add_control(
                 'flipbox_front_number',
                 [
-                    'label'         => __( 'Number', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Number', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXT,
-                    'default'       => __( '01', 'htmega-addons' ),
+                    'default'       => esc_html__( '01', 'htmega-addons' ),
                     'condition'=>[
                         'flipbox_content_type'=>'number',
                     ],
@@ -146,7 +146,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_front_icon',
                 [
-                    'label'         => __( 'Icon', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Icon', 'htmega-addons' ),
                     'type'          => Controls_Manager::ICONS,
                     'condition'=>[
                         'flipbox_content_type'=>'icon',
@@ -207,9 +207,9 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_front_description',
                 [
-                    'label'         => __( 'Description', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Description', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXTAREA,
-                    'placeholder'   => __( 'Description', 'htmega-addons' ),
+                    'placeholder'   => esc_html__( 'Description', 'htmega-addons' ),
                     'condition'=>[
                         'flipbox_layout'=>array( '3','4' ),
                     ],
@@ -218,9 +218,9 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_bottom_index_number',
                 [
-                    'label'         => __( 'Bottom Index Number', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Bottom Index Number', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXT,
-                    'default'       => __( '01', 'htmega-addons' ),
+                    'default'       => esc_html__( '01', 'htmega-addons' ),
                     'condition'=>[
                         'flipbox_layout'=>'3',
                     ],
@@ -232,7 +232,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flipbox_content_back',
             [
-                'label' => __( 'Back', 'htmega-addons' ),
+                'label' => esc_html__( 'Back', 'htmega-addons' ),
             ]
             );
 
@@ -267,23 +267,23 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_content_type',
                 [
-                    'label'   => __( 'Icon Type', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Icon Type', 'htmega-addons' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'none' => [
-                            'title' => __( 'None', 'htmega-addons' ),
+                            'title' => esc_html__( 'None', 'htmega-addons' ),
                             'icon'  => 'eicon-ban',
                         ],
                         'number' => [
-                            'title' => __( 'Number', 'htmega-addons' ),
+                            'title' => esc_html__( 'Number', 'htmega-addons' ),
                             'icon'  => 'eicon-counter',
                         ],
                         'image' => [
-                            'title' => __( 'Image', 'htmega-addons' ),
+                            'title' => esc_html__( 'Image', 'htmega-addons' ),
                             'icon'  => 'eicon-image-bold',
                         ],
                         'icon' => [
-                            'title' => __( 'Icon', 'htmega-addons' ),
+                            'title' => esc_html__( 'Icon', 'htmega-addons' ),
                             'icon'  => 'eicon-info-circle',
                         ],
                     ],
@@ -297,19 +297,19 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_title',
                 [
-                    'label'         => __( 'Title', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Title', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXT,
-                    'default'       => __( 'Flip Box Back Heading', 'htmega-addons' ),
-                    'placeholder'   => __( 'Type your title here', 'htmega-addons' ),
+                    'default'       => esc_html__( 'Flip Box Back Heading', 'htmega-addons' ),
+                    'placeholder'   => esc_html__( 'Type your title here', 'htmega-addons' ),
                 ]
             );
             $this->add_control(
                 'flipbox_back_sub_title',
                 [
-                    'label'         => __( 'Sub Title', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Sub Title', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXT,
-                    'default'       => __( 'UI/UX Designer', 'htmega-addons' ),
-                    'placeholder'   => __( 'Type your sub title here', 'htmega-addons' ),
+                    'default'       => esc_html__( 'UI/UX Designer', 'htmega-addons' ),
+                    'placeholder'   => esc_html__( 'Type your sub title here', 'htmega-addons' ),
                     'condition' =>[
                         'flipbox_layout' => '5'
                     ]
@@ -319,9 +319,9 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_number',
                 [
-                    'label'         => __( 'Number', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Number', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXT,
-                    'default'       => __( '01', 'htmega-addons' ),
+                    'default'       => esc_html__( '01', 'htmega-addons' ),
                     'condition'=>[
                         'flipbox_back_content_type'=>'number',
                         'flipbox_layout!' => '5'
@@ -332,7 +332,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_icon',
                 [
-                    'label'         => __( 'Icon', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Icon', 'htmega-addons' ),
                     'type'          => Controls_Manager::ICONS,
                     'condition'=>[
                         'flipbox_back_content_type'=>'icon',
@@ -373,17 +373,17 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_description',
                 [
-                    'label'         => __( 'Description', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Description', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXTAREA,
-                    'default'       => __( 'There are many variations of passages Lorem Ipsum available, but the majority hav suffered alteration in.', 'htmega-addons' ),
-                    'placeholder'   => __( 'Description', 'htmega-addons' ),
+                    'default'       => esc_html__( 'There are many variations of passages Lorem Ipsum available, but the majority hav suffered alteration in.', 'htmega-addons' ),
+                    'placeholder'   => esc_html__( 'Description', 'htmega-addons' ),
                 ]
             );
 
             $this->add_control(
                 'flipbox_button',
                 [
-                    'label' => __( 'Button Text', 'htmega-addons' ),
+                    'label' => esc_html__( 'Button Text', 'htmega-addons' ),
                     'type' => Controls_Manager::TEXT,
                     'condition' => [
                         'flipbox_layout!' => '5'
@@ -394,9 +394,9 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_button_link',
                 [
-                    'label' => __( 'Button Link', 'htmega-addons' ),
+                    'label' => esc_html__( 'Button Link', 'htmega-addons' ),
                     'type' => Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                    'placeholder' => esc_html__( 'https://your-link.com', 'htmega-addons' ),
                     'show_external' => true,
                     'default' => [
                         'url' => '#',
@@ -412,9 +412,9 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_bottom_index_number',
                 [
-                    'label'         => __( 'Bottom Index Number', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Bottom Index Number', 'htmega-addons' ),
                     'type'          => Controls_Manager::TEXT,
-                    'default'       => __( '01', 'htmega-addons' ),
+                    'default'       => esc_html__( '01', 'htmega-addons' ),
                     'condition'=>[
                         'flipbox_layout'=>'3',
                     ],
@@ -438,7 +438,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $repeater->add_control(
                 'htmega_social_title',
                 [
-                    'label'   => __( 'Title', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Title', 'htmega-addons' ),
                     'type'    => Controls_Manager::TEXT,
                     'default' => 'Facebook',
                 ]
@@ -447,9 +447,9 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $repeater->add_control(
                 'htmega_social_link',
                 [
-                    'label'   => __( 'Link', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Link', 'htmega-addons' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __( 'https://www.facebook.com/hastech.company/', 'htmega-addons' ),
+                    'default' => esc_url( 'https://www.facebook.com/hastech.company/' ),
 
                 ]
             );
@@ -457,7 +457,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $repeater->add_control(
                 'htmega_social_icon',
                 [
-                    'label'   => __( 'Icon', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Icon', 'htmega-addons' ),
                     'type'    => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fab fa-facebook-f',
@@ -476,7 +476,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         [
                             'htmega_social_title'      => 'Facebook',
                             'htmega_social_icon'       => 'fab fa-facebook-f',
-                            'htmega_social_link'       => __( 'https://www.facebook.com/hastech.company/', 'htmega-addons' ),
+                            'htmega_social_link'       => esc_url( 'https://www.facebook.com/hastech.company/' ),
                         ],
                     ],
                     'title_field' => '{{{ htmega_social_title }}}',
@@ -494,14 +494,14 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flipbox_options',
             [
-                'label' => __( 'Additional Options', 'htmega-addons' ),
+                'label' => esc_html__( 'Additional Options', 'htmega-addons' ),
             ]
         );
 
             $this->add_responsive_control(
                 'flipbox_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Height', 'htmega-addons' ),
                     'type' => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -523,23 +523,23 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_animation',
                 [
-                    'label' => __( 'Animation', 'htmega-addons' ),
+                    'label' => esc_html__( 'Animation', 'htmega-addons' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'right',
                     'options' => [
-                        'top'   => __( 'Flip Top', 'htmega-addons' ),
-                        'bottom'   => __( 'Flip Bottom', 'htmega-addons' ),
-                        'left'   => __( 'Flip Left', 'htmega-addons' ),
-                        'right'   => __( 'Flip Right', 'htmega-addons' ),
-                        'zoom_in'   => __( 'Zoom In', 'htmega-addons' ),
-                        'zoom_out'   => __( 'Zoom Out', 'htmega-addons' ),
-                        'fade_in'   => __( 'Fade In (Pro)', 'htmega-addons' ),
-                        'slide_left'   => __( 'Slide Left (Pro)', 'htmega-addons' ),
-                        'slide_right'   => __( 'Slide Right (Pro)', 'htmega-addons' ),
-                        'slide_top'   => __( 'Slide Top (Pro)', 'htmega-addons' ),
-                        'slide_bottom'   => __( 'Slide Bottom (Pro)', 'htmega-addons' ),
-                        'push_left'   => __( 'Push Left (Pro)', 'htmega-addons' ),
-                        'push_right'   => __( 'Push Right (Pro)', 'htmega-addons' ),
+                        'top'   => esc_html__( 'Flip Top', 'htmega-addons' ),
+                        'bottom'   => esc_html__( 'Flip Bottom', 'htmega-addons' ),
+                        'left'   => esc_html__( 'Flip Left', 'htmega-addons' ),
+                        'right'   => esc_html__( 'Flip Right', 'htmega-addons' ),
+                        'zoom_in'   => esc_html__( 'Zoom In', 'htmega-addons' ),
+                        'zoom_out'   => esc_html__( 'Zoom Out', 'htmega-addons' ),
+                        'fade_in'   => esc_html__( 'Fade In (Pro)', 'htmega-addons' ),
+                        'slide_left'   => esc_html__( 'Slide Left (Pro)', 'htmega-addons' ),
+                        'slide_right'   => esc_html__( 'Slide Right (Pro)', 'htmega-addons' ),
+                        'slide_top'   => esc_html__( 'Slide Top (Pro)', 'htmega-addons' ),
+                        'slide_bottom'   => esc_html__( 'Slide Bottom (Pro)', 'htmega-addons' ),
+                        'push_left'   => esc_html__( 'Push Left (Pro)', 'htmega-addons' ),
+                        'push_right'   => esc_html__( 'Push Right (Pro)', 'htmega-addons' ),
                     ],
                 ]
             );
@@ -567,13 +567,33 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     
                 ]
             );
+            $this->add_control(
+                'flip_heading_tag_free',
+                [
+                    'label' => esc_html__( 'Title Tag ', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                    'type' => Controls_Manager::SELECT,
+                    'default' => 'h2',
+                    'options' => [
+                        'h1' => esc_html__('H1', 'htmega-pro'),
+                        'h2' => esc_html__('H2', 'htmega-pro'),
+                        'h3' => esc_html__('H3', 'htmega-pro'),
+                        'h4' => esc_html__('H4', 'htmega-pro'),
+                        'h5' => esc_html__('H5', 'htmega-pro'),
+                        'h6' => esc_html__('H6', 'htmega-pro'),
+                        'span' => esc_html__('Span', 'htmega-pro'),
+                        'p' => esc_html__('P', 'htmega-pro'),
+                        'div' => esc_html__('Div', 'htmega-pro'),
+                    ],
+                    'classes' => 'htmega-disable-control',
+                ]
+            );
         $this->end_controls_section();
 
         // Style tab section
         $this->start_controls_section(
             'flipbox_front_style_section',
             [
-                'label' => __( 'Front', 'htmega-addons' ),
+                'label' => esc_html__( 'Front', 'htmega-addons' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -581,7 +601,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'flipbox_front_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -595,7 +615,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'flipbox_front_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'htmega-addons' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-flip-box-front .front-container',
                 ]
@@ -604,7 +624,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_front_background_overlay',
                 [
-                    'label'     => __( 'Background Overlay', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Background Overlay', 'htmega-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-flip-box-front .htmega-flip-overlay' => 'background-color: {{VALUE}};',
@@ -619,7 +639,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_front_background_opacity',
                 [
-                    'label'   => __( 'Opacity (%)', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Opacity (%)', 'htmega-addons' ),
                     'type'    => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 1,
@@ -644,7 +664,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'flipbox_front_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-flip-box-front',
                 ]
             );
@@ -663,7 +683,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_style_image_heading',
                 [
-                    'label' => __( 'Image Box Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Image Box Style', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' =>[
@@ -674,7 +694,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'flipbox_image_height',
                 [
-                    'label' => __( 'Image Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Image Height', 'htmega-addons' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -702,7 +722,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_style_tab_heading',
                 [
-                    'label' => __( 'Content Style Tabs', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Style Tabs', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -714,13 +734,13 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_front_style_title_tab',
                     [
-                        'label' => __( 'Title', 'htmega-addons' ),
+                        'label' => esc_html__( 'Title', 'htmega-addons' ),
                     ]
                 );
                     $this->add_control(
                         'flipbox_front_title_color',
                         [
-                            'label' => __( 'Title Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Title Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#4a4a4a',
                             'selectors' => [
@@ -740,7 +760,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_title_padding',
                         [
-                            'label' => __( 'Title Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Title Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -753,7 +773,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_title_margin',
                         [
-                            'label' => __( 'Title Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Title Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -766,7 +786,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_front_title_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .front-container h2',
                         ]
                     );
@@ -787,7 +807,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_front_style_description_tab',
                     [
-                        'label' => __( 'Description', 'htmega-addons' ),
+                        'label' => esc_html__( 'Description', 'htmega-addons' ),
                         'condition'=>[
                             'flipbox_layout'=>array( '3','4' ),
                         ],
@@ -797,7 +817,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_description_color',
                         [
-                            'label' => __( 'Description Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Description Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .front-container p' => 'color: {{VALUE}};',
@@ -816,7 +836,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_description_padding',
                         [
-                            'label' => __( 'Description Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Description Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -829,7 +849,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_description_margin',
                         [
-                            'label' => __( 'Description Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Description Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -844,7 +864,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_front_style_icon_tab',
                     [
-                        'label' => __( 'Icon', 'htmega-addons' ),
+                        'label' => esc_html__( 'Icon', 'htmega-addons' ),
                         'condition'=>[
                             'flipbox_front_icon[value]!'=>'',
                         ]
@@ -854,7 +874,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_color',
                         [
-                            'label' => __( 'Icon Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#4a4a4a',
                             'selectors' => [
@@ -867,7 +887,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_fontsize',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -895,7 +915,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_background_color',
                         [
-                            'label' => __( 'Icon Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Background Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ff7a5a',
                             'selectors' => [
@@ -907,7 +927,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_width',
                         [
-                            'label' => __( 'Icon Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Width', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -931,7 +951,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_height',
                         [
-                            'label' => __( 'Icon Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Height', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -954,7 +974,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_icon_padding',
                         [
-                            'label' => __( 'Icon Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -967,7 +987,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_icon_margin',
                         [
-                            'label' => __( 'Icon Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -980,7 +1000,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_front_icon_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .front-container span.flipbox-icon',
                         ]
                     );
@@ -999,7 +1019,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'flipbox_front_icon_boxshadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => esc_html__( 'Box Shadow', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .front-container span.flipbox-icon',
                             'separator' =>'before',
                         ]
@@ -1007,7 +1027,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_seperator_color',
                         [
-                            'label' => __( 'Separator Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Separator Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-flip-box-style-2 .htmega-flip-box-front span.flipbox-icon::before, {{WRAPPER}} .htmega-flip-box-style-2 .htmega-flip-box-front span.flipbox-icon::after' => 'background-color: {{VALUE}};',
@@ -1023,7 +1043,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_front_style_number_tab',
                     [
-                        'label' => __( 'Number', 'htmega-addons' ),
+                        'label' => esc_html__( 'Number', 'htmega-addons' ),
                         'condition'=>[
                             'flipbox_content_type'=>'number',
                             'flipbox_front_number!'=>'',
@@ -1035,7 +1055,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_number_color',
                         [
-                            'label' => __( 'Number Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Number Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#4a4a4a',
                             'selectors' => [
@@ -1055,7 +1075,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_number_padding',
                         [
-                            'label' => __( 'Number Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Number Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1068,7 +1088,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_number_margin',
                         [
-                            'label' => __( 'Number Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Number Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1081,7 +1101,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_front_number_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .front-container .flipbox-number',
                         ]
                     );
@@ -1099,7 +1119,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_seperator_color2',
                         [
-                            'label' => __( 'Separator Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Separator Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-flip-box-style-2 .htmega-flip-box-front span::before,{{WRAPPER}} .htmega-flip-box-style-2 .htmega-flip-box-front span::after' => 'background-color: {{VALUE}};',
@@ -1114,7 +1134,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_front_style_index_tab',
                     [
-                        'label' => __( 'Index', 'htmega-addons' ),
+                        'label' => esc_html__( 'Index', 'htmega-addons' ),
                         'condition'=>[
                             'flipbox_layout'=>'3',
                         ],
@@ -1124,7 +1144,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_index_color',
                         [
-                            'label' => __( 'Index Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Index Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-flipbox-bottom-index-number' => 'color: {{VALUE}};',
@@ -1142,7 +1162,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_front_index_margin',
                         [
-                            'label' => __( 'Description Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Description Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1165,7 +1185,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'index_front_stroke_color',
                         [
-                            'label' => __( 'Stroke Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Stroke Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-flipbox-bottom-index-number' => '-webkit-text-stroke-color: {{VALUE}};',
@@ -1178,7 +1198,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'index_front_stroke_widht',
                         [
-                            'label' => __( 'Stroke Fill Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Stroke Fill Width', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1209,7 +1229,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'flipbox_back_style_section',
             [
-                'label' => __( 'Back', 'htmega-addons' ),
+                'label' => esc_html__( 'Back', 'htmega-addons' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1217,7 +1237,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'flipbox_back_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1231,7 +1251,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'flipbox_back_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'htmega-addons' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-flip-box-back',
                 ]
@@ -1240,7 +1260,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_background_overlay',
                 [
-                    'label'     => __( 'Background Overlay', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Background Overlay', 'htmega-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-flip-box-back .htmega-flip-overlay' => 'background-color: {{VALUE}};',
@@ -1255,7 +1275,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_background_opacity',
                 [
-                    'label'   => __( 'Opacity (%)', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Opacity (%)', 'htmega-addons' ),
                     'type'    => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 1,
@@ -1280,7 +1300,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'flipbox_back_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-flip-box-back',
                 ]
             );
@@ -1301,7 +1321,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'flipbox_back_style_tab_heading',
                 [
-                    'label' => __( 'Content Style Tabs', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Style Tabs', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1313,13 +1333,13 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_back_style_title_tab',
                     [
-                        'label' => __( 'Title', 'htmega-addons' ),
+                        'label' => esc_html__( 'Title', 'htmega-addons' ),
                     ]
                 );
                     $this->add_control(
                         'flipbox_back_title_color',
                         [
-                            'label' => __( 'Title Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Title Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -1339,7 +1359,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_title_padding',
                         [
-                            'label' => __( 'Title Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Title Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1352,7 +1372,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_title_margin',
                         [
-                            'label' => __( 'Title Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Title Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1365,7 +1385,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_back_title_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .back-container h2',
                         ]
                     );
@@ -1386,7 +1406,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_back_style_sub_title_tab',
                     [
-                        'label' => __( 'Sub Title', 'htmega-addons' ),
+                        'label' => esc_html__( 'Sub Title', 'htmega-addons' ),
                         'condition' =>[
                             'flipbox_layout' => '5',
                             'flipbox_back_sub_title!' => ''
@@ -1397,7 +1417,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_back_sub_title_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -1417,7 +1437,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_sub_title_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1430,7 +1450,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_sub_title_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1443,7 +1463,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_back_sub_title_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .back-container h3',
                         ]
                     );
@@ -1454,13 +1474,13 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_back_style_description_tab',
                     [
-                        'label' => __( 'Description', 'htmega-addons' ),
+                        'label' => esc_html__( 'Description', 'htmega-addons' ),
                     ]
                 );
                     $this->add_control(
                         'flipbox_back_description_color',
                         [
-                            'label' => __( 'Description Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Description Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -1480,7 +1500,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_description_padding',
                         [
-                            'label' => __( 'Description Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Description Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1493,7 +1513,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_description_margin',
                         [
-                            'label' => __( 'Description Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Description Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1509,7 +1529,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_back_style_icon_tab',
                     [
-                        'label' => __( 'Icon', 'htmega-addons' ),
+                        'label' => esc_html__( 'Icon', 'htmega-addons' ),
                         'condition'=>[
                             'flipbox_back_content_type'=>'icon',
                             'flipbox_back_icon[value]!'=>'',
@@ -1520,7 +1540,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_back_icon_color',
                         [
-                            'label' => __( 'Icon Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#4a4a4a',
                             'selectors' => [
@@ -1533,7 +1553,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_back_icon_fontsize',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1561,7 +1581,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_back_icon_background_color',
                         [
-                            'label' => __( 'Icon Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Background Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ff7a5a',
                             'selectors' => [
@@ -1573,7 +1593,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_back_icon_width',
                         [
-                            'label' => __( 'Icon Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Width', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1597,7 +1617,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_back_icon_height',
                         [
-                            'label' => __( 'Icon Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Height', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1620,7 +1640,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_icon_padding',
                         [
-                            'label' => __( 'Icon Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1633,7 +1653,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_icon_margin',
                         [
-                            'label' => __( 'Icon Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1647,7 +1667,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_back_icon_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .back-container span.flipbox-icon',
                         ]
                     );
@@ -1666,7 +1686,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'flipbox_back_icon_boxshadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => esc_html__( 'Box Shadow', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .back-container span.flipbox-icon',
                             'separator' =>'before',
                         ]
@@ -1674,7 +1694,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_seperator_color3',
                         [
-                            'label' => __( 'Separator Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Separator Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-flip-box-style-2 .htmega-flip-box-back span.flipbox-icon::before,{{WRAPPER}} .htmega-flip-box-style-2 .htmega-flip-box-back span.flipbox-icon::after' => 'background-color: {{VALUE}};',
@@ -1689,7 +1709,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                  $this->start_controls_tab(
                     'flipbox_social_style_icon_tab',
                     [
-                        'label' => __( 'Icons', 'htmega-addons' ),
+                        'label' => esc_html__( 'Icons', 'htmega-addons' ),
                         'condition'=>[
                             'show_social_list'=>'yes',
                             'flipbox_layout' => '5'
@@ -1700,7 +1720,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_social_icon_color',
                         [
-                            'label' => __( 'Icon Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} ul.htmega-flipbox-social-list li a' => 'color: {{VALUE}};',
@@ -1712,7 +1732,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_social_icon_fontsize',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1736,7 +1756,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_social_icon_background_color',
                         [
-                            'label' => __( 'Icon Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Background Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} ul.htmega-flipbox-social-list li a' => 'background-color: {{VALUE}};',
@@ -1747,7 +1767,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_social_icon_width',
                         [
-                            'label' => __( 'Icon Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Width', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1771,7 +1791,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_social_icon_height',
                         [
-                            'label' => __( 'Icon Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Height', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1793,7 +1813,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_social_icon_margin',
                         [
-                            'label' => __( 'Icon Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1807,7 +1827,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_social_icon_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} ul.htmega-flipbox-social-list li a',
                         ]
                     );
@@ -1826,7 +1846,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'flipbox_social_icon_boxshadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => esc_html__( 'Box Shadow', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} ul.htmega-flipbox-social-list li a',
                             'separator' =>'before',
                         ]
@@ -1835,7 +1855,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'social_icon_hover_heading',
                         [
-                            'label' => __( 'Icon Hover Style', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Hover Style', 'htmega-addons' ),
                             'type' => Controls_Manager::HEADING,
                             'separator' =>'before',
                         ]
@@ -1843,7 +1863,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_social_icon_color_hover',
                         [
-                            'label' => __( 'Icon Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} ul.htmega-flipbox-social-list li a:hover' => 'color: {{VALUE}};',
@@ -1855,7 +1875,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_social_icon_background_color_hover',
                         [
-                            'label' => __( 'Icon Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Background Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} ul.htmega-flipbox-social-list li a:hover' => 'background-color: {{VALUE}};',
@@ -1867,7 +1887,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_social_icon_border_hover',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} ul.htmega-flipbox-social-list li a:hover',
                         ]
                     );
@@ -1886,7 +1906,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'flipbox_social_icon_boxshadow_hover',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => esc_html__( 'Box Shadow', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} ul.htmega-flipbox-social-list li a:hover',
                             'separator' =>'before',
                         ]
@@ -1897,7 +1917,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_back_style_number_tab',
                     [
-                        'label' => __( 'Number', 'htmega-addons' ),
+                        'label' => esc_html__( 'Number', 'htmega-addons' ),
                         'condition'=>[
                             'flipbox_back_content_type'=>'number',
                             'flipbox_back_number!'=>'',
@@ -1909,7 +1929,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_back_number_color',
                         [
-                            'label' => __( 'Number Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Number Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -1929,7 +1949,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_number_padding',
                         [
-                            'label' => __( 'Number Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Number Padding', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1942,7 +1962,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_number_margin',
                         [
-                            'label' => __( 'Number Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Number Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1955,7 +1975,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'flipbox_back_number_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'htmega-addons' ),
                             'selector' => '{{WRAPPER}} .back-container .flipbox-number',
                         ]
                     );
@@ -1973,7 +1993,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_front_icon_seperator_color4',
                         [
-                            'label' => __( 'Separator Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Separator Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-flip-box-style-2 .htmega-flip-box-back span::before,{{WRAPPER}} .htmega-flip-box-style-2 .htmega-flip-box-back span::after' => 'background-color: {{VALUE}};',
@@ -1988,7 +2008,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 $this->start_controls_tab(
                     'flipbox_back_style_index_tab',
                     [
-                        'label' => __( 'Index', 'htmega-addons' ),
+                        'label' => esc_html__( 'Index', 'htmega-addons' ),
                         'condition'=>[
                             'flipbox_layout'=>'3',
                         ],
@@ -1998,7 +2018,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'flipbox_back_index_color',
                         [
-                            'label' => __( 'Index Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Index Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-flipbox-back-bottom-index-number' => 'color: {{VALUE}};',
@@ -2016,7 +2036,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_responsive_control(
                         'flipbox_back_index_margin',
                         [
-                            'label' => __( 'Description Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Description Margin', 'htmega-addons' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -2039,7 +2059,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'index_back_stroke_color',
                         [
-                            'label' => __( 'Stroke Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Stroke Color', 'htmega-addons' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-flipbox-back-bottom-index-number' => '-webkit-text-stroke-color: {{VALUE}};',
@@ -2052,7 +2072,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                     $this->add_control(
                         'index_back_stroke_widht',
                         [
-                            'label' => __( 'Stroke Fill Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Stroke Fill Width', 'htmega-addons' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -2080,7 +2100,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'read_more_button_style',
                 [
-                    'label' => __( 'Button Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Button Style', 'htmega-addons' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition'=>[
@@ -2100,7 +2120,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         $this->start_controls_tab(
             'readmore_style_normal_tab',
             [
-                'label' => __( 'Normal', 'htmega-addons' ),
+                'label' => esc_html__( 'Normal', 'htmega-addons' ),
 
             ]
         );
@@ -2108,7 +2128,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_control(
                 'readmore_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Color', 'htmega-addons' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-flip-box-area .flp-btn a' => 'color: {{VALUE}}',
@@ -2120,7 +2140,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'readmore_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => esc_html__( 'Typography', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-flip-box-area .flp-btn a',
                 ]
             );
@@ -2128,7 +2148,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'readmore_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -2140,7 +2160,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
             $this->add_responsive_control(
                 'readmore_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -2153,7 +2173,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'readmore_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'htmega-addons' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-flip-box-area .flp-btn a',
                 ]
@@ -2163,7 +2183,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'readmore_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-flip-box-area .flp-btn a',
                 ]
             );
@@ -2184,13 +2204,13 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
         $this->start_controls_tab(
             'readmore_style_hover_tab',
             [
-                'label' => __( 'Hover', 'htmega-addons' ),
+                'label' => esc_html__( 'Hover', 'htmega-addons' ),
             ]
         );
             $this->add_control(
                 'readmore_hover_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Color', 'htmega-addons' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-flip-box-area .flp-btn a:hover' => 'color: {{VALUE}}',
@@ -2202,7 +2222,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'readmore_hover_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'htmega-addons' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-flip-box-area .flp-btn a:hover',
                 ]
@@ -2212,7 +2232,7 @@ class HTMega_Elementor_Widget_Flip_Box extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'readmore_hover_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'htmega-addons' ),
                     'selector' => '{{WRAPPER}} .htmega-flip-box-area .flp-btn a:hover',
                 ]
             );

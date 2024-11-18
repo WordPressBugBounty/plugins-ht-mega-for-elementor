@@ -6114,6 +6114,9 @@ ul.htmega-testimonial-rating * {
     text-decoration: none;
     position: relative;
   }
+  .htmega-player-container a {
+        position: relative;
+    }
   .htmega-player-container .magnify-video-active *{
       line-height: initial;
   }
@@ -8802,7 +8805,7 @@ blockquote .blockquote_icon svg{
       font-size: 50px;
   }
   
-  .front-container h2 {
+  .front-container h2, .front-container .htmega-flip-box-title {
       color: #4a4a4a;
       font-size: 22px;
       font-weight: 400;
@@ -8817,7 +8820,7 @@ blockquote .blockquote_icon svg{
       margin-bottom: 28px;
   }
   
-  .back-container h2 {
+  .back-container h2,.back-container .htmega-flip-box-title {
       color: #ffffff;
       font-size: 22px;
       font-weight: 400;
@@ -8956,7 +8959,7 @@ blockquote .blockquote_icon svg{
     border-radius: 100px 100px 100px 100px;
     box-shadow: 0px 1px 100px 0px rgba(0, 0, 0, 0.29);
 }
-.htmega-flip-box-style-4 .front-container h2{
+.htmega-flip-box-style-4 .front-container h2, .htmega-flip-box-style-4 .front-container .htmega-flip-box-title{
     margin-top: 70px;
 }
 .htmega-flip-box-style-4 .front-container p{
@@ -8967,7 +8970,7 @@ blockquote .blockquote_icon svg{
 }
   /* Flipbox Style 05 Social links */
 
-  .htmega-flip-box-style-5 .back-container h2 {
+  .htmega-flip-box-style-5 .back-container h2,.back-container .htmega-flip-box-title {
     margin-bottom:10px;
     }
     .htmega-flip-box-style-5 .back-container h3 {
