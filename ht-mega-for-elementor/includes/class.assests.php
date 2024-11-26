@@ -600,8 +600,10 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             }
 
             $regenerate_elementor_file = get_option( 'htmega_elementor_regenerate_file' );
-            
-            if ( ! $regenerate_elementor_file ){
+            $previous_version = get_option( 'htmega_elementor_addons_previous_version' );
+
+            if ( ! $regenerate_elementor_file && $previous_version ) {
+                
                 \Elementor\Plugin::$instance->files_manager->clear_cache();
                 update_option( 'htmega_elementor_regenerate_file', HTMEGA_VERSION );
             }
