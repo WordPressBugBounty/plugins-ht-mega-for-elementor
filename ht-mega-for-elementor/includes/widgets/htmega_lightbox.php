@@ -211,10 +211,6 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
                             'title' => __( 'Right', 'htmega-addons' ),
                             'icon' => 'eicon-text-align-right',
                         ],
-                        'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
-                            'icon' => 'eicon-text-align-justify',
-                        ],
                     ],
                     'selectors' => [
                         '{{WRAPPER}} .htmega-lightbox' => 'text-align: {{VALUE}};',
@@ -324,13 +320,9 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
                             'title' => __( 'Right', 'htmega-addons' ),
                             'icon' => 'eicon-text-align-right',
                         ],
-                        'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
-                            'icon' => 'eicon-text-align-justify',
-                        ],
                     ],
                     'selectors' => [
-                        '{{WRAPPER}} .htmega-lightbox .htmega-lightbox-action' => 'text-align: {{VALUE}};',
+                        '{{WRAPPER}} .htmega-lightbox .htmega-lightbox-action' => 'justify-content: {{VALUE}};',
                     ],
                     'default' => 'left',
                     'separator' =>'before',
@@ -434,7 +426,8 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
                         '{{WRAPPER}} .htmega-lightbox .image-popup-vertical-fit' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                     ],
                     'condition'=>[
-                        'zoom_icon[value]!'=>'',
+                        'zoom_icon[value]!' => '',
+                        'lightbox_toggler_type' => 'icon'
                     ],
                 ]
             );
@@ -523,7 +516,7 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
                     <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'lightbox_toggler_imagesize', 'lightbox_toggler_image' );?>
                 </div>
                 <?php } ?>
-                <div class="htmega-lightbox-action">
+                <div class="htmega-lightbox-action htmega-lightbox-button-type-<?php echo esc_attr( $settings['lightbox_toggler_type'] ); ?>">
                     <?php if( !empty($settings['zoom_icon']['value'] ) ): ?>
                         <a <?php echo $this->get_render_attribute_string( 'popup_content_attr' ); ?> ><?php echo HTMega_Icon_manager::render_icon( $settings['zoom_icon'], [ 'aria-hidden' => 'true' ] ); ?></a>
                     <?php else:?>

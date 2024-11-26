@@ -6025,6 +6025,9 @@ ul.htmega-testimonial-rating * {
     transition: 0.5s;
     left: 0;
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .htmega-lightbox .htmega-lightbox-action::before {
@@ -6050,6 +6053,9 @@ ul.htmega-testimonial-rating * {
     justify-content: center;
     width: 30px;
     height: 30px;
+  }
+  .htmega-lightbox .htmega-lightbox-action.htmega-lightbox-button-type-button a {
+    width: max-content;
   }
   .htmega-lightbox .htmega-lightbox-action a i {
     color: #fff;

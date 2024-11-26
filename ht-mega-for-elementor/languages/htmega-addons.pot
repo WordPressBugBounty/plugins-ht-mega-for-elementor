@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HT Mega – Absolute Addons for Elementor.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-18 04:25+0000\n"
+"POT-Creation-Date: 2024-11-26 06:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.12; wp-6.7\n"
+"X-Loco-Version: 2.6.14; wp-6.7.1\n"
 "X-Domain: htmega-addons"
 
 #: includes/widgets/htmega_twitter_feed.php:1684
@@ -954,7 +954,7 @@ msgstr ""
 #: includes/widgets/htmega_inlinemenu.php:120
 #: includes/widgets/htmega_instagram.php:1486
 #: includes/widgets/htmega_lightbox.php:199
-#: includes/widgets/htmega_lightbox.php:312
+#: includes/widgets/htmega_lightbox.php:308
 #: includes/widgets/htmega_mailchimp_wp.php:119
 #: includes/widgets/htmega_modal.php:347 includes/widgets/htmega_modal.php:1002
 #: includes/widgets/htmega_newsticker.php:354
@@ -1005,7 +1005,7 @@ msgstr ""
 #: includes/widgets/htmega_teammember.php:920
 #: includes/widgets/htmega_teammember.php:987
 #: includes/widgets/htmega_testimonial_grid.php:553
-#: includes/widgets/htmega_toggle.php:196
+#: includes/widgets/htmega_toggle.php:193
 #: includes/widgets/htmega_tooltip.php:234
 #: includes/widgets/htmega_user_login_form.php:138
 #: includes/widgets/htmega_user_login_form.php:404
@@ -1512,7 +1512,7 @@ msgstr ""
 #: includes/widgets/htmega_instagram.php:1253
 #: includes/widgets/htmega_instagram.php:1319
 #: includes/widgets/htmega_instagram.php:1416
-#: includes/widgets/htmega_lightbox.php:361
+#: includes/widgets/htmega_lightbox.php:353
 #: includes/widgets/htmega_mailchimp_wp.php:110
 #: includes/widgets/htmega_modal.php:250 includes/widgets/htmega_modal.php:456
 #: includes/widgets/htmega_modal.php:517 includes/widgets/htmega_modal.php:614
@@ -1615,8 +1615,8 @@ msgstr ""
 #: includes/widgets/htmega_testimonial_grid.php:302
 #: includes/widgets/htmega_testimonial_grid.php:347
 #: includes/widgets/htmega_testimonial_grid.php:648
-#: includes/widgets/htmega_toggle.php:315
-#: includes/widgets/htmega_toggle.php:367
+#: includes/widgets/htmega_toggle.php:312
+#: includes/widgets/htmega_toggle.php:364
 #: includes/widgets/htmega_tooltip.php:369
 #: includes/widgets/htmega_tooltip.php:447
 #: includes/widgets/htmega_tooltip.php:522
@@ -2180,8 +2180,8 @@ msgstr ""
 #: includes/widgets/htmega_instagram.php:1263
 #: includes/widgets/htmega_instagram.php:1329
 #: includes/widgets/htmega_instagram.php:1465
-#: includes/widgets/htmega_lightbox.php:272
-#: includes/widgets/htmega_lightbox.php:459
+#: includes/widgets/htmega_lightbox.php:268
+#: includes/widgets/htmega_lightbox.php:452
 #: includes/widgets/htmega_mailchimp_wp.php:232
 #: includes/widgets/htmega_mailchimp_wp.php:415
 #: includes/widgets/htmega_mailchimp_wp.php:477
@@ -2296,8 +2296,8 @@ msgstr ""
 #: includes/widgets/htmega_testimonial_grid.php:311
 #: includes/widgets/htmega_testimonial_grid.php:356
 #: includes/widgets/htmega_testimonial_grid.php:401
-#: includes/widgets/htmega_toggle.php:325
-#: includes/widgets/htmega_toggle.php:377
+#: includes/widgets/htmega_toggle.php:322
+#: includes/widgets/htmega_toggle.php:374
 #: includes/widgets/htmega_tooltip.php:379
 #: includes/widgets/htmega_tooltip.php:457
 #: includes/widgets/htmega_twitter_feed.php:601
@@ -2576,8 +2576,8 @@ msgstr ""
 #: includes/widgets/htmega_instagram.php:1271
 #: includes/widgets/htmega_instagram.php:1337
 #: includes/widgets/htmega_instagram.php:1474
-#: includes/widgets/htmega_lightbox.php:280
-#: includes/widgets/htmega_lightbox.php:467
+#: includes/widgets/htmega_lightbox.php:276
+#: includes/widgets/htmega_lightbox.php:460
 #: includes/widgets/htmega_mailchimp_wp.php:240
 #: includes/widgets/htmega_mailchimp_wp.php:423
 #: includes/widgets/htmega_modal.php:268 includes/widgets/htmega_modal.php:561
@@ -2681,7 +2681,7 @@ msgstr ""
 #: includes/widgets/htmega_testimonial_grid.php:319
 #: includes/widgets/htmega_testimonial_grid.php:409
 #: includes/widgets/htmega_testimonial_grid.php:633
-#: includes/widgets/htmega_toggle.php:333
+#: includes/widgets/htmega_toggle.php:330
 #: includes/widgets/htmega_tooltip.php:387
 #: includes/widgets/htmega_tooltip.php:531
 #: includes/widgets/htmega_twitter_feed.php:609
@@ -2993,8 +2993,8 @@ msgstr ""
 #: includes/widgets/htmega_image_masonry.php:490
 #: includes/widgets/htmega_image_masonry.php:571
 #: includes/widgets/htmega_inlinemenu.php:226
-#: includes/widgets/htmega_lightbox.php:292
-#: includes/widgets/htmega_lightbox.php:479
+#: includes/widgets/htmega_lightbox.php:288
+#: includes/widgets/htmega_lightbox.php:472
 #: includes/widgets/htmega_mailchimp_wp.php:436
 #: includes/widgets/htmega_modal.php:241 includes/widgets/htmega_modal.php:605
 #: includes/widgets/htmega_ninja_form.php:594
@@ -3144,7 +3144,7 @@ msgstr ""
 #: includes/widgets/htmega_quforms.php:743
 #: includes/widgets/htmega_service.php:1061
 #: includes/widgets/htmega_special_day_banner.php:634
-#: includes/widgets/htmega_toggle.php:188
+#: includes/widgets/htmega_toggle.php:185
 #: includes/widgets/htmega_tooltip.php:294
 #: includes/widgets/htmega_videoplayer.php:332
 #: includes/widgets/htmega_wc_element_pages.php:1503
@@ -3485,7 +3485,7 @@ msgstr ""
 #: includes/widgets/htmega_inlinemenu.php:128
 #: includes/widgets/htmega_instagram.php:1494
 #: includes/widgets/htmega_lightbox.php:207
-#: includes/widgets/htmega_lightbox.php:320
+#: includes/widgets/htmega_lightbox.php:316
 #: includes/widgets/htmega_mailchimp_wp.php:127
 #: includes/widgets/htmega_modal.php:355 includes/widgets/htmega_modal.php:1010
 #: includes/widgets/htmega_newsticker.php:362
@@ -3538,7 +3538,7 @@ msgstr ""
 #: includes/widgets/htmega_teammember.php:928
 #: includes/widgets/htmega_teammember.php:995
 #: includes/widgets/htmega_testimonial_grid.php:561
-#: includes/widgets/htmega_toggle.php:204
+#: includes/widgets/htmega_toggle.php:201
 #: includes/widgets/htmega_tooltip.php:242
 #: includes/widgets/htmega_user_login_form.php:146
 #: includes/widgets/htmega_user_login_form.php:412
@@ -3713,7 +3713,7 @@ msgstr ""
 #: includes/widgets/htmega_business_hours.php:173
 #: includes/widgets/htmega_modal.php:834
 #: includes/widgets/htmega_post_grid_tab.php:884
-#: includes/widgets/htmega_toggle.php:67 includes/widgets/htmega_toggle.php:68
+#: includes/widgets/htmega_toggle.php:64 includes/widgets/htmega_toggle.php:65
 msgid "Close"
 msgstr ""
 
@@ -3938,7 +3938,7 @@ msgstr ""
 #: includes/widgets/htmega_instagram.php:1086
 #: includes/widgets/htmega_instagram.php:1307
 #: includes/widgets/htmega_instagram.php:1403
-#: includes/widgets/htmega_lightbox.php:346
+#: includes/widgets/htmega_lightbox.php:338
 #: includes/widgets/htmega_modal.php:218 includes/widgets/htmega_modal.php:442
 #: includes/widgets/htmega_modal.php:583 includes/widgets/htmega_modal.php:681
 #: includes/widgets/htmega_modal.php:755 includes/widgets/htmega_modal.php:841
@@ -4043,9 +4043,9 @@ msgstr ""
 #: includes/widgets/htmega_testimonial_grid.php:492
 #: includes/widgets/htmega_testimonial_grid.php:584
 #: includes/widgets/htmega_testimonial_grid.php:705
-#: includes/widgets/htmega_toggle.php:133
-#: includes/widgets/htmega_toggle.php:236
-#: includes/widgets/htmega_toggle.php:353
+#: includes/widgets/htmega_toggle.php:130
+#: includes/widgets/htmega_toggle.php:233
+#: includes/widgets/htmega_toggle.php:350
 #: includes/widgets/htmega_tooltip.php:310
 #: includes/widgets/htmega_tooltip.php:433
 #: includes/widgets/htmega_tooltip.php:488
@@ -4329,7 +4329,7 @@ msgstr ""
 #: includes/widgets/htmega_switcher.php:557 includes/widgets/htmega_tabs.php:63
 #: includes/widgets/htmega_tabs.php:150 includes/widgets/htmega_tabs.php:163
 #: includes/widgets/htmega_tabs.php:165 includes/widgets/htmega_tabs.php:1025
-#: includes/widgets/htmega_toggle.php:97 includes/widgets/htmega_toggle.php:110
+#: includes/widgets/htmega_toggle.php:94 includes/widgets/htmega_toggle.php:107
 #: includes/widgets/htmega_tooltip.php:482
 #: includes/widgets/htmega_twitter_feed.php:623
 #: includes/widgets/htmega_verticle_time_line.php:65
@@ -4431,7 +4431,7 @@ msgstr ""
 #: includes/widgets/htmega_dropcaps.php:73
 #: includes/widgets/htmega_teammember.php:66
 #: includes/widgets/htmega_teammember.php:81
-#: includes/widgets/htmega_toggle.php:126
+#: includes/widgets/htmega_toggle.php:123
 msgid "Content Style"
 msgstr ""
 
@@ -4557,7 +4557,7 @@ msgstr ""
 #: includes/widgets/htmega_switcher.php:210
 #: includes/widgets/htmega_tabs.php:140 includes/widgets/htmega_tabs.php:322
 #: includes/widgets/htmega_testimonial_grid.php:63
-#: includes/widgets/htmega_toggle.php:87
+#: includes/widgets/htmega_toggle.php:84
 #: extensions/ht-builder/widgets/bl_post_meta_info.php:84
 #: extensions/ht-builder/widgets/bl_post_meta_info.php:102
 #: extensions/ht-builder/widgets/bl_post_meta_info.php:140
@@ -4578,7 +4578,7 @@ msgid "Custom Background Color"
 msgstr ""
 
 #: includes/widgets/htmega_scroll_navigation.php:339
-#: includes/widgets/htmega_toggle.php:112
+#: includes/widgets/htmega_toggle.php:109
 msgid "Custom Content"
 msgstr ""
 
@@ -5188,7 +5188,7 @@ msgstr ""
 #: includes/widgets/htmega_scroll_navigation.php:62
 #: includes/widgets/htmega_switcher.php:119
 #: includes/widgets/htmega_switcher.php:211
-#: includes/widgets/htmega_tabs.php:141 includes/widgets/htmega_toggle.php:88
+#: includes/widgets/htmega_tabs.php:141 includes/widgets/htmega_toggle.php:85
 msgid "Elementor Template"
 msgstr ""
 
@@ -5749,7 +5749,7 @@ msgstr ""
 #: includes/widgets/htmega_double_button.php:400
 #: includes/widgets/htmega_instagram.php:778
 #: includes/widgets/htmega_instagram.php:952
-#: includes/widgets/htmega_lightbox.php:384
+#: includes/widgets/htmega_lightbox.php:376
 #: includes/widgets/htmega_panel_slider.php:828
 #: includes/widgets/htmega_search.php:465
 #: includes/widgets/htmega_search.php:717
@@ -6487,7 +6487,7 @@ msgstr ""
 #: includes/widgets/htmega_socialshere.php:711
 #: includes/widgets/htmega_special_day_banner.php:734
 #: includes/widgets/htmega_testimonial_grid.php:340
-#: includes/widgets/htmega_toggle.php:347
+#: includes/widgets/htmega_toggle.php:344
 #: includes/widgets/htmega_tooltip.php:427
 #: includes/widgets/htmega_twitter_feed.php:875
 #: includes/widgets/htmega_twitter_feed.php:1032
@@ -6852,14 +6852,14 @@ msgstr ""
 msgid "Icon Color"
 msgstr ""
 
-#: includes/widgets/htmega_lightbox.php:415
+#: includes/widgets/htmega_lightbox.php:407
 msgid "Icon Dimensions"
 msgstr ""
 
 #: includes/widgets/htmega_audio_player.php:1478
 #: includes/widgets/htmega_search.php:882
 #: includes/widgets/htmega_socialshere.php:477
-#: includes/widgets/htmega_toggle.php:256
+#: includes/widgets/htmega_toggle.php:253
 msgid "Icon Font Size"
 msgstr ""
 
@@ -7673,8 +7673,6 @@ msgstr ""
 #: includes/widgets/htmega_image_grid.php:396
 #: includes/widgets/htmega_image_masonry.php:282
 #: includes/widgets/htmega_image_masonry.php:379
-#: includes/widgets/htmega_lightbox.php:215
-#: includes/widgets/htmega_lightbox.php:328
 #: includes/widgets/htmega_mailchimp_wp.php:135
 #: includes/widgets/htmega_modal.php:363 includes/widgets/htmega_modal.php:1018
 #: includes/widgets/htmega_newsticker.php:370
@@ -7706,7 +7704,7 @@ msgstr ""
 #: includes/widgets/htmega_teammember.php:936
 #: includes/widgets/htmega_teammember.php:1003
 #: includes/widgets/htmega_testimonial_grid.php:569
-#: includes/widgets/htmega_toggle.php:212
+#: includes/widgets/htmega_toggle.php:209
 #: includes/widgets/htmega_tooltip.php:250
 #: includes/widgets/htmega_user_login_form.php:624
 #: extensions/ht-builder/widgets/bl_page_title.php:155
@@ -7933,7 +7931,7 @@ msgstr ""
 #: includes/widgets/htmega_instagram.php:1490
 #: includes/widgets/htmega_job_manager.php:153
 #: includes/widgets/htmega_lightbox.php:203
-#: includes/widgets/htmega_lightbox.php:316
+#: includes/widgets/htmega_lightbox.php:312
 #: includes/widgets/htmega_mailchimp_wp.php:123
 #: includes/widgets/htmega_modal.php:179 includes/widgets/htmega_modal.php:351
 #: includes/widgets/htmega_modal.php:1006
@@ -7995,7 +7993,7 @@ msgstr ""
 #: includes/widgets/htmega_teammember.php:924
 #: includes/widgets/htmega_teammember.php:991
 #: includes/widgets/htmega_testimonial_grid.php:557
-#: includes/widgets/htmega_toggle.php:200
+#: includes/widgets/htmega_toggle.php:197
 #: includes/widgets/htmega_tooltip.php:178
 #: includes/widgets/htmega_tooltip.php:238
 #: includes/widgets/htmega_user_login_form.php:142
@@ -8310,7 +8308,7 @@ msgid ""
 "Duis aute irure dolor in repre in voluptate."
 msgstr ""
 
-#: includes/widgets/htmega_toggle.php:116
+#: includes/widgets/htmega_toggle.php:113
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
@@ -8560,7 +8558,7 @@ msgstr ""
 #: includes/widgets/htmega_instagram.php:686
 #: includes/widgets/htmega_instagram.php:903
 #: includes/widgets/htmega_instagram.php:1361
-#: includes/widgets/htmega_lightbox.php:245
+#: includes/widgets/htmega_lightbox.php:241
 #: includes/widgets/htmega_mailchimp_wp.php:96
 #: includes/widgets/htmega_mailchimp_wp.php:267
 #: includes/widgets/htmega_mailchimp_wp.php:401
@@ -8648,8 +8646,8 @@ msgstr ""
 #: includes/widgets/htmega_testimonial_grid.php:453
 #: includes/widgets/htmega_testimonial_grid.php:513
 #: includes/widgets/htmega_testimonial_grid.php:605
-#: includes/widgets/htmega_toggle.php:160
-#: includes/widgets/htmega_toggle.php:288
+#: includes/widgets/htmega_toggle.php:157
+#: includes/widgets/htmega_toggle.php:285
 #: includes/widgets/htmega_tooltip.php:278
 #: includes/widgets/htmega_tooltip.php:398
 #: includes/widgets/htmega_twitter_feed.php:574
@@ -9378,7 +9376,7 @@ msgstr ""
 #: includes/widgets/htmega_switcher.php:363
 #: includes/widgets/htmega_tabs.php:645 includes/widgets/htmega_tabs.php:823
 #: includes/widgets/htmega_testimonial_grid.php:268
-#: includes/widgets/htmega_toggle.php:229
+#: includes/widgets/htmega_toggle.php:226
 #: includes/widgets/htmega_tooltip.php:304
 #: includes/widgets/htmega_twitter_feed.php:705
 #: includes/widgets/htmega_twitter_feed.php:974
@@ -9421,7 +9419,7 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: includes/widgets/htmega_toggle.php:57
+#: includes/widgets/htmega_toggle.php:54
 msgid "Normal Icon"
 msgstr ""
 
@@ -9430,7 +9428,7 @@ msgstr ""
 msgid "Normal Style"
 msgstr ""
 
-#: includes/widgets/htmega_toggle.php:47
+#: includes/widgets/htmega_toggle.php:44
 msgid "Normal Title"
 msgstr ""
 
@@ -10021,11 +10019,11 @@ msgstr ""
 msgid "Open Item Icon"
 msgstr ""
 
-#: includes/widgets/htmega_toggle.php:75
+#: includes/widgets/htmega_toggle.php:72
 msgid "Opened Icon"
 msgstr ""
 
-#: includes/widgets/htmega_toggle.php:65
+#: includes/widgets/htmega_toggle.php:62
 msgid "Opened Title"
 msgstr ""
 
@@ -10111,7 +10109,7 @@ msgstr ""
 msgid "Outer"
 msgstr ""
 
-#: includes/widgets/htmega_lightbox.php:233
+#: includes/widgets/htmega_lightbox.php:229
 #: includes/widgets/htmega_scroll_image.php:259
 msgid "Overlay"
 msgstr ""
@@ -10236,8 +10234,8 @@ msgstr ""
 #: includes/widgets/htmega_instagram.php:891
 #: includes/widgets/htmega_instagram.php:1063
 #: includes/widgets/htmega_instagram.php:1348
-#: includes/widgets/htmega_lightbox.php:258
-#: includes/widgets/htmega_lightbox.php:445
+#: includes/widgets/htmega_lightbox.php:254
+#: includes/widgets/htmega_lightbox.php:438
 #: includes/widgets/htmega_mailchimp_wp.php:83
 #: includes/widgets/htmega_mailchimp_wp.php:253
 #: includes/widgets/htmega_mailchimp_wp.php:388
@@ -10341,8 +10339,8 @@ msgstr ""
 #: includes/widgets/htmega_testimonial_grid.php:467
 #: includes/widgets/htmega_testimonial_grid.php:527
 #: includes/widgets/htmega_testimonial_grid.php:619
-#: includes/widgets/htmega_toggle.php:172
-#: includes/widgets/htmega_toggle.php:301
+#: includes/widgets/htmega_toggle.php:169
+#: includes/widgets/htmega_toggle.php:298
 #: includes/widgets/htmega_tooltip.php:265
 #: includes/widgets/htmega_tooltip.php:411
 #: includes/widgets/htmega_tooltip.php:508
@@ -11445,7 +11443,7 @@ msgstr ""
 #: includes/widgets/htmega_instagram.php:1498
 #: includes/widgets/htmega_job_manager.php:154
 #: includes/widgets/htmega_lightbox.php:211
-#: includes/widgets/htmega_lightbox.php:324
+#: includes/widgets/htmega_lightbox.php:320
 #: includes/widgets/htmega_mailchimp_wp.php:131
 #: includes/widgets/htmega_modal.php:183 includes/widgets/htmega_modal.php:359
 #: includes/widgets/htmega_modal.php:1014
@@ -11507,7 +11505,7 @@ msgstr ""
 #: includes/widgets/htmega_teammember.php:932
 #: includes/widgets/htmega_teammember.php:999
 #: includes/widgets/htmega_testimonial_grid.php:565
-#: includes/widgets/htmega_toggle.php:208
+#: includes/widgets/htmega_toggle.php:205
 #: includes/widgets/htmega_tooltip.php:179
 #: includes/widgets/htmega_tooltip.php:246
 #: includes/widgets/htmega_user_login_form.php:150
@@ -11823,7 +11821,7 @@ msgstr ""
 #: includes/widgets/htmega_modal.php:52
 #: includes/widgets/htmega_switcher.php:114
 #: includes/widgets/htmega_switcher.php:206
-#: includes/widgets/htmega_tabs.php:136 includes/widgets/htmega_toggle.php:83
+#: includes/widgets/htmega_tabs.php:136 includes/widgets/htmega_toggle.php:80
 msgid "Select Content Source"
 msgstr ""
 
@@ -12172,7 +12170,7 @@ msgid "Show Active Time"
 msgstr ""
 
 #: includes/widgets/htmega_easy_digital_download.php:137
-#: includes/widgets/htmega_toggle.php:49 includes/widgets/htmega_toggle.php:50
+#: includes/widgets/htmega_toggle.php:46 includes/widgets/htmega_toggle.php:47
 #: includes/widgets/htmega_wc_categories.php:81
 msgid "Show All"
 msgstr ""
@@ -14072,7 +14070,7 @@ msgstr ""
 msgid "Today"
 msgstr ""
 
-#: includes/widgets/htmega_toggle.php:14 includes/widgets/htmega_toggle.php:40
+#: includes/widgets/htmega_toggle.php:14 includes/widgets/htmega_toggle.php:37
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:593
 msgid "Toggle"
 msgstr ""
@@ -15074,7 +15072,7 @@ msgstr ""
 msgid "Zoom"
 msgstr ""
 
-#: includes/widgets/htmega_lightbox.php:304
+#: includes/widgets/htmega_lightbox.php:300
 msgid "Zoom Button"
 msgstr ""
 
