@@ -191,7 +191,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     $repeater->add_control(
                         'social_text_hover_color',
                         [
-                            'label'     => esc_html__( 'Hover color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Hover Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover' => 'color: {{VALUE}};',
@@ -273,7 +273,7 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     $repeater->add_control(
                         'social_icon_hover_color',
                         [
-                            'label'     => esc_html__( 'Hover color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Hover Color', 'htmega-addons' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-social-share {{CURRENT_ITEM}}:hover i' => 'color: {{VALUE}};',
@@ -315,17 +315,17 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                         [
                             'htmega_social_media' => 'facebook',
                             'htmega_social_title' => esc_html__( 'Facebook', 'htmega-addons' ),
-                            'htmega_social_icon' => 'fab fa-facebook-square',
+                            'htmega_social_icon' => 'fab fa-linkedin-in',
                         ],
                         [
                             'htmega_social_media' => 'twitter',
                             'htmega_social_title' => esc_html__( 'Twitter', 'htmega-addons' ),
-                            'htmega_social_icon' => 'fab fa-twitter',
+                            'htmega_social_icon' => 'fab fa-twitter-x',
                         ],
                         [
-                            'htmega_social_media' => 'googleplus',
-                            'htmega_social_title' => esc_html__( 'Google Plus', 'htmega-addons' ),
-                            'htmega_social_icon' => 'fab fa-google-plus-g',
+                            'htmega_social_media' => 'linkedin',
+                            'htmega_social_title' => esc_html__( 'Linkedin', 'htmega-addons' ),
+                            'htmega_social_icon' => 'fab fa-linkedin-in',
                         ],
                     ],
                     'title_field' => '{{{ htmega_social_title }}}',
@@ -472,35 +472,6 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
             $this->start_popover();
 
             $this->add_control(
-                'icon_fontsize',
-                [
-                    'label' => esc_html__( 'Icon Font Size', 'htmega-addons' ),
-                    'type' => Controls_Manager::SLIDER,
-                    'size_units' => [ 'px', '%' ],
-                    'range' => [
-                        'px' => [
-                            'min' => 0,
-                            'max' => 100,
-                            'step' => 1,
-                        ],
-                        '%' => [
-                            'min' => 0,
-                            'max' => 100,
-                        ],
-                    ],
-                    'default' => [
-                        'unit' => 'px',
-                        'size' => 20,
-                    ],
-                    'selectors' => [
-                        '{{WRAPPER}} .htmega-social-share ul li i' => 'font-size: {{SIZE}}{{UNIT}};',
-                        '{{WRAPPER}} .htmega-social-share ul li > svg' => 'width: {{SIZE}}{{UNIT}};',
-                    ],
-                    'separator' =>'before',
-                ]
-            );
-
-            $this->add_control(
                 'icon_height',
                 [
                     'label' => esc_html__( 'Icon Height', 'htmega-addons' ),
@@ -571,7 +542,34 @@ class HTMega_Elementor_Widget_SocialShere extends Widget_Base {
                     ],
                 ]
             );
-
+            $this->add_control(
+                'icon_fontsize',
+                [
+                    'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
+                    'type' => Controls_Manager::SLIDER,
+                    'size_units' => [ 'px', '%' ],
+                    'range' => [
+                        'px' => [
+                            'min' => 0,
+                            'max' => 100,
+                            'step' => 1,
+                        ],
+                        '%' => [
+                            'min' => 0,
+                            'max' => 100,
+                        ],
+                    ],
+                    'default' => [
+                        'unit' => 'px',
+                        'size' => 20,
+                    ],
+                    'selectors' => [
+                        '{{WRAPPER}} .htmega-social-share ul li i' => 'font-size: {{SIZE}}{{UNIT}};',
+                        '{{WRAPPER}} .htmega-social-share ul li > svg' => 'width: {{SIZE}}{{UNIT}};',
+                    ],
+                    'separator' =>'before',
+                ]
+            );
             $this->add_group_control(
                 Group_Control_Border::get_type(),
                 [

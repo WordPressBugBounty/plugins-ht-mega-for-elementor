@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HT Mega – Absolute Addons for Elementor.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-26 06:29+0000\n"
+"POT-Creation-Date: 2024-12-04 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -473,7 +473,7 @@ msgstr ""
 msgid "31"
 msgstr ""
 
-#: includes/class.assests.php:783
+#: includes/class.assests.php:785
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:908
 msgid "360 Rotation"
 msgstr ""
@@ -845,7 +845,7 @@ msgstr ""
 msgid "Advance Title style"
 msgstr ""
 
-#: includes/class.assests.php:627
+#: includes/class.assests.php:629
 #: admin/include/settings-panel/includes/templates/sidebar-banner.php:39
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:944
 msgid "Advanced Slider"
@@ -1591,9 +1591,9 @@ msgstr ""
 #: includes/widgets/htmega_socialshere.php:127
 #: includes/widgets/htmega_socialshere.php:237
 #: includes/widgets/htmega_socialshere.php:289
-#: includes/widgets/htmega_socialshere.php:588
-#: includes/widgets/htmega_socialshere.php:699
-#: includes/widgets/htmega_socialshere.php:731
+#: includes/widgets/htmega_socialshere.php:586
+#: includes/widgets/htmega_socialshere.php:697
+#: includes/widgets/htmega_socialshere.php:729
 #: includes/widgets/htmega_special_day_banner.php:326
 #: includes/widgets/htmega_special_day_banner.php:695
 #: includes/widgets/htmega_special_day_banner.php:774
@@ -1793,7 +1793,7 @@ msgstr ""
 msgid "Background Second Color"
 msgstr ""
 
-#: includes/class.assests.php:633
+#: includes/class.assests.php:635
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:781
 msgid "Background Switcher"
 msgstr ""
@@ -2276,7 +2276,7 @@ msgstr ""
 #: includes/widgets/htmega_socialshere.php:247
 #: includes/widgets/htmega_socialshere.php:299
 #: includes/widgets/htmega_socialshere.php:444
-#: includes/widgets/htmega_socialshere.php:579
+#: includes/widgets/htmega_socialshere.php:577
 #: includes/widgets/htmega_special_day_banner.php:675
 #: includes/widgets/htmega_special_day_banner.php:754
 #: includes/widgets/htmega_switcher.php:309
@@ -2665,7 +2665,7 @@ msgstr ""
 #: includes/widgets/htmega_slider_thumb_gallery.php:1386
 #: includes/widgets/htmega_socialshere.php:255
 #: includes/widgets/htmega_socialshere.php:428
-#: includes/widgets/htmega_socialshere.php:597
+#: includes/widgets/htmega_socialshere.php:595
 #: includes/widgets/htmega_special_day_banner.php:683
 #: includes/widgets/htmega_special_day_banner.php:762
 #: includes/widgets/htmega_switcher.php:320
@@ -3088,7 +3088,7 @@ msgstr ""
 msgid "Brands"
 msgstr ""
 
-#: includes/class.assests.php:639
+#: includes/class.assests.php:641
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:790
 msgid "Breadcrumbs"
 msgstr ""
@@ -3210,7 +3210,7 @@ msgstr ""
 msgid "Button Infinity Animation"
 msgstr ""
 
-#: includes/widgets/htmega_socialshere.php:611
+#: includes/widgets/htmega_socialshere.php:609
 msgid "Button Line Height"
 msgstr ""
 
@@ -3409,7 +3409,7 @@ msgstr ""
 msgid "Category Area"
 msgstr ""
 
-#: includes/class.assests.php:645
+#: includes/class.assests.php:647
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:736
 msgid "Category List"
 msgstr ""
@@ -3616,7 +3616,7 @@ msgstr ""
 msgid "Center Top"
 msgstr ""
 
-#: includes/class.assests.php:651
+#: includes/class.assests.php:653
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:871
 msgid "Chart"
 msgstr ""
@@ -4021,8 +4021,8 @@ msgstr ""
 #: includes/widgets/htmega_slider_thumb_gallery.php:1031
 #: includes/widgets/htmega_socialshere.php:182
 #: includes/widgets/htmega_socialshere.php:224
-#: includes/widgets/htmega_socialshere.php:686
-#: includes/widgets/htmega_socialshere.php:718
+#: includes/widgets/htmega_socialshere.php:684
+#: includes/widgets/htmega_socialshere.php:716
 #: includes/widgets/htmega_special_day_banner.php:350
 #: includes/widgets/htmega_special_day_banner.php:409
 #: includes/widgets/htmega_special_day_banner.php:468
@@ -4441,7 +4441,7 @@ msgstr ""
 msgid "Content Type"
 msgstr ""
 
-#: includes/class.assests.php:808
+#: includes/class.assests.php:810
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:971
 msgid "Copy Coupon Code"
 msgstr ""
@@ -5030,7 +5030,7 @@ msgstr ""
 msgid "Duration Time"
 msgstr ""
 
-#: includes/class.assests.php:657
+#: includes/class.assests.php:659
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:935
 msgid "Dynamic Gallery"
 msgstr ""
@@ -5384,7 +5384,7 @@ msgstr ""
 msgid "Event"
 msgstr ""
 
-#: includes/class.assests.php:663
+#: includes/class.assests.php:665
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:862
 msgid "Event Box"
 msgstr ""
@@ -5401,7 +5401,7 @@ msgstr ""
 msgid "Event Button text"
 msgstr ""
 
-#: includes/class.assests.php:669
+#: includes/class.assests.php:671
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:727
 msgid "Event Calendar"
 msgstr ""
@@ -5509,7 +5509,7 @@ msgstr ""
 msgid "Facebook Group"
 msgstr ""
 
-#: includes/class.assests.php:675
+#: includes/class.assests.php:677
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:835
 msgid "Facebook Review"
 msgstr ""
@@ -5596,7 +5596,7 @@ msgstr ""
 msgid "Feature Jobs only"
 msgstr ""
 
-#: includes/class.assests.php:681
+#: includes/class.assests.php:683
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:754
 msgid "Feature List"
 msgstr ""
@@ -5626,7 +5626,7 @@ msgstr ""
 msgid "Fill Color"
 msgstr ""
 
-#: includes/class.assests.php:687
+#: includes/class.assests.php:689
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:853
 msgid "Filterable Gallery"
 msgstr ""
@@ -5666,12 +5666,12 @@ msgstr ""
 msgid "Flip Box"
 msgstr ""
 
-#: includes/class.assests.php:795
+#: includes/class.assests.php:797
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:953
 msgid "Flip Carousel"
 msgstr ""
 
-#: includes/class.assests.php:693
+#: includes/class.assests.php:695
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:926
 msgid "Flip Switcher Pricing Table"
 msgstr ""
@@ -6013,10 +6013,6 @@ msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:1107
 msgid "Google Map API key"
-msgstr ""
-
-#: includes/widgets/htmega_socialshere.php:327
-msgid "Google Plus"
 msgstr ""
 
 #: includes/widgets/htmega_data_table.php:56
@@ -6484,7 +6480,7 @@ msgstr ""
 #: includes/widgets/htmega_service.php:1159
 #: includes/widgets/htmega_singlepost.php:441
 #: includes/widgets/htmega_slider_thumb_gallery.php:1024
-#: includes/widgets/htmega_socialshere.php:711
+#: includes/widgets/htmega_socialshere.php:709
 #: includes/widgets/htmega_special_day_banner.php:734
 #: includes/widgets/htmega_testimonial_grid.php:340
 #: includes/widgets/htmega_toggle.php:344
@@ -6547,17 +6543,14 @@ msgstr ""
 #: includes/widgets/htmega_post_grid_tab.php:348
 #: includes/widgets/htmega_service.php:397
 #: includes/widgets/htmega_singlepost.php:161
+#: includes/widgets/htmega_socialshere.php:194
+#: includes/widgets/htmega_socialshere.php:276
 #: includes/widgets/htmega_user_login_form.php:1164
 #: includes/widgets/htmega_verticle_time_line.php:146
 #: extensions/ht-builder/widgets/bl_post_meta_info.php:507
 #: extensions/ht-menu/widgets/inline-mega-menu.php:352
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:1586
 msgid "Hover Color"
-msgstr ""
-
-#: includes/widgets/htmega_socialshere.php:194
-#: includes/widgets/htmega_socialshere.php:276
-msgid "Hover color"
 msgstr ""
 
 #: includes/widgets/htmega_teammember.php:439
@@ -6813,7 +6806,7 @@ msgstr ""
 msgid "Icon Background"
 msgstr ""
 
-#: includes/class.assests.php:699
+#: includes/class.assests.php:701
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:808
 msgid "Icon Box"
 msgstr ""
@@ -6858,13 +6851,12 @@ msgstr ""
 
 #: includes/widgets/htmega_audio_player.php:1478
 #: includes/widgets/htmega_search.php:882
-#: includes/widgets/htmega_socialshere.php:477
 #: includes/widgets/htmega_toggle.php:253
 msgid "Icon Font Size"
 msgstr ""
 
 #: includes/widgets/htmega_instagram.php:1445
-#: includes/widgets/htmega_socialshere.php:506
+#: includes/widgets/htmega_socialshere.php:477
 #: includes/widgets/htmega_tabs.php:944
 msgid "Icon Height"
 msgstr ""
@@ -6917,6 +6909,7 @@ msgstr ""
 #: includes/widgets/htmega_popover.php:360
 #: includes/widgets/htmega_pricing_list_view.php:748
 #: includes/widgets/htmega_service.php:651
+#: includes/widgets/htmega_socialshere.php:548
 #: includes/widgets/htmega_switcher.php:94
 #: includes/widgets/htmega_switcher.php:185
 #: includes/widgets/htmega_tabs.php:843 includes/widgets/htmega_tooltip.php:336
@@ -6957,7 +6950,7 @@ msgid "Icon Type"
 msgstr ""
 
 #: includes/widgets/htmega_instagram.php:1426
-#: includes/widgets/htmega_socialshere.php:554
+#: includes/widgets/htmega_socialshere.php:525
 #: includes/widgets/htmega_tabs.php:923
 msgid "Icon Width"
 msgstr ""
@@ -7163,7 +7156,7 @@ msgstr ""
 msgid "Image Position On"
 msgstr ""
 
-#: includes/class.assests.php:705
+#: includes/class.assests.php:707
 msgid "Image Rotate"
 msgstr ""
 
@@ -7271,7 +7264,7 @@ msgstr ""
 msgid "Info Address Style"
 msgstr ""
 
-#: includes/class.assests.php:621
+#: includes/class.assests.php:623
 #: htmega-blocks/includes/classes/Blocks_List.php:72
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:709
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:1056
@@ -7419,12 +7412,12 @@ msgstr ""
 msgid "Integrations"
 msgstr ""
 
-#: includes/class.assests.php:802
+#: includes/class.assests.php:804
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:962
 msgid "Interactive Circle Infographic"
 msgstr ""
 
-#: includes/class.assests.php:711
+#: includes/class.assests.php:713
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:826
 msgid "Interactive Promo"
 msgstr ""
@@ -8087,7 +8080,7 @@ msgstr ""
 
 #: includes/widgets/htmega_blockquote.php:604
 #: includes/widgets/htmega_notify.php:702
-#: includes/widgets/htmega_socialshere.php:530
+#: includes/widgets/htmega_socialshere.php:501
 msgid "Line Height"
 msgstr ""
 
@@ -8130,6 +8123,7 @@ msgid "Link Hover Color"
 msgstr ""
 
 #: includes/widgets/htmega_socialshere.php:62
+#: includes/widgets/htmega_socialshere.php:327
 msgid "Linkedin"
 msgstr ""
 
@@ -8336,7 +8330,7 @@ msgstr ""
 msgid "Lost your password?"
 msgstr ""
 
-#: includes/class.assests.php:717
+#: includes/class.assests.php:719
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:718
 msgid "Lottie"
 msgstr ""
@@ -9371,7 +9365,7 @@ msgstr ""
 #: includes/widgets/htmega_slider_thumb_gallery.php:851
 #: includes/widgets/htmega_slider_thumb_gallery.php:1109
 #: includes/widgets/htmega_slider_thumb_gallery.php:1331
-#: includes/widgets/htmega_socialshere.php:678
+#: includes/widgets/htmega_socialshere.php:676
 #: includes/widgets/htmega_special_day_banner.php:647
 #: includes/widgets/htmega_switcher.php:363
 #: includes/widgets/htmega_tabs.php:645 includes/widgets/htmega_tabs.php:823
@@ -10314,7 +10308,7 @@ msgstr ""
 #: includes/widgets/htmega_slider_thumb_gallery.php:800
 #: includes/widgets/htmega_slider_thumb_gallery.php:1008
 #: includes/widgets/htmega_socialshere.php:404
-#: includes/widgets/htmega_socialshere.php:649
+#: includes/widgets/htmega_socialshere.php:647
 #: includes/widgets/htmega_special_day_banner.php:306
 #: includes/widgets/htmega_special_day_banner.php:383
 #: includes/widgets/htmega_special_day_banner.php:442
@@ -10413,7 +10407,7 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: includes/class.assests.php:723
+#: includes/class.assests.php:725
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:799
 msgid "Page List"
 msgstr ""
@@ -10867,7 +10861,7 @@ msgstr ""
 msgid "Post Grid Tab"
 msgstr ""
 
-#: includes/class.assests.php:729
+#: includes/class.assests.php:731
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:889
 msgid "Post Masonry"
 msgstr ""
@@ -10903,7 +10897,7 @@ msgstr ""
 msgid "Post Slider"
 msgstr ""
 
-#: includes/class.assests.php:735
+#: includes/class.assests.php:737
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:880
 msgid "Post Timeline"
 msgstr ""
@@ -10984,7 +10978,7 @@ msgstr ""
 msgid "Pricing List View"
 msgstr ""
 
-#: includes/class.assests.php:741
+#: includes/class.assests.php:743
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:745
 msgid "Pricing Menu"
 msgstr ""
@@ -10993,7 +10987,7 @@ msgstr ""
 msgid "Pricing Table"
 msgstr ""
 
-#: includes/class.assests.php:747
+#: includes/class.assests.php:749
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:917
 msgid "Pricing Table Flip Box"
 msgstr ""
@@ -12620,7 +12614,7 @@ msgstr ""
 msgid "Social Media"
 msgstr ""
 
-#: includes/class.assests.php:753
+#: includes/class.assests.php:755
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:763
 msgid "Social Network Icons"
 msgstr ""
@@ -12662,7 +12656,7 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: includes/class.assests.php:759
+#: includes/class.assests.php:761
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:899
 msgid "Source Code"
 msgstr ""
@@ -12750,7 +12744,7 @@ msgstr ""
 msgid "Steps"
 msgstr ""
 
-#: includes/class.assests.php:765
+#: includes/class.assests.php:767
 msgid "Sticky Section"
 msgstr ""
 
@@ -13404,7 +13398,7 @@ msgstr ""
 msgid "Taxonomy"
 msgstr ""
 
-#: includes/class.assests.php:771
+#: includes/class.assests.php:773
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:772
 msgid "Taxonomy Terms"
 msgstr ""
@@ -13418,7 +13412,7 @@ msgstr ""
 msgid "Team Box Style"
 msgstr ""
 
-#: includes/class.assests.php:777
+#: includes/class.assests.php:779
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:817
 msgid "Team Carousel"
 msgstr ""
@@ -14023,7 +14017,7 @@ msgstr ""
 #: includes/widgets/htmega_progress_bar.php:639
 #: includes/widgets/htmega_section_title.php:45
 #: includes/widgets/htmega_slider_thumb_gallery.php:712
-#: includes/widgets/htmega_socialshere.php:637
+#: includes/widgets/htmega_socialshere.php:635
 msgid "Title Style"
 msgstr ""
 
@@ -14615,7 +14609,7 @@ msgstr ""
 msgid "Video Container"
 msgstr ""
 
-#: includes/class.assests.php:814
+#: includes/class.assests.php:816
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:980
 msgid "Video Gallery"
 msgstr ""
@@ -14638,7 +14632,7 @@ msgstr ""
 msgid "Video Player"
 msgstr ""
 
-#: includes/class.assests.php:820
+#: includes/class.assests.php:822
 msgid "Video Playlist"
 msgstr ""
 
@@ -14791,7 +14785,7 @@ msgstr ""
 msgid "Whatsapp"
 msgstr ""
 
-#: includes/class.assests.php:789
+#: includes/class.assests.php:791
 #: admin/include/settings-panel/includes/classes/Admin/Options_field.php:844
 msgid "WhatsApp Chat"
 msgstr ""

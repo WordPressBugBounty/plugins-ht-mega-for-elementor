@@ -2187,6 +2187,11 @@ body:has( .htmega_mega_menu ){
       padding: 0;
       margin: 0;
   }
+  .htmega-pricing-body ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .htmega-pricing-panel .pricing_old {
     margin-right: 15px;
   }
@@ -2318,6 +2323,7 @@ body:has( .htmega_mega_menu ){
       font-weight: 300;
       font-size: 16px;
       padding: 5px 0;
+      justify-content: left;
   }
   .htmega-pricing-style-1 .htmega-pricing-body ul li svg path{
     fill: #f1f1f1;
@@ -2396,6 +2402,7 @@ body:has( .htmega_mega_menu ){
       font-size: 14px;
       font-weight: 300;
       padding: 3px 0;
+      justify-content: left;
   }
   
   .htmega-pricing-style-2 .htmega-pricing-footer a.price_btn {
@@ -2489,7 +2496,9 @@ body:has( .htmega_mega_menu ){
       padding: 5px 0;
       font-family: "Poppins", sans-serif;
   }
-  
+  .htmega-pricing-style-3 .htmega-pricing-body ul li svg path{
+    fill: #ffffff;
+  }
   .htmega-pricing-style-3 .htmega-pricing-footer {
       margin-top: 48px;
   }
@@ -2596,6 +2605,9 @@ body:has( .htmega_mega_menu ){
       font-family: "Montserrat", sans-serif;
   }
   
+  .htmega-pricing-style-4 .htmega-pricing-body ul li svg path{
+    fill: #000000;
+  }
   .htmega-pricing-style-4 .htmega-pricing-footer {
       margin-top: 32px;
       height: 0px;
@@ -2920,6 +2932,7 @@ body:has( .htmega_mega_menu ){
         color: #FFFFFF;
         font-weight: 400;
         padding: 5px 5px 5px 5px;
+        justify-content: left;
     }
     .htmega-pricing-panel.htmega-pricing-style-8 .htmega-pricing-body ul {
         text-align: left;

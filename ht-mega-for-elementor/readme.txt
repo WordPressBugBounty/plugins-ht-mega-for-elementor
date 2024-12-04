@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor, elementor addons, elementor widgets, elementor templates, addons, elementor slider, elementor page builder, mega menu, addons for elementor, post grid, elements, header footer builder
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 2.7.5
+Stable tag: 2.7.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -529,6 +529,12 @@ Visit [HasThemes](https://hasthemes.com/) for more details about HTML, Shopify a
 
 == Changelog ==
 
+= Version 2.7.6 - Date: 2024-12-04 =
+* Added: Global Option to add Features Icon's Size and inner space in Pricing Table Widget.
+* Fixed: Feature's SVG Icon Default Color Issue in Pricing Table Widget.
+* Fixed: SVG Icon Size Issue in Social Widget.
+* Fixed: A few minor issues.
+
 = Version 2.7.5 - Date: 2024-11-26 =
 * Fixed: Issue with asset cache reset.
 
@@ -843,30 +849,6 @@ Visit [HasThemes](https://hasthemes.com/) for more details about HTML, Shopify a
 
 = Version: 2.1.9 - Date: 2023-06-12 =
 * Fixed: Title length Input Issue in Post Grid Tab, Post Carousel, Single Post, and News Sticker Widgets
-* Fixed: A few minor issues
-
-= Version: 2.1.8 - Date: 2023-05-31 =
-* Fixed: Title length Input Issue in Post Slider and Post Grid Widgets
-* Fixed: A few minor issues
-
-= Version: 2.1.7 - Date: 2023-05-23 =
-* Added: Vertical Slide option in Carousel Widget
-* Fixed: A few minor issues
-
-= Version: 2.1.6 - Date: 2023-05-16 =
-* Added: Toggle button style, toggle close button style, and mobile menu style options in Inline Mega Menu Widget
-* Fixed: Third label menu display issue in Vertical Mega Menu Widget
-* Fixed: A few minor issues
-* Tested: Compatibility with the latest version of Elementor
-
-= Version: 2.1.5 - Date: 2023-05-08 =
-* Added: Mega Menu Fullwidth option in Inline Mega Menu Widget
-* Fixed: Dropdown menu icon update issue in Inline Mega Menu Widget
-* Fixed: Dropdown menu icon update issue in Vertical Mega Menu Widget
-* Fixed: A few minor issues
-
-= Version: 2.1.4 - Date: 2023-04-29 =
-* Added: Slider and Thumbnail Inner space control option in Slider Thumbnail Gallery Widget
 * Fixed: A few minor issues
 
 

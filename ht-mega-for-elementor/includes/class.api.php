@@ -12,7 +12,7 @@ class HTMega_Api{
     /**
      * Info API URL
      */
-    public static $api_url = 'https://woolentor.com/library/wp-json/woolentor/v1/info';
+    public static $api_url = 'https://library.shoplentor.com/wp-json/woolentor/v1/info';
 
     /**
      * Get API data
