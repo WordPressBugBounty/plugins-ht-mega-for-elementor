@@ -119,30 +119,33 @@ class Manage_Styles {
 
 			$params 	= $request->get_params();
 			$post_id 	= sanitize_text_field( $params['post_id'] );
-			
+			$block_css = isset($params['block_css']) ? wp_strip_all_tags($params['block_css']) : '';
+
 			if ( $post_id == 'htmega-widget' && $params['has_block'] ) {
-				update_option( $post_id, $params['block_css'] );
+				update_option( $post_id, sanitize_text_field( $block_css ) );
+
 				return [
 					'success' => true, 
 					'message' => __('Widget CSS Saved.', 'htmega-addons')
 				];
 			}
-
+			
 			$filename 		= "htmega-css-{$post_id}.css";
 			$upload_dir_url = wp_upload_dir();
 			$dirname 		= trailingslashit( $upload_dir_url['basedir'] ) . 'htmega-addons/';
 
 			if ( $params['has_block'] ) {
 				update_post_meta( $post_id, '_htmega_active', 'yes' );
-				$all_block_css = $params['block_css'];
+				//$all_block_css = $params['block_css'];
+				$all_block_css = $block_css;
 
 				WP_Filesystem( false, $upload_dir_url['basedir'], true );
 				if( ! $wp_filesystem->is_dir( $dirname ) ) {
 					$wp_filesystem->mkdir( $dirname );
 				}
 
-				update_post_meta( $post_id, '_htmega_css', $all_block_css );
-				if ( ! $wp_filesystem->put_contents( $dirname . $filename, $all_block_css ) ) {
+				update_post_meta( $post_id, '_htmega_css', sanitize_text_field( $all_block_css ) );
+				if ( ! $wp_filesystem->put_contents( $dirname . $filename, sanitize_text_field( $all_block_css ) ) ) {
 					throw new Exception( __('You are not permitted to save CSS.', 'htmega-addons' ) ); 
 				}
 				return [
@@ -179,7 +182,7 @@ class Manage_Styles {
 		}
 
 		$params  = $request->get_params();
-		$css 	 = $params['inner_css'];
+		$css = isset($params['inner_css']) ? wp_strip_all_tags($params['inner_css']) : '';
 		$post_id = (int) sanitize_text_field( $params['post_id'] );
 
 		if( $post_id ){
@@ -192,10 +195,10 @@ class Manage_Styles {
 				$wp_filesystem->mkdir( $dirname );
 			}
 			
-			update_post_meta( $post_id, '_htmega_css', $css );
+			update_post_meta( $post_id, '_htmega_css', sanitize_text_field( $css ) );
 			update_post_meta( $post_id, '_htmega_active', 'yes' );
 			
-			if ( ! $wp_filesystem->put_contents( $dirname . $filename, $css ) ) {
+			if ( ! $wp_filesystem->put_contents( $dirname . $filename, sanitize_text_field( $css ) ) ) {
 				throw new Exception( esc_html__('You are not permitted to save CSS.', 'htmega-addons' ) );
 			}
 

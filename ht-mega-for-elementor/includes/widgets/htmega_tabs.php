@@ -1144,6 +1144,8 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     <?php
                         $i=0;
                         foreach ( $settings['htmega_tabs_list'] as $item ) {
+                            
+                            $item['template_id'] = apply_filters( 'wpml_object_id', $item['template_id'], 'elementor_library' );
                             $i++;
                             if( $i == $item_active_index ){ $active_tab = 'htb-active htb-show'; } else{ $active_tab = ''; }
 

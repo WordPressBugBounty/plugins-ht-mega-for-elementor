@@ -33,6 +33,7 @@ class HTMega_Admin_Setting{
     public function HTMega_Admin_Settings_page() {
         require_once('include/class.newsletter-data.php');
         require_once('include/class.diagnostic-data.php');
+        require_once('include/class-deactivation.php');
         require_once('include/template-library.php');
         require_once ('include/class.htmega-elementor-template-library.php' );
         require_once ('include/class.library-source.php' );

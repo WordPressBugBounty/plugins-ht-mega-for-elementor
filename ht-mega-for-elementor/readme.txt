@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor, elementor addons, elementor widgets, elementor templates, addons, elementor slider, elementor page builder, mega menu, addons for elementor, post grid, elements, header footer builder
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 2.7.6
+Stable tag: 2.7.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -528,6 +528,12 @@ Visit [HasThemes](https://hasthemes.com/) for more details about HTML, Shopify a
 
 
 == Changelog ==
+
+= Version 2.7.7 - Date: 2024-12-18 =
+* Fixed: Mega Menu settings not updating issue.
+* Fixed: WPML compatibility issue in Tabs widget.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
 
 = Version 2.7.6 - Date: 2024-12-04 =
 * Added: Global Option to add Features Icon's Size and inner space in Pricing Table Widget.

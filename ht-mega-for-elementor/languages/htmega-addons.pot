@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HT Mega – Absolute Addons for Elementor.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-04 06:01+0000\n"
+"POT-Creation-Date: 2024-12-18 04:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -4668,7 +4668,7 @@ msgstr ""
 msgid "Data Export Button (Pro)"
 msgstr ""
 
-#: htmega-blocks/includes/classes/Manage_Styles.php:205
+#: htmega-blocks/includes/classes/Manage_Styles.php:208
 msgid "Data fetch"
 msgstr ""
 
@@ -4676,7 +4676,7 @@ msgstr ""
 msgid "Data Not Found"
 msgstr ""
 
-#: htmega-blocks/includes/classes/Manage_Styles.php:212
+#: htmega-blocks/includes/classes/Manage_Styles.php:215
 msgid "Data not found."
 msgstr ""
 
@@ -4750,7 +4750,7 @@ msgstr ""
 
 #: includes/widgets/htmega_countdown.php:201
 #: includes/widgets/htmega_countdown.php:203
-#: includes/widgets/htmega_countdown.php:1205
+#: includes/widgets/htmega_countdown.php:1206
 msgid "Days"
 msgstr ""
 
@@ -6423,7 +6423,7 @@ msgstr ""
 #: includes/widgets/htmega_countdown.php:141
 #: includes/widgets/htmega_countdown.php:215
 #: includes/widgets/htmega_countdown.php:217
-#: includes/widgets/htmega_countdown.php:1206
+#: includes/widgets/htmega_countdown.php:1210
 msgid "Hours"
 msgstr ""
 
@@ -6632,11 +6632,11 @@ msgstr ""
 msgid "HTMega Addons"
 msgstr ""
 
-#: htmega-blocks/includes/classes/Manage_Styles.php:160
+#: htmega-blocks/includes/classes/Manage_Styles.php:163
 msgid "HtMega Blocks CSS Delete."
 msgstr ""
 
-#: htmega-blocks/includes/classes/Manage_Styles.php:150
+#: htmega-blocks/includes/classes/Manage_Styles.php:153
 msgid "HtMega Blocks css file update."
 msgstr ""
 
@@ -8952,7 +8952,7 @@ msgstr ""
 #: includes/widgets/htmega_countdown.php:151
 #: includes/widgets/htmega_countdown.php:229
 #: includes/widgets/htmega_countdown.php:231
-#: includes/widgets/htmega_countdown.php:1207
+#: includes/widgets/htmega_countdown.php:1214
 msgid "Minutes"
 msgstr ""
 
@@ -11775,7 +11775,7 @@ msgstr ""
 #: includes/widgets/htmega_countdown.php:161
 #: includes/widgets/htmega_countdown.php:243
 #: includes/widgets/htmega_countdown.php:245
-#: includes/widgets/htmega_countdown.php:1208
+#: includes/widgets/htmega_countdown.php:1218
 msgid "Seconds"
 msgstr ""
 
@@ -14798,7 +14798,7 @@ msgstr ""
 msgid "Whols"
 msgstr ""
 
-#: htmega-blocks/includes/classes/Manage_Styles.php:127
+#: htmega-blocks/includes/classes/Manage_Styles.php:129
 msgid "Widget CSS Saved."
 msgstr ""
 
@@ -14984,8 +14984,8 @@ msgstr ""
 msgid "You are not authorized."
 msgstr ""
 
-#: htmega-blocks/includes/classes/Manage_Styles.php:146
-#: htmega-blocks/includes/classes/Manage_Styles.php:199
+#: htmega-blocks/includes/classes/Manage_Styles.php:149
+#: htmega-blocks/includes/classes/Manage_Styles.php:202
 msgid "You are not permitted to save CSS."
 msgstr ""
 

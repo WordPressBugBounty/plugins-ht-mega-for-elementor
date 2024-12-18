@@ -100,6 +100,7 @@
                         action          : "HT_Mega_Menu_Panels_ajax_requests",
                         sub_action      : "get_menu_options",
                         menu_item_id    : id,
+                        nonce           : HTMEGAMENU.nonce
 
                     },
                     cache: false,

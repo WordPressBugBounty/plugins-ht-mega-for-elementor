@@ -1200,12 +1200,24 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         $data_options['htmegahours']    = sanitize_text_field( $settings['count_down_hours'] );
         $data_options['htmegaminiute']  = sanitize_text_field( $settings['count_down_miniute'] );
         $data_options['htmegasecond']   = sanitize_text_field( $settings['count_down_second'] );
-
         // Custom Label
-        $data_options['htmegadaytxt'] = ! empty( $settings['customlabel_days'] ) ? sanitize_text_field( $settings['customlabel_days'] ) : esc_html__( 'Days', 'htmega-addons' );
-        $data_options['htmegahourtxt'] = ! empty( $settings['customlabel_hours'] ) ? sanitize_text_field( $settings['customlabel_hours'] ) : esc_html__( 'Hours', 'htmega-addons' );
-        $data_options['htmegaminutestxt'] = ! empty( $settings['customlabel_minutes'] ) ? sanitize_text_field( $settings['customlabel_minutes'] ) : esc_html__( 'Minutes', 'htmega-addons' );
-        $data_options['htmegasecondstxt'] = ! empty( $settings['customlabel_seconds'] ) ? sanitize_text_field( $settings['customlabel_seconds'] ) : esc_html__( 'Seconds', 'htmega-addons' );
+        $data_options['htmegadaytxt'] = ! empty( $settings['customlabel_days'] ) ? 
+        esc_html( wp_strip_all_tags($settings['customlabel_days']) ) : 
+        esc_html__( 'Days', 'htmega-addons' );
+    
+        $data_options['htmegahourtxt'] = ! empty( $settings['customlabel_hours'] ) ? 
+            esc_html( wp_strip_all_tags($settings['customlabel_hours']) ) : 
+            esc_html__( 'Hours', 'htmega-addons' );
+        
+        $data_options['htmegaminutestxt'] = ! empty( $settings['customlabel_minutes'] ) ? 
+            esc_html( wp_strip_all_tags($settings['customlabel_minutes']) ) : 
+            esc_html__( 'Minutes', 'htmega-addons' );
+        
+        $data_options['htmegasecondstxt'] = ! empty( $settings['customlabel_seconds'] ) ? 
+            esc_html( wp_strip_all_tags($settings['customlabel_seconds']) ) : 
+            esc_html__( 'Seconds', 'htmega-addons' );
+
+
         
         $this->add_render_attribute( 'countdown_wrapper_attr', 'class', 'htmega-countdown-wrapper ' . esc_attr( $sectionid ) );
         $this->add_render_attribute( 'countdown_wrapper_attr', 'class', 'htmega-countdown-style-'. esc_attr( $settings['htmega_count_style'] ) );
