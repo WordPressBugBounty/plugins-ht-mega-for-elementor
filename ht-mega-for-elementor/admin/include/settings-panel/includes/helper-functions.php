@@ -63,3 +63,116 @@ function htmegaopt_get_options( $registered_settings = [] ) {
     return apply_filters( 'htmegaopt' . '_get_settings', $settings );
 
 }
+
+/**
+ * Get list of elements for the onboarding
+ */
+function get_elements_list() {
+    $elements_all_settings = Options_Field::instance()->get_registered_settings();
+    $elements_all_settings = $elements_all_settings['htmega_element_tabs'];
+    $elements = $this->extractElementData($elements_all_settings);
+    $defaults = array_column($elements, 'default', 'key');
+    return $defaults;
+}
+/**
+ * Get list of modules for the onboarding
+ */
+function get_modules_list() {
+    $module_all_settings = Options_Field::instance()->get_registered_settings();
+    $module_all_settings = $module_all_settings['htmega_advance_element_tabs'];
+    $modules = $this->extractElementData($module_all_settings);
+    $defaults = array_column($modules, 'default', 'key');
+    return $defaults;
+}
+
+/**
+ * Extract element data from an array
+ */
+function extractElementData($array) {
+    $result = [];
+
+    // Loop through each element in the array
+    foreach ($array as $item) {
+        // Initialize default values for each item
+        $key = $item['key'] ?? $item['id'] ?? '';
+        $name = $item['name'] ?? $item['name'] ?? '';
+        $status =  $item['is_pro'] ?? $item['is_pro'] ?? false;
+        $default =  $item['default'] ?? $item['default'] ?? false;
+
+        // Check if 'setting_fields' exists and contains 'is_pro'
+        // if (isset($item['setting_fields']) && is_array($item['setting_fields'])) {
+        //     foreach ($item['setting_fields'] as $field) {
+        //         // If 'is_pro' is true, mark it as 'pro'
+        //         if (isset($field['is_pro']) && $field['is_pro'] === true) {
+        //             $status = 'pro';
+        //             break; // No need to check further once we find 'pro'
+        //         }
+        //     }
+        // }
+
+        // Add the processed item to the result array
+        $result[] = [
+            'key' => $key,
+            'name' => $name,
+            'is_pro' => $status,
+            'default' => $default,
+        ];
+    }
+
+    return $result;
+}
+
+add_action( 'wp_ajax_htmega_get_sidebar_content', 'get_sidebar_content' );
+    /**
+     * AJAX handler for getting sidebar banner content
+     */
+     function get_sidebar_content() {
+        try {
+            // Prevent any unwanted output
+            @error_reporting(0);
+            @ini_set('display_errors', 0);
+
+            if (!current_user_can('manage_options')) {
+                wp_send_json_error(array('message' => 'Unauthorized access'));
+                return;
+            }
+
+            // Include required dependencies
+            if (!function_exists('is_plugin_active')) {
+                require_once ABSPATH . 'wp-admin/includes/plugin.php';
+            }
+
+            // Start output buffering
+            ob_start();
+            
+            // Include the template
+            $template_path = HTMEGA_ADDONS_PL_PATH . 'admin/include/settings-panel/includes/templates/sidebar-banner.php';
+            
+            if (!file_exists($template_path)) {
+                wp_send_json_error(array('message' => esc_html__('Template file not found', 'htmega-addons')));
+                return;
+            }
+
+            // Include template and get content
+            include $template_path;
+            $content = ob_get_clean();
+
+            // Clean any unwanted output
+            while (ob_get_level()) {
+                ob_end_clean();
+            }
+
+            if (empty($content)) {
+                wp_send_json_error(array('message' => esc_html__('Empty content', 'htmega-addons')));
+                return;
+            }
+
+            // Send JSON response
+            wp_send_json_success(array(
+                'content' => $content
+            ));
+
+        } catch (Exception $e) {
+            wp_send_json_error(array('message' => $e->getMessage()));
+        }
+    }
