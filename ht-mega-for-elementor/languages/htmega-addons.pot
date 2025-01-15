@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HT Mega – Absolute Addons for Elementor.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-05 04:17+0000\n"
+"POT-Creation-Date: 2025-01-15 06:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -107,7 +107,7 @@ msgstr ""
 msgid "%s Comments"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:257
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:261
 msgid "& Many More Features..."
 msgstr ""
 
@@ -612,7 +612,7 @@ msgstr ""
 msgid "<strong>Welcome,</strong>to Notification."
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:266
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:270
 msgid ""
 "Access a variety of ready-to-use templates for every niche, from business to "
 "e-commerce, blogs, and more."
@@ -700,7 +700,7 @@ msgstr ""
 msgid "Activate"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:233
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:237
 msgid "Activate the Elements You Require"
 msgstr ""
 
@@ -851,13 +851,13 @@ msgstr ""
 msgid "Advance Title style"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:208
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:212
 msgid "Advanced"
 msgstr ""
 
 #: includes/class.assests.php:629
 #: admin/include/settings-panel/includes/templates/sidebar-banner.php:57
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:248
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:252
 msgid "Advanced Slider"
 msgstr ""
 
@@ -1065,7 +1065,11 @@ msgstr ""
 msgid "All Content Color"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:103
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:97
+msgid "All data has been saved successfully!"
+msgstr ""
+
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:107
 msgid "All Data Restored"
 msgstr ""
 
@@ -1078,7 +1082,7 @@ msgstr ""
 msgid "All Items have been Loaded"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:113
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:117
 msgid "All settings has been reset successfully."
 msgstr ""
 
@@ -1175,7 +1179,7 @@ msgstr ""
 msgid "Are you cheating?"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:106
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:110
 msgid "Are you sure?"
 msgstr ""
 
@@ -1358,7 +1362,7 @@ msgstr ""
 msgid "Avater Image Position"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:190
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:194
 msgid "Back"
 msgstr ""
 
@@ -1848,7 +1852,7 @@ msgstr ""
 msgid "Baseline"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:200
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:204
 msgid "Basic"
 msgstr ""
 
@@ -3079,7 +3083,7 @@ msgstr ""
 msgid "Buffer"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:213
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:217
 msgid ""
 "Build complex websites with the advance functionalities of HT Mega. All "
 "dynamic elements will be activated in this option."
@@ -3271,7 +3275,7 @@ msgstr ""
 msgid "By "
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:224
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:228
 msgid ""
 "By continuing, you agree to allow this plugin to collect some of your data "
 "for the purpose of improving your experience."
@@ -4240,11 +4244,11 @@ msgid "Compare"
 msgstr ""
 
 #: admin/include/settings-panel/includes/templates/sidebar-banner.php:58
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:249
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:253
 msgid "Conditional Display"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:221
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:225
 msgid ""
 "Configure the elements of HT mega according to your preferences to make your "
 "website engaging & stand out."
@@ -4495,10 +4499,6 @@ msgstr ""
 msgid "Create a new page from this template"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:255
-msgid "Cross Domain Copy Paste"
-msgstr ""
-
 #: extensions/wc-sales-notification/admin/setting.php:212
 msgid "Cross Icon Color"
 msgstr ""
@@ -4560,7 +4560,7 @@ msgstr ""
 #: extensions/ht-builder/widgets/bl_post_meta_info.php:306
 #: extensions/ht-builder/widgets/bl_site_logo.php:62
 #: extensions/ht-menu/widgets/inline-mega-menu.php:380
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:216
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:220
 msgid "Custom"
 msgstr ""
 
@@ -4578,7 +4578,7 @@ msgstr ""
 msgid "Custom Content"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:253
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:257
 msgid "Custom CSS"
 msgstr ""
 
@@ -4854,7 +4854,7 @@ msgstr ""
 msgid "Description Tag"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:262
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:266
 msgid ""
 "Design stunning websites effortlessly with HT Mega's exclusive collection of "
 "templates."
@@ -4906,8 +4906,8 @@ msgstr ""
 msgid "Direction"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:98
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:193
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:102
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:197
 msgid "Disable All"
 msgstr ""
 
@@ -5032,7 +5032,7 @@ msgid "Duration Time"
 msgstr ""
 
 #: includes/class.assests.php:659
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:254
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:258
 msgid "Dynamic Gallery"
 msgstr ""
 
@@ -5203,7 +5203,7 @@ msgid "Elementor Template (Pro)"
 msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Onboarding.php:55
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:181
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:185
 msgid "Elements"
 msgstr ""
 
@@ -5232,8 +5232,8 @@ msgstr ""
 msgid "Enable"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:97
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:192
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:101
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:196
 msgid "Enable All"
 msgstr ""
 
@@ -5254,7 +5254,7 @@ msgstr ""
 msgid "Enable to Custom Style"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:240
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:244
 msgid "Enable/Disable the Modules anytime you want from the HT Mega Dashboard."
 msgstr ""
 
@@ -5478,7 +5478,7 @@ msgstr ""
 msgid "Expired timestamp, yours %1$s, ours %2$s"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:261
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:265
 #, php-format
 msgid "Explore %s Templates"
 msgstr ""
@@ -5489,7 +5489,7 @@ msgid ""
 "apply any layout with just a few clicks!"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:245
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:249
 msgid "Explore Premium Features"
 msgstr ""
 
@@ -5657,7 +5657,7 @@ msgid "Filters"
 msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Onboarding.php:59
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:185
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:189
 msgid "Finalize"
 msgstr ""
 
@@ -5691,7 +5691,7 @@ msgstr ""
 msgid "Flip Switcher Pricing Table"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:252
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:256
 msgid "Floating Effects"
 msgstr ""
 
@@ -5926,7 +5926,7 @@ msgstr ""
 msgid "Full Width"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:273
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:277
 msgid "Fully Customizable"
 msgstr ""
 
@@ -5943,7 +5943,7 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:205
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:209
 msgid ""
 "General widgets will be activated to build your website. Best suited for "
 "lightweight-fast starter websites."
@@ -5973,7 +5973,7 @@ msgstr ""
 #: includes/class.htmega.php:296
 #: admin/include/templates/library/templates.php:71
 #: admin/include/settings-panel/includes/classes/Onboarding.php:57
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:183
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:187
 msgid "Go Pro"
 msgstr ""
 
@@ -5984,8 +5984,8 @@ msgid ""
 "Style Array"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:191
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:280
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:195
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:284
 msgid "Go To Dashboard"
 msgstr ""
 
@@ -7142,7 +7142,7 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:270
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:274
 msgid ""
 "Import complete pages or sections in seconds to kickstart your website "
 "design with minimal effort."
@@ -7472,7 +7472,7 @@ msgid ""
 "and the like."
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:107
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:111
 msgid ""
 "It will reset all the settings to default, and all the changes you made will "
 "be deleted."
@@ -8141,6 +8141,10 @@ msgstr ""
 
 #: includes/widgets/htmega_pricing_list_view.php:1454
 msgid "List Area"
+msgstr ""
+
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:259
+msgid "Live Copy Paste"
 msgstr ""
 
 #: includes/widgets/htmega_socialshere.php:67
@@ -8831,7 +8835,7 @@ msgstr ""
 msgid "Mega Menu Width"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:251
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:255
 msgid "Megamenu Builder"
 msgstr ""
 
@@ -9024,14 +9028,14 @@ msgstr ""
 msgid "Modal Width"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:274
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:278
 msgid ""
 "Modify every template to match your branding, ensuring a unique and "
 "personalized website."
 msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Onboarding.php:56
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:182
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:186
 msgid "Modules"
 msgstr ""
 
@@ -9134,7 +9138,7 @@ msgid "News Ticker"
 msgstr ""
 
 #: includes/class.assests.php:397 includes/widgets/htmega_data_table.php:699
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:188
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:192
 msgid "Next"
 msgstr ""
 
@@ -9192,7 +9196,7 @@ msgstr ""
 #: includes/widgets/htmega_videoplayer.php:196
 #: includes/widgets/htmega_videoplayer.php:208
 #: includes/widgets/htmega_videoplayer.php:220
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:109
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:113
 msgid "No"
 msgstr ""
 
@@ -9590,7 +9594,7 @@ msgstr ""
 msgid "Offsets"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:114
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:118
 msgid "OK"
 msgstr ""
 
@@ -9630,7 +9634,7 @@ msgstr ""
 msgid "One Comment"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:269
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:273
 msgid "One-Click Import"
 msgstr ""
 
@@ -10582,12 +10586,12 @@ msgstr ""
 msgid "Primary Button Text"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:228
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:232
 msgid "Privacy Policy"
 msgstr ""
 
 #: admin/include/settings-panel/includes/templates/sidebar-banner.php:45
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:243
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:247
 msgid "PRO"
 msgstr ""
 
@@ -10597,7 +10601,7 @@ msgstr ""
 msgid "Pro"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:229
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:233
 msgid "Proceed to Next"
 msgstr ""
 
@@ -10627,7 +10631,7 @@ msgstr ""
 msgid "Product Added"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:265
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:269
 msgid "Professionally Designed Templates"
 msgstr ""
 
@@ -10685,7 +10689,7 @@ msgid "Progress Position Top-Bottom"
 msgstr ""
 
 #: admin/include/settings-panel/includes/templates/sidebar-banner.php:79
-msgid "Provide your 5 Star"
+msgid "Provide Your Feedback"
 msgstr ""
 
 #: includes/widgets/htmega_pricing_list_view.php:149
@@ -10841,9 +10845,9 @@ msgstr ""
 msgid "Recommendations"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:203
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:211
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:219
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:207
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:215
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:223
 msgid "Recommended"
 msgstr ""
 
@@ -10945,15 +10949,15 @@ msgstr ""
 msgid "Required Symbol Color"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:101
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:105
 msgid "Reset All Settings"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:112
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:116
 msgid "Reset!"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:102
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:106
 msgid "Resetting..."
 msgstr ""
 
@@ -11474,13 +11478,13 @@ msgstr ""
 msgid "Select Template"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:234
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:238
 msgid ""
 "Select the elements you want to use in your website. You can enable or "
 "disable them anytime later."
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:239
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:243
 msgid "Select the Modules You Require Now"
 msgstr ""
 
@@ -11779,7 +11783,7 @@ msgstr ""
 msgid "Show Info"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:236
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:240
 msgid "Show Less Elements"
 msgstr ""
 
@@ -11975,11 +11979,11 @@ msgstr ""
 msgid "Skew Background"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:189
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:193
 msgid "Skip"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:230
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:234
 msgid "Skip & Go to Dashboard"
 msgstr ""
 
@@ -12614,6 +12618,7 @@ msgid "Subscribing..."
 msgstr ""
 
 #: includes/widgets/htmega_notify.php:129
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:96
 msgid "Success"
 msgstr ""
 
@@ -12913,7 +12918,7 @@ msgstr ""
 msgid "Template does not have any content"
 msgstr ""
 
-#: admin/include/settings-panel/includes/helper-functions.php:157
+#: admin/include/settings-panel/includes/helper-functions.php:161
 msgid "Template file not found"
 msgstr ""
 
@@ -12931,7 +12936,7 @@ msgstr ""
 
 #: admin/include/templates_list.php:33
 #: admin/include/settings-panel/includes/classes/Onboarding.php:58
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:184
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:188
 msgid "Templates"
 msgstr ""
 
@@ -13081,7 +13086,7 @@ msgstr ""
 msgid "TH Width (Table Header Column Width %)"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:197
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:201
 msgid ""
 "Thank You for choosing HT Mega for Elementor. Follow these simple steps of "
 "easy setup wizard & enjoy your Elementor web-building experience now!"
@@ -13150,7 +13155,7 @@ msgstr ""
 
 #: extensions/ht-builder/admin/setting.php:32
 #: admin/include/settings-panel/includes/templates/sidebar-banner.php:56
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:250
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:254
 msgid "Theme Builder"
 msgstr ""
 
@@ -13905,7 +13910,7 @@ msgstr ""
 msgid "Units"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:244
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:248
 msgid "Unlock 6+ Premium Modules & 30+ Elements"
 msgstr ""
 
@@ -13917,7 +13922,7 @@ msgstr ""
 msgid "Up"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:243
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:247
 #, php-format
 msgid "Upgrade to %s Today!"
 msgstr ""
@@ -13926,7 +13931,7 @@ msgstr ""
 msgid "Upgrade to HT Mega Pro"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:258
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:262
 msgid "Upgrade To PRO"
 msgstr ""
 
@@ -14150,7 +14155,7 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:235
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:239
 msgid "View All Elements"
 msgstr ""
 
@@ -14227,7 +14232,7 @@ msgstr ""
 msgid "WC Sales Notification Settings"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:226
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:230
 msgid ""
 "We gather basic, non-sensitive information to ensure the plugin works "
 "smoothly on your site. This includes your site's URL, the versions of "
@@ -14265,16 +14270,16 @@ msgid "Weibo"
 msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Onboarding.php:54
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:180
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:184
 msgid "Welcome"
 msgstr ""
 
 #: admin/include/settings-panel/includes/templates/dashboard-general.php:14
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:196
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:200
 msgid "Welcome To HT Mega"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:225
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:229
 msgid "What We Collect"
 msgstr ""
 
@@ -14454,7 +14459,7 @@ msgstr ""
 #: includes/widgets/htmega_videoplayer.php:195
 #: includes/widgets/htmega_videoplayer.php:207
 #: includes/widgets/htmega_videoplayer.php:219
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:108
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:112
 msgid "Yes"
 msgstr ""
 
@@ -14483,7 +14488,7 @@ msgstr ""
 msgid "You are not permitted to save CSS."
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:246
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:250
 msgid "You can get a lot more out of it upgrading to premium. Get all features"
 msgstr ""
 
@@ -14499,7 +14504,7 @@ msgstr ""
 msgid "You do not have permission to duplicate this private post!"
 msgstr ""
 
-#: admin/include/settings-panel/includes/classes/Admin/Menu.php:279
+#: admin/include/settings-panel/includes/classes/Admin/Menu.php:283
 msgid "You Have Completed Your Setup for HT Mega"
 msgstr ""
 

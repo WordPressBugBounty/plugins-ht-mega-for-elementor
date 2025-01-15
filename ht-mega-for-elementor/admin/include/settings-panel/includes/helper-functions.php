@@ -5,12 +5,14 @@
  * @param [array] $var
  * @return void
  */
+if ( ! function_exists( 'htmegaopt_data_clean' ) ) {
 function htmegaopt_data_clean( $var ) {
     if ( is_array( $var ) ) {
         return array_map( 'htmegaopt_data_clean', $var );
     } else {
         return is_scalar( $var ) ? sanitize_text_field( $var ) : $var;
     }
+}
 }
 
 /**
@@ -21,6 +23,7 @@ function htmegaopt_data_clean( $var ) {
  * @param boolean $default
  * @return void
  */
+if ( ! function_exists( 'htmegaopt_get_option' ) ) {
 function htmegaopt_get_option( $key, $section, $default = false ){
     $options = get_option( $section );
     if ( isset( $options['blocks'] ) && isset( $options['blocks'][$key] ) ) {
@@ -32,6 +35,7 @@ function htmegaopt_get_option( $key, $section, $default = false ){
     }
     return apply_filters( 'htmegaopt' . '_get_option_' . $key, $value, $key, $default );
 }
+}
 
 /**
  * Get Option value Section wise
@@ -39,6 +43,7 @@ function htmegaopt_get_option( $key, $section, $default = false ){
  * @param [array] $registered_settings
  * @return void
  */
+if ( ! function_exists( 'htmegaopt_get_options' ) ) {
 function htmegaopt_get_options( $registered_settings = [] ) {
     if( ! is_array( $registered_settings ) ){
         return;
@@ -53,8 +58,20 @@ function htmegaopt_get_options( $registered_settings = [] ) {
                     $options['blocks'][$block['id']] = htmegaopt_get_option( $block['id'], $section_key, $default );
                 }
             } else {
-                $default                   = isset( $setting['std'] ) ? $setting['std'] : ( isset( $setting['default'] ) ? $setting['default'] : '' );
-                $options[ $setting['id'] ] = htmegaopt_get_option( $setting['id'], $section_key, $default );
+
+                if( isset( $setting['section'] ) ){
+                    $options2 = [];
+                    foreach ($setting['setting_fields'] as $key => $sub_setting ) {
+                        $default = isset( $sub_setting['std'] ) ? $sub_setting['std'] : ( isset( $sub_setting['default'] ) ? $sub_setting['default'] : '' );
+                        $options2[ $sub_setting['id']] = htmega_get_module_option( $setting['section'], $setting['id'], $sub_setting['id'], $default );
+                    } 
+    
+                    $settings[$setting['section']] = $options2;
+                    $options2 = [];
+                }else{
+                    $default                   = isset( $setting['std'] ) ? $setting['std'] : ( isset( $setting['default'] ) ? $setting['default'] : '' );
+                    $options[ $setting['id'] ] = htmegaopt_get_option( $setting['id'], $section_key, $default );
+                }
             }
         }
         $settings[$section_key] = $options;
@@ -63,20 +80,23 @@ function htmegaopt_get_options( $registered_settings = [] ) {
     return apply_filters( 'htmegaopt' . '_get_settings', $settings );
 
 }
-
+}
 /**
  * Get list of elements for the onboarding
  */
-function get_elements_list() {
-    $elements_all_settings = Options_Field::instance()->get_registered_settings();
-    $elements_all_settings = $elements_all_settings['htmega_element_tabs'];
-    $elements = $this->extractElementData($elements_all_settings);
-    $defaults = array_column($elements, 'default', 'key');
-    return $defaults;
+if ( ! function_exists( 'get_elements_list' ) ) {
+    function get_elements_list() {
+        $elements_all_settings = Options_Field::instance()->get_registered_settings();
+        $elements_all_settings = $elements_all_settings['htmega_element_tabs'];
+        $elements = $this->extractElementData($elements_all_settings);
+        $defaults = array_column($elements, 'default', 'key');
+        return $defaults;
+    }
 }
 /**
  * Get list of modules for the onboarding
  */
+if ( ! function_exists( 'get_modules_list' ) ) {
 function get_modules_list() {
     $module_all_settings = Options_Field::instance()->get_registered_settings();
     $module_all_settings = $module_all_settings['htmega_advance_element_tabs'];
@@ -84,10 +104,12 @@ function get_modules_list() {
     $defaults = array_column($modules, 'default', 'key');
     return $defaults;
 }
+}
 
 /**
  * Extract element data from an array
  */
+if ( ! function_exists( 'extractElementData' ) ) {
 function extractElementData($array) {
     $result = [];
 
@@ -98,19 +120,6 @@ function extractElementData($array) {
         $name = $item['name'] ?? $item['name'] ?? '';
         $status =  $item['is_pro'] ?? $item['is_pro'] ?? false;
         $default =  $item['default'] ?? $item['default'] ?? false;
-
-        // Check if 'setting_fields' exists and contains 'is_pro'
-        // if (isset($item['setting_fields']) && is_array($item['setting_fields'])) {
-        //     foreach ($item['setting_fields'] as $field) {
-        //         // If 'is_pro' is true, mark it as 'pro'
-        //         if (isset($field['is_pro']) && $field['is_pro'] === true) {
-        //             $status = 'pro';
-        //             break; // No need to check further once we find 'pro'
-        //         }
-        //     }
-        // }
-
-        // Add the processed item to the result array
         $result[] = [
             'key' => $key,
             'name' => $name,
@@ -121,7 +130,7 @@ function extractElementData($array) {
 
     return $result;
 }
-
+}
 add_action( 'wp_ajax_htmega_get_sidebar_content', 'get_sidebar_content' );
     /**
      * AJAX handler for getting sidebar banner content

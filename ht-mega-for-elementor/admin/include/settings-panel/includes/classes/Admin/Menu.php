@@ -63,7 +63,6 @@ class Menu {
      * @return void
      */
     public function enqueue_scripts() {
-        wp_enqueue_style('htmegaopt-sweetalert2');
         wp_enqueue_style( 'htmegaopt-admin' );
         wp_enqueue_style( 'htmegaopt-style' );
         wp_enqueue_script( 'htmegaopt-admin' );
