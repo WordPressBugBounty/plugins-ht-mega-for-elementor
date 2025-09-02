@@ -3,13 +3,14 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor, elementor addons, elementor widgets, page builder, elementor templates, mega menu, addons for elementor, post grid, elements, header footer builder
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 2.9.4
+Stable tag: 2.9.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Elementor addons package for WordPress with Elementor widgets, blocks, pre-designed templates, Theme builder, mega menu, header footer, single post, archive builder, AI content writer, carousel, slider, form, gallery, testimonial, portfolio, WooCommerce widgets, forms, tables, and so on. It empowers you to build a professional website in WordPress, one of the most popular WordPress page builders.
 
-== Description of HT Mega ==
+== Description ==
+
 ### Transform Your Elementor Page Builder into a Design Powerhouse
 
 Are you tired of Elementor's limitations holding back your creativity? **HT Mega** is the ultimate Elementor addon plugin that unlocks your full design potential with **135+ professional widgets**, **AI-powered content writer**, **theme builder**, and **790+ ready-made blocks**.
@@ -235,6 +236,11 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 2.9.5 - Date: 2025-09-02 =
+* Added: Dynamic tag support in Add Banner, Image Comparison, Image Magnifier, and Special Day Offer Widgets.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
 
 = Version 2.9.4 - Date: 2025-08-19 =
 * Added: [Intorio - Interior Design Template Kit](https://library.wphtmega.com/intorio-interior-design-template/).
