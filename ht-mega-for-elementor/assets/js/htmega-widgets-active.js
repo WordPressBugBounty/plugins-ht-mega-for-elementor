@@ -481,7 +481,7 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                                 <span class="ht-count htmega-next htmega-bottom">${next}</span>
                                 <span class="ht-count htmega-curr htmega-bottom">${curr}</span>
                             </div>
-                            <span class="htmega-label">${($countdownoptions['lavelhide'] == 'yes') ? '' : $('<p>').text($countdownoptions['htmegadaytxt']).html()}</span>
+                            <span class="htmega-label">${($countdownoptions['lavelhide'] == 'yes') ? '' : $('<p>').text($countdownoptions['htmegadaytxt']).prop('outerHTML')}</span>
                         </div>`
                     )
                 }else if(($countdownoptions['htmegahours'] == 'yes') && (label.toLowerCase() == 'hours')){
@@ -493,7 +493,7 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                                 <span class="ht-count htmega-next htmega-bottom">${next}</span>
                                 <span class="ht-count htmega-curr htmega-bottom">${curr}</span>
                             </div>
-                            <span class="htmega-label">${($countdownoptions['lavelhide'] == 'yes') ? '' : $('<p>').text($countdownoptions['htmegahourtxt']).html()}</span>
+                            <span class="htmega-label">${($countdownoptions['lavelhide'] == 'yes') ? '' : $('<p>').text($countdownoptions['htmegahourtxt']).prop('outerHTML')}</span>
                         </div>`
                     )
                 }else if(($countdownoptions['htmegaminiute'] == 'yes') && (label.toLowerCase() == 'mins')){
@@ -505,7 +505,7 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                                 <span class="ht-count htmega-next htmega-bottom">${next}</span>
                                 <span class="ht-count htmega-curr htmega-bottom">${curr}</span>
                             </div>
-                            <span class="htmega-label">${($countdownoptions['lavelhide'] == 'yes') ? '' : $('<p>').text($countdownoptions['htmegaminutestxt']).html()}</span>
+                            <span class="htmega-label">${($countdownoptions['lavelhide'] == 'yes') ? '' : $('<p>').text($countdownoptions['htmegaminutestxt']).prop('outerHTML')}</span>
                         </div>`
                     )
                 }else if(($countdownoptions['htmegasecond'] == 'yes') && (label.toLowerCase() == 'secs')){
@@ -517,7 +517,7 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                                 <span class="ht-count htmega-next htmega-bottom">${next}</span>
                                 <span class="ht-count htmega-curr htmega-bottom">${curr}</span>
                             </div>
-                            <span class="htmega-label">${($countdownoptions['lavelhide'] == 'yes') ? '' : $('<p>').text($countdownoptions['htmegasecondstxt']).html()}</span>
+                            <span class="htmega-label">${($countdownoptions['lavelhide'] == 'yes') ? '' : $('<p>').text($countdownoptions['htmegasecondstxt']).prop('outerHTML')}</span>
                         </div>`
                     )
                 }
@@ -599,10 +599,11 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                             minutes = '<span class="ht-count minutes"><span class="count-inner"><span class="time-count">%M</span> </span></span>';
                             second = '<span class="ht-count second"><span class="count-inner"><span class="time-count">%S</span> </span></span>';
                         }else{
-                            daysTime = '<span class="ht-count days"><span class="count-inner"><span class="time-count">%-D</span>'+$('<p>').text(countdownoptions.htmegadaytxt).html()+ '</span></span>';
-                            hours = '<span class="ht-count hour"><span class="count-inner"><span class="time-count">%-H</span> ' +$('<p>').text(countdownoptions.htmegahourtxt).html()+ '</span></span>';
-                            minutes = '<span class="ht-count minutes"><span class="count-inner"><span class="time-count">%M</span>' +$('<p>').text(countdownoptions.htmegaminutestxt).html()+ '</span></span>';
-                            second = '<span class="ht-count second"><span class="count-inner"><span class="time-count">%S</span>'+$('<p>').text(countdownoptions.htmegasecondstxt).html()+ '</span></span>';
+                            daysTime = '<span class="ht-count days"><span class="count-inner"><span class="time-count">%-D</span>' + $('<p>').text(countdownoptions.htmegadaytxt).prop('outerHTML') + '</span></span>';
+                            hours = '<span class="ht-count hour"><span class="count-inner"><span class="time-count">%-H</span>' +
+                            $('<p>').text(countdownoptions.htmegahourtxt).prop('outerHTML') + '</span></span>';
+                            minutes = '<span class="ht-count minutes"><span class="count-inner"><span class="time-count">%M</span>' + $('<p>').text(countdownoptions.htmegaminutestxt).prop('outerHTML') + '</span></span>';
+                            second = '<span class="ht-count second"><span class="count-inner"><span class="time-count">%S</span>' + $('<p>').text(countdownoptions.htmegasecondstxt).prop('outerHTML') + '</span></span>';
                         }
                         
                         // Total default target time

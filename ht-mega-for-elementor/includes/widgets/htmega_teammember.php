@@ -398,6 +398,15 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                     'selector' => '{{WRAPPER}} .htmega-team-style-7, {{WRAPPER}} .htmega-team',
                     'separator' =>'before',
                 ]
+            );
+            $this->add_group_control(
+                Group_Control_Box_Shadow::get_type(),
+                [
+                    'name' => 'team_item_hover_boxshadow',
+                    'label' => __( 'Box Shadow Hover', 'htmega-addons' ),
+                    'selector' => '{{WRAPPER}} .htmega-team:hover',
+                    'separator' =>'before',
+                ]
             );            
             $this->add_control(
                 'team_member_hover_content_bg',
@@ -1452,6 +1461,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
 
                 <?php 
                  $htmega_print_css = '';
+                 $htmega_print_css .=  " .{$sectionid}.htmega-team { transition: 0.3s; }";
 
                     if( 'no'== $settings['show_img_animation'] ){
                         $htmega_print_css .=  " .{$sectionid}.htmega-team-style-7:hover .htmega-thumb img,.{$sectionid}.htmega-team-style-6:hover .htmega-thumb img {

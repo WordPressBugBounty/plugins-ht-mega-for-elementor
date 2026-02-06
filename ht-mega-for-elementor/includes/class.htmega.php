@@ -154,6 +154,7 @@ final class HTMega_Addons_Elementor {
             }
             // Admin Notices
             add_action( 'admin_head', [ $this, 'admin_rating_notice' ] );
+            add_action( 'admin_head', [ $this, 'admin_promo_notice' ] );
             if ( is_plugin_active('htmega-pro/htmega_pro.php' ) ) {
                 add_action( 'admin_head', [ $this, 'admin_htmega_pro_version_compatibily' ] );
             }
@@ -309,6 +310,26 @@ final class HTMega_Addons_Elementor {
         );
     }
 
+    /**
+     * [admin_promo_notice]
+     * @return [void] Promo banner admin notice
+     */
+    public function admin_promo_notice(){
+
+        if ( is_plugin_active('htmega-pro/htmega_pro.php' ) ) {
+            return;
+        }
+        // showing notice through the remote api
+        $noticeManager = HTMega_Notice_Manager::instance();
+        $notices = $noticeManager->get_notices_info();
+        if(!empty($notices)) {
+            foreach ($notices as $notice) {
+                if(empty($notice['disable'])) {
+                    HasTech_Notices::set_notice($notice);
+                }
+            }
+        }
+    }
 
 
     /**

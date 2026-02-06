@@ -671,3 +671,34 @@ if ( ! function_exists( 'htmega_get_remote_file_data' ) ) {
         return $data;
     }
 }
+
+/**
+ * Sanitize HTML tag names with a whitelist of safe tags
+ * Prevents XSS attacks by only allowing safe HTML tags
+ *
+ * @param string $tag The tag name to sanitize
+ * @return string Sanitized tag name, defaults to 'div' if invalid
+ */
+if ( ! function_exists( 'htmegaBlocks_sanitize_tag' ) ) {
+    function htmegaBlocks_sanitize_tag( $tag ) {
+        // Whitelist of safe HTML5 tags
+        $allowed_tags = [
+            'div', 'span', 'p', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+            'ul', 'ol', 'li', 'dl', 'dt', 'dd', 'blockquote', 'pre', 'code',
+            'section', 'article', 'header', 'footer', 'nav', 'aside', 'main',
+            'strong', 'em', 'b', 'i', 'u', 'sub', 'sup', 'del', 'ins',
+            'figure', 'figcaption', 'time', 'mark', 'q', 'abbr', 'cite'
+        ];
+
+        // Convert to lowercase and trim whitespace
+        $tag = strtolower( trim( $tag ) );
+
+        // If tag is in whitelist, return it
+        if ( in_array( $tag, $allowed_tags, true ) ) {
+            return $tag;
+        }
+
+        // Default to div if tag is not in whitelist
+        return 'div';
+    }
+}

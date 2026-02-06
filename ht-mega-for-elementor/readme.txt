@@ -2,8 +2,8 @@
 Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasib, madhusudandev
 Tags: elementor, elementor addons, elementor widgets, page builder, elementor templates, mega menu, addons for elementor, post grid, elements, header footer builder
 Requires at least: 5.0
-Tested up to: 6.8
-Stable tag: 2.9.6
+Tested up to: 6.9
+Stable tag: 3.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -236,6 +236,50 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 3.0.5 - Date: 2026-01-25 =
+* Added: Team Wrapper Hover Box Shadow option for the Team Member widget.
+* Added: Review Title input field to the Testimonial Grid widget.
+* Added: [Law Home Dark (Modern) Template Kit](https://library.wphtmega.com/law-home-dark-modern/).
+* Fixed: Designation margin issue in the Testimonial Grid widget.
+* Tested: Compatibility with the latest version of Elementor.
+
+= Version 3.0.4 - Date: 2025-12-24 =
+* Fixed: Template library request issue.
+* Tested: Compatibility with the latest version of Elementor.
+
+= Version 3.0.3 - Date: 2025-12-22 =
+* Fixed: Library transient size issue.
+* Tested: Compatibility with the latest version of Elementor.
+
+= Version 3.0.2 - Date: 2025-12-09 =
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
+
+= Version 3.0.1 - Date: 2025-11-19 =
+* Fixed: Button Gutenberg block display issue.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+
+= Version 3.0.0 - Date: 2025-11-13 =
+* Updated: Language translation file.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+
+= Version 2.9.9 - Date: 2025-11-05 =
+* Fixed: Label Style not applied issue in Countdown widget.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+
+= Version 2.9.8 - Date: 2025-10-23 =
+* Added: [Portfolio Home Light (Modern) Template Kit](https://library.wphtmega.com/portfolio-home-light-modern/).
+* Fixed: Issue with Template library template filtering.
+* Fixed: A few minor issues.
+
+= Version 2.9.7 - Date: 2025-10-06 =
+* Fixed: Issue with Wrapper Link not working in some cases.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
 
 = Version 2.9.6 - Date: 2025-09-21 =
 * Added: Dynamic tag support in Counter, Dropcaps and Countdown Widgets.

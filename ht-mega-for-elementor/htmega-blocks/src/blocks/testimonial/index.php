@@ -105,7 +105,7 @@ ob_start();
 						<?php if ($showName) {
 							printf(
 								'<%1$s class="htmega-testimonial-name">%2$s</%1$s>',
-								tag_escape($titleTag),
+								htmegaBlocks_sanitize_tag($titleTag),
 								esc_html($testimonial['name'])
 							);
 						} ?>

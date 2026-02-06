@@ -13,28 +13,29 @@ try {
         require_once ABSPATH . 'wp-admin/includes/plugin.php';
     }
 
-    if (class_exists('HTMega_Template_Library')) {
-        $template_data = HTMega_Template_Library::instance()->get_templates_info();
-        
+    if (class_exists('HTMega_Notice_Manager')) {
+        // showing sidbar  through the remote api
+        $noticeManager = HTMega_Notice_Manager::instance();
+        $notices = $noticeManager->get_sidebar_info();
         if (is_plugin_active('htmega-pro/htmega_pro.php')) {
             $htmega_license_title = apply_filters('htmega_license_title', 'lifetime'); 
             if (!str_contains($htmega_license_title, 'Growth') && !str_contains($htmega_license_title, 'Unlimited - Lifetime')) {
-                if (isset($template_data['notices']['sidebar'][1]['status']) && !empty($template_data['notices']['sidebar'][1]['status'])) {
+                if (isset($notices[1]['status']) && !empty($notices[1]['status']) && !empty($notices[1]['bannerimage']) ) {
                     ?>
                     <div class="htmega-opt-sidebar-item htmega-opt-banner-image">
-                        <a href="<?php echo esc_url($template_data['notices']['sidebar'][1]['bannerlink']); ?>" target="_blank">
-                            <img class="htoptions-banner-img" src="<?php echo esc_url($template_data['notices']['sidebar'][1]['bannerimage']); ?>" alt="<?php echo esc_attr__('HT Mega Addons', 'htmega-addons'); ?>"/>
+                        <a href="<?php echo esc_url($notices[1]['bannerlink']); ?>" target="_blank">
+                            <img class="htoptions-banner-img" src="<?php echo esc_url($notices[1]['bannerimage']); ?>" alt="<?php echo esc_attr__('HT Mega Addons', 'htmega-addons'); ?>"/>
                         </a>
                     </div>
                     <?php
                 }
             }
         } else { 
-            if (isset($template_data['notices']['sidebar'][0]['status']) && !empty($template_data['notices']['sidebar'][0]['status'])) {
+            if (isset($notices[0]['status']) && !empty($notices[0]['status']) && !empty($notices[0]['bannerimage']) ) {
                 ?>
                 <div class="htmega-opt-sidebar-item htmega-opt-banner-image">
-                    <a href="<?php echo esc_url($template_data['notices']['sidebar'][0]['bannerlink']); ?>" target="_blank">
-                        <img class="htoptions-banner-img" src="<?php echo esc_url($template_data['notices']['sidebar'][0]['bannerimage']); ?>" alt="<?php echo esc_attr__('HT Mega Addons', 'htmega-addons'); ?>"/>
+                    <a href="<?php echo esc_url($notices[0]['bannerlink']); ?>" target="_blank">
+                        <img class="htoptions-banner-img" src="<?php echo esc_url($notices[0]['bannerimage']); ?>" alt="<?php echo esc_attr__('HT Mega Addons', 'htmega-addons'); ?>"/>
                     </a>
                 </div>
                 <?php

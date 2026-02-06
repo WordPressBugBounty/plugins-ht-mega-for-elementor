@@ -52,7 +52,7 @@ class Blocks_List
                 'name' => 'htmega/button',
                 'server_side_render' => true,
                 'type' => 'common',
-                'active' => htmegaBlocks_get_option('button', 'htmega_gutenberg_tabs', 'off') === 'on' ? true : false,
+                'active' => htmegaBlocks_get_option('buttons', 'htmega_gutenberg_tabs', 'off') === 'on' ? true : false,
             ],
             'cta' => [
                 'label' => 'Call To Action',

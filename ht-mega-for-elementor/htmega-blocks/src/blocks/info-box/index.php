@@ -52,10 +52,10 @@
 					esc_attr($item['image']['height']),
 				);
 
-				$title = !empty($item['title']) ? "<" . tag_escape($titleTag) ." class='htmega-info-box-item-title'>
+				$title = !empty($item['title']) ? "<" . htmegaBlocks_sanitize_tag($titleTag) ." class='htmega-info-box-item-title'>
 					<a {$link} " . esc_attr($target) . " " . esc_attr($rel) . ">" . esc_html($item['title']) ."</a>
 					{$title_shape}
-				</" . tag_escape($titleTag) .">" : "";
+				</" . htmegaBlocks_sanitize_tag($titleTag) .">" : "";
 				$desc = !empty($item['desc']) ? "<p class='htmega-info-box-item-desc'>" . esc_html($item['desc']) . "</p>" : "";
 				$button = !$hideButton && isset($item['linkText']) && !empty($item['linkText']) ? "<div class='htmega-info-box-item-link'><a {$link} " . esc_attr($target) . " " . esc_attr($rel) . ">" . esc_html($item['linkText']) . "</a></div>" : "";
 

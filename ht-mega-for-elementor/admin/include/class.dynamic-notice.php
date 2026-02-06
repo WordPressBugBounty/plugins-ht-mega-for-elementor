@@ -140,7 +140,17 @@ if ( ! class_exists( 'HasTech_Notices' ) ){
             }
             .hastech-review-notice-content h3 {
                 margin: 0;
-            }";
+            }
+            #hastech-notice-id-htmega-halloween-notice, #hastech-notice-id-htmega-promotional-banner {
+                padding: 10px!important;
+                border-radius: 8px;
+                border-left-color: #4b138a;
+                line-height: 0;
+            }
+            #hastech-notice-id-htmega-halloween-notice .notice-dismiss:before, #hastech-notice-id-htmega-promotional-banner .notice-dismiss:before{
+                color:#ddd;
+            }
+            ";
 
             $scripts = "jQuery(document).ready( function($) {
                 $( '.hastech-admin-notice.is-dismissible' ).on( 'click', '.notice-dismiss,.hastech-notice-close', function(e) {
@@ -361,7 +371,7 @@ if ( ! class_exists( 'HasTech_Notices' ) ){
                         }
 
                         // Notice Message
-                        if( $notice_arg['message_type'] === 'text'){
+                        if( $notice_arg['message_type'] === 'text' && !empty( $notice_arg['message'] ) ){
                             printf('<p>%1$s</p>', esc_html( $notice_arg['message'] ) );
                         }else{
                             echo wp_kses_post( $notice_arg['message'] );

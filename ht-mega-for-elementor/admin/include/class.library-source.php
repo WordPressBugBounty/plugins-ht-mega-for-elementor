@@ -57,7 +57,7 @@ class Library_Source extends Source_Base {
 	 */
 	public static function get_library_data() {
 
-		$data = get_transient( 'htmega_template_info' );
+		$data = \HTMega_Template_Library::instance()->get_templates_info();
 
 		if ( empty( $data ) ) {
 			return [];

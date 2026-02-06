@@ -183,6 +183,14 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
             );
 
             $repeater->add_control(
+                'client_title',
+                [
+                    'label'   => __( 'Title', 'htmega-addons' ),
+                    'type'    => Controls_Manager::TEXT,
+                ]
+            );
+
+            $repeater->add_control(
                 'client_rating',
                 [
                     'label' => __( 'Client Rating', 'htmega-addons' ),
@@ -455,7 +463,7 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
                         '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .content h4' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                        '{{WRAPPER}} {{WRAPPER}} .htmega-testimonialgrid-area .testimonal .clint-info h4' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .clint-info h4' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                     'separator' =>'before',
                 ]
@@ -514,8 +522,8 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
-                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .content span' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .clint-info span' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .content span' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; display: inline-block;',
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .clint-info span' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; display: inline-block;',
                     ],
                     'separator' =>'before',
                 ]
@@ -528,8 +536,8 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
-                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .content span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .clint-info span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .content span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; display: inline-block;',
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .clint-info span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; display: inline-block;',
                     ],
                     'separator' =>'before',
                 ]
@@ -679,6 +687,52 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
             );
         $this->end_controls_section(); // Style Testimonial designation style end
 
+        // Style Testimonial Title style start
+        $this->start_controls_section(
+            'htmega_testimonial_title_style',
+            [
+                'label'     => __( 'Title', 'htmega-addons' ),
+                'tab'       => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+            $this->add_control(
+                'htmega_testimonial_title_color',
+                [
+                    'label' => __( 'Color', 'htmega-addons' ),
+                    'type' => Controls_Manager::COLOR,
+                    'default' => '#383838',
+                    'selectors' => [
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .content .client-title' => 'color: {{VALUE}};',
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .client-title' => 'color: {{VALUE}};',
+                    ],
+                ]
+            );
+
+            $this->add_group_control(
+                Group_Control_Typography::get_type(),
+                [
+                    'name' => 'htmega_testimonial_title_typography',
+                    'selector' => '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .content .client-title, {{WRAPPER}} .htmega-testimonialgrid-area .testimonal .client-title',
+                ]
+            );
+
+            $this->add_responsive_control(
+                'htmega_testimonial_title_margin',
+                [
+                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'type' => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%', 'em' ],
+                    'selectors' => [
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .content .client-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .htmega-testimonialgrid-area .testimonal .client-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    ],
+                    'separator' =>'before',
+                ]
+            );
+
+        $this->end_controls_section(); // Style Testimonial Title style end
+
         // Style Testimonial designation style start
         $this->start_controls_section(
             'htmega_testimonial_clientrating_style',
@@ -753,6 +807,9 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
                                 ?>
                                 <div class="content">
                                     <?php
+                                        if( !empty($testimonial['client_title']) ){
+                                            echo '<h5 class="client-title">'.htmega_kses_title( $testimonial['client_title'] ).'</h5>';
+                                        }
                                         if( !empty($testimonial['client_say']) ){
                                             echo '<p>'.htmega_kses_desc( $testimonial['client_say'] ).'</p>';
                                         }
@@ -795,6 +852,9 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
                             <div class="testimonal">
                                 <div class="content">
                                     <?php
+                                        if( !empty($testimonial['client_title']) ){
+                                            echo '<h5 class="client-title">'.htmega_kses_title( $testimonial['client_title'] ).'</h5>';
+                                        }
                                         if( !empty($testimonial['client_say']) ){
                                             echo '<p>'.htmega_kses_desc( $testimonial['client_say'] ).'</p>';
                                         }
@@ -874,6 +934,9 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
                                     </div>
                                 </div>
                                 <?php
+                                    if( !empty($testimonial['client_title']) ){
+                                        echo '<h5 class="client-title">'.htmega_kses_title( $testimonial['client_title'] ).'</h5>';
+                                    }
                                     if( !empty($testimonial['client_say'] ) ){
                                         echo '<p>'.htmega_kses_desc( $testimonial['client_say'] ).'</p>';
                                     }
@@ -919,6 +982,9 @@ class HTMega_Elementor_Widget_Testimonial_Grid extends Widget_Base {
                                     </div>
                                 </div>
                                 <?php
+                                    if( !empty($testimonial['client_title']) ){
+                                        echo '<h5 class="client-title">'.htmega_kses_title( $testimonial['client_title'] ).'</h5>';
+                                    }
                                     if( !empty($testimonial['client_say']) ){
                                         echo '<p>'.htmega_kses_desc( $testimonial['client_say'] ).'</p>';
                                     }

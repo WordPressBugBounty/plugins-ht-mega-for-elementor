@@ -25,7 +25,7 @@
 			
 			<div class='htmega-team-content'>
 				<div class='htmega-team-content-inner'>
-					<<?php echo tag_escape($settings['nameTag']); ?> class='htmega-team-name'><?php echo esc_html($settings['name']); ?></<?php echo tag_escape($settings['nameTag']); ?>>
+					<<?php echo htmegaBlocks_sanitize_tag($settings['nameTag']); ?> class='htmega-team-name'><?php echo esc_html($settings['name']); ?></<?php echo htmegaBlocks_sanitize_tag($settings['nameTag']); ?>>
 					<span class='htmega-team-designation'><?php echo esc_html($settings['designation']) ?></span>
 					<?php echo $settings['showBio'] ? "<p class='htmega-team-bio'>" . esc_html($settings['bio']) ."</p>" : ''; ?>
 				</div>

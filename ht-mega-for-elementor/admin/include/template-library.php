@@ -5,10 +5,15 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 class HTMega_Template_Library{
 
     const TRANSIENT_KEY = 'htmega_template_info';
+    const CACHE_DIR = 'htmega-addons';
+    const CACHE_FILE = 'htmega_template_info.json';
+    const CACHE_META_FILE = 'htmega_template_meta.json';
+    const CACHE_EXPIRY = 604800; // WEEK_IN_SECONDS
     public static $buylink = null;
 
     public static $endpoint     = 'https://library.wphtmega.com/wp-json/htmega/v1/templates';
     public static $templateapi  = 'https://library.wphtmega.com/wp-json/htmega/v1/templates/%s';
+
 
     public static $api_args = [];
 
@@ -40,34 +45,103 @@ class HTMega_Template_Library{
     }
 
     /**
-     * AJAX endpoint for fetching templates
+     * AJAX endpoint for fetching templates with per-user rate limiting
      */
     public function get_templates_ajax() {
         check_ajax_referer('htmega_actication_verifynonce', 'nonce');
-        
-        // Check last request time and clear transients if needed
-        $stror_time = (int) get_option('htmega_api_last_req');
-        if ($stror_time) {
-            if (time() > $stror_time + 604800) {
-                update_option('htmega_api_last_req', time());
-                delete_transient('htmega_template_info');
-                delete_transient('htmega_template_request_pending');
-                delete_transient('htmega_severdown_request_pending');
+
+        $force_refresh = false;
+
+        // Check if this is a manual refresh request
+        $is_manual_refresh = isset($_POST['manual_refresh']) && $_POST['manual_refresh'] === 'true';
+
+        if ($is_manual_refresh) {
+            // Production: 24-hour limit per user for manual refresh
+            $refresh_limit_seconds = 86400; // 24 hours in seconds
+
+            // Check if user already refreshed in the last 24 hours
+            $last_user_refresh = get_transient('htmega_user_refresh_' . get_current_user_id());
+
+            if ($last_user_refresh) {
+                // User already refreshed within 24 hours, return cached data
+                $cached = get_transient(self::TRANSIENT_KEY);
+
+                // Calculate time remaining until next refresh allowed
+                $time_passed = time() - (int)$last_user_refresh;
+                $time_remaining = $refresh_limit_seconds - $time_passed;
+                $hours_remaining = ceil($time_remaining / 3600);
+
+                if ($cached && !empty($cached)) {
+                    wp_send_json_success([
+                        'templates' => $cached,
+                        'message' => sprintf(
+                            __('You can refresh templates once every 24 hours. Next refresh available in %d hours.', 'htmega-addons'),
+                            $hours_remaining
+                        ),
+                        'cached' => true
+                    ]);
+                    return;
+                }
             }
+
+            // Check if we're in a server failure backoff period
+            if (get_transient('htmega_api_backoff')) {
+                $failure_count = get_transient('htmega_api_failure_count');
+                $retry_after = $failure_count ? min(60 * pow(2, $failure_count - 3), 360) : 60;
+
+                $cached = get_transient(self::TRANSIENT_KEY);
+                if ($cached && !empty($cached)) {
+                    wp_send_json_success([
+                        'templates' => $cached,
+                        'message' => sprintf(
+                            __('Template server is temporarily unavailable. Showing cached data. Server will be checked again in %d minutes.', 'htmega-addons'),
+                            $retry_after
+                        ),
+                        'cached' => true
+                    ]);
+                    return;
+                }
+
+                wp_send_json_error([
+                    'message' => __('Template server is temporarily unavailable. Please try again later.', 'htmega-addons'),
+                    'retry_after' => $retry_after
+                ]);
+                return;
+            }
+
+            // User can refresh - set the timestamp and force update
+            set_transient('htmega_user_refresh_' . get_current_user_id(), time(), 86400);
+            $force_refresh = true;
+
         } else {
-            update_option('htmega_api_last_req', time());
-            delete_transient('htmega_template_info');
-            delete_transient('htmega_template_request_pending');
-            delete_transient('htmega_severdown_request_pending');
+            // Regular page load - check for weekly auto-refresh
+            $last_auto_refresh = (int) get_option('htmega_api_last_req');
+            $week_in_seconds = 604800;
+
+            if (!$last_auto_refresh || (time() > $last_auto_refresh + $week_in_seconds)) {
+                // Only auto-refresh if not in backoff
+                if (!get_transient('htmega_api_backoff')) {
+                    update_option('htmega_api_last_req', time());
+                    $force_refresh = true;
+                }
+            }
         }
 
-        // Get fresh template info
-        $template_info = $this->get_templates_info();
-        
-        if ($template_info) {
+        // Get template info (with caching and rate limiting)
+        $template_info = $this->get_templates_info($force_refresh);
+
+        if ($template_info && !empty($template_info)) {
             wp_send_json_success($template_info);
         } else {
-            wp_send_json_error(['message' => __('No templates found', 'htmega-addons')]);
+            // If no data, return cached data if available
+            $cached = get_transient(self::TRANSIENT_KEY);
+            if ($cached && !empty($cached)) {
+                wp_send_json_success($cached);
+            } else {
+                wp_send_json_error([
+                    'message' => __('Unable to load templates at this time. Please try again later.', 'htmega-addons')
+                ]);
+            }
         }
     }
 
@@ -140,32 +214,281 @@ class HTMega_Template_Library{
         return self::$buylink;
     }
 
-    public static function request_remote_templates_info( $force_update ) {
-        global $wp_version;
-        if ($force_update) {
-            delete_transient('htmega_severdown_request_pending');
-        } 
-        // Check server down status only if not forcing update
-        else if (get_transient('htmega_severdown_request_pending')) {
-            return [];
+    /**
+     * Initialize WP_Filesystem
+     */
+    private static function init_filesystem() {
+        global $wp_filesystem;
+
+        if ( ! $wp_filesystem || ! is_object( $wp_filesystem ) ) {
+            if ( ! function_exists( 'WP_Filesystem' ) ) {
+                require_once ABSPATH . 'wp-admin/includes/file.php';
+            }
+
+            $upload_dir = wp_upload_dir();
+            WP_Filesystem( false, $upload_dir['basedir'], true );
         }
 
+        return ( $wp_filesystem && is_object( $wp_filesystem ) );
+    }
+
+    /**
+     * Get cache directory path
+     */
+    public static function get_cache_dir() {
+        $upload_dir = wp_upload_dir();
+        return trailingslashit( $upload_dir['basedir'] ) . self::CACHE_DIR . '/cache';
+    }
+
+    /**
+     * Get cache file path
+     */
+    public static function get_cache_file_path() {
+        return trailingslashit( self::get_cache_dir() ) . self::CACHE_FILE;
+    }
+
+    /**
+     * Get cache meta file path
+     */
+    public static function get_cache_meta_path() {
+        return trailingslashit( self::get_cache_dir() ) . self::CACHE_META_FILE;
+    }
+
+    /**
+     * Create cache directory if not exists
+     */
+    public static function create_cache_dir() {
+        global $wp_filesystem;
+
+        if ( ! self::init_filesystem() ) {
+            return false;
+        }
+
+        $upload_dir = wp_upload_dir();
+        $plugin_dir = trailingslashit( $upload_dir['basedir'] ) . self::CACHE_DIR;
+        $cache_dir  = self::get_cache_dir();
+
+        // Create parent plugin directory if not exists
+        if ( ! $wp_filesystem->exists( $plugin_dir ) ) {
+            wp_mkdir_p( $plugin_dir );
+            $wp_filesystem->put_contents( trailingslashit( $plugin_dir ) . 'index.php', '<?php // Silence is golden', FS_CHMOD_FILE );
+        }
+
+        // Create cache directory if not exists
+        if ( ! $wp_filesystem->exists( $cache_dir ) ) {
+            $created = wp_mkdir_p( $cache_dir );
+
+            if ( $created ) {
+                // Create .htaccess for security
+                $htaccess_content = "Options -Indexes\n<Files *.json>\n    Order Allow,Deny\n    Allow from all\n</Files>";
+                $wp_filesystem->put_contents( trailingslashit( $cache_dir ) . '.htaccess', $htaccess_content, FS_CHMOD_FILE );
+
+                // Create index.php for security
+                $wp_filesystem->put_contents( trailingslashit( $cache_dir ) . 'index.php', '<?php // Silence is golden', FS_CHMOD_FILE );
+            }
+        }
+
+        return $wp_filesystem->is_dir( $cache_dir ) && $wp_filesystem->is_writable( $cache_dir );
+    }
+
+    /**
+     * Save data to cache file
+     */
+    public static function save_cache_file( $data ) {
+        global $wp_filesystem;
+
+        if ( ! self::create_cache_dir() ) {
+            return false;
+        }
+
+        $file_path = self::get_cache_file_path();
+        $json_data = wp_json_encode( $data );
+
+        $saved = $wp_filesystem->put_contents( $file_path, $json_data, FS_CHMOD_FILE );
+
+        if ( $saved ) {
+            self::update_cache_meta( strlen( $json_data ) );
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Update cache meta information
+     */
+    public static function update_cache_meta( $size = 0 ) {
+        global $wp_filesystem;
+
+        if ( ! self::init_filesystem() ) {
+            return;
+        }
+
+        $meta_path = self::get_cache_meta_path();
+        $meta = [];
+
+        if ( $wp_filesystem->exists( $meta_path ) ) {
+            $meta_content = $wp_filesystem->get_contents( $meta_path );
+            if ( $meta_content !== false ) {
+                $meta = json_decode( $meta_content, true ) ?: [];
+            }
+        }
+
+        $meta['template'] = [
+            'timestamp' => time(),
+            'version'   => HTMEGA_VERSION,
+            'size'      => $size
+        ];
+
+        $wp_filesystem->put_contents( $meta_path, wp_json_encode( $meta ), FS_CHMOD_FILE );
+    }
+
+    /**
+     * Read data from cache file
+     */
+    public static function get_cache_file() {
+        global $wp_filesystem;
+
+        if ( ! self::init_filesystem() ) {
+            return null;
+        }
+
+        $file_path = self::get_cache_file_path();
+
+        if ( ! $wp_filesystem->exists( $file_path ) ) {
+            return null;
+        }
+
+        $content = $wp_filesystem->get_contents( $file_path );
+
+        if ( $content === false ) {
+            return null;
+        }
+
+        return json_decode( $content, true );
+    }
+
+    /**
+     * Check if cache is valid (not expired)
+     */
+    public static function is_cache_valid() {
+        global $wp_filesystem;
+
+        if ( ! self::init_filesystem() ) {
+            return false;
+        }
+
+        $file_path = self::get_cache_file_path();
+
+        if ( ! $wp_filesystem->exists( $file_path ) ) {
+            return false;
+        }
+
+        $meta_path = self::get_cache_meta_path();
+
+        if ( ! $wp_filesystem->exists( $meta_path ) ) {
+            // Fallback to filemtime if meta doesn't exist
+            $file_time = filemtime( $file_path );
+            return ( time() - $file_time ) < self::CACHE_EXPIRY;
+        }
+
+        $meta_content = $wp_filesystem->get_contents( $meta_path );
+        if ( $meta_content === false ) {
+            return false;
+        }
+
+        $meta = json_decode( $meta_content, true );
+
+        if ( ! isset( $meta['template']['timestamp'] ) ) {
+            // Fallback to filemtime if timestamp not in meta
+            $file_time = filemtime( $file_path );
+            return ( time() - $file_time ) < self::CACHE_EXPIRY;
+        }
+
+        return ( time() - $meta['template']['timestamp'] ) < self::CACHE_EXPIRY;
+    }
+
+    /**
+     * Clear cache files
+     */
+    public static function clear_cache() {
+        global $wp_filesystem;
+
+        if ( ! self::init_filesystem() ) {
+            return false;
+        }
+
+        $cache_dir = self::get_cache_dir();
+
+        if ( ! $wp_filesystem->is_dir( $cache_dir ) ) {
+            return true;
+        }
+
+        $file_path = self::get_cache_file_path();
+        if ( $wp_filesystem->exists( $file_path ) ) {
+            $wp_filesystem->delete( $file_path );
+        }
+        
+        // Clear meta file
+        $meta_path = self::get_cache_meta_path();
+        if ( $wp_filesystem->exists( $meta_path ) ) {
+            $wp_filesystem->delete( $meta_path );
+        }
+
+        return true;
+    }
+
+    public static function request_remote_templates_info( $force_update ) {
+        global $wp_version;
+
+        // Check if we should skip the request due to recent failures
+        if (!$force_update) {
+            $failure_count = get_transient('htmega_api_failure_count');
+            if ($failure_count !== false && $failure_count >= 3) {
+                // If we've failed 3+ times, check if backoff period has passed
+                if (get_transient('htmega_api_backoff')) {
+                    return [];
+                }
+            }
+        } else {
+            // Force update clears failure tracking
+            delete_transient('htmega_api_failure_count');
+            delete_transient('htmega_api_backoff');
+            delete_transient('htmega_severdown_request_pending');
+        }
 
         $timeout = ( $force_update ) ? 25 : 8;
         $request = wp_remote_get(
             self::get_api_endpoint(),
             [
                 'timeout'    => $timeout,
-                'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url()
+                'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url(),
+                'sslverify'  => true,
             ]
         );
 
         if ( is_wp_error( $request ) || 200 !== (int) wp_remote_retrieve_response_code( $request ) ) {
+            // Track failure count
+            $failure_count = get_transient('htmega_api_failure_count');
+            $failure_count = ($failure_count === false) ? 1 : $failure_count + 1;
+            set_transient('htmega_api_failure_count', $failure_count, 12 * HOUR_IN_SECONDS);
+
+            // Implement exponential backoff
+            if ($failure_count >= 3) {
+                $backoff_time = min(60 * pow(2, $failure_count - 3), 360); // 1, 2, 4... up to 6 hours
+                set_transient('htmega_api_backoff', true, $backoff_time * MINUTE_IN_SECONDS);
+            }
+
+            // Set general server down flag for backward compatibility
             set_transient('htmega_severdown_request_pending', 'Pending request for server down', 60 * MINUTE_IN_SECONDS);
             return [];
         }
-        // Clear server down status on successful request
+
+        // Clear failure tracking on successful request
+        delete_transient('htmega_api_failure_count');
+        delete_transient('htmega_api_backoff');
         delete_transient('htmega_severdown_request_pending');
+
         $response = json_decode( wp_remote_retrieve_body( $request ), true );
         return $response;
 
@@ -175,29 +498,62 @@ class HTMega_Template_Library{
      * Retrieve template library and save as a transient.
      */
     public static function set_templates_info( $force_update = false ) {
-
-        $transient = get_transient( self::TRANSIENT_KEY );
-        if ( ! $transient || $force_update ) {
-            $info = self::request_remote_templates_info( $force_update );
-            set_transient( self::TRANSIENT_KEY, $info, 30 * DAY_IN_SECONDS );
+        $info = self::request_remote_templates_info( $force_update );
+    
+        // Always set something so subsequent calls see the cache (even if empty).
+        if ( null === $info ) {
+            $info = [];
         }
+        
+        // Save to file cache
+        self::save_cache_file( $info );
+
+        // Clear usage of transient
+        delete_transient( self::TRANSIENT_KEY );
     }
 
     /**
-     * Get template info.
+     * Get template info with intelligent caching and retry logic.
      */
     public function get_templates_info( $force_update = false ) {
-        if ( ! get_transient( self::TRANSIENT_KEY ) || $force_update ) {
-            self::set_templates_info( true );
+        // First, check if we have cached data
+        $cached = null;
+        if ( self::is_cache_valid() ) {
+            $cached = self::get_cache_file();
         }
-        return get_transient( self::TRANSIENT_KEY );
+
+        // If forcing update, always try to fetch fresh data
+        if ( $force_update ) {
+            self::set_templates_info( true );
+            $cached = self::get_cache_file();
+        }
+        // If no cache exists and not in backoff period, try to fetch
+        elseif ( empty( $cached ) ) {
+            // Check if we're in a backoff period before making request
+            if ( ! get_transient('htmega_api_backoff') ) {
+                self::set_templates_info( false );
+                $cached = self::get_cache_file();
+            }
+        }
+        
+        // Backward compatibility migration: If no file cache, check transient
+        if ( empty($cached) ) {
+            $transient_data = get_transient( self::TRANSIENT_KEY );
+            if ( ! empty($transient_data) ) {
+                $cached = $transient_data;
+                self::save_cache_file( $cached );
+                delete_transient( self::TRANSIENT_KEY );
+            }
+        }
+
+        // Return cached data (could be empty array if API is down)
+        return $cached ? $cached : [];
     }
     /**
      * Ajax request.
      */
     function templates_ajax_request(){
         
-        //file_put_contents( __DIR__.'/log.txt', print_r( $_REQUEST, true ) );
         check_ajax_referer('htmega_actication_verifynonce', 'plgactivenonce');
 
         if ( isset( $_REQUEST ) ) {
@@ -367,7 +723,6 @@ class HTMega_Template_Library{
 
         $plugin_file = $plugin_data['location'];
         $plugin_path = WP_PLUGIN_DIR . '/' . $plugin_file;
-        error_log("Activating plugin at: {$plugin_path}");
 
         if ( ! file_exists( $plugin_path ) ) {
             wp_send_json_error(
@@ -390,7 +745,6 @@ class HTMega_Template_Library{
             );
         }
 
-        error_log('Plugin activated successfully: ' . $plugin_file);
         wp_send_json_success(
             array(
                 'success' => true,

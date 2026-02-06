@@ -86,9 +86,9 @@
 						'<%s class="htmega-section-heading-title">
 							%s
 						</%s>',
-                        tag_escape($settings['titleTag']),
+                        htmegaBlocks_sanitize_tag($settings['titleTag']),
                         wp_kses_post($title),
-                        tag_escape($settings['titleTag'])
+                        htmegaBlocks_sanitize_tag($settings['titleTag'])
 					);
 					if($settings['titleSeparator'] && ($settings['titleSeparatorPosition'] == 'after' || empty($settings['titleSeparatorPosition']))) {
 						echo $titleSeparator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

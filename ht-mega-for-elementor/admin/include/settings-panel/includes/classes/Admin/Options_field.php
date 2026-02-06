@@ -466,7 +466,7 @@ class Options_Field {
                     'label_off' => __( 'Off', 'htmega-addons' ),
                     'category' => __( 'Creative Widgets', 'htmega-addons' ),
                     'video_link' => 'https://wphtmega.com/widget/elementor-off-canvas-widget/',
-                    'doc_link' => 'https://wphtmega.com/docs/creative-widgets/off-canvas-widget/',
+                    'doc_link' => 'https://wphtmega.com/docs/creative-widgets/offcanvas-widget/',
                 ),
             
                 array(

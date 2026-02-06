@@ -38,6 +38,7 @@ class HTMega_Admin_Setting{
         require_once ('include/class.htmega-elementor-template-library.php' );
         require_once ('include/class.library-source.php' );
         require_once( 'include/class.dynamic-notice.php' ); // dynamic notice file
+        require_once( 'include/class-notice-manager.php' ); // notice manager file
         require_once( HTMEGA_ADDONS_PL_PATH.'includes/class.api.php' );
         if( ! class_exists( 'HTMega_Settings_API' ) ) {
             require_once ( HTMEGA_ADDONS_PL_PATH . '/admin/include/class.settings-api.php' );
@@ -69,9 +70,9 @@ class HTMega_Admin_Setting{
          ( htmega_get_option( 'megamenubuilder', 'htmega_advance_element_tabs', 'off' ) === 'on' && empty ( htmega_get_module_option( 'htmega_megamenu_module_settings') ) ) ) {
             require_once( HTMEGA_ADDONS_PL_PATH.'extensions/ht-menu/admin/setting.php' );
         }
-        if ( get_option( 'htmega_onboarding_completed' ) ) {
-            require_once( 'include/class-trail.php' ); // trial notice file
-        }
+        // if ( get_option( 'htmega_onboarding_completed' ) ) {
+        //     require_once( 'include/class-trail.php' ); // trial notice file
+        // }
 
     }
 
