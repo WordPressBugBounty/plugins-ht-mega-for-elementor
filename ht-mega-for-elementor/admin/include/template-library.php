@@ -8,7 +8,7 @@ class HTMega_Template_Library{
     const CACHE_DIR = 'htmega-addons';
     const CACHE_FILE = 'htmega_template_info.json';
     const CACHE_META_FILE = 'htmega_template_meta.json';
-    const CACHE_EXPIRY = 604800; // WEEK_IN_SECONDS
+    const CACHE_EXPIRY = 2592000; // 30 days in seconds
     public static $buylink = null;
 
     public static $endpoint     = 'https://library.wphtmega.com/wp-json/htmega/v1/templates';

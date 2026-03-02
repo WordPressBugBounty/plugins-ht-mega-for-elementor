@@ -6,7 +6,7 @@ if ( ! class_exists( 'HTMega_Elementor_Assests_Cache' ) ) {
 
     class HTMega_Elementor_Assests_Cache {
 
-        const UPLOADS_DIR = 'htmega/';
+        const UPLOADS_DIR = 'htmega-addons/';
         const CSS_DIR = 'css/';
         const FILE_PREFIX = 'htmega-';
         protected $post_id = 0;
@@ -36,6 +36,15 @@ if ( ! class_exists( 'HTMega_Elementor_Assests_Cache' ) ) {
             $this->upload_file_path = trailingslashit( $upload_dir['basedir'] );
             $this->upload_file_url = trailingslashit( $upload_dir['baseurl'] );
             $this->upload_file_url = ( is_ssl() ? str_replace( 'http://', 'https://', $this->upload_file_url ) : $this->upload_file_url );
+
+            // One-time migration: remove old 'htmega' cache directory
+            if ( ! get_option( 'htmega_cache_dir_migrated' ) ) {
+                $old_dir = $this->upload_file_path . 'htmega';
+                if ( is_dir( $old_dir ) ) {
+                    $this->file_system->delete( $old_dir, true );
+                }
+                update_option( 'htmega_cache_dir_migrated', true, true );
+            }
         }
 
         public function get_css_dir_name() {

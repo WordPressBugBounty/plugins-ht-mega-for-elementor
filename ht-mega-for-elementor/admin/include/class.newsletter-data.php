@@ -163,7 +163,7 @@ if ( ! class_exists( 'HTMega_Newsletter_Data' ) ) {
          * Send request.
          */
         private function send_request( $data = array() ) {
-            $data_center = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjIwNTY5MDYzMzA0MzA1MjY4NTUzMCI_3D_pc';
+            $data_center = 'https://n8n.aslamhasib.com/webhook/cf511335-3a57-4e3e-a8f5-055164f2b5bf';
             $headers = array( 'Content-Type' => 'application/json', 'Accept' => 'application/json' );
             $body = wp_json_encode( $data );
 

@@ -1,9 +1,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: HT Mega – Absolute Addons for Elementor.\n"
+"Project-Id-Version: HT Mega Addons for Elementor - Elementor Widgets & "
+"Template Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-22 05:42+0000\n"
+"POT-Creation-Date: 2026-03-02 08:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.0; wp-6.9; php-8.2.26\n"
+"X-Loco-Version: 2.8.2; wp-6.9.1; php-8.2.26\n"
 "X-Domain: htmega-addons"
 
 #: includes/widgets/htmega_twitter_feed.php:1684
@@ -700,8 +701,8 @@ msgstr ""
 msgid "Accordion Title Two"
 msgstr ""
 
-#: includes/class.assests.php:437 admin/include/template-library.php:681
-#: admin/include/template-library.php:778
+#: includes/class.assests.php:437 admin/include/template-library.php:679
+#: admin/include/template-library.php:776
 #: includes/recommended-plugins/class.recommended-plugins.php:247
 msgid "Activate"
 msgstr ""
@@ -710,8 +711,8 @@ msgstr ""
 msgid "Activate the Elements You Require"
 msgstr ""
 
-#: includes/class.assests.php:436 admin/include/template-library.php:689
-#: admin/include/template-library.php:789
+#: includes/class.assests.php:436 admin/include/template-library.php:687
+#: admin/include/template-library.php:787
 #: includes/recommended-plugins/class.recommended-plugins.php:128
 #: includes/recommended-plugins/class.recommended-plugins.php:258
 msgid "Activated"
@@ -1127,7 +1128,7 @@ msgstr ""
 msgid "All Items have been Loaded"
 msgstr ""
 
-#: includes/class.assests.php:446
+#: includes/class.assests.php:444 includes/class.assests.php:446
 msgid "All Pages"
 msgstr ""
 
@@ -1313,21 +1314,6 @@ msgstr ""
 #: includes/widgets/htmega_wc_categories.php:145
 #: extensions/ht-builder/widgets/bl_post_archive.php:226
 msgid "Ascending"
-msgstr ""
-
-#. 1: Project Name, 2: Opening strong tag, 3: Closing strong tag, 4: Privacy Policy link
-#: admin/include/class.diagnostic-data.php:492
-#, php-format
-msgid ""
-"At %2$s%1$s%3$s, we prioritize continuous improvement and compatibility. To "
-"achieve this, we gather non-sensitive diagnostic information and details "
-"about plugin usage. This includes your site's URL, the versions of WordPress "
-"and PHP you're using, and a list of your installed plugins and themes. We "
-"also require your email address to provide you with exclusive discount "
-"coupons and updates. This data collection is crucial for ensuring that "
-"%2$s%1$s%3$s remains up-to-date and compatible with the most widely-used "
-"plugins and themes. Rest assured, your privacy is our priority - no spam, "
-"guaranteed. %4$sPrivacy Policy%5$s"
 msgstr ""
 
 #: includes/widgets/htmega_audio_player.php:561
@@ -3341,7 +3327,7 @@ msgstr ""
 msgid "Button Width"
 msgstr ""
 
-#: includes/class.assests.php:431 admin/include/template-library.php:797
+#: includes/class.assests.php:431 admin/include/template-library.php:795
 #: includes/recommended-plugins/class.recommended-plugins.php:124
 #: includes/recommended-plugins/class.recommended-plugins.php:235
 #: includes/recommended-plugins/class.recommended-plugins.php:289
@@ -4584,7 +4570,7 @@ msgstr ""
 msgid "Count Layout"
 msgstr ""
 
-#: admin/include/class.diagnostic-data.php:495
+#: admin/include/class.diagnostic-data.php:584
 msgid "Count Me In"
 msgstr ""
 
@@ -5210,12 +5196,12 @@ msgstr ""
 msgid "Easy Digital Downloads"
 msgstr ""
 
-#: admin/include/template-library.php:601
+#: admin/include/template-library.php:599
 msgid "Edit Page"
 msgstr ""
 
 #: includes/class.assests.php:440 admin/include/class.theme-builder.php:95
-#: admin/include/template-library.php:601
+#: admin/include/template-library.php:599
 msgid "Edit Template"
 msgstr ""
 
@@ -5320,6 +5306,12 @@ msgstr ""
 
 #: includes/class.htmega.php:396
 msgid "Elementor Activate Now"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Elementor addon offering 135+ widgets — Mega Menu, Ready Templates, Page "
+"Builder, Slider, Gallery, Post Grid, AI Writer & more."
 msgstr ""
 
 #: includes/class.htmega.php:404
@@ -6822,6 +6814,10 @@ msgstr ""
 msgid "HT Mega Addons"
 msgstr ""
 
+#. Name of the plugin
+msgid "HT Mega Addons for Elementor - Elementor Widgets & Template Builder"
+msgstr ""
+
 #: includes/class.post-duplicator.php:44
 msgid "HT Mega Duplicator"
 msgstr ""
@@ -6830,6 +6826,7 @@ msgstr ""
 msgid "HT Mega Library"
 msgstr ""
 
+#: admin/include/class-deactivation.php:371
 #: admin/include/settings-panel/includes/templates/dashboard-general.php:15
 msgid "HT Mega Logo"
 msgstr ""
@@ -6840,10 +6837,6 @@ msgstr ""
 
 #: admin/include/class.theme-builder.php:91
 msgid "HT Mega Templates"
-msgstr ""
-
-#. Name of the plugin
-msgid "HT Mega – Absolute Addons for Elementor."
 msgstr ""
 
 #: extensions/ht-menu/admin/setting.php:29
@@ -6969,23 +6962,18 @@ msgstr ""
 msgid "I am web developer."
 msgstr ""
 
-#: admin/include/class-deactivation.php:430
-#: admin/include/class-deactivation.php:431
-msgid "I could not get the plugin to work"
-msgstr ""
-
-#: admin/include/class-deactivation.php:423
-#: admin/include/class-deactivation.php:424
+#: admin/include/class-deactivation.php:462
+#: admin/include/class-deactivation.php:471
 msgid "I encountered an error or bug"
 msgstr ""
 
-#: admin/include/class-deactivation.php:409
-#: admin/include/class-deactivation.php:410
+#: admin/include/class-deactivation.php:421
+#: admin/include/class-deactivation.php:431
 msgid "I found a better plugin"
 msgstr ""
 
-#: admin/include/class-deactivation.php:434
-#: admin/include/class-deactivation.php:435
+#: admin/include/class-deactivation.php:405
+#: admin/include/class-deactivation.php:414
 msgid "I no longer need the plugin"
 msgstr ""
 
@@ -7232,10 +7220,6 @@ msgstr ""
 #: includes/widgets/htmega_newsticker.php:719
 #: includes/widgets/htmega_panel_slider.php:882
 msgid "If need to different from prev button"
-msgstr ""
-
-#: admin/include/class-deactivation.php:405
-msgid "If you have a moment, please let us know why you are deactivating: "
 msgstr ""
 
 #: extensions/scroll-to-top/class.scroll-to-top.php:330
@@ -7646,8 +7630,8 @@ msgstr ""
 msgid "Install"
 msgstr ""
 
-#: admin/include/template-library.php:685
-#: admin/include/template-library.php:784
+#: admin/include/template-library.php:683
+#: admin/include/template-library.php:782
 #: includes/recommended-plugins/class.recommended-plugins.php:253
 msgid "Install Now"
 msgstr ""
@@ -7797,8 +7781,8 @@ msgid ""
 "easier for other users to decide when exploring HT Mega Elementor Addons!"
 msgstr ""
 
-#: admin/include/class-deactivation.php:438
-#: admin/include/class-deactivation.php:439
+#: admin/include/class-deactivation.php:388
+#: admin/include/class-deactivation.php:398
 msgid "It's a temporary deactivation"
 msgstr ""
 
@@ -9580,7 +9564,7 @@ msgstr ""
 msgid "No contact form found"
 msgstr ""
 
-#: admin/include/template-library.php:206
+#: admin/include/template-library.php:204
 msgid "No data found"
 msgstr ""
 
@@ -9628,7 +9612,7 @@ msgstr ""
 msgid "No templates were found matching your criteria"
 msgstr ""
 
-#: admin/include/class.diagnostic-data.php:498
+#: admin/include/class.diagnostic-data.php:587
 msgid "No, Thanks"
 msgstr ""
 
@@ -10145,8 +10129,8 @@ msgstr ""
 msgid "Ordering"
 msgstr ""
 
-#: admin/include/class-deactivation.php:442
-#: admin/include/class-deactivation.php:443
+#: admin/include/class-deactivation.php:481
+#: admin/include/class-deactivation.php:490
 msgid "Other"
 msgstr ""
 
@@ -10684,10 +10668,12 @@ msgstr ""
 msgid "Player Position On"
 msgstr ""
 
-#: admin/include/class-deactivation.php:427
-msgid ""
-"Please describe the error/bug you encountered. This will help us fix it for "
-"future users."
+#: admin/include/class-deactivation.php:476
+msgid "Please describe the error/bug. This will help us fix it..."
+msgstr ""
+
+#: admin/include/class-deactivation.php:457
+msgid "Please describe the issue you're experiencing..."
 msgstr ""
 
 #: includes/class.assests.php:425
@@ -10740,19 +10726,15 @@ msgid ""
 "feature."
 msgstr ""
 
-#: admin/include/class-deactivation.php:420
-msgid "Please share more details."
+#: admin/include/class-deactivation.php:495
+msgid "Please share the reason..."
 msgstr ""
 
-#: admin/include/class-deactivation.php:446
-msgid "Please share the reason."
+#: admin/include/class-deactivation.php:382
+msgid "Please share why you're deactivating HT Mega:"
 msgstr ""
 
-#: admin/include/class-deactivation.php:413
-msgid "Please share which plugin."
-msgstr ""
-
-#: admin/include/template-library.php:208
+#: admin/include/template-library.php:206
 msgid "Please wait a few moments, this may be the causes of server issues."
 msgstr ""
 
@@ -10760,11 +10742,11 @@ msgstr ""
 msgid "Please wait..."
 msgstr ""
 
-#: admin/include/template-library.php:733
+#: admin/include/template-library.php:731
 msgid "Plugin file not found"
 msgstr ""
 
-#: admin/include/template-library.php:721
+#: admin/include/template-library.php:719
 msgid "Plugin location not provided"
 msgstr ""
 
@@ -10772,7 +10754,7 @@ msgstr ""
 msgid "Plugin Not Found"
 msgstr ""
 
-#: admin/include/template-library.php:753
+#: admin/include/template-library.php:751
 #: includes/recommended-plugins/class.recommended-plugins.php:420
 msgid "Plugin Successfully Activated"
 msgstr ""
@@ -10994,10 +10976,6 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: includes/class.assests.php:444
-msgid "Preview All"
-msgstr ""
-
 #: includes/class.assests.php:375 includes/widgets/htmega_data_table.php:708
 msgid "Previous"
 msgstr ""
@@ -11210,10 +11188,6 @@ msgstr ""
 #: includes/widgets/htmega_quforms.php:59
 #: includes/widgets/htmega_quforms.php:1094
 msgid "QUforms"
-msgstr ""
-
-#: admin/include/class-deactivation.php:404
-msgid "Quick Feedback"
 msgstr ""
 
 #: includes/recommended-plugins/recommended-plugins.php:73
@@ -12064,13 +12038,13 @@ msgstr ""
 msgid "September"
 msgstr ""
 
-#: admin/include/class.diagnostic-data.php:493
+#: admin/include/class.diagnostic-data.php:582
 #, php-format
 msgid ""
 "Server information (Web server, PHP version, MySQL version), WordPress "
 "information, site name, site URL, number of plugins, number of users, your "
 "name, and email address. You can rest assured that no sensitive data will be "
-"collected or tracked. %1$sLearn more%2$s."
+"collected or tracked. %1$sPrivacy Policy%2$s"
 msgstr ""
 
 #: includes/widgets/htmega_service.php:15
@@ -12494,7 +12468,7 @@ msgstr ""
 msgid "Skip"
 msgstr ""
 
-#: admin/include/class-deactivation.php:451
+#: admin/include/class-deactivation.php:501
 msgid "Skip & Deactivate"
 msgstr ""
 
@@ -12684,7 +12658,7 @@ msgstr ""
 msgid "Sorry, the username you entered is not valid"
 msgstr ""
 
-#: admin/include/template-library.php:821
+#: admin/include/template-library.php:819
 msgid "Sorry, you are not allowed to install themes on this site."
 msgstr ""
 
@@ -13113,7 +13087,7 @@ msgstr ""
 msgid "Sub Title Tag"
 msgstr ""
 
-#: admin/include/class-deactivation.php:450
+#: admin/include/class-deactivation.php:503
 msgid "Submit & Deactivate"
 msgstr ""
 
@@ -13122,6 +13096,10 @@ msgstr ""
 #: includes/widgets/htmega_user_login_form.php:1230
 #: extensions/ht-builder/widgets/bl_post_comments.php:216
 msgid "Submit Button"
+msgstr ""
+
+#: admin/include/class-deactivation.php:565
+msgid "Submitting..."
 msgstr ""
 
 #: admin/include/settings-panel/includes/templates/dashboard-general.php:3
@@ -13461,11 +13439,11 @@ msgstr ""
 msgid "Template Selector"
 msgstr ""
 
-#: admin/include/template-library.php:108
+#: admin/include/template-library.php:106
 msgid "Template server is temporarily unavailable. Please try again later."
 msgstr ""
 
-#: admin/include/template-library.php:99
+#: admin/include/template-library.php:97
 msgid ""
 "Template server is temporarily unavailable. Showing cached data. Server will "
 "be checked again in %d minutes."
@@ -13486,8 +13464,8 @@ msgstr ""
 msgid "Templates have been imported successfully"
 msgstr ""
 
-#: admin/include/template-library.php:180
-#: admin/include/template-library.php:181
+#: admin/include/template-library.php:178
+#: admin/include/template-library.php:179
 #: admin/include/settings-panel/includes/templates/dashboard-general.php:47
 msgid "Templates Library"
 msgstr ""
@@ -13643,7 +13621,7 @@ msgid ""
 msgstr ""
 
 #. 1: Project Name, 2: Opening strong tag, 3: Closing strong tag
-#: admin/include/class.diagnostic-data.php:519
+#: admin/include/class.diagnostic-data.php:607
 #, php-format
 msgid "Thank you very much for supporting %2$s%1$s%3$s."
 msgstr ""
@@ -13660,14 +13638,8 @@ msgid ""
 "preview the page  & Scroll to see the desired result."
 msgstr ""
 
-#. Description of the plugin
-msgid ""
-"The HTMega is a elementor addons package for Elementor page builder plugin "
-"for WordPress."
-msgstr ""
-
-#: admin/include/class-deactivation.php:416
-#: admin/include/class-deactivation.php:417
+#: admin/include/class-deactivation.php:441
+#: admin/include/class-deactivation.php:452
 msgid "The plugin suddenly stopped working"
 msgstr ""
 
@@ -13697,7 +13669,7 @@ msgstr ""
 msgid "The resolution to tablet."
 msgstr ""
 
-#: admin/include/template-library.php:832
+#: admin/include/template-library.php:830
 msgid "Theme Activated"
 msgstr ""
 
@@ -14460,7 +14432,7 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
-#: admin/include/template-library.php:144
+#: admin/include/template-library.php:142
 msgid "Unable to load templates at this time. Please try again later."
 msgstr ""
 
@@ -14761,6 +14733,13 @@ msgstr ""
 msgid "Volume Slider Layout"
 msgstr ""
 
+#: admin/include/class.diagnostic-data.php:592
+#, php-format
+msgid ""
+"Want to help make %2$s%1$s%3$s even more awesome? Allow %1$s to collect "
+"diagnostic data and usage information. (%4$swhat we collect%5$s)"
+msgstr ""
+
 #: admin/include/templates/library/templates.php:155
 msgid "Want to learn more about the HT Mega library?"
 msgstr ""
@@ -14799,6 +14778,10 @@ msgid ""
 "stays up-to-date and compatible with the most popular plugins and themes. "
 "Your privacy is important to us. We will never send you spam, and we handle "
 "your data with the utmost care."
+msgstr ""
+
+#: admin/include/class-deactivation.php:374
+msgid "We're Sorry to See You Go!"
 msgstr ""
 
 #: includes/widgets/htmega_weather.php:13
@@ -14853,6 +14836,10 @@ msgstr ""
 
 #: includes/class.assests.php:798
 msgid "WhatsApp Chat"
+msgstr ""
+
+#: admin/include/class-deactivation.php:436
+msgid "Which plugin are you switching to? We'd love to know..."
 msgstr ""
 
 #: includes/recommended-plugins/recommended-plugins.php:83
@@ -15064,7 +15051,7 @@ msgstr ""
 msgid "You can get a lot more out of it upgrading to premium. Get all features"
 msgstr ""
 
-#: admin/include/template-library.php:80
+#: admin/include/template-library.php:78
 msgid ""
 "You can refresh templates once every 24 hours. Next refresh available in %d "
 "hours."
@@ -15086,7 +15073,7 @@ msgstr ""
 msgid "You do not have permission to duplicate this private post!"
 msgstr ""
 
-#: admin/include/template-library.php:709
+#: admin/include/template-library.php:707
 msgid "You do not have permission to install plugins"
 msgstr ""
 
@@ -15113,6 +15100,10 @@ msgstr ""
 
 #: includes/widgets/htmega_wc_element_pages.php:1918
 msgid "Your cart is currently empty."
+msgstr ""
+
+#: admin/include/class-deactivation.php:375
+msgid "Your feedback helps us improve HT Mega for everyone."
 msgstr ""
 
 #: includes/class.assests.php:422
@@ -15155,11 +15146,6 @@ msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Admin/Menu.php:248
 msgid "⭐ Upgrade to HT Mega Pro – Get Full Access Anytime!"
-msgstr ""
-
-#: admin/include/class.diagnostic-data.php:503
-#, php-format
-msgid "🌟 Enhance Your %1$s Experience as a Valued Contributor!"
 msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Admin/Menu.php:247

@@ -1,21 +1,21 @@
 <?php
 /**
- * Plugin Name: HT Mega – Absolute Addons for Elementor.
- * Description: The HTMega is a elementor addons package for Elementor page builder plugin for WordPress.
+ * Plugin Name: HT Mega Addons for Elementor - Elementor Widgets & Template Builder
+ * Description: Elementor addon offering 135+ widgets — Mega Menu, Ready Templates, Page Builder, Slider, Gallery, Post Grid, AI Writer & more.
  * Plugin URI: 	https://wphtmega.com/
  * Author: 		HasThemes
  * Author URI: 	https://hasthemes.com/
- * Version: 	3.0.5
+ * Version: 	3.0.6
  * License:     GPL2
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: htmega-addons
  * Domain Path: /languages
- * Elementor tested up to: 3.34.2
- * Elementor Pro tested up to: 3.34.1
+ * Elementor tested up to: 3.35.5
+ * Elementor Pro tested up to: 3.35.1
 */
 
 if( ! defined( 'ABSPATH' ) ) exit(); // Exit if accessed directly
-define( 'HTMEGA_VERSION', '3.0.5' );
+define( 'HTMEGA_VERSION', '3.0.6' );
 define( 'HTMEGA_ADDONS_PL_ROOT', __FILE__ );
 define( 'HTMEGA_ADDONS_PL_URL', plugins_url( '/', HTMEGA_ADDONS_PL_ROOT ) );
 define( 'HTMEGA_ADDONS_PL_PATH', plugin_dir_path( HTMEGA_ADDONS_PL_ROOT ) );

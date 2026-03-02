@@ -1,13 +1,13 @@
-=== HT Mega - Absolute Addons For Elementor ===
+=== HT Mega Addons for Elementor - Elementor Widgets & Template Builder ===
 Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasib, madhusudandev
-Tags: elementor, elementor addons, elementor widgets, page builder, elementor templates, mega menu, addons for elementor, post grid, elements, header footer builder
+Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 3.0.5
+Stable tag: 3.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Elementor addons package for WordPress with Elementor widgets, blocks, pre-designed templates, Theme builder, mega menu, header footer, single post, archive builder, AI content writer, carousel, slider, form, gallery, testimonial, portfolio, WooCommerce widgets, forms, tables, and so on. It empowers you to build a professional website in WordPress, one of the most popular WordPress page builders.
+Elementor addon offering 135+ widgets — Mega Menu, Ready Templates, Page Builder, Slider, Gallery, Post Grid, AI Writer & more.
 
 == Description ==
 
@@ -237,6 +237,13 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 == Changelog ==
 
+= Version 3.0.6 - Date: 2026-03-02 =
+* Updated: Template library "Preview All" button text changed to "All Pages".
+* Updated: Template library cache expiry.
+* Updated: Consolidated asset cache and template cache into single 'htmega-addons' directory.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+
 = Version 3.0.5 - Date: 2026-01-25 =
 * Added: Team Wrapper Hover Box Shadow option for the Team Member widget.
 * Added: Review Title input field to the Testimonial Grid widget.
@@ -437,22 +444,6 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 * Added: Option to disable the Popup Play button hover animation in the Video Player widget.
 * Improved: Template Library layout.
 * Updated: Deprecated Elementor classes.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.7.9 - Date: 2025-01-15 =
-* Improved: Admin settings panel performance.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.7.8 - Date: 2025-01-09 =
-* Improved: Admin settings panel layout.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.7.7 - Date: 2024-12-18 =
-* Fixed: Mega Menu settings not updating issue.
-* Fixed: WPML compatibility issue in Tabs widget.
 * Fixed: A few minor issues.
 * Tested: Compatibility with the latest version of Elementor.
 
