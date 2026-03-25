@@ -79,7 +79,7 @@
 </script>
 
 <script type="text/template" id="tmpl-htmega-template-library-header-back">
-	<i class="eicon-" aria-hidden="true"></i>
+	<i class="eicon-chevron-left" aria-hidden="true"></i>
 	<span><?php echo esc_html__( 'Back to Library', 'htmega-addons' ); ?></span>
 </script>
 

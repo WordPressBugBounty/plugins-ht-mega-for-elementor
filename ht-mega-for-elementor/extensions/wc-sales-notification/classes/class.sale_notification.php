@@ -60,10 +60,8 @@ class HTMegaWC_Sales_Notification{
                     if( !empty( $product ) ){
                         preg_match( '/src="(.*?)"/', $product->get_image( 'thumbnail' ), $imgurl );
                         $p = array(
-                            'id'    => $first_item['order_id'],
                             'name'  => $product->get_title(),
                             'url'   => $product->get_permalink(),
-                            'date'  => $post->post_date_gmt,
                             'image' => count($imgurl) === 2 ? $imgurl[1] : null,
                             'price' => $this->purchased_productprice( $check_wc_version ? $product->get_display_price() : wc_get_price_to_display( $product ) ),
                             'buyer' => $this->purchased_buyer_info( $order )
@@ -99,12 +97,22 @@ class HTMegaWC_Sales_Notification{
         if( !isset( $address['city'] ) || empty( $address['city'] ) ){
             $address = $order->get_address( 'shipping' );
         }
+
+        $show_buyer_name = ( htmega_get_option( 'show_buyer_name', 'htmegawcsales_setting_tabs', 'off' ) === 'on' );
+        $show_city       = ( htmega_get_option( 'show_city',       'htmegawcsales_setting_tabs', 'off' ) === 'on' );
+        $show_state      = ( htmega_get_option( 'show_state',      'htmegawcsales_setting_tabs', 'off' ) === 'on' );
+        $show_country    = ( htmega_get_option( 'show_country',    'htmegawcsales_setting_tabs', 'off' ) === 'on' );
+
+        // When buyer name is enabled, expose first name + last initial only (never full last name).
+        $lname_raw     = isset( $address['last_name'] ) && !empty( $address['last_name'] ) ? $address['last_name'] : '';
+        $lname_initial = !empty( $lname_raw ) ? strtoupper( substr( $lname_raw, 0, 1 ) ) . '.' : '';
+
         $buyerinfo = array(
-            'fname' => isset( $address['first_name'] ) && !empty( $address['first_name'] ) ? ucfirst( $address['first_name'] ) : '',
-            'lname' => isset( $address['last_name'] ) && !empty( $address['last_name'] ) ? ucfirst( $address['last_name'] ) : '',
-            'city' => isset( $address['city'] ) && !empty( $address['city'] ) ? ucfirst( $address['city'] ) : '',
-            'state' => isset( $address['state'] ) && !empty( $address['state'] ) ? ucfirst( $address['state'] ) : '',
-            'country' =>  isset( $address['country'] ) && !empty( $address['country'] ) ? WC()->countries->countries[$address['country']] : '',
+            'fname'   => ( $show_buyer_name && !empty( $address['first_name'] ) ) ? ucfirst( $address['first_name'] ) : '',
+            'lname'   => ( $show_buyer_name && !empty( $lname_initial ) )         ? $lname_initial                    : '',
+            'city'    => ( $show_city    && !empty( $address['city'] ) )           ? ucfirst( $address['city'] )       : '',
+            'state'   => ( $show_state   && !empty( $address['state'] ) )          ? ucfirst( $address['state'] )      : '',
+            'country' => ( $show_country && !empty( $address['country'] ) )        ? WC()->countries->countries[ $address['country'] ] : '',
         );
         return $buyerinfo;
     }

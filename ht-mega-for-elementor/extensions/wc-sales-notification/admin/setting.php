@@ -97,6 +97,38 @@ class HTMegaWcsale_Admin_Settings {
                 ),
 
                 array(
+                    'name'    => 'show_buyer_name',
+                    'label'   => __( 'Show Buyer Name', 'htmega-addons' ),
+                    'desc'    => __( 'Display buyer first name in the notification.', 'htmega-addons' ),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
+                ),
+
+                array(
+                    'name'    => 'show_city',
+                    'label'   => __( 'Show City', 'htmega-addons' ),
+                    'desc'    => __( 'Display buyer city in the notification.', 'htmega-addons' ),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
+                ),
+
+                array(
+                    'name'    => 'show_state',
+                    'label'   => __( 'Show State', 'htmega-addons' ),
+                    'desc'    => __( 'Display buyer state in the notification.', 'htmega-addons' ),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
+                ),
+
+                array(
+                    'name'    => 'show_country',
+                    'label'   => __( 'Show Country', 'htmega-addons' ),
+                    'desc'    => __( 'Display buyer country in the notification.', 'htmega-addons' ),
+                    'type'    => 'checkbox',
+                    'default' => 'off',
+                ),
+
+                array(
                     'name'              => 'notification_limit',
                     'label'             => __( 'Limit', 'htmega-addons' ),
                     'desc'              => __( 'Order Limit for notification.', 'htmega-addons' ),
