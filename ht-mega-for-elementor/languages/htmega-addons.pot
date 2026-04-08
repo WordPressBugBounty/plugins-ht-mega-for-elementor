@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: HT Mega Addons for Elementor - Elementor Widgets & "
 "Template Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 08:29+0000\n"
+"POT-Creation-Date: 2026-04-08 08:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid " hours ago"
 msgstr ""
 
-#: includes/helper-function.php:1223
+#: includes/helper-function.php:1244
 msgid " is missing! Please install and activate "
 msgstr ""
 
@@ -1761,7 +1761,8 @@ msgstr ""
 #: includes/widgets/htmega_pricing_list_view.php:1648
 #: includes/widgets/htmega_pricing_list_view.php:1729
 #: includes/widgets/htmega_pricing_list_view.php:1806
-#: includes/widgets/htmega_custom_event.php:343
+#: includes/widgets/htmega_custom_event.php:132
+#: includes/widgets/htmega_custom_event.php:416
 #: includes/widgets/htmega_wpforms.php:525
 #: includes/widgets/htmega_wpforms.php:675
 #: includes/widgets/htmega_wpforms.php:747
@@ -2187,8 +2188,9 @@ msgstr ""
 #: includes/widgets/htmega_image_grid.php:225
 #: includes/widgets/htmega_image_grid.php:518
 #: includes/widgets/htmega_image_grid.php:577
-#: includes/widgets/htmega_custom_event.php:420
-#: includes/widgets/htmega_custom_event.php:462
+#: includes/widgets/htmega_custom_event.php:144
+#: includes/widgets/htmega_custom_event.php:493
+#: includes/widgets/htmega_custom_event.php:535
 #: includes/widgets/htmega_double_button.php:434
 #: includes/widgets/htmega_double_button.php:464
 #: includes/widgets/htmega_double_button.php:531
@@ -2602,7 +2604,8 @@ msgstr ""
 #: includes/widgets/htmega_image_grid.php:233
 #: includes/widgets/htmega_image_grid.php:526
 #: includes/widgets/htmega_image_grid.php:585
-#: includes/widgets/htmega_custom_event.php:428
+#: includes/widgets/htmega_custom_event.php:152
+#: includes/widgets/htmega_custom_event.php:501
 #: includes/widgets/htmega_double_button.php:280
 #: includes/widgets/htmega_double_button.php:442
 #: includes/widgets/htmega_double_button.php:472
@@ -3184,7 +3187,7 @@ msgstr ""
 #: includes/widgets/htmega_errorcontent.php:120
 #: includes/widgets/htmega_wc_element_pages.php:1503
 #: includes/widgets/htmega_pricing_list_view.php:587
-#: includes/widgets/htmega_custom_event.php:379
+#: includes/widgets/htmega_custom_event.php:452
 #: includes/widgets/htmega_double_button.php:105
 #: includes/widgets/htmega_double_button.php:192
 #: includes/widgets/htmega_double_button.php:318
@@ -3420,6 +3423,10 @@ msgstr ""
 
 #: includes/widgets/htmega_instagram.php:864
 msgid "Caption"
+msgstr ""
+
+#: includes/widgets/htmega_custom_event.php:124
+msgid "Card"
 msgstr ""
 
 #: includes/widgets/htmega_imagemarker.php:415
@@ -3983,13 +3990,13 @@ msgstr ""
 #: includes/widgets/htmega_image_grid.php:411
 #: includes/widgets/htmega_image_grid.php:463
 #: includes/widgets/htmega_image_grid.php:545
-#: includes/widgets/htmega_custom_event.php:144
-#: includes/widgets/htmega_custom_event.php:199
-#: includes/widgets/htmega_custom_event.php:229
-#: includes/widgets/htmega_custom_event.php:286
-#: includes/widgets/htmega_custom_event.php:331
-#: includes/widgets/htmega_custom_event.php:399
-#: includes/widgets/htmega_custom_event.php:449
+#: includes/widgets/htmega_custom_event.php:217
+#: includes/widgets/htmega_custom_event.php:272
+#: includes/widgets/htmega_custom_event.php:302
+#: includes/widgets/htmega_custom_event.php:359
+#: includes/widgets/htmega_custom_event.php:404
+#: includes/widgets/htmega_custom_event.php:472
+#: includes/widgets/htmega_custom_event.php:522
 #: includes/widgets/htmega_double_button.php:508
 #: includes/widgets/htmega_double_button.php:605
 #: includes/widgets/htmega_double_button.php:683
@@ -4806,7 +4813,7 @@ msgstr ""
 
 #: includes/widgets/htmega_post_grid_tab.php:1693
 #: includes/widgets/htmega_verticle_time_line.php:323
-#: includes/widgets/htmega_custom_event.php:323
+#: includes/widgets/htmega_custom_event.php:396
 #: includes/widgets/htmega_newsticker.php:134
 #: includes/widgets/htmega_newsticker.php:804
 #: includes/widgets/htmega_newsticker.php:1187
@@ -4930,7 +4937,7 @@ msgstr ""
 #: includes/widgets/htmega_errorcontent.php:457
 #: includes/widgets/htmega_image_grid.php:118
 #: includes/widgets/htmega_image_grid.php:372
-#: includes/widgets/htmega_custom_event.php:218
+#: includes/widgets/htmega_custom_event.php:291
 #: includes/widgets/htmega_add_banner.php:123
 #: includes/widgets/htmega_add_banner.php:570
 #: includes/widgets/htmega_wpforms.php:118
@@ -6690,8 +6697,8 @@ msgstr ""
 #: includes/widgets/htmega_twitter_feed.php:1237
 #: includes/widgets/htmega_countdown.php:1125
 #: includes/widgets/htmega_image_grid.php:539
-#: includes/widgets/htmega_custom_event.php:192
-#: includes/widgets/htmega_custom_event.php:442
+#: includes/widgets/htmega_custom_event.php:265
+#: includes/widgets/htmega_custom_event.php:515
 #: includes/widgets/htmega_double_button.php:456
 #: includes/widgets/htmega_double_button.php:598
 #: includes/widgets/htmega_double_button.php:773
@@ -8868,10 +8875,11 @@ msgstr ""
 #: includes/widgets/htmega_dropcaps.php:257
 #: includes/widgets/htmega_image_grid.php:211
 #: includes/widgets/htmega_image_grid.php:357
-#: includes/widgets/htmega_custom_event.php:177
-#: includes/widgets/htmega_custom_event.php:262
-#: includes/widgets/htmega_custom_event.php:306
-#: includes/widgets/htmega_custom_event.php:363
+#: includes/widgets/htmega_custom_event.php:175
+#: includes/widgets/htmega_custom_event.php:250
+#: includes/widgets/htmega_custom_event.php:335
+#: includes/widgets/htmega_custom_event.php:379
+#: includes/widgets/htmega_custom_event.php:436
 #: includes/widgets/htmega_double_button.php:301
 #: includes/widgets/htmega_double_button.php:583
 #: includes/widgets/htmega_double_button.php:758
@@ -9708,8 +9716,8 @@ msgstr ""
 #: includes/widgets/htmega_twitter_feed.php:1310
 #: includes/widgets/htmega_countdown.php:1030
 #: includes/widgets/htmega_image_grid.php:457
-#: includes/widgets/htmega_custom_event.php:137
-#: includes/widgets/htmega_custom_event.php:392
+#: includes/widgets/htmega_custom_event.php:210
+#: includes/widgets/htmega_custom_event.php:465
 #: includes/widgets/htmega_double_button.php:426
 #: includes/widgets/htmega_double_button.php:501
 #: includes/widgets/htmega_double_button.php:676
@@ -10284,7 +10292,8 @@ msgstr ""
 #: includes/widgets/htmega_image_grid.php:431
 #: includes/widgets/htmega_image_grid.php:504
 #: includes/widgets/htmega_custom_event.php:164
-#: includes/widgets/htmega_custom_event.php:249
+#: includes/widgets/htmega_custom_event.php:237
+#: includes/widgets/htmega_custom_event.php:322
 #: includes/widgets/htmega_double_button.php:570
 #: includes/widgets/htmega_double_button.php:745
 #: includes/widgets/htmega_double_button.php:929
@@ -13459,7 +13468,7 @@ msgstr ""
 msgid "Template name is required"
 msgstr ""
 
-#: includes/helper-function.php:1192
+#: includes/helper-function.php:1209
 msgid "Template not published or does not exist"
 msgstr ""
 
@@ -13849,7 +13858,7 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: includes/widgets/htmega_custom_event.php:278
+#: includes/widgets/htmega_custom_event.php:351
 msgid "Time / Location"
 msgstr ""
 
@@ -13938,7 +13947,7 @@ msgstr ""
 #: includes/widgets/htmega_image_grid.php:109
 #: includes/widgets/htmega_image_grid.php:275
 #: includes/widgets/htmega_custom_event.php:43
-#: includes/widgets/htmega_custom_event.php:124
+#: includes/widgets/htmega_custom_event.php:197
 #: includes/widgets/htmega_teammember.php:212
 #: includes/widgets/htmega_add_banner.php:99
 #: includes/widgets/htmega_add_banner.php:452

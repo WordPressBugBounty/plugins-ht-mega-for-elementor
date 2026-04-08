@@ -91,7 +91,7 @@ if( !function_exists('htmega_elementor_template') ){
         if( class_exists('\Elementor\Plugin') ){
 
             $template_instance = \Elementor\Plugin::instance()->templates_manager->get_source( 'local' );
-            
+
             $defaults = [
                 'post_type' => 'elementor_library',
                 'post_status' => 'publish',
@@ -1183,14 +1183,35 @@ add_filter('litespeed_media_lazy_img_parent_cls_excludes', 'htmega_custom_class_
  */
 if ( !function_exists('htmega_get_template_content_by_id') ) {
     function htmega_get_template_content_by_id($template_id) {
+        // Static cache for same request (e.g., same template used in multiple slides)
+        static $template_cache = [];
+
+        if ( isset( $template_cache[ $template_id ] ) ) {
+            return $template_cache[ $template_id ];
+        }
+
         $template_post = get_post( $template_id );
-        
+
         // Check if the post exists and its status is 'publish'
         if ( $template_post && $template_post->post_status === 'publish' ) {
-            return \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
+
+            // Transient cache: persists across requests, invalidated on template save
+            $transient_key = 'htmega_tmpl_' . $template_id . '_' . $template_post->post_modified;
+            $content = get_transient( $transient_key );
+
+            if ( false === $content ) {
+                $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
+                if ( ! empty( $content ) ) {
+                    set_transient( $transient_key, $content, DAY_IN_SECONDS );
+                }
+            }
         } else {
-            return esc_html__( 'Template not published or does not exist', 'htmega-addons');
+            $content = esc_html__( 'Template not published or does not exist', 'htmega-addons');
         }
+
+        $template_cache[ $template_id ] = $content;
+
+        return $content;
     }
 }
 

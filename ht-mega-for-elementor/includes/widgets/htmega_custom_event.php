@@ -117,6 +117,79 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             
         $this->end_controls_section();
 
+        // Card Style tab section
+        $this->start_controls_section(
+            'event_card_style_section',
+            [
+                'label' => __( 'Card', 'htmega-addons' ),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+            $this->add_control(
+                'event_card_bg_color',
+                [
+                    'label' => __( 'Background Color', 'htmega-addons' ),
+                    'type' => Controls_Manager::COLOR,
+                    'selectors' => [
+                        '{{WRAPPER}} .ht-event' => 'background-color: {{VALUE}};',
+                    ],
+                ]
+            );
+
+            $this->add_group_control(
+                Group_Control_Border::get_type(),
+                [
+                    'name' => 'event_card_border',
+                    'label' => __( 'Border', 'htmega-addons' ),
+                    'selector' => '{{WRAPPER}} .ht-event',
+                ]
+            );
+
+            $this->add_responsive_control(
+                'event_card_border_radius',
+                [
+                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'type' => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%', 'em' ],
+                    'selectors' => [
+                        '{{WRAPPER}} .ht-event' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
+                    ],
+                ]
+            );
+
+            $this->add_responsive_control(
+                'event_card_padding',
+                [
+                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'type' => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%', 'em' ],
+                    'selectors' => [
+                        '{{WRAPPER}} .ht-event' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    ],
+                ]
+            );
+            $this->add_responsive_control(
+                'event_card_margin',
+                [
+                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'type' => Controls_Manager::DIMENSIONS,
+                    'size_units' => [ 'px', '%', 'em' ],
+                    'selectors' => [
+                        '{{WRAPPER}} .ht-event' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    ],
+                ]
+            );
+            $this->add_group_control(
+                Group_Control_Box_Shadow::get_type(),
+                [
+                    'name' => 'event_card_box_shadow',
+                    'selector' => '{{WRAPPER}} .ht-event',
+                ]
+            );
+
+        $this->end_controls_section();
+
         // Event Title Style tab section
         $this->start_controls_section(
             'event_title_style_section',
