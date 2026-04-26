@@ -1182,11 +1182,11 @@ add_filter('litespeed_media_lazy_img_parent_cls_excludes', 'htmega_custom_class_
  * @return string
  */
 if ( !function_exists('htmega_get_template_content_by_id') ) {
-    function htmega_get_template_content_by_id($template_id) {
+    function htmega_get_template_content_by_id( $template_id ) {
         static $template_cache = [];
 
         $current_post_id = (int) get_the_ID();
-        $cache_key = $template_id . '_' . $current_post_id;
+        $cache_key       = $template_id . '_' . $current_post_id;
 
         if ( isset( $template_cache[ $cache_key ] ) ) {
             return $template_cache[ $cache_key ];
@@ -1195,20 +1195,9 @@ if ( !function_exists('htmega_get_template_content_by_id') ) {
         $template_post = get_post( $template_id );
 
         if ( $template_post && $template_post->post_status === 'publish' ) {
-
-            $current_post  = $current_post_id ? get_post( $current_post_id ) : null;
-            $post_modified = $current_post ? $current_post->post_modified : '';
-            $transient_key = 'htmega_tmpl_' . $template_id . '_' . $current_post_id . '_' . $template_post->post_modified . '_' . $post_modified;
-            $content = get_transient( $transient_key );
-
-            if ( false === $content ) {
-                $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
-                if ( ! empty( $content ) ) {
-                    set_transient( $transient_key, $content, DAY_IN_SECONDS );
-                }
-            }
+            $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
         } else {
-            $content = esc_html__( 'Template not published or does not exist', 'htmega-addons');
+            $content = esc_html__( 'Template not published or does not exist', 'htmega-addons' );
         }
 
         $template_cache[ $cache_key ] = $content;

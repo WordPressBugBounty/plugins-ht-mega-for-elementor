@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 3.0.9
+Stable tag: 3.0.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -236,6 +236,10 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 3.0.10 - Date: 2026-04-26 =
+* Fixed: Theme builder single post template showing incorrect content.
+* Fixed: Template cache compatibility issue between free and pro versions.
 
 = Version 3.0.9 - Date: 2026-04-26 =
 * Fixed: Theme builder single post template showing incorrect content.
