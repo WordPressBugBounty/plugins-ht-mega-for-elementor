@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 3.0.8
+Stable tag: 3.0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -236,6 +236,9 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 3.0.9 - Date: 2026-04-26 =
+* Fixed: Theme builder single post template showing incorrect content.
 
 = Version 3.0.8 - Date: 2026-04-08 =
 * Added: [Political Campaign (Modern) Template Kit](https://library.wphtmega.com/political-campaign-home-modern/) (Pro).
