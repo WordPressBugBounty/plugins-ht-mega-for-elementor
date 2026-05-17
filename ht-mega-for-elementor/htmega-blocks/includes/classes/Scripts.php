@@ -45,7 +45,7 @@ class Scripts
 	public function block_assets()
 	{
 
-		if ( ! has_blocks( get_queried_object_id() ) ) {
+		if ( ! is_admin() && ! htmegaBlocks_any_block_enabled() ) {
 			return;
 		}
 		wp_enqueue_style('dashicons');

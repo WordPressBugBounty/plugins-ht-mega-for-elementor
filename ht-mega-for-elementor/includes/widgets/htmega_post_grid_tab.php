@@ -1275,9 +1275,20 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         }
 
         // Exclude posts check
-        if (  !empty( $exclude_posts ) ) {
-            $exclude_posts = explode(',',$exclude_posts);
-            $args['post__not_in'] =  $exclude_posts;
+        $exclude_merge = array();
+        if ( ! empty( $exclude_posts ) ) {
+            $exclude_merge = array_filter(
+                array_map(
+                    'absint',
+                    explode( ',', str_replace( ' ', '', sanitize_text_field( $exclude_posts ) ) )
+                )
+            );
+        }
+        if ( 'yes' === $settings['hide_current_post'] && is_singular() ) {
+            $exclude_merge[] = get_the_ID();
+        }
+        if ( ! empty( $exclude_merge ) ) {
+            $args['post__not_in'] = array_values( array_unique( $exclude_merge ) );
         }
 
         // Order check
@@ -1293,11 +1304,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 ],
             ];
         }
-        // hide current post
-        if ( 'yes' === $settings['hide_current_post'] && is_singular() ) {
-            $args['post__not_in'] = [get_the_ID()];
-        }
-        $grid_post = new \WP_Query( $args );
+        $grid_post = \HTMega_Query_Cache::query( $args );
 
         $tabs_options = [];
         $tabs_options['wrapid'] = esc_attr( $id );
@@ -1530,10 +1537,10 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                                     $title_length = $settings['title_length'];
                                     
                                     if ( 0 > $title_length ) { ?>
-                                        <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+                                        <h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h2>
                                     <?php
                                     } else { ?>
-                                        <h2><a href="<?php the_permalink();?>"><?php echo esc_html( wp_trim_words( get_the_title(), (int)$title_length, '' ) ); ?></a></h2>
+                                        <h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo wp_kses_post( wp_trim_words( get_the_title(), (int) $title_length, '' ) ); ?></a></h2>
                                     <?php
                                      }
                                     ?>

@@ -12,6 +12,223 @@
 
     var htFilterText = 'page';
 
+    /**
+     * `get_htmega_template_data` updates WP options in that AJAX request after Elementor already built
+     * `Widgets_Manager`; the next isolated `get_widgets_config` HTTP request re-bootstraps PHP so newly-enabled
+     * widgets exist in `elementor.widgetsCache` (Elementor uses widget base + cache for unknown types).
+     */
+    function htmegaRefreshElementorWidgetsConfigThen(callback) {
+        var excludeWidgets = {},
+            runCb = function () {
+                if (typeof callback === "function") {
+                    callback();
+                }
+            };
+        if (typeof elementor === "undefined" || typeof elementorCommon === "undefined" || !elementorCommon.ajax) {
+            runCb();
+            return;
+        }
+        jQuery.each(elementor.widgetsCache || {}, function (widgetName, widgetConfig) {
+            if (widgetConfig && widgetConfig.controls) {
+                excludeWidgets[widgetName] = true;
+            }
+        });
+        elementorCommon.ajax.addRequest("get_widgets_config", {
+            unique_id: "htmega_lib_widgets_" + String(Date.now()),
+            data: {
+                exclude: excludeWidgets
+            },
+            success: function (data) {
+                elementor.addWidgetsCache(data || {});
+                if (elementor.config && elementor.config.locale !== elementor.config.user.locale && typeof elementor.translateControlsDefaults === "function") {
+                    elementor.translateControlsDefaults(elementor.config.locale);
+                }
+                if (elementor.loaded) {
+                    if (elementor.kitManager && typeof elementor.kitManager.renderGlobalsDefaultCSS === "function") {
+                        elementor.kitManager.renderGlobalsDefaultCSS();
+                    }
+                    if (typeof $e !== "undefined" && $e.internal) {
+                        $e.internal("panel/state-ready");
+                    }
+                } else if (typeof elementor.once === "function") {
+                    elementor.once("panel:init", function () {
+                        if (typeof $e !== "undefined" && $e.internal) {
+                            $e.internal("panel/state-ready");
+                        }
+                    });
+                }
+                runCb();
+            },
+            error: function () {
+                runCb();
+            }
+        });
+    }
+
+    /** True when this widget still needs frontend JS (Slick/Swiper/Beer slider) typical after Elementor library import. */
+    function htmegaPreviewWidgetNeedsCarouselRebind($widget, jq) {
+        function hasUninitedSlick(sel) {
+            return (
+                $widget.find(sel).filter(function () {
+                    return !jq(this).hasClass("slick-initialized");
+                }).length > 0
+            );
+        }
+        if (hasUninitedSlick(".htmega-carousel-activation")) {
+            return true;
+        }
+        if (hasUninitedSlick(".htmega-testimonial-activation")) {
+            return true;
+        }
+        if (hasUninitedSlick(".htmega-testimonial-for") || hasUninitedSlick(".htmega-testimonal-nav")) {
+            return true;
+        }
+        if (hasUninitedSlick(".htmega-thumbgallery-for") || hasUninitedSlick(".htmega-thumbgallery-nav")) {
+            return true;
+        }
+        if (hasUninitedSlick(".htmega-pro-carousel-activation")) {
+            return true;
+        }
+        if (hasUninitedSlick(".htmega-pro-slider-for") || hasUninitedSlick(".htmega-pro-slider-nav")) {
+            return true;
+        }
+        var $sw = $widget.find(".htmega-team-carousel-slider-active").first();
+        if ($sw.length && !$sw.hasClass("swiper-initialized")) {
+            return true;
+        }
+        if (
+            $widget.find(".htmega-imagecomparison .beer-slider").filter(function () {
+                return !jq(this).find(".beer-range").length;
+            }).length > 0
+        ) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * True when this widget should re-run HT Mega frontend handlers after library import (sliders + progress/countdown/chart/…).
+     * Skips broad “all widgets” rebinding to reduce duplicate listeners on tab/accordion/etc.
+     */
+    function htmegaPreviewWidgetNeedsLibraryRebind($widget, jq) {
+        if (htmegaPreviewWidgetNeedsCarouselRebind($widget, jq)) {
+            return true;
+        }
+        var el = $widget[0];
+        var wt = (el && el.getAttribute("data-widget_type")) || "";
+        // Widgets that rely on scripts/CSS loaded per-widget on first paint (same root cause as carousels).
+        if (
+            /htmega-(progressbar|countdown|counter|newtsicker|videoplayer|imagemasonryd|chart|google-map|magnific-popup|notify|audio-player|postslider|thumbgallery|carousel|postcarousel|instagram|twitterfeed|panelslider|scrollnavigation|postgridtab|imagecomparison|imagemagnifier|animatedheading|lottie|flip-carousel)-addons/i.test(
+                wt
+            )
+        ) {
+            return true;
+        }
+        if (/^bl-/.test(wt)) {
+            return true;
+        }
+        if ($widget.find(".radial-progress").length) {
+            return true;
+        }
+        if ($widget.find("[data-countdown]").length) {
+            return true;
+        }
+        if ($widget.find(".htmega-masonry-activation").length) {
+            return true;
+        }
+        if ($widget.find(".htmega-newstricker").length) {
+            return true;
+        }
+        if ($widget.find(".htmega-animated-heading").length) {
+            return true;
+        }
+        if ($widget.find(".htmega-lottie-image").length || $widget.find("lottie-player").length) {
+            return true;
+        }
+        if ($widget.find(".htmega-flipster").length) {
+            return true;
+        }
+        if ($widget.find(".htmega-doughunt-chartjs").length) {
+            return true;
+        }
+        if ($widget.find(".magnifier-thumb-wrapper img.zoom").length) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Re-fire Elementor `element_ready` in the preview iframe so HT Mega handlers run after library import.
+     * Targets sliders and other “activation” widgets that miss per-widget enqueued scripts until preview reload.
+     */
+    function htmegaRerunHtmegaCarouselsInPreview() {
+        try {
+            var frame = window.elementor && elementor.$preview && elementor.$preview[0];
+            if (!frame || !frame.contentWindow || !frame.contentWindow.document) {
+                return;
+            }
+            var win = frame.contentWindow;
+            var ef = win.elementorFrontend;
+            if (!ef || !ef.elementsHandler || typeof ef.elementsHandler.runReadyTrigger !== "function") {
+                return;
+            }
+            var jq = win.jQuery;
+            if (!jq) {
+                return;
+            }
+            jq(win.document)
+                .find('[data-element_type="widget"]')
+                .each(function () {
+                    var wt = this.getAttribute("data-widget_type") || "";
+                    if (wt.indexOf("htmega-") !== 0 && wt.indexOf("bl-") !== 0) {
+                        return;
+                    }
+                    var $w = jq(this);
+                    if (!htmegaPreviewWidgetNeedsLibraryRebind($w, jq)) {
+                        return;
+                    }
+                    ef.elementsHandler.runReadyTrigger(this);
+                });
+            window.setTimeout(function () {
+                if (!jq.fn || typeof jq.fn.slick !== "function") {
+                    return;
+                }
+                jq(win.document)
+                    .find(".slick-initialized")
+                    .each(function () {
+                        var $el = jq(this);
+                        if (
+                            !$el.closest('.elementor-element[data-widget_type^="htmega-"]').length &&
+                            !$el.closest('.elementor-element[data-widget_type^="bl-"]').length
+                        ) {
+                            return;
+                        }
+                        try {
+                            $el.slick("setPosition");
+                        } catch (ePos) {}
+                    });
+            }, 150);
+        } catch (e) {}
+    }
+
+    function htmegaAfterLibraryImportRebindPreviewCarousels(importResult) {
+        var done = function () {
+            window.setTimeout(htmegaRerunHtmegaCarouselsInPreview, 80);
+        };
+        if (importResult === false) {
+            return;
+        }
+        if (importResult && typeof importResult.done === "function" && typeof importResult.fail === "function") {
+            importResult.done(done).fail(function () {});
+            return;
+        }
+        if (importResult && typeof importResult.then === "function") {
+            importResult.then(done).catch(function () {});
+            return;
+        }
+        window.setTimeout(done, 120);
+    }
+
     moduleExp.Models.Template = Backbone.Model.extend( 
         { 
             defaults: { 
@@ -221,7 +438,7 @@
                 return (
                     _.each(t, function (t, a) {
                         var n = htmega.library.getFilter(a);
-                        if (n && t.callback) {
+                        if ((n || a === 'category') && t.callback) {
                             var r = t.callback.call(e, n);
                             return r || (i = false), r;
                         }
@@ -456,8 +673,18 @@
                 },
                 category: {
                     callback: function (category) {
-                        if (!category) return true;
-                        var shareId =this.get("shareId");
+                        if (!category) {
+                            if (htFilterText === 'page') {
+                                var title = (this.get('title') || '').toLowerCase();
+                                var tags = this.get('tags') || [];
+                                return title.indexOf('home') !== -1 ||
+                                    _.any(tags, function (tag) {
+                                        return String(tag).toLowerCase().indexOf('home') !== -1;
+                                    });
+                            }
+                            return true;
+                        }
+                        var shareId = this.get("shareId");
                         return shareId === category;
                     }
                 }
@@ -493,7 +720,19 @@
             var t = {
                 data: {},
                 success: function (t) {
-                    (d = new moduleExp.Collections.Template(t.templates)), t.tags && (s = t.tags), e.onUpdate && e.onUpdate();
+                    d = new moduleExp.Collections.Template(t.templates);
+
+                    if (htFilterText === 'page') {
+                        d.comparator = function(model) {
+                            var dateVal = model.get('date') || model.get('human_date') || '';
+                            var time = new Date(dateVal).getTime() || parseInt(model.get('id')) || 0;
+                            return -time;
+                        };
+                        d.sort();
+                    }
+
+                    t.tags && (s = t.tags);
+                    e.onUpdate && e.onUpdate();
                 },
             };
             e.forceSync && (t.data.sync = true), 
@@ -521,17 +760,26 @@
                 success: function (e) {
                     i.getModal().hideLoadingView(), 
                     i.getModal().hideModal();
-                    var a = {};
-                    -1 !== i.atIndex && (a.at = i.atIndex), 
-                    $e.run(
-                        "document/elements/import", 
-                        { 
-                            model: t, 
-                            data: e, 
-                            options: a 
+                    var payload = jQuery.extend(true, {}, e || {}),
+                        placement = {};
+                    delete payload.htmega_reload_editor,
+                    -1 !== i.atIndex && (placement.at = i.atIndex),
+                    window.setTimeout(function () {
+                        var runImport = function () {
+                            var importDeferred = $e.run("document/elements/import", {
+                                model: t,
+                                data: payload,
+                                options: placement
+                            });
+                            htmegaAfterLibraryImportRebindPreviewCarousels(importDeferred);
+                        };
+                        if (e && e.htmega_reload_editor) {
+                            htmegaRefreshElementorWidgetsConfigThen(runImport);
+                        } else {
+                            runImport();
                         }
-                    ), 
-                    (i.atIndex = -1);
+                    }, 10),
+                    i.atIndex = -1;
                 },
                 error: function (e) {
                     i.showErrorDialog(e);

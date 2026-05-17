@@ -50,7 +50,6 @@ class weatherResource{
         $country_info = json_decode( wp_remote_retrieve_body( $country_info ) );
 
         if( (isset($country_info->latitude ) && $country_info->latitude !== 0) && ( isset( $country_info->longitude) && $country_info->longitude !== 0 ) ){
-        //if($country_info->latitude !== 0 && $country_info->longitude !== 0 ){
             return array(
                 'lat' => $country_info->latitude,
                 'lon' => $country_info->longitude,
@@ -100,10 +99,8 @@ class weatherResource{
 			
 
         // set sunset and sunrise
-        //$weather_data['current']['sunrise'] = $city_weather->sunrise;
         $weather_data['current']['sunrise_time'] = $this->get_country_date_time($time_zone, $city_weather->sunrise);
         
-        //$weather_data['current']['sunset'] = $city_weather->sunset;
         $weather_data['current']['sunset_time'] =  $this->get_country_date_time($time_zone, $city_weather->sunset);
 
         // set wind

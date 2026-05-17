@@ -12,6 +12,21 @@ function htmegaBlocks_get_option( $option, $section, $default = '' ){
 }
 
 /**
+ * Returns true if at least one HT Mega Gutenberg block is enabled in settings.
+ * Block assets are loaded only when this returns true.
+ */
+function htmegaBlocks_any_block_enabled() {
+    static $result = null;
+    if ( null !== $result ) {
+        return $result;
+    }
+    $options = get_option( 'htmega_gutenberg_tabs', [] );
+    $blocks  = ! empty( $options['blocks'] ) ? $options['blocks'] : [];
+    $result  = in_array( 'on', $blocks, true );
+    return $result;
+}
+
+/**
 * Woocommerce Product last product id return
 */
 function htmegaBlocks_get_last_product_id(){

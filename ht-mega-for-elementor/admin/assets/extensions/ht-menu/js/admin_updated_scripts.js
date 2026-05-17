@@ -105,7 +105,7 @@
                     },
                     cache: false,
                     beforeSend: function(){
-                        $('.htmega-menu-loader').html('<span class="htmega-menu-loading-close"></span><div class="htmegamenus-css"><div style="width:100%;height:100%" class="htmegamenus-ripple"><div></div><div></div>');
+                        $('.htmega-menu-loader').html('<span class="htmega-menu-loading-close"></span><div class="htmegamenus-css"><div style="width:100%;height:100%" class="htmegamenus-ripple"><div></div><div></div></div></div>');
                     },
                      success: function( response ) {
 

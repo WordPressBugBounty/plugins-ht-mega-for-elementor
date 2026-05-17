@@ -88,7 +88,11 @@ if ( ! class_exists( 'HTMega_Elementor_Assests_Cache' ) ) {
                     }
                 }
                 if ( file_exists( $this->get_upload_file_path() ) ) {
-                    wp_enqueue_style('htmega-' . $this->get_post_id(), $this->get_upload_file_url(), [ 'elementor-frontend' ], HTMEGA_VERSION . '.' . get_post_modified_time());
+                    if ( function_exists( 'htmega_elementor_ensure_frontend_dependencies_registered' ) ) {
+                        htmega_elementor_ensure_frontend_dependencies_registered();
+                    }
+                    $deps = wp_style_is( 'elementor-frontend', 'registered' ) ? array( 'elementor-frontend' ) : array();
+                    wp_enqueue_style( 'htmega-' . $this->get_post_id(), $this->get_upload_file_url(), $deps, HTMEGA_VERSION . '.' . get_post_modified_time() );
                 }
             }
         }
@@ -170,7 +174,7 @@ if ( ! class_exists( 'HTMega_Elementor_Assests_Cache' ) ) {
             $widget = str_replace( 'htmega-', '', $widget );
             $widget = str_replace( '-addons', '', $widget );
 
-            if ( is_plugin_active( 'htmega-pro/htmega_pro.php' ) ) {
+            if ( function_exists( 'htmega_is_pro_active' ) && htmega_is_pro_active() ) {
                 $widget_css_path = file_exists( HTMEGA_ADDONS_PL_PATH_PRO . 'assets/widgets/' . $widget . '/style.min.css' )
                     ? ( defined( 'WP_DEBUG' ) && WP_DEBUG
                         ? HTMEGA_ADDONS_PL_PATH_PRO . 'assets/widgets/' . $widget . '/style.css'

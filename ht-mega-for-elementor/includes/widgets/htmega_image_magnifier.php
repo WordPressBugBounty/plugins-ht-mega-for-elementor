@@ -268,12 +268,6 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
                     <a class="magnifier-thumb-wrapper"><img <?php echo $this->get_render_attribute_string( 'zoomimgattr' ); ?>></a>
                 </div>
             </div>
-            <script>
-                jQuery(document).ready(function($) {
-                    'use strict';
-                    $('#thumb-<?php echo esc_attr( $id ); ?>').magnify();
-                });
-            </script>
         <?php
 
     }

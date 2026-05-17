@@ -991,7 +991,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         if ( !empty( $postorder ) ) {
             $args['order'] =  sanitize_text_field( $postorder );
         }
-        $news_ticker = new \WP_Query( $args );
+        $news_ticker = \HTMega_Query_Cache::query( $args );
        
         ?>
             <div <?php echo $this->get_render_attribute_string( 'htmega_newsticker_section_attr' ); ?> style="display:none;">

@@ -53,8 +53,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     public function enqueue_frontend_scripts() {
 
         // HT Builder
-
-        if ( ('on' == htmega_get_module_option( 'htmega_themebuilder_module_settings','themebuilder','themebuilder_enable','off' ) ) || htmega_get_option( 'themebuilder', 'htmega_advance_element_tabs', 'off' ) === 'on' && empty ( htmega_get_module_option( 'htmega_themebuilder_module_settings') ) ) {
+        if (
+            ( function_exists( 'htmega_should_enqueue_global_assets' ) && htmega_should_enqueue_global_assets() ) &&
+            ( ( 'on' == htmega_get_module_option( 'htmega_themebuilder_module_settings','themebuilder','themebuilder_enable','off' ) ) || htmega_get_option( 'themebuilder', 'htmega_advance_element_tabs', 'off' ) === 'on' && empty ( htmega_get_module_option( 'htmega_themebuilder_module_settings') ) )
+        ) {
             wp_enqueue_style(
                 'htbuilder-main',
                 HTMEGA_ADDONS_PL_URL . 'assets/extensions/ht-builder/css/htbuilder.css',

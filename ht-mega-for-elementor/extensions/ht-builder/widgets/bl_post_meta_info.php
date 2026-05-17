@@ -345,7 +345,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                         ],
                         [
                             'metaname' => 'comments',
-                            'icon' => 'fa fa-commenting-o',
+                            'icon' => 'far fa-comment-dots',
                         ],
                     ],
                     'title_field' => '<i class="{{ icon }}"></i> <span style="text-transform: capitalize;">{{{ metaname }}}</span>',
@@ -623,7 +623,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                         'url' => get_comments_link(),
                     ];
                 }
-                $item_data['icon']['value'] = 'fa fa-commenting';
+                $item_data['icon']['value'] = 'far fa-comment-dots';
                 $item_data['icon']['library'] = 'fa-regular';
                 $item_data['itemprop'] = 'commentCount';
             }

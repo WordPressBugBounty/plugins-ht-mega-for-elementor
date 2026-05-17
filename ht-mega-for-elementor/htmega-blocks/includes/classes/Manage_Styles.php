@@ -230,8 +230,9 @@ class Manage_Styles {
 			$css = isset($params['inner_css']) ? $this->sanitize_css_content($params['inner_css']) : '';
 
 			$filename = sanitize_file_name("htmega-css-{$post_id}.css");
-			$dirname  = trailingslashit( wp_upload_dir()['basedir'] ).'htmega-addons/';
-			
+			$upload_dir_url = wp_upload_dir();
+			$dirname        = trailingslashit( $upload_dir_url['basedir'] ) . 'htmega-addons/';
+
 			WP_Filesystem( false, $upload_dir_url['basedir'], true );
 			if( ! $wp_filesystem->is_dir( $dirname ) ) {
 				$wp_filesystem->mkdir( $dirname );

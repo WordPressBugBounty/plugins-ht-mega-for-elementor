@@ -25,6 +25,24 @@ if( !function_exists('htmega_is_editing_mode') ){
         is_preview() );
     }
 }
+
+if ( ! function_exists( 'htmega_is_elementor_preview_request' ) ) {
+	/**
+	 * True only when serving the Elementor editor preview iframe (not the wp-admin editor shell, not WordPress
+	 * native `?preview=true`). Use this to conditionally merge heavy script deps for template import / live canvas —
+	 * avoids loading bundle extras on normal front-end requests when {@see htmega_is_editing_mode()} would also be
+	 * true for WordPress post preview.
+	 *
+	 * @return bool
+	 */
+	function htmega_is_elementor_preview_request() {
+		if ( ! class_exists( '\Elementor\Plugin', false ) ) {
+			return false;
+		}
+		$preview = \Elementor\Plugin::$instance->preview;
+		return $preview && $preview->is_preview_mode();
+	}
+}
 /**
  * [htmega_get_elementor_option]
  * @param  [string] $key Option Key
@@ -1175,6 +1193,148 @@ function htmega_custom_class_modify_litespeed_excludes($current_excludes) {
     return $current_excludes;
 }
 add_filter('litespeed_media_lazy_img_parent_cls_excludes', 'htmega_custom_class_modify_litespeed_excludes');
+
+/**
+ * Ensure Elementor base frontend styles/scripts are registered before document CSS enqueue.
+ *
+ * WordPress 6.9+ warns when a stylesheet lists a dependency that is not registered. Theme Builder and
+ * template widgets can render `get_builder_content()` before `wp_enqueue_scripts` priority 5 has run.
+ */
+if ( ! function_exists( 'htmega_elementor_ensure_frontend_dependencies_registered' ) ) {
+	function htmega_elementor_ensure_frontend_dependencies_registered() {
+		if ( ! class_exists( '\Elementor\Plugin', false ) ) {
+			return;
+		}
+		$plugin = \Elementor\Plugin::instance();
+		if ( ! isset( $plugin->frontend ) || ! is_object( $plugin->frontend ) ) {
+			return;
+		}
+		if ( wp_style_is( 'elementor-frontend', 'registered' ) ) {
+			return;
+		}
+		$frontend = $plugin->frontend;
+		if ( is_callable( array( $frontend, 'register_scripts' ) ) ) {
+			$frontend->register_scripts();
+		}
+		if ( is_callable( array( $frontend, 'register_styles' ) ) ) {
+			$frontend->register_styles();
+		}
+	}
+}
+
+if ( did_action( 'elementor/loaded' ) ) {
+	add_action( 'elementor/frontend/before_get_builder_content', 'htmega_elementor_ensure_frontend_dependencies_registered', 1 );
+} else {
+	add_action(
+		'elementor/loaded',
+		static function (): void {
+			add_action( 'elementor/frontend/before_get_builder_content', 'htmega_elementor_ensure_frontend_dependencies_registered', 1 );
+		},
+		5
+	);
+}
+
+/**
+ * Enqueue Elementor Post CSS for Theme Builder header/footer templates during {@see 'wp_enqueue_scripts'}.
+ *
+ * `theme-header.php` prints {@see wp_head()} in `<head>` before the Elementor template renders in the body.
+ * Elementor usually registers `elementor-post-{id}` CSS while rendering builder output — after that first
+ * `wp_head()` pass. Legacy strip then clears `wp_head` before the theme’s duplicate header runs, so late
+ * stylesheet registration never reaches the page. Pre-enqueue fixes missing header/footer styling.
+ *
+ * Must run during Elementor preview / Theme Builder preview URLs too: {@see htmega_is_editing_mode()} is often true
+ * there (`preview->is_preview_mode()` / `is_preview()`), so skipping would drop `elementor-post-{id}` on those requests.
+ */
+if ( ! function_exists( 'htmega_enqueue_theme_builder_elementor_document_styles' ) ) {
+	function htmega_enqueue_theme_builder_elementor_document_styles() {
+		if ( is_admin() ) {
+			return;
+		}
+		if ( ! did_action( 'elementor/loaded' ) ) {
+			return;
+		}
+		if ( ! class_exists( '\Elementor\Core\Files\CSS\Post', false ) ) {
+			return;
+		}
+		if ( ! function_exists( 'htmega_get_theme_builder_header_footer_ids_for_request' ) ) {
+			return;
+		}
+
+		$placement = htmega_get_theme_builder_header_footer_ids_for_request();
+		$doc_ids   = array();
+		foreach ( array( 'header', 'footer' ) as $slot ) {
+			if ( empty( $placement[ $slot ] ) || '0' === (string) $placement[ $slot ] ) {
+				continue;
+			}
+			$doc_ids[] = absint( $placement[ $slot ] );
+		}
+
+		// Single blog template CSS
+		if ( is_singular( 'post' ) ) {
+			$single_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'single_blog_page' );
+			if ( empty( $single_tm_id ) ) {
+				$single_tm_id = htmega_get_option( 'single_blog_page', 'htmegabuilder_templatebuilder_tabs', '0' );
+			}
+			if ( ! empty( $single_tm_id ) && '0' !== (string) $single_tm_id ) {
+				$doc_ids[] = absint( $single_tm_id );
+			}
+		}
+
+		// Archive blog template CSS
+		if ( is_post_type_archive( 'post' ) || ( function_exists( 'htmega_builder_is_blog_page' ) && htmega_builder_is_blog_page() ) ) {
+			$archive_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'archive_blog_page' );
+			if ( empty( $archive_tm_id ) ) {
+				$archive_tm_id = htmega_get_option( 'archive_blog_page', 'htmegabuilder_templatebuilder_tabs', '0' );
+			}
+			if ( ! empty( $archive_tm_id ) && '0' !== (string) $archive_tm_id ) {
+				$doc_ids[] = absint( $archive_tm_id );
+			}
+		}
+
+		// Search page template CSS (pro)
+		if ( is_search() ) {
+			$search_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'search_page' );
+			if ( ! empty( $search_tm_id ) && '0' !== (string) $search_tm_id ) {
+				$doc_ids[] = absint( $search_tm_id );
+			}
+		}
+
+		// 404 error page template CSS (pro)
+		if ( is_404() ) {
+			$error_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'error_page' );
+			if ( ! empty( $error_tm_id ) && '0' !== (string) $error_tm_id ) {
+				$doc_ids[] = absint( $error_tm_id );
+			}
+		}
+
+		// Coming soon template CSS (pro) — shown to non-logged-in users
+		if ( ! is_user_logged_in() ) {
+			$comingsoon_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'coming_soon_page' );
+			if ( ! empty( $comingsoon_tm_id ) && '0' !== (string) $comingsoon_tm_id ) {
+				$doc_ids[] = absint( $comingsoon_tm_id );
+			}
+		}
+
+		$doc_ids = array_unique( array_filter( $doc_ids ) );
+		if ( empty( $doc_ids ) ) {
+			return;
+		}
+
+		if ( function_exists( 'htmega_elementor_ensure_frontend_dependencies_registered' ) ) {
+			htmega_elementor_ensure_frontend_dependencies_registered();
+		}
+
+		foreach ( $doc_ids as $post_id ) {
+			if ( ! $post_id ) {
+				continue;
+			}
+			$post_css = new \Elementor\Core\Files\CSS\Post( $post_id );
+			$post_css->enqueue();
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'htmega_enqueue_theme_builder_elementor_document_styles', 15 );
+
 /**
  * Get template content by id
  * @since 2.6.6
@@ -1207,10 +1367,320 @@ if ( !function_exists('htmega_get_template_content_by_id') ) {
 }
 
 if ( ! function_exists('htmega_is_elementor_page') ) {
-    function htmega_is_elementor_page( $post_id ) {
-        $elementor = get_post_meta( $post_id, '_elementor_edit_mode', true );
-        return $elementor;
-    }
+	/**
+	 * Whether a post/page is built with Elementor (uses Elementor document API when available).
+	 *
+	 * @param int|null $post_id Post ID, or null for the current singular main query object.
+	 * @return bool
+	 */
+	function htmega_is_elementor_page( $post_id = null ) {
+		if ( null === $post_id ) {
+			if ( ! is_singular() ) {
+				return false;
+			}
+			$post_id = get_queried_object_id();
+		}
+		$post_id = absint( $post_id );
+		if ( ! $post_id ) {
+			return false;
+		}
+
+		if ( did_action( 'elementor/loaded' ) && class_exists( '\Elementor\Plugin' ) ) {
+			$plugin = \Elementor\Plugin::$instance;
+			if ( isset( $plugin->documents ) && is_callable( array( $plugin->documents, 'get' ) ) ) {
+				$document = $plugin->documents->get( $post_id );
+				if ( $document && method_exists( $document, 'is_built_with_elementor' ) ) {
+					return (bool) $document->is_built_with_elementor();
+				}
+
+				return false;
+			}
+			if ( isset( $plugin->db ) && is_callable( array( $plugin->db, 'is_built_with_elementor' ) ) ) {
+				return (bool) $plugin->db->is_built_with_elementor( $post_id );
+			}
+		}
+
+		return 'builder' === (string) get_post_meta( $post_id, '_elementor_edit_mode', true );
+	}
+}
+
+if ( ! function_exists( 'htmega_get_theme_builder_header_footer_ids_for_request' ) ) {
+	/**
+	 * Resolved HT Builder header/footer template IDs for the current request (matches Header_Footer resolver).
+	 *
+	 * @return array{header:mixed, footer:mixed}
+	 */
+	function htmega_get_theme_builder_header_footer_ids_for_request() {
+		$pid       = get_queried_object_id();
+		$header_id = '';
+		$footer_id = '';
+
+		if ( function_exists( 'htmega_get_elementor_setting' ) && $pid && is_singular() ) {
+			$page_header = htmega_get_elementor_setting( 'htmegaheader_template', $pid );
+			$page_footer = htmega_get_elementor_setting( 'htmegafooter_template', $pid );
+			if ( ! empty( $page_header ) && '0' !== (string) $page_header ) {
+				$header_id = $page_header;
+			}
+			if ( ! empty( $page_footer ) && '0' !== (string) $page_footer ) {
+				$footer_id = $page_footer;
+			}
+		}
+
+		if ( '' === $header_id || '0' === (string) $header_id ) {
+			$mod_header = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'header_page', '' );
+			$header_id  = ! empty( $mod_header ) ? $mod_header : ( htmega_get_option( 'header_page', 'htmegabuilder_templatebuilder_tabs', '0' ) ?: '' );
+		}
+		if ( '' === $footer_id || '0' === (string) $footer_id ) {
+			$mod_footer = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'footer_page', '' );
+			$footer_id  = ! empty( $mod_footer ) ? $mod_footer : ( htmega_get_option( 'footer_page', 'htmegabuilder_templatebuilder_tabs', '0' ) ?: '' );
+		}
+
+		return array(
+			'header' => $header_id,
+			'footer' => $footer_id,
+		);
+	}
+}
+
+if ( ! function_exists( 'htmega_should_enqueue_global_assets' ) ) {
+	/**
+	 * Whether HT Mega global frontend assets should load on this request (Phase 3 asset gate).
+	 *
+	 * @return bool
+	 */
+	function htmega_should_enqueue_global_assets() {
+		static $memo = null;
+		if ( null !== $memo ) {
+			return $memo;
+		}
+		if ( is_admin() ) {
+			$memo = true;
+
+			return $memo;
+		}
+
+		$force_standalone = filter_var(
+			get_option( 'htmega_force_global_assets', false ),
+			FILTER_VALIDATE_BOOLEAN
+		);
+		if ( (bool) apply_filters( 'htmega_force_global_assets', $force_standalone ) ) {
+			$memo = true;
+
+			return $memo;
+		}
+
+		$needs = false;
+		if ( function_exists( 'htmega_is_editing_mode' ) && htmega_is_editing_mode() ) {
+			$needs = true;
+		} else {
+			$placement = function_exists( 'htmega_get_theme_builder_header_footer_ids_for_request' )
+				? htmega_get_theme_builder_header_footer_ids_for_request()
+				: array( 'header' => '', 'footer' => '' );
+			$hid       = isset( $placement['header'] ) ? $placement['header'] : '';
+			$fid       = isset( $placement['footer'] ) ? $placement['footer'] : '';
+			if ( ( '' !== (string) $hid && '0' !== (string) $hid ) || ( '' !== (string) $fid && '0' !== (string) $fid ) ) {
+				$needs = true;
+			} elseif ( function_exists( 'htmega_is_elementor_page' ) && htmega_is_elementor_page( null ) ) {
+				$needs = true;
+			} elseif ( is_singular( 'post' ) ) {
+				$single_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'single_blog_page' );
+				if ( empty( $single_tm_id ) ) {
+					$single_tm_id = htmega_get_option( 'single_blog_page', 'htmegabuilder_templatebuilder_tabs', '0' );
+				}
+				if ( ! empty( $single_tm_id ) && '0' !== (string) $single_tm_id ) {
+					$needs = true;
+				}
+			} elseif ( is_post_type_archive( 'post' ) || ( function_exists( 'htmega_builder_is_blog_page' ) && htmega_builder_is_blog_page() ) ) {
+				$archive_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'archive_blog_page' );
+				if ( empty( $archive_tm_id ) ) {
+					$archive_tm_id = htmega_get_option( 'archive_blog_page', 'htmegabuilder_templatebuilder_tabs', '0' );
+				}
+				if ( ! empty( $archive_tm_id ) && '0' !== (string) $archive_tm_id ) {
+					$needs = true;
+				}
+			} elseif ( is_search() ) {
+				$search_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'search_page' );
+				if ( ! empty( $search_tm_id ) && '0' !== (string) $search_tm_id ) {
+					$needs = true;
+				}
+			} elseif ( is_404() ) {
+				$error_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'error_page' );
+				if ( ! empty( $error_tm_id ) && '0' !== (string) $error_tm_id ) {
+					$needs = true;
+				}
+			} elseif ( ! is_user_logged_in() ) {
+				$comingsoon_tm_id = htmega_get_module_option( 'htmega_themebuilder_module_settings', 'themebuilder', 'coming_soon_page' );
+				if ( ! empty( $comingsoon_tm_id ) && '0' !== (string) $comingsoon_tm_id ) {
+					$needs = true;
+				}
+			}
+		}
+
+		$memo = (bool) apply_filters( 'htmega_should_enqueue_global_assets', $needs );
+
+		return $memo;
+	}
+}
+
+if ( ! function_exists( 'htmega_is_mega_menu_module_enabled' ) ) {
+	/**
+	 * True when the Menu Builder / Mega Menu extension is bootstrapped (same rules as class.htmega.php).
+	 *
+	 * @return bool
+	 */
+	function htmega_is_mega_menu_module_enabled() {
+		static $memo = null;
+		if ( null !== $memo ) {
+			return $memo;
+		}
+		if ( 'on' === htmega_get_module_option( 'htmega_megamenu_module_settings', 'megamenubuilder', 'megamenubuilder_enable', 'off' ) ) {
+			$memo = true;
+
+			return $memo;
+		}
+		$legacy_on  = htmega_get_option( 'megamenubuilder', 'htmega_advance_element_tabs', 'off' ) === 'on';
+		$empty_mod  = empty( htmega_get_module_option( 'htmega_megamenu_module_settings' ) );
+		$memo       = $legacy_on && $empty_mod;
+
+		return $memo;
+	}
+}
+
+if ( ! function_exists( 'htmega_get_nav_menu_term_ids_with_megamenu_enabled' ) ) {
+	/**
+	 * Menu terms whose “Enable megamenu?” checkbox is saved in HT Mega nav settings.
+	 *
+	 * @return int[]
+	 */
+	function htmega_get_nav_menu_term_ids_with_megamenu_enabled() {
+		static $memo = null;
+		if ( null !== $memo ) {
+			return $memo;
+		}
+		if ( ! htmega_is_mega_menu_module_enabled() ) {
+			$memo = array();
+
+			return $memo;
+		}
+		$memo = array();
+		foreach ( (array) wp_get_nav_menus() as $menu ) {
+			if ( empty( $menu->term_id ) ) {
+				continue;
+			}
+			$settings = get_option( 'ht_menu_options_' . absint( $menu->term_id ), array() );
+			if ( is_array( $settings ) && isset( $settings['enable_menu'] ) && 'on' === $settings['enable_menu'] ) {
+				$memo[] = absint( $menu->term_id );
+			}
+		}
+
+		return $memo;
+	}
+}
+
+if ( ! function_exists( 'htmega_is_megamenu_assigned_to_theme_location' ) ) {
+	/**
+	 * True when a mega-enabled menu is assigned to any registered theme location (typical headers).
+	 *
+	 * @return bool
+	 */
+	function htmega_is_megamenu_assigned_to_theme_location() {
+		$enabled = htmega_get_nav_menu_term_ids_with_megamenu_enabled();
+		if ( empty( $enabled ) ) {
+			return false;
+		}
+		$locations = get_nav_menu_locations();
+		if ( empty( $locations ) || ! is_array( $locations ) ) {
+			return false;
+		}
+		foreach ( $locations as $menu_term_id ) {
+			if ( $menu_term_id && in_array( absint( $menu_term_id ), $enabled, true ) ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+}
+
+if ( ! function_exists( 'htmega_has_active_mega_menu' ) ) {
+	/**
+	 * Frontend: mega nav is expected to render (classic theme menus). Filter to override detection.
+	 *
+	 * Use `add_filter( 'htmega_has_active_mega_menu', '__return_true' )` when the menu prints without `theme_location`.
+	 *
+	 * @return bool
+	 */
+	function htmega_has_active_mega_menu() {
+		static $memo = null;
+		if ( null !== $memo ) {
+			return $memo;
+		}
+		if ( is_admin() ) {
+			$memo = false;
+
+			return $memo;
+		}
+		if ( ! htmega_is_mega_menu_module_enabled() ) {
+			$memo = false;
+
+			return $memo;
+		}
+
+		$detected = htmega_is_megamenu_assigned_to_theme_location();
+		$memo     = (bool) apply_filters( 'htmega_has_active_mega_menu', $detected );
+
+		return $memo;
+	}
+}
+
+if ( ! function_exists( 'htmega_should_load_frontend_mega_menu_assets' ) ) {
+	/**
+	 * Mega menu stylesheet/script + inline customization on this request (full globals or mega companion path).
+	 *
+	 * @return bool
+	 */
+	function htmega_should_load_frontend_mega_menu_assets() {
+		if ( function_exists( 'htmega_should_enqueue_global_assets' ) && htmega_should_enqueue_global_assets() ) {
+			return true;
+		}
+
+		return function_exists( 'htmega_has_active_mega_menu' ) && htmega_has_active_mega_menu();
+	}
+}
+
+if ( ! function_exists( 'htmega_enqueue_mega_menu_companion_pack' ) ) {
+	/**
+	 * Slim HT Mega bundle so Elementor-built mega dropdowns (htb/grid) resolve on non-Elementor screens.
+	 * Handles are registered in HTMega_Elementor_Addons_Assests::register_assets().
+	 */
+	function htmega_enqueue_mega_menu_companion_pack() {
+		if ( ! apply_filters( 'htmega_should_enqueue_mega_menu_companion_pack', true ) ) {
+			return;
+		}
+
+		do_action( 'htmega_enqueue_mega_menu_companion_assets' );
+
+		wp_enqueue_style( 'htbbootstrap' );
+		wp_enqueue_script( 'htbbootstrap' );
+		wp_enqueue_script( 'waypoints' );
+
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			wp_enqueue_style( 'htmega-global-style' );
+			wp_enqueue_script( 'htmega-widgets-scripts' );
+		} else {
+			wp_enqueue_style( 'htmega-global-style-min' );
+			wp_enqueue_script( 'htmega-widgets-scripts-min' );
+		}
+
+		wp_enqueue_style( 'htmega-animation' );
+		wp_enqueue_style( 'htmega-keyframes' );
+
+		if ( wp_style_is( 'elementor-frontend', 'registered' ) ) {
+			wp_enqueue_style( 'elementor-frontend' );
+		}
+
+		do_action( 'htmega_after_mega_menu_companion_pack' );
+	}
 }
 
 if ( ! function_exists( 'htmega_get_module_option2' ) ) {
@@ -1218,6 +1688,247 @@ if ( ! function_exists( 'htmega_get_module_option2' ) ) {
         $options = get_option('htmega_advance_element_tabs');
         return isset($options[$option_name]) ? $options[$option_name] : null;
     }
+}
+
+if ( ! function_exists( 'htmega_is_legacy_mode' ) ) {
+    /**
+     * Master legacy-mode filter (Phase 0). Return true via add_filter to favor old behavioural paths once toggles exist downstream.
+     *
+     * @return bool
+     */
+    function htmega_is_legacy_mode() {
+        static $cached = null;
+        if ( null === $cached ) {
+            $cached = (bool) apply_filters( 'htmega_legacy_mode', false );
+        }
+        return $cached;
+    }
+}
+
+if ( ! function_exists( 'htmega_is_pro_active' ) ) {
+    /**
+     * Cached HT Mega Pro activation check (Phase 0 helper).
+     *
+     * @return bool
+     */
+    function htmega_is_pro_active() {
+        static $active = null;
+        if ( null === $active ) {
+            if ( ! function_exists( 'is_plugin_active' ) ) {
+                require_once ABSPATH . 'wp-admin/includes/plugin.php';
+            }
+            $active = is_plugin_active( 'htmega-pro/htmega_pro.php' );
+        }
+
+        return $active;
+    }
+}
+
+if ( ! function_exists( 'htmega_safe_hex_color' ) ) {
+	/**
+	 * Normalize a hex color to #rgb or #rrggbb for safe CSS interpolation.
+	 *
+	 * @param string $hex Raw value (may include leading #).
+	 * @return string Empty if invalid.
+	 */
+	function htmega_safe_hex_color( $hex ) {
+		$hex = strtolower( trim( (string) $hex ) );
+		$hex = ltrim( $hex, '#' );
+		if ( preg_match( '/^[0-9a-f]{3}$/', $hex ) || preg_match( '/^[0-9a-f]{6}$/', $hex ) ) {
+			return '#' . $hex;
+		}
+		return '';
+	}
+}
+
+if ( ! function_exists( 'htmega_sanitize_menu_icon_classes' ) ) {
+	/**
+	 * Space-separated Font Awesome / icon classes hardened for class attributes.
+	 *
+	 * @param string $class_string Raw class list.
+	 */
+	function htmega_sanitize_menu_icon_classes( $class_string ) {
+		$parts = preg_split( '/\s+/', trim( (string) $class_string ), -1, PREG_SPLIT_NO_EMPTY );
+		$sanitized = array();
+		foreach ( $parts as $part ) {
+			$c = sanitize_html_class( $part );
+			if ( '' !== $c ) {
+				$sanitized[] = $c;
+			}
+		}
+
+		return implode( ' ', array_unique( $sanitized ) );
+	}
+}
+
+if ( ! function_exists( 'htmega_sanitize_simple_css_px' ) ) {
+	/**
+	 * Numeric pixel-ish value for width/offset (digits and optional decimal).
+	 *
+	 * @param mixed $value Raw.
+	 */
+	function htmega_sanitize_simple_css_px( $value ) {
+		if ( ! is_numeric( $value ) ) {
+			return '';
+		}
+
+		return (string) round( (float) $value, 2 );
+	}
+}
+
+if ( ! function_exists( 'htmega_sanitize_module_color_for_inline_css' ) ) {
+	/**
+	 * Restrict module option strings embedded in frontend CSS (#hex / basic rgb/rgba).
+	 *
+	 * @param string $color Raw color token.
+	 */
+	function htmega_sanitize_module_color_for_inline_css( $color ) {
+		$color = trim( wp_strip_all_tags( (string) $color ) );
+		if ( '' === $color ) {
+			return '';
+		}
+
+		if ( '#' === substr( $color, 0, 1 ) ) {
+			$c = sanitize_hex_color( $color );
+			return is_string( $c ) ? $c : '';
+		}
+
+		if ( preg_match( '/^rgba?\(\s*[0-9]{1,3}\s*(?:,\s*[0-9]{1,3}\s*){2}(?:,\s*(?:0|1|0?\.\d+)\s*)?\)$/i', $color ) ) {
+			return $color;
+		}
+
+		return '';
+	}
+}
+
+if ( ! function_exists( 'htmega_walker_submenu_wrapper_style_attr' ) ) {
+	/**
+	 * First-level submenu ul inline width/offset.
+	 *
+	 * @param string|int|float $menuwidth Walker state width.
+	 * @param string|int|float $menupos   Walker state left offset.
+	 */
+	function htmega_walker_submenu_wrapper_style_attr( $menuwidth, $menupos ) {
+		$w     = htmega_sanitize_simple_css_px( $menuwidth );
+		$l     = htmega_sanitize_simple_css_px( $menupos );
+		$style = '';
+		if ( '' !== $w ) {
+			$style .= 'width:' . $w . 'px;';
+		}
+		if ( '' !== $l ) {
+			$style .= 'left:' . $l . 'px;';
+		}
+
+		return '' !== $style ? 'style="' . esc_attr( $style ) . '"' : '';
+	}
+}
+
+if ( ! function_exists( 'htmega_walker_menu_icon_markup' ) ) {
+	/**
+	 * Front-end menu item icon HTML.
+	 *
+	 * @param object $item WP nav menu item with HT Mega fields.
+	 */
+	function htmega_walker_menu_icon_markup( $item ) {
+		if ( empty( $item->ficon ) ) {
+			return '';
+		}
+		$icons = substr( $item->ficon, 0, 3 );
+		$icons = str_replace( $icons, $icons . ' ', $item->ficon );
+		$icon_style = '';
+		if ( ! empty( $item->ficoncolor ) ) {
+			$safe = htmega_safe_hex_color( $item->ficoncolor );
+			if ( $safe ) {
+				$icon_style .= 'color:' . $safe . ';';
+			}
+		}
+		$class_list = htmega_sanitize_menu_icon_classes( $icons );
+		if ( '' === $class_list ) {
+			return '';
+		}
+
+		return '<i class="' . esc_attr( $class_list ) . '" style="' . esc_attr( $icon_style ) . '"></i>';
+	}
+}
+
+if ( ! function_exists( 'htmega_walker_menu_badge_markup' ) ) {
+	/**
+	 * Menu badge / tag span.
+	 *
+	 * @param object $item Nav menu item.
+	 */
+	function htmega_walker_menu_badge_markup( $item ) {
+		if ( empty( $item->menutag ) ) {
+			return '';
+		}
+		$badge_style   = '';
+		$badge_bg_type = isset( $item->badge_bg_type ) ? $item->badge_bg_type : '';
+		$bg_two        = isset( $item->badge_bg_color_two ) ? $item->badge_bg_color_two : '';
+
+		if ( ! empty( $item->menutagcolor ) ) {
+			$c = htmega_safe_hex_color( $item->menutagcolor );
+			if ( $c ) {
+				$badge_style .= 'color:' . $c . ';';
+			}
+		}
+		if ( 'gradient' === $badge_bg_type ) {
+			$c1 = htmega_safe_hex_color( isset( $item->menutagbgcolor ) ? $item->menutagbgcolor : '' );
+			$c2 = htmega_safe_hex_color( $bg_two );
+			if ( $c1 && $c2 ) {
+				$badge_style .= 'background-image:linear-gradient(45deg,' . $c1 . ' 0%,' . $c2 . ' 100%);';
+			}
+		} elseif ( ! empty( $item->menutagbgcolor ) ) {
+			$bg = htmega_safe_hex_color( $item->menutagbgcolor );
+			if ( $bg ) {
+				$badge_style .= 'background-color:' . $bg . ';';
+			}
+		}
+
+		return '<span class="htmenu-menu-tag" style="' . esc_attr( $badge_style ) . '">' . esc_html( $item->menutag ) . '</span>';
+	}
+}
+
+if ( ! function_exists( 'htmega_walker_menu_item_title' ) ) {
+	/**
+	 * Filtered nav title with optional kses lock-down.
+	 *
+	 * @param object $item Nav menu item.
+	 */
+	function htmega_walker_menu_item_title( $item ) {
+		$title = apply_filters( 'the_title', $item->title, $item->ID );
+
+		return wp_kses_post( $title );
+	}
+}
+
+if ( ! function_exists( 'htmega_walker_megamenu_wrap_markup' ) ) {
+	/**
+	 * Mega menu dropdown content wrapper markup.
+	 *
+	 * @param object $item           Nav menu item.
+	 * @param string $buildercontent Template HTML output.
+	 */
+	function htmega_walker_megamenu_wrap_markup( $item, $buildercontent ) {
+		$styles = '';
+		if ( isset( $item->menuposition ) && is_numeric( $item->menuposition ) ) {
+			$p = htmega_sanitize_simple_css_px( $item->menuposition );
+			if ( '' !== $p ) {
+				$styles .= 'left:' . $p . 'px;';
+			}
+		}
+		if ( isset( $item->menuwidth ) && is_numeric( $item->menuwidth ) ) {
+			$w = htmega_sanitize_simple_css_px( $item->menuwidth );
+			if ( '' !== $w ) {
+				$styles .= 'width:' . $w . 'px;';
+			}
+		}
+
+		return sprintf(
+			'<div class="htmegamenu-content-wrapper sub-menu" style="%1$s">%2$s</div>',
+			esc_attr( $styles ),
+			$buildercontent
+		);
+	}
 }
 
 /**

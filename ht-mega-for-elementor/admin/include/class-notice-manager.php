@@ -32,7 +32,7 @@ class HTMega_Notice_Manager{
      * Get Notice Endpoint
      */
     public static function get_api_endpoint(){
-        if( is_plugin_active('htmega-pro/htmega_pro.php') && function_exists('htmega_pro_notice_endpoint') ){
+        if( htmega_is_pro_active() && function_exists('htmega_pro_notice_endpoint') ){
             return htmega_pro_notice_endpoint();
         }
         return self::get_remote_url('notice');

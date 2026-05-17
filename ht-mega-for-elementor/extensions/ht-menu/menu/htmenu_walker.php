@@ -21,7 +21,7 @@ class HTMega_Menu_Nav_Walker extends Walker_Nav_Menu {
         $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
         $display_depth = ( $depth + 1 ); // because it counts the first submenu as 0
         if ($display_depth == 1) {
-         $style = 'style="width:'.$this->htmenu_menuwidth.'px; left:'.$this->htmenu_menupos.'px;"';
+         $style = htmega_walker_submenu_wrapper_style_attr( $this->htmenu_menuwidth, $this->htmenu_menupos );
         }else{
           $style = '';
         }
@@ -94,49 +94,20 @@ class HTMega_Menu_Nav_Walker extends Walker_Nav_Menu {
 
     }
 
-    $icons = substr( $item->ficon,0,3);
-    $icons = str_replace($icons, $icons." ", $item->ficon);
-
     // Custom Data
-    $icon = $buildercontent = $badge = $styles = '';
-    $item_settings = get_post_meta( $item->ID, 'htmega_menu_settings', true );
-
-    if( isset( $item->ficon ) && !empty( $item->ficon ) ){
-        $icon_style = '';
-        if( !empty( $item->ficoncolor ) ){
-            $icon_style .= 'color:#'.$item->ficoncolor.';';
-        }
-        $icon = '<i class="'.$icons.'" style="'.$icon_style.'"></i>';
-    }
+    $icon = $buildercontent = $badge = '';
+    $icon = ( isset( $item->ficon ) && ! empty( $item->ficon ) && function_exists( 'htmega_walker_menu_icon_markup' ) )
+        ? htmega_walker_menu_icon_markup( $item )
+        : '';
 
     if( isset( $item->template ) && !empty( $item->template ) ){
         $buildercontent = $this->getItemBuilderContent( $item->template );
         $dropdown_icon = '<span class="htmenu-icon"><i class="fas fa-angle-down"></i></span>';
     }
 
-    if( isset( $item->menutag ) && !empty( $item->menutag ) ){
-        $badge_style = '';
-        if( !empty( $item->menutagcolor ) ){
-            $badge_style .= 'color:#'.$item->menutagcolor.';';
-        }
-        if( $item->badge_bg_type === 'gradient' ){
-            $badge_style .= 'background-image: -webkit-linear-gradient(45deg, #'.$item->menutagbgcolor.' 0%, #'.$item->badge_bg_color_two.' 100%);background-image: -o-linear-gradient(45deg, #'.$item->menutagbgcolor.' 0%, #'.$item->badge_bg_color_two.' 100%);background-image: linear-gradient(45deg, #'.$item->menutagbgcolor.' 0%, #'.$item->badge_bg_color_two.' 100%);';
-        }else{
-            if( !empty( $item->menutagbgcolor ) ){
-                $badge_style .= 'background-color:#'.$item->menutagbgcolor.';';
-            }
-        }
-        $badge = '<span class="htmenu-menu-tag" style="'.$badge_style.'">'.$item->menutag.'</span>';
-    }
-
-
-    if( isset( $item->menuposition ) && !empty( $item->menuposition ) ){
-        $styles .= 'left:'.$item->menuposition.'px;';
-    }
-
-    if( isset( $item->menuwidth ) && !empty( $item->menuwidth ) ){
-        $styles .= 'width:'.$item->menuwidth.'px;';
-    }
+    $badge = ( isset( $item->menutag ) && ! empty( $item->menutag ) && function_exists( 'htmega_walker_menu_badge_markup' ) )
+        ? htmega_walker_menu_badge_markup( $item )
+        : '';
 
     // Build HTML output and pass through the proper filter.
     $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s%6$s%7$s%8$s</a>%9$s',
@@ -144,7 +115,7 @@ class HTMega_Menu_Nav_Walker extends Walker_Nav_Menu {
         $attributes,
         $args->link_before,
         $icon,
-        apply_filters( 'the_title', $item->title, $item->ID ),
+        function_exists( 'htmega_walker_menu_item_title' ) ? htmega_walker_menu_item_title( $item ) : apply_filters( 'the_title', $item->title, $item->ID ),
         $dropdown_icon,
         $badge,
         $args->link_after,
@@ -152,7 +123,9 @@ class HTMega_Menu_Nav_Walker extends Walker_Nav_Menu {
     );
 
     if( !empty( $buildercontent ) ){
-        $item_output .= sprintf('<div class="htmegamenu-content-wrapper sub-menu" style="%1s">%2s</div>', $styles, $buildercontent );
+        $item_output .= function_exists( 'htmega_walker_megamenu_wrap_markup' )
+            ? htmega_walker_megamenu_wrap_markup( $item, $buildercontent )
+            : sprintf( '<div class="htmegamenu-content-wrapper sub-menu" style="%1$s">%2$s</div>', '', $buildercontent );
     }
 
     $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );

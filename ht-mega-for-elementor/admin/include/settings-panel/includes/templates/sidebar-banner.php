@@ -17,7 +17,7 @@ try {
         // showing sidbar  through the remote api
         $noticeManager = HTMega_Notice_Manager::instance();
         $notices = $noticeManager->get_sidebar_info();
-        if (is_plugin_active('htmega-pro/htmega_pro.php')) {
+        if (htmega_is_pro_active()) {
             $htmega_license_title = apply_filters('htmega_license_title', 'lifetime'); 
             if (!str_contains($htmega_license_title, 'Growth') && !str_contains($htmega_license_title, 'Unlimited - Lifetime')) {
                 if (isset($notices[1]['status']) && !empty($notices[1]['status']) && !empty($notices[1]['bannerimage']) ) {

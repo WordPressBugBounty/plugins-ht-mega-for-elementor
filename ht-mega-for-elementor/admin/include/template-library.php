@@ -30,7 +30,6 @@ class HTMega_Template_Library{
         if ( is_admin() ) {
             add_action( 'admin_menu', [ $this, 'admin_menu' ], 225 );
             add_action( 'wp_ajax_htmega_ajax_request', [ $this, 'templates_ajax_request' ] );
-            add_action( 'wp_ajax_nopriv_htmega_ajax_request', [ $this, 'templates_ajax_request' ] );
             add_action( 'wp_ajax_htmega_get_templates', [ $this, 'get_templates_ajax' ] );
 
             add_action( 'wp_ajax_htmega_ajax_get_required_plugin', [ $this, 'ajax_plugin_data' ] );
@@ -141,6 +140,7 @@ class HTMega_Template_Library{
                 wp_send_json_error([
                     'message' => __('Unable to load templates at this time. Please try again later.', 'htmega-addons')
                 ]);
+                return;
             }
         }
     }
@@ -157,7 +157,7 @@ class HTMega_Template_Library{
 
     // Get Endpoint
     public static function get_api_endpoint(){
-        if( is_plugin_active('htmega-pro/htmega_pro.php') && function_exists('htmega_pro_template_endpoint') ){
+        if( htmega_is_pro_active() && function_exists('htmega_pro_template_endpoint') ){
             self::$endpoint = htmega_pro_template_endpoint();
         }
         return self::$endpoint;
@@ -165,7 +165,7 @@ class HTMega_Template_Library{
     
     // Get Template API
     public static function get_api_templateapi(){
-        if( is_plugin_active('htmega-pro/htmega_pro.php') && function_exists('htmega_pro_template_url') ){
+        if( htmega_is_pro_active() && function_exists('htmega_pro_template_url') ){
             self::$templateapi = htmega_pro_template_url();
         }
         return self::$templateapi;
@@ -556,6 +556,11 @@ class HTMega_Template_Library{
         
         check_ajax_referer('htmega_actication_verifynonce', 'plgactivenonce');
 
+        if ( ! current_user_can( 'edit_posts' ) ) {
+            wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+            return;
+        }
+
         if ( isset( $_REQUEST ) ) {
 
             $template_id        = sanitize_text_field( $_REQUEST['httemplateid'] );
@@ -565,6 +570,13 @@ class HTMega_Template_Library{
 
             $templateurl    = sprintf( self::get_api_templateapi(), $template_id );
             $response_data  = $this->templates_get_content_remote_request( $templateurl );
+
+            if ( function_exists( 'htmega_enable_widgets_for_imported_template_content' ) ) {
+                $tpl_elements = isset( $response_data['content']['content'] ) ? $response_data['content']['content'] : array();
+                $tpl_page     = isset( $response_data['page_settings'] ) && is_array( $response_data['page_settings'] ) ? $response_data['page_settings'] : array();
+                htmega_enable_widgets_for_imported_template_content( $tpl_elements, $tpl_page );
+            }
+
             $defaulttitle   = ucfirst( $template_parentid ) .' -> '.$template_title;
 
             $args = [
@@ -707,10 +719,10 @@ class HTMega_Template_Library{
                     'message' => esc_html__( 'You do not have permission to install plugins', 'htmega-addons' ),
                 )
             );
+            return;
         }
 
         $plugin_data = isset( $_POST['plugindata'] ) ? json_decode( stripslashes( $_POST['plugindata'] ), true ) : array();
-        error_log('Plugin activation request data: ' . print_r($plugin_data, true));
 
         if ( empty( $plugin_data['location'] ) ) {
             wp_send_json_error(
@@ -719,6 +731,7 @@ class HTMega_Template_Library{
                     'message' => esc_html__( 'Plugin location not provided', 'htmega-addons' ),
                 )
             );
+            return;
         }
 
         $plugin_file = $plugin_data['location'];
@@ -731,18 +744,19 @@ class HTMega_Template_Library{
                     'message' => esc_html__( 'Plugin file not found', 'htmega-addons' ),
                 )
             );
+            return;
         }
 
         $activate = activate_plugin( $plugin_file, '', false, true );
 
         if ( is_wp_error( $activate ) ) {
-            error_log('Plugin activation error: ' . $activate->get_error_message());
             wp_send_json_error(
                 array(
                     'success' => false,
                     'message' => $activate->get_error_message(),
                 )
             );
+            return;
         }
 
         wp_send_json_success(
@@ -819,6 +833,7 @@ class HTMega_Template_Library{
                     'message' => esc_html__( 'Sorry, you are not allowed to install themes on this site.', 'htmega-addons' ),
                 )
             );
+            return;
         }
 
         $theme_slug = ( isset( $_POST['themeslug'] ) ) ? esc_attr( $_POST['themeslug'] ) : '';

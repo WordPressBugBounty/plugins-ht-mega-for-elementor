@@ -1463,6 +1463,28 @@ class Options_Field {
                     'sanitize_callback' => 'floatval',
                 ),
 
+                array(
+                    'id'         => 'htmega_perf_force_global',
+                    'name'       => __( 'Load HT Mega assets on every page', 'htmega-addons' ),
+                    'desc'       => __( 'Keeps legacy behavior (global CSS/JS). Turn off so assets load only on Elementor pages and where the theme builder/header/footer templates apply.', 'htmega-addons' ),
+                    'type'       => 'checkbox',
+                    'default'    => 'off',
+                    'class'      => 'htmega-action-field-left',
+                    'label_on'   => __( 'On', 'htmega-addons' ),
+                    'label_off'  => __( 'Off', 'htmega-addons' ),
+                ),
+
+                array(
+                    'id'         => 'htmega_perf_query_cache',
+                    'name'       => __( 'Cache post queries in widgets', 'htmega-addons' ),
+                    'desc'       => __( 'Caches post lists for sliders, grids, and similar widgets (skipped in the Elementor editor). Disable when debugging stale content.', 'htmega-addons' ),
+                    'type'       => 'checkbox',
+                    'default'    => 'on',
+                    'class'      => 'htmega-action-field-left',
+                    'label_on'   => __( 'On', 'htmega-addons' ),
+                    'label_off'  => __( 'Off', 'htmega-addons' ),
+                ),
+
             ),
 
             'htmega_advance_element_tabs' => array(

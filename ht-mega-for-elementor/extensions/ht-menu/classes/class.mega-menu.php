@@ -131,22 +131,32 @@ class HTMegaMenu_Elementor {
     public function panel_ajax_requests(){
         if ( ! check_ajax_referer( 'htmega_menu_nonce', 'nonce' ) ) {
             wp_send_json_error();
+            return;
         }
-        $action = isset( $_POST['sub_action'] ) ? $_POST['sub_action'] : '';
-        
+        $action = isset( $_POST['sub_action'] ) ? sanitize_text_field( wp_unslash( $_POST['sub_action'] ) ) : '';
+
+        if ( 'save_menu_settings' === $action || 'save_menu_options' === $action ) {
+            if ( ! current_user_can( 'edit_theme_options' ) ) {
+                wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+                return;
+            }
+        } elseif ( ! current_user_can( 'edit_posts' ) ) {
+            wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+            return;
+        }
+
         if( $action === 'save_menu_settings' ){
+            $form_raw = ! empty( $_POST['settings'] ) ? wp_unslash( $_POST['settings'] ) : '';
+            $data     = array();
 
-
-
-            $form_data = ( !empty( $_POST['settings'] ) ?  sanitize_text_field( $_POST['settings'] ) : '' );
-
-            if( !empty( $form_data ) ) {
-                parse_str( $form_data, $data );
+            if ( ! empty( $form_raw ) ) {
+                parse_str( $form_raw, $data );
+                $data = $this->recursive_sanitize( $data );
             } else {
                 return;
             }
 
-            $menu_item_id = absint( $_POST['menu_item_id'] );
+            $menu_item_id = isset( $_POST['menu_item_id'] ) ? absint( $_POST['menu_item_id'] ) : 0;
 
             update_post_meta( $menu_item_id, 'htmega_menu_settings', $data );
 
@@ -160,10 +170,11 @@ class HTMegaMenu_Elementor {
 
             if ( ! check_ajax_referer( 'htmega_menu_nonce', 'nonce' ) ) {
                 wp_send_json_error();
+                return;
             }
 
-            $settings = isset( $_POST['settings'] ) ? $_POST['settings'] : array();
-            $menu_id = absint( $_POST['menu_id'] );
+            $settings = isset( $_POST['settings'] ) ? $this->recursive_sanitize( wp_unslash( $_POST['settings'] ) ) : array();
+            $menu_id = isset( $_POST['menu_id'] ) ? absint( $_POST['menu_id'] ) : 0;
             update_option( 'ht_menu_options_' . $menu_id, $settings );
             wp_die();
         }
@@ -207,7 +218,11 @@ class HTMegaMenu_Elementor {
 
     // enqueue frontend scripts
     public function enqueue_frontend_scripts(){
-        
+
+        if ( function_exists( 'htmega_should_load_frontend_mega_menu_assets' ) && ! htmega_should_load_frontend_mega_menu_assets() ) {
+            return;
+        }
+
         // CSS File
         wp_enqueue_style( 'font-awesome-5-all', ELEMENTOR_ASSETS_URL . '/lib/font-awesome/css/all.min.css' );
         wp_enqueue_style(  'htmega-menu',  HTMEGA_ADDONS_PL_URL . 'assets/extensions/ht-menu/css/mega-menu-style.css', array(), HTMEGA_VERSION );
@@ -224,8 +239,9 @@ class HTMegaMenu_Elementor {
             wp_enqueue_script('fonticonpicker.js', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/js/jquery.fonticonpicker.min.js',
                 array('jquery'));
 
-            wp_enqueue_script( 'htmegamenu-admin', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/js/admin_updated_scripts.js', array('jquery','jquery-ui-dialog'), HTMEGA_VERSION, TRUE );
+            wp_enqueue_script( 'htmegamenu-admin', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/js/admin_updated_scripts.js', array( 'jquery', 'jquery-ui-dialog', 'wp-util', 'wp-color-picker' ), HTMEGA_VERSION, TRUE );
 
+            wp_enqueue_style( 'wp-color-picker' );
             wp_enqueue_style( 'fonticonpicker', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/css/jquery.fonticonpicker.min.css' );
             
             wp_enqueue_style( 'fonticonpicker-bootstrap', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/css/jquery.fonticonpicker.bootstrap.min.css');
@@ -277,6 +293,10 @@ class HTMegaMenu_Elementor {
     */
     public function htmega_menu_styles_inline() {
 
+        if ( function_exists( 'htmega_should_load_frontend_mega_menu_assets' ) && ! htmega_should_load_frontend_mega_menu_assets() ) {
+            return;
+        }
+
         $menu_item_color = $menu_item_hover_color = $sub_menu_width = $sub_menu_bg = $sub_menu_itemcolor = $sub_menu_itemhover_color = $mega_menu_width = $mega_menu_bg = '';
 
         //$menuitemscolor         = htmega_get_option( 'menu_items_color', 'htmegamenu_setting_tabs' );
@@ -295,6 +315,17 @@ class HTMegaMenu_Elementor {
         $megamenuwidth          = htmega_get_module_option( 'htmega_megamenu_module_settings', 'megamenubuilder', 'mega_menu_width') ? htmega_get_module_option( 'htmega_megamenu_module_settings', 'megamenubuilder', 'mega_menu_width') : htmega_get_option( 'mega_menu_width', 'htmegamenu_setting_tabs' );
 
         $megamenubg             = htmega_get_module_option( 'htmega_megamenu_module_settings', 'megamenubuilder', 'mega_menu_bg_color') ? htmega_get_module_option( 'htmega_megamenu_module_settings', 'megamenubuilder', 'mega_menu_bg_color') : htmega_get_option( 'mega_menu_bg_color', 'htmegamenu_setting_tabs' );
+
+        if ( function_exists( 'htmega_sanitize_module_color_for_inline_css' ) ) {
+            $menuitemscolor        = htmega_sanitize_module_color_for_inline_css( $menuitemscolor );
+            $menuitemshovercolor   = htmega_sanitize_module_color_for_inline_css( $menuitemshovercolor );
+            $submenubg             = htmega_sanitize_module_color_for_inline_css( $submenubg );
+            $submenuitemcolor      = htmega_sanitize_module_color_for_inline_css( $submenuitemcolor );
+            $submenuitemhovercolor = htmega_sanitize_module_color_for_inline_css( $submenuitemhovercolor );
+            $megamenubg            = htmega_sanitize_module_color_for_inline_css( $megamenubg );
+            $submenuwidth          = (string) absint( $submenuwidth );
+            $megamenuwidth         = (string) absint( $megamenuwidth );
+        }
 
         if( $menuitemscolor && !empty($menuitemscolor) ){
             $menu_item_color = "
@@ -373,6 +404,18 @@ class HTMegaMenu_Elementor {
         wp_add_inline_style( 'htmega-menu', $custom_css );
     }
 
+    /**
+     * Recursively sanitize menu settings from POST.
+     *
+     * @param mixed $value Raw value.
+     * @return mixed
+     */
+    private function recursive_sanitize( $value ) {
+        if ( is_array( $value ) ) {
+            return array_map( array( $this, 'recursive_sanitize' ), $value );
+        }
+        return is_scalar( $value ) ? sanitize_text_field( (string) $value ) : '';
+    }
 
 }
 

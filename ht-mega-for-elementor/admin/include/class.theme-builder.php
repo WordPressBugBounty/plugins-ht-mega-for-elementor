@@ -399,19 +399,22 @@ class HTMega_Theme_Builder {
 
         if (!current_user_can('manage_options')) {
             wp_send_json_error(__('Permission denied', 'htmega-addons'));
+            return;
         }
 
         $template_type = isset($_POST['template_type']) ? sanitize_text_field($_POST['template_type']) : '';
         $template_name = isset($_POST['template_name']) ? sanitize_text_field($_POST['template_name']) : '';
         $set_as_default = isset($_POST['set_as_default']) ? filter_var($_POST['set_as_default'], FILTER_VALIDATE_BOOLEAN) : false;
-        $selected_template = isset($_POST['selected_template']) ? sanitize_text_field($_POST['selected_template']) : '';
+        $selected_template = isset($_POST['selected_template']) ? sanitize_text_field(wp_unslash($_POST['selected_template'])) : '';
 
         if (!$template_type || !isset($this->template_types[$template_type])) {
             wp_send_json_error(__('Invalid template type', 'htmega-addons'));
+            return;
         }
 
         if (!$template_name) {
             wp_send_json_error(__('Template name is required', 'htmega-addons'));
+            return;
         }
 
         $post_id = wp_insert_post([
@@ -422,6 +425,7 @@ class HTMega_Theme_Builder {
 
         if (is_wp_error($post_id)) {
             wp_send_json_error($post_id->get_error_message());
+            return;
         }
 
         // Add template metadata
@@ -430,35 +434,44 @@ class HTMega_Theme_Builder {
         update_post_meta($post_id, '_elementor_edit_mode', 'builder');
         update_post_meta($post_id, '_elementor_template_type', $template_type);
         
-        // Import selected template content if provided
-        if ($selected_template) {
-            // Get templates from library
-            $library = HTMega_Template_Library::instance();
-            $templates_info = $library->get_templates_info();
-            
-            if (!empty($templates_info) && isset($templates_info['templates'])) {
-                foreach ($templates_info['templates'] as $template) {
-                    if ($template['id'] == $selected_template) {
-                        // Get template content from API
-                        $template_url = sprintf(HTMega_Template_Library::get_api_templateapi(), $template['id']);
-                        $response = wp_remote_get($template_url, [
-                            'timeout' => 60,
-                        ]);
-                        
-                        if (!is_wp_error($response) && 200 === wp_remote_retrieve_response_code($response)) {
-                            $template_content = json_decode(wp_remote_retrieve_body($response), true);
-                            
-                            if ($template_content && isset($template_content['content']['content'])) {
-                                update_post_meta($post_id, '_elementor_data', wp_slash(json_encode($template_content['content']['content'])));
-                            }
-                        }
-                        break;
+        $saved_builder_markup = false;
+
+        // Same pipeline as Elementor Template Library (`get_htmega_template_data` → Library_Source::get_data): enables widgets/modules, replaces IDs, processes import content against this document.
+        if (
+            '' !== $selected_template
+            && class_exists( '\Elementor\Plugin', false )
+            && class_exists( '\HtMeaga\ElementorTemplate\Elementor_Library_Manage', false )
+        ) {
+            $db = \Elementor\Plugin::$instance->db;
+            $db->switch_to_post( $post_id );
+            try {
+                $result = \HtMeaga\ElementorTemplate\Elementor_Library_Manage::instance()->get_template_data(
+                    array(
+                        'template_id'    => $selected_template,
+                        'editor_post_id' => $post_id,
+                    )
+                );
+                if ( is_array( $result ) && ! empty( $result['content'] ) && is_array( $result['content'] ) ) {
+                    update_post_meta( $post_id, '_elementor_data', wp_slash( wp_json_encode( $result['content'] ) ) );
+                    if ( ! empty( $result['page_settings'] ) && is_array( $result['page_settings'] ) ) {
+                        update_post_meta( $post_id, '_elementor_page_settings', $result['page_settings'] );
                     }
+                    if ( ! empty( $result['page_template'] ) ) {
+                        update_post_meta( $post_id, '_wp_page_template', $result['page_template'] );
+                    }
+                    $saved_builder_markup = true;
+                }
+            } catch ( \Exception $e ) {
+                // Leave canvas empty; Library_Source may throw on invalid remote payloads.
+            } finally {
+                if ( method_exists( $db, 'restore_current_post' ) ) {
+                    $db->restore_current_post();
                 }
             }
-        } else {
-            // Set empty elementor data if no template selected
-            update_post_meta($post_id, '_elementor_data', '[]');
+        }
+
+        if ( ! $saved_builder_markup ) {
+            update_post_meta( $post_id, '_elementor_data', '[]' );
         }
         
         // Handle set as default ONLY if checkbox is checked
@@ -534,12 +547,14 @@ class HTMega_Theme_Builder {
                 wp_send_json_error(array(
                     'message' => __('You are unauthorized to import templates!', 'htmega-addons')
                 ));
+                return;
             }
             
             if ( !check_ajax_referer('htmega_template_builder_nonce', 'nonce', false) ) {
                 wp_send_json_error(array(
                     'message' => __('Nonce verification failed!', 'htmega-addons')
                 ));
+                return;
             }
 
             $settings = get_option('htmega_themebuilder_module_settings');
@@ -594,6 +609,7 @@ class HTMega_Theme_Builder {
             wp_send_json_error([
                 'message' => __('Something went wrong!', 'htmega-addons')
             ]);
+            return;
         }
     }
 
@@ -649,6 +665,7 @@ class HTMega_Theme_Builder {
             ]);
         } else {
             wp_send_json_error(__('Failed to move templates to trash', 'htmega-addons'));
+            return;
         }
     }
 

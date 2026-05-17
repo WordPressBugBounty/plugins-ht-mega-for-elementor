@@ -30,8 +30,23 @@ class HTMega_Settings_API {
 
     /**
      * Enqueue scripts and styles
+     *
+     * @param string $hook_suffix Current admin screen hook (from `admin_enqueue_scripts`).
      */
-    function admin_enqueue_scripts() {
+    function admin_enqueue_scripts( $hook_suffix = '' ) {
+        $allow = false;
+        if ( is_string( $hook_suffix ) && strpos( $hook_suffix, 'htmega' ) !== false ) {
+            $allow = true;
+        }
+        if ( ! $allow && function_exists( 'get_current_screen' ) ) {
+            $screen = get_current_screen();
+            if ( $screen && isset( $screen->id ) && strpos( (string) $screen->id, 'htmega' ) !== false ) {
+                $allow = true;
+            }
+        }
+        if ( ! $allow ) {
+            return;
+        }
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_media();
         wp_enqueue_script( 'wp-color-picker' );

@@ -27,6 +27,10 @@ class HTMegaReadingProgressBar_Elementor {
 	 * @access public
 	 */
 	public static function enqueue_scripts() {
+        if ( function_exists( 'htmega_should_enqueue_global_assets' ) && ! htmega_should_enqueue_global_assets() ) {
+            return;
+        }
+
         $htmega_rpbar_module_settings = htmega_get_option( 'htmega_rpbar', 'htmega_rpbar_module_settings' );
         $htmega_rpbar_module_settings = json_decode( $htmega_rpbar_module_settings, true );
 
@@ -59,7 +63,7 @@ class HTMegaReadingProgressBar_Elementor {
         $htmega_rpbar_module_settings = json_decode( $htmega_rpbar_module_settings, true );
 
         $rpbar_global = isset( $htmega_rpbar_module_settings['rpbar_global'] ) ? $htmega_rpbar_module_settings['rpbar_global'] : 'off';
-        $rpbar_enable_label =  ( 'on' == $rpbar_global && is_plugin_active( 'htmega-pro/htmega_pro.php' ) ) ? __('Enable to Custom Style', 'htmega-addons') : __('Enable Reading Progress Bar', 'htmega-addons');
+            $rpbar_enable_label =  ( 'on' == $rpbar_global && htmega_is_pro_active() ) ? __('Enable to Custom Style', 'htmega-addons') : __('Enable Reading Progress Bar', 'htmega-addons');
         
 		$tabs = Controls_Manager::TAB_SETTINGS;
 
@@ -71,7 +75,7 @@ class HTMegaReadingProgressBar_Elementor {
 			)
 		);
 
-        if( 'on' == $rpbar_global && is_plugin_active( 'htmega-pro/htmega_pro.php' ) ) {
+        if( 'on' == $rpbar_global && htmega_is_pro_active() ) {
             $element->add_control(
                 'htmega_rpbar_disable',
                 [

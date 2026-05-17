@@ -114,7 +114,7 @@ final class HTMega_Addons_Elementor {
      * Load template manager after init
      */
     public function load_template_manager() {
-        if ( is_plugin_active( 'htmega-pro/htmega_pro.php' ) && file_exists( HTMEGA_ADDONS_PL_PATH_PRO . 'includes/admin/class.theme-builder.php' ) ) {
+        if ( htmega_is_pro_active() && file_exists( HTMEGA_ADDONS_PL_PATH_PRO . 'includes/admin/class.theme-builder.php' ) ) {
             require_once ( HTMEGA_ADDONS_PL_PATH_PRO . 'includes/admin/class.theme-builder.php' );
         } else {
             require_once ( HTMEGA_ADDONS_PL_PATH . 'admin/include/class.theme-builder.php' );
@@ -127,12 +127,21 @@ final class HTMega_Addons_Elementor {
      */
     public function includes() {
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/helper-function.php' );
+        require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/template-import-widget-enable.php' );
+        require_once ( HTMEGA_ADDONS_PL_PATH . 'admin/include/class.performance-settings-sync.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.assests-cache.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.assests.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'admin/admin-init.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/widgets_control.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.htmega-icon-manager.php' );
+        require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/migrations/class.migration-base.php' );
+        require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/migrations/class.migration-310.php' );
+        require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.query-cache.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/class.updater.php' );
+        Updater::register_hooks();
+        if ( is_admin() ) {
+            require_once HTMEGA_ADDONS_PL_PATH . 'admin/include/class.performance-upgrade-notice.php';
+        }
         require_once ( HTMEGA_ADDONS_PL_PATH . 'admin/include/custom-control/preset-manage.php' );
         require_once ( HTMEGA_ADDONS_PL_PATH . 'admin/include/custom-control/preset-select.php' );
         
@@ -155,7 +164,7 @@ final class HTMega_Addons_Elementor {
             // Admin Notices
             add_action( 'admin_head', [ $this, 'admin_rating_notice' ] );
             add_action( 'admin_head', [ $this, 'admin_promo_notice' ] );
-            if ( is_plugin_active('htmega-pro/htmega_pro.php' ) ) {
+            if ( htmega_is_pro_active() ) {
                 add_action( 'admin_head', [ $this, 'admin_htmega_pro_version_compatibily' ] );
             }
         }
@@ -171,7 +180,7 @@ final class HTMega_Addons_Elementor {
         }
         // WC Sales Notification
         if( htmega_get_option( 'salenotification', 'htmega_advance_element_tabs', 'off' ) === 'on' && is_plugin_active('woocommerce/woocommerce.php') ){
-            if( is_plugin_active('htmega-pro/htmega_pro.php') ){
+            if( htmega_is_pro_active() ){
                 if( htmega_get_option( 'notification_content_type', 'htmegawcsales_setting_tabs', 'actual' ) == 'fakes' ){
                     require_once( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/wc-sales-notification/classes/class.sale_notification_fake.php' );
                 }else{
@@ -186,7 +195,7 @@ final class HTMega_Addons_Elementor {
         if ( ( 'on' == htmega_get_module_option( 'htmega_megamenu_module_settings','megamenubuilder','megamenubuilder_enable','off' ) ) ||
          ( htmega_get_option( 'megamenubuilder', 'htmega_advance_element_tabs', 'off' ) === 'on' && empty ( htmega_get_module_option( 'htmega_megamenu_module_settings') )) ) {
 
-            if ( is_plugin_active( 'htmega-pro/htmega_pro.php' ) ) {
+            if ( htmega_is_pro_active() ) {
                 require_once( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/ht-menu/classes/class.mega-menu.php' );
             } else {
                 require_once( HTMEGA_ADDONS_PL_PATH . 'extensions/ht-menu/classes/class.mega-menu.php' );
@@ -223,7 +232,7 @@ final class HTMega_Addons_Elementor {
         // Floating Effects Module
         if( htmega_get_option( 'floating_effects', 'htmega_advance_element_tabs', 'off' ) === 'on' ){
 
-            if( is_plugin_active('htmega-pro/htmega_pro.php')  && file_exists( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/floating-effects/class.floating-effects.php' )){
+            if( htmega_is_pro_active()  && file_exists( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/floating-effects/class.floating-effects.php' )){
                 require_once( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/floating-effects/class.floating-effects.php' );
             }else{
                 require_once( HTMEGA_ADDONS_PL_PATH . 'extensions/floating-effects/class.floating-effects.php' );
@@ -237,9 +246,6 @@ final class HTMega_Addons_Elementor {
         if (file_exists(HTMEGA_ADDONS_PL_PATH . 'includes/ai/htmega-ai-integration.php')) {
            
             require_once HTMEGA_ADDONS_PL_PATH . 'includes/ai/htmega-ai-integration.php';
-            // add_action('elementor/loaded', function() {
-            //     require_once HTMEGA_ADDONS_PL_PATH . 'includes/ai/htmega-ai-integration.php';
-            // });
         }
     }
     
@@ -316,7 +322,7 @@ final class HTMega_Addons_Elementor {
      */
     public function admin_promo_notice(){
 
-        if ( is_plugin_active('htmega-pro/htmega_pro.php' ) ) {
+        if ( htmega_is_pro_active() ) {
             return;
         }
         // showing notice through the remote api
@@ -445,7 +451,7 @@ final class HTMega_Addons_Elementor {
     public function plugins_setting_links( $links ) {
         $htmega_settings_link = '<a href="admin.php?page=htmega-addons#/general">'.esc_html__( 'Settings', 'htmega-addons' ).'</a>';
         array_unshift( $links, $htmega_settings_link );
-        if( !is_plugin_active('htmega-pro/htmega_pro.php') ){
+        if( !htmega_is_pro_active() ){
             $links['htmegago_pro'] = sprintf('<a href="https://wphtmega.com/pricing/" target="_blank" style="color: #39b54a; font-weight: bold;">' . esc_html__('Go Pro','htmega-addons') . '</a>');
         }
         return $links; 
@@ -462,9 +468,12 @@ final class HTMega_Addons_Elementor {
         if ( false === get_option( 'htmega_elementor_addons_activation_time' ) ) {
             add_option( 'htmega_elementor_addons_activation_time', absint( intval( strtotime('now') ) ) );
         }
-        // save plugin version
+        // save plugin version (legacy + canonical)
         if ( false === get_option( 'htmega_elementor_addons_version' ) ) {
             update_option('htmega_elementor_addons_version', HTMEGA_VERSION );
+        }
+        if ( false === get_option( 'htmega_version' ) ) {
+            update_option( 'htmega_version', HTMEGA_VERSION, false );
         }
 
         add_option('htmega_do_activation_redirect', true);
@@ -483,7 +492,10 @@ final class HTMega_Addons_Elementor {
         // save plugin version
         if ( false === get_option( 'htmega_elementor_addons_version' ) ) {
             update_option('htmega_elementor_addons_version', HTMEGA_VERSION );
-        } 
+        }
+        if ( false === get_option( 'htmega_version' ) ) {
+            update_option( 'htmega_version', HTMEGA_VERSION, false );
+        }
         if ( get_option( 'htmega_do_activation_redirect', false ) ) {
             delete_option('htmega_do_activation_redirect');
             if( !isset( $_GET['activate-multi'] ) ) {

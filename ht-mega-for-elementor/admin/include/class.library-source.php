@@ -125,8 +125,53 @@ class Library_Source extends Source_Base {
 
 		$data = json_decode( $data, true );
 
-		if ( empty( $data ) || empty( $data['content'] ) ) {
+		if ( empty( $data ) || ! is_array( $data ) ) {
 			throw new \Exception( esc_html__( 'Template does not have any content', 'htmega-addons' ) );
+		}
+
+		// Resolve Elementor elements tree for widget auto-enable (same shapes as Theme Builder / varied API payloads).
+		$resolved = array(
+			'elements'       => array(),
+			'page_settings'  => array(),
+			'page_template'  => '',
+		);
+		if ( function_exists( 'htmega_resolve_remote_template_for_import' ) ) {
+			$resolved = htmega_resolve_remote_template_for_import( $data );
+		} elseif ( function_exists( 'htmega_normalize_remote_template_payload_for_import' ) ) {
+			$resolved = htmega_normalize_remote_template_payload_for_import( $data );
+		}
+
+		$tpl_elements = isset( $resolved['elements'] ) && is_array( $resolved['elements'] ) ? $resolved['elements'] : array();
+		if ( empty( $tpl_elements ) && isset( $data['content']['content'] ) && is_array( $data['content']['content'] ) ) {
+			$tpl_elements = $data['content']['content'];
+		}
+
+		if ( empty( $tpl_elements ) ) {
+			throw new \Exception( esc_html__( 'Template does not have any content', 'htmega-addons' ) );
+		}
+
+		if ( ! isset( $data['content'] ) || ! is_array( $data['content'] ) ) {
+			$data['content'] = array();
+		}
+		$data['content']['content'] = $tpl_elements;
+
+		$tpl_page = array();
+		if ( isset( $resolved['page_settings'] ) && is_array( $resolved['page_settings'] ) ) {
+			$tpl_page = $resolved['page_settings'];
+		}
+		if ( isset( $data['page_settings'] ) && is_array( $data['page_settings'] ) ) {
+			$tpl_page = array_merge( $tpl_page, $data['page_settings'] );
+		}
+
+		$htmega_options_changed = false;
+		if ( function_exists( 'htmega_enable_widgets_for_imported_template_content' ) ) {
+			$htmega_options_changed = htmega_enable_widgets_for_imported_template_content( $tpl_elements, $tpl_page );
+		}
+
+		// JSON key retained for backwards compatibility (JS: refresh widgets via get_widgets_config before import, not page reload).
+		$needs_widgets_refresh = $htmega_options_changed;
+		if ( ! $needs_widgets_refresh && function_exists( 'htmega_template_import_payload_uses_registered_htmega_widget_types' ) ) {
+			$needs_widgets_refresh = htmega_template_import_payload_uses_registered_htmega_widget_types( $tpl_elements );
 		}
 
 		$data['content'] = $this->replace_elements_ids( $data['content']['content'] );
@@ -138,6 +183,19 @@ class Library_Source extends Source_Base {
 		if ( $document ) {
 			$data['content'] = $document->get_elements_raw_data( $data['content'], true );
 		}
+
+		/**
+		 * When true, the editor scripts call Elementor `get_widgets_config` before `document/elements/import`
+		 * so newly-enabled HT Mega widgets appear in `elementor.widgetsCache` (historic key name: reload).
+		 *
+		 * @param bool  $suggest_widgets_refresh Matching $needs_widgets_refresh before override.
+		 * @param array $data                  Template payload (content processed for Elementor).
+		 */
+		$data['htmega_reload_editor'] = (bool) apply_filters(
+			'htmega_template_import_suggest_editor_reload',
+			$needs_widgets_refresh,
+			$data
+		);
 
 		return $data;
 	}
@@ -159,13 +217,21 @@ class Library_Source extends Source_Base {
 		];
 
 		$content_url = sprintf( \HTMega_Template_Library::get_api_templateapi(), $template_id );
+
+		global $wp_version;
+
 		$response = wp_remote_get(
 			$content_url,
 			[
-				'body' => $body,
-				'timeout' => 25
+				'body'       => $body,
+				'timeout'    => 60,
+				'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url(),
 			]
 		);
+
+		if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+			return '';
+		}
 
 		return wp_remote_retrieve_body( $response );
 	}

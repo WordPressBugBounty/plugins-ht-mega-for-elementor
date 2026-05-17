@@ -532,7 +532,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         if ( "0" != $get_post_name ) {
             $args['post__in'] = $post_names;
         }
-        $single_post = new \WP_Query( $args );
+        $single_post = \HTMega_Query_Cache::query( $args );
 
         ?>
             <?php
@@ -574,10 +574,10 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                         <?php endif; if($settings['show_title'] == 'yes' ):
                         
                             if ( 0 > $title_length ) { ?>
-                                <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+                                <h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h2>
                             <?php
                             } else { ?>
-                                <h2><a href="<?php the_permalink();?>"><?php echo esc_html( wp_trim_words( get_the_title(), floatval( $title_length ), '' ) ) ; ?></a></h2>
+                                <h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo wp_kses_post( wp_trim_words( get_the_title(), floatval( $title_length ), '' ) ); ?></a></h2>
                             <?php
                              }
                         ?>

@@ -53,7 +53,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                     ],
                 )
             );
-            if ( is_plugin_active('htmega-pro/htmega_pro.php') ) {
+            if ( htmega_is_pro_active() ) {
 
                 $this->add_responsive_control(
                     'menu_badge',
@@ -679,7 +679,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         );
         $this->end_controls_section();
 
-        if ( is_plugin_active('htmega-pro/htmega_pro.php') ) {
+        if ( htmega_is_pro_active() ) {
         //Badge Style
             $this->start_controls_section(
                 'menu_badge_style',

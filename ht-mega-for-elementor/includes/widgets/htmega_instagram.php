@@ -1535,7 +1535,14 @@ class HTMega_Elementor_Widget_Instagram extends Widget_Base {
 
         if ( false === ( $items = get_transient( $transient_var ) ) ) {
 
-            $url = 'https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username&limit=200&access_token='. esc_attr( $access_token);
+            $url = add_query_arg(
+                array(
+                    'fields'        => 'id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username',
+                    'limit'         => 200,
+                    'access_token'  => $access_token,
+                ),
+                'https://graph.instagram.com/me/media'
+            );
 
             $instagram_data = wp_remote_retrieve_body( wp_remote_get( $url ) );
 

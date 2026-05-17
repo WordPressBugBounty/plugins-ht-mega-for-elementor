@@ -114,7 +114,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'magnifier' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/magnifier.css',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'htmega-global-style' ]
+                    'deps'    => ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? [ 'htmega-global-style' ] : [ 'htmega-global-style-min' ],
                 ],
                 'animated-heading' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/animated-text.css',
@@ -167,7 +167,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'htbbootstrap' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/htbbootstrap.js',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'jquery' ]
+                    'deps'    => [ 'jquery', 'htmega-popper' ],
                 ],
                 'htmega-popper' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/popper.min.js',
@@ -182,12 +182,13 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'htmega-widgets-scripts' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/htmega-widgets-active.js',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'jquery' ]
+                    // magnifier must load before the bundle (Image Magnifier uses $.fn.magnify in element_ready).
+                    'deps'    => [ 'jquery', 'magnifier' ],
                 ],
                 'htmega-widgets-scripts-min' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/htmega-widgets-active.min.js',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'jquery' ]
+                    'deps'    => [ 'jquery', 'magnifier' ],
                 ],
                 'slick' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/slick.min.js',
@@ -295,7 +296,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                     'deps'    => [ 'jquery' ]
                 ],
                 'google-map-api' => [
-                    'src'     => 'http://maps.googleapis.com/maps/api/js?sensor=false',
+                    'src'     => 'https://maps.googleapis.com/maps/api/js',
                     'version' => HTMEGA_VERSION,
                     'deps'    => [ 'jquery' ]
                 ],
@@ -334,7 +335,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
 
             if( !empty( $google_map_api_key ) ){
                 $script_list['google-map-api'] = [
-                    'src'     => 'https://maps.googleapis.com/maps/api/js?key='.$google_map_api_key,
+                    'src'     => add_query_arg( array( 'key' => $google_map_api_key ), 'https://maps.googleapis.com/maps/api/js' ),
                     'version' => HTMEGA_VERSION,
                     'deps'    => [ 'jquery' ]
                 ];
@@ -360,6 +361,54 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
         public function register_assets() {
             $scripts = $this->get_scripts();
             $styles  = $this->get_styles();
+
+            // Elementor preview iframes only collect widget script handles from the initial document; template imports
+            // inject new widgets without re-fetching the frame, so libraries (Slick, BeerSlider, easy-pie-chart, …)
+            // may be absent when htmega-widgets-active handlers run.
+            $merge_editor_preview_deps = function_exists( 'htmega_is_elementor_preview_request' ) && htmega_is_elementor_preview_request();
+            if ( ! $merge_editor_preview_deps && ! function_exists( 'htmega_is_elementor_preview_request' ) && function_exists( 'htmega_is_editing_mode' ) ) {
+                $merge_editor_preview_deps = htmega_is_editing_mode();
+            }
+            if ( $merge_editor_preview_deps ) {
+                /** @var string[] Script handles merged into the main widget bundle in editor/preview (filterable). */
+                $editor_bundle_extra_deps = apply_filters(
+                    'htmega_editor_preview_widget_bundle_extra_deps',
+                    array(
+                        'slick',
+                        'beerslider',
+                        'easy-pie-chart',
+                        'htmega-countdown',
+                        'htmega-newsticker',
+                        'isotope',
+                        'swiper',
+                        'magnific-popup',
+                        'ytplayer',
+                        'vaccordion',
+                        'counterup',
+                        'animated-heading',
+                        'mapmarker',
+                        'magnifier',
+                        // Masonry widget uses core-registered scripts:
+                        'masonry',
+                        'imagesloaded',
+                    )
+                );
+                foreach ( array( 'htmega-widgets-scripts', 'htmega-widgets-scripts-min' ) as $bundle_handle ) {
+                    if ( empty( $scripts[ $bundle_handle ] ) ) {
+                        continue;
+                    }
+                    $deps = isset( $scripts[ $bundle_handle ]['deps'] ) && is_array( $scripts[ $bundle_handle ]['deps'] )
+                        ? $scripts[ $bundle_handle ]['deps']
+                        : array( 'jquery' );
+                    foreach ( $editor_bundle_extra_deps as $dep_handle ) {
+                        if ( isset( $scripts[ $dep_handle ] ) || wp_script_is( $dep_handle, 'registered' ) ) {
+                            $deps[] = $dep_handle;
+                        }
+                    }
+                    $deps                              = array_values( array_unique( $deps ) );
+                    $scripts[ $bundle_handle ]['deps'] = $deps;
+                }
+            }
 
             $localize_data_frontend = [];
             $localize_data_admin = [];
@@ -389,7 +438,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             // Localize Scripts for frontend
             wp_localize_script( 'htmega-widgets-scripts', 'HTMEGAF', $localize_data_frontend );
             wp_localize_script( 'htmega-widgets-scripts-min', 'HTMEGAF', $localize_data_frontend );
-            if( is_plugin_active('htmega-pro/htmega_pro.php') ){
+            if( htmega_is_pro_active() ){
                 wp_localize_script( 'htmega-pro-slick-active', 'HTMEGAF', $localize_data_frontend );
                 wp_localize_script( 'htmega-pro-active', 'HTMEGAF', $localize_data_frontend );
             }
@@ -408,7 +457,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'pluginURL'        => plugin_dir_url( __FILE__ ),
                 'alldata'          => !empty( HTMega_Addons_Elementor::$template_info['templates'] ) ? HTMega_Addons_Elementor::$template_info['templates'] : array(),
                 'prolink'          => isset( HTMega_Addons_Elementor::$template_info['pro_link'] ) ? HTMega_Addons_Elementor::$template_info['pro_link'] : '#',
-                'htmegaProActive' => is_plugin_active('htmega-pro/htmega_pro.php') ? 'true':'false',
+                'htmegaProActive' => htmega_is_pro_active() ? 'true':'false',
 
                 'prolabel'         => esc_html__( 'Pro', 'htmega-addons' ),
                 'loadingimg'       => HTMEGA_ADDONS_PL_URL . 'admin/assets/images/loading.gif',
@@ -464,7 +513,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             wp_localize_script( 'htmegaopt-admin', 'HTTM', $localize_data );
 
             // Reading progress bar global functionality
-            if( is_plugin_active('htmega-pro/htmega_pro.php') ) {
+            if( htmega_is_pro_active() ) {
 
                 $htmega_rpbar_module_settings = htmega_get_option( 'htmega_rpbar', 'htmega_rpbar_module_settings' );
                 $htmega_rpbar_module_settings = json_decode( $htmega_rpbar_module_settings,true );
@@ -501,7 +550,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             }
 
             // Scroll To Top global functionality
-            if( is_plugin_active('htmega-pro/htmega_pro.php') ) {
+            if( htmega_is_pro_active() ) {
 
                 $htmega_stt_module_settings = htmega_get_option( 'htmega_stt', 'htmega_stt_module_settings' );
                 $htmega_stt_module_settings = json_decode( $htmega_stt_module_settings,true );
@@ -560,7 +609,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'htmega-widgets-editor',
                 'htmegaPanelSettings',
                 array(
-                    'htmega_pro_installed' => is_plugin_active('htmega-pro/htmega_pro.php') ? true : false,
+                    'htmega_pro_installed' => htmega_is_pro_active() ? true : false,
                     'htmega_pro_widgets'   => $this->get_promotional_widget_list(),
                 )
             );
@@ -571,7 +620,20 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
          * @return [void] Frontend Scripts
          */
         public function enqueue_scripts( ){
-           
+            $allow_global = ! function_exists( 'htmega_should_enqueue_global_assets' ) || htmega_should_enqueue_global_assets();
+            $mega_active  = function_exists( 'htmega_has_active_mega_menu' ) && htmega_has_active_mega_menu();
+
+            if ( ! $allow_global && ! $mega_active ) {
+                return;
+            }
+
+            if ( $mega_active && ! $allow_global ) {
+                if ( function_exists( 'htmega_enqueue_mega_menu_companion_pack' ) ) {
+                    htmega_enqueue_mega_menu_companion_pack();
+                }
+                return;
+            }
+
             // CSS
             wp_enqueue_style( 'htbbootstrap' );
             wp_enqueue_style( 'font-awesome' );
@@ -579,8 +641,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             wp_enqueue_style( 'htmega-keyframes' );
             
 
-            // JS
-            wp_enqueue_script( 'htmega-popper' );
+            // JS (Popper loads first — required by htbbootstrap.js for tooltips/dropdowns)
             wp_enqueue_script( 'htbbootstrap' );
             wp_enqueue_script( 'waypoints' ); 
 
@@ -593,16 +654,60 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 wp_enqueue_script( 'htmega-widgets-scripts-min' );
             }
 
+            if ( function_exists( 'htmega_is_editing_mode' ) && htmega_is_editing_mode() ) {
+                wp_enqueue_style( 'slick' );
+                // Image comparison + animated heading: styles are normally enqueued only when the widget is in the
+                // initial document; match deps to the global stylesheet (min vs non-min) already loaded above.
+                $editor_global_style_dep = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? array( 'htmega-global-style' ) : array( 'htmega-global-style-min' );
+                wp_enqueue_style(
+                    'htmega-compare-image-editor',
+                    HTMEGA_ADDONS_PL_URL . 'assets/css/compare-image.css',
+                    $editor_global_style_dep,
+                    HTMEGA_VERSION
+                );
+                wp_enqueue_style(
+                    'htmega-animated-heading-editor',
+                    HTMEGA_ADDONS_PL_URL . 'assets/css/animated-text.css',
+                    $editor_global_style_dep,
+                    HTMEGA_VERSION
+                );
+                wp_enqueue_style(
+                    'htmega-magnifier-editor',
+                    HTMEGA_ADDONS_PL_URL . 'assets/css/magnifier.css',
+                    $editor_global_style_dep,
+                    HTMEGA_VERSION
+                );
+            }
+
+            /*
+             * Merged per-widget CSS files. Theme Builder header/footer IDs must merge even when
+             * `htmega_is_editing_mode()` is true (Elementor preview iframe / Theme Builder preview URLs); otherwise only
+             * `htmega-widgets-style` loads and TB templates miss scoped combines.
+             */
+            $post_id = get_the_ID();
+            $combine_document_ids = array();
             if ( ! htmega_is_editing_mode() ) {
-                $post_id = get_the_ID();
-
-                if ( htmega_is_elementor_page( $post_id ) ) {
-                 
-                    $assets_cache = new HTMega_Elementor_Assests_Cache( $post_id );
-                    $assets_cache -> combine_ht_mega_css_files();
+                if ( $post_id && htmega_is_elementor_page( $post_id ) ) {
+                    $combine_document_ids[] = (int) $post_id;
                 }
+            }
+            if ( function_exists( 'htmega_get_theme_builder_header_footer_ids_for_request' ) ) {
+                $tb_ids = htmega_get_theme_builder_header_footer_ids_for_request();
+                foreach ( array( 'header', 'footer' ) as $slot ) {
+                    $tid = isset( $tb_ids[ $slot ] ) ? absint( $tb_ids[ $slot ] ) : 0;
+                    if ( ! $tid || ! htmega_is_elementor_page( $tid ) ) {
+                        continue;
+                    }
+                    $combine_document_ids[] = $tid;
+                }
+            }
+            $combine_document_ids = array_values( array_unique( array_filter( $combine_document_ids ) ) );
+            foreach ( $combine_document_ids as $document_id ) {
+                $assets_cache = new HTMega_Elementor_Assests_Cache( $document_id );
+                $assets_cache->combine_ht_mega_css_files();
+            }
 
-            } else {
+            if ( htmega_is_editing_mode() ) {
                 wp_enqueue_style( 'htmega-widgets-style' );
             }
 

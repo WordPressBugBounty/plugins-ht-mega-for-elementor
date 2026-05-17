@@ -33,10 +33,10 @@ class HTMega_Icon_manager extends Icons_Manager{
     }
 
     public static function render_icon( $icon, $attributes = [], $tag = 'i' ) {
-        ob_start(); 
-        Icons_Manager::render_icon(  $icon, $attributes = [], $tag = 'i' );
-        
-        $icon_html = ob_get_clean(); 
+        ob_start();
+        Icons_Manager::render_icon( $icon, $attributes, $tag );
+
+        $icon_html = ob_get_clean();
         return $icon_html;
     }
 

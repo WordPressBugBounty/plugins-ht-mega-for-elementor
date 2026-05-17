@@ -30,6 +30,10 @@ class HTMegaScrollToTop_Elementor {
 	 * @access public
 	 */
 	public static function enqueue_scripts() {
+        if ( function_exists( 'htmega_should_enqueue_global_assets' ) && ! htmega_should_enqueue_global_assets() ) {
+            return;
+        }
+
         $htmega_stt_module_settings = htmega_get_option( 'htmega_stt', 'htmega_stt_module_settings' );
         $htmega_stt_module_settings = json_decode( $htmega_stt_module_settings, true );
 
@@ -78,7 +82,7 @@ class HTMegaScrollToTop_Elementor {
         $htmega_stt_module_settings = json_decode( $htmega_stt_module_settings,true );
 
         $stt_global = isset( $htmega_stt_module_settings['stt_global'] ) ? $htmega_stt_module_settings['stt_global'] : 'off';
-        $stt_enable_label =  ( 'on' == $stt_global && is_plugin_active( 'htmega-pro/htmega_pro.php' ) ) ? __('Enable to Custom Style', 'htmega-addons') : __('Enable Scroll To Top', 'htmega-addons');
+        $stt_enable_label =  ( 'on' == $stt_global && htmega_is_pro_active() ) ? __('Enable to Custom Style', 'htmega-addons') : __('Enable Scroll To Top', 'htmega-addons');
         
 		$tabs = Controls_Manager::TAB_SETTINGS;
 
@@ -90,7 +94,7 @@ class HTMegaScrollToTop_Elementor {
 			)
 		);
 
-        if( 'on' == $stt_global && is_plugin_active( 'htmega-pro/htmega_pro.php' ) ) {
+        if( 'on' == $stt_global && htmega_is_pro_active() ) {
             $element->add_control(
                 'htmega_stt_disable',
                 [

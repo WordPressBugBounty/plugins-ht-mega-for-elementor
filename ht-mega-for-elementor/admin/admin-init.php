@@ -10,7 +10,7 @@ class HTMega_Admin_Setting{
         $this->HTMega_Admin_Settings_page();
 
         // HT Mega Pro version check and menu remove action
-        if( is_plugin_active('htmega-pro/htmega_pro.php') && ( version_compare( HTMEGA_VERSION_PRO, '1.4.3' ) <= 0 ) ){
+        if( htmega_is_pro_active() && ( version_compare( HTMEGA_VERSION_PRO, '1.4.3' ) <= 0 ) ){
             add_action( 'admin_init', [ $this, 'htmega_un_register_admin_menu' ] );
         }
 
@@ -19,7 +19,7 @@ class HTMega_Admin_Setting{
             add_action( 'wp_dashboard_setup', [ $this, 'dashboard_widget' ], 9999 );
         }
         // Upgrade Pro Menu
-        if( !is_plugin_active( 'htmega-pro/htmega_pro.php' ) ) {
+        if( ! htmega_is_pro_active() ) {
             add_action( 'admin_menu', [$this, 'upgrade_to_pro_menu'], 329 );
             add_action('admin_head', [ $this, 'admin_menu_item_adjust'] );
             add_action('admin_head', [ $this, 'enqueue_admin_head_scripts'], 11 );
@@ -44,13 +44,13 @@ class HTMega_Admin_Setting{
             require_once ( HTMEGA_ADDONS_PL_PATH . '/admin/include/class.settings-api.php' );
         }
         require_once( 'include/admin-setting.php' );
-        if( is_plugin_active('htmega-pro/htmega_pro.php') && defined( "HTMEGA_ADDONS_PL_PATH_PRO" ) && file_exists( HTMEGA_ADDONS_PL_PATH_PRO.'includes/admin/admin-setting.php' ) ){
+        if( htmega_is_pro_active() && defined( "HTMEGA_ADDONS_PL_PATH_PRO" ) && file_exists( HTMEGA_ADDONS_PL_PATH_PRO.'includes/admin/admin-setting.php' ) ){
             require_once ( HTMEGA_ADDONS_PL_PATH_PRO.'includes/admin/admin-setting.php' );
         }
 
         // HT Builder
         if ( ( 'on' == htmega_get_module_option( 'htmega_themebuilder_module_settings','themebuilder','themebuilder_enable','off' ) ) || (htmega_get_option( 'themebuilder', 'htmega_advance_element_tabs', 'off' ) === 'on' && empty ( htmega_get_module_option( 'htmega_themebuilder_module_settings') ) ) ) {
-            if( is_plugin_active('htmega-pro/htmega_pro.php') ){
+            if( htmega_is_pro_active() ){
                 require_once( HTMEGA_ADDONS_PL_PATH_PRO.'extensions/ht-builder/admin/setting.php' );
             }else{
                 require_once( HTMEGA_ADDONS_PL_PATH.'extensions/ht-builder/admin/setting.php' );
@@ -59,7 +59,7 @@ class HTMega_Admin_Setting{
 
         // Sale Notification
         if( htmega_get_option( 'salenotification', 'htmega_advance_element_tabs', 'off' ) === 'on' ){
-            if( is_plugin_active('htmega-pro/htmega_pro.php') ){
+            if( htmega_is_pro_active() ){
                 require_once( HTMEGA_ADDONS_PL_PATH_PRO.'extensions/wc-sales-notification/admin/setting.php' );
             }else{
                 require_once( HTMEGA_ADDONS_PL_PATH.'extensions/wc-sales-notification/admin/setting.php' );

@@ -56,7 +56,9 @@ class Api {
                     'wpnonce'  => []
                 ],
                 'callback' => [ $this, 'get_post_data' ],
-                'permission_callback' => '__return_true'
+                'permission_callback' => function () {
+                    return current_user_can( 'edit_posts' );
+                },
             ]
         );
 
@@ -67,7 +69,9 @@ class Api {
                     'wpnonce'  => []
                 ],
                 'callback' => [ $this, 'get_last_product_data' ],
-                'permission_callback' => '__return_true'
+                'permission_callback' => function () {
+                    return current_user_can( 'edit_posts' );
+                },
             ]
         );
 
@@ -89,7 +93,9 @@ class Api {
                     'wpnonce'  => []
                 ],
                 'callback' => [ $this, 'get_image_sizes' ],
-                'permission_callback' => '__return_true'
+                'permission_callback' => function () {
+                    return current_user_can( 'edit_posts' );
+                },
             ]
         );
 
@@ -110,6 +116,35 @@ class Api {
         }else{
             return false;
         }
+    }
+
+    /**
+     * Verify block editor or REST nonce for HT Mega Blocks API.
+     *
+     * @return bool
+     */
+    private function verify_blocks_api_nonce() {
+        $wpnonce = isset( $_REQUEST['wpnonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['wpnonce'] ) ) : '';
+        if ( wp_verify_nonce( $wpnonce, 'htmega-block-nonce' ) ) {
+            return true;
+        }
+
+        $rest_nonce = isset( $_REQUEST['nonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['nonce'] ) ) : '';
+        if ( $rest_nonce && wp_verify_nonce( $rest_nonce, 'wp_rest' ) ) {
+            return true;
+        }
+
+        $rest_nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) : '';
+        if ( $rest_nonce && wp_verify_nonce( $rest_nonce, 'wp_rest' ) ) {
+            return true;
+        }
+
+        if ( ! empty( $_SERVER['HTTP_X_WP_NONCE'] ) ) {
+            $header_nonce = sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_WP_NONCE'] ) );
+            return (bool) wp_verify_nonce( $header_nonce, 'wp_rest' );
+        }
+
+        return false;
     }
 
     /**
@@ -264,9 +299,9 @@ class Api {
      */
     public function get_last_product_data( $request ){
 
-        // if ( !isset( $_REQUEST['wpnonce'] ) || !wp_verify_nonce( $_REQUEST['wpnonce'], 'htmega-block-nonced') ){
-        //     return rest_ensure_response([]);
-        // }
+        if ( ! $this->verify_blocks_api_nonce() ) {
+            return new \WP_Error( 'invalid_nonce', __( 'Invalid nonce.', 'htmega-addons' ), array( 'status' => 403 ) );
+        }
 
         // Load WooCommerce frontend files
         if( function_exists('WC') ){

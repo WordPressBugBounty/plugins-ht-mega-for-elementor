@@ -1083,14 +1083,25 @@ class HTMega_Elementor_Widget_PostGrid extends Widget_Base {
         }
 
         // Exclude posts check
-        if (  !empty( $exclude_posts ) ) {
-            $exclude_posts = explode(',',$exclude_posts);
-            $args['post__not_in'] =  $exclude_posts;
+        $exclude_merge = array();
+        if ( ! empty( $exclude_posts ) ) {
+            $exclude_merge = array_filter(
+                array_map(
+                    'absint',
+                    explode( ',', str_replace( ' ', '', sanitize_text_field( $exclude_posts ) ) )
+                )
+            );
+        }
+        if ( 'yes' === $settings['hide_current_post'] && is_singular() ) {
+            $exclude_merge[] = get_the_ID();
+        }
+        if ( ! empty( $exclude_merge ) ) {
+            $args['post__not_in'] = array_values( array_unique( $exclude_merge ) );
         }
 
         // Order check
-        if (  !empty( $postorder ) ) {
-            $args['order'] =  $postorder;
+        if ( ! empty( $postorder ) ) {
+            $args['order'] = $postorder;
         }
         // empty thumbnail post
         if ( 'yes' === $settings['hide_empty_thumbnail_post'] ) {
@@ -1101,13 +1112,8 @@ class HTMega_Elementor_Widget_PostGrid extends Widget_Base {
                 ],
             ];
         }
-        // hide current post
-        if ( 'yes' === $settings['hide_current_post'] && is_singular() ) {
-            $args['post__not_in'] = [get_the_ID()];
-        }
 
-
-        $grid_post = new \WP_Query( $args );
+        $grid_post = \HTMega_Query_Cache::query( $args );
        
 
         $this->add_render_attribute( 'htmega_post_attr', 'class', 'htmega-post-g-title' );
@@ -1128,10 +1134,11 @@ class HTMega_Elementor_Widget_PostGrid extends Widget_Base {
                         if( $countrow > 3){ $roclass = 'htb-col-lg-6 htb-col-md-6'; }else{ $roclass = $roclass; }
 
                         if ( 0 > $settings['title_length'] ) {
-                            $title_link_text = "<a href='".get_the_permalink()."'>".get_the_title()."</a>";
-                        } else { 
-                            $title_link_text = "<a href='".get_the_permalink()."'>".wp_trim_words( get_the_title(), floatval( $settings['title_length'] ), '' )."</a>";
+                            $title_display = wp_kses_post( get_the_title() );
+                        } else {
+                            $title_display = wp_kses_post( wp_trim_words( get_the_title(), floatval( $settings['title_length'] ), '' ) );
                         }
+                        $title_link_text = '<a href="' . esc_url( get_permalink() ) . '">' . $title_display . '</a>';
                         ?>
 
                         <?php if( $settings['post_grid_style'] == 2 ): ?>

@@ -31,7 +31,7 @@ class Preset_Manage {
     protected static function get_presets_option($presete_name) {
         $preset_path = HTMEGA_ADDONS_PL_PATH . 'admin/assets/presets/' . sanitize_file_name( $presete_name ) . '.json'; 
     
-        if (is_plugin_active('htmega-pro/htmega_pro.php')) {
+        if (htmega_is_pro_active()) {
             if (!file_exists($preset_path)) {
                 $preset_path = HTMEGA_ADDONS_PL_PATH_PRO . 'assets/preset-json/' . sanitize_file_name( $presete_name ) . '.json';
             }

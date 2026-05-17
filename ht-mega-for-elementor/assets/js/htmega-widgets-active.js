@@ -891,21 +891,59 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
 
     }
 
+    /*=========== Image Magnifier (jQuery Magnify must load before this bundle; deps enforce order) =======*/
+    var WidgetImageMagnifierHandler = function ($scope, $) {
+        var run = function () {
+            if (typeof $.fn.magnify !== 'function') {
+                return false;
+            }
+            $scope.find('.magnifier-thumb-wrapper img.zoom').each(function () {
+                var $img = $(this);
+                if ($img.parent('div.magnify').length && typeof $img.destroy === 'function') {
+                    $img.destroy();
+                }
+                $img.magnify();
+            });
+            return true;
+        };
+        if (run()) {
+            return;
+        }
+        var n = 0;
+        var poll = window.setInterval(function () {
+            n += 1;
+            if (run() || n > 50) {
+                window.clearInterval(poll);
+            }
+        }, 50);
+    };
+
     /*=========== Image Comparison =======*/
     var WidgetImageComparisonHandler = function ($scope, $) {
-
-        $.fn.BeerSlider = function (options) {
-            options = options || {};
-            return this.each(function () {
-                new BeerSlider(this, options);
+        if (typeof window.BeerSlider !== 'function') {
+            return;
+        }
+        if (typeof $.fn.BeerSlider !== 'function') {
+            $.fn.BeerSlider = function (options) {
+                options = options || {};
+                return this.each(function () {
+                    var $el = $(this);
+                    if ($el.find('.beer-range').length) {
+                        return;
+                    }
+                    new window.BeerSlider(this, options);
+                });
+            };
+        }
+        $scope.find('.beer-slider').each(function () {
+            var $el = $(this);
+            if ($el.find('.beer-range').length) {
+                return;
+            }
+            $el.BeerSlider({
+                start: $el.data('start'),
             });
-        };
-        $(".beer-slider").each(function (index, el) {
-            $(el).BeerSlider({
-                start: $(el).data("start")
-            })
         });
-        
     }
   /*=========== Slick Content tab load option =======*/
     var WidgetTabControll = function tabeCarouselController() {
@@ -1006,6 +1044,7 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-carousel-addons.default', WidgetHtmegaCarouselHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-postcarousel-addons.default', WidgetHtmegaCarouselHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-postgridtab-addons.default', WidgetPostGridHandler);
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-imagemagnifier-addons.default', WidgetImageMagnifierHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-imagecomparison-addons.default', WidgetImageComparisonHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-panelslider-addons.default', WidgetHtmegaCarouselHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-switcher-addons.default', WidgetSwithcerControll);

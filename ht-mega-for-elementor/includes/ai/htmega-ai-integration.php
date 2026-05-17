@@ -280,28 +280,36 @@ class HTMega_AI_Integration {
      * Handle AI generation request
      */
     public function handle_ai_generation() {
-        // Verify nonce
-        if (!wp_verify_nonce($_POST['nonce'], 'htmega_ai_nonce')) {
-            wp_send_json_error('Invalid security token');
+        if ( ! current_user_can( 'edit_posts' ) ) {
+            wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+            return;
+        }
+        $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+        if ( ! wp_verify_nonce( $nonce, 'htmega_ai_nonce' ) ) {
+            wp_send_json_error( array( 'message' => __( 'Invalid security token', 'htmega-addons' ) ) );
+            return;
         }
         
         // Check if AI is enabled
         if (!$this->is_ai_enabled()) {
             wp_send_json_error('AI integration is not enabled');
+            return;
         }
         
         // Check API key
         if (!$this->is_api_key_configured()) {
             wp_send_json_error('API key not configured');
+            return;
         }
         
-        $prompt = sanitize_textarea_field($_POST['prompt']);
-        $widget_type = sanitize_text_field($_POST['widget_type']);
-        $control_name = sanitize_text_field($_POST['control_name']);
-        $context = sanitize_textarea_field($_POST['context'] ?? '');
+        $prompt = isset( $_POST['prompt'] ) ? sanitize_textarea_field( wp_unslash( $_POST['prompt'] ) ) : '';
+        $widget_type = isset( $_POST['widget_type'] ) ? sanitize_text_field( wp_unslash( $_POST['widget_type'] ) ) : '';
+        $control_name = isset( $_POST['control_name'] ) ? sanitize_text_field( wp_unslash( $_POST['control_name'] ) ) : '';
+        $context = isset( $_POST['context'] ) ? sanitize_textarea_field( wp_unslash( $_POST['context'] ) ) : '';
         
         if (empty($prompt)) {
             wp_send_json_error('Prompt is required');
+            return;
         }
         
         try {
@@ -319,8 +327,14 @@ class HTMega_AI_Integration {
      * Test API connection
      */
     public function test_api_connection() {
-        if (!wp_verify_nonce($_POST['nonce'], 'htmega_ai_nonce')) {
-            wp_send_json_error('Invalid security token');
+        if ( ! current_user_can( 'edit_posts' ) ) {
+            wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+            return;
+        }
+        $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+        if ( ! wp_verify_nonce( $nonce, 'htmega_ai_nonce' ) ) {
+            wp_send_json_error( array( 'message' => __( 'Invalid security token', 'htmega-addons' ) ) );
+            return;
         }
         
         try {
@@ -687,7 +701,6 @@ class HTMega_AI_Integration {
      * Check if AI is enabled
      */
     private function is_ai_enabled() {
-       // return true;
         $enable_option = $this->get_ai_option('htmega_ai_enable');
         if ( ! isset( $enable_option ) ) {
             return true;

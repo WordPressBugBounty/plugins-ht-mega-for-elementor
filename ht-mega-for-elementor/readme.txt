@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 3.0.10
+Stable tag: 3.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -236,6 +236,21 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 3.1.0 - Date: 2026-05-17 =
+* Improved: Conditional frontend asset loading for better performance.
+* Improved: Query cache support for posts widgets.
+* Improved: Theme Builder header/footer CSS loading and rendering process.
+* Improved: Mega Menu output, inline CSS, and settings sanitization.
+* Improved: HT Mega admin scripts now load only on HT Mega-related admin screens.
+* Improved: Permission checks, nonce verification, and data sanitization across REST API, AJAX, Template Library, Mega Menu, WooCommerce, Elementor AI, and post-based widget actions.
+* Fixed: Theme Builder global header/footer not applying on block (FSE) themes that render header and footer via core/template-part blocks instead of classic get_header() / get_footer().
+* Fixed: Mega Menu admin on Appearance → Menus — added missing wp-util script dependency so WordPress wp.template() works reliably across environments.
+* Fixed: Mega Menu admin — added missing wp-color-picker script and stylesheet dependencies so color fields work after AJAX loads menu item settings; corrected Mega Menu admin loader HTML in JavaScript.
+* Fixed: Block CSS file saving issue during first filesystem initialization.
+* Fixed: Elementor Template Library now shows only the latest home pages by default.
+* Fixed: Widgets used in imported templates are now enabled automatically during template import.
+* Tested: Compatibility with the latest version of Elementor.
 
 = Version 3.0.10 - Date: 2026-04-26 =
 * Fixed: Theme builder single post template showing incorrect content.

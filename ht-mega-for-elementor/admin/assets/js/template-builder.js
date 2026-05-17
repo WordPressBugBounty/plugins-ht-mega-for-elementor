@@ -247,6 +247,7 @@ jQuery(document).ready(function($) {
                     $templateName.val(templateTitle);
                 }
                 
+                $('#htmega-tb-sample-template-id').val(String(templateId));
                 $('#template-form').data('selected-template', templateId);
                 $('.template-item').removeClass('selected');
                 $this.closest('.template-item').addClass('selected');
@@ -491,6 +492,7 @@ jQuery(document).ready(function($) {
                             <div class="form-group">
                                 <label for="template-name">${window.HTMegaTemplateBuilder.i18n.enterName}</label>
                                 <input type="text" id="template-name" placeholder="${window.HTMegaTemplateBuilder.i18n.enterName}" required>
+                                <input type="hidden" id="htmega-tb-sample-template-id" value="">
                             </div>
                             <div class="form-group template-actions">
                                 <div class="template-checkbox">
@@ -542,6 +544,8 @@ jQuery(document).ready(function($) {
             $('.htmega-template-modal').fadeIn(200);
             $('#template-type').val('').focus();
             $('#template-name').val('');
+            $('#htmega-tb-sample-template-id').val('');
+            $('#template-form').removeData('selected-template');
             $('#create-template').prop('disabled', true);
         },
 
@@ -550,10 +554,14 @@ jQuery(document).ready(function($) {
             this.resetSampleDesigns();
             $('#template-type').val('');
             $('#template-name').val('');
+            $('#htmega-tb-sample-template-id').val('');
+            $('#template-form').removeData('selected-template');
             $('#create-template').prop('disabled', true);
         },
 
         resetSampleDesigns: function() {
+            $('#htmega-tb-sample-template-id').val('');
+            $('#template-form').removeData('selected-template');
             const $wrapper = $('.htmega-sample-designs-wrapper');
             const $grid = $wrapper.find('.htmega-sample-designs-carousel');
             const $button = $('#htmega-sample-design');
@@ -585,7 +593,10 @@ jQuery(document).ready(function($) {
             const templateType = $('#template-type').val();
             const templateName = $('#template-name').val();
             const setAsDefault = $('#set-as-default').prop('checked');
-            const selectedTemplate = $form.data('selected-template');
+            const selectedTemplate =
+                $('#htmega-tb-sample-template-id').val() ||
+                $('#template-form').data('selected-template') ||
+                '';
             
             if (!templateType || !templateName) {
                 alert(window.HTMegaTemplateBuilder.i18n.noTemplatesSelected);
@@ -598,7 +609,7 @@ jQuery(document).ready(function($) {
             // Show loading state
             $submitButton.prop('disabled', true)
                 .html('<span class="spinner is-active" style="float: none; margin-right: 5px;"></span>' + (window.HTMegaTemplateBuilder.i18n.creating || 'Creating...'));
-            
+
             $.ajax({
                 url: window.HTMegaTemplateBuilder.ajaxurl,
                 type: 'POST',
@@ -607,7 +618,7 @@ jQuery(document).ready(function($) {
                     template_type: templateType,
                     template_name: templateName,
                     set_as_default: setAsDefault ? 'true' : 'false',
-                    selected_template: selectedTemplate,
+                    selected_template: selectedTemplate ? String(selectedTemplate) : '',
                     nonce: window.HTMegaTemplateBuilder.nonce
                 },
                 success: function(response) {
@@ -630,16 +641,16 @@ jQuery(document).ready(function($) {
                                 </div>
                             </div>
                         `;
-                        
+
                         // Add success message and hide form content
                         const $modal = $('.htmega-template-modal');
                         $modal.addClass('success-state');
                         $modal.find('.htmega-template-modal-content').append(successHtml);
-                        
+
                         // Reset form
                         $submitButton.prop('disabled', false).html(originalText);
                         $('#template-name').val('');
-                        
+
                         // Handle close button click
                         $(document).on('click', '.htmega-template-success .close-button', function() {
                             HTMegaTemplateBuilder.closeModal();

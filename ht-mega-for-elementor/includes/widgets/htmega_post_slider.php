@@ -2129,9 +2129,20 @@ class HTMega_Elementor_Widget_Post_Slider extends Widget_Base {
         }
 
         // Exclude posts check
-        if (  !empty( $exclude_posts ) ) {
-            $exclude_posts = explode(',',$exclude_posts);
-            $args['post__not_in'] =  $exclude_posts;
+        $exclude_merge = array();
+        if ( ! empty( $exclude_posts ) ) {
+            $exclude_merge = array_filter(
+                array_map(
+                    'absint',
+                    explode( ',', str_replace( ' ', '', sanitize_text_field( $exclude_posts ) ) )
+                )
+            );
+        }
+        if ( 'yes' === $settings['hide_current_post'] && is_singular() ) {
+            $exclude_merge[] = get_the_ID();
+        }
+        if ( ! empty( $exclude_merge ) ) {
+            $args['post__not_in'] = array_values( array_unique( $exclude_merge ) );
         }
 
         // Order check
@@ -2147,12 +2158,8 @@ class HTMega_Elementor_Widget_Post_Slider extends Widget_Base {
                 ],
             ];
         }
-        // hide current post
-        if ( 'yes' === $settings['hide_current_post'] && is_singular() ) {
-            $args['post__not_in'] = [get_the_ID()];
-        }
 
-        $slider_post = new \WP_Query( $args );
+        $slider_post = \HTMega_Query_Cache::query( $args );
 
         ?>
             <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_attr' ); ?> style='display:none;'>
@@ -2244,10 +2251,10 @@ class HTMega_Elementor_Widget_Post_Slider extends Widget_Base {
                     <?php endif;?>
                     <?php if( $settings['show_title'] == 'yes' ): 
                         if ( 0 > $settings['title_length'] ) { ?>
-                            <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+                            <h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h2>
                         <?php
                         } else { ?>
-                            <h2><a href="<?php the_permalink();?>"><?php echo esc_html( wp_trim_words( get_the_title(), floatval( $settings['title_length'] ), '' ) ); ?></a></h2>
+                            <h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo wp_kses_post( wp_trim_words( get_the_title(), floatval( $settings['title_length'] ), '' ) ); ?></a></h2>
                         <?php
                          }
                          

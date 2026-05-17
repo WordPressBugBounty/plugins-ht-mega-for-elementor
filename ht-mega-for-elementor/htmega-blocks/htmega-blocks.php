@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 if ( ! class_exists( 'HtMegaBlocks' ) ) :
 
 	define( 'HTMEGA_BLOCK_FILE', __FILE__ );

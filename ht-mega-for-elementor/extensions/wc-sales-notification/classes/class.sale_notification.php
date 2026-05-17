@@ -59,12 +59,18 @@ class HTMegaWC_Sales_Notification{
 
                     if( !empty( $product ) ){
                         preg_match( '/src="(.*?)"/', $product->get_image( 'thumbnail' ), $imgurl );
+                        $allow_html        = (bool) apply_filters( 'htmega_wcsales_allow_html', false );
+                        $raw_img           = count( $imgurl ) === 2 ? $imgurl[1] : '';
+                        $sanitized_buyer    = array();
+                        foreach ( $this->purchased_buyer_info( $order ) as $bk => $bv ) {
+                            $sanitized_buyer[ sanitize_key( (string) $bk ) ] = sanitize_text_field( (string) $bv );
+                        }
                         $p = array(
-                            'name'  => $product->get_title(),
-                            'url'   => $product->get_permalink(),
-                            'image' => count($imgurl) === 2 ? $imgurl[1] : null,
+                            'name'  => $allow_html ? wp_kses_post( $product->get_name() ) : wp_strip_all_tags( $product->get_name() ),
+                            'url'   => esc_url_raw( $product->get_permalink() ),
+                            'image' => $raw_img ? esc_url_raw( $raw_img ) : '',
                             'price' => $this->purchased_productprice( $check_wc_version ? $product->get_display_price() : wc_get_price_to_display( $product ) ),
-                            'buyer' => $this->purchased_buyer_info( $order )
+                            'buyer' => $sanitized_buyer,
                         );
                         $p = apply_filters( 'wcsales_product_data', $p );
                         array_push( $products, $p);
@@ -74,8 +80,7 @@ class HTMegaWC_Sales_Notification{
             }
             set_transient( $cachekey, $products, 60 ); // Cache the results for 1 minute
         }
-        echo( wp_json_encode( $products ) );
-        wp_die();
+        wp_send_json( $products );
 
     }
 
@@ -160,27 +165,38 @@ class HTMegaWC_Sales_Notification{
                             ajaxurl, 
                             data,
                             function( response ){
-                                var wcpobj = $.parseJSON( response );
-                                if( wcpobj.length > 0 ){
+                                var wcpobj = ( typeof response === 'string' ) ? $.parseJSON( response ) : response;
+                                if( ! $.isArray( wcpobj ) || wcpobj.length === 0 ) {
+                                    return;
+                                }
+                                function appendSaleRow($container, item) {
+                                    var buyer = item.buyer || {};
+                                    var line = $.grep([buyer.city, buyer.state, buyer.country], function (v){ return !!(v); }).join(' ');
+                                    line = $.trim(line);
+                                    var buyerLbl = $.trim(((buyer.fname||'') + ' ' + (buyer.lname||'')));
+                                    var imgDiv = $('<div>').addClass('wcnotification_image').append(
+                                        $('<img>').attr('src', item.image || '').attr('alt', item.name || '')
+                                    );
+                                    var contentWrap = $('<div>').addClass('wcnotification_content').append(
+                                        $('<h4>').append($('<a>').attr('href', item.url || '#').text(item.name || '')),
+                                        $('<p>').text(line ? (line + '.') : ''),
+                                        $('<h6>').text('Price : ' + ( item.price || '' )),
+                                        $('<span>').addClass('wcsales-buyername').text(buyerLbl ? ('By ' + buyerLbl) : '')
+                                    );
+                                    var closeSpan = $('<span>').addClass('wccross').html('&times;');
+                                    $container.empty().append(imgDiv, contentWrap, closeSpan);
+                                }
                                     setInterval(function() {
-                                        if( i == wcpobj.length ){ i = 0; }
-                                        $('.wcsales-notification-content').html('');
-                                        $('.wcsales-notification-content').css('padding','15px');
-                                        var ordercontent = `<div class="wcnotification_image"><img src="${wcpobj[i].image}" alt="${wcpobj[i].name}" /></div>
-                                            <div class="wcnotification_content">
-                                                <h4><a href="${wcpobj[i].url}">${wcpobj[i].name}</a></h4>
-                                                <p>${wcpobj[i].buyer.city + ' ' + wcpobj[i].buyer.state + ', ' + wcpobj[i].buyer.country }.</p>
-                                                <h6>Price : ${wcpobj[i].price}</h6>
-                                                <span class="wcsales-buyername">By ${wcpobj[i].buyer.fname + ' ' + wcpobj[i].buyer.lname}</span>
-                                            </div>
-                                            <span class="wccross">&times;</span>`;
-                                        $('.wcsales-notification-content').append( ordercontent ).addClass('animated '+inanimation).removeClass(outanimation);
+                                        if( i === wcpobj.length ){ i = 0; }
+                                        var $box = $('.wcsales-notification-content');
+                                        $box.css('padding','15px');
+                                        appendSaleRow($box, wcpobj[i]);
+                                        $box.addClass('animated '+inanimation).removeClass(outanimation);
                                         setTimeout(function() {
-                                            $('.wcsales-notification-content').removeClass(inanimation).addClass(outanimation);
+                                            $box.removeClass(inanimation).addClass(outanimation);
                                         }, intervaltime-500 );
                                         i++;
                                     }, intervaltime );
-                                }
                             }
                         );
                     }, duration );

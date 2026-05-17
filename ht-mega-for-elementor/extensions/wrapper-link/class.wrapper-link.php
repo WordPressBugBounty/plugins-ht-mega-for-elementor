@@ -33,7 +33,9 @@ class HTMegaWrapperLink_Elementor {
 	 * @access public
 	 */
 	public function enqueue_scripts() {
-		// Only load on pages with Elementor content
+		if ( function_exists( 'htmega_should_enqueue_global_assets' ) && ! htmega_should_enqueue_global_assets() ) {
+			return;
+		}
 
 			wp_enqueue_script( 
 				'htmega-wrapper-link', 

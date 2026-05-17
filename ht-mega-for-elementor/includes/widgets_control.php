@@ -86,7 +86,7 @@ class HTMega_Widgets_Control{
             }
 
             if ( $widget_status ){
-                if( is_plugin_active('htmega-pro/htmega_pro.php') && file_exists( HTMEGA_ADDONS_PL_PATH_PRO.'includes/widgets/htmega_'.$widget_file_name.'.php' ) ) {
+                if( htmega_is_pro_active() && file_exists( HTMEGA_ADDONS_PL_PATH_PRO.'includes/widgets/htmega_'.$widget_file_name.'.php' ) ) {
                     require_once HTMEGA_ADDONS_PL_PATH_PRO.'includes/widgets/htmega_'.$widget_file_name.'.php';
                 } else {
                     require_once $widget_path.'includes/widgets/htmega_'.$widget_file_name.'.php';
