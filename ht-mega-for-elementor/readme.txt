@@ -2,8 +2,8 @@
 Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasib, madhusudandev
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
-Tested up to: 6.9
-Stable tag: 3.1.0
+Tested up to: 7.0
+Stable tag: 3.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -236,6 +236,11 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 3.1.1 - Date: 2026-06-10 =
+* Fixed: Theme Builder — "Create Template" button now activates immediately when a sample design is selected and auto-fills the template name.
+* Tested: Compatibility with the latest version of WordPress.
+* Tested: Compatibility with the latest version of Elementor.
 
 = Version 3.1.0 - Date: 2026-05-17 =
 * Improved: Conditional frontend asset loading for better performance.

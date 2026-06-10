@@ -251,6 +251,7 @@ jQuery(document).ready(function($) {
                 $('#template-form').data('selected-template', templateId);
                 $('.template-item').removeClass('selected');
                 $this.closest('.template-item').addClass('selected');
+                $templateName.trigger('input');
             });
 
             // Template Library button click
