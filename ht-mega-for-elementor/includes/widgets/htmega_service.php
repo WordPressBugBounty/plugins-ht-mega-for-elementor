@@ -1441,7 +1441,7 @@ class HTMega_Elementor_Widget_Service extends Widget_Base {
                 <div class="content">
                     <?php
                         if( !empty( $settings['htmega_service_title'] ) && !empty( $settings['service_link']['url'] ) ){
-                            echo '<h4 class="service-title"><a href=" '.esc_url($settings['service_link']['url']).' ">'.htmega_kses_title( $settings['htmega_service_title'] ).'</a></h4>';
+                            echo '<h4 class="service-title"><a href="'.esc_url($settings['service_link']['url']).'">'.htmega_kses_title( $settings['htmega_service_title'] ).'</a></h4>';
                         }else{
                             if( !empty( $settings['htmega_service_title'] ) ){
                                 echo '<h4 class="service-title">'.htmega_kses_title( $settings['htmega_service_title'] ).'</h4>';

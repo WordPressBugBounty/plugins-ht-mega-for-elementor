@@ -1738,7 +1738,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $show_all_text ='';
         $default_row_number = 10;
             if( 'yes' == $settings['custom_display_row'] && !empty( $settings['display_options'] ) ){
-                $display_options = $settings['display_options'];
+                $display_options = implode(', ', array_map('intval', explode(',', $settings['display_options'])));
             }
             if( 'yes'== $settings['show_all_button'] && !empty( $settings['show_all_text'] ) ){
                 $show_all_text = " ,'".esc_html($settings['show_all_text'])."'";

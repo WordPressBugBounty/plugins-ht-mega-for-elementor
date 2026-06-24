@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -236,6 +236,11 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 3.1.2 - Date: 2026-06-24 =
+* Fixed: Service title link spacing issues in the Services widget.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
 
 = Version 3.1.1 - Date: 2026-06-10 =
 * Fixed: Theme Builder — "Create Template" button now activates immediately when a sample design is selected and auto-fills the template name.
