@@ -1,0 +1,569 @@
+{
+  "name": "htmega/about-2025",
+  "category": "htmega-blocks",
+  "keywords": [
+    "about",
+    "feature",
+    "grid",
+    "section",
+    "htmega",
+    "2026"
+  ],
+  "description": "An About / Feature section with repeatable feature cards, 5 design style presets, and 4 layouts (Split Left, Split Right, Centered, Feature Grid). Part of the HT Mega 2026 Collection.",
+  "title": "About / Feature 2026",
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "split-left"
+    },
+    "featureColumns": {
+      "type": "string",
+      "default": "2"
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "Why Choose Us"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Everything you need to\nbuild something great."
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "something great"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "A focused toolkit designed around real developer and designer workflows. Minimal setup, maximum output."
+    },
+    "featureItems": {
+      "type": "array",
+      "default": [
+        {
+          "icon": "fas fa-bolt",
+          "title": "Lightning Fast",
+          "description": "Optimised for Core Web Vitals from day one — zero layout shift, sub-second LCP."
+        },
+        {
+          "icon": "fas fa-shield-alt",
+          "title": "Secure by Default",
+          "description": "Every output is sanitised and escaped. CSRF tokens on all forms, nonces everywhere."
+        },
+        {
+          "icon": "fas fa-palette",
+          "title": "Design Token System",
+          "description": "Full CSS custom-property token layer — change a brand colour in one place, it updates everywhere."
+        },
+        {
+          "icon": "fas fa-universal-access",
+          "title": "Accessible First",
+          "description": "WCAG 2.1 AA compliant. Proper landmarks, focus rings, and ARIA attributes out of the box."
+        }
+      ]
+    },
+    "aboutImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "aboutImageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "aboutImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "aboutImageSize": {
+      "type": "string",
+      "default": "large"
+    },
+    "showFloatingBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "floatingStatNumber": {
+      "type": "string",
+      "default": "10K+"
+    },
+    "floatingStatLabel": {
+      "type": "string",
+      "default": "Projects Built"
+    },
+    "showCta": {
+      "type": "boolean",
+      "default": true
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Explore Features"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "ctaTarget": {
+      "type": "boolean",
+      "default": false
+    },
+    "ctaIcon": {
+      "type": "string",
+      "default": "fas fa-arrow-right"
+    },
+    "styleAccentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleCardBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "cardBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "cardBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleIconSize": {
+      "type": "number",
+      "default": 0
+    },
+    "styleFeatureTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFeatureTitleTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFeatureDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFeatureDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleCtaBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleCtaShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "ctaBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "ctaBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaHoverBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaHoverBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "ctaHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleImageBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleImageShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "imageBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "imageBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "imageBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFloatBadgeBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFloatBadgeNumberColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFloatBadgeLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFloatBadgeRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleFloatBadgeNumberTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFloatBadgeLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    }
+  },
+  "render": "file:./index.php"
+}

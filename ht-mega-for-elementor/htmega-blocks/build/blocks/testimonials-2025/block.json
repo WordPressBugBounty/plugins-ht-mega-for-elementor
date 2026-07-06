@@ -1,0 +1,443 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "htmega/testimonials-2025",
+  "version": "1.0.0",
+  "title": "Testimonials 2026",
+  "category": "htmega-blocks",
+  "icon": "format-quote",
+  "description": "Testimonials section with 5 design presets, star ratings, avatars, and masonry or grid layouts.",
+  "keywords": [
+    "testimonial",
+    "review",
+    "quote",
+    "rating",
+    "htmega",
+    "2026"
+  ],
+  "textdomain": "htmega-addons",
+  "render": "file:./index.php",
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "grid"
+    },
+    "testimonialColumns": {
+      "type": "string",
+      "default": "3"
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "Testimonials"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Trusted by teams\nat world-class companies."
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "world-class companies"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "Real feedback from real users — no cherry-picking, no marketing spin."
+    },
+    "testimonialItems": {
+      "type": "array",
+      "default": [
+        {
+          "quoteText": "The design system saved us months of work. Every token is perfectly considered and the DX is outstanding.",
+          "rating": "5",
+          "authorName": "Alex Morgan",
+          "authorRole": "Lead Designer",
+          "authorCompany": "Stripe",
+          "authorAvatar": "",
+          "authorAvatarId": 0,
+          "isFeatured": false
+        },
+        {
+          "quoteText": "Performance gains were immediate. Our Lighthouse score jumped from 54 to 98 after switching to this system.",
+          "rating": "5",
+          "authorName": "Sarah Kim",
+          "authorRole": "CTO",
+          "authorCompany": "Vercel",
+          "authorAvatar": "",
+          "authorAvatarId": 0,
+          "isFeatured": true
+        },
+        {
+          "quoteText": "Accessibility out of the box. Our WCAG 2.1 AA audit passed on the first try — no remediation needed.",
+          "rating": "5",
+          "authorName": "James Tran",
+          "authorRole": "Frontend Lead",
+          "authorCompany": "Shopify",
+          "authorAvatar": "",
+          "authorAvatarId": 0,
+          "isFeatured": false
+        },
+        {
+          "quoteText": "The Neo-Brutalist preset is unlike anything else on the market. Our studio won two awards using it.",
+          "rating": "5",
+          "authorName": "Priya Rao",
+          "authorRole": "Creative Director",
+          "authorCompany": "Awwwards",
+          "authorAvatar": "",
+          "authorAvatarId": 0,
+          "isFeatured": false
+        },
+        {
+          "quoteText": "Five stars — the support team responds in minutes and the code quality is genuinely exceptional.",
+          "rating": "5",
+          "authorName": "David Liu",
+          "authorRole": "Senior Developer",
+          "authorCompany": "HubSpot",
+          "authorAvatar": "",
+          "authorAvatarId": 0,
+          "isFeatured": false
+        }
+      ]
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleCardBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleCardShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "cardBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "cardBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featuredCardBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featuredCardShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "featuredCardBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "featuredCardBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "featuredCardBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleQuoteColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleQuoteTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleAuthorNameColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleAuthorNameTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleAuthorRoleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleAuthorCompanyColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleAuthorRoleTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleAvatarSize": {
+      "type": "number",
+      "default": 0
+    },
+    "styleAvatarBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleStarsColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleEmptyStarsColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

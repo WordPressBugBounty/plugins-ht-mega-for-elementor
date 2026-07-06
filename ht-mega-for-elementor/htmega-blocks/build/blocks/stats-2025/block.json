@@ -1,0 +1,406 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "htmega/stats-2025",
+  "version": "1.0.0",
+  "title": "Stats / Counter 2026",
+  "category": "htmega-blocks",
+  "icon": "chart-bar",
+  "description": "Animated stat counters with 5 design presets. Supports row strip, card grid, and bento layouts.",
+  "keywords": [
+    "stats",
+    "counter",
+    "numbers",
+    "count-up",
+    "facts",
+    "htmega",
+    "2026"
+  ],
+  "textdomain": "htmega-addons",
+  "render": "file:./index.php",
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "row"
+    },
+    "statColumns": {
+      "type": "string",
+      "default": "4"
+    },
+    "enableCountup": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSectionHeader": {
+      "type": "boolean",
+      "default": false
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "By the Numbers"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Trusted by thousands\nof businesses worldwide."
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "thousands"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "Real numbers. No rounding. No marketing fluff."
+    },
+    "statItems": {
+      "type": "array",
+      "default": [
+        {
+          "statPrefix": "$",
+          "statNumber": "2.5",
+          "statSuffix": "M+",
+          "statLabel": "Revenue Generated",
+          "statDescription": "Across 150+ countries",
+          "statIcon": ""
+        },
+        {
+          "statPrefix": "",
+          "statNumber": "10",
+          "statSuffix": "K+",
+          "statLabel": "Happy Customers",
+          "statDescription": "And growing every day",
+          "statIcon": ""
+        },
+        {
+          "statPrefix": "",
+          "statNumber": "99.9",
+          "statSuffix": "%",
+          "statLabel": "Uptime SLA",
+          "statDescription": "Guaranteed reliability",
+          "statIcon": ""
+        },
+        {
+          "statPrefix": "",
+          "statNumber": "4.9",
+          "statSuffix": "/5",
+          "statLabel": "Average Rating",
+          "statDescription": "From verified reviews",
+          "statIcon": ""
+        }
+      ]
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleItemBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleItemBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleItemShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "itemBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "itemBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "itemBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleNumberColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleNumberGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleNumberTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "stylePrefixSuffixColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrefixSuffixTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleSublabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSublabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleIconSize": {
+      "type": "number",
+      "default": 0
+    },
+    "styleSectionLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleSectionLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  }
+}

@@ -17,10 +17,16 @@ class HTMega_Widgets_Control{
     }
 
     public function __construct(){
-        // Register custom category
+        // Register custom categories (legacy + 2025)
         add_action( 'elementor/elements/categories_registered', [ $this, 'add_category' ] );
-        // Init Widgets
+        // Init legacy widgets
         add_action( 'elementor/widgets/register', [ $this, 'init_widgets' ] );
+        // Init HT Mega 2025 widgets (new architecture)
+        add_action( 'elementor/widgets/register', [ $this, 'init_widgets_2025' ] );
+        // Enqueue 2025 widget assets: editor admin panel + editor preview iframe.
+        // Frontend (non-editing) loading is handled by the CSS combine system in class.assests-cache.php.
+        add_action( 'elementor/editor/after_enqueue_styles',   [ $this, 'enqueue_2025_assets' ] );
+        add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'enqueue_2025_editor_preview' ] );
 
         // Add custom control
         add_action( 'elementor/controls/register', [ $this, 'initiliaze_custom_control' ] );
@@ -32,16 +38,141 @@ class HTMega_Widgets_Control{
             $controls_manager->register( new \HtMega\Preset\Preset_Select());
         }
     }
-    // Add custom category.
+    // Add custom categories.
     public function add_category( $elements_manager ) {
+        // Legacy category
         $elements_manager->add_category(
             'htmega-addons',
             [
                 'title' => __( 'HTMega Addons', 'htmega-addons' ),
-                'icon' => 'fa fa-snowflake',
+                'icon'  => 'fa fa-snowflake',
+            ]
+        );
+        // 2026 Collection category (new widgets)
+        $elements_manager->add_category(
+            'htmega-2026',
+            [
+                'title' => __( 'HT Mega 2026', 'htmega-addons' ),
+                'icon'  => 'eicon-apps',
             ]
         );
     }
+
+    /**
+     * Register HT Mega 2025 widgets.
+     * These use a separate file naming convention (htmega_2025_*.php)
+     * and always-on registration (no settings panel toggle needed until
+     * they are promoted to the main widget list).
+     */
+    public function init_widgets_2025() {
+        if ( ! did_action( 'elementor/loaded' ) ) {
+            return;
+        }
+
+        // NOTE: File names keep the htmega_2025_ prefix (internal convention).
+        // Only user-facing labels say "2026". Next year: bump labels to 2027, files unchanged.
+        $widgets_2025 = [
+            'hero' => 'HTMega_Elementor_Widget_Hero_2025',
+            // Add more 2026 widgets here as they are built:
+            'about'        => 'HTMega_Elementor_Widget_About_2025',
+            'services'     => 'HTMega_Elementor_Widget_Services_2025',
+            'pricing'      => 'HTMega_Elementor_Widget_Pricing_2025',
+            'testimonials' => 'HTMega_Elementor_Widget_Testimonials_2025',
+            'stats'        => 'HTMega_Elementor_Widget_Stats_2025',
+            'cta'          => 'HTMega_Elementor_Widget_CTA_2025',
+            'team'         => 'HTMega_Elementor_Widget_Team_2025',
+            'faq'          => 'HTMega_Elementor_Widget_FAQ_2025',
+            'blog'         => 'HTMega_Elementor_Widget_Blog_2025',
+            'contact'      => 'HTMega_Elementor_Widget_Contact_2025',
+        ];
+
+        $widgets_manager = \Elementor\Plugin::instance()->widgets_manager;
+
+        foreach ( $widgets_2025 as $slug => $class_name ) {
+            if ( 'on' !== htmega_get_option( $slug, 'htmega_sections_element_tabs', 'on' ) ) {
+                continue;
+            }
+            $file = HTMEGA_ADDONS_PL_PATH . 'includes/widgets/htmega_2025_' . $slug . '.php';
+            if ( ! file_exists( $file ) ) {
+                continue;
+            }
+            require_once $file;
+            $fqn = '\\Elementor\\' . $class_name;
+            if ( ! class_exists( $fqn ) ) {
+                continue;
+            }
+            if ( htmega_is_elementor_version( '>=', '3.5.0' ) ) {
+                $widgets_manager->register( new $fqn() );
+            } else {
+                $widgets_manager->register_widget_type( new $fqn() );
+            }
+        }
+    }
+
+    /**
+     * Enqueue 2025 CSS token file + per-widget styles.
+     * Runs on both frontend and Elementor editor.
+     */
+    public function enqueue_2025_assets() {
+        $css_path = HTMEGA_ADDONS_PL_PATH . 'assets/css/';
+        $css_url  = HTMEGA_ADDONS_PL_URL  . 'assets/css/';
+        $base_ver = defined( 'HTMEGA_VERSION' ) ? HTMEGA_VERSION : '1.0.0';
+
+        // Version helper: append the file's modified time so any CSS edit
+        // automatically busts the browser/Elementor cache.
+        $file_ver = function ( $file ) use ( $base_ver ) {
+            return file_exists( $file ) ? $base_ver . '.' . filemtime( $file ) : $base_ver;
+        };
+
+        // 1. Token system (always loaded — tiny file, needed by all 2025 widgets)
+        wp_enqueue_style(
+            'htm25-tokens',
+            $css_url . 'htm25-tokens.css',
+            [],
+            $file_ver( $css_path . 'htm25-tokens.css' )
+        );
+
+        // 2. Per-widget styles (only load if the widget's file exists)
+        $widget_styles = [
+            'hero' => 'htm25-hero',
+            'about'        => 'htm25-about',
+            'services'     => 'htm25-services',
+            'pricing'      => 'htm25-pricing',
+            'testimonials' => 'htm25-testimonials',
+            'stats'        => 'htm25-stats',
+            'cta'          => 'htm25-cta',
+            'team'         => 'htm25-team',
+            'faq'          => 'htm25-faq',
+            'blog'         => 'htm25-blog',
+            'contact'      => 'htm25-contact',
+        ];
+
+        foreach ( $widget_styles as $slug => $handle ) {
+            if ( 'on' !== htmega_get_option( $slug, 'htmega_sections_element_tabs', 'on' ) ) {
+                continue;
+            }
+            $widget_file = $css_path . 'widgets/htmega_2025_' . $slug . '.php';
+            $css_file    = $css_path . 'widgets/' . $handle . '.css';
+
+            if ( file_exists( $css_file ) ) {
+                wp_enqueue_style(
+                    $handle,
+                    $css_url . 'widgets/' . $handle . '.css',
+                    [ 'htm25-tokens' ],
+                    $file_ver( $css_file )
+                );
+            }
+        }
+    }
+
+    public function enqueue_2025_editor_preview() {
+        // The Elementor editor preview iframe fires elementor/frontend/after_enqueue_styles.
+        // The CSS combine system skips editing mode, so load all 2025 styles explicitly here.
+        if ( function_exists( 'htmega_is_editing_mode' ) && htmega_is_editing_mode() ) {
+            $this->enqueue_2025_assets();
+        }
+    }
+
     public function init_widgets(){
         // Only check if Elementor is loaded
         if (!did_action('elementor/loaded')) {

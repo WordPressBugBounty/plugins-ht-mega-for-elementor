@@ -1,0 +1,877 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "htmega/contact-2025",
+  "version": "1.0.0",
+  "title": "Contact Section 2026",
+  "category": "htmega-blocks",
+  "icon": "email",
+  "description": "A full contact section with a form, contact info items, and optional map embed. Five design style presets.",
+  "keywords": [
+    "contact",
+    "form",
+    "email",
+    "address",
+    "map",
+    "htmega",
+    "2026"
+  ],
+  "textdomain": "htmega-addons",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "split"
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "Contact Us"
+    },
+    "headline": {
+      "type": "string",
+      "default": "We'd Love to Hear From You"
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "Love"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "Have a question or project in mind? Reach out and we'll get back to you within one business day."
+    },
+    "formTitle": {
+      "type": "string",
+      "default": "Send us a message"
+    },
+    "formSubtitle": {
+      "type": "string",
+      "default": "Fill in the form and we'll get back to you shortly."
+    },
+    "formPlugin": {
+      "type": "string",
+      "default": ""
+    },
+    "formId": {
+      "type": "string",
+      "default": ""
+    },
+    "formCssClass": {
+      "type": "string",
+      "default": ""
+    },
+    "contactInfoItems": {
+      "type": "array",
+      "default": [
+        {
+          "infoIconType": "address",
+          "infoLabel": "Our Office",
+          "infoValue": "123 Design Street\nSan Francisco, CA 94107",
+          "infoLink": ""
+        },
+        {
+          "infoIconType": "email",
+          "infoLabel": "Email Us",
+          "infoValue": "hello@example.com",
+          "infoLink": "mailto:hello@example.com"
+        },
+        {
+          "infoIconType": "phone",
+          "infoLabel": "Call Us",
+          "infoValue": "+1 (555) 000-0000",
+          "infoLink": "tel:+15550000000"
+        },
+        {
+          "infoIconType": "hours",
+          "infoLabel": "Working Hours",
+          "infoValue": "Mon–Fri: 9am – 6pm\nWeekends: Closed",
+          "infoLink": ""
+        }
+      ]
+    },
+    "showMap": {
+      "type": "boolean",
+      "default": false
+    },
+    "mapEmbedUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "mapHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "showHours": {
+      "type": "boolean",
+      "default": true
+    },
+    "hoursTitle": {
+      "type": "string",
+      "default": "Working Hours"
+    },
+    "hoursItems": {
+      "type": "array",
+      "default": [
+        {
+          "hoursDay": "Mon – Fri",
+          "hoursTime": "9:00 – 18:00"
+        },
+        {
+          "hoursDay": "Saturday",
+          "hoursTime": "10:00 – 14:00"
+        },
+        {
+          "hoursDay": "Sunday",
+          "hoursTime": "Closed"
+        }
+      ]
+    },
+    "hoursOpenBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "hoursBadgeText": {
+      "type": "string",
+      "default": "Open now"
+    },
+    "showSocial": {
+      "type": "boolean",
+      "default": true
+    },
+    "socialTitle": {
+      "type": "string",
+      "default": "Follow Us"
+    },
+    "socialItems": {
+      "type": "array",
+      "default": [
+        {
+          "socialNetwork": "facebook",
+          "socialUrl": "#"
+        },
+        {
+          "socialNetwork": "twitter",
+          "socialUrl": "#"
+        },
+        {
+          "socialNetwork": "linkedin",
+          "socialUrl": "#"
+        },
+        {
+          "socialNetwork": "instagram",
+          "socialUrl": "#"
+        }
+      ]
+    },
+    "showTrust": {
+      "type": "boolean",
+      "default": true
+    },
+    "trustLabel": {
+      "type": "string",
+      "default": "Why teams choose us"
+    },
+    "trustNumber": {
+      "type": "string",
+      "default": "< 1 hr"
+    },
+    "trustSubtext": {
+      "type": "string",
+      "default": "Average first response time"
+    },
+    "trustShowStars": {
+      "type": "boolean",
+      "default": true
+    },
+    "trustFooter": {
+      "type": "string",
+      "default": "Rated 4.9/5 by 2,400+ customers"
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFormBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "formBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "formBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "formBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFormBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleFormShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleInputBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInputBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInputFocusBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSubmitBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSubmitBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSubmitTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSubmitHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSubmitHoverBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSubmitHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "submitBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "submitBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "submitBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSubmitBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSubmitShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "styleInfoItemBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInfoIconBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInfoIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInfoLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInfoLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleInfoValueColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInfoValueTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleMapBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleMapShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "styleSectionLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleSectionLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleHoursRowColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHoursRowTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHoursBadgeColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHoursBadgeBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHoursBadgeTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleSocialIconSize": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSocialColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTrustTileBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTrustTileBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTrustNumColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTrustNumTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleTrustSubColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTrustSubTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleTrustStarsColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTrustFooterColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTrustFooterTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleTileBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTileBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTileLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTileLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "tileBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "tileBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "tileBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTileBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleTileShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "styleFormHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFormHeadingTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFormSubheadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFormSubheadingTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleInputTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInputBorderWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInputBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleInputPlaceholderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleInputTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleSubmitPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "no"
+      }
+    },
+    "styleSubmitTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleInfoIconSize": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "render": "file:./index.php"
+}

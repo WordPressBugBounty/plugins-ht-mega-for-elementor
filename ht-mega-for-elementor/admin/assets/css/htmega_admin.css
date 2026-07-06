@@ -715,14 +715,14 @@ margin-bottom: 40px;
 gap: 20px;
 }
 .htmega-header-content .htmega-header-title {
-font-size: 22px;
+font-size: 18px;
 font-weight: 500;
 line-height: 1;
 margin: 0 0 10px;
 color: #000000;
 }
 .htmega-header-content p {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.75;
   max-width: 800px;

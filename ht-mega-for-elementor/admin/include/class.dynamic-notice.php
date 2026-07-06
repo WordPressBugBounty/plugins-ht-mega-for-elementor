@@ -306,9 +306,6 @@ if ( ! class_exists( 'HasTech_Notices' ) ){
         public function show_admin_notices(){
             $screen  = get_current_screen();
             $id      = isset($screen->id) ? $screen->id : "";
-            if ($id === 'plugins') { 
-                return;
-            }
             $notices_displayed_count = 0;
             $notices = $this->get_notices();
 
@@ -317,6 +314,12 @@ if ( ! class_exists( 'HasTech_Notices' ) ){
                 // Only Show one notice at a time.
                 if ( $notices_displayed_count > 0 ) {
                     break;
+                }
+
+                // Keep promo/rating notices off the Plugins screen; let notices that
+                // explicitly opt in (e.g. compatibility warnings) through.
+                if ( $id === 'plugins' && empty( $notice['show_on_plugins_page'] ) ) {
+                    continue;
                 }
 
                 $notice = self::instance()->prepare_notice( $notice );

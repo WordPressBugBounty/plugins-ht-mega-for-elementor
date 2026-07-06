@@ -1,0 +1,548 @@
+{
+  "name": "htmega/pricing-2025",
+  "category": "htmega-blocks",
+  "keywords": [
+    "pricing",
+    "price",
+    "table",
+    "plans",
+    "htmega",
+    "2026"
+  ],
+  "description": "A Pricing Table section with monthly/annual toggle, featured plan highlighting, 5 design style presets, and 2 layouts. Part of the HT Mega 2026 Collection.",
+  "title": "Pricing Table 2026",
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "cards"
+    },
+    "planColumns": {
+      "type": "string",
+      "default": "3"
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "Pricing"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Simple pricing for\nevery team size."
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "every team size"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "No hidden fees. No lock-in. Upgrade or downgrade at any time."
+    },
+    "showBillingToggle": {
+      "type": "boolean",
+      "default": true
+    },
+    "billingMonthlyLabel": {
+      "type": "string",
+      "default": "Monthly"
+    },
+    "billingAnnualLabel": {
+      "type": "string",
+      "default": "Annual"
+    },
+    "billingSaveBadge": {
+      "type": "string",
+      "default": "Save 20%"
+    },
+    "planItems": {
+      "type": "array",
+      "default": [
+        {
+          "name": "Starter",
+          "isFeatured": false,
+          "featuredBadge": "Most Popular",
+          "icon": "",
+          "currency": "$",
+          "priceMonthly": "9",
+          "priceAnnual": "7",
+          "period": "/month",
+          "tagline": "Perfect for freelancers and solo creators.",
+          "features": "3 Projects\n5 GB Storage\nEmail Support\nBasic Analytics",
+          "ctaText": "Start Free Trial",
+          "ctaUrl": "#",
+          "ctaTarget": false,
+          "ctaVariant": "outline"
+        },
+        {
+          "name": "Pro",
+          "isFeatured": true,
+          "featuredBadge": "Most Popular",
+          "icon": "",
+          "currency": "$",
+          "priceMonthly": "29",
+          "priceAnnual": "23",
+          "period": "/month",
+          "tagline": "For growing teams that need more power.",
+          "features": "Unlimited Projects\n50 GB Storage\nPriority Support\nAdvanced Analytics\nAPI Access",
+          "ctaText": "Get Started",
+          "ctaUrl": "#",
+          "ctaTarget": false,
+          "ctaVariant": "primary"
+        },
+        {
+          "name": "Enterprise",
+          "isFeatured": false,
+          "featuredBadge": "Most Popular",
+          "icon": "",
+          "currency": "$",
+          "priceMonthly": "79",
+          "priceAnnual": "63",
+          "period": "/month",
+          "tagline": "Custom solutions for large organisations.",
+          "features": "Unlimited Everything\n500 GB Storage\nDedicated Support\nCustom Integrations\nSSO & SAML\nSLA Guarantee",
+          "ctaText": "Contact Sales",
+          "ctaUrl": "#",
+          "ctaTarget": false,
+          "ctaVariant": "outline"
+        }
+      ]
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleToggleBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleToggleActiveBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleToggleTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleCardShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "cardBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "cardBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFeaturedCardHeaderBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFeaturedCardAccentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleBadgeTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleBadgeBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleBadgeBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleBadgeTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleBadgeBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "stylePlanNameColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePlanNameTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "stylePriceColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePriceGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePriceTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFeatureItemColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFeatureItemTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFeatureCheckColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFeatureCheckBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleCtaShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "styleCtaTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "ctaBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "ctaBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaHoverBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaHoverBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "ctaHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    }
+  },
+  "render": "file:./index.php"
+}

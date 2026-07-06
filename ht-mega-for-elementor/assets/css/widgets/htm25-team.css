@@ -1,0 +1,562 @@
+/**
+ * HT Mega 2026 — Team Section Widget
+ * File: assets/css/widgets/htm25-team.css
+ *
+ * BEM component: .htm25-team
+ * Requires htm25-tokens.css (design token system)
+ * Zero hardcoded colours — all values via var(--htm25-*)
+ */
+
+/* =========================================================
+   SECTION WRAPPER
+   ========================================================= */
+.htm25-team {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--htm25-section-py);
+  padding-inline: var(--htm25-section-px);
+  background-color: var(--htm25-bg-section);
+}
+
+/* ── Background decoration (glass + aurora) ── */
+.htm25-team__bg-blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.htm25-team__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.40;
+  animation: htm25-teamblob-drift 18s ease-in-out infinite alternate;
+}
+
+.htm25-team__blob--1 {
+  width: 55vw;
+  height: 40vw;
+  max-width: 800px;
+  max-height: 600px;
+  top: -15%;
+  right: -5%;
+  background: radial-gradient(circle, var(--htm25-accent-primary) 0%, transparent 70%);
+  animation-delay: 0s;
+}
+
+.htm25-team__blob--2 {
+  width: 45vw;
+  height: 35vw;
+  max-width: 680px;
+  max-height: 520px;
+  bottom: -10%;
+  left: -8%;
+  background: radial-gradient(circle, var(--htm25-accent-secondary, var(--htm25-accent-primary)) 0%, transparent 70%);
+  animation-delay: -7s;
+}
+
+@keyframes htm25-teamblob-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-3%, 4%) scale(1.06); }
+  100% { transform: translate(3%, -3%) scale(0.96); }
+}
+
+/* =========================================================
+   INNER WRAPPER
+   ========================================================= */
+.htm25-team__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--htm25-container-xl);
+  margin-inline: auto;
+}
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+.htm25-team__header {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: var(--htm25-space-16);
+}
+
+.htm25-team .htm25-team__section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  color: var(--htm25-section-label-color, var(--htm25-accent-primary));
+  margin-bottom: var(--htm25-space-5);
+}
+
+.htm25-team .htm25-team__headline {
+    white-space: pre-line;
+
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-4xl);
+  font-weight: var(--htm25-weight-heading, var(--htm25-weight-bold));
+  line-height: var(--htm25-leading-heading, var(--htm25-leading-tight));
+  letter-spacing: var(--htm25-tracking-heading, var(--htm25-tracking-tight));
+  color: var(--htm25-section-title-color, var(--htm25-text-heading));
+  margin-top: 0;
+  margin-bottom: var(--htm25-space-5);
+}
+
+/* Base — always clip to text so Elementor gradient/color controls render as text, not a box */
+.htm25-team .htm25-team__headline-accent {
+  background-color: var(--htm25-accent-primary);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Glass + Aurora: gradient text */
+.htm25-style--glass .htm25-team__headline-accent,
+.htm25-style--aurora .htm25-team__headline-accent {
+  background-color: transparent;
+  background-image: var(--htm25-gradient-text, var(--htm25-gradient-btn));
+}
+
+.htm25-team .htm25-team__description {
+  font-size: var(--htm25-text-lg);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-section-body-color, var(--htm25-text-muted));
+  margin: 0;
+  max-width: 56ch;
+  margin-inline: auto;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+.htm25-team__grid {
+  display: grid;
+  gap: var(--htm25-space-8);
+}
+
+.htm25-team__grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+.htm25-team__grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+.htm25-team__grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ── Featured layout: first card spans full width ── */
+.htm25-team--featured .htm25-team__card--hero {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--htm25-space-10);
+  align-items: center;
+}
+
+.htm25-team--featured .htm25-team__card--hero .htm25-team__card-photo-wrap {
+  aspect-ratio: 1 / 1;
+  max-height: 360px;
+}
+
+.htm25-team--featured .htm25-team__card--hero .htm25-team__card-photo {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.htm25-team--featured .htm25-team__card--hero .htm25-team__card-bio {
+  font-size: var(--htm25-text-base);
+  max-width: 54ch;
+}
+
+/* ── List layout ── */
+.htm25-team--list .htm25-team__grid {
+  grid-template-columns: 1fr;
+  gap: var(--htm25-space-4);
+}
+
+.htm25-team--list .htm25-team__card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--htm25-space-6);
+  align-items: center;
+}
+
+.htm25-team--list .htm25-team__card-photo-wrap {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.htm25-team--list .htm25-team__card-photo,
+.htm25-team--list .htm25-team__card-photo-placeholder {
+  width: 80px;
+  height: 80px;
+}
+
+.htm25-team--list .htm25-team__card-social-overlay {
+  display: none; /* overlay not useful in list layout */
+}
+
+/* =========================================================
+   CARD BASE
+   ========================================================= */
+.htm25-team__card {
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: var(--htm25-radius-2xl);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.htm25-team__card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--htm25-shadow-lg);
+}
+
+/* ── Featured card highlight ── */
+.htm25-team__card--featured {
+  border-color: var(--htm25-accent-primary);
+  box-shadow: 0 0 0 1px var(--htm25-accent-primary),
+              var(--htm25-shadow-md);
+}
+
+/* =========================================================
+   PHOTO AREA
+   ========================================================= */
+.htm25-team__card-photo-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background-color: var(--htm25-bg-subtle);
+}
+
+/* list layout overrides aspect-ratio via explicit px above */
+.htm25-team--list .htm25-team__card-photo-wrap {
+  aspect-ratio: unset;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.htm25-team__card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.htm25-team__card:hover .htm25-team__card-photo {
+  transform: scale(1.04);
+}
+
+/* ── Avatar placeholder ── */
+.htm25-team__card-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--htm25-accent-primary-lt, var(--htm25-bg-subtle));
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-3xl);
+  font-weight: var(--htm25-weight-bold);
+  color: var(--htm25-accent-primary);
+  letter-spacing: var(--htm25-tracking-tight);
+  user-select: none;
+}
+
+.htm25-team--list .htm25-team__card-photo-placeholder {
+  font-size: var(--htm25-text-xl);
+  border-radius: 50%;
+}
+
+/* ── Social overlay (hover reveal on grid/featured) ── */
+.htm25-team__card-social-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--htm25-space-3);
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+.htm25-team__card:hover .htm25-team__card-social-overlay {
+  opacity: 1;
+}
+
+.htm25-team__card-social-overlay .htm25-team__card-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transition: background 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+.htm25-team__card-social-overlay .htm25-team__card-social-link:hover {
+  background: var(--htm25-accent-primary);
+  border-color: var(--htm25-accent-primary);
+  transform: scale(1.1);
+}
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+.htm25-team__card-body {
+  padding: var(--htm25-space-6);
+}
+
+.htm25-team--featured .htm25-team__card--hero .htm25-team__card-body {
+  padding: var(--htm25-space-8) var(--htm25-space-8) var(--htm25-space-8) 0;
+}
+
+.htm25-team--list .htm25-team__card-body {
+  padding: var(--htm25-space-4) 0;
+}
+
+.htm25-team__card-department {
+  display: inline-block;
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  color: var(--htm25-accent-primary);
+  background-color: var(--htm25-accent-primary-lt, var(--htm25-bg-subtle));
+  padding: var(--htm25-space-1) var(--htm25-space-3);
+  border-radius: var(--htm25-radius-full);
+  margin-bottom: var(--htm25-space-3);
+}
+
+.htm25-team .htm25-team__card-name {
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-lg);
+  font-weight: var(--htm25-weight-bold);
+  color: var(--htm25-text-heading);
+  margin: 0 0 var(--htm25-space-1) 0;
+  line-height: var(--htm25-leading-tight);
+}
+
+.htm25-team .htm25-team__card-role {
+  font-size: var(--htm25-text-sm);
+  color: var(--htm25-accent-primary);
+  font-weight: var(--htm25-weight-medium);
+  margin: 0 0 var(--htm25-space-3) 0;
+}
+
+.htm25-team .htm25-team__card-bio {
+  font-size: var(--htm25-text-sm);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-text-muted);
+  margin: 0 0 var(--htm25-space-4) 0;
+}
+
+/* ── Social links row (below card body, not overlay) ── */
+.htm25-team__card-social {
+  display: flex;
+  align-items: center;
+  gap: var(--htm25-space-3);
+  margin-top: var(--htm25-space-4);
+}
+
+.htm25-team__card-social .htm25-team__card-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--htm25-bg-subtle);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  color: var(--htm25-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease,
+              border-color 0.15s ease, transform 0.15s ease;
+}
+
+.htm25-team__card-social .htm25-team__card-social-link:hover {
+  color: var(--htm25-accent-primary);
+  background-color: var(--htm25-accent-primary-lt, var(--htm25-bg-subtle));
+  border-color: var(--htm25-accent-primary);
+  transform: scale(1.1);
+}
+
+.htm25-team__card-social .htm25-team__card-social-link:focus-visible {
+  outline: 2px solid var(--htm25-accent-primary);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   STYLE: BENTO — card lift
+   ========================================================= */
+.htm25-style--bento .htm25-team__card {
+  box-shadow: var(--htm25-shadow-md);
+}
+
+.htm25-style--bento .htm25-team__card:hover {
+  box-shadow: var(--htm25-shadow-xl);
+}
+
+/* =========================================================
+   STYLE: DARK
+   ========================================================= */
+.htm25-style--dark .htm25-team__card-name {
+  color: var(--htm25-text-heading);
+}
+
+.htm25-style--dark .htm25-team__card-social .htm25-team__card-social-link:hover {
+  color: var(--htm25-accent-primary);
+}
+
+/* =========================================================
+   STYLE: GLASS + AURORA — frosted card
+   ========================================================= */
+.htm25-team.htm25-style--glass,
+.htm25-team.htm25-style--aurora {
+  background: var(--htm25-gradient-hero);
+}
+
+.htm25-style--glass .htm25-team__card,
+.htm25-style--aurora .htm25-team__card {
+  background: var(--htm25-glass-bg, var(--htm25-bg-card));
+  -webkit-backdrop-filter: var(--htm25-glass-blur, none);
+          backdrop-filter: var(--htm25-glass-blur, none);
+}
+
+/* =========================================================
+   STYLE: NEO-BRUTALIST
+   ========================================================= */
+.htm25-style--neo .htm25-team__card {
+  border: var(--htm25-border-width-thick, 3px) solid var(--htm25-border-color);
+  border-radius: 0;
+  box-shadow: var(--htm25-shadow-card);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.htm25-style--neo .htm25-team__card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--htm25-shadow-btn);
+}
+
+.htm25-style--neo .htm25-team__card--featured {
+  background-color: var(--htm25-swatch-yellow, #fef08a);
+  color: var(--htm25-swatch-black, #000);
+}
+
+.htm25-style--neo .htm25-team__card--featured .htm25-team__card-name,
+.htm25-style--neo .htm25-team__card--featured .htm25-team__card-bio {
+  color: var(--htm25-swatch-black, #000);
+}
+
+.htm25-style--neo .htm25-team__card-photo-placeholder {
+  border-radius: 0;
+  background: #FFE500;
+  border: 2px solid #000000;
+  color: #000000;
+}
+
+.htm25-style--neo .htm25-team--list .htm25-team__card-photo-placeholder {
+  border-radius: 0;
+}
+
+.htm25-style--neo .htm25-team__card-department {
+  border-radius: 0;
+  color: var(--htm25-swatch-black, #000);
+  background-color: var(--htm25-accent-primary);
+  border: 1px solid var(--htm25-swatch-black, #000);
+  box-shadow: 1px 1px 0 var(--htm25-swatch-black, #000);
+}
+
+.htm25-style--neo .htm25-team__card-role {
+  color: var(--htm25-swatch-black, #000);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1200px) {
+  .htm25-team__grid--cols-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .htm25-team__grid--cols-3,
+  .htm25-team__grid--cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .htm25-team--featured .htm25-team__card--hero {
+    grid-template-columns: 240px 1fr;
+    gap: var(--htm25-space-8);
+  }
+}
+
+@media (max-width: 768px) {
+  .htm25-team__grid--cols-2,
+  .htm25-team__grid--cols-3,
+  .htm25-team__grid--cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .htm25-team--featured .htm25-team__card--hero {
+    grid-template-columns: 1fr;
+  }
+
+  .htm25-team--featured .htm25-team__card--hero .htm25-team__card-photo-wrap {
+    max-height: 280px;
+  }
+
+  .htm25-team--featured .htm25-team__card--hero .htm25-team__card-body {
+    padding: var(--htm25-space-6);
+  }
+
+  .htm25-team .htm25-team__headline {
+    font-size: var(--htm25-text-3xl);
+  }
+}
+
+@media (max-width: 540px) {
+  .htm25-team__grid--cols-2,
+  .htm25-team__grid--cols-3,
+  .htm25-team__grid--cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .htm25-team--list .htm25-team__card {
+    grid-template-columns: 64px 1fr;
+    gap: var(--htm25-space-4);
+  }
+
+  .htm25-team--list .htm25-team__card-photo-wrap {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .htm25-team__blob {
+    animation: none;
+  }
+
+  .htm25-team__card,
+  .htm25-team__card-photo,
+  .htm25-team__card-social-overlay,
+  .htm25-team__card-social .htm25-team__card-social-link {
+    transition: none;
+  }
+}

@@ -1,0 +1,701 @@
+{
+  "name": "htmega/hero-2025",
+  "category": "htmega-blocks",
+  "keywords": [
+    "hero",
+    "banner",
+    "headline",
+    "htmega",
+    "2026",
+    "modern"
+  ],
+  "description": "A modern Hero section with 5 design style presets (Bento, Glass, Dark, Aurora, Neo-Brutalist) and 3 layouts. Part of the HT Mega 2026 Collection.",
+  "title": "Hero 2026",
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "centered"
+    },
+    "showBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "badgeText": {
+      "type": "string",
+      "default": "Now in Beta"
+    },
+    "badgeIcon": {
+      "type": "string",
+      "default": "fa fa-rocket"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Build Faster.\nShip Smarter."
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "Smarter"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h1"
+    },
+    "description": {
+      "type": "string",
+      "default": "The all-in-one toolkit for teams who ship. Beautiful, accessible, and fast by default."
+    },
+    "showPrimaryBtn": {
+      "type": "boolean",
+      "default": true
+    },
+    "primaryBtnText": {
+      "type": "string",
+      "default": "Get Started Free"
+    },
+    "primaryBtnUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "primaryBtnTarget": {
+      "type": "boolean",
+      "default": false
+    },
+    "showSecondaryBtn": {
+      "type": "boolean",
+      "default": true
+    },
+    "secondaryBtnText": {
+      "type": "string",
+      "default": "View Demo"
+    },
+    "secondaryBtnUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "secondaryBtnTarget": {
+      "type": "boolean",
+      "default": false
+    },
+    "secondaryBtnIcon": {
+      "type": "string",
+      "default": "fa fa-play"
+    },
+    "showSocialProof": {
+      "type": "boolean",
+      "default": true
+    },
+    "socialProofText": {
+      "type": "string",
+      "default": "Trusted by 50,000+ builders worldwide"
+    },
+    "socialProofRating": {
+      "type": "string",
+      "default": "4.9 / 5.0"
+    },
+    "heroImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "heroImageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "heroImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "showFloatingBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "floatingStatNumber": {
+      "type": "string",
+      "default": "50K+"
+    },
+    "floatingStatLabel": {
+      "type": "string",
+      "default": "Happy Users"
+    },
+    "styleAccentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleBadgeTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleBadgeBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleBadgeIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnHoverBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnHoverBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleIconCircleBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleIconCircleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialProofTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleRatingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleStarsColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFloatBadgeBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFloatBadgeNumberColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleFloatBadgeLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnBorderRadiusObj": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "stylePrimaryBtnShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "primaryBtnBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "primaryBtnBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "primaryBtnBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleBadgeBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "badgeBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "badgeBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "badgeBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleImageBorderRadiusObj": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleImageShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "imageBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "imageBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "imageBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleBadgeTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleBadgeIconSize": {
+      "type": "number",
+      "default": 0
+    },
+    "styleBadgeIconGap": {
+      "type": "number",
+      "default": 0
+    },
+    "styleBtnGap": {
+      "type": "number",
+      "default": 0.75
+    },
+    "stylePrimaryBtnTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleSecondaryBtnTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "primaryBtnHoverBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "primaryBtnHoverBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "primaryBtnHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryBtnBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryBtnBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "secondaryBtnBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryBtnHoverBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryBtnHoverBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "secondaryBtnHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialProofTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleRatingTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFloatBadgeNumberTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFloatBadgeLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleFloatBadgeRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionPaddingTop": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionPaddingBottom": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPaddingTop": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPaddingRight": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPaddingBottom": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPaddingLeft": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineFontWeight": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineLineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescFontWeight": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnBorderRadius": {
+      "type": "string",
+      "default": ""
+    },
+    "styleImageBorderRadius": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBorder": {
+      "type": "object",
+      "default": {}
+    },
+    "stylePrimaryBtnBorder": {
+      "type": "object",
+      "default": {}
+    },
+    "styleBadgeBorder": {
+      "type": "object",
+      "default": {}
+    },
+    "styleImageBorder": {
+      "type": "object",
+      "default": {}
+    }
+  },
+  "render": "file:./index.php"
+}

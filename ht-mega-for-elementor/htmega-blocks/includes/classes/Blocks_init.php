@@ -94,7 +94,7 @@ class Blocks_init {
 
         if( !isset($block['server_side_render']) ) return;
 
-        $block_dir = ( isset($block['is_pro']) && $block['is_pro'] == true && defined( "HTMEGA_ADDONS_PL_PATH_PRO" ) ) ? HTMEGA_ADDONS_PL_PATH_PRO . 'blocks/' : HTMEGA_BLOCK_PATH . '/src/blocks/';
+        $block_dir = ( isset($block['is_pro']) && $block['is_pro'] == true && defined( "HTMEGA_ADDONS_PL_PATH_PRO" ) ) ? HTMEGA_ADDONS_PL_PATH_PRO . 'blocks/' : HTMEGA_BLOCK_PATH . '/build/blocks/';
         $block_name  = str_replace('htmega/', '', trim(preg_replace('/\(.+\)/', '', $block['name'])));
         $block_file  = $block_dir . $block_name . '/index.php';
 
@@ -120,14 +120,41 @@ class Blocks_init {
             'is_editor'         => ( isset($_GET['is_editor_mode']) && $_GET['is_editor_mode'] == 'yes' ) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         ] );
 
-        $block['render_callback'] = function ( $settings, $content ) use ( $block, $block_file ) {
-            $this->enqueue_block_assets( $block );
-            ob_start();
-            if( file_exists( $block_file ) ){
-                include ( $block_file );
-            }
-            return ob_get_clean();
-        };
+        $static_2025 = [
+            'htmega/hero-2025', 'htmega/about-2025', 'htmega/services-2025',
+            'htmega/testimonials-2025', 'htmega/pricing-2025', 'htmega/stats-2025',
+            'htmega/cta-2025', 'htmega/team-2025', 'htmega/faq-2025',
+        ];
+        $full_block_name = $block['name'];
+
+        if ( in_array( $full_block_name, $static_2025, true ) ) {
+            $block['render_callback'] = function ( $settings, $content ) use ( $block, $block_file, $full_block_name ) {
+                $this->enqueue_block_assets( $block );
+                if ( ! empty( trim( $content ) ) ) {
+                    $css    = \HtMegaBlocks\Blocks_Css::build_block_css( $full_block_name, $settings );
+                    $script = \HtMegaBlocks\Blocks_Css::build_block_script( $full_block_name, $settings );
+                    $out = '';
+                    if ( $css )    $out .= '<style>' . $css . '</style>';
+                    $out .= $content;
+                    if ( $script ) $out .= $script;
+                    return $out;
+                }
+                ob_start();
+                if ( file_exists( $block_file ) ) {
+                    include $block_file;
+                }
+                return ob_get_clean();
+            };
+        } else {
+            $block['render_callback'] = function ( $settings, $content ) use ( $block, $block_file ) {
+                $this->enqueue_block_assets( $block );
+                ob_start();
+                if( file_exists( $block_file ) ){
+                    include ( $block_file );
+                }
+                return ob_get_clean();
+            };
+        }
 
         // Register block.
         register_block_type( $block['name'], $block );

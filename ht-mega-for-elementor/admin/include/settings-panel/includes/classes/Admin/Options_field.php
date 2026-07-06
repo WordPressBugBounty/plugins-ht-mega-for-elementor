@@ -43,37 +43,16 @@ class Options_Field {
                     'desc'  => __( 'Freely use these elements to create your site. You can enable which you are not using, and, all associated assets will be disable to improve your site loading speed.', 'htmega-addons' ),
                 ],
             ],
-            'gutenberg' => [
-                'id'    => 'htmega_gutenberg_tabs',
-                'title' => esc_html__( 'Gutenberg', 'htmega-addons' ),
-                'icon'  => '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1_9625)"> <path d="M5.11042 3.186C5.11042 3.0641 5.24055 2.98634 5.3479 3.0441L9.65036 5.35904C9.73739 5.40587 9.79167 5.49671 9.79167 5.59554V10.8042C9.79167 10.9263 9.6612 11.0041 9.55384 10.946L5.25115 8.61749C5.16444 8.57056 5.11042 8.47989 5.11042 8.3813V3.186ZM0.506447 11.2989C0.39405 11.3594 0.393334 11.5204 0.505187 11.5819L1.24959 11.9914L4.76796 13.889C4.84774 13.9321 4.94385 13.9319 5.02353 13.8887L9.2753 11.5815C9.38792 11.5204 9.3876 11.3587 9.27475 11.298L5.01478 9.00767C4.93531 8.96495 4.8397 8.96498 4.76027 9.00777L0.506447 11.2989ZM5.1125 19.7106C5.1125 19.8327 5.2429 19.9104 5.35026 19.8524L9.63833 17.5341C9.72509 17.4872 9.77916 17.3965 9.77916 17.2979V12.0824C9.77916 11.9604 9.64876 11.8827 9.5414 11.9407L5.25334 14.2589C5.16657 14.3058 5.1125 14.3965 5.1125 14.4952V19.7106ZM14.7527 8.61742C14.8396 8.57055 14.8937 8.4798 14.8937 8.38109V3.18639C14.8937 3.0644 14.7634 2.98665 14.6561 3.04459L10.3639 5.36106C10.2771 5.40794 10.2229 5.49868 10.2229 5.59739V10.7921C10.2229 10.9141 10.3532 10.9918 10.4606 10.9339L14.7527 8.61742ZM19.495 11.5789C19.6074 11.5179 19.6074 11.3565 19.4949 11.2956L15.2486 8.99592C15.1689 8.95276 15.0728 8.95271 14.993 8.99579L10.7261 11.3012C10.614 11.3617 10.6132 11.5223 10.7248 11.5839L11.7456 12.1481L14.1178 13.4237L14.9853 13.886C15.0647 13.9284 15.1601 13.9281 15.2393 13.8853L16.6542 13.1205L19.495 11.5789ZM0 17.2895C0 17.3882 0.0541119 17.4789 0.140932 17.5258L4.43729 19.8463C4.54465 19.9043 4.675 19.8265 4.675 19.7045V14.4932C4.675 14.3945 4.62085 14.3038 4.53399 14.2569L0.237658 11.9383C0.130302 11.8804 0 11.9581 0 12.0801V17.2895ZM15.3292 19.7044C15.3292 19.8264 15.4596 19.9042 15.5669 19.8461L19.8592 17.5258C19.9459 17.4789 20 17.3882 20 17.2895V12.0803C20 11.9583 19.8696 11.8806 19.7622 11.9386L15.47 14.2589C15.3832 14.3058 15.3292 14.3965 15.3292 14.4952V19.7044ZM14.654 19.8463C14.7613 19.9042 14.8917 19.8265 14.8917 19.7045V14.4932C14.8917 14.3945 14.8375 14.3038 14.7507 14.2569L10.4585 11.9404C10.3511 11.8825 10.2208 11.9602 10.2208 12.0822V17.2916C10.2208 17.3902 10.2749 17.481 10.3618 17.5279L14.654 19.8463ZM5.61176 2.40285C5.50051 2.46314 5.49898 2.62226 5.60905 2.68468L6.19547 3.01724L9.925 5.01216L10.0062 5.05591L14.3883 2.68305C14.5008 2.62211 14.5008 2.46058 14.3882 2.39965L10.1279 0.0938866C10.0481 0.0506978 9.9519 0.050725 9.87213 0.0939587L5.61176 2.40285Z" fill="#7D8087"/> </g> <defs> <clipPath id="clip0_1_9625"> <rect width="20" height="20" fill="white"/> </clipPath> </defs> </svg>',
+            'sections' => [
+                'id'    => 'htmega_sections_element_tabs',
+                'title' => esc_html__( 'Sections', 'htmega-addons' ),
+                'icon'  => '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="18" height="5" rx="1.5" fill="#7D8087"/><rect x="1" y="8" width="8" height="11" rx="1.5" fill="#7D8087"/><rect x="11" y="8" width="8" height="5" rx="1.5" fill="#7D8087"/><rect x="11" y="15" width="8" height="4" rx="1.5" fill="#7D8087"/></svg>',
                 'content' => [
                     'column' => 3,
-                    'title' => __( 'Gutenberg Blocks List', 'htmega-addons' ),
-                    'desc'  => __( 'Freely use these Gutenberg Blocks to create your site. You can disable which you are not using, and, all associated assets will be disable to improve your site loading speed.', 'htmega-addons' ),
+                    'title'  => __( 'HT Mega 2026 Collection', 'htmega-addons' ),
+                    'desc'   => __( 'Toggle individual 2026 section widgets for Elementor and Gutenberg. Disable unused sections to improve your site loading speed.', 'htmega-addons' ),
                 ],
             ],
-            'thirdparty' => array(
-                'id'    => 'htmega_thirdparty_element_tabs',
-                'title' => esc_html__( 'Third Party', 'htmega-addons' ),
-                'icon'  => '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1_9629)"> <path d="M4.21875 15.625C5.44845 15.625 6.44531 14.6194 6.44531 13.3789C6.44531 12.1384 5.44845 11.1328 4.21875 11.1328C2.98905 11.1328 1.99219 12.1384 1.99219 13.3789C1.99219 14.6194 2.98905 15.625 4.21875 15.625Z" fill="#7D8087"/> <path d="M15.7617 15.625C17.0022 15.625 18.0078 14.6194 18.0078 13.3789C18.0078 12.1384 17.0022 11.1328 15.7617 11.1328C14.5212 11.1328 13.5156 12.1384 13.5156 13.3789C13.5156 14.6194 14.5212 15.625 15.7617 15.625Z" fill="#7D8087"/> <path d="M9.98047 4.72656C11.221 4.72656 12.2266 3.72095 12.2266 2.48047C12.2266 1.23999 11.221 0.234375 9.98047 0.234375C8.73998 0.234375 7.73438 1.23999 7.73438 2.48047C7.73438 3.72095 8.73998 4.72656 9.98047 4.72656Z" fill="#7D8087"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.96388 14.6875C1.64503 14.8615 1.3498 15.0812 1.08833 15.3424C0.366472 16.0633 -0.0390625 17.0412 -0.0390625 18.0608V18.0615C-0.0390625 18.9811 0.707358 19.7266 1.62815 19.7266H6.77029C7.69108 19.7266 8.4375 18.9811 8.4375 18.0615C8.4375 18.0612 8.4375 18.061 8.4375 18.0608C8.4375 17.0412 8.03197 16.0633 7.3101 15.3424C7.04864 15.0812 6.75341 14.8615 6.43455 14.6875C5.98454 15.4531 5.15153 15.9676 4.19926 15.9676C3.24691 15.9676 2.4139 15.4531 1.96388 14.6875Z" fill="#7D8087"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5264 14.6875C13.2075 14.8616 12.9123 15.0812 12.6508 15.3424C11.929 16.0634 11.5234 17.0411 11.5234 18.0607V18.0614C11.5234 18.981 12.2699 19.7266 13.1906 19.7266H18.3328C19.2536 19.7266 20 18.981 20 18.0614C20 18.0612 20 18.061 20 18.0607C20 17.0411 19.5945 16.0634 18.8726 15.3424C18.6111 15.0812 18.3159 14.8616 17.9971 14.6875C17.547 15.4532 16.714 15.9676 15.7617 15.9676C14.8094 15.9676 13.9764 15.4532 13.5264 14.6875Z" fill="#7D8087"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.74511 3.78906C7.42634 3.96304 7.13112 4.18279 6.86966 4.44393C6.1478 5.16488 5.74219 6.14275 5.74219 7.16235V7.16302C5.74227 8.08265 6.48869 8.82812 7.40946 8.82812H12.5516C13.4723 8.82812 14.2188 8.08265 14.2188 7.16302C14.2188 7.16277 14.2188 7.16251 14.2188 7.16235C14.2188 6.14275 13.8132 5.16488 13.0914 4.44393C12.8299 4.18279 12.5346 3.96304 12.2158 3.78906C11.7658 4.55469 10.9328 5.06912 9.98047 5.06912C9.02813 5.06912 8.19521 4.55469 7.74511 3.78906Z" fill="#7D8087"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2224 11.6289L11.0841 9.17969H8.87789L8.73955 11.6289L6.64062 14.4022C6.97941 14.5909 7.2934 14.8277 7.57201 15.1081C7.82069 15.3583 8.03476 15.6367 8.21125 15.9359L9.98097 13.9826L11.7522 15.9375C11.9295 15.6358 12.1449 15.3551 12.3953 15.1031C12.6722 14.8245 12.984 14.5889 13.3203 14.4008L11.2224 11.6289Z" fill="#7D8087"/> </g> <defs> <clipPath id="clip0_1_9629"> <rect width="20" height="20" fill="white"/> </clipPath> </defs> </svg>',
-                'content' => [
-                    'column' => 3,
-                    'title' => __( 'Third Party Widget List', 'htmega-addons' ),
-                    'desc'  => __( 'Freely use these elements to create your site. You can enable which you are not using, and, all associated assets will be disable to improve your site loading speed.', 'htmega-addons' ),
-                ],
-            ),
-            'others' => array(
-                'id'    => 'htmega_general_tabs',
-                'title' => esc_html__( 'Integrations', 'htmega-addons' ),
-                'icon'  => '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1_9639)"> <path d="M9.28571 15.0181H8.57143V15.735C8.57143 16.0109 8.41379 16.2614 8.16686 16.3811C7.91921 16.5001 7.62486 16.4666 7.41071 16.295L3.83929 13.4275C3.66979 13.2911 3.57143 13.0852 3.57143 12.8675C3.57143 12.6498 3.66979 12.4439 3.83929 12.3074L7.41071 9.43993C7.62557 9.26771 7.91786 9.23479 8.16686 9.35379C8.41379 9.47357 8.57143 9.72414 8.57143 10V10.7169H9.28571V8.56621C9.28571 8.17 9.60521 7.84936 10 7.84936H12.1429C12.5189 7.84936 12.8264 8.14057 12.8551 8.51021L14.571 7.13243L12.8551 5.75464C12.8265 6.12429 12.5189 6.4155 12.1429 6.4155H10C9.60521 6.4155 9.28571 6.09486 9.28571 5.69864V0C4.10507 0.370143 0 4.70786 0 10C0 15.2921 4.10507 19.6299 9.28571 20V15.0181Z" fill="#7D8087"/> <path d="M10.715 0V4.98186H11.4293V4.26493C11.4293 3.98907 11.5869 3.7385 11.8338 3.61879C12.0808 3.49907 12.3751 3.53264 12.59 3.70493L16.1614 6.57243C16.3309 6.70893 16.4293 6.91479 16.4293 7.1325C16.4293 7.35021 16.3309 7.55607 16.1614 7.69257L12.59 10.5601C12.3758 10.733 12.0828 10.7659 11.8338 10.6462C11.5869 10.5264 11.4293 10.2759 11.4293 10V9.28314H10.715V11.4338C10.715 11.83 10.3955 12.1506 10.0007 12.1506H7.85783C7.48183 12.1506 7.17426 11.8594 7.14562 11.4898L5.42969 12.8676L7.14562 14.2454C7.17419 13.8757 7.48183 13.5845 7.85783 13.5845H10.0007C10.3955 13.5845 10.715 13.9051 10.715 14.3014V20C15.8956 19.6299 20.0007 15.2921 20.0007 10C20.0007 4.70786 15.8956 0.370143 10.715 0Z" fill="#7D8087"/> </g> <defs> <clipPath id="clip0_1_9639"> <rect width="20" height="20" fill="white"/> </clipPath> </defs> </svg>',
-                'content' => [
-                    'enableall' => false,
-                    'title' => __( 'Integrations', 'htmega-addons' ),
-                    'desc'  => __( 'Set the fields value to use these features', 'htmega-addons' ),
-                    'wrapper_class'  => 'htmega-integrarion-section',
-                ],
-            ),
             'advance' => array(
                 'id'    => 'htmega_advance_element_tabs',
                 'title' => esc_html__( 'Modules', 'htmega-addons' ),
@@ -84,6 +63,17 @@ class Options_Field {
                     'desc'  => __( 'Freely use these elements to create your site. You can enable which you are not using, and, all associated assets will be disable to improve your site loading speed.', 'htmega-addons' ),
                 ],
             ),
+            'others' => array(
+                'id'    => 'htmega_general_tabs',
+                'title' => esc_html__( 'Settings', 'htmega-addons' ),
+                'icon'  => '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1_9639)"> <path d="M9.28571 15.0181H8.57143V15.735C8.57143 16.0109 8.41379 16.2614 8.16686 16.3811C7.91921 16.5001 7.62486 16.4666 7.41071 16.295L3.83929 13.4275C3.66979 13.2911 3.57143 13.0852 3.57143 12.8675C3.57143 12.6498 3.66979 12.4439 3.83929 12.3074L7.41071 9.43993C7.62557 9.26771 7.91786 9.23479 8.16686 9.35379C8.41379 9.47357 8.57143 9.72414 8.57143 10V10.7169H9.28571V8.56621C9.28571 8.17 9.60521 7.84936 10 7.84936H12.1429C12.5189 7.84936 12.8264 8.14057 12.8551 8.51021L14.571 7.13243L12.8551 5.75464C12.8265 6.12429 12.5189 6.4155 12.1429 6.4155H10C9.60521 6.4155 9.28571 6.09486 9.28571 5.69864V0C4.10507 0.370143 0 4.70786 0 10C0 15.2921 4.10507 19.6299 9.28571 20V15.0181Z" fill="#7D8087"/> <path d="M10.715 0V4.98186H11.4293V4.26493C11.4293 3.98907 11.5869 3.7385 11.8338 3.61879C12.0808 3.49907 12.3751 3.53264 12.59 3.70493L16.1614 6.57243C16.3309 6.70893 16.4293 6.91479 16.4293 7.1325C16.4293 7.35021 16.3309 7.55607 16.1614 7.69257L12.59 10.5601C12.3758 10.733 12.0828 10.7659 11.8338 10.6462C11.5869 10.5264 11.4293 10.2759 11.4293 10V9.28314H10.715V11.4338C10.715 11.83 10.3955 12.1506 10.0007 12.1506H7.85783C7.48183 12.1506 7.17426 11.8594 7.14562 11.4898L5.42969 12.8676L7.14562 14.2454C7.17419 13.8757 7.48183 13.5845 7.85783 13.5845H10.0007C10.3955 13.5845 10.715 13.9051 10.715 14.3014V20C15.8956 19.6299 20.0007 15.2921 20.0007 10C20.0007 4.70786 15.8956 0.370143 10.715 0Z" fill="#7D8087"/> </g> <defs> <clipPath id="clip0_1_9639"> <rect width="20" height="20" fill="white"/> </clipPath> </defs> </svg>',
+                'content' => [
+                    'enableall' => false,
+                    'title' => __( 'Settings', 'htmega-addons' ),
+                    'desc'  => __( 'Set the fields value to use these features', 'htmega-addons' ),
+                    'wrapper_class'  => 'htmega-integrarion-section',
+                ],
+            ),
         );
 
         return apply_filters( 'htmega_admin_fields_sections', $tabs );
@@ -92,9 +82,67 @@ class Options_Field {
 
     public function get_settings_subtabs(){
 
-        $subtabs = array();
+        $subtabs = array(
+            'elements' => array(
+                'elementor' => array(
+                    'id'      => 'htmega_element_tabs',
+                    'title'   => __( 'Elementor Widgets', 'htmega-addons' ),
+                    'content' => [
+                        'column' => 3,
+                        'title'  => __( 'Elementor Widget List', 'htmega-addons' ),
+                        'desc'   => __( 'Freely use these elements to create your site. You can enable which you are not using, and all associated assets will be disabled to improve your site loading speed.', 'htmega-addons' ),
+                    ],
+                    'panels' => [
+                        [
+                            'id'     => 'htmega_thirdparty_element_tabs',
+                            'title'  => __( 'Third Party Plugin\'s Widget List', 'htmega-addons' ),
+                            'desc'   => __( 'Freely use these elements to create your site. You can enable which you are not using, and all associated assets will be disabled to improve your site loading speed.', 'htmega-addons' ),
+                            'column' => 3,
+                        ],
+                    ],
+                ),
+                'gutenberg' => array(
+                    'id'      => 'htmega_gutenberg_tabs',
+                    'title'   => __( 'Gutenberg Blocks', 'htmega-addons' ),
+                    'content' => [
+                        'column' => 3,
+                        'title'  => __( 'Gutenberg Block List', 'htmega-addons' ),
+                        'desc'   => __( 'Freely use these Gutenberg blocks to create your site. You can disable which you are not using, and all associated assets will be disabled to improve your site loading speed.', 'htmega-addons' ),
+                    ],
+                ),
+            ),
+            'sections' => array(
+                'elementor' => array(
+                    'id'      => 'htmega_sections_element_tabs',
+                    'title'   => __( 'Elementor Sections', 'htmega-addons' ),
+                    'content' => [
+                        'column' => 3,
+                        'title'  => __( 'HT Mega 2026 — Elementor Widgets', 'htmega-addons' ),
+                        'desc'   => __( 'Toggle individual 2026 collection widgets for Elementor. Disable unused sections to improve your site loading speed.', 'htmega-addons' ),
+                    ],
+                ),
+                'gutenberg' => array(
+                    'id'      => 'htmega_sections_gutenberg_tabs',
+                    'title'   => __( 'Gutenberg Sections', 'htmega-addons' ),
+                    'content' => [
+                        'column' => 3,
+                        'title'  => __( 'HT Mega 2026 — Gutenberg Blocks', 'htmega-addons' ),
+                        'desc'   => __( 'Toggle individual 2026 collection blocks for the WordPress block editor. Disable unused blocks to improve your site loading speed.', 'htmega-addons' ),
+                    ],
+                ),
+            ),
+        );
 
-        return apply_filters( 'htmega_admin_fields_sub_sections', $subtabs );
+        $subtabs = apply_filters( 'htmega_admin_fields_sub_sections', $subtabs );
+
+        // Gutenberg always last in elements tab, regardless of filter insertion order.
+        if ( isset( $subtabs['elements']['gutenberg'] ) ) {
+            $gutenberg = $subtabs['elements']['gutenberg'];
+            unset( $subtabs['elements']['gutenberg'] );
+            $subtabs['elements']['gutenberg'] = $gutenberg;
+        }
+
+        return $subtabs;
     }
 
     public function get_registered_settings(){
@@ -2559,6 +2607,34 @@ class Options_Field {
                 'type'    => 'html',
             ];
         }
+
+        $settings['htmega_sections_element_tabs'] = apply_filters( 'htmega_sections_element_fields', array(
+            array( 'id' => 'hero',         'name' => __( 'Hero 2026',            'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'about',        'name' => __( 'About / Feature 2026', 'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'services',     'name' => __( 'Services 2026',        'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'pricing',      'name' => __( 'Pricing Table 2026',   'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'testimonials', 'name' => __( 'Testimonials 2026',    'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'stats',        'name' => __( 'Stats / Counter 2026', 'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'cta',          'name' => __( 'CTA Section 2026',     'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'team',         'name' => __( 'Team 2026',            'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'faq',          'name' => __( 'FAQ 2026',             'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'blog',         'name' => __( 'Blog / Posts 2026',    'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'contact',      'name' => __( 'Contact Section 2026', 'htmega-addons' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+        ) );
+
+        $settings['htmega_sections_gutenberg_tabs'] = apply_filters( 'htmega_sections_gutenberg_fields', array(
+            array( 'id' => 'hero-2025',         'name' => __( 'Hero 2026',            'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'about-2025',        'name' => __( 'About / Feature 2026', 'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'services-2025',     'name' => __( 'Services 2026',        'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'pricing-2025',      'name' => __( 'Pricing Table 2026',   'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'testimonials-2025', 'name' => __( 'Testimonials 2026',    'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'stats-2025',        'name' => __( 'Stats / Counter 2026', 'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'cta-2025',          'name' => __( 'CTA Section 2026',     'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'team-2025',         'name' => __( 'Team 2026',            'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'faq-2025',          'name' => __( 'FAQ 2026',             'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'blog-2025',         'name' => __( 'Blog / Posts 2026',    'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+            array( 'id' => 'contact-2025',      'name' => __( 'Contact Section 2026', 'htmega-addons' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'htmega-addons' ), 'label_off' => __( 'Off', 'htmega-addons' ) ),
+        ) );
 
         $allFields = array_merge( $settings, $third_party_element );
         return apply_filters( 'htmega_admin_fields', $allFields );

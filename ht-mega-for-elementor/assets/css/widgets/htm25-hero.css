@@ -1,0 +1,579 @@
+/**
+ * HT Mega 2025 — Hero Widget Styles
+ * File: assets/css/widgets/htm25-hero.css
+ *
+ * All values pull from htm25-tokens.css custom properties.
+ * Apply .htm25-style--{style} on the section to switch themes.
+ * No !important, no hardcoded colors, no Bootstrap.
+ */
+
+/* =========================================================
+   SECTION WRAPPER
+   ========================================================= */
+
+.htm25-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--htm25-section-py);
+  padding-inline: var(--htm25-section-px);
+  background-color: var(--htm25-bg-section);
+}
+
+/* =========================================================
+   BACKGROUND LAYERS
+   ========================================================= */
+
+/* Gradient background for glass + aurora */
+.htm25-hero.htm25-style--glass,
+.htm25-hero.htm25-style--aurora {
+  background: var(--htm25-gradient-hero);
+}
+
+/* Animated gradient blobs */
+.htm25-hero__bg-blobs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: var(--htm25-z-below);
+}
+
+.htm25-hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: htm25-blob-drift 12s ease-in-out infinite alternate;
+}
+
+.htm25-style--glass .htm25-hero__blob--1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(120, 110, 255, 0.45), transparent 70%);
+  animation-duration: 14s;
+}
+
+.htm25-style--glass .htm25-hero__blob--2 {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.35), transparent 70%);
+  animation-duration: 18s;
+  animation-direction: alternate-reverse;
+}
+
+.htm25-style--aurora .htm25-hero__blob--1 {
+  width: 700px;
+  height: 700px;
+  top: -250px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(255, 60, 172, 0.40), transparent 70%);
+  animation-duration: 16s;
+}
+
+.htm25-style--aurora .htm25-hero__blob--2 {
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(43, 134, 197, 0.35), transparent 70%);
+  animation-duration: 20s;
+  animation-direction: alternate-reverse;
+}
+
+.htm25-style--aurora .htm25-hero__blob--3 {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  left: 30%;
+  background: radial-gradient(circle, rgba(120, 75, 160, 0.30), transparent 70%);
+  animation-duration: 22s;
+}
+
+@keyframes htm25-blob-drift {
+  from {
+    transform: translate(0, 0) scale(1.0);
+  }
+
+  to {
+    transform: translate(40px, 30px) scale(1.1);
+  }
+}
+
+
+/* =========================================================
+   INNER LAYOUT
+   ========================================================= */
+
+.htm25-hero__inner {
+  position: relative;
+  z-index: var(--htm25-z-base);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--htm25-space-10);
+  align-items: center;
+  max-width: var(--htm25-container-xl);
+  margin-inline: auto;
+}
+
+/* Split layouts: two columns */
+.htm25-hero--split-left .htm25-hero__inner,
+.htm25-hero--split-right .htm25-hero__inner {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Centered layout: single column, text centered */
+.htm25-hero--centered .htm25-hero__content {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 700px;
+}
+
+.htm25-hero--centered .htm25-hero__actions {
+  justify-content: center;
+}
+
+.htm25-hero--centered .htm25-hero__social-proof {
+  justify-content: center;
+}
+
+.htm25-hero--centered .htm25-hero__description {
+  margin-inline: auto;
+}
+
+/* =========================================================
+   BADGE / EYEBROW
+   ========================================================= */
+
+.htm25-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  padding: var(--htm25-space-1) var(--htm25-space-3);
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  border-radius: var(--htm25-badge-radius);
+  background-color: var(--htm25-badge-bg);
+  color: var(--htm25-badge-text);
+  border: 1px solid var(--htm25-badge-border, transparent);
+  margin-bottom: var(--htm25-space-6);
+}
+
+.htm25-hero__badge-icon {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.htm25-hero__badge-icon svg,
+.htm25-hero__badge-icon i,
+.htm25-hero__badge-icon span,
+.htm25-hero__badge-icon img {
+  width: 0.85em;
+  height: 0.85em;
+  font-size: 0.85em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Custom-uploaded SVG icon (rendered as <img>, not inline <svg>) —
+   scale to box instead of stretching, and fill currentColor when
+   the SVG itself doesn't hardcode a fill */
+.htm25-hero__badge-icon img {
+  object-fit: contain;
+}
+
+.htm25-hero__badge-icon svg {
+  fill: currentColor;
+}
+
+/* Neo badge gets hard border */
+.htm25-style--neo .htm25-hero__badge {
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* =========================================================
+   HEADLINE
+   ========================================================= */
+
+/* Parent scope (0,2,0) beats theme .editor-styles-wrapper h1 (0,1,1) */
+.htm25-hero .htm25-hero__headline {
+    white-space: pre-line;
+
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-5xl);
+  font-weight: var(--htm25-weight-heading, var(--htm25-weight-bold));
+  line-height: var(--htm25-leading-heading, var(--htm25-leading-tight));
+  letter-spacing: var(--htm25-tracking-heading, var(--htm25-tracking-tight));
+  color: var(--htm25-text-heading);
+  margin: 0 0 var(--htm25-space-6);
+}
+
+/* Highlighted accent word — always use background-clip:text so Elementor gradient/color controls render as text color not a box */
+.htm25-hero .htm25-hero__headline-accent {
+  background-color: var(--htm25-accent-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Glass + aurora: swap in gradient */
+.htm25-style--glass .htm25-hero__headline-accent,
+.htm25-style--aurora .htm25-hero__headline-accent {
+  background-color: transparent;
+  background-image: var(--htm25-gradient-btn);
+}
+
+/* Elementor: full headline gradient text (set via Style → Headline → Text Gradient) */
+.htm25-headline--gradient-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Dark: lime accent */
+.htm25-style--dark .htm25-hero__headline-accent {
+  background-color: var(--htm25-accent-primary);
+  background-image: none;
+}
+
+/* Neo: accent word — dark text + underline */
+.htm25-style--neo .htm25-hero__headline-accent {
+  background-color: var(--htm25-text-heading);
+  background-image: none;
+  text-decoration: underline;
+  text-decoration-color: var(--htm25-neo-yellow);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.htm25-hero .htm25-hero__description {
+  font-size: var(--htm25-text-lg);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-text-body);
+  margin: 0 0 var(--htm25-space-8);
+  max-width: 52ch;
+}
+
+/* =========================================================
+   CTA ACTIONS
+   ========================================================= */
+
+.htm25-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--htm25-space-3);
+  margin-bottom: var(--htm25-space-8);
+}
+
+/* Smooth transitions — tokens only cover background/box-shadow/transform; add color + border-color */
+.htm25-hero .htm25-btn--primary,
+.htm25-hero .htm25-btn--outline {
+  transition: background 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+/* Secondary button play-icon circle */
+.htm25-hero__play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75em;
+  height: 1.75em;
+  border-radius: 50%;
+  background-color: var(--htm25-accent-primary);
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, background-image 0.2s ease;
+}
+
+/* Icon color — covers FA4 <span class="fa fa-*"> and dashicons <span class="dashicons ..."> */
+.htm25-hero__play-icon i,
+.htm25-hero__play-icon svg,
+.htm25-hero__play-icon span:not(.htm25-hero__play-icon) {
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.htm25-hero__play-icon svg path {
+  transition: fill 0.2s ease;
+}
+
+/* FA4 / dashicon span inside play circle */
+.htm25-hero__play-icon span.fa,
+.htm25-hero__play-icon span[class*="dashicons"],
+.htm25-hero__play-icon svg{
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass + aurora: secondary button play icon uses gradient bg */
+.htm25-style--glass .htm25-hero__play-icon,
+.htm25-style--aurora .htm25-hero__play-icon {
+  background: var(--htm25-gradient-btn);
+}
+
+/* Dark: lime play icon, dark text */
+.htm25-style--dark .htm25-hero__play-icon {
+  background: var(--htm25-accent-primary);
+}
+
+.htm25-style--dark .htm25-hero__play-icon i,
+.htm25-style--dark .htm25-hero__play-icon svg {
+  color: var(--htm25-text-inverse);
+}
+
+/* =========================================================
+   SOCIAL PROOF
+   ========================================================= */
+
+.htm25-hero__social-proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  font-size: var(--htm25-text-sm);
+  color: var(--htm25-text-muted);
+}
+
+.htm25-hero__stars {
+  display: flex;
+  gap: 2px;
+  color: #F59E0B;
+  /* star amber — intentionally not a token, always amber */
+}
+
+.htm25-hero__rating {
+  font-weight: var(--htm25-weight-semibold);
+  color: var(--htm25-text-body);
+}
+
+.htm25-hero__social-text {
+  color: var(--htm25-text-muted);
+}
+
+/* =========================================================
+   MEDIA COLUMN (split layouts)
+   ========================================================= */
+
+.htm25-hero__media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.htm25-hero__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--htm25-radius-card);
+  display: block;
+  object-fit: cover;
+}
+
+/* Bento: card shadow on image */
+.htm25-style--bento .htm25-hero__media img {
+  box-shadow: var(--htm25-shadow-lg);
+  border: var(--htm25-border-width) solid var(--htm25-border-color);
+}
+
+/* Neo: hard shadow on image */
+.htm25-style--neo .htm25-hero__media img {
+  border: 2px solid #000;
+  box-shadow: var(--htm25-shadow-lg);
+  border-radius: 0;
+}
+
+/* Glass + aurora: soft glow around image */
+.htm25-style--glass .htm25-hero__media img {
+  box-shadow: var(--htm25-shadow-glow), 0 0 0 1px var(--htm25-border-color);
+  border-radius: var(--htm25-radius-2xl);
+}
+
+.htm25-style--aurora .htm25-hero__media img {
+  box-shadow: var(--htm25-shadow-glow-pink);
+  border-radius: var(--htm25-radius-2xl);
+}
+
+/* =========================================================
+   FLOATING STAT BADGE
+   ========================================================= */
+
+.htm25-hero__float-badge {
+  position: absolute;
+  bottom: var(--htm25-space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--htm25-space-4) var(--htm25-space-6);
+  border-radius: var(--htm25-radius-xl);
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width) solid var(--htm25-border-color);
+  box-shadow: var(--htm25-shadow-card);
+  text-align: center;
+  min-width: 120px;
+  white-space: nowrap;
+}
+
+.htm25-style--glass .htm25-hero__float-badge,
+.htm25-style--aurora .htm25-hero__float-badge {
+  background: var(--htm25-glass-bg, var(--htm25-bg-card));
+  -webkit-backdrop-filter: var(--htm25-glass-blur, none);
+  backdrop-filter: var(--htm25-glass-blur, none);
+  border-color: var(--htm25-border-color);
+}
+
+.htm25-style--neo .htm25-hero__float-badge {
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  border-radius: 0;
+}
+
+.htm25-hero__float-number {
+  font-size: var(--htm25-text-2xl);
+  font-weight: var(--htm25-weight-bold);
+  line-height: 1;
+  color: var(--htm25-text-heading);
+  margin-bottom: var(--htm25-space-1);
+}
+
+.htm25-hero__float-label {
+  font-size: var(--htm25-text-xs);
+  color: var(--htm25-text-muted);
+  letter-spacing: var(--htm25-tracking-wide);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .htm25-hero--split-left .htm25-hero__inner,
+  .htm25-hero--split-right .htm25-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* On tablet, always show media below content */
+  .htm25-hero--split-right .htm25-hero__media {
+    order: 1;
+  }
+
+  .htm25-hero--split-right .htm25-hero__content {
+    order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .htm25-hero .htm25-hero__headline {
+    font-size: var(--htm25-text-3xl);
+  }
+
+  .htm25-hero .htm25-hero__description {
+    font-size: var(--htm25-text-base);
+  }
+
+  .htm25-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .htm25-hero__actions .htm25-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   IMAGE PLACEHOLDER
+   ========================================================= */
+
+.htm25-hero__media-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--htm25-radius-card);
+  border: 2px dashed var(--htm25-border-color, rgba(0,0,0,.2));
+  color: var(--htm25-text-muted, rgba(0,0,0,.35));
+  background-color: var(--htm25-surface-alt, rgba(0,0,0,.03));
+  pointer-events: none;
+  user-select: none;
+}
+
+.htm25-hero__media-placeholder svg {
+  opacity: .5;
+  flex-shrink: 0;
+}
+
+.htm25-hero__media-placeholder span {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: .6;
+}
+
+/* Glass / Aurora — frosted */
+.htm25-style--glass .htm25-hero__media-placeholder,
+.htm25-style--aurora .htm25-hero__media-placeholder {
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Dark — lime-tinted dashed border */
+.htm25-style--dark .htm25-hero__media-placeholder {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(163, 230, 53, 0.25);
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Neo — solid thick border, offset shadow, sharp corners */
+.htm25-style--neo .htm25-hero__media-placeholder {
+  border-radius: 0;
+  border: 2px solid var(--htm25-border-color);
+  border-style: solid;
+  box-shadow: 4px 4px 0 var(--htm25-border-color);
+  background-color: var(--htm25-surface-alt, #f5f5f5);
+}
+
+/* =========================================================
+   ACCESSIBILITY + REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .htm25-hero__blob {
+    animation: none;
+  }
+}

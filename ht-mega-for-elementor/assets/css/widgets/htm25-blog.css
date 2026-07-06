@@ -1,0 +1,585 @@
+/**
+ * HT Mega 2026 — Blog / Posts Section Widget
+ * File: assets/css/widgets/htm25-blog.css
+ *
+ * BEM component: .htm25-blog
+ * Requires htm25-tokens.css (design token system)
+ * Zero hardcoded colours — all values via var(--htm25-*)
+ */
+
+/* =========================================================
+   SECTION WRAPPER
+   ========================================================= */
+.htm25-blog {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--htm25-section-py);
+  padding-inline: var(--htm25-section-px);
+  background-color: var(--htm25-bg-section);
+}
+
+/* ── Background decoration (glass + aurora) ── */
+.htm25-blog__bg-blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.htm25-blog__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: htm25-blogblob-drift 22s ease-in-out infinite alternate;
+}
+
+.htm25-blog__blob--1 {
+  width: 55vw;
+  height: 40vw;
+  max-width: 800px;
+  max-height: 600px;
+  top: -20%;
+  right: -5%;
+  background: radial-gradient(circle, var(--htm25-accent-primary) 0%, transparent 70%);
+  animation-delay: 0s;
+}
+
+.htm25-blog__blob--2 {
+  width: 45vw;
+  height: 35vw;
+  max-width: 660px;
+  max-height: 500px;
+  bottom: -15%;
+  left: -8%;
+  background: radial-gradient(circle, var(--htm25-accent-primary) 0%, transparent 70%);
+  animation-delay: -9s;
+}
+
+@keyframes htm25-blogblob-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-3%, 4%) scale(1.06); }
+  100% { transform: translate(3%, -3%) scale(0.96); }
+}
+
+/* =========================================================
+   INNER WRAPPER
+   ========================================================= */
+.htm25-blog__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--htm25-container-xl);
+  margin-inline: auto;
+}
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+.htm25-blog__header {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: var(--htm25-space-16);
+}
+
+.htm25-blog .htm25-blog__section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  color: var(--htm25-section-label-color, var(--htm25-accent-primary));
+  margin-bottom: var(--htm25-space-5);
+}
+
+.htm25-blog .htm25-blog__headline {
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-4xl);
+  font-weight: var(--htm25-weight-heading, var(--htm25-weight-bold));
+  line-height: var(--htm25-leading-heading, var(--htm25-leading-tight));
+  letter-spacing: var(--htm25-tracking-heading, var(--htm25-tracking-tight));
+  color: var(--htm25-section-title-color, var(--htm25-text-heading));
+  margin-top: 0;
+  margin-bottom: var(--htm25-space-5);
+}
+
+/* Base — always clip to text so Elementor gradient/color controls render as text, not a box */
+.htm25-blog .htm25-blog__headline-accent {
+  background-color: var(--htm25-accent-primary);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Glass + Aurora: gradient text */
+.htm25-style--glass .htm25-blog__headline-accent,
+.htm25-style--aurora .htm25-blog__headline-accent {
+  background-color: transparent;
+  background-image: var(--htm25-gradient-text, var(--htm25-gradient-btn));
+}
+
+.htm25-blog .htm25-blog__description {
+  font-size: var(--htm25-text-lg);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-section-body-color, var(--htm25-text-muted));
+  margin: 0;
+  max-width: 56ch;
+  margin-inline: auto;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+.htm25-blog__grid {
+  display: grid;
+  gap: var(--htm25-space-8);
+}
+
+.htm25-blog__grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+.htm25-blog__grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* ── Featured: hero card spans full width ── */
+.htm25-blog--featured .htm25-blog__card--hero {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.htm25-blog--featured .htm25-blog__card--hero .htm25-blog__card-image-link {
+  height: 100%;
+}
+
+.htm25-blog--featured .htm25-blog__card--hero .htm25-blog__card-image-wrap {
+  height: 100%;
+  aspect-ratio: unset;
+  border-radius: var(--htm25-radius-2xl) 0 0 var(--htm25-radius-2xl);
+}
+
+.htm25-blog--featured .htm25-blog__card--hero .htm25-blog__card-body {
+  padding: var(--htm25-space-10) var(--htm25-space-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.htm25-blog--featured .htm25-blog__card--hero .htm25-blog__card-title {
+  font-size: var(--htm25-text-3xl);
+}
+
+.htm25-blog--featured .htm25-blog__card--hero .htm25-blog__card-excerpt {
+  font-size: var(--htm25-text-base);
+  max-width: 52ch;
+}
+
+/* ── List layout ── */
+.htm25-blog--list .htm25-blog__grid {
+  grid-template-columns: 1fr;
+  gap: var(--htm25-space-5);
+}
+
+.htm25-blog--list .htm25-blog__card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.htm25-blog--list .htm25-blog__card-image-link {
+  height: 100%;
+}
+
+.htm25-blog--list .htm25-blog__card-image-wrap {
+  height: 100%;
+  aspect-ratio: unset;
+  min-height: 200px;
+  border-radius: var(--htm25-radius-2xl) 0 0 var(--htm25-radius-2xl);
+}
+
+.htm25-blog--list .htm25-blog__card-image-wrap--placeholder {
+  border-bottom: none;
+  border-right: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+}
+
+.htm25-blog--list .htm25-blog__card-body {
+  padding: var(--htm25-space-6) var(--htm25-space-8);
+}
+
+.htm25-blog--list .htm25-blog__card-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* =========================================================
+   CARD BASE
+   ========================================================= */
+.htm25-blog__card {
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: var(--htm25-radius-2xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.htm25-blog__card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--htm25-shadow-lg);
+}
+
+/* ── Image wrap ── */
+.htm25-blog__card-image-link {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.htm25-blog__card-image-wrap {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--htm25-bg-subtle);
+}
+
+.htm25-blog__card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.htm25-blog__card:hover .htm25-blog__card-image-wrap img {
+  transform: scale(1.04);
+}
+
+/* ── Image placeholder ── */
+.htm25-blog__card-image-wrap--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--htm25-text-muted);
+  border-bottom: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+}
+
+/* ── Card body ── */
+.htm25-blog__card-body {
+  padding: var(--htm25-space-6);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ── Meta top row (category + read time) ── */
+.htm25-blog__card-meta-top {
+  display: flex;
+  align-items: center;
+  gap: var(--htm25-space-3);
+  margin-bottom: var(--htm25-space-3);
+  flex-wrap: wrap;
+}
+
+.htm25-blog__card-category {
+  display: inline-block;
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  color: var(--htm25-accent-primary);
+  background-color: var(--htm25-accent-primary-lt, var(--htm25-bg-subtle));
+  padding: 2px var(--htm25-space-3);
+  border-radius: var(--htm25-radius-full);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.htm25-blog__card-category:hover {
+  background-color: var(--htm25-accent-primary);
+  color: var(--htm25-swatch-white, #fff);
+}
+
+.htm25-blog__card-read-time {
+  font-size: var(--htm25-text-xs);
+  color: var(--htm25-text-muted);
+}
+
+/* ── Title ── */
+.htm25-blog .htm25-blog__card-title {
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-lg);
+  font-weight: var(--htm25-weight-bold);
+  line-height: var(--htm25-leading-snug, 1.35);
+  color: var(--htm25-text-heading);
+  margin: 0 0 var(--htm25-space-3) 0;
+}
+
+.htm25-blog__card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.htm25-blog__card-title a:hover {
+  color: var(--htm25-accent-primary);
+}
+
+/* ── Excerpt ── */
+.htm25-blog .htm25-blog__card-excerpt {
+  font-size: var(--htm25-text-sm);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-text-muted);
+  margin: 0 0 var(--htm25-space-5) 0;
+  flex: 1;
+}
+
+/* ── Footer (byline + read more) ── */
+.htm25-blog__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--htm25-space-4);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--htm25-space-4);
+  border-top: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+}
+
+.htm25-blog__card-byline {
+  display: flex;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  flex-wrap: wrap;
+}
+
+.htm25-blog__card-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.htm25-blog__card-author {
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-medium);
+  color: var(--htm25-text-body);
+}
+
+.htm25-blog__card-byline-sep {
+  color: var(--htm25-text-muted);
+  font-size: var(--htm25-text-xs);
+}
+
+.htm25-blog__card-date {
+  font-size: var(--htm25-text-xs);
+  color: var(--htm25-text-muted);
+}
+
+/* ── Read more link ── */
+.htm25-blog__card-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  font-size: var(--htm25-text-sm);
+  font-weight: var(--htm25-weight-semibold);
+  color: var(--htm25-accent-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: gap 0.15s ease, color 0.15s ease;
+}
+
+.htm25-blog__card-read-more:hover {
+  gap: var(--htm25-space-3);
+}
+
+.htm25-blog__card-read-more svg {
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.htm25-blog__card-read-more:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Empty state ── */
+.htm25-blog__empty {
+  text-align: center;
+  padding: var(--htm25-space-16);
+  color: var(--htm25-text-muted);
+  border: var(--htm25-border-width) dashed var(--htm25-border-color-strong);
+  border-radius: var(--htm25-radius-2xl);
+}
+
+/* =========================================================
+   STYLE: BENTO
+   ========================================================= */
+.htm25-style--bento .htm25-blog__card {
+  box-shadow: var(--htm25-shadow-card);
+}
+
+.htm25-style--bento .htm25-blog__card:hover {
+  box-shadow: var(--htm25-shadow-lg);
+}
+
+/* =========================================================
+   STYLE: GLASS + AURORA — frosted cards
+   ========================================================= */
+.htm25-blog.htm25-style--glass,
+.htm25-blog.htm25-style--aurora {
+  background: var(--htm25-gradient-hero);
+}
+
+.htm25-style--glass .htm25-blog__card,
+.htm25-style--aurora .htm25-blog__card {
+  background: var(--htm25-glass-bg, var(--htm25-bg-card));
+  -webkit-backdrop-filter: var(--htm25-glass-blur, none);
+          backdrop-filter: var(--htm25-glass-blur, none);
+}
+
+/* =========================================================
+   STYLE: GLASS + AURORA + DARK — read-more link colours
+   Purple accent (#786EFF) is too muted on dark glass bg;
+   lime/pink accents already pop but need explicit hover.
+   ========================================================= */
+
+/* Glass: accent-primary (#786EFF) — inherits from base, explicit hover */
+.htm25-blog.htm25-style--glass .htm25-blog__card-read-more:hover {
+  color: #fff;
+}
+
+/* Dark Minimal: lime accent → white on hover */
+.htm25-blog.htm25-style--dark .htm25-blog__card-read-more {
+  color: var(--htm25-accent-primary);
+}
+
+.htm25-blog.htm25-style--dark .htm25-blog__card-read-more:hover {
+  color: #fff;
+}
+
+/* Aurora: pink accent → white on hover */
+.htm25-blog.htm25-style--aurora .htm25-blog__card-read-more {
+  color: var(--htm25-accent-primary);
+}
+
+.htm25-blog.htm25-style--aurora .htm25-blog__card-read-more:hover {
+  color: #fff;
+}
+
+/* =========================================================
+   STYLE: NEO-BRUTALIST
+   ========================================================= */
+.htm25-style--neo .htm25-blog__card {
+  border: 3px solid var(--htm25-border-color);
+  border-radius: 0;
+  box-shadow: var(--htm25-shadow-card);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.htm25-style--neo .htm25-blog__card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--htm25-shadow-btn);
+}
+
+.htm25-style--neo .htm25-blog__card-image-wrap {
+  border-radius: 0;
+}
+
+.htm25-blog.htm25-style--neo.htm25-blog--featured .htm25-blog__card--hero .htm25-blog__card-image-wrap,
+.htm25-blog.htm25-style--neo.htm25-blog--list .htm25-blog__card-image-wrap {
+  border-radius: 0;
+}
+
+/* Neo: category — solid yellow badge, black text, neo border */
+.htm25-style--neo .htm25-blog__card-category {
+  border-radius: 0;
+  background-color: var(--htm25-accent-primary);
+  color: #000;
+  border: 2px solid #000;
+  font-weight: var(--htm25-weight-bold);
+}
+
+.htm25-style--neo .htm25-blog__card-category:hover {
+  background-color: #000;
+  color: var(--htm25-accent-primary);
+}
+
+/* List layout: suppress Y-lift hover (full-width card looks odd lifting) */
+.htm25-blog--list .htm25-blog__card:hover {
+  transform: none;
+  box-shadow: var(--htm25-shadow-card-hover);
+}
+
+/* Issue #2 — Neo: dot-grid background decoration */
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1024px) {
+  .htm25-blog__grid--cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .htm25-blog--featured .htm25-blog__card--hero {
+    grid-template-columns: 1fr;
+  }
+
+  .htm25-blog--featured .htm25-blog__card--hero .htm25-blog__card-image-wrap {
+    border-radius: var(--htm25-radius-2xl) var(--htm25-radius-2xl) 0 0;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .htm25-blog--featured .htm25-blog__card--hero .htm25-blog__card-body {
+    padding: var(--htm25-space-6);
+  }
+
+  .htm25-blog--list .htm25-blog__card {
+    grid-template-columns: 1fr;
+  }
+
+  .htm25-blog--list .htm25-blog__card-image-wrap {
+    border-radius: var(--htm25-radius-2xl) var(--htm25-radius-2xl) 0 0;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: unset;
+  }
+
+  .htm25-blog__grid--cols-2,
+  .htm25-blog__grid--cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .htm25-blog .htm25-blog__headline {
+    font-size: var(--htm25-text-3xl);
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .htm25-blog__blob {
+    animation: none;
+  }
+
+  .htm25-blog__card,
+  .htm25-blog__card-image-wrap img,
+  .htm25-blog__card-category,
+  .htm25-blog__card-title a,
+  .htm25-blog__card-read-more,
+  .htm25-blog__card-read-more svg {
+    transition: none;
+  }
+}

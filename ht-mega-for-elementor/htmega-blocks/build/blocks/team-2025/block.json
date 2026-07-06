@@ -1,0 +1,400 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "htmega/team-2025",
+  "version": "1.0.0",
+  "title": "Team 2026",
+  "category": "htmega-blocks",
+  "icon": "groups",
+  "description": "Showcase team members in grid, list, or featured layouts across five design style presets.",
+  "keywords": [
+    "team",
+    "members",
+    "people",
+    "staff",
+    "htmega",
+    "2026"
+  ],
+  "textdomain": "htmega-addons",
+  "render": "file:./index.php",
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "grid"
+    },
+    "teamColumns": {
+      "type": "string",
+      "default": "3"
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "Meet The Team"
+    },
+    "headline": {
+      "type": "string",
+      "default": "The People Behind the Product"
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "People"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "A passionate group of builders, designers, and thinkers dedicated to crafting exceptional digital experiences."
+    },
+    "teamMembers": {
+      "type": "array",
+      "default": [
+        {
+          "memberName": "Alex Rivera",
+          "memberRole": "Co-Founder & CEO",
+          "memberBio": "Visionary product leader with 10+ years scaling B2B SaaS companies from zero to enterprise.",
+          "memberDepartment": "Leadership",
+          "memberPhotoId": 0,
+          "memberPhotoUrl": "",
+          "memberPhotoAlt": "",
+          "socialLinkedin": "",
+          "socialTwitter": "",
+          "socialGithub": "",
+          "isFeatured": true
+        },
+        {
+          "memberName": "Priya Nair",
+          "memberRole": "Head of Design",
+          "memberBio": "Award-winning UX designer who believes great products are built at the intersection of empathy and craft.",
+          "memberDepartment": "Design",
+          "memberPhotoId": 0,
+          "memberPhotoUrl": "",
+          "memberPhotoAlt": "",
+          "socialLinkedin": "",
+          "socialTwitter": "",
+          "socialGithub": "",
+          "isFeatured": false
+        },
+        {
+          "memberName": "Jordan Kim",
+          "memberRole": "Lead Engineer",
+          "memberBio": "Full-stack architect obsessed with performance, clean APIs, and shipping things that actually work.",
+          "memberDepartment": "Engineering",
+          "memberPhotoId": 0,
+          "memberPhotoUrl": "",
+          "memberPhotoAlt": "",
+          "socialLinkedin": "",
+          "socialTwitter": "",
+          "socialGithub": "",
+          "isFeatured": false
+        },
+        {
+          "memberName": "Sam Torres",
+          "memberRole": "Growth & Marketing",
+          "memberBio": "Data-driven marketer with a knack for turning complex stories into campaigns people remember.",
+          "memberDepartment": "Marketing",
+          "memberPhotoId": 0,
+          "memberPhotoUrl": "",
+          "memberPhotoAlt": "",
+          "socialLinkedin": "",
+          "socialTwitter": "",
+          "socialGithub": "",
+          "isFeatured": false
+        }
+      ]
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleCardBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleCardShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "cardBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "cardBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleMemberNameColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleMemberNameTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleMemberRoleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleMemberRoleTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleDeptTagColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDeptTagBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDeptTagTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleDeptTagRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSocialIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialIconHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSocialIconSize": {
+      "type": "number",
+      "default": 0
+    },
+    "styleSocialIconBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    }
+  }
+}

@@ -12,6 +12,25 @@ function htmegaBlocks_get_option( $option, $section, $default = '' ){
 }
 
 /**
+ * Flat option lookup for the 2025/2026 collection toggle settings
+ * (e.g. `htmega_sections_gutenberg_tabs`), stored as $option[$slug]
+ * directly — not nested under 'blocks' like htmegaBlocks_get_option().
+ *
+ * Lives here (composer "files" autoload) so it's always defined,
+ * unlike the main plugin's htmega_get_option() which only loads
+ * when Elementor is active.
+ */
+if ( ! function_exists( 'htmega_sections_get_option' ) ) {
+    function htmega_sections_get_option( $option, $section, $default = '' ) {
+        $options = get_option( $section );
+        if ( isset( $options[ $option ] ) ) {
+            return $options[ $option ];
+        }
+        return $default;
+    }
+}
+
+/**
  * Returns true if at least one HT Mega Gutenberg block is enabled in settings.
  * Block assets are loaded only when this returns true.
  */

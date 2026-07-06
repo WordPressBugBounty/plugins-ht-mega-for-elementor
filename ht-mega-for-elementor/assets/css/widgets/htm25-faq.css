@@ -1,0 +1,505 @@
+/**
+ * HT Mega 2026 — FAQ Section Widget
+ * File: assets/css/widgets/htm25-faq.css
+ *
+ * BEM component: .htm25-faq
+ * Requires htm25-tokens.css (design token system)
+ * Zero hardcoded colours — all values via var(--htm25-*)
+ * Uses native <details>/<summary> — no JS required
+ */
+
+/* =========================================================
+   SECTION WRAPPER
+   ========================================================= */
+.htm25-faq {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--htm25-section-py);
+  padding-inline: var(--htm25-section-px);
+  background-color: var(--htm25-bg-section);
+}
+
+/* ── Background decoration (glass + aurora) ── */
+.htm25-faq__bg-blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.htm25-faq__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: htm25-faqblob-drift 20s ease-in-out infinite alternate;
+}
+
+.htm25-faq__blob--1 {
+  width: 50vw;
+  height: 38vw;
+  max-width: 720px;
+  max-height: 540px;
+  top: -20%;
+  left: -5%;
+  background: radial-gradient(circle, var(--htm25-accent-primary) 0%, transparent 70%);
+  animation-delay: 0s;
+}
+
+.htm25-faq__blob--2 {
+  width: 40vw;
+  height: 32vw;
+  max-width: 600px;
+  max-height: 460px;
+  bottom: -15%;
+  right: -8%;
+  background: radial-gradient(circle, var(--htm25-accent-secondary, var(--htm25-accent-primary)) 0%, transparent 70%);
+  animation-delay: -8s;
+}
+
+@keyframes htm25-faqblob-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(3%, -4%) scale(1.05); }
+  100% { transform: translate(-2%, 3%) scale(0.97); }
+}
+
+/* =========================================================
+   INNER WRAPPER
+   ========================================================= */
+.htm25-faq__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--htm25-container-md, 780px);
+  margin-inline: auto;
+}
+
+/* Grid layout needs wider container */
+.htm25-faq--grid .htm25-faq__inner {
+  max-width: var(--htm25-container-xl);
+}
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+.htm25-faq__header {
+  text-align: center;
+  margin-bottom: var(--htm25-space-14);
+}
+
+.htm25-faq .htm25-faq__section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  color: var(--htm25-section-label-color, var(--htm25-accent-primary));
+  margin-bottom: var(--htm25-space-5);
+}
+
+.htm25-faq .htm25-faq__headline {
+    white-space: pre-line;
+
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-4xl);
+  font-weight: var(--htm25-weight-heading, var(--htm25-weight-bold));
+  line-height: var(--htm25-leading-heading, var(--htm25-leading-tight));
+  letter-spacing: var(--htm25-tracking-heading, var(--htm25-tracking-tight));
+  color: var(--htm25-section-title-color, var(--htm25-text-heading));
+  margin-top: 0;
+  margin-bottom: var(--htm25-space-5);
+}
+
+/* Base — always clip to text so Elementor gradient/color controls render as text, not a box */
+.htm25-faq .htm25-faq__headline-accent {
+  background-color: var(--htm25-accent-primary);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Glass + Aurora: gradient text */
+.htm25-style--glass .htm25-faq__headline-accent,
+.htm25-style--aurora .htm25-faq__headline-accent {
+  background-color: transparent;
+  background-image: var(--htm25-gradient-text, var(--htm25-gradient-btn));
+}
+
+.htm25-faq .htm25-faq__description {
+  font-size: var(--htm25-text-lg);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-section-body-color, var(--htm25-text-muted));
+  margin: 0;
+  max-width: 56ch;
+  margin-inline: auto;
+}
+
+/* =========================================================
+   FAQ LIST
+   ========================================================= */
+.htm25-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: var(--htm25-space-8);
+}
+
+/* Two-column grid layout */
+.htm25-faq--grid .htm25-faq__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--htm25-space-4);
+  align-items: start;
+}
+
+/* Boxed layout adds gap between cards */
+.htm25-faq--boxed .htm25-faq__list {
+  gap: var(--htm25-space-4);
+}
+
+/* =========================================================
+   FAQ ITEM — <details>/<summary> native accordion
+   ========================================================= */
+.htm25-faq__item {
+  border-bottom: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+/* Remove default browser triangle marker */
+.htm25-faq__item summary::-webkit-details-marker,
+.htm25-faq__item summary::marker {
+  display: none;
+  content: '';
+}
+
+/* ── Summary row ── */
+.htm25-faq__item-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--htm25-space-4);
+  padding: var(--htm25-space-5) 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  outline: none;
+}
+
+.htm25-faq__item-summary:focus-visible {
+  outline: 2px solid var(--htm25-accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--htm25-radius-sm);
+}
+
+.htm25-faq__item-question-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--htm25-space-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.htm25-faq__item-category {
+  display: inline-block;
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  color: var(--htm25-accent-primary);
+  background-color: var(--htm25-accent-primary-lt, var(--htm25-bg-subtle));
+  padding: 2px var(--htm25-space-2);
+  border-radius: var(--htm25-radius-full);
+  width: fit-content;
+}
+
+.htm25-faq .htm25-faq__item-question {
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-base);
+  font-weight: var(--htm25-weight-semibold);
+  color: var(--htm25-text-heading);
+  line-height: var(--htm25-leading-snug, 1.4);
+}
+
+/* ── Chevron icon ── */
+.htm25-faq__item-icon {
+  flex-shrink: 0;
+  color: var(--htm25-text-muted);
+  transition: transform 0.2s ease,
+              color 0.2s ease;
+}
+
+.htm25-faq__item[open] .htm25-faq__item-icon {
+  transform: rotate(180deg);
+  color: var(--htm25-accent-primary);
+}
+
+/* ── Answer body ── */
+.htm25-faq__item-body {
+  overflow: hidden;
+  /* Smooth reveal: height animates from 0 to auto via grid trick */
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+/* Fallback for browsers without grid-template-rows animation (uses max-height) */
+@supports not (grid-template-rows: 0fr) {
+  .htm25-faq__item-body {
+    display: block;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  .htm25-faq__item[open] .htm25-faq__item-body {
+    max-height: 600px;
+  }
+}
+
+.htm25-faq__item[open] .htm25-faq__item-body {
+  grid-template-rows: 1fr;
+}
+
+/* The inner div collapses to overflow:hidden when grid row = 0fr */
+.htm25-faq__item-body > * {
+  overflow: hidden;
+}
+
+
+.htm25-faq .htm25-faq__item-answer {
+  font-size: var(--htm25-text-base);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-section-body-color, var(--htm25-text-muted));
+  margin: 0;
+  padding-bottom: var(--htm25-space-5);
+  padding-right: var(--htm25-space-8);
+}
+
+/* =========================================================
+   LAYOUT: SIMPLE — divider between items, no card bg
+   ========================================================= */
+.htm25-faq--simple .htm25-faq__item:first-child {
+  border-top: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+}
+
+.htm25-faq--simple .htm25-faq__item[open] .htm25-faq__item-question {
+  color: var(--htm25-accent-primary);
+}
+
+/* =========================================================
+   LAYOUT: BOXED — each item in its own card
+   ========================================================= */
+.htm25-faq--boxed .htm25-faq__item {
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: var(--htm25-radius-xl);
+}
+
+.htm25-faq--boxed .htm25-faq__item-summary {
+  padding: var(--htm25-space-5) var(--htm25-space-6);
+}
+
+.htm25-faq--boxed .htm25-faq__item-answer {
+  padding-inline: var(--htm25-space-6);
+  padding-bottom: var(--htm25-space-6);
+}
+
+.htm25-faq--boxed .htm25-faq__item[open] {
+  border-color: var(--htm25-accent-primary);
+  box-shadow: 0 0 0 1px var(--htm25-accent-primary), 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   LAYOUT: GRID — two columns
+   ========================================================= */
+.htm25-faq--grid .htm25-faq__item {
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: var(--htm25-radius-xl);
+}
+
+.htm25-faq--grid .htm25-faq__item-summary {
+  padding: var(--htm25-space-5) var(--htm25-space-6);
+}
+
+.htm25-faq--grid .htm25-faq__item-answer {
+  padding-inline: var(--htm25-space-6);
+  padding-bottom: var(--htm25-space-6);
+}
+
+.htm25-faq--grid .htm25-faq__item[open] {
+  border-color: var(--htm25-accent-primary);
+  box-shadow: 0 0 0 1px var(--htm25-accent-primary);
+}
+
+/* =========================================================
+   STYLE: BENTO
+   ========================================================= */
+.htm25-style--bento .htm25-faq--boxed .htm25-faq__item,
+.htm25-style--bento .htm25-faq--grid  .htm25-faq__item {
+  box-shadow: var(--htm25-shadow-sm);
+  transition: box-shadow 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.htm25-style--bento .htm25-faq--boxed .htm25-faq__item:hover,
+.htm25-style--bento .htm25-faq--grid  .htm25-faq__item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+/* =========================================================
+   STYLE: GLASS + AURORA — frosted bg
+   ========================================================= */
+.htm25-faq.htm25-style--glass,
+.htm25-faq.htm25-style--aurora {
+  background: var(--htm25-gradient-hero);
+}
+
+.htm25-style--glass .htm25-faq--boxed .htm25-faq__item,
+.htm25-style--glass .htm25-faq--grid  .htm25-faq__item,
+.htm25-style--aurora .htm25-faq--boxed .htm25-faq__item,
+.htm25-style--aurora .htm25-faq--grid  .htm25-faq__item {
+  background: var(--htm25-glass-bg, var(--htm25-bg-card));
+  -webkit-backdrop-filter: var(--htm25-glass-blur, none);
+          backdrop-filter: var(--htm25-glass-blur, none);
+}
+
+/* =========================================================
+   STYLE: NEO-BRUTALIST
+   Dual selectors on every layout rule:
+     descendant (space)  = FSE block  (<div class="htm25-style--neo"><section class="htm25-faq--*">)
+     combined   (no spc) = Elementor  (<section class="htm25-faq htm25-style--neo htm25-faq--*">)
+   ========================================================= */
+
+/* Simple layout: full card treatment (all 4 sides border + offset shadow) */
+.htm25-style--neo .htm25-faq--simple .htm25-faq__item,
+.htm25-style--neo.htm25-faq--simple  .htm25-faq__item {
+  border: 3px solid var(--htm25-border-color);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--htm25-border-color);
+  margin-bottom: var(--htm25-space-3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+/* Override the first-child top-border that simple layout adds (already have full border) */
+.htm25-style--neo .htm25-faq--simple .htm25-faq__item:first-child,
+.htm25-style--neo.htm25-faq--simple  .htm25-faq__item:first-child {
+  border-top: 3px solid var(--htm25-border-color);
+}
+
+/* Simple: last item no bottom margin */
+.htm25-style--neo .htm25-faq--simple .htm25-faq__item:last-child,
+.htm25-style--neo.htm25-faq--simple  .htm25-faq__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Simple closed items: hover translate + shadow grow */
+.htm25-style--neo .htm25-faq--simple .htm25-faq__item:not([open]):hover,
+.htm25-style--neo.htm25-faq--simple  .htm25-faq__item:not([open]):hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--htm25-border-color);
+}
+
+/* Simple open item: larger shadow on yellow */
+.htm25-style--neo .htm25-faq--simple .htm25-faq__item[open],
+.htm25-style--neo.htm25-faq--simple  .htm25-faq__item[open] {
+  box-shadow: 4px 4px 0 var(--htm25-border-color);
+}
+
+/* Simple layout: horizontal padding so content doesn't touch borders */
+.htm25-style--neo .htm25-faq--simple .htm25-faq__item-summary,
+.htm25-style--neo.htm25-faq--simple  .htm25-faq__item-summary {
+  padding: var(--htm25-space-5) var(--htm25-space-6);
+}
+
+.htm25-style--neo .htm25-faq--simple .htm25-faq__item-answer,
+.htm25-style--neo.htm25-faq--simple  .htm25-faq__item-answer {
+  padding: var(--htm25-space-3) var(--htm25-space-6) var(--htm25-space-5);
+}
+
+/* Boxed + Grid: thick borders, sharp corners, offset shadow */
+.htm25-style--neo .htm25-faq--boxed  .htm25-faq__item,
+.htm25-style--neo.htm25-faq--boxed   .htm25-faq__item,
+.htm25-style--neo .htm25-faq--grid   .htm25-faq__item,
+.htm25-style--neo.htm25-faq--grid    .htm25-faq__item {
+  border-color: var(--htm25-border-color);
+  border-width: 3px;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--htm25-border-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Boxed + Grid closed items: hover translate + shadow grow */
+.htm25-style--neo .htm25-faq--boxed  .htm25-faq__item:not([open]):hover,
+.htm25-style--neo.htm25-faq--boxed   .htm25-faq__item:not([open]):hover,
+.htm25-style--neo .htm25-faq--grid   .htm25-faq__item:not([open]):hover,
+.htm25-style--neo.htm25-faq--grid    .htm25-faq__item:not([open]):hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--htm25-border-color);
+}
+
+/* Closed items: dark pill so it reads on cream bg */
+.htm25-style--neo .htm25-faq__item-category {
+  background-color: #000;
+  color: #fff;
+  border-radius: 0;
+}
+
+.htm25-style--neo .htm25-faq__item[open] {
+  background-color: var(--htm25-swatch-yellow, #fef08a);
+}
+
+.htm25-style--neo .htm25-faq__item[open] .htm25-faq__item-question,
+.htm25-style--neo .htm25-faq__item[open] .htm25-faq__item-answer {
+  color: #000;
+}
+
+/* Chevron: force black so it's visible on yellow bg */
+.htm25-style--neo .htm25-faq__item[open] .htm25-faq__item-icon {
+  color: #000;
+}
+
+/* Open item pill: invert back to yellow-on-black */
+.htm25-style--neo .htm25-faq__item[open] .htm25-faq__item-category {
+  background-color: #000;
+  color: var(--htm25-swatch-yellow, #fef08a);
+  border: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .htm25-faq--grid .htm25-faq__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .htm25-faq .htm25-faq__headline {
+    font-size: var(--htm25-text-3xl);
+  }
+
+  .htm25-faq .htm25-faq__item-answer {
+    padding-right: 0;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .htm25-faq__blob {
+    animation: none;
+  }
+
+  .htm25-faq__item-body,
+  .htm25-faq__item-icon {
+    transition: none;
+  }
+}

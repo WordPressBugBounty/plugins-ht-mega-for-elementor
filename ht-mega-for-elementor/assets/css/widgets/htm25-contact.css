@@ -1,0 +1,865 @@
+/**
+ * HT Mega 2026 — Contact Section Widget
+ * File: assets/css/widgets/htm25-contact.css
+ *
+ * BEM component: .htm25-contact
+ * Requires htm25-tokens.css (design token system).
+ * Five style presets themed by the .htm25-style--{bento|glass|dark|aurora|neo}
+ * wrapper class. Zero hardcoded colours except documented preset accents.
+ *
+ * Markup map (htmega_2025_contact.php → render_contact):
+ *   .htm25-style--X
+ *     .htm25-contact[--split|--centered|--info-only]
+ *       .htm25-contact__bg-blobs > .htm25-contact__blob--1/2/3
+ *       .htm25-contact__inner
+ *         .htm25-contact__header
+ *           .htm25-contact__section-label > .htm25-contact__label-dot
+ *           .htm25-contact__headline > .htm25-contact__headline-accent
+ *           .htm25-contact__description
+ *         .htm25-contact__body
+ *           .htm25-contact__form-col.htm25-contact__tile--form
+ *           .htm25-contact__info-col
+ *             .htm25-contact__tile--info  > __info-list > __info-item …
+ *             .htm25-contact__minicards
+ *               .htm25-contact__tile--hours  > __hours-list / __badge-open
+ *               .htm25-contact__tile--social > __social-grid > __social-link
+ *             .htm25-contact__tile--map    > iframe.htm25-contact__map
+ *             .htm25-contact__tile--trust  > __trust-num / __trust-stars …
+ */
+
+/* =========================================================
+   SECTION WRAPPER
+   ========================================================= */
+.htm25-contact {
+	position: relative;
+	overflow: hidden;
+	padding-block: var(--htm25-section-py, 5rem);
+	padding-inline: var(--htm25-section-px, 1.5rem);
+	background-color: var(--htm25-bg-section, var(--htm25-bg-page, #f7f8fa));
+	color: var(--htm25-text-body, #475467);
+	font-family: var(--htm25-font-body, system-ui, sans-serif);
+	line-height: var(--htm25-leading-normal, 1.6);
+	/* ── Form field tokens (bento/default values) ── */
+	--c-field-bg:            var(--htm25-bg-page, #fafbfc);
+	--c-field-border:        var(--htm25-border-color, #e4e7ec);
+	--c-field-border-width:  var(--htm25-border-width, 1px);
+	--c-field-radius:        var(--htm25-radius-input, 0.75rem);
+	--c-field-text:          var(--htm25-text-heading, #0f1117);
+	--c-field-label:         var(--htm25-text-heading, #0f1117);
+	--c-field-placeholder:   var(--htm25-text-muted, #a9b0bd);
+	--c-field-focus-border:  var(--htm25-accent-primary, #3b6fff);
+	--c-field-focus-shadow:  0 0 0 4px var(--htm25-accent-primary-lt, rgba(59, 111, 255, 0.12));
+	/* ── Submit button tokens ── */
+	--c-btn-bg:              var(--htm25-btn-primary-bg, var(--htm25-accent-primary, #3b6fff));
+	--c-btn-text:            var(--htm25-btn-primary-text, #fff);
+	--c-btn-hover-bg:        var(--htm25-btn-primary-bg-hover, var(--htm25-accent-primary-dk, #2953cc));
+	--c-btn-radius:          var(--htm25-radius-btn, 0.75rem);
+	--c-btn-border-width:    0px;
+	--c-btn-shadow:          none;
+	--c-btn-hover-shadow:    var(--htm25-btn-shadow-hover, 0 10px 22px rgba(59, 111, 255, 0.3));
+	--c-btn-hover-transform: translateY(-2px);
+}
+.htm25-contact * { box-sizing: border-box; }
+
+.htm25-contact__inner {
+	position: relative;
+	z-index: var(--htm25-z-raised, 1);
+	max-width: var(--htm25-container-xl, 1200px);
+	margin-inline: auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.htm25-contact__header {
+	max-width: 680px;
+	margin: 0 auto var(--htm25-space-12, 3rem);
+	text-align: center;
+}
+.htm25-contact .htm25-contact__section-label {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--htm25-space-2, 0.5rem);
+	margin: 0 0 var(--htm25-space-4, 1rem);
+	font-size: var(--htm25-text-xs, 0.75rem);
+	font-weight: var(--htm25-weight-semibold, 600);
+	letter-spacing: var(--htm25-tracking-wide, 0.08em);
+	text-transform: uppercase;
+	color: var(--htm25-accent-primary, #3b6fff);
+	background: var(--htm25-accent-primary-lt, rgba(59, 111, 255, 0.1));
+	padding: var(--htm25-space-1, 0.25rem) var(--htm25-space-3, 0.75rem);
+	border-radius: var(--htm25-radius-full, 999px);
+}
+.htm25-contact__label-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--htm25-accent-primary, #3b6fff);
+	box-shadow: 0 0 0 4px var(--htm25-accent-primary-lt, rgba(59, 111, 255, 0.18));
+}
+.htm25-contact .htm25-contact__headline {
+	font-family: var(--htm25-font-heading, system-ui, sans-serif);
+	font-size: var(--htm25-text-4xl, clamp(2.2rem, 1.8rem + 2vw, 3.4rem));
+	font-weight: var(--htm25-weight-bold, 800);
+	line-height: var(--htm25-leading-tight, 1.08);
+	letter-spacing: var(--htm25-tracking-tight, -0.03em);
+	color: var(--htm25-text-heading, #0f1117);
+	margin: 0 0 var(--htm25-space-4, 1rem);
+}
+/* Base — always clip to text so Elementor gradient/color controls render as text, not a box */
+.htm25-contact .htm25-contact__headline-accent {
+	background-color: var(--htm25-accent-primary, #3b6fff);
+	-webkit-background-clip: text;
+	        background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+}
+
+/* Glass + Aurora: gradient text */
+.htm25-style--glass .htm25-contact__headline-accent,
+.htm25-style--aurora .htm25-contact__headline-accent {
+	background-color: transparent;
+	background-image: var(--htm25-gradient-text, var(--htm25-gradient-btn));
+}
+.htm25-contact .htm25-contact__description {
+	font-size: var(--htm25-text-lg, 1.15rem);
+	color: var(--htm25-text-muted, #667085);
+	margin: 0;
+}
+
+/* =========================================================
+   BODY LAYOUTS
+   ========================================================= */
+.htm25-contact__body {
+	display: grid;
+	gap: var(--htm25-space-6, 1.5rem);
+	align-items: start;
+}
+.htm25-contact--centered .htm25-contact__body {
+	max-width: 680px;
+	margin-inline: auto;
+	grid-template-columns: 1fr;
+}
+.htm25-contact--info-only .htm25-contact__info-col {
+	width: 100%;
+}
+.htm25-contact--split .htm25-contact__form-col,
+.htm25-contact--split .htm25-contact__info-col,
+.htm25-contact--split .htm25-contact__tile { min-width: 0; }
+
+@media (max-width: 900px) {
+	.htm25-contact.htm25-contact--split .htm25-contact__body {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* =========================================================
+   TILE — shared card surface for every block
+   ========================================================= */
+.htm25-contact__tile {
+	background: var(--htm25-bg-card, #fff);
+	border: var(--htm25-border-width, 1px) var(--htm25-border-style, solid) var(--htm25-border-color, #e4e7ec);
+	border-radius: var(--htm25-radius-2xl, 1.5rem);
+	box-shadow: var(--htm25-shadow-card, 0 4px 12px rgba(16, 24, 40, 0.05));
+	padding: clamp(1.4rem, 1rem + 1.5vw, 1.9rem);
+	transition:
+		transform var(--htm25-duration-normal, 0.25s) var(--htm25-ease-out, ease),
+		box-shadow var(--htm25-duration-normal, 0.25s) var(--htm25-ease-out, ease),
+		border-color var(--htm25-duration-normal, 0.25s) var(--htm25-ease-out, ease);
+}
+.htm25-contact__tile--form { padding: clamp(1.6rem, 1rem + 2vw, 2.4rem); }
+
+.htm25-contact__info-col {
+	display: flex;
+	flex-direction: column;
+	gap: var(--htm25-space-6, 1.5rem);
+}
+
+/* Mini cards (hours + social) sit side-by-side */
+.htm25-contact__minicards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--htm25-space-6, 1.5rem);
+}
+.htm25-contact__minicards:empty { display: none; }
+@media (max-width: 520px) {
+	.htm25-contact__minicards { grid-template-columns: 1fr; }
+}
+
+.htm25-contact__tile-label {
+	display: block;
+	font-size: var(--htm25-text-xs, 0.72rem);
+	font-weight: var(--htm25-weight-semibold, 700);
+	letter-spacing: var(--htm25-tracking-wide, 0.1em);
+	text-transform: uppercase;
+	color: var(--htm25-text-muted, #8a91a0);
+	margin-bottom: var(--htm25-space-4, 1.1rem);
+}
+
+/* =========================================================
+   INFO LIST
+   ========================================================= */
+.htm25-contact .htm25-contact__info-list { list-style: none; margin: 0; padding: 0; }
+.htm25-contact__info-item {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--htm25-space-3, 0.9rem);
+	padding: var(--htm25-space-3, 0.75rem) 0;
+}
+.htm25-contact__info-item + .htm25-contact__info-item {
+	border-top: 1px solid var(--htm25-border-color, #e6e8ec);
+}
+.htm25-contact__info-icon {
+	flex: 0 0 44px;
+	width: 44px;
+	height: 44px;
+	border-radius: var(--htm25-radius-icon, 0.75rem);
+	background: var(--htm25-accent-primary-lt, rgba(59, 111, 255, 0.1));
+	color: var(--htm25-accent-primary, #3b6fff);
+	display: grid;
+	place-items: center;
+}
+.htm25-contact__info-icon svg { width: 20px; height: 20px; }
+.htm25-contact__info-content { flex: 1; min-width: 0; }
+.htm25-contact__info-label {
+	display: block;
+	font-size: var(--htm25-text-xs, 0.72rem);
+	font-weight: var(--htm25-weight-semibold, 600);
+	letter-spacing: var(--htm25-tracking-wide, 0.06em);
+	text-transform: uppercase;
+	color: var(--htm25-text-muted, #8a91a0);
+	margin-bottom: 2px;
+}
+.htm25-contact__info-value {
+	display: block;
+	font-size: var(--htm25-text-base, 0.98rem);
+	font-weight: var(--htm25-weight-medium, 500);
+	color: var(--htm25-text-heading, #0f1117);
+	line-height: var(--htm25-leading-snug, 1.4);
+	word-break: break-word;
+	text-decoration: none;
+}
+a.htm25-contact__info-value:hover { color: var(--htm25-accent-primary, #3b6fff); }
+
+/* =========================================================
+   WORKING HOURS
+   ========================================================= */
+.htm25-contact .htm25-contact__hours-list { list-style: none; margin: 0; padding: 0; }
+.htm25-contact__hours-row {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--htm25-space-2, 0.5rem);
+	padding: var(--htm25-space-2, 0.5rem) 0;
+	font-size: var(--htm25-text-sm, 0.9rem);
+	border-bottom: 1px solid var(--htm25-border-color, #e6e8ec);
+}
+.htm25-contact__hours-row:last-child { border-bottom: 0; }
+.htm25-contact__hours-row span:last-child {
+	color: var(--htm25-text-heading, #0f1117);
+	font-weight: var(--htm25-weight-semibold, 600);
+}
+.htm25-contact__badge-open {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--htm25-space-1, 0.4rem);
+	margin-top: var(--htm25-space-3, 0.8rem);
+	font-size: var(--htm25-text-xs, 0.75rem);
+	font-weight: var(--htm25-weight-semibold, 600);
+	color: var(--htm25-accent-success, #16a34a);
+	background: rgba(22, 163, 74, 0.12);
+	padding: var(--htm25-space-1, 0.3rem) var(--htm25-space-3, 0.7rem);
+	border-radius: var(--htm25-radius-full, 999px);
+}
+.htm25-contact__badge-dot {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--htm25-accent-success, #16a34a);
+	animation: htm25-contact-pulse 2s infinite;
+}
+@keyframes htm25-contact-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+@media (prefers-reduced-motion: reduce) { .htm25-contact__badge-dot { animation: none; } }
+
+/* =========================================================
+   SOCIAL
+   ========================================================= */
+.htm25-contact__social-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--htm25-space-2, 0.6rem);
+}
+.htm25-contact__social-link {
+	aspect-ratio: 1;
+	display: grid;
+	place-items: center;
+	border: 1px solid var(--htm25-border-color, #e6e8ec);
+	border-radius: var(--htm25-radius-md, 0.75rem);
+	color: var(--htm25-text-body, #475467);
+	transition: var(--htm25-duration-normal, 0.2s) var(--htm25-ease-out, ease);
+}
+.htm25-contact__social-link:hover {
+	background: var(--htm25-accent-primary, #3b6fff);
+	color: var(--htm25-text-inverse, #fff);
+	border-color: var(--htm25-accent-primary, #3b6fff);
+	transform: translateY(-2px);
+}
+.htm25-contact__social-link svg { width: 19px; height: 19px; }
+
+/* =========================================================
+   MAP
+   ========================================================= */
+.htm25-contact__tile--map { padding: 0; overflow: hidden; }
+.htm25-contact__map {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 230px;
+	border: 0;
+}
+.htm25-contact__map-wrap--full {
+	margin-top: var(--htm25-space-10, 2.5rem);
+	max-width: var(--htm25-container-xl, 1200px);
+	margin-inline: auto;
+}
+.htm25-contact__map-wrap--full .htm25-contact__map { aspect-ratio: 21 / 7; min-height: 280px; }
+
+/* =========================================================
+   TRUST BLOCK
+   ========================================================= */
+.htm25-contact__tile--trust {
+	background: linear-gradient(135deg, var(--htm25-accent-primary, #3b6fff), var(--htm25-accent-secondary, #7c3aed));
+	border: none;
+	color: var(--htm25-text-inverse, #fff);
+}
+.htm25-contact__tile--trust .htm25-contact__tile-label { color: rgba(255, 255, 255, 0.7); }
+.htm25-contact__trust-num {
+	font-size: var(--htm25-text-4xl, 2.4rem);
+	font-weight: var(--htm25-weight-bold, 800);
+	letter-spacing: var(--htm25-tracking-tight, -0.02em);
+	line-height: 1;
+	color: #fff;
+}
+.htm25-contact__trust-sub {
+	font-size: var(--htm25-text-sm, 0.9rem);
+	color: rgba(255, 255, 255, 0.85);
+	margin-top: 4px;
+}
+.htm25-contact__trust-stars {
+	color: #ffd600;
+	letter-spacing: 2px;
+	margin-top: var(--htm25-space-3, 0.9rem);
+}
+.htm25-contact__trust-foot {
+	font-size: var(--htm25-text-xs, 0.82rem);
+	color: rgba(255, 255, 255, 0.8);
+	margin-top: 4px;
+}
+
+/* =========================================================
+   BACKGROUND BLOBS (glass + aurora)
+   ========================================================= */
+.htm25-contact__bg-blobs {
+	position: absolute;
+	inset: 0;
+	z-index: var(--htm25-z-base, 0);
+	pointer-events: none;
+	overflow: hidden;
+}
+.htm25-contact__blob {
+	position: absolute;
+	border-radius: 50%;
+	filter: blur(90px);
+	opacity: 0.5;
+	animation: htm25-contactblob-drift 18s ease-in-out infinite alternate;
+}
+.htm25-contact__blob--1 {
+	width: 55vw; height: 45vw; max-width: 760px; max-height: 600px;
+	top: -18%; left: -12%;
+	background: radial-gradient(circle, var(--htm25-accent-primary, #786eff) 0%, transparent 70%);
+}
+.htm25-contact__blob--2 {
+	width: 48vw; height: 42vw; max-width: 680px; max-height: 560px;
+	bottom: -20%; right: -10%;
+	background: radial-gradient(circle, var(--htm25-accent-secondary, #06b6d4) 0%, transparent 70%);
+	animation-delay: -7s;
+}
+.htm25-contact__blob--3 {
+	width: 40vw; height: 40vw; max-width: 560px; max-height: 560px;
+	top: 30%; left: 40%;
+	background: radial-gradient(circle, var(--htm25-accent-tertiary, #7c3aed) 0%, transparent 70%);
+	animation-delay: -12s;
+}
+@keyframes htm25-contactblob-drift {
+	0%   { transform: translate(0, 0) scale(1); }
+	100% { transform: translate(5%, 4%) scale(1.12); }
+}
+@media (prefers-reduced-motion: reduce) { .htm25-contact__blob { animation: none; } }
+
+/* =========================================================
+   FORM HEADING / SUBHEADING
+   ========================================================= */
+.htm25-contact__form-heading {
+	font-size: var(--htm25-text-xl, 1.4rem);
+	font-weight: var(--htm25-weight-bold, 700);
+	color: var(--htm25-text-heading, #0f1117);
+	line-height: var(--htm25-leading-tight, 1.15);
+	margin: 0 0 4px;
+}
+.htm25-contact__form-subheading {
+	font-size: var(--htm25-text-sm, 0.95rem);
+	color: var(--htm25-text-muted, #667085);
+	margin: 0 0 var(--htm25-space-6, 1.5rem);
+}
+
+/* =========================================================
+   FORM FIELD TOKENS — per-preset overrides
+   All form colours reference the --c-field-* / --c-btn-*
+   tokens defined on .htm25-contact, so swapping the preset
+   class automatically repaints every external plugin form.
+   ========================================================= */
+.htm25-contact.htm25-style--glass {
+	--c-field-bg:           rgba(255, 255, 255, 0.05);
+	--c-field-border:       rgba(255, 255, 255, 0.14);
+	--c-field-text:         #fff;
+	--c-field-label:        rgba(255, 255, 255, 0.85);
+	--c-field-placeholder:  rgba(255, 255, 255, 0.45);
+	--c-btn-bg:             var(--htm25-gradient-btn, var(--htm25-accent-primary, #3b6fff));
+	--c-btn-hover-bg:       var(--htm25-gradient-btn, var(--htm25-accent-primary, #3b6fff));
+}
+.htm25-contact.htm25-style--dark {
+	--c-field-bg:           #0c0c0e;
+	--c-field-border:       rgba(255, 255, 255, 0.12);
+	--c-field-text:         #fafafa;
+	--c-field-label:        rgba(255, 255, 255, 0.7);
+	--c-field-placeholder:  rgba(255, 255, 255, 0.35);
+	--c-btn-hover-shadow:   0 10px 22px rgba(228, 255, 60, 0.3);
+}
+.htm25-contact.htm25-style--aurora {
+	--c-field-bg:           rgba(255, 255, 255, 0.05);
+	--c-field-border:       rgba(255, 255, 255, 0.12);
+	--c-field-text:         #fff;
+	--c-field-label:        rgba(255, 255, 255, 0.85);
+	--c-field-placeholder:  rgba(255, 255, 255, 0.45);
+	--c-btn-bg:             var(--htm25-gradient-btn, var(--htm25-accent-primary, #3b6fff));
+	--c-btn-hover-bg:       var(--htm25-gradient-btn, var(--htm25-accent-primary, #3b6fff));
+}
+.htm25-contact.htm25-style--neo {
+	--c-field-bg:            #fff;
+	--c-field-border:        #000;
+	--c-field-border-width:  2px;
+	--c-field-radius:        0;
+	--c-field-text:          #111;
+	--c-field-label:         #000;
+	--c-field-focus-border:  var(--htm25-accent-tertiary, #0038ff);
+	--c-field-focus-shadow:  4px 4px 0 var(--htm25-accent-tertiary, #0038ff);
+	--c-btn-bg:              var(--htm25-accent-primary, #ffe500);
+	--c-btn-text:            #000;
+	--c-btn-hover-bg:        var(--htm25-accent-tertiary, #00e0a4);
+	--c-btn-radius:          0;
+	--c-btn-border-width:    3px;
+	--c-btn-shadow:          5px 5px 0 #000;
+	--c-btn-hover-shadow:    7px 7px 0 #000;
+	--c-btn-hover-transform: translate(-2px, -2px);
+}
+
+/* =========================================================
+   THIRD-PARTY FORM NORMALISATION
+   ========================================================= */
+.htm25-contact .htm25-contact__form-col h2,
+.htm25-contact .htm25-contact__form-col .htm25-contact__form-title {
+	font-size: var(--htm25-text-xl, 1.4rem);
+	font-weight: var(--htm25-weight-bold, 700);
+	color: var(--htm25-text-heading, #0f1117);
+	margin-bottom: var(--htm25-space-4, 1rem);
+}
+/* Double-class selector (0,2,1+) beats most external plugin CSS (0,1,1–0,2,1).
+   Colours resolve from --c-field-* tokens set on .htm25-contact, so switching
+   the preset class automatically repaints every external plugin form. */
+.htm25-contact .htm25-contact__form-col input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+.htm25-contact .htm25-contact__form-col select,
+.htm25-contact .htm25-contact__form-col textarea {
+	width: 100%;
+	padding: var(--htm25-space-3, 0.8rem) var(--htm25-space-4, 1rem);
+	font-family: inherit;
+	font-size: var(--htm25-text-base, 0.95rem);
+	color: var(--c-field-text);
+	background-color: var(--c-field-bg);
+	border: var(--c-field-border-width) solid var(--c-field-border);
+	border-radius: var(--c-field-radius);
+	outline: none;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.htm25-contact .htm25-contact__form-col textarea { min-height: 120px; resize: vertical; }
+.htm25-contact .htm25-contact__form-col input:focus,
+.htm25-contact .htm25-contact__form-col select:focus,
+.htm25-contact .htm25-contact__form-col textarea:focus {
+	border-color: var(--c-field-focus-border);
+	box-shadow: var(--c-field-focus-shadow);
+}
+.htm25-contact .htm25-contact__form-col input::placeholder,
+.htm25-contact .htm25-contact__form-col textarea::placeholder { color: var(--c-field-placeholder); }
+.htm25-contact .htm25-contact__form-col label {
+	font-size: var(--htm25-text-sm, 0.82rem);
+	font-weight: var(--htm25-weight-medium, 600);
+	color: var(--c-field-label);
+}
+.htm25-contact .htm25-contact__form-col input[type="submit"],
+.htm25-contact .htm25-contact__form-col button[type="submit"],
+.htm25-contact .htm25-contact__form-col .wpcf7-submit,
+.htm25-contact .htm25-contact__form-col .ff-btn-submit,
+.htm25-contact .htm25-contact__form-col .wpforms-submit,
+.htm25-contact .htm25-contact__form-col .gform_button,
+.htm25-contact .htm25-contact__form-col .nf-field-submit input {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	gap: var(--htm25-space-2, 0.5rem);
+	padding: var(--htm25-btn-py, 0.95rem) var(--htm25-btn-px, 1.5rem);
+	font-family: inherit;
+	font-size: var(--htm25-btn-font-size, 1rem);
+	font-weight: var(--htm25-btn-font-weight, 700);
+	color: var(--c-btn-text);
+	background: var(--c-btn-bg);
+	border: var(--c-btn-border-width) solid var(--c-field-border);
+	border-radius: var(--c-btn-radius);
+	box-shadow: var(--c-btn-shadow);
+	cursor: pointer;
+	transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.htm25-contact .htm25-contact__form-col input[type="submit"]:hover,
+.htm25-contact .htm25-contact__form-col button[type="submit"]:hover,
+.htm25-contact .htm25-contact__form-col .wpcf7-submit:hover,
+.htm25-contact .htm25-contact__form-col .ff-btn-submit:hover,
+.htm25-contact .htm25-contact__form-col .wpforms-submit:hover,
+.htm25-contact .htm25-contact__form-col .gform_button:hover,
+.htm25-contact .htm25-contact__form-col .nf-field-submit input:hover {
+	background: var(--c-btn-hover-bg);
+	transform: var(--c-btn-hover-transform);
+	box-shadow: var(--c-btn-hover-shadow);
+}
+.htm25-contact__form-placeholder {
+	border-radius: var(--htm25-radius-2xl, 1.5rem) !important;
+	border-color: var(--htm25-border-color, #e4e7ec) !important;
+	color: var(--htm25-text-muted, #667085) !important;
+}
+
+/* =========================================================
+   PRESET: BENTO — light tiles, hover lift
+   ========================================================= */
+.htm25-style--bento .htm25-contact__tile:hover {
+	transform: translateY(-3px);
+	box-shadow: var(--htm25-shadow-card-hover, 0 12px 24px rgba(16, 24, 40, 0.08));
+}
+.htm25-style--bento .htm25-contact__tile--form:hover,
+.htm25-style--bento .htm25-contact__tile--map:hover,
+.htm25-style--bento .htm25-contact__tile--trust:hover { transform: none; }
+
+/* ── SPLIT LAYOUT: BENTO — 12-col mosaic ── */
+@media (min-width: 901px) {
+	.htm25-style--bento .htm25-contact--split .htm25-contact__body {
+		grid-template-columns: repeat(12, 1fr);
+		grid-auto-rows: min-content;
+		gap: 18px;
+		align-items: stretch;
+	}
+	.htm25-style--bento .htm25-contact--split .htm25-contact__info-col { display: contents; }
+	.htm25-style--bento .htm25-contact--split .htm25-contact__minicards { display: contents; }
+	.htm25-style--bento .htm25-contact--split .htm25-contact__form-col {
+		grid-column: 1 / span 7;
+		grid-row: 1 / span 2;
+	}
+	.htm25-style--bento .htm25-contact--split .htm25-contact__tile--map {
+		grid-column: 8 / span 5;
+		grid-row: 1;
+	}
+	.htm25-style--bento .htm25-contact--split .htm25-contact__tile--info {
+		grid-column: 8 / span 5;
+		grid-row: 2;
+	}
+	.htm25-style--bento .htm25-contact--split .htm25-contact__tile--hours {
+		grid-column: 1 / span 4;
+		grid-row: 3;
+	}
+	.htm25-style--bento .htm25-contact--split .htm25-contact__tile--social {
+		grid-column: 5 / span 4;
+		grid-row: 3;
+	}
+	.htm25-style--bento .htm25-contact--split .htm25-contact__tile--trust {
+		grid-column: 9 / span 4;
+		grid-row: 3;
+	}
+}
+@media (min-width: 901px) {
+	.htm25-style--bento .htm25-contact--split.htm25-contact--no-map .htm25-contact__tile--info {
+		grid-row: 1 / span 2;
+	}
+}
+
+/* ── SPLIT LAYOUT: GLASS / AURORA / NEO — 2-col (form | flex aside) ── */
+@media (min-width: 901px) {
+	.htm25-style--glass .htm25-contact--split .htm25-contact__body,
+	.htm25-style--aurora .htm25-contact--split .htm25-contact__body,
+	.htm25-style--neo .htm25-contact--split .htm25-contact__body {
+		grid-template-columns: 1.05fr 0.95fr;
+		gap: 24px;
+		align-items: start;
+	}
+}
+
+/* ── SPLIT LAYOUT: DARK — centered form + 3-col info + map/trust strip ── */
+@media (min-width: 901px) {
+	.htm25-style--dark .htm25-contact--split .htm25-contact__body {
+		display: block;
+	}
+	.htm25-style--dark .htm25-contact--split .htm25-contact__form-col {
+		max-width: 660px;
+		margin-inline: auto;
+		margin-bottom: 18px;
+	}
+	.htm25-style--dark .htm25-contact--split .htm25-contact__info-col {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 18px;
+	}
+	.htm25-style--dark .htm25-contact--split .htm25-contact__minicards { display: contents; }
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--info  { grid-column: 1; grid-row: 1; }
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--hours { grid-column: 2; grid-row: 1; }
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--social { grid-column: 3; grid-row: 1; }
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--map {
+		grid-column: 1 / span 2;
+		grid-row: 2;
+	}
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--trust {
+		grid-column: 3;
+		grid-row: 2;
+	}
+}
+
+/* ── SPLIT LAYOUT: ≤900px restore ── */
+@media (max-width: 900px) {
+	.htm25-contact--split .htm25-contact__info-col {
+		display: flex;
+		flex-direction: column;
+	}
+	.htm25-contact--split .htm25-contact__minicards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--info,
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--hours,
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--social,
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--map,
+	.htm25-style--dark .htm25-contact--split .htm25-contact__tile--trust {
+		grid-column: unset;
+		grid-row: unset;
+	}
+}
+@media (max-width: 520px) {
+	.htm25-contact--split .htm25-contact__minicards {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* =========================================================
+   PRESET: GLASS — frosted panels over gradient + glow
+   ========================================================= */
+.htm25-contact.htm25-style--glass { background: var(--htm25-gradient-hero, var(--htm25-bg-page)); }
+.htm25-style--glass .htm25-contact__tile {
+	background: var(--htm25-glass-bg, var(--htm25-bg-card));
+	-webkit-backdrop-filter: var(--htm25-glass-blur, blur(20px));
+	        backdrop-filter: var(--htm25-glass-blur, blur(20px));
+	border-color: var(--htm25-border-color, rgba(255, 255, 255, 0.12));
+	box-shadow: var(--htm25-shadow-card, 0 8px 32px rgba(0, 0, 0, 0.3));
+}
+.htm25-style--glass .htm25-contact__tile:hover {
+	background: var(--htm25-glass-bg-hover, var(--htm25-glass-bg));
+}
+.htm25-style--glass .htm25-contact__tile--trust {
+	background: linear-gradient(135deg, rgba(120, 110, 255, 0.25), rgba(6, 182, 212, 0.18));
+	border: var(--htm25-border-width, 1px) var(--htm25-border-style, solid) var(--htm25-border-color);
+	-webkit-backdrop-filter: var(--htm25-glass-blur, blur(20px));
+	        backdrop-filter: var(--htm25-glass-blur, blur(20px));
+}
+.htm25-style--aurora .htm25-contact__tile--trust {
+	background: linear-gradient(135deg, rgba(255, 60, 172, 0.22), rgba(124, 58, 237, 0.18));
+	border: var(--htm25-border-width, 1px) var(--htm25-border-style, solid) var(--htm25-border-color);
+	-webkit-backdrop-filter: var(--htm25-glass-blur, blur(20px));
+	        backdrop-filter: var(--htm25-glass-blur, blur(20px));
+}
+.htm25-style--glass .htm25-contact__map,
+.htm25-style--aurora .htm25-contact__map {
+	filter: invert(0.92) hue-rotate(190deg) saturate(0.75) brightness(0.88);
+}
+
+/* =========================================================
+   PRESET: DARK — minimal surface, lime accent
+   ========================================================= */
+.htm25-style--dark .htm25-contact__tile { box-shadow: none; }
+.htm25-style--dark .htm25-contact__tile:hover {
+	border-color: var(--htm25-border-color-strong, #3f3f46);
+	transform: translateY(-3px);
+}
+.htm25-style--dark .htm25-contact__tile--form:hover { transform: none; }
+.htm25-style--dark .htm25-contact__info-icon {
+	background: rgba(228, 255, 60, 0.1);
+	color: var(--htm25-accent-primary, #e4ff3c);
+}
+.htm25-style--dark .htm25-contact__social-link:hover {
+	background: var(--htm25-accent-primary, #e4ff3c);
+	color: #09090b;
+	border-color: var(--htm25-accent-primary, #e4ff3c);
+}
+.htm25-style--dark .htm25-contact__badge-open {
+	color: var(--htm25-accent-primary, #e4ff3c);
+	background: rgba(228, 255, 60, 0.1);
+}
+.htm25-style--dark .htm25-contact__badge-dot {
+	background: var(--htm25-accent-primary, #e4ff3c);
+	box-shadow: 0 0 8px var(--htm25-accent-primary, #e4ff3c);
+}
+.htm25-style--dark .htm25-contact__section-label {
+	background: transparent;
+	color: var(--htm25-accent-primary, #e4ff3c);
+	border-radius: 0;
+	padding: 0;
+	gap: 0.75rem;
+}
+.htm25-style--dark .htm25-contact__label-dot { display: none; }
+.htm25-style--dark .htm25-contact__section-label::before,
+.htm25-style--dark .htm25-contact__section-label::after {
+	content: '';
+	display: block;
+	width: 28px;
+	height: 1px;
+	background: currentColor;
+}
+.htm25-style--dark .htm25-contact__map { filter: invert(0.92) hue-rotate(180deg) saturate(0.6) brightness(0.85); }
+.htm25-style--dark .htm25-contact__tile--trust {
+	background: var(--htm25-bg-card, #111113);
+	border: var(--htm25-border-width, 1px) var(--htm25-border-style, solid) var(--htm25-border-color, #27272a);
+}
+.htm25-style--dark .htm25-contact__trust-num { color: var(--htm25-accent-primary, #e4ff3c); }
+.htm25-style--dark .htm25-contact__tile--trust .htm25-contact__tile-label,
+.htm25-style--dark .htm25-contact__trust-sub,
+.htm25-style--dark .htm25-contact__trust-foot { color: var(--htm25-text-body, #a1a1aa); }
+.htm25-style--dark .htm25-contact__trust-stars { color: var(--htm25-accent-primary, #e4ff3c); }
+
+/* =========================================================
+   PRESET: AURORA — vivid mesh, elevated glass
+   ========================================================= */
+.htm25-contact.htm25-style--aurora { background: var(--htm25-gradient-hero, var(--htm25-bg-page)); }
+.htm25-style--aurora .htm25-contact__tile {
+	background: var(--htm25-glass-bg, var(--htm25-bg-card));
+	-webkit-backdrop-filter: var(--htm25-glass-blur, blur(22px));
+	        backdrop-filter: var(--htm25-glass-blur, blur(22px));
+	border-color: var(--htm25-border-color, rgba(255, 255, 255, 0.1));
+	box-shadow: var(--htm25-shadow-lg, 0 20px 60px rgba(0, 0, 0, 0.4));
+}
+/* =========================================================
+   PRESET: NEO-BRUTALIST — hard borders, offset shadows
+   ========================================================= */
+.htm25-style--neo .htm25-contact__tile {
+	border: var(--htm25-border-width-thick, 3px) solid var(--htm25-border-color, #000);
+	border-radius: 0;
+	box-shadow: 7px 7px 0 var(--htm25-border-color, #000);
+}
+.htm25-style--neo .htm25-contact__tile:hover {
+	transform: translate(-2px, -2px);
+	box-shadow: 9px 9px 0 var(--htm25-border-color, #000);
+}
+.htm25-style--neo .htm25-contact__tile--form:hover,
+.htm25-style--neo .htm25-contact__tile--map:hover { transform: none; box-shadow: 7px 7px 0 var(--htm25-border-color, #000); }
+.htm25-style--neo .htm25-contact__section-label {
+	border-radius: 0;
+	border: var(--htm25-border-width-thick, 2px) solid var(--htm25-border-color, #000);
+	box-shadow: 4px 4px 0 var(--htm25-border-color, #000);
+	color: var(--htm25-text-heading, #000);
+	background: var(--htm25-accent-primary, #ffe500);
+}
+.htm25-style--neo .htm25-contact__label-dot { background: var(--htm25-border-color, #000); box-shadow: none; border-radius: 0; }
+.htm25-style--neo .htm25-contact__tile-label {
+	display: inline-block;
+	color: var(--htm25-text-heading, #000);
+	background: var(--htm25-accent-tertiary, #00e0a4);
+	border: var(--htm25-border-width-thick, 2px) solid var(--htm25-border-color, #000);
+	box-shadow: 3px 3px 0 var(--htm25-border-color, #000);
+	padding: 0.25rem 0.6rem;
+}
+.htm25-style--neo .htm25-contact__info-icon {
+	border-radius: 0;
+	border: var(--htm25-border-width-thick, 2px) solid var(--htm25-border-color, #000);
+	background: var(--htm25-accent-secondary, #ff2d78);
+	color: #fff;
+}
+.htm25-style--neo .htm25-contact__info-item + .htm25-contact__info-item { border-top: 2px dashed var(--htm25-border-color, #000); }
+.htm25-style--neo .htm25-contact__social-link {
+	border-radius: 0;
+	border: var(--htm25-border-width-thick, 2px) solid var(--htm25-border-color, #000);
+}
+.htm25-style--neo .htm25-contact__social-link:hover {
+	background: var(--htm25-accent-secondary, #ff2d78);
+	transform: translate(-2px, -2px);
+	box-shadow: 3px 3px 0 var(--htm25-border-color, #000);
+}
+.htm25-style--neo .htm25-contact__badge-open {
+	border-radius: 0;
+	color: var(--htm25-text-heading, #000);
+	background: var(--htm25-accent-tertiary, #00e0a4);
+	border: var(--htm25-border-width-thick, 2px) solid var(--htm25-border-color, #000);
+	box-shadow: 3px 3px 0 var(--htm25-border-color, #000);
+}
+.htm25-style--neo .htm25-contact__badge-dot { border-radius: 0; background: var(--htm25-border-color, #000); animation: none; }
+.htm25-style--neo .htm25-contact__tile--hours {
+	background: #0038FF;
+	color: #fff;
+}
+.htm25-style--neo .htm25-contact__tile--hours .htm25-contact__tile-label {
+	background: var(--htm25-accent-primary, #ffe500);
+	color: #000;
+	box-shadow: 3px 3px 0 #000;
+}
+.htm25-style--neo .htm25-contact__tile--hours .htm25-contact__hours-row {
+	color: rgba(255, 255, 255, 0.85);
+	border-bottom: 2px dashed rgba(255, 255, 255, 0.35);
+}
+.htm25-style--neo .htm25-contact__tile--hours .htm25-contact__hours-row:last-child { border-bottom: 0; }
+.htm25-style--neo .htm25-contact__tile--hours .htm25-contact__hours-row span:last-child { color: #fff; }
+.htm25-style--neo .htm25-contact__tile--hours .htm25-contact__badge-open {
+	background: var(--htm25-accent-primary, #ffe500);
+	color: #000;
+	border-color: #000;
+	box-shadow: 3px 3px 0 #000;
+}
+.htm25-style--neo .htm25-contact__tile--hours .htm25-contact__badge-dot { background: #000; border-radius: 0; }
+.htm25-style--neo .htm25-contact__hours-row { border-bottom: 2px dashed var(--htm25-border-color, #000); font-weight: var(--htm25-weight-medium, 700); }
+.htm25-style--neo .htm25-contact__map { filter: grayscale(1) contrast(1.2); }
+.htm25-style--neo .htm25-contact__tile--trust {
+	background: var(--htm25-accent-secondary, #ff2d78);
+	color: #fff;
+}
+.htm25-style--neo .htm25-contact__tile--trust .htm25-contact__tile-label {
+	background: var(--htm25-accent-primary, #ffe500);
+	color: var(--htm25-text-heading, #000);
+}
+.htm25-style--neo .htm25-contact__trust-stars { color: var(--htm25-accent-primary, #ffe500); -webkit-text-stroke: 1px var(--htm25-border-color, #000); }
+
+/* =========================================================
+   HEADLINE ACCENT — per-preset overrides
+   ========================================================= */
+/* Neo: pink accent text; user gradient clips to text same as other styles */
+.htm25-style--neo .htm25-contact__headline-accent {
+  background-color: #FF2D78;
+  background-image: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+	.htm25-contact { padding-block: var(--htm25-space-16, 4rem); }
+	.htm25-contact__header { margin-bottom: var(--htm25-space-10, 2.5rem); }
+	.htm25-contact__blob { filter: blur(60px); }
+}

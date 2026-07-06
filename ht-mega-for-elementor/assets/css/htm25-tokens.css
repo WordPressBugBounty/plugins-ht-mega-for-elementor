@@ -1,0 +1,914 @@
+/**
+ * HT Mega 2025 Design Token System
+ * File: htm25-tokens.css
+ *
+ * Five design style token sets:
+ *   1. Bento Grid       (.htm25-style--bento)
+ *   2. Glassmorphism    (.htm25-style--glass)
+ *   3. Dark Minimal     (.htm25-style--dark)
+ *   4. Aurora           (.htm25-style--aurora)
+ *   5. Neo-Brutalist    (.htm25-style--neo)
+ *
+ * Usage:
+ *   - Add one of the above classes to any widget/block wrapper
+ *   - All child elements reference var(--htm25-*) tokens
+ *   - Tokens also available on :root for global defaults
+ *
+ * Prefix: htm25- (never conflicts with legacy htmega- CSS)
+ * Convention: BEM HTML, CSS custom properties, no jQuery
+ */
+
+/* =========================================================
+   GLOBAL DEFAULTS (fallbacks if no style class is applied)
+   ========================================================= */
+:root {
+  /* Typography */
+  --htm25-font-heading: "Inter", system-ui, -apple-system, sans-serif;
+  --htm25-font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --htm25-font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --htm25-text-xs:   clamp(0.70rem, 0.65rem + 0.25vw, 0.75rem);
+  --htm25-text-sm:   clamp(0.85rem, 0.80rem + 0.25vw, 0.875rem);
+  --htm25-text-base: clamp(1rem,    0.95rem + 0.25vw, 1.0625rem);
+  --htm25-text-lg:   clamp(1.125rem,1.05rem + 0.35vw, 1.25rem);
+  --htm25-text-xl:   clamp(1.25rem, 1.10rem + 0.75vw, 1.5rem);
+  --htm25-text-2xl:  clamp(1.5rem,  1.30rem + 1.0vw,  2rem);
+  --htm25-text-3xl:  clamp(1.875rem,1.60rem + 1.4vw,  2.625rem);
+  --htm25-text-4xl:  clamp(2.25rem, 1.80rem + 2.25vw, 3.5rem);
+  --htm25-text-5xl:  clamp(2.75rem, 2.10rem + 3.25vw, 4.5rem);
+
+  --htm25-weight-regular: 400;
+  --htm25-weight-medium:  500;
+  --htm25-weight-semibold:600;
+  --htm25-weight-bold:    700;
+  --htm25-weight-black:   900;
+
+  --htm25-leading-tight:  1.15;
+  --htm25-leading-snug:   1.35;
+  --htm25-leading-normal: 1.6;
+  --htm25-leading-loose:  1.8;
+
+  --htm25-tracking-tight: -0.03em;
+  --htm25-tracking-normal: 0em;
+  --htm25-tracking-wide:   0.05em;
+  --htm25-tracking-wider:  0.12em;
+
+  /* Spacing scale (4px base) */
+  --htm25-space-1:  0.25rem;   /*  4px */
+  --htm25-space-2:  0.5rem;    /*  8px */
+  --htm25-space-3:  0.75rem;   /* 12px */
+  --htm25-space-4:  1rem;      /* 16px */
+  --htm25-space-5:  1.25rem;   /* 20px */
+  --htm25-space-6:  1.5rem;    /* 24px */
+  --htm25-space-8:  2rem;      /* 32px */
+  --htm25-space-10: 2.5rem;    /* 40px */
+  --htm25-space-12: 3rem;      /* 48px */
+  --htm25-space-16: 4rem;      /* 64px */
+  --htm25-space-20: 5rem;      /* 80px */
+  --htm25-space-24: 6rem;      /* 96px */
+  --htm25-space-32: 8rem;      /* 128px */
+
+  /* Border radius */
+  --htm25-radius-none:  0;
+  --htm25-radius-sm:    0.25rem;   /* 4px  */
+  --htm25-radius-md:    0.5rem;    /* 8px  */
+  --htm25-radius-lg:    0.75rem;   /* 12px */
+  --htm25-radius-xl:    1rem;      /* 16px */
+  --htm25-radius-2xl:   1.5rem;    /* 24px */
+  --htm25-radius-3xl:   2rem;      /* 32px */
+  --htm25-radius-full:  9999px;
+
+  /* Transitions */
+  --htm25-ease-out:  cubic-bezier(0.0, 0.0, 0.2, 1);
+  --htm25-ease-in:   cubic-bezier(0.4, 0.0, 1, 1);
+  --htm25-ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --htm25-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --htm25-duration-fast:   150ms;
+  --htm25-duration-normal: 250ms;
+  --htm25-duration-slow:   400ms;
+
+  /* Z-index scale */
+  --htm25-z-below:   -1;
+  --htm25-z-base:     0;
+  --htm25-z-raised:   10;
+  --htm25-z-overlay:  100;
+  --htm25-z-modal:    1000;
+  --htm25-z-toast:    9999;
+
+  /* Container */
+  --htm25-container-sm:   640px;
+  --htm25-container-md:   768px;
+  --htm25-container-lg:   1024px;
+  --htm25-container-xl:   1280px;
+  --htm25-container-2xl:  1440px;
+  --htm25-container-px:   clamp(1rem, 4vw, 2rem);
+
+  /* Section padding */
+  --htm25-section-py: clamp(3rem, 6vw, 6rem);
+  --htm25-section-px: clamp(1rem, 4vw, 2rem);
+}
+
+
+/* =========================================================
+   1. BENTO GRID
+   Character: clean white/off-white, crisp grid cards,
+   subtle border, soft shadow. SaaS / dashboard feel.
+   ========================================================= */
+.htm25-style--bento {
+
+  /* Surfaces */
+  --htm25-bg-page:       #F7F8FA;
+  --htm25-bg-section:    #FFFFFF;
+  --htm25-bg-card:       #FFFFFF;
+  --htm25-bg-card-alt:   #F0F2F5;
+  --htm25-bg-subtle:     #F0F2F5;
+  --htm25-bg-overlay:    rgba(0, 0, 0, 0.45);
+
+  /* Borders */
+  --htm25-border-color:  #E4E7EC;
+  --htm25-border-color-strong: #CDD1D8;
+  --htm25-border-width:  1px;
+  --htm25-border-style:  solid;
+
+  /* Brand / accent */
+  --htm25-accent-primary:    #3B6FFF;
+  --htm25-accent-primary-dk: #2953CC;
+  --htm25-accent-primary-lt: #EEF2FF;
+  --htm25-accent-secondary:  #7C3AED;
+  --htm25-accent-success:    #16A34A;
+  --htm25-accent-warning:    #D97706;
+  --htm25-accent-danger:     #DC2626;
+
+  /* Text */
+  --htm25-text-heading:  #0F1117;
+  --htm25-text-body:     #374151;
+  --htm25-text-muted:    #6B7280;
+  --htm25-text-faint:    #9CA3AF;
+  --htm25-text-inverse:  #FFFFFF;
+  --htm25-text-accent:   #3B6FFF;
+  --htm25-text-link:     #3B6FFF;
+  --htm25-text-link-hover: #2953CC;
+
+  /* Typography choices */
+  --htm25-font-heading:  "Inter", system-ui, sans-serif;
+  --htm25-font-body:     "Inter", system-ui, sans-serif;
+  --htm25-weight-heading: 700;
+  --htm25-tracking-heading: -0.03em;
+  --htm25-leading-heading: 1.15;
+
+  /* Radius */
+  --htm25-radius-card:   1rem;       /* 16px – main card corners */
+  --htm25-radius-btn:    0.5rem;     /*  8px – buttons */
+  --htm25-radius-input:  0.5rem;
+  --htm25-radius-badge:  9999px;
+  --htm25-radius-icon:   0.625rem;
+
+  /* Shadows */
+  --htm25-shadow-card:   0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --htm25-shadow-card-hover: 0 4px 6px rgba(0,0,0,0.08), 0 12px 24px rgba(0,0,0,0.06);
+  --htm25-shadow-btn:    0 1px 2px rgba(0,0,0,0.10);
+  --htm25-shadow-lg:     0 8px 32px rgba(0,0,0,0.10);
+  --htm25-shadow-none:   none;
+
+  /* Bento-specific: grid gap */
+  --htm25-bento-gap:       1rem;
+  --htm25-bento-gap-lg:    1.5rem;
+  --htm25-bento-col-span:  2;
+  --htm25-bento-row-span:  2;
+
+  /* Button tokens */
+  --htm25-btn-primary-bg:     #3B6FFF;
+  --htm25-btn-primary-text:   #FFFFFF;
+  --htm25-btn-primary-bg-hover: #2953CC;
+  --htm25-btn-outline-border: #3B6FFF;
+  --htm25-btn-outline-text:   #3B6FFF;
+  --htm25-btn-outline-bg-hover: #EEF2FF;
+  --htm25-btn-ghost-text:     #374151;
+  --htm25-btn-ghost-bg-hover: #F0F2F5;
+  --htm25-btn-radius:         0.5rem;
+  --htm25-btn-py:             0.625rem;
+  --htm25-btn-px:             1.25rem;
+  --htm25-btn-font-size:      var(--htm25-text-sm);
+  --htm25-btn-font-weight:    600;
+
+  /* Tag / badge */
+  --htm25-badge-bg:     #EEF2FF;
+  --htm25-badge-text:   #3B6FFF;
+  --htm25-badge-radius: 9999px;
+
+  /* Divider */
+  --htm25-divider-color: #E4E7EC;
+  --htm25-divider-width: 1px;
+
+  /* Section title */
+  --htm25-section-label-color:  #3B6FFF;
+  --htm25-section-title-color:  #0F1117;
+  --htm25-section-body-color:   #6B7280;
+}
+
+
+/* =========================================================
+   2. GLASSMORPHISM
+   Character: frosted-glass cards on gradient/image
+   backgrounds, blur effects, soft glow borders.
+   Premium SaaS / fintech / crypto.
+   ========================================================= */
+.htm25-style--glass {
+
+  /* Surfaces */
+  --htm25-bg-page:       #0D1225;
+  --htm25-bg-section:    #0D1225;
+  --htm25-bg-card:       rgba(255, 255, 255, 0.06);
+  --htm25-bg-card-alt:   rgba(255, 255, 255, 0.10);
+  --htm25-bg-subtle:     rgba(255, 255, 255, 0.04);
+  --htm25-bg-overlay:    rgba(13, 18, 37, 0.80);
+
+  /* Glass effect */
+  --htm25-glass-blur:        blur(16px);
+  --htm25-glass-blur-lg:     blur(32px);
+  --htm25-glass-blur-sm:     blur(8px);
+  --htm25-glass-saturation:  saturate(180%);
+  --htm25-glass-bg:          rgba(255, 255, 255, 0.06);
+  --htm25-glass-bg-hover:    rgba(255, 255, 255, 0.10);
+  --htm25-glass-shine:       linear-gradient(
+                               135deg,
+                               rgba(255,255,255,0.12) 0%,
+                               rgba(255,255,255,0.04) 50%,
+                               rgba(255,255,255,0.00) 100%
+                             );
+
+  /* Borders (glowing) */
+  --htm25-border-color:        rgba(255, 255, 255, 0.12);
+  --htm25-border-color-strong: rgba(255, 255, 255, 0.20);
+  --htm25-border-color-glow:   rgba(120, 110, 255, 0.40);
+  --htm25-border-width:        1px;
+  --htm25-border-style:        solid;
+
+  /* Brand / accent */
+  --htm25-accent-primary:    #786EFF;
+  --htm25-accent-primary-dk: #5548E8;
+  --htm25-accent-primary-lt: rgba(120, 110, 255, 0.15);
+  --htm25-accent-secondary:  #06B6D4;
+  --htm25-accent-glow:       rgba(120, 110, 255, 0.50);
+  --htm25-accent-glow-cyan:  rgba(6, 182, 212, 0.40);
+
+  /* Text */
+  --htm25-text-heading:  #FFFFFF;
+  --htm25-text-body:     rgba(255, 255, 255, 0.75);
+  --htm25-text-muted:    rgba(255, 255, 255, 0.50);
+  --htm25-text-faint:    rgba(255, 255, 255, 0.30);
+  --htm25-text-inverse:  #0D1225;
+  --htm25-text-accent:   #786EFF;
+  --htm25-text-link:     #786EFF;
+  --htm25-text-link-hover: #06B6D4;
+
+  /* Gradient backgrounds (section use) */
+  --htm25-gradient-hero:  radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120,110,255,0.25) 0%, transparent 70%),
+                          radial-gradient(ellipse 60% 40% at 80% 80%, rgba(6,182,212,0.15) 0%, transparent 60%),
+                          #0D1225;
+  --htm25-gradient-card:  linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+  --htm25-gradient-btn:   linear-gradient(135deg, #786EFF 0%, #5548E8 100%);
+
+  /* Typography */
+  --htm25-font-heading:  "Inter", system-ui, sans-serif;
+  --htm25-font-body:     "Inter", system-ui, sans-serif;
+  --htm25-weight-heading: 700;
+  --htm25-tracking-heading: -0.03em;
+  --htm25-leading-heading: 1.15;
+
+  /* Radius */
+  --htm25-radius-card:   1.25rem;
+  --htm25-radius-btn:    0.625rem;
+  --htm25-radius-input:  0.625rem;
+  --htm25-radius-badge:  9999px;
+  --htm25-radius-icon:   0.875rem;
+
+  /* Shadows / glows */
+  --htm25-shadow-card:       0 0 0 1px rgba(255,255,255,0.08), 0 8px 32px rgba(0,0,0,0.30);
+  --htm25-shadow-card-hover: 0 0 0 1px rgba(120,110,255,0.30), 0 16px 48px rgba(120,110,255,0.15);
+  --htm25-shadow-btn:        0 0 20px rgba(120,110,255,0.40);
+  --htm25-shadow-lg:         0 24px 64px rgba(0,0,0,0.50);
+  --htm25-shadow-glow:       0 0 40px rgba(120,110,255,0.30);
+
+  /* Button tokens */
+  --htm25-btn-primary-bg:     linear-gradient(135deg, #786EFF 0%, #5548E8 100%);
+  --htm25-btn-primary-text:   #FFFFFF;
+  --htm25-btn-primary-bg-hover: linear-gradient(135deg, #8A81FF 0%, #6659F0 100%);
+  --htm25-btn-outline-border: rgba(120,110,255,0.50);
+  --htm25-btn-outline-text:   #786EFF;
+  --htm25-btn-outline-bg-hover: rgba(120,110,255,0.10);
+  --htm25-btn-ghost-text:     rgba(255,255,255,0.70);
+  --htm25-btn-ghost-bg-hover: rgba(255,255,255,0.08);
+  --htm25-btn-radius:         0.625rem;
+  --htm25-btn-py:             0.75rem;
+  --htm25-btn-px:             1.5rem;
+  --htm25-btn-font-size:      var(--htm25-text-sm);
+  --htm25-btn-font-weight:    600;
+
+  /* Badge */
+  --htm25-badge-bg:     rgba(120,110,255,0.15);
+  --htm25-badge-text:   #786EFF;
+  --htm25-badge-border: rgba(120,110,255,0.30);
+  --htm25-badge-radius: 9999px;
+
+  /* Divider */
+  --htm25-divider-color: rgba(255,255,255,0.10);
+  --htm25-divider-width: 1px;
+
+  /* Section title */
+  --htm25-section-label-color:  #786EFF;
+  --htm25-section-title-color:  #FFFFFF;
+  --htm25-section-body-color:   rgba(255,255,255,0.60);
+}
+
+
+/* =========================================================
+   3. DARK MINIMAL
+   Character: pure black/near-black surfaces, razor-sharp
+   typography, monochrome palette with one accent, no
+   decoration. Dev tools / AI products / CLI brands.
+   ========================================================= */
+.htm25-style--dark {
+
+  /* Surfaces */
+  --htm25-bg-page:       #09090B;
+  --htm25-bg-section:    #09090B;
+  --htm25-bg-card:       #111113;
+  --htm25-bg-card-alt:   #18181B;
+  --htm25-bg-subtle:     #18181B;
+  --htm25-bg-overlay:    rgba(0, 0, 0, 0.80);
+  --htm25-bg-code:       #0E0E10;
+
+  /* Borders */
+  --htm25-border-color:        #27272A;
+  --htm25-border-color-strong: #3F3F46;
+  --htm25-border-color-subtle: #1C1C1F;
+  --htm25-border-width:        1px;
+  --htm25-border-style:        solid;
+
+  /* Brand / accent (single vivid color on dark) */
+  --htm25-accent-primary:    #E4FF3C;   /* electric lime */
+  --htm25-accent-primary-dk: #C8E600;
+  --htm25-accent-primary-lt: rgba(228,255,60,0.10);
+  --htm25-accent-secondary:  #FFFFFF;
+  --htm25-accent-success:    #4ADE80;
+  --htm25-accent-warning:    #FACC15;
+  --htm25-accent-danger:     #F87171;
+
+  /* Text */
+  --htm25-text-heading:  #FAFAFA;
+  --htm25-text-body:     #A1A1AA;
+  --htm25-text-muted:    #71717A;
+  --htm25-text-faint:    #3F3F46;
+  --htm25-text-inverse:  #09090B;
+  --htm25-text-accent:   #E4FF3C;
+  --htm25-text-link:     #E4FF3C;
+  --htm25-text-link-hover: #FAFAFA;
+
+  /* Typography */
+  --htm25-font-heading:  "Inter", system-ui, sans-serif;
+  --htm25-font-body:     "Inter", system-ui, sans-serif;
+  --htm25-font-mono:     "JetBrains Mono", monospace;
+  --htm25-weight-heading: 600;
+  --htm25-tracking-heading: -0.02em;
+  --htm25-leading-heading: 1.2;
+
+  /* Radius (sharper than other styles) */
+  --htm25-radius-card:   0.375rem;    /* 6px  */
+  --htm25-radius-btn:    0.25rem;     /* 4px  */
+  --htm25-radius-input:  0.25rem;
+  --htm25-radius-badge:  0.25rem;
+  --htm25-radius-icon:   0.25rem;
+
+  /* Shadows */
+  --htm25-shadow-card:       0 0 0 1px #27272A;
+  --htm25-shadow-card-hover: 0 0 0 1px #3F3F46;
+  --htm25-shadow-btn:        none;
+  --htm25-shadow-lg:         0 16px 48px rgba(0,0,0,0.60);
+  --htm25-shadow-glow-accent: 0 0 24px rgba(228,255,60,0.20);
+
+  /* Button tokens */
+  --htm25-btn-primary-bg:     #E4FF3C;
+  --htm25-btn-primary-text:   #09090B;
+  --htm25-btn-primary-bg-hover: #F0FF70;
+  --htm25-btn-outline-border: #3F3F46;
+  --htm25-btn-outline-text:   #FAFAFA;
+  --htm25-btn-outline-bg-hover: #18181B;
+  --htm25-btn-ghost-text:     #A1A1AA;
+  --htm25-btn-ghost-bg-hover: #18181B;
+  --htm25-btn-radius:         0.25rem;
+  --htm25-btn-py:             0.5rem;
+  --htm25-btn-px:             1rem;
+  --htm25-btn-font-size:      var(--htm25-text-sm);
+  --htm25-btn-font-weight:    500;
+
+  /* Badge (monospace pill) */
+  --htm25-badge-bg:     #18181B;
+  --htm25-badge-text:   #A1A1AA;
+  --htm25-badge-border: #27272A;
+  --htm25-badge-radius: 0.25rem;
+
+  /* Terminal-style tag (for code labels) */
+  --htm25-tag-bg:     rgba(228,255,60,0.08);
+  --htm25-tag-text:   #E4FF3C;
+  --htm25-tag-border: rgba(228,255,60,0.20);
+
+  /* Divider */
+  --htm25-divider-color: #1C1C1F;
+  --htm25-divider-width: 1px;
+
+  /* Section title */
+  --htm25-section-label-color:  #E4FF3C;
+  --htm25-section-title-color:  #FAFAFA;
+  --htm25-section-body-color:   #71717A;
+}
+
+
+/* =========================================================
+   4. AURORA
+   Character: soft gradient mesh backgrounds, blurred
+   colorful blobs, pastel-vivid hybrid palette, smooth
+   rounded corners. AI / generative / tech brands.
+   ========================================================= */
+.htm25-style--aurora {
+
+  /* Surfaces */
+  --htm25-bg-page:       #08071A;
+  --htm25-bg-section:    #08071A;
+  --htm25-bg-card:       rgba(255,255,255,0.04);
+  --htm25-bg-card-alt:   rgba(255,255,255,0.07);
+  --htm25-bg-subtle:     rgba(255,255,255,0.03);
+  --htm25-bg-overlay:    rgba(8,7,26,0.85);
+
+  /* Aurora / mesh gradient blobs */
+  --htm25-aurora-1:   #FF3CAC;   /* hot pink  */
+  --htm25-aurora-2:   #784BA0;   /* purple    */
+  --htm25-aurora-3:   #2B86C5;   /* blue      */
+  --htm25-aurora-4:   #00F0FF;   /* cyan      */
+  --htm25-aurora-5:   #38EF7D;   /* green     */
+
+  --htm25-gradient-hero:
+    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(255,60,172,0.30) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(43,134,197,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 60% 80%, rgba(120,75,160,0.20) 0%, transparent 60%),
+    #08071A;
+
+  --htm25-gradient-card:
+    linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+
+  --htm25-gradient-btn:
+    linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+  --htm25-gradient-text:
+    linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+  /* Borders */
+  --htm25-border-color:        rgba(255,255,255,0.10);
+  --htm25-border-color-strong: rgba(255,255,255,0.18);
+  --htm25-border-gradient:     linear-gradient(135deg, rgba(255,60,172,0.40), rgba(43,134,197,0.40));
+  --htm25-border-width:        1px;
+  --htm25-border-style:        solid;
+
+  /* Brand / accent */
+  --htm25-accent-primary:    #FF3CAC;
+  --htm25-accent-primary-dk: #D4208C;
+  --htm25-accent-primary-lt: rgba(255,60,172,0.15);
+  --htm25-accent-secondary:  #2B86C5;
+  --htm25-accent-tertiary:   #38EF7D;
+  --htm25-accent-glow-pink:  rgba(255,60,172,0.45);
+  --htm25-accent-glow-blue:  rgba(43,134,197,0.35);
+
+  /* Text */
+  --htm25-text-heading:  #FFFFFF;
+  --htm25-text-body:     rgba(255,255,255,0.72);
+  --htm25-text-muted:    rgba(255,255,255,0.45);
+  --htm25-text-faint:    rgba(255,255,255,0.25);
+  --htm25-text-inverse:  #08071A;
+  --htm25-text-accent:   #FF3CAC;
+  --htm25-text-gradient: var(--htm25-gradient-text);
+  --htm25-text-link:     #FF3CAC;
+  --htm25-text-link-hover: #00F0FF;
+
+  /* Typography (expressive) */
+  --htm25-font-heading:  "Inter", system-ui, sans-serif;
+  --htm25-font-body:     "Inter", system-ui, sans-serif;
+  --htm25-weight-heading: 800;
+  --htm25-tracking-heading: -0.04em;
+  --htm25-leading-heading: 1.1;
+
+  /* Radius (very rounded) */
+  --htm25-radius-card:   1.5rem;     /* 24px */
+  --htm25-radius-btn:    9999px;     /* pill */
+  --htm25-radius-input:  0.75rem;
+  --htm25-radius-badge:  9999px;
+  --htm25-radius-icon:   1rem;
+
+  /* Shadows / glows */
+  --htm25-shadow-card:       0 0 0 1px rgba(255,255,255,0.08), 0 8px 32px rgba(0,0,0,0.40);
+  --htm25-shadow-card-hover: 0 0 0 1px rgba(255,60,172,0.30), 0 16px 48px rgba(255,60,172,0.15);
+  --htm25-shadow-btn:        0 0 24px rgba(255,60,172,0.50), 0 0 8px rgba(43,134,197,0.30);
+  --htm25-shadow-lg:         0 24px 80px rgba(0,0,0,0.60);
+  --htm25-shadow-glow-pink:  0 0 48px rgba(255,60,172,0.35);
+  --htm25-shadow-glow-blue:  0 0 48px rgba(43,134,197,0.25);
+
+  /* Button tokens */
+  --htm25-btn-primary-bg:     linear-gradient(135deg, #FF3CAC, #784BA0, #2B86C5);
+  --htm25-btn-primary-text:   #FFFFFF;
+  --htm25-btn-primary-bg-hover: linear-gradient(135deg, #FF60BB, #8E5CB8, #3E9BD8);
+  --htm25-btn-outline-border: rgba(255,60,172,0.40);
+  --htm25-btn-outline-text:   #FF3CAC;
+  --htm25-btn-outline-bg-hover: rgba(255,60,172,0.08);
+  --htm25-btn-ghost-text:     rgba(255,255,255,0.65);
+  --htm25-btn-ghost-bg-hover: rgba(255,255,255,0.06);
+  --htm25-btn-radius:         9999px;
+  --htm25-btn-py:             0.75rem;
+  --htm25-btn-px:             1.75rem;
+  --htm25-btn-font-size:      var(--htm25-text-sm);
+  --htm25-btn-font-weight:    600;
+
+  /* Badge */
+  --htm25-badge-bg:     rgba(255,60,172,0.12);
+  --htm25-badge-text:   #FF3CAC;
+  --htm25-badge-border: rgba(255,60,172,0.25);
+  --htm25-badge-radius: 9999px;
+
+  /* Divider */
+  --htm25-divider-color: rgba(255,255,255,0.08);
+  --htm25-divider-width: 1px;
+
+  /* Section title */
+  --htm25-section-label-color:  #FF3CAC;
+  --htm25-section-title-color:  #FFFFFF;
+  --htm25-section-body-color:   rgba(255,255,255,0.55);
+
+  /* Glass layer for aurora cards */
+  --htm25-glass-blur:        blur(20px);
+  --htm25-glass-bg:          rgba(255,255,255,0.04);
+  --htm25-glass-bg-hover:    rgba(255,255,255,0.07);
+}
+
+
+/* =========================================================
+   5. NEO-BRUTALIST
+   Character: heavy black borders, raw flat colors, bold
+   shadows offset (not blurred), visible grid, compressed
+   typography. Agencies / studios / creative portfolios.
+   ========================================================= */
+.htm25-style--neo {
+
+  /* Surfaces */
+  --htm25-bg-page:       #FFFEF0;   /* warm off-white */
+  --htm25-bg-section:    #FFFEF0;
+  --htm25-bg-card:       #FFFFFF;
+  --htm25-bg-card-alt:   #FFFEF0;
+  --htm25-bg-card-accent:#F0F0FF;
+  --htm25-bg-subtle:     #F5F5E8;
+  --htm25-bg-overlay:    rgba(0,0,0,0.70);
+
+  /* Flat color blocks */
+  --htm25-swatch-yellow:  #FFE500;
+  --htm25-swatch-pink:    #FF2D78;
+  --htm25-swatch-blue:    #0038FF;
+  --htm25-swatch-green:   #00C853;
+  --htm25-swatch-orange:  #FF6D00;
+  --htm25-swatch-purple:  #6200EA;
+  --htm25-swatch-black:   #000000;
+  --htm25-swatch-white:   #FFFFFF;
+
+  /* Borders (thick, black — the neo-brutal signature) */
+  --htm25-border-color:        #000000;
+  --htm25-border-color-strong: #000000;
+  --htm25-border-color-subtle: #000000;
+  --htm25-border-width:        2px;
+  --htm25-border-width-thick:  3px;
+  --htm25-border-style:        solid;
+
+  /* Brand / accent */
+  --htm25-accent-primary:    #FFE500;
+  --htm25-accent-primary-dk: #D4C000;
+  --htm25-accent-primary-lt: #FFF9A0;
+  --htm25-accent-secondary:  #FF2D78;
+  --htm25-accent-tertiary:   #0038FF;
+
+  /* Text */
+  --htm25-text-heading:  #000000;
+  --htm25-text-body:     #1A1A1A;
+  --htm25-text-muted:    #555555;
+  --htm25-text-faint:    #888888;
+  --htm25-text-inverse:  #FFFFFF;
+  --htm25-text-accent:   #000000;
+  --htm25-text-link:     #0038FF;
+  --htm25-text-link-hover: #FF2D78;
+
+  /* Typography (compressed, heavy) */
+  --htm25-font-heading:  "Inter", "Arial Black", system-ui, sans-serif;
+  --htm25-font-body:     "Inter", system-ui, sans-serif;
+  --htm25-weight-heading: 900;
+  --htm25-tracking-heading: -0.04em;
+  --htm25-leading-heading: 1.0;
+
+  /* Radius (zero or near-zero — hard edges) */
+  --htm25-radius-card:   0;
+  --htm25-radius-btn:    0;
+  --htm25-radius-input:  0;
+  --htm25-radius-badge:  0;
+  --htm25-radius-icon:   0;
+
+  /* Shadows (hard offset, not blurred — neo-brutal signature) */
+  --htm25-shadow-card:       4px 4px 0 #000000;
+  --htm25-shadow-card-hover: 6px 6px 0 #000000;
+  --htm25-shadow-btn:        3px 3px 0 #000000;
+  --htm25-shadow-btn-hover:  5px 5px 0 #000000;
+  --htm25-shadow-btn-active: 1px 1px 0 #000000;
+  --htm25-shadow-lg:         8px 8px 0 #000000;
+  --htm25-shadow-none:       none;
+
+  /* Button tokens */
+  --htm25-btn-primary-bg:     #FFE500;
+  --htm25-btn-primary-text:   #000000;
+  --htm25-btn-primary-bg-hover: #FFD000;
+  --htm25-btn-primary-border: #000000;
+  --htm25-btn-outline-border: #000000;
+  --htm25-btn-outline-text:   #000000;
+  --htm25-btn-outline-bg-hover: #FFE500;
+  --htm25-btn-ghost-text:     #000000;
+  --htm25-btn-ghost-bg-hover: #FFFEF0;
+  --htm25-btn-radius:         0;
+  --htm25-btn-py:             0.75rem;
+  --htm25-btn-px:             1.5rem;
+  --htm25-btn-font-size:      var(--htm25-text-base);
+  --htm25-btn-font-weight:    700;
+  --htm25-btn-border-width:   2px;
+  --htm25-btn-transform-hover:  translate(-2px, -2px);
+  --htm25-btn-shadow-hover:     5px 5px 0 #000000;
+  --htm25-btn-transform-active: translate(2px, 2px);
+  --htm25-btn-shadow-active:    1px 1px 0 #000000;
+
+  /* Badge (flat square) */
+  --htm25-badge-bg:     #FFE500;
+  --htm25-badge-text:   #000000;
+  --htm25-badge-border: #000000;
+  --htm25-badge-radius: 0;
+
+  /* Divider (thick black rule) */
+  --htm25-divider-color: #000000;
+  --htm25-divider-width: 2px;
+
+  /* Section title */
+  --htm25-section-label-color:  #FF2D78;
+  --htm25-section-title-color:  #000000;
+  --htm25-section-body-color:   #555555;
+
+  /* Neo-specific decoration */
+  --htm25-neo-stripe-bg: repeating-linear-gradient(
+    -45deg,
+    #FFE500,
+    #FFE500 4px,
+    transparent 4px,
+    transparent 12px
+  );
+  --htm25-neo-dot-bg: radial-gradient(circle, #000 1px, transparent 1px);
+  --htm25-neo-dot-size: 20px;
+  --htm25-neo-grid-color: rgba(0,0,0,0.06);
+}
+
+
+/* =========================================================
+   SHARED UTILITY CLASSES
+   Used across all styles — reference tokens via var()
+   ========================================================= */
+
+/* Container wrapper */
+.htm25-container {
+  width: 100%;
+  max-width: var(--htm25-container-xl);
+  margin-inline: auto;
+  padding-inline: var(--htm25-container-px);
+}
+
+.htm25-container--sm  { max-width: var(--htm25-container-sm); }
+.htm25-container--md  { max-width: var(--htm25-container-md); }
+.htm25-container--lg  { max-width: var(--htm25-container-lg); }
+.htm25-container--2xl { max-width: var(--htm25-container-2xl); }
+
+/* Section wrapper */
+.htm25-section {
+  padding-block: var(--htm25-section-py);
+  padding-inline: var(--htm25-section-px);
+  background-color: var(--htm25-bg-section);
+}
+
+/* Card base */
+.htm25-card {
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: var(--htm25-radius-card);
+  box-shadow: var(--htm25-shadow-card);
+  transition: box-shadow var(--htm25-duration-normal) var(--htm25-ease-out),
+              transform var(--htm25-duration-normal) var(--htm25-ease-out);
+}
+
+.htm25-card:hover {
+  box-shadow: var(--htm25-shadow-card-hover);
+}
+
+/* Glass card (glass + aurora styles) */
+.htm25-card--glass {
+  background: var(--htm25-glass-bg, var(--htm25-bg-card));
+  -webkit-backdrop-filter: var(--htm25-glass-blur, none);
+          backdrop-filter: var(--htm25-glass-blur, none);
+}
+
+.htm25-card--glass:hover {
+  background: var(--htm25-glass-bg-hover, var(--htm25-bg-card-alt));
+}
+
+/* Section label (eyebrow text above heading) */
+.htm25-section-label {
+  display: inline-flex;
+  align-self: flex-start;   /* prevent stretch to full width inside flex-column header */
+  align-items: center;
+  gap: var(--htm25-space-2);
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  color: var(--htm25-section-label-color);
+  margin-bottom: var(--htm25-space-4);
+}
+
+/* Section heading */
+.htm25-section-title {
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-4xl);
+  font-weight: var(--htm25-weight-heading, var(--htm25-weight-bold));
+  line-height: var(--htm25-leading-heading, var(--htm25-leading-tight));
+  letter-spacing: var(--htm25-tracking-heading, var(--htm25-tracking-tight));
+  color: var(--htm25-section-title-color, var(--htm25-text-heading));
+  margin-top: 0;
+  margin-bottom: var(--htm25-space-4);
+}
+
+/* Section body text */
+.htm25-section-body {
+  font-size: var(--htm25-text-lg);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-section-body-color, var(--htm25-text-muted));
+  max-width: 60ch;
+}
+
+/* Badge / tag */
+.htm25-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--htm25-space-1);
+  padding: var(--htm25-space-1) var(--htm25-space-3);
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wide);
+  border-radius: var(--htm25-badge-radius);
+  background-color: var(--htm25-badge-bg);
+  color: var(--htm25-badge-text);
+  border: 1px solid var(--htm25-badge-border, transparent);
+}
+
+/* Button base */
+.htm25-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--htm25-space-2);
+  padding: var(--htm25-btn-py) var(--htm25-btn-px);
+  font-size: var(--htm25-btn-font-size);
+  font-weight: var(--htm25-btn-font-weight);
+  font-family: var(--htm25-font-heading);
+  line-height: 1;
+  border-radius: var(--htm25-btn-radius);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--htm25-duration-fast) var(--htm25-ease-out),
+              box-shadow var(--htm25-duration-fast) var(--htm25-ease-out),
+              transform var(--htm25-duration-fast) var(--htm25-ease-spring);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+}
+
+.htm25-btn--primary {
+  background: var(--htm25-btn-primary-bg);
+  color: var(--htm25-btn-primary-text);
+  box-shadow: var(--htm25-shadow-btn);
+}
+
+.htm25-btn--primary:hover {
+  background: var(--htm25-btn-primary-bg-hover);
+}
+
+.htm25-btn--outline {
+  background: transparent;
+  color: var(--htm25-btn-outline-text);
+  border: var(--htm25-btn-border-width, 1px) solid var(--htm25-btn-outline-border);
+}
+
+.htm25-btn--outline:hover {
+  background: var(--htm25-btn-outline-bg-hover);
+}
+
+.htm25-btn--ghost {
+  background: transparent;
+  color: var(--htm25-btn-ghost-text);
+  border: none;
+}
+
+.htm25-btn--ghost:hover {
+  background: var(--htm25-btn-ghost-bg-hover);
+}
+
+/*
+ * Specificity bridge — prevents WordPress theme editor-styles (e.g. Astra's
+ * `.editor-styles-wrapper a { color: ... }` at 0,1,1) from overriding button
+ * colors. `[class*="htm25-"] .htm25-btn*` is 0,2,0 which wins in all contexts.
+ * Safe on frontend too — identical values, no visual change.
+ */
+[class*="htm25-"] .htm25-btn {
+  text-decoration: none;
+}
+[class*="htm25-"] .htm25-btn--primary {
+  color: var(--htm25-btn-primary-text);
+  background: var(--htm25-btn-primary-bg);
+}
+[class*="htm25-"] .htm25-btn--primary:hover {
+  background: var(--htm25-btn-primary-bg-hover);
+}
+[class*="htm25-"] .htm25-btn--outline {
+  color: var(--htm25-btn-outline-text);
+  border-color: var(--htm25-btn-outline-border);
+}
+[class*="htm25-"] .htm25-btn--outline:hover {
+  background: var(--htm25-btn-outline-bg-hover);
+}
+[class*="htm25-"] .htm25-btn--ghost {
+  color: var(--htm25-btn-ghost-text);
+}
+
+/* Neo-brutalist button specific transforms */
+.htm25-style--neo .htm25-btn--primary {
+  border: var(--htm25-btn-border-width, 2px) solid var(--htm25-btn-primary-border, #000);
+  box-shadow: var(--htm25-shadow-btn);
+}
+
+.htm25-style--neo .htm25-btn--primary:hover {
+  transform: var(--htm25-btn-transform-hover);
+  box-shadow: var(--htm25-btn-shadow-hover);
+}
+
+.htm25-style--neo .htm25-btn--primary:active {
+  transform: var(--htm25-btn-transform-active);
+  box-shadow: var(--htm25-btn-shadow-active);
+}
+
+/* Divider */
+.htm25-divider {
+  border: none;
+  border-top: var(--htm25-divider-width) solid var(--htm25-divider-color);
+  margin-block: var(--htm25-space-8);
+}
+
+/* Gradient text (aurora + glass) */
+.htm25-text-gradient {
+  background: var(--htm25-gradient-text, var(--htm25-gradient-btn));
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Screen-reader-only */
+.htm25-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus ring (accessible) */
+.htm25-btn:focus-visible,
+.htm25-card:focus-visible {
+  outline: 2px solid var(--htm25-accent-primary);
+  outline-offset: 3px;
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  .htm25-btn,
+  .htm25-card {
+    transition: none;
+  }
+}

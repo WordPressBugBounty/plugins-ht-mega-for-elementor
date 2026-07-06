@@ -41,6 +41,9 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             add_action( 'elementor/editor/after_save', [ $this, 'cache_widgets_asset' ], 10, 2 );
 		    add_action( 'after_delete_post', [ $this, 'delete_cache' ] );
 
+            // One-click install/activate for contact form plugin from Elementor editor
+            add_action( 'wp_ajax_htmega_activate_contact_plugin', [ $this, 'ajax_activate_contact_plugin' ] );
+
         }
 
         /**
@@ -609,10 +612,41 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'htmega-widgets-editor',
                 'htmegaPanelSettings',
                 array(
-                    'htmega_pro_installed' => htmega_is_pro_active() ? true : false,
-                    'htmega_pro_widgets'   => $this->get_promotional_widget_list(),
+                    'htmega_pro_installed'        => htmega_is_pro_active() ? true : false,
+                    'htmega_pro_widgets'          => $this->get_promotional_widget_list(),
+                    'contact_plugin_nonce'        => wp_create_nonce( 'htmega_contact_plugin_action' ),
                 )
             );
+
+            // Contact widget: one-click install/activate HT Contact Form
+            wp_enqueue_script( 'updates' );
+            wp_enqueue_script(
+                'htmega-contact-editor',
+                HTMEGA_ADDONS_PL_URL . 'assets/js/htm25-contact-editor.js',
+                [ 'jquery', 'updates', 'htmega-widgets-editor' ],
+                HTMEGA_VERSION,
+                true
+            );
+        }
+
+        /**
+         * AJAX handler — activate HT Contact Form plugin from within Elementor editor.
+         */
+        public function ajax_activate_contact_plugin() {
+            check_ajax_referer( 'htmega_contact_plugin_action', 'nonce' );
+
+            if ( ! current_user_can( 'activate_plugins' ) ) {
+                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'htmega-addons' ) ] );
+            }
+
+            $plugin_file = 'ht-contactform/contact-form-widget-elementor.php';
+            $result      = activate_plugin( $plugin_file );
+
+            if ( is_wp_error( $result ) ) {
+                wp_send_json_error( [ 'message' => $result->get_error_message() ] );
+            }
+
+            wp_send_json_success();
         }
 
         /**
@@ -715,9 +749,18 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             $previous_version = get_option( 'htmega_elementor_addons_previous_version' );
 
             if ( ! $regenerate_elementor_file && $previous_version ) {
-                
+
                 \Elementor\Plugin::$instance->files_manager->clear_cache();
                 update_option( 'htmega_elementor_regenerate_file', HTMEGA_VERSION );
+            }
+
+            // One-time bust of per-page CSS cache to include 2026 section widget styles.
+            // Cache files generated before the combine-system integration lack 2026 CSS.
+            $cache_bust_version = '3.1.2-2026sections';
+            if ( get_option( 'htmega_css_cache_bust' ) !== $cache_bust_version ) {
+                $assets_cache = new HTMega_Elementor_Assests_Cache();
+                $assets_cache->delete_all();
+                update_option( 'htmega_css_cache_bust', $cache_bust_version, true );
             }
             
         }

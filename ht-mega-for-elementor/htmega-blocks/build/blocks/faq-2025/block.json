@@ -1,0 +1,393 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "htmega/faq-2025",
+  "version": "1.0.0",
+  "title": "FAQ 2026",
+  "category": "htmega-blocks",
+  "icon": "editor-help",
+  "description": "Accessible accordion FAQ section with simple, two-column grid, and boxed card layouts across five design style presets.",
+  "keywords": [
+    "faq",
+    "accordion",
+    "questions",
+    "answers",
+    "htmega",
+    "2026"
+  ],
+  "textdomain": "htmega-addons",
+  "render": "file:./index.php",
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "simple"
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "FAQ"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Frequently Asked Questions"
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "Asked"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "Can't find what you're looking for? We've compiled answers to our most common questions below."
+    },
+    "faqItems": {
+      "type": "array",
+      "default": [
+        {
+          "faqQuestion": "How do I get started?",
+          "faqAnswer": "Getting started is easy. Simply sign up for a free account, choose your plan, and follow the onboarding guide. Our team is available to help you at every step.",
+          "faqCategory": "General",
+          "faqOpen": true
+        },
+        {
+          "faqQuestion": "What payment methods do you accept?",
+          "faqAnswer": "We accept all major credit and debit cards (Visa, Mastercard, Amex), PayPal, and bank transfers for annual plans. All payments are securely processed and encrypted.",
+          "faqCategory": "Billing",
+          "faqOpen": false
+        },
+        {
+          "faqQuestion": "Can I cancel my subscription at any time?",
+          "faqAnswer": "Yes, you can cancel your subscription at any time from your account dashboard. Your access will continue until the end of your current billing period — no questions asked.",
+          "faqCategory": "Billing",
+          "faqOpen": false
+        },
+        {
+          "faqQuestion": "Is there a free trial available?",
+          "faqAnswer": "Absolutely. We offer a 14-day free trial on all paid plans — no credit card required. You get full access to every feature so you can evaluate if it's the right fit.",
+          "faqCategory": "Plans",
+          "faqOpen": false
+        },
+        {
+          "faqQuestion": "How do I contact support?",
+          "faqAnswer": "Our support team is available via live chat, email, and our help centre. Pro and Enterprise customers also get priority phone support with a guaranteed 4-hour response time.",
+          "faqCategory": "Support",
+          "faqOpen": false
+        },
+        {
+          "faqQuestion": "Can I upgrade or downgrade my plan?",
+          "faqAnswer": "Yes, you can change your plan at any time. Upgrades take effect immediately and you'll be charged a prorated amount. Downgrades take effect at the start of your next billing cycle.",
+          "faqCategory": "Plans",
+          "faqOpen": false
+        }
+      ]
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleItemBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleItemBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleItemShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "itemBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "itemBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "itemBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleQuestionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleQuestionTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleQuestionActiveColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleQuestionActiveBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleAnswerColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleAnswerTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleTagColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTagBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleTagTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleTagRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleChevronColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleChevronSize": {
+      "type": "number",
+      "default": 0
+    },
+    "styleChevronActiveColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    }
+  }
+}

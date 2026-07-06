@@ -1,0 +1,299 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "_comment": "HT Mega 2025 — FSE design tokens. Maps to htm25-tokens.css values.",
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+
+    "color": {
+      "custom": true,
+      "customDuotone": false,
+      "customGradient": true,
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "duotone": [],
+      "palette": [
+        {
+          "slug": "htm25-white",
+          "color": "#FFFFFF",
+          "name": "White"
+        },
+        {
+          "slug": "htm25-black",
+          "color": "#000000",
+          "name": "Black"
+        },
+
+        { "slug": "htm25-bento-page",        "color": "#F7F8FA",   "name": "Bento: Page background" },
+        { "slug": "htm25-bento-card",        "color": "#FFFFFF",   "name": "Bento: Card background" },
+        { "slug": "htm25-bento-subtle",      "color": "#F0F2F5",   "name": "Bento: Subtle background" },
+        { "slug": "htm25-bento-border",      "color": "#E4E7EC",   "name": "Bento: Border" },
+        { "slug": "htm25-bento-accent",      "color": "#3B6FFF",   "name": "Bento: Accent primary" },
+        { "slug": "htm25-bento-accent-lt",   "color": "#EEF2FF",   "name": "Bento: Accent light" },
+        { "slug": "htm25-bento-accent-dk",   "color": "#2953CC",   "name": "Bento: Accent dark" },
+        { "slug": "htm25-bento-heading",     "color": "#0F1117",   "name": "Bento: Heading text" },
+        { "slug": "htm25-bento-body",        "color": "#374151",   "name": "Bento: Body text" },
+        { "slug": "htm25-bento-muted",       "color": "#6B7280",   "name": "Bento: Muted text" },
+
+        { "slug": "htm25-glass-page",        "color": "#0D1225",   "name": "Glass: Page background" },
+        { "slug": "htm25-glass-accent",      "color": "#786EFF",   "name": "Glass: Accent primary" },
+        { "slug": "htm25-glass-accent-cyan", "color": "#06B6D4",   "name": "Glass: Accent cyan" },
+        { "slug": "htm25-glass-heading",     "color": "#FFFFFF",   "name": "Glass: Heading text" },
+        { "slug": "htm25-glass-body",        "color": "#BFC5D4",   "name": "Glass: Body text" },
+        { "slug": "htm25-glass-muted",       "color": "#7B84A3",   "name": "Glass: Muted text" },
+
+        { "slug": "htm25-dark-page",         "color": "#09090B",   "name": "Dark: Page background" },
+        { "slug": "htm25-dark-card",         "color": "#111113",   "name": "Dark: Card background" },
+        { "slug": "htm25-dark-border",       "color": "#27272A",   "name": "Dark: Border" },
+        { "slug": "htm25-dark-accent",       "color": "#E4FF3C",   "name": "Dark: Accent (lime)" },
+        { "slug": "htm25-dark-heading",      "color": "#FAFAFA",   "name": "Dark: Heading text" },
+        { "slug": "htm25-dark-body",         "color": "#A1A1AA",   "name": "Dark: Body text" },
+        { "slug": "htm25-dark-muted",        "color": "#71717A",   "name": "Dark: Muted text" },
+
+        { "slug": "htm25-aurora-page",       "color": "#08071A",   "name": "Aurora: Page background" },
+        { "slug": "htm25-aurora-pink",       "color": "#FF3CAC",   "name": "Aurora: Pink" },
+        { "slug": "htm25-aurora-purple",     "color": "#784BA0",   "name": "Aurora: Purple" },
+        { "slug": "htm25-aurora-blue",       "color": "#2B86C5",   "name": "Aurora: Blue" },
+        { "slug": "htm25-aurora-cyan",       "color": "#00F0FF",   "name": "Aurora: Cyan" },
+        { "slug": "htm25-aurora-green",      "color": "#38EF7D",   "name": "Aurora: Green" },
+        { "slug": "htm25-aurora-heading",    "color": "#FFFFFF",   "name": "Aurora: Heading text" },
+        { "slug": "htm25-aurora-body",       "color": "#B8BFCF",   "name": "Aurora: Body text" },
+
+        { "slug": "htm25-neo-page",          "color": "#FFFEF0",   "name": "Neo: Page background" },
+        { "slug": "htm25-neo-yellow",        "color": "#FFE500",   "name": "Neo: Yellow" },
+        { "slug": "htm25-neo-pink",          "color": "#FF2D78",   "name": "Neo: Pink" },
+        { "slug": "htm25-neo-blue",          "color": "#0038FF",   "name": "Neo: Blue" },
+        { "slug": "htm25-neo-heading",       "color": "#000000",   "name": "Neo: Heading text" },
+        { "slug": "htm25-neo-body",          "color": "#1A1A1A",   "name": "Neo: Body text" }
+      ],
+
+      "gradients": [
+        {
+          "slug": "htm25-bento-subtle-bg",
+          "gradient": "linear-gradient(135deg, #F7F8FA 0%, #ECEEF2 100%)",
+          "name": "Bento: Subtle background"
+        },
+        {
+          "slug": "htm25-glass-hero",
+          "gradient": "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120,110,255,0.25) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(6,182,212,0.15) 0%, transparent 60%), linear-gradient(180deg, #0D1225 0%, #0D1225 100%)",
+          "name": "Glass: Hero gradient"
+        },
+        {
+          "slug": "htm25-glass-btn",
+          "gradient": "linear-gradient(135deg, #786EFF 0%, #5548E8 100%)",
+          "name": "Glass: Button gradient"
+        },
+        {
+          "slug": "htm25-aurora-hero",
+          "gradient": "radial-gradient(ellipse 70% 50% at 20% 20%, rgba(255,60,172,0.30) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 10%, rgba(43,134,197,0.25) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 60% 80%, rgba(120,75,160,0.20) 0%, transparent 60%), linear-gradient(180deg, #08071A 0%, #08071A 100%)",
+          "name": "Aurora: Hero gradient"
+        },
+        {
+          "slug": "htm25-aurora-text",
+          "gradient": "linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)",
+          "name": "Aurora: Text gradient"
+        },
+        {
+          "slug": "htm25-aurora-btn",
+          "gradient": "linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)",
+          "name": "Aurora: Button gradient"
+        }
+      ]
+    },
+
+    "typography": {
+      "customFontSize": true,
+      "dropCap": false,
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "Inter, system-ui, -apple-system, sans-serif",
+          "slug": "htm25-inter",
+          "name": "Inter (HT Mega 2025)"
+        },
+        {
+          "fontFamily": "'JetBrains Mono', 'Fira Code', monospace",
+          "slug": "htm25-mono",
+          "name": "Mono (HT Mega 2025)"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "htm25-xs",   "size": "clamp(0.70rem, 0.65rem + 0.25vw, 0.75rem)",    "name": "HTM xs"   },
+        { "slug": "htm25-sm",   "size": "clamp(0.85rem, 0.80rem + 0.25vw, 0.875rem)",   "name": "HTM sm"   },
+        { "slug": "htm25-base", "size": "clamp(1rem, 0.95rem + 0.25vw, 1.0625rem)",     "name": "HTM base" },
+        { "slug": "htm25-lg",   "size": "clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem)",   "name": "HTM lg"   },
+        { "slug": "htm25-xl",   "size": "clamp(1.25rem, 1.10rem + 0.75vw, 1.5rem)",     "name": "HTM xl"   },
+        { "slug": "htm25-2xl",  "size": "clamp(1.5rem, 1.30rem + 1.0vw, 2rem)",         "name": "HTM 2xl"  },
+        { "slug": "htm25-3xl",  "size": "clamp(1.875rem, 1.60rem + 1.4vw, 2.625rem)",   "name": "HTM 3xl"  },
+        { "slug": "htm25-4xl",  "size": "clamp(2.25rem, 1.80rem + 2.25vw, 3.5rem)",     "name": "HTM 4xl"  },
+        { "slug": "htm25-5xl",  "size": "clamp(2.75rem, 2.10rem + 3.25vw, 4.5rem)",     "name": "HTM 5xl"  }
+      ]
+    },
+
+    "spacing": {
+      "customSpacingSize": true,
+      "units": ["px", "em", "rem", "%", "vw", "vh"],
+      "spacingSizes": [
+        { "slug": "htm25-1",  "size": "0.25rem",  "name": "HTM 4px"   },
+        { "slug": "htm25-2",  "size": "0.5rem",   "name": "HTM 8px"   },
+        { "slug": "htm25-3",  "size": "0.75rem",  "name": "HTM 12px"  },
+        { "slug": "htm25-4",  "size": "1rem",     "name": "HTM 16px"  },
+        { "slug": "htm25-5",  "size": "1.25rem",  "name": "HTM 20px"  },
+        { "slug": "htm25-6",  "size": "1.5rem",   "name": "HTM 24px"  },
+        { "slug": "htm25-8",  "size": "2rem",     "name": "HTM 32px"  },
+        { "slug": "htm25-10", "size": "2.5rem",   "name": "HTM 40px"  },
+        { "slug": "htm25-12", "size": "3rem",     "name": "HTM 48px"  },
+        { "slug": "htm25-16", "size": "4rem",     "name": "HTM 64px"  },
+        { "slug": "htm25-20", "size": "5rem",     "name": "HTM 80px"  },
+        { "slug": "htm25-24", "size": "6rem",     "name": "HTM 96px"  },
+        { "slug": "htm25-32", "size": "8rem",     "name": "HTM 128px" }
+      ]
+    },
+
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    },
+
+    "shadow": {
+      "defaultPresets": false,
+      "presets": [
+        { "slug": "htm25-card",   "shadow": "0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04)", "name": "Card shadow" },
+        { "slug": "htm25-lg",     "shadow": "0 8px 32px rgba(0,0,0,0.10)",                              "name": "Large shadow" },
+        { "slug": "htm25-neo",    "shadow": "4px 4px 0 #000000",                                         "name": "Neo shadow"  },
+        { "slug": "htm25-neo-lg", "shadow": "8px 8px 0 #000000",                                         "name": "Neo shadow large" },
+        { "slug": "htm25-glow-violet", "shadow": "0 0 40px rgba(120,110,255,0.30)",                      "name": "Glow violet" },
+        { "slug": "htm25-glow-pink",   "shadow": "0 0 48px rgba(255,60,172,0.35)",                       "name": "Glow pink"   }
+      ]
+    },
+
+    "layout": {
+      "contentSize": "1280px",
+      "wideSize": "1440px"
+    },
+
+    "blocks": {
+      "core/button": { "border": { "radius": true } },
+      "core/image":  { "lightbox": { "enabled": true, "allowEditing": true } }
+    },
+
+    "custom": {
+      "htm25": {
+        "bento": {
+          "gap":      "1rem",
+          "gap-lg":   "1.5rem",
+          "radius":   "1rem",
+          "shadow":   "0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04)"
+        },
+        "glass": {
+          "blur":     "blur(16px)",
+          "blur-lg":  "blur(32px)",
+          "bg":       "rgba(255,255,255,0.06)",
+          "border":   "rgba(255,255,255,0.12)"
+        },
+        "dark": {
+          "lime":     "#E4FF3C",
+          "card-bg":  "#111113",
+          "border":   "#27272A"
+        },
+        "aurora": {
+          "pink":     "#FF3CAC",
+          "purple":   "#784BA0",
+          "blue":     "#2B86C5",
+          "cyan":     "#00F0FF",
+          "green":    "#38EF7D"
+        },
+        "neo": {
+          "shadow":       "4px 4px 0 #000",
+          "shadow-lg":    "8px 8px 0 #000",
+          "border-width": "2px",
+          "yellow":       "#FFE500",
+          "pink":         "#FF2D78",
+          "blue":         "#0038FF"
+        }
+      }
+    }
+  },
+
+  "styles": {
+    "color": {
+      "background": "#FFFFFF",
+      "text":       "#374151"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--htm25-inter)",
+      "fontSize":   "var(--wp--preset--font-size--htm25-base)",
+      "lineHeight": "1.6"
+    },
+    "spacing": {
+      "blockGap": "var(--wp--preset--spacing--htm25-8)"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--htm25-inter)",
+          "fontWeight": "700",
+          "lineHeight": "1.15",
+          "letterSpacing": "-0.03em"
+        }
+      },
+      "h1": { "typography": { "fontSize": "var(--wp--preset--font-size--htm25-5xl)" } },
+      "h2": { "typography": { "fontSize": "var(--wp--preset--font-size--htm25-4xl)" } },
+      "h3": { "typography": { "fontSize": "var(--wp--preset--font-size--htm25-3xl)" } },
+      "h4": { "typography": { "fontSize": "var(--wp--preset--font-size--htm25-2xl)" } },
+      "h5": { "typography": { "fontSize": "var(--wp--preset--font-size--htm25-xl)"  } },
+      "h6": { "typography": { "fontSize": "var(--wp--preset--font-size--htm25-lg)"  } },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--htm25-bento-accent)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--htm25-bento-accent-dk)"
+          }
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--htm25-bento-accent)",
+          "text":       "#FFFFFF"
+        },
+        "typography": {
+          "fontSize":   "var(--wp--preset--font-size--htm25-sm)",
+          "fontWeight": "600"
+        },
+        "border": {
+          "radius": "0.5rem"
+        },
+        "spacing": {
+          "padding": {
+            "top":    "0.625rem",
+            "right":  "1.25rem",
+            "bottom": "0.625rem",
+            "left":   "1.25rem"
+          }
+        }
+      }
+    },
+    "blocks": {
+      "core/separator": {
+        "color": {
+          "text": "var(--wp--preset--color--htm25-bento-border)"
+        }
+      },
+      "core/code": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--htm25-mono)"
+        }
+      }
+    }
+  },
+
+  "templateParts": [],
+
+  "patterns": []
+}

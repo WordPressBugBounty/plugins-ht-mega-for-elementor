@@ -3,7 +3,7 @@
 final class HTMega_Addons_Elementor {
     
     const MINIMUM_ELEMENTOR_VERSION = '2.5.0';
-    const MINIMUM_HTMEGA_PRO_VERSION = '1.9.5';
+    const MINIMUM_HTMEGA_PRO_VERSION = '2.2.0';
     const MINIMUM_PHP_VERSION = '7.0';
 
     /**
@@ -359,7 +359,8 @@ final class HTMega_Addons_Elementor {
                 'message'     => $message,
                 'display_after'  => 1,
                 'expire_time' => 0,
-                'close_by'    => 'user'
+                'close_by'    => 'user',
+                'show_on_plugins_page' => true,
             ]
         );
     }

@@ -1,0 +1,503 @@
+/**
+ * HT Mega 2026 — Services Section
+ * BEM component: .htm25-services
+ *
+ * All token names match htm25-tokens.css exactly:
+ *   font sizes   → --htm25-text-*
+ *   font weights → --htm25-weight-*
+ *   line heights → --htm25-leading-*
+ *   tracking     → --htm25-tracking-*
+ *   surfaces     → --htm25-bg-*
+ *   borders      → --htm25-border-*
+ *   radius       → --htm25-radius-*
+ *   shadows      → --htm25-shadow-*
+ *   buttons      → --htm25-btn-*  (py / px / primary-text)
+ *   spacing      → --htm25-space-*
+ *   sections     → --htm25-section-py / --htm25-section-px
+ *
+ * Design styles applied via: .htm25-style--{bento|glass|dark|aurora|neo}
+ * Layouts applied via: .htm25-services--{grid|list|centered}
+ */
+
+/* ── Base wrapper ─────────────────────────────────────────────── */
+
+.htm25-services {
+    position: relative;
+    overflow: hidden;
+    padding-block: var(--htm25-section-py);
+    padding-inline: var(--htm25-section-px);
+    background-color: var(--htm25-bg-section);
+    color: var(--htm25-text-body);
+}
+
+/* Glass / Aurora get their full gradient hero background */
+.htm25-services.htm25-style--glass,
+.htm25-services.htm25-style--aurora {
+    background: var(--htm25-gradient-hero);
+}
+
+/* ── Background decorations ───────────────────────────────────── */
+
+.htm25-services__bg-blobs {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: var(--htm25-z-below, -1);
+}
+
+.htm25-services__blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: htm25-blob-drift 14s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+/* Glass blobs */
+.htm25-style--glass .htm25-services__blob--1 {
+    width: 520px; height: 520px;
+    top: -160px; right: -60px;
+    background: radial-gradient(circle, rgba(120,110,255,0.40), transparent 70%);
+    animation-duration: 18s;
+}
+.htm25-style--glass .htm25-services__blob--2 {
+    width: 440px; height: 440px;
+    bottom: -100px; left: -80px;
+    background: radial-gradient(circle, rgba(6,182,212,0.30), transparent 70%);
+    animation-duration: 22s;
+    animation-direction: alternate-reverse;
+}
+
+/* Aurora blobs */
+.htm25-style--aurora .htm25-services__blob--1 {
+    width: 580px; height: 580px;
+    top: -200px; left: -100px;
+    background: radial-gradient(circle, rgba(255,60,172,0.35), transparent 70%);
+    animation-duration: 20s;
+}
+.htm25-style--aurora .htm25-services__blob--2 {
+    width: 480px; height: 480px;
+    bottom: -120px; right: -80px;
+    background: radial-gradient(circle, rgba(43,134,197,0.28), transparent 70%);
+    animation-duration: 24s;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes htm25-blob-drift {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(30px, 20px) scale(1.08); }
+}
+
+
+/* ── Inner container ──────────────────────────────────────────── */
+
+.htm25-services__inner {
+    position: relative;
+    z-index: var(--htm25-z-base, 0);
+    max-width: var(--htm25-container-xl, 1280px);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--htm25-space-12, 3rem);
+}
+
+/* ── Section header ───────────────────────────────────────────── */
+
+.htm25-services__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--htm25-space-4, 1rem);
+    max-width: 52ch;
+}
+
+/* Centered layout: centre the header */
+.htm25-services--centered .htm25-services__header {
+    align-items: center;
+    text-align: center;
+    max-width: 60ch;
+    margin-inline: auto;
+}
+
+.htm25-services--centered .htm25-services__section-label {
+    align-self: center;
+}
+
+/* ── Section label ────────────────────────────────────────────── */
+
+.htm25-services .htm25-services__section-label {
+    margin: 0;
+    font-size: var(--htm25-text-xs);
+    font-weight: var(--htm25-weight-semibold);
+    letter-spacing: var(--htm25-tracking-wider);
+    text-transform: uppercase;
+    color: var(--htm25-section-label-color, var(--htm25-accent-primary));
+}
+
+/* ── Headline ─────────────────────────────────────────────────── */
+
+.htm25-services .htm25-services__headline {
+    white-space: pre-line;
+
+    margin: 0;
+    font-size: var(--htm25-text-3xl);
+    font-weight: var(--htm25-weight-bold);
+    line-height: var(--htm25-leading-tight);
+    letter-spacing: var(--htm25-tracking-tight);
+    color: var(--htm25-text-heading);
+}
+
+/* Base — always clip to text so Elementor gradient/color controls render as text, not a box */
+.htm25-services .htm25-services__headline-accent {
+    background-color: var(--htm25-accent-primary);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Glass + Aurora: gradient text */
+.htm25-style--glass .htm25-services__headline-accent,
+.htm25-style--aurora .htm25-services__headline-accent {
+    background-color: transparent;
+    background-image: var(--htm25-gradient-text, var(--htm25-gradient-btn));
+}
+
+/* ── Description ──────────────────────────────────────────────── */
+
+.htm25-services .htm25-services__description {
+    margin: 0;
+    font-size: var(--htm25-text-lg);
+    line-height: var(--htm25-leading-normal);
+    color: var(--htm25-text-muted);
+    max-width: 52ch;
+}
+
+.htm25-services--centered .htm25-services__description {
+    max-width: 60ch;
+}
+
+/* ── Cards container ──────────────────────────────────────────── */
+
+.htm25-services .htm25-services__cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--htm25-space-6, 1.5rem);
+}
+
+/* Grid layout columns */
+.htm25-services--grid.htm25-services--grid .htm25-services__cards--cols-2 { grid-template-columns: repeat(2, 1fr); }
+.htm25-services--grid.htm25-services--grid .htm25-services__cards--cols-3 { grid-template-columns: repeat(3, 1fr); }
+.htm25-services--grid.htm25-services--grid .htm25-services__cards--cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Centered layout: auto-fill wrapping grid */
+.htm25-services--centered .htm25-services__cards {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* List layout: single column stack */
+.htm25-services--list .htm25-services__cards {
+    grid-template-columns: 1fr;
+    gap: var(--htm25-space-4, 1rem);
+}
+
+/* ── Individual service card ──────────────────────────────────── */
+
+.htm25-services__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--htm25-space-4, 1rem);
+    padding: var(--htm25-space-8, 2rem);
+    border-radius: var(--htm25-radius-card);
+    background: var(--htm25-bg-card);
+    border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+    box-shadow: var(--htm25-shadow-card);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.htm25-services__card:hover {
+    box-shadow: var(--htm25-shadow-card-hover);
+    transform: translateY(-3px);
+}
+
+/* List layout: horizontal card */
+.htm25-services--list .htm25-services__card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--htm25-space-6, 1.5rem);
+    padding: var(--htm25-space-6, 1.5rem);
+    transform: none;   /* no lift on list cards */
+}
+
+.htm25-services--list .htm25-services__card:hover {
+    transform: none;
+}
+
+/* Centered layout: centre-align card content */
+.htm25-services--centered .htm25-services__card {
+    align-items: center;
+    text-align: center;
+}
+
+/* Glass card */
+.htm25-style--glass .htm25-services__card {
+    background: var(--htm25-glass-bg);
+    -webkit-backdrop-filter: var(--htm25-glass-blur);
+            backdrop-filter: var(--htm25-glass-blur);
+    border-color: var(--htm25-border-color);
+}
+
+/* Dark card */
+.htm25-style--dark .htm25-services__card {
+    background: var(--htm25-bg-card);
+    border-color: var(--htm25-border-color);
+}
+
+/* Aurora card */
+.htm25-style--aurora .htm25-services__card {
+    background: var(--htm25-bg-card);
+    border-color: var(--htm25-border-color);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+}
+
+/* Neo-Brutalist card */
+.htm25-style--neo .htm25-services__card {
+    border-width: 2px;
+    border-color: var(--htm25-border-color);
+    box-shadow: 3px 3px 0 var(--htm25-border-color);
+    border-radius: 0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.htm25-style--neo .htm25-services__card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--htm25-border-color);
+}
+
+/* Neo: list layout re-override (no translate on hover) */
+.htm25-style--neo.htm25-services--list .htm25-services__card:hover {
+    transform: none;
+    box-shadow: 5px 5px 0 var(--htm25-border-color);
+}
+
+/* Neo: solid yellow wrap + black icon */
+.htm25-style--neo .htm25-services__card-icon-wrap {
+    background: #FFE500;
+    border: 2px solid #000000;
+    border-radius: 0;
+}
+.htm25-style--neo.htm25-services .htm25-services__card-icon,
+.htm25-style--neo.htm25-services .htm25-services__card-icon svg,
+.htm25-style--neo.htm25-services .htm25-services__card-icon i {
+    color: #000000;
+}
+.htm25-style--neo.htm25-services .htm25-services__card-icon svg path {
+    fill: #000000;
+}
+
+/* ── Icon wrapper ─────────────────────────────────────────────── */
+
+.htm25-services__card-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--htm25-radius-icon, var(--htm25-radius-md));
+    background: var(--htm25-accent-primary-lt);
+}
+
+/* Slightly larger icon box in grid layout */
+.htm25-services--grid .htm25-services__card-icon-wrap {
+    width: 3.25rem;
+    height: 3.25rem;
+}
+
+/* List layout: don't shrink the icon box */
+.htm25-services--list .htm25-services__card-icon-wrap {
+    margin-top: 0.125rem; /* optical alignment with title text */
+}
+
+/* ── Icon itself ──────────────────────────────────────────────── */
+
+.htm25-services .htm25-services__card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    color: var(--htm25-accent-primary);
+}
+
+.htm25-services .htm25-services__card-icon svg,
+.htm25-services .htm25-services__card-icon i {
+    display: block;
+    color: var(--htm25-accent-primary);
+}
+
+.htm25-services .htm25-services__card-icon svg {
+    width: 1.2em;
+    height: 1.2em;
+    fill: currentColor;
+}
+
+/* ── Card body ────────────────────────────────────────────────── */
+
+.htm25-services__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--htm25-space-2, 0.5rem);
+    flex: 1;
+}
+
+/* Centered layout: centre the body text */
+.htm25-services--centered .htm25-services__card-body {
+    align-items: center;
+}
+
+/* ── Card title ───────────────────────────────────────────────── */
+
+.htm25-services .htm25-services__card-title {
+    margin: 0;
+    font-size: var(--htm25-text-lg);
+    font-weight: var(--htm25-weight-semibold);
+    line-height: var(--htm25-leading-snug);
+    color: var(--htm25-text-heading);
+}
+
+/* ── Card description ─────────────────────────────────────────── */
+
+.htm25-services .htm25-services__card-description {
+    margin: 0;
+    font-size: var(--htm25-text-sm);
+    line-height: var(--htm25-leading-normal);
+    color: var(--htm25-text-muted);
+}
+
+/* ── Card link ────────────────────────────────────────────────── */
+
+.htm25-services__card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--htm25-space-1, 0.25rem);
+    margin-top: var(--htm25-space-2, 0.5rem);
+    font-size: var(--htm25-text-sm);
+    font-weight: var(--htm25-weight-semibold);
+    color: var(--htm25-text-link);
+    text-decoration: none;
+    transition: color 0.15s ease, gap 0.15s ease;
+}
+
+.htm25-services__card-link:hover {
+    color: var(--htm25-text-link-hover);
+    gap: var(--htm25-space-2, 0.5rem);
+}
+
+.htm25-services__card-link-arrow {
+    display: inline-flex;
+    transition: transform 0.15s ease;
+}
+
+.htm25-services__card-link:hover .htm25-services__card-link-arrow {
+    transform: translateX(3px);
+}
+
+/* ── Bottom CTA ───────────────────────────────────────────────── */
+
+.htm25-services__cta-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--htm25-space-4, 1rem);
+}
+
+.htm25-services__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--htm25-space-2, 0.5rem);
+    padding: var(--htm25-btn-py) var(--htm25-btn-px);
+    font-size: var(--htm25-btn-font-size, var(--htm25-text-sm));
+    font-weight: var(--htm25-btn-font-weight, var(--htm25-weight-semibold));
+    line-height: 1;
+    border-radius: var(--htm25-btn-radius);
+    background: var(--htm25-btn-primary-bg);
+    color: var(--htm25-btn-primary-text);
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.htm25-services__cta:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    box-shadow: var(--htm25-shadow-btn);
+}
+
+.htm25-services__cta-icon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875em;
+    transition: transform 0.15s ease;
+}
+
+.htm25-services__cta-icon i   { display: block; line-height: 1; }
+.htm25-services__cta-icon svg { display: block; width: 1em; height: 1em; fill: currentColor; }
+
+.htm25-services__cta:hover .htm25-services__cta-icon {
+    transform: translateX(3px);
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+
+/* 4-col → 2-col on large tablet */
+@media (max-width: 1200px) {
+    .htm25-services--grid .htm25-services__cards--cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3-col → 2-col on tablet */
+@media (max-width: 1024px) {
+    .htm25-services--grid .htm25-services__cards--cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* All grids → 1-col on small tablet, list stays row */
+@media (max-width: 640px) {
+    .htm25-services--grid .htm25-services__cards--cols-2,
+    .htm25-services--grid .htm25-services__cards--cols-3,
+    .htm25-services--grid .htm25-services__cards--cols-4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* List: stack vertically on mobile */
+    .htm25-services--list .htm25-services__card {
+        flex-direction: column;
+    }
+
+    .htm25-services__cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+    .htm25-services__blob {
+        animation: none;
+    }
+
+    .htm25-services__card,
+    .htm25-services__cta,
+    .htm25-services__cta-icon,
+    .htm25-services__card-link,
+    .htm25-services__card-link-arrow {
+        transition: none;
+    }
+}

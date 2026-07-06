@@ -1,0 +1,445 @@
+/**
+ * HT Mega 2026 — CTA Section Widget
+ * File: assets/css/widgets/htm25-cta.css
+ *
+ * BEM component: .htm25-cta
+ * Requires htm25-tokens.css (design token system)
+ * Zero hardcoded colours — all values via var(--htm25-*)
+ */
+
+/* =========================================================
+   SECTION WRAPPER
+   ========================================================= */
+.htm25-cta {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--htm25-section-py);
+  padding-inline: var(--htm25-section-px);
+  background-color: var(--htm25-bg-section);
+}
+
+/* Bento: subtle card-style container */
+.htm25-style--bento .htm25-cta__inner {
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: var(--htm25-radius-3xl);
+  box-shadow: var(--htm25-shadow-lg);
+  padding: var(--htm25-space-16) var(--htm25-space-16);
+}
+
+/* Dark: slightly elevated card */
+.htm25-style--dark .htm25-cta__inner {
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: var(--htm25-radius-lg);
+  padding: var(--htm25-space-16) var(--htm25-space-16);
+}
+
+/* Glass + Aurora: frosted card on gradient */
+.htm25-cta.htm25-style--glass,
+.htm25-cta.htm25-style--aurora {
+  background: var(--htm25-gradient-hero);
+}
+
+.htm25-style--glass .htm25-cta__inner,
+.htm25-style--aurora .htm25-cta__inner {
+  background: var(--htm25-glass-bg, var(--htm25-bg-card));
+  -webkit-backdrop-filter: var(--htm25-glass-blur, none);
+          backdrop-filter: var(--htm25-glass-blur, none);
+  border: var(--htm25-border-width) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: var(--htm25-radius-3xl);
+  padding: var(--htm25-space-16) var(--htm25-space-16);
+}
+
+/* Neo: thick border, offset shadow */
+.htm25-style--neo .htm25-cta__inner {
+  background-color: var(--htm25-bg-card);
+  border: var(--htm25-border-width-thick, 3px) var(--htm25-border-style) var(--htm25-border-color);
+  border-radius: 0;
+  box-shadow: var(--htm25-shadow-lg);
+  padding: var(--htm25-space-16) var(--htm25-space-16);
+}
+
+/* ── Background decoration (glass + aurora) ── */
+.htm25-cta__bg-blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.htm25-cta__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.50;
+  animation: htm25-ctablob-drift 16s ease-in-out infinite alternate;
+}
+
+.htm25-cta__blob--1 {
+  width: 60vw;
+  height: 45vw;
+  max-width: 860px;
+  max-height: 640px;
+  top: -20%;
+  left: -10%;
+  background: radial-gradient(circle, var(--htm25-accent-primary) 0%, transparent 70%);
+  animation-delay: 0s;
+}
+
+.htm25-cta__blob--2 {
+  width: 50vw;
+  height: 40vw;
+  max-width: 720px;
+  max-height: 560px;
+  bottom: -20%;
+  right: -8%;
+  background: radial-gradient(circle, var(--htm25-accent-secondary, var(--htm25-accent-primary)) 0%, transparent 70%);
+  animation-delay: -6s;
+}
+
+@keyframes htm25-ctablob-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(4%, -3%) scale(1.08); }
+  100% { transform: translate(-2%, 5%) scale(0.95); }
+}
+
+
+/* =========================================================
+   INNER WRAPPER
+   ========================================================= */
+.htm25-cta__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--htm25-container-xl);
+  margin-inline: auto;
+}
+
+/* =========================================================
+   CENTERED LAYOUT
+   ========================================================= */
+.htm25-cta--centered .htm25-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.htm25-cta--centered .htm25-cta__content {
+  max-width: 720px;
+  width: 100%;
+}
+
+/* =========================================================
+   SPLIT LAYOUT
+   ========================================================= */
+.htm25-cta--split .htm25-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--htm25-space-16);
+  align-items: center;
+}
+
+/* Image on left: swap column order */
+.htm25-cta--split.htm25-cta--image-left .htm25-cta__content {
+  order: 2;
+}
+.htm25-cta--split.htm25-cta--image-left .htm25-cta__media {
+  order: 1;
+}
+
+.htm25-cta--split .htm25-cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.htm25-cta--split .htm25-cta__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--htm25-radius-2xl);
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.htm25-style--neo .htm25-cta--split .htm25-cta__image {
+  border-radius: 0;
+  border: var(--htm25-border-width-thick, 3px) solid var(--htm25-border-color);
+  box-shadow: var(--htm25-shadow-card);
+}
+
+.htm25-cta__image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--htm25-radius-2xl);
+  background-color: var(--htm25-bg-subtle);
+  border: var(--htm25-border-width) dashed var(--htm25-border-color-strong);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--htm25-space-3);
+  color: var(--htm25-text-muted);
+  font-size: var(--htm25-text-sm);
+}
+
+/* =========================================================
+   BANNER LAYOUT
+   ========================================================= */
+
+/* content is the flex row — headline fills left, actions pin right */
+.htm25-cta--banner .htm25-cta__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--htm25-space-8);
+  flex-wrap: wrap;
+}
+
+/* compact strip hides label and description */
+.htm25-cta--banner .htm25-cta__section-label,
+.htm25-cta--banner .htm25-cta__description {
+  display: none;
+}
+
+.htm25-cta--banner .htm25-cta__headline {
+  flex: 1;
+  font-size: var(--htm25-text-2xl);
+  margin-bottom: 0;
+  min-width: 200px;
+}
+
+.htm25-cta--banner .htm25-cta__actions {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   CONTENT ELEMENTS
+   ========================================================= */
+.htm25-cta .htm25-cta__section-label {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  font-size: var(--htm25-text-xs);
+  font-weight: var(--htm25-weight-semibold);
+  letter-spacing: var(--htm25-tracking-wider);
+  text-transform: uppercase;
+  color: var(--htm25-section-label-color, var(--htm25-accent-primary));
+  margin-bottom: var(--htm25-space-5);
+}
+
+/* Center label in centered layout */
+.htm25-cta--centered .htm25-cta__section-label {
+  margin-inline: auto;
+}
+
+.htm25-cta .htm25-cta__headline {
+    white-space: pre-line;
+
+  font-family: var(--htm25-font-heading);
+  font-size: var(--htm25-text-4xl);
+  font-weight: var(--htm25-weight-heading, var(--htm25-weight-bold));
+  line-height: var(--htm25-leading-heading, var(--htm25-leading-tight));
+  letter-spacing: var(--htm25-tracking-heading, var(--htm25-tracking-tight));
+  color: var(--htm25-section-title-color, var(--htm25-text-heading));
+  margin-top: 0;
+  margin-bottom: var(--htm25-space-6);
+}
+
+/* Base — always clip to text so Elementor gradient/color controls render as text, not a box */
+.htm25-cta .htm25-cta__headline-accent {
+  background-color: var(--htm25-accent-primary);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Glass + Aurora: gradient text */
+.htm25-style--glass .htm25-cta__headline-accent,
+.htm25-style--aurora .htm25-cta__headline-accent {
+  background-color: transparent;
+  background-image: var(--htm25-gradient-text, var(--htm25-gradient-btn));
+}
+
+/* Neo: heading color text (NOT accent-primary) */
+.htm25-style--neo .htm25-cta__headline-accent {
+  background-color: var(--htm25-text-heading);
+  background-image: none;
+}
+
+.htm25-cta .htm25-cta__description {
+  font-size: var(--htm25-text-lg);
+  line-height: var(--htm25-leading-normal);
+  color: var(--htm25-section-body-color, var(--htm25-text-muted));
+  margin-top: 0;
+  margin-bottom: var(--htm25-space-8);
+  max-width: 56ch;
+}
+
+/* Centered layout: center-align description */
+.htm25-cta--centered .htm25-cta__description {
+  margin-inline: auto;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+.htm25-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--htm25-space-4);
+  flex-wrap: wrap;
+}
+
+.htm25-cta--centered .htm25-cta__actions {
+  justify-content: center;
+}
+
+.htm25-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--htm25-space-2);
+  white-space: nowrap;
+}
+
+/* Primary button — size up slightly for CTA prominence */
+.htm25-cta__btn--primary {
+  padding: calc( var(--htm25-btn-py) * 1.2 ) calc( var(--htm25-btn-px) * 1.2 );
+  font-size: var(--htm25-text-base);
+}
+
+/* Icon inside buttons */
+.htm25-cta__btn--primary i,
+.htm25-cta__btn--secondary i {
+  display: block;
+  line-height: 1;
+}
+.htm25-cta__btn--primary svg,
+.htm25-cta__btn--secondary svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+/* Secondary button default state — dark-background styles */
+.htm25-style--glass .htm25-cta__btn--secondary,
+.htm25-style--dark .htm25-cta__btn--secondary,
+.htm25-style--aurora .htm25-cta__btn--secondary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Secondary button hover — dark-background styles (glass, dark, aurora) */
+/* Token outline-hover fills dark, clashes with dark section backgrounds */
+.htm25-style--glass .htm25-cta__btn--secondary:hover,
+.htm25-style--dark .htm25-cta__btn--secondary:hover,
+.htm25-style--aurora .htm25-cta__btn--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+/* Neo button transforms */
+.htm25-style--neo .htm25-cta__btn--primary {
+  box-shadow: var(--htm25-shadow-btn);
+}
+.htm25-style--neo .htm25-cta__btn--primary:hover {
+  transform: var(--htm25-btn-transform-hover);
+  box-shadow: var(--htm25-btn-shadow-hover);
+}
+.htm25-style--neo .htm25-cta__btn--primary:active {
+  transform: var(--htm25-btn-transform-active);
+  box-shadow: var(--htm25-btn-shadow-active);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1024px) {
+  .htm25-style--bento .htm25-cta__inner,
+  .htm25-style--dark  .htm25-cta__inner,
+  .htm25-style--glass .htm25-cta__inner,
+  .htm25-style--aurora .htm25-cta__inner,
+  .htm25-style--neo   .htm25-cta__inner {
+    padding: var(--htm25-space-12) var(--htm25-space-10);
+  }
+}
+
+@media (max-width: 768px) {
+  .htm25-cta--split .htm25-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .htm25-cta--split.htm25-cta--image-left .htm25-cta__content,
+  .htm25-cta--split.htm25-cta--image-left .htm25-cta__media {
+    order: unset;
+  }
+
+  .htm25-cta--split .htm25-cta__content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .htm25-cta--split .htm25-cta__section-label,
+  .htm25-cta--split .htm25-cta__description {
+    margin-inline: auto;
+  }
+
+  .htm25-cta--split .htm25-cta__actions {
+    justify-content: center;
+  }
+
+  .htm25-cta--banner .htm25-cta__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .htm25-cta--banner .htm25-cta__actions {
+    justify-content: center;
+  }
+
+  .htm25-style--bento .htm25-cta__inner,
+  .htm25-style--dark  .htm25-cta__inner,
+  .htm25-style--glass .htm25-cta__inner,
+  .htm25-style--aurora .htm25-cta__inner,
+  .htm25-style--neo   .htm25-cta__inner {
+    padding: var(--htm25-space-10) var(--htm25-space-6);
+  }
+
+  .htm25-cta .htm25-cta__headline {
+    font-size: var(--htm25-text-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .htm25-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .htm25-cta__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .htm25-cta__blob {
+    animation: none;
+  }
+
+  .htm25-cta__btn {
+    transition: none;
+  }
+}

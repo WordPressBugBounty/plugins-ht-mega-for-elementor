@@ -3,17 +3,17 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 3.1.2
+Stable tag: 3.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Elementor addon offering 135+ widgets — Mega Menu, Ready Templates, Page Builder, Slider, Gallery, Post Grid, AI Writer & more.
+Elementor addon offering 146+ widgets — Mega Menu, Ready Templates, Page Builder, Slider, Gallery, Post Grid, AI Writer & more.
 
 == Description ==
 
 ### Transform Your Elementor Page Builder into a Design Powerhouse
 
-Are you tired of Elementor's limitations holding back your creativity? **HT Mega** is the ultimate Elementor addon plugin that unlocks your full design potential with **135+ professional widgets**, **AI-powered content writer**, **theme builder**, and **790+ ready-made blocks**.
+Are you tired of Elementor's limitations holding back your creativity? **HT Mega** is the ultimate Elementor addon plugin that unlocks your full design potential with **146+ professional widgets**, **AI-powered content writer**, **theme builder**, and **790+ ready-made blocks**.
 
 Join WordPress professionals who’ve already transformed their workflow and build stunning websites 73% faster than before.
 
@@ -27,7 +27,7 @@ Join WordPress professionals who’ve already transformed their workflow and bui
 
 ✅ **All-in-One Solution**: Stop juggling multiple plugins. Get everything in one optimized package
 ✅ **AI Content Writer**: Create Elementor content instantly with GPT-4, Claude & Gemini
-✅ **135+ Professional Widgets**: From basic to advanced - we've got you covered
+✅ **146+ Professional Widgets**: From basic to advanced - we've got you covered
 ✅ **Theme Builder Included**: Design headers, footers, archives, and single posts
 ✅ **790+ Ready Blocks**: Pre-designed sections across 100+ categories
 ✅ **Lightning Fast**: Modular loading ensures optimal performance
@@ -36,13 +36,29 @@ Join WordPress professionals who’ve already transformed their workflow and bui
 ### 📊 By The Numbers 
 *(Combined Free & Pro features)*
 
-* **135+** Professional Widgets 
+* **146+** Professional Widgets
 * **14+** Powerful Modules
 * **790+** Ready-Made Blocks
 * **370+** Page Templates
-* **9** Gutenberg Blocks
+* **20** Gutenberg Blocks
 
 ### 🎯 Complete Widget Collection
+
+**🆕 2026 Trend-Ready Section Collection (11) — NEW in 3.2.0**
+
+Built around 2026's top design trends — Bento Grid, Glassmorphism, Dark Minimal, Aurora, and Neo-Brutalist — each of the 11 sections ships in all 5 styles with multiple layout variants, for both Elementor and Gutenberg (FSE):
+
+* **Hero**: Landing page hero sections with headline, description, and CTA layouts
+* **About / Feature**: Feature highlight sections with image + content columns
+* **Services**: Service showcase sections in grid, list, or centered layouts
+* **Testimonials**: Customer review sections in grid, masonry, or centered layouts
+* **Pricing Table**: Plan comparison sections with monthly/annual billing toggle
+* **Stats / Counter**: Animated number counter sections in row, grid, or bento layouts
+* **CTA Section**: Call-to-action sections in centered, split, or banner layouts
+* **Team**: Team member showcase sections in grid, list, or featured layouts
+* **FAQ**: Accessible accordion FAQ sections in simple, grid, or boxed layouts
+* **Blog / Posts**: WP_Query-powered post sections in grid, list, or featured layouts
+* **Contact**: Contact form + info sections in split, centered, or info-only layouts
 
 **General Widgets (39)**
 
@@ -237,6 +253,14 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 == Changelog ==
 
+= Version 3.2.0 - Date: 2026-07-06 =
+* Added: New 2026 Trend-Ready Section Collection — 11 ready-made pre-built sections (Hero, About/Feature, Services, Testimonials, Pricing Table, Stats/Counter, CTA, Team, FAQ, Blog/Posts, Contact) for Elementor.
+* Added: Each new section ships with 5 design styles — Bento Grid, Glassmorphism, Dark Minimal, Aurora, and Neo-Brutalist — plus multiple layout variants.
+* Added: Matching Gutenberg (FSE) blocks for all 11 new sections, fully compatible with block/Full Site Editing themes.
+* Improved: Settings panel — Gutenberg, Theme Builder, and third-party widget toggles moved into the Elements tab.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
+
 = Version 3.1.2 - Date: 2026-06-24 =
 * Fixed: Service title link spacing issues in the Services widget.
 * Fixed: A few minor issues.
@@ -390,95 +414,6 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 * Fixed: Gutenberg Button Block display issue.
 * Fixed: A few minor issues.
 * Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.8.9 - Date: 2025-06-18 =
-* Added: [Sapruin - Home Service Template Kit](https://library.wphtmega.com/sapruin-home-service-template/).
-* Added: [Sinza - Business Template Kit](https://library.wphtmega.com/sinza-business-template/).
-* Added: [Trimva - Hair Salon Template Kit](https://library.wphtmega.com/trimva-hair-salon-template/).
-* Added: [Axiona - AI Template Kit](https://library.wphtmega.com/axiona-ai-template/).
-* Added: Option to add a border to the Pricing Header in the Pricing Table widget.
-* Added: Option to set the width of the Pricing Footer in the Pricing Table widget.
-* Fixed: Issue with the WP Rocket plugin Media loading notice.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.8.8 - Date: 2025-05-26 =
-* Added: [Seavia – Yacht Boat Rental Template Kit](https://library.wphtmega.com/seavia-yacht-boat-rental-template/).
-* Added: Select options Color option in Contact Form 7 Widget.
-* Added: Magnifier lens height/width, box shadow, and border radius options in the Image Magnifier Widget.
-* Fixed: Issue with the magnifier not working properly in the Image Magnifier Widget.
-* Fixed: Default SVG icon color and size issues in the Panel Slider Widget.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.8.7 - Date: 2025-05-08 =
-* Added: [Autivio – Automobile Services Template Kit](https://library.wphtmega.com/autivio-automobile-template).
-* Added: [Luxorefi – Hotel Booking Template Kit](https://library.wphtmega.com/luxorefi-hotel-booking-template/).
-* Added: [Donarix – Charity & Nonprofit Template Kit](https://library.wphtmega.com/donarix-charity-template/).
-* Fixed: WPML compatibility issue in Theme Builder
-* Fixed: Default SVG icon size issue in the News Ticker Widget.
-* Fixed: Default SVG icon color issue in the Search Widget.
-* Fixed: PHP warning in the Section Title Widget.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-* Tested: Compatibility with the latest version of WordPress.
-
-= Version 2.8.6 - Date: 2025-04-20 =
-* Fixed: Audio Player not working issue in Audio Player Widget.
-* Fixed: Global visibility issue of the Scroll To Top Button in the Scroll To Top Module.
-* Fixed: Default false selection issue in the Select field on the Admin Dashboard.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of WordPress.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.8.5 - Date: 2025-04-08 =
-* Added: [Clenix – Cleaning Service Template Kit](https://library.wphtmega.com/clenix-cleaning-service-template/).
-* Added: [Legality – Law Firm Template Kit](https://library.wphtmega.com/legality-law-firm-template/).
-* Added: [Realsto – Real Estate Template Kit](https://library.wphtmega.com/realsto-real-estate-template/).
-* Added: [Dentipai – Medical & Dental Template Kit](https://library.wphtmega.com/dentipai-medical-template/).
-
-* Added: Option to update the select field arrow icon in the Contact Form 7 widget.
-* Added: Option to add category border and border radius in the Post Carousel widget.
-* Added: Option to add a social media container border for Style Six in the Team Member widget.
-* Improved: Template Library layout by Category Templates.
-* Fixed: Issue with removing category background color in the Post Carousel widget.
-* Fixed: Slick carousel Console Error.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.8.4 - Date: 2025-03-18 =
-* Added: Mailbes SaaS – Elementor Template Kit.
-* Added: Constia Construction – Elementor Template Kit.
-* Added: Saafigo SaaS – Elementor Template Kit.
-* Added: MedCare Medical – Elementor Template Kit.
-* Added: Appixy SaaS – Elementor Template Kit.
-* Added: SaaSo SaaS – Elementor Template Kit.
-* Added: Theme Builder to easily manage HT Mega Theme Builder Templates.
-* Added: Pricing Button Alignment option in the Pricing Table Widget.
-* Added: Option to add Card Border, Border Radius, Background Color, and Padding in the Post Carousel Widget.
-* Added: Option to add Team Member Image Border, Border Radius, and Padding in the Team Member Widget.
-* Fixed: Button Typography not working issue in the Pricing Table Widget.
-* Fixed: Button SVG Icon transition issue in the Button Widget.
-* Fixed: Pricing Header Alignment issue in the Pricing Table Widget.
-* Fixed: Pricing Button Background Hover color issue in the Pricing Table Widget.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.8.3 - Date: 2025-03-02 =
-* Added: BuildBes Construction – Elementor Template Kit.
-* Added: Dynamic Tag option in the Thumbnail Slider Widget.
-* Added: Option to add a Button Icon in the Service Widget.
-* Added: Option to adjust Input Width in the MailChimp Widget.
-* Fixed: SVG Icon size issue in the Button Widget.
-* Fixed: Video Play Icon alignment issue in the Video Player Widget.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.8.2 - Date: 2025-02-04 =
-* Fixed: Escaping & Sanitizing issues.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
 
 
 == Installation ==

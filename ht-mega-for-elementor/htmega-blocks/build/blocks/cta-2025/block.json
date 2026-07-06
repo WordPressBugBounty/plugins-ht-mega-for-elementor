@@ -1,0 +1,505 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "htmega/cta-2025",
+  "version": "1.0.0",
+  "title": "CTA Section 2026",
+  "category": "htmega-blocks",
+  "icon": "megaphone",
+  "description": "Call-to-action section with centered, split, and banner layouts across five design styles.",
+  "keywords": [
+    "cta",
+    "call to action",
+    "htmega",
+    "2026",
+    "banner"
+  ],
+  "textdomain": "htmega-addons",
+  "render": "file:./index.php",
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "centered"
+    },
+    "imagePosition": {
+      "type": "string",
+      "default": "right"
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "Get Started Today"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Ready to Transform Your Workflow?"
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "Transform"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "Join thousands of teams already using our platform to ship faster, collaborate smarter, and grow with confidence."
+    },
+    "showPrimaryCta": {
+      "type": "boolean",
+      "default": true
+    },
+    "primaryCtaText": {
+      "type": "string",
+      "default": "Start Free Trial"
+    },
+    "primaryCtaUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "primaryCtaTarget": {
+      "type": "string",
+      "default": "_self"
+    },
+    "primaryCtaIcon": {
+      "type": "string",
+      "default": "fas fa-arrow-right"
+    },
+    "showPrimaryCtaIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "primaryCtaIconPosition": {
+      "type": "string",
+      "default": "after"
+    },
+    "showSecondaryCta": {
+      "type": "boolean",
+      "default": true
+    },
+    "secondaryCtaText": {
+      "type": "string",
+      "default": "Watch Demo"
+    },
+    "secondaryCtaUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "secondaryCtaTarget": {
+      "type": "string",
+      "default": "_self"
+    },
+    "ctaImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaImageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "stylePrimaryBtnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnHoverBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stylePrimaryBtnBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "stylePrimaryBtnShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "stylePrimaryBtnTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "primaryBtnBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "primaryBtnBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "primaryBtnBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "primaryBtnHoverBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "primaryBtnHoverBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "primaryBtnHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnHoverBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSecondaryBtnBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSecondaryBtnTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "secondaryBtnBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryBtnBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "secondaryBtnBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryBtnHoverBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "secondaryBtnHoverBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "secondaryBtnHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleImageBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleImageShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "imageBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "imageBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "imageBorderColor": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

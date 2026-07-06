@@ -1,0 +1,486 @@
+{
+  "name": "htmega/services-2025",
+  "category": "htmega-blocks",
+  "keywords": [
+    "services",
+    "cards",
+    "grid",
+    "list",
+    "section",
+    "htmega",
+    "2026"
+  ],
+  "description": "A Services section with repeatable service cards, 5 design style presets, and 3 layouts (Card Grid, Icon-Left List, Centered). Part of the HT Mega 2026 Collection.",
+  "title": "Services 2026",
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "attributes": {
+    "blockUniqId": {
+      "type": "string",
+      "default": ""
+    },
+    "preview": {
+      "type": "boolean",
+      "default": false
+    },
+    "designStyle": {
+      "type": "string",
+      "default": "bento"
+    },
+    "layout": {
+      "type": "string",
+      "default": "grid"
+    },
+    "serviceColumns": {
+      "type": "string",
+      "default": "3"
+    },
+    "showSectionLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionLabelText": {
+      "type": "string",
+      "default": "What We Offer"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Services built for\nmodern teams."
+    },
+    "headlineHighlight": {
+      "type": "string",
+      "default": "modern teams"
+    },
+    "headlineTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "description": {
+      "type": "string",
+      "default": "Everything your team needs to design, build, and ship faster than ever before."
+    },
+    "serviceItems": {
+      "type": "array",
+      "default": [
+        {
+          "icon": "fas fa-bolt",
+          "title": "Speed Optimisation",
+          "description": "Sub-second load times out of the box. We fine-tune Core Web Vitals so your users never wait.",
+          "showLink": false,
+          "linkText": "Learn more",
+          "linkUrl": "#"
+        },
+        {
+          "icon": "fas fa-shield-alt",
+          "title": "Security Hardening",
+          "description": "Proactive vulnerability scanning, nonce protection, and sanitised outputs on every request.",
+          "showLink": false,
+          "linkText": "Learn more",
+          "linkUrl": "#"
+        },
+        {
+          "icon": "fas fa-palette",
+          "title": "Design Systems",
+          "description": "Token-driven component libraries that keep your brand consistent across every surface.",
+          "showLink": false,
+          "linkText": "Learn more",
+          "linkUrl": "#"
+        },
+        {
+          "icon": "fas fa-universal-access",
+          "title": "Accessibility Audits",
+          "description": "WCAG 2.1 AA compliance reviews with actionable fixes delivered in plain English.",
+          "showLink": false,
+          "linkText": "Learn more",
+          "linkUrl": "#"
+        },
+        {
+          "icon": "fas fa-chart-line",
+          "title": "Analytics Setup",
+          "description": "GA4, GTM, and conversion tracking configured correctly from day one — no data gaps.",
+          "showLink": false,
+          "linkText": "Learn more",
+          "linkUrl": "#"
+        },
+        {
+          "icon": "fas fa-headset",
+          "title": "Ongoing Support",
+          "description": "Dedicated account managers and priority response SLAs so you're never left waiting.",
+          "showLink": false,
+          "linkText": "Learn more",
+          "linkUrl": "#"
+        }
+      ]
+    },
+    "showCta": {
+      "type": "boolean",
+      "default": false
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "View All Services"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "ctaTarget": {
+      "type": "boolean",
+      "default": false
+    },
+    "ctaIcon": {
+      "type": "string",
+      "default": "fas fa-arrow-right"
+    },
+    "styleAccentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleSectionPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleSectionShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "sectionBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "sectionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "sectionBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleContainerMaxWidth": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineHighlightGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleHeadlineTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleHeadlineMargin": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleCardBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleCardShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "cardBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "cardBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleIconSize": {
+      "type": "number",
+      "default": 0
+    },
+    "styleCardTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardTitleTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleCardDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCardDescTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleCtaBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverBgGradient": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleCtaBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleCtaShadow": {
+      "type": "object",
+      "default": {
+        "inset": false,
+        "horizontal": "",
+        "vertical": "",
+        "blur": "",
+        "spread": "",
+        "color": ""
+      }
+    },
+    "styleCtaTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "ctaBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "ctaBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaHoverBorderType": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaHoverBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "ctaHoverBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "styleLabelTypography": {
+      "type": "object",
+      "default": {
+        "family": "",
+        "size": "",
+        "sizeUnit": "px",
+        "weight": "",
+        "lineHeight": "",
+        "letterSpacing": "",
+        "transform": ""
+      }
+    },
+    "styleLabelRadius": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    },
+    "styleLabelPadding": {
+      "type": "object",
+      "default": {
+        "top": "",
+        "right": "",
+        "bottom": "",
+        "left": "",
+        "unit": "px",
+        "link": "yes"
+      }
+    }
+  },
+  "render": "file:./index.php"
+}

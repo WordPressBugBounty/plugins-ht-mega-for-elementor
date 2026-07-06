@@ -75,23 +75,42 @@ if ( ! class_exists( 'HTMega_Elementor_Assests_Cache' ) ) {
             $widgets = $this->get_widgets_used_on_page( $this->get_post_id() );
 
             if ( $widgets && is_array( $widgets ) ) {
+                // Detect whether any 2026 section widget is present.
+                $has_2026_widget = false;
+                foreach ( $widgets as $w ) {
+                    if ( strpos( $w, 'htmega-2026-' ) === 0 ) {
+                        $has_2026_widget = true;
+                        break;
+                    }
+                }
+
                 if ( ! file_exists( $this->get_upload_file_path() ) ) {
                     $css_content = '';
                     foreach ( $widgets as $widget ) {
-                        $widget_css = $this->get_widget_css( $widget ); 
-                        $css_content .= $widget_css;
+                        $css_content .= $this->get_widget_css( $widget );
                     }
-
                     if ( $css_content ) {
                         $this->file_system->put_contents( $this->get_upload_file_path(), $css_content, FS_CHMOD_FILE );
-                    
                     }
                 }
+
                 if ( file_exists( $this->get_upload_file_path() ) ) {
                     if ( function_exists( 'htmega_elementor_ensure_frontend_dependencies_registered' ) ) {
                         htmega_elementor_ensure_frontend_dependencies_registered();
                     }
                     $deps = wp_style_is( 'elementor-frontend', 'registered' ) ? array( 'elementor-frontend' ) : array();
+
+                    // Ensure htm25-tokens loads before the combined file when 2026 widgets are present.
+                    // FSE blocks system (Scripts.php) normally loads it; register as fallback so it
+                    // works even when all FSE blocks are disabled.
+                    if ( $has_2026_widget ) {
+                        if ( ! wp_style_is( 'htm25-tokens', 'registered' ) && ! wp_style_is( 'htm25-tokens', 'enqueued' ) ) {
+                            wp_register_style( 'htm25-tokens', HTMEGA_ADDONS_PL_URL . 'assets/css/htm25-tokens.css', [], HTMEGA_VERSION );
+                        }
+                        wp_enqueue_style( 'htm25-tokens' );
+                        $deps[] = 'htm25-tokens';
+                    }
+
                     wp_enqueue_style( 'htmega-' . $this->get_post_id(), $this->get_upload_file_url(), $deps, HTMEGA_VERSION . '.' . get_post_modified_time() );
                 }
             }
@@ -171,6 +190,13 @@ if ( ! class_exists( 'HTMega_Elementor_Assests_Cache' ) ) {
 
 
         protected function get_widget_css( $widget ) {
+            // 2026 section widgets use a different CSS path convention.
+            if ( strpos( $widget, 'htmega-2026-' ) === 0 ) {
+                $slug     = str_replace( 'htmega-2026-', '', $widget );
+                $css_path = HTMEGA_ADDONS_PL_PATH . 'assets/css/widgets/htm25-' . $slug . '.css';
+                return file_exists( $css_path ) ? $this->file_system->get_contents( $css_path ) : '';
+            }
+
             $widget = str_replace( 'htmega-', '', $widget );
             $widget = str_replace( '-addons', '', $widget );
 
