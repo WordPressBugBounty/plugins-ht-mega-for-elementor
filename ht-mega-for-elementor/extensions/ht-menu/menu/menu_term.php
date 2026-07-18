@@ -21,6 +21,70 @@ class HTMega_Menu_Term_Meta{
         add_filter( 'wp_setup_nav_menu_item', [ $this, 'custom_nav_fields_data' ] );
         add_filter('wp_nav_menu_args', [ $this, '_change_nav_menu_args' ], PHP_INT_MAX);
 
+        // Elementor only generates atomic-widget CSS for the main queried post; register
+        // mega-menu templates before that one-shot pass so their atomic styles aren't skipped.
+        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_atomic_styles_for_menu_templates' ], 15 );
+
+    }
+
+    /**
+     * Elementor template IDs assigned to items of any currently-enabled mega menu.
+     */
+    private function get_active_menu_template_ids() {
+        $template_ids = [];
+
+        $locations = get_nav_menu_locations();
+        if ( empty( $locations ) ) {
+            return $template_ids;
+        }
+
+        foreach ( $locations as $menu_id ) {
+            if ( ! $menu_id ) {
+                continue;
+            }
+
+            $settings = get_option( 'ht_menu_options_' . $menu_id );
+            if ( empty( $settings['enable_menu'] ) || 'on' !== $settings['enable_menu'] ) {
+                continue;
+            }
+
+            $items = wp_get_nav_menu_items( $menu_id );
+            if ( empty( $items ) ) {
+                continue;
+            }
+
+            foreach ( $items as $item ) {
+                if ( ! empty( $item->template ) ) {
+                    $template_ids[] = absint( $item->template );
+                }
+            }
+        }
+
+        return array_unique( array_filter( $template_ids ) );
+    }
+
+    /**
+     * Register mega-menu Elementor templates with Elementor's atomic-widget CSS pipeline
+     * before its own single per-request enqueue pass runs (Frontend::enqueue_styles(),
+     * hooked at wp_enqueue_scripts priority 20). That pass only registers is_singular()'s
+     * queried post, so a template rendered via the nav walker never gets its atomic CSS
+     * generated unless we register it here first.
+     */
+    public function enqueue_atomic_styles_for_menu_templates() {
+        if ( is_admin() || ! class_exists( '\Elementor\Plugin' ) ) {
+            return;
+        }
+
+        $template_ids = $this->get_active_menu_template_ids();
+        if ( empty( $template_ids ) ) {
+            return;
+        }
+
+        foreach ( $template_ids as $template_id ) {
+            do_action( 'elementor/post/render', $template_id );
+        }
+
+        \Elementor\Plugin::instance()->frontend->enqueue_styles();
     }
 
     public function custom_nav_fields_data( $menu_item ){

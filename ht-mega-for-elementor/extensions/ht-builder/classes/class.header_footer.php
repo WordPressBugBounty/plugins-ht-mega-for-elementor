@@ -68,6 +68,12 @@ class HTMegaBuilder_Header_Footer{
             add_action( 'get_footer', [ $this, 'get_footer' ] );
         }
 
+        // Elementor only generates atomic-widget CSS for the main queried post; register
+        // the header/footer templates before that one-shot pass so their atomic styles aren't skipped.
+        if ( ! empty( $this->header_id ) || ! empty( $this->footer_id ) ) {
+            add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_atomic_styles_for_header_footer_templates' ], 15 );
+        }
+
         /*
          * Block (FSE) themes render header/footer via core/template-part, not get_header()/get_footer().
          */
@@ -172,7 +178,34 @@ class HTMegaBuilder_Header_Footer{
         ob_get_clean();
     }
 
-    /* 
+    /**
+     * Register header/footer Elementor templates with Elementor's atomic-widget CSS pipeline
+     * before its own single per-request enqueue pass runs (Frontend::enqueue_styles(),
+     * hooked at wp_enqueue_scripts priority 20). That pass fires
+     * 'elementor/frontend/after_enqueue_post_styles' unconditionally on every request, which
+     * is what actually triggers the atomic CSS generation for every post id registered via
+     * 'elementor/post/render' so far — so we only need to register our template ids here
+     * (priority 15, before Elementor's own priority 20 pass), not force-run enqueue_styles()
+     * ourselves. Calling enqueue_styles() directly would trip its internal static one-shot
+     * guard and race with any other extension (e.g. the mega menu) doing the same, silently
+     * dropping whichever extension's ids weren't registered yet at that moment.
+     */
+    public function enqueue_atomic_styles_for_header_footer_templates() {
+        if ( is_admin() || ! class_exists( '\Elementor\Plugin' ) ) {
+            return;
+        }
+
+        $template_ids = array_unique( array_filter( [ absint( $this->header_id ), absint( $this->footer_id ) ] ) );
+        if ( empty( $template_ids ) ) {
+            return;
+        }
+
+        foreach ( $template_ids as $template_id ) {
+            do_action( 'elementor/post/render', $template_id );
+        }
+    }
+
+    /*
     * Render Elementor Header Content
     */
     public function header_content_elementor() {

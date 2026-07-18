@@ -1,9 +1,9 @@
 === HT Mega Addons for Elementor - Elementor Widgets & Template Builder ===
-Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasib, madhusudandev
+Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhusudandev
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 3.2.0
+Stable tag: 3.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -252,6 +252,12 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 3.2.1 - Date: 2026-07-18 =
+* Fixed: Elementor Atomic Widgets' CSS not loading for Mega Menu item templates and Theme Builder templates on the frontend.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.0 - Date: 2026-07-06 =
 * Added: New 2026 Trend-Ready Section Collection — 11 ready-made pre-built sections (Hero, About/Feature, Services, Testimonials, Pricing Table, Stats/Counter, CTA, Team, FAQ, Blog/Posts, Contact) for Elementor.

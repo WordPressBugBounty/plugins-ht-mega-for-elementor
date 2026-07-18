@@ -30,6 +30,52 @@ class HTMegaBuilder_Custom_Template_Layout{
         // Archive Template
         add_action( 'htmegabuilder_blog_content', array( $this, 'blog_content_elementor' ), 999 );
 
+        // Elementor only generates atomic-widget CSS for the main queried post; register
+        // the active Single/Archive builder template before that one-shot pass so its
+        // atomic styles aren't skipped.
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_atomic_styles_for_content_templates' ), 15 );
+
+    }
+
+    /**
+     * Register the currently-active Single/Archive builder template with Elementor's
+     * atomic-widget CSS pipeline before its own single per-request enqueue pass runs
+     * (Frontend::enqueue_styles(), hooked at wp_enqueue_scripts priority 20). That pass
+     * only registers the main queried post via is_singular(), which for a blog archive
+     * (or a single post whose content is fully replaced by a builder template) is either
+     * the wrong post id or none at all — so the builder template's own atomic CSS never
+     * gets generated unless we register it here first. We only register the id (priority
+     * 15, before Elementor's own priority 20 pass); we don't force-run enqueue_styles()
+     * ourselves, since that would trip its internal static one-shot guard and race with
+     * any other extension (e.g. the header/footer builder) doing the same.
+     */
+    public function enqueue_atomic_styles_for_content_templates() {
+        if ( is_admin() || ! class_exists( '\Elementor\Plugin' ) ) {
+            return;
+        }
+
+        $template_ids = [];
+
+        if ( is_singular( 'post' ) ) {
+            $single_tm_id = $this->custom_template_id( 'single_blog_page' );
+            if ( ! empty( $single_tm_id ) ) {
+                $template_ids[] = absint( $single_tm_id );
+            }
+        } elseif ( is_post_type_archive( 'post' ) || htmega_builder_is_blog_page() ) {
+            $archive_tm_id = $this->custom_template_id( 'archive_blog_page' );
+            if ( ! empty( $archive_tm_id ) ) {
+                $template_ids[] = absint( $archive_tm_id );
+            }
+        }
+
+        $template_ids = array_unique( array_filter( $template_ids ) );
+        if ( empty( $template_ids ) ) {
+            return;
+        }
+
+        foreach ( $template_ids as $template_id ) {
+            do_action( 'elementor/post/render', $template_id );
+        }
     }
 
     /*
