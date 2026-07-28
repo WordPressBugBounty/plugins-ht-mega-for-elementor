@@ -627,15 +627,19 @@
         };
 
         this.getTabs = function () {
-            return { 
-                tabs: { 
-                    section: { 
-                        title: "Blocks", 
-                        active: false 
+            return {
+                tabs: {
+                    section: {
+                        title: "Blocks",
+                        active: false
                     },
-                    page: { 
-                        title: "Pages", 
-                        active: true 
+                    page: {
+                        title: "Pages",
+                        active: true
+                    },
+                    container: {
+                        title: "Sections",
+                        active: false
                     }
                 }
             };

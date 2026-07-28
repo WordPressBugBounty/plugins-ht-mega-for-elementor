@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhus
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Elementor addon offering 146+ widgets — Mega Menu, Ready Templates, Page Build
 
 ### Transform Your Elementor Page Builder into a Design Powerhouse
 
-Are you tired of Elementor's limitations holding back your creativity? **HT Mega** is the ultimate Elementor addon plugin that unlocks your full design potential with **146+ professional widgets**, **AI-powered content writer**, **theme builder**, and **790+ ready-made blocks**.
+Are you tired of Elementor's limitations holding back your creativity? **HT Mega** is the ultimate Elementor addon plugin that unlocks your full design potential with **146+ professional widgets**, **AI-powered content writer**, **theme builder**, and **850+ ready-made blocks & sections**.
 
 Join WordPress professionals who’ve already transformed their workflow and build stunning websites 73% faster than before.
 
@@ -29,7 +29,7 @@ Join WordPress professionals who’ve already transformed their workflow and bui
 ✅ **AI Content Writer**: Create Elementor content instantly with GPT-4, Claude & Gemini
 ✅ **146+ Professional Widgets**: From basic to advanced - we've got you covered
 ✅ **Theme Builder Included**: Design headers, footers, archives, and single posts
-✅ **790+ Ready Blocks**: Pre-designed sections across 100+ categories
+✅ **850+ Ready Blocks & Sections**: Pre-designed sections across 100+ categories
 ✅ **Lightning Fast**: Modular loading ensures optimal performance
 ✅ **Regular Updates**: New features and improvements every 2 weeks
 
@@ -38,7 +38,7 @@ Join WordPress professionals who’ve already transformed their workflow and bui
 
 * **146+** Professional Widgets
 * **14+** Powerful Modules
-* **790+** Ready-Made Blocks
+* **850+** Ready-Made Blocks & Sections
 * **370+** Page Templates
 * **20** Gutenberg Blocks
 
@@ -47,6 +47,8 @@ Join WordPress professionals who’ve already transformed their workflow and bui
 **🆕 2026 Trend-Ready Section Collection (11) — NEW in 3.2.0**
 
 Built around 2026's top design trends — Bento Grid, Glassmorphism, Dark Minimal, Aurora, and Neo-Brutalist — each of the 11 sections ships in all 5 styles with multiple layout variants, for both Elementor and Gutenberg (FSE):
+
+[youtube https://youtu.be/BUV58QPVCDM]
 
 * **Hero**: Landing page hero sections with headline, description, and CTA layouts
 * **About / Feature**: Feature highlight sections with image + content columns
@@ -196,7 +198,7 @@ No more writer's block! Create headlines, descriptions, and full content with AI
 **370+ Professional Page Templates** across 43+ categories including:
 SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate, Charity, Portfolio, Event, and many more!
 
-**790+ Ready Blocks** organized in 100+ categories:
+**850+ Ready Blocks & Sections** organized in 100+ categories:
 
 * Hero Sections
 * Feature Grids
@@ -252,6 +254,13 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 
 == Changelog ==
+
+= Version 3.2.2 - Date: 2026-07-28 =
+* Added: 55 Sections Templates in HT Mega Templates Library.
+* Fixed: SVG icon size issue in Stats/Counter 2026 widget.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.1 - Date: 2026-07-18 =
 * Fixed: Elementor Atomic Widgets' CSS not loading for Mega Menu item templates and Theme Builder templates on the frontend.
@@ -513,10 +522,10 @@ The pro version of HT Mega gives you access to numerous incredible features that
 
 == Screenshots ==
 
-1. 135+ Powerful Widgets, 790+ Blocks & 370+ Templates for Elementor
+1. 145+ Powerful Widgets, 850+ Blocks & Sections, and 370+ Templates for Elementor
 2. Seamless Elementor Integration - Build Professional Websites with Drag & Drop Simplicity
 3. 1170+ Ready-to-Import Templates - Professional Designs for Every Industry
-4. Extensive Widget Library - 135+ Free & Pro Widgets Organized by Category
+4. Extensive Widget Library - 145+ Free & Pro Widgets Organized by Category
 5. Stunning Websites Built with HT Mega - Professional Results in Hours, Not Weeks
 6. Powerful Modules Beyond Widgets - Theme Builder, Mega Menu, AI Writer & More
 7. Complete Theme Customization - Design Every Part of Your WordPress Site

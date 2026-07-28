@@ -325,6 +325,9 @@
   color: var(--htm25-accent-primary);
   line-height: 1;
 }
+.htm25-stats__item-icon svg {
+  width: var(--htm25-text-lg);
+}
 
 .htm25-style--neo .htm25-stats__item-icon-wrap {
   border: 2px solid var(--htm25-swatch-black, #000);

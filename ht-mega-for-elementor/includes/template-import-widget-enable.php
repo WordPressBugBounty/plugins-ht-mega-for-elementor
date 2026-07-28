@@ -713,6 +713,32 @@ function htmega_template_import_widget_type_settings_map() {
 		'bl-print-page'           => array( 'bl_print_pagep', $themebuilder_tab ),
 		'bl-post-navigation'      => array( 'bl_post_navigationp', $themebuilder_tab ),
 		'bl-view-counter'         => array( 'bl_view_counterp', $themebuilder_tab ),
+
+		// HT Mega 2026 Collection — Elementor widgets (get_name() = 'htmega-2026-{slug}'; option key = htmega_sections_element_tabs, default 'on').
+		'htmega-2026-hero'         => array( 'hero', 'htmega_sections_element_tabs' ),
+		'htmega-2026-about'        => array( 'about', 'htmega_sections_element_tabs' ),
+		'htmega-2026-services'     => array( 'services', 'htmega_sections_element_tabs' ),
+		'htmega-2026-pricing'      => array( 'pricing', 'htmega_sections_element_tabs' ),
+		'htmega-2026-testimonials' => array( 'testimonials', 'htmega_sections_element_tabs' ),
+		'htmega-2026-stats'        => array( 'stats', 'htmega_sections_element_tabs' ),
+		'htmega-2026-cta'          => array( 'cta', 'htmega_sections_element_tabs' ),
+		'htmega-2026-team'         => array( 'team', 'htmega_sections_element_tabs' ),
+		'htmega-2026-faq'          => array( 'faq', 'htmega_sections_element_tabs' ),
+		'htmega-2026-blog'         => array( 'blog', 'htmega_sections_element_tabs' ),
+		'htmega-2026-contact'      => array( 'contact', 'htmega_sections_element_tabs' ),
+
+		// HT Mega 2026 Collection — FSE Gutenberg blocks (block name = 'htmega/{slug}-2025'; option key = htmega_sections_gutenberg_tabs, default 'off').
+		'htmega/hero-2025'         => array( 'hero-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/about-2025'        => array( 'about-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/services-2025'     => array( 'services-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/pricing-2025'      => array( 'pricing-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/testimonials-2025' => array( 'testimonials-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/stats-2025'        => array( 'stats-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/cta-2025'          => array( 'cta-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/team-2025'         => array( 'team-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/faq-2025'          => array( 'faq-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/blog-2025'         => array( 'blog-2025', 'htmega_sections_gutenberg_tabs' ),
+		'htmega/contact-2025'      => array( 'contact-2025', 'htmega_sections_gutenberg_tabs' ),
 	);
 
 	$map = apply_filters( 'htmega_template_import_widget_type_settings_map', $map );

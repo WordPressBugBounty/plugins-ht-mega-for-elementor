@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: HT Mega Addons for Elementor - Elementor Widgets & "
 "Template Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-18 06:10+0000\n"
+"POT-Creation-Date: 2026-07-28 06:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -277,16 +277,16 @@ msgstr ""
 msgid "13"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/sidebar-banner.php:52
-msgid "135+ Elemetor Widgets"
-msgstr ""
-
 #: includes/widgets/htmega_booked_calender.php:81
 msgid "14"
 msgstr ""
 
 #: admin/include/settings-panel/includes/templates/sidebar-banner.php:53
 msgid "14+ Essential Modules"
+msgstr ""
+
+#: admin/include/settings-panel/includes/templates/sidebar-banner.php:52
+msgid "145+ Elemetor Widgets"
 msgstr ""
 
 #: includes/widgets/htmega_booked_calender.php:82
@@ -633,12 +633,12 @@ msgstr ""
 msgid "7 seconds"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/sidebar-banner.php:55
-msgid "795+ Elementor Blocks Template"
-msgstr ""
-
 #: extensions/wc-sales-notification/admin/setting.php:157
 msgid "8 seconds"
+msgstr ""
+
+#: admin/include/settings-panel/includes/templates/sidebar-banner.php:55
+msgid "850+ Elementor Blocks & Sections Templates"
 msgstr ""
 
 #: extensions/wc-sales-notification/admin/setting.php:158
@@ -2419,320 +2419,6 @@ msgstr ""
 #: includes/widgets/htmega_section_title.php:620
 #: includes/widgets/htmega_section_title.php:851
 msgid "Block"
-msgstr ""
-
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-msgctxt "block description"
-msgid ""
-"A full contact section with a form, contact info items, and optional map "
-"embed. Five design style presets."
-msgstr ""
-
-#: htmega-blocks/build/blocks/faq-2025/block.json:1
-#: htmega-blocks/src/blocks/faq-2025/block.json:1
-msgctxt "block description"
-msgid ""
-"Accessible accordion FAQ section with simple, two-column grid, and boxed "
-"card layouts across five design style presets."
-msgstr ""
-
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-msgctxt "block description"
-msgid ""
-"Animated stat counters with 5 design presets. Supports row strip, card grid, "
-"and bento layouts."
-msgstr ""
-
-#: htmega-blocks/build/blocks/cta-2025/block.json:1
-#: htmega-blocks/src/blocks/cta-2025/block.json:1
-msgctxt "block description"
-msgid ""
-"Call-to-action section with centered, split, and banner layouts across five "
-"design styles."
-msgstr ""
-
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-msgctxt "block description"
-msgid ""
-"Display recent posts in grid, list, or featured layouts with full query "
-"control and five design style presets."
-msgstr ""
-
-#: htmega-blocks/build/blocks/team-2025/block.json:1
-#: htmega-blocks/src/blocks/team-2025/block.json:1
-msgctxt "block description"
-msgid ""
-"Showcase team members in grid, list, or featured layouts across five design "
-"style presets."
-msgstr ""
-
-#: htmega-blocks/build/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/src/blocks/testimonials-2025/block.json:1
-msgctxt "block description"
-msgid ""
-"Testimonials section with 5 design presets, star ratings, avatars, and "
-"masonry or grid layouts."
-msgstr ""
-
-#: htmega-blocks/build/blocks/cta-2025/block.json:1
-#: htmega-blocks/build/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/build/blocks/team-2025/block.json:1
-#: htmega-blocks/build/blocks/faq-2025/block.json:1
-#: htmega-blocks/src/blocks/cta-2025/block.json:1
-#: htmega-blocks/src/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/team-2025/block.json:1
-#: htmega-blocks/src/blocks/faq-2025/block.json:1
-msgctxt "block keyword"
-msgid "2026"
-msgstr ""
-
-#: htmega-blocks/build/blocks/faq-2025/block.json:1
-#: htmega-blocks/src/blocks/faq-2025/block.json:1
-msgctxt "block keyword"
-msgid "accordion"
-msgstr ""
-
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-msgctxt "block keyword"
-msgid "address"
-msgstr ""
-
-#: htmega-blocks/build/blocks/faq-2025/block.json:1
-#: htmega-blocks/src/blocks/faq-2025/block.json:1
-msgctxt "block keyword"
-msgid "answers"
-msgstr ""
-
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-msgctxt "block keyword"
-msgid "articles"
-msgstr ""
-
-#: htmega-blocks/build/blocks/cta-2025/block.json:1
-#: htmega-blocks/src/blocks/cta-2025/block.json:1
-msgctxt "block keyword"
-msgid "banner"
-msgstr ""
-
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-msgctxt "block keyword"
-msgid "blog"
-msgstr ""
-
-#: htmega-blocks/build/blocks/cta-2025/block.json:1
-#: htmega-blocks/src/blocks/cta-2025/block.json:1
-msgctxt "block keyword"
-msgid "call to action"
-msgstr ""
-
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-msgctxt "block keyword"
-msgid "contact"
-msgstr ""
-
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-msgctxt "block keyword"
-msgid "count-up"
-msgstr ""
-
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-msgctxt "block keyword"
-msgid "counter"
-msgstr ""
-
-#: htmega-blocks/build/blocks/cta-2025/block.json:1
-#: htmega-blocks/src/blocks/cta-2025/block.json:1
-msgctxt "block keyword"
-msgid "cta"
-msgstr ""
-
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-msgctxt "block keyword"
-msgid "email"
-msgstr ""
-
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-msgctxt "block keyword"
-msgid "facts"
-msgstr ""
-
-#: htmega-blocks/build/blocks/faq-2025/block.json:1
-#: htmega-blocks/src/blocks/faq-2025/block.json:1
-msgctxt "block keyword"
-msgid "faq"
-msgstr ""
-
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-msgctxt "block keyword"
-msgid "form"
-msgstr ""
-
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-msgctxt "block keyword"
-msgid "grid"
-msgstr ""
-
-#: htmega-blocks/build/blocks/cta-2025/block.json:1
-#: htmega-blocks/build/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/build/blocks/team-2025/block.json:1
-#: htmega-blocks/build/blocks/faq-2025/block.json:1
-#: htmega-blocks/src/blocks/cta-2025/block.json:1
-#: htmega-blocks/src/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/team-2025/block.json:1
-#: htmega-blocks/src/blocks/faq-2025/block.json:1
-msgctxt "block keyword"
-msgid "htmega"
-msgstr ""
-
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-msgctxt "block keyword"
-msgid "map"
-msgstr ""
-
-#: htmega-blocks/build/blocks/team-2025/block.json:1
-#: htmega-blocks/src/blocks/team-2025/block.json:1
-msgctxt "block keyword"
-msgid "members"
-msgstr ""
-
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-msgctxt "block keyword"
-msgid "news"
-msgstr ""
-
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-msgctxt "block keyword"
-msgid "numbers"
-msgstr ""
-
-#: htmega-blocks/build/blocks/team-2025/block.json:1
-#: htmega-blocks/src/blocks/team-2025/block.json:1
-msgctxt "block keyword"
-msgid "people"
-msgstr ""
-
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-msgctxt "block keyword"
-msgid "posts"
-msgstr ""
-
-#: htmega-blocks/build/blocks/faq-2025/block.json:1
-#: htmega-blocks/src/blocks/faq-2025/block.json:1
-msgctxt "block keyword"
-msgid "questions"
-msgstr ""
-
-#: htmega-blocks/build/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/src/blocks/testimonials-2025/block.json:1
-msgctxt "block keyword"
-msgid "quote"
-msgstr ""
-
-#: htmega-blocks/build/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/src/blocks/testimonials-2025/block.json:1
-msgctxt "block keyword"
-msgid "rating"
-msgstr ""
-
-#: htmega-blocks/build/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/src/blocks/testimonials-2025/block.json:1
-msgctxt "block keyword"
-msgid "review"
-msgstr ""
-
-#: htmega-blocks/build/blocks/team-2025/block.json:1
-#: htmega-blocks/src/blocks/team-2025/block.json:1
-msgctxt "block keyword"
-msgid "staff"
-msgstr ""
-
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-msgctxt "block keyword"
-msgid "stats"
-msgstr ""
-
-#: htmega-blocks/build/blocks/team-2025/block.json:1
-#: htmega-blocks/src/blocks/team-2025/block.json:1
-msgctxt "block keyword"
-msgid "team"
-msgstr ""
-
-#: htmega-blocks/build/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/src/blocks/testimonials-2025/block.json:1
-msgctxt "block keyword"
-msgid "testimonial"
-msgstr ""
-
-#: htmega-blocks/build/blocks/blog-2025/block.json:1
-#: htmega-blocks/src/blocks/blog-2025/block.json:1
-msgctxt "block title"
-msgid "Blog / Posts 2026"
-msgstr ""
-
-#: htmega-blocks/build/blocks/contact-2025/block.json:1
-#: htmega-blocks/src/blocks/contact-2025/block.json:1
-msgctxt "block title"
-msgid "Contact Section 2026"
-msgstr ""
-
-#: htmega-blocks/build/blocks/cta-2025/block.json:1
-#: htmega-blocks/src/blocks/cta-2025/block.json:1
-msgctxt "block title"
-msgid "CTA Section 2026"
-msgstr ""
-
-#: htmega-blocks/build/blocks/faq-2025/block.json:1
-#: htmega-blocks/src/blocks/faq-2025/block.json:1
-msgctxt "block title"
-msgid "FAQ 2026"
-msgstr ""
-
-#: htmega-blocks/build/blocks/stats-2025/block.json:1
-#: htmega-blocks/src/blocks/stats-2025/block.json:1
-msgctxt "block title"
-msgid "Stats / Counter 2026"
-msgstr ""
-
-#: htmega-blocks/build/blocks/team-2025/block.json:1
-#: htmega-blocks/src/blocks/team-2025/block.json:1
-msgctxt "block title"
-msgid "Team 2026"
-msgstr ""
-
-#: htmega-blocks/build/blocks/testimonials-2025/block.json:1
-#: htmega-blocks/src/blocks/testimonials-2025/block.json:1
-msgctxt "block title"
-msgid "Testimonials 2026"
 msgstr ""
 
 #: includes/widgets/htmega_blockquote.php:13
@@ -6488,7 +6174,7 @@ msgstr ""
 
 #. Description of the plugin
 msgid ""
-"Elementor addon offering 135+ widgets — Mega Menu, Ready Templates, Page "
+"Elementor addon offering 145+ widgets — Mega Menu, Ready Templates, Page "
 "Builder, Slider, Gallery, Post Grid, AI Writer & more."
 msgstr ""
 
