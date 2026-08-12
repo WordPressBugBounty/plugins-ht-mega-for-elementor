@@ -69,7 +69,7 @@ if ( ! class_exists( 'HasTech_Notices' ) ){
             // User Capability check
 			if ( ! apply_filters( 'hastech_notice_user_cap_check', current_user_can( $capability ) ) ) {
                 $error_message = [
-                    'message'  => __('You are not authorized.', 'htmega-addons')
+                    'message'  => __('You are not authorized.', 'ht-mega-for-elementor')
                 ];
                 wp_send_json_error( $error_message );
 			}
@@ -77,7 +77,7 @@ if ( ! class_exists( 'HasTech_Notices' ) ){
             // Nonce verification check
             if( !wp_verify_nonce( $nonce, 'hastech_notices_nonce') ) {
                 $error_message = [
-                    'message'  => __('Are you cheating?', 'htmega-addons')
+                    'message'  => __('Are you cheating?', 'ht-mega-for-elementor')
                 ];
                 wp_send_json_error( $error_message );
             }
@@ -276,7 +276,7 @@ if ( ! class_exists( 'HasTech_Notices' ) ){
                 if( $notice['type'] !== 'custom'){
                     $classes[] = 'notice';
                 }else{
-                    $notice['dismissible_btn'] = '<button type="button" class="notice-dismiss"><span class="screen-reader-text">'.esc_html__('Dismiss this notice.','htmega-addons').'</span></button>';
+                    $notice['dismissible_btn'] = '<button type="button" class="notice-dismiss"><span class="screen-reader-text">'.esc_html__('Dismiss this notice.','ht-mega-for-elementor').'</span></button>';
                 }
             }
 

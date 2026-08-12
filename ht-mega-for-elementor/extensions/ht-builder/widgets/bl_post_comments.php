@@ -20,7 +20,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Post Comments', 'htmega-addons' );
+        return __( 'Post Comments', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -42,25 +42,25 @@ class Bl_Post_Comments_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_commnet_inputbox_style_sectionee',
             array(
-                'label' => __( 'Post Comments', 'htmega-addons' ),
+                'label' => __( 'Post Comments', 'ht-mega-for-elementor' ),
             )
         );
         $this->add_responsive_control(
             'post_comment_align',
             [
-                'label'        => __( 'Alignment', 'htmega-addons' ),
+                'label'        => __( 'Alignment', 'ht-mega-for-elementor' ),
                 'type'         => Controls_Manager::CHOOSE,
                 'options'      => [
                     'left'   => [
-                        'title' => __( 'Left', 'htmega-addons' ),
+                        'title' => __( 'Left', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'htmega-addons' ),
+                        'title' => __( 'Center', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'right'  => [
-                        'title' => __( 'Right', 'htmega-addons' ),
+                        'title' => __( 'Right', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                 ],
@@ -76,14 +76,14 @@ class Bl_Post_Comments_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_commnet_title_section',
             array(
-                'label' => __( 'Title & Description', 'htmega-addons' ),
+                'label' => __( 'Title & Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
         $this->add_control(
             'post_commnet_title_color',
             [
-                'label'     => __( 'Title Color', 'htmega-addons' ),
+                'label'     => __( 'Title Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .comment-reply-title' => 'color: {{VALUE}};',
@@ -95,14 +95,14 @@ class Bl_Post_Comments_ELement extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'post_commnet_title_typography',
-                'label'     => __( 'Typography', 'htmega-addons' ),
+                'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                 'selector'  => '{{WRAPPER}} .comment-reply-title',
             )
         );
         $this->add_responsive_control(
             'post_commnet_title_margin',
             [
-                'label' => __( 'Margin', 'htmega-addons' ),
+                'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -113,7 +113,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
         $this->add_control(
             'post_commnet_description_color',
             [
-                'label'     => __( 'Description Color', 'htmega-addons' ),
+                'label'     => __( 'Description Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .logged-in-as, {{WRAPPER}} .comment-notes' => 'color: {{VALUE}};',
@@ -125,7 +125,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
         $this->add_control(
             'post_commnet_description_link_color',
             [
-                'label'     => __( 'Description Link Color', 'htmega-addons' ),
+                'label'     => __( 'Description Link Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .logged-in-as a, {{WRAPPER}} .comment-notes a' => 'color: {{VALUE}};',
@@ -137,7 +137,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
             Group_Control_Typography::get_type(),
             array(
                 'name'      => 'post_commnet_description_typography',
-                'label'     => __( 'Typography', 'htmega-addons' ),
+                'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                 'selector'  => '{{WRAPPER}} .logged-in-as, {{WRAPPER}} .comment-notes',
             )
         );
@@ -148,7 +148,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_commnet_inputbox_style_section',
             array(
-                'label' => __( 'Input Box', 'htmega-addons' ),
+                'label' => __( 'Input Box', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -156,7 +156,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
             $this->add_control(
                 'post_commnet_inputbox_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} form.comment-form input[type="text"],
@@ -171,7 +171,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'post_commnet_inputbox_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}} form.comment-form input[type="text"], {{WRAPPER}} form.comment-form textarea',
                 )
             );
@@ -180,7 +180,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'post_commnet_inputbox_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} form.comment-form input[type="text"],
                     {{WRAPPER}} form.comment-form input[type="email"],
                     {{WRAPPER}} form.comment-form input[type="url"],
@@ -190,7 +190,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
             $this->add_control(
                 'post_commnet_label_color',
                 [
-                    'label'     => __( 'Label Color', 'htmega-addons' ),
+                    'label'     => __( 'Label Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} form.comment-form label' => 'color: {{VALUE}};',
@@ -203,7 +203,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'post_commnet_label_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}} form.comment-form label',
                 )
             );
@@ -213,7 +213,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_commnet_submitbtn_style_section',
             array(
-                'label' => __( 'Submit Button', 'htmega-addons' ),
+                'label' => __( 'Submit Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -224,14 +224,14 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'submitbtn_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_commnet_submitbtn_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} form.comment-form input[type="submit"]' => 'color: {{VALUE}};',
@@ -242,7 +242,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                     $this->add_control(
                         'post_commnet_submitbtn_bg_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} form.comment-form input[type="submit"]' => 'background-color: {{VALUE}};',
@@ -254,7 +254,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         array(
                             'name'      => 'post_commnet_submitbtn_typography',
-                            'label'     => __( 'Typography', 'htmega-addons' ),
+                            'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector'  => '{{WRAPPER}} form.comment-form input[type="submit"]!important',
                         )
                     );
@@ -263,7 +263,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'post_commnet_submitbtn_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} form.comment-form input[type="submit"]!important',
                         ]
                     );
@@ -274,14 +274,14 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'submitbtn_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_commnet_submitbtn_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} form.comment-form input[type="submit"]:hover' => 'color: {{VALUE}};',
@@ -292,7 +292,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                     $this->add_control(
                         'post_commnet_submitbtn_hover_bg_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} form.comment-form input[type="submit"]:hover' => 'background-color: {{VALUE}};',
@@ -304,7 +304,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'post_commnet_submitbtn_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} form.comment-form input[type="submit"]:hover',
                         ]
                     );
@@ -322,10 +322,10 @@ class Bl_Post_Comments_ELement extends Widget_Base {
         if( Elementor::instance()->editor->is_edit_mode() ){ ?>
             <section id="comments" class="comments-area">
                 <div id="respond" class="comment-respond">
-                    <h2 id="reply-title" class="comment-reply-title"><?php esc_html_e( 'Leave a Reply', 'htmega-addons' ); ?> <small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;"><?php esc_html_e( 'Cancel reply', 'htmega-addons' ); ?></a></small></h2>
+                    <h2 id="reply-title" class="comment-reply-title"><?php esc_html_e( 'Leave a Reply', 'ht-mega-for-elementor' ); ?> <small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;"><?php esc_html_e( 'Cancel reply', 'ht-mega-for-elementor' ); ?></a></small></h2>
                     <form action="#" method="post" id="commentform" class="comment-form" novalidate="" autocomplete="off">
-                        <p class="logged-in-as"><?php esc_html_e( 'Logged in as admin.', 'htmega-addons' ); ?> <a href="#"><?php esc_html_e( 'Edit your profile.', 'htmega-addons' ); ?></a> <a href="#"><?php esc_html_e( 'Log out?', 'htmega-addons' ); ?></a> <span class="required-field-message"><?php esc_html_e( 'Required fields are marked', 'htmega-addons' ); ?> <span class="required"><?php esc_html_e( '*', 'htmega-addons' ); ?></span></span></p>
-                        <p class="comment-form-comment"><label for="comment"><?php esc_html_e( 'Comment', 'htmega-addons' ); ?> <span class="required"><?php esc_html_e( '*', 'htmega-addons' ); ?></span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="" autocomplete="off" spellcheck="false" data-ms-editor="true"></textarea></p>
+                        <p class="logged-in-as"><?php esc_html_e( 'Logged in as admin.', 'ht-mega-for-elementor' ); ?> <a href="#"><?php esc_html_e( 'Edit your profile.', 'ht-mega-for-elementor' ); ?></a> <a href="#"><?php esc_html_e( 'Log out?', 'ht-mega-for-elementor' ); ?></a> <span class="required-field-message"><?php esc_html_e( 'Required fields are marked', 'ht-mega-for-elementor' ); ?> <span class="required"><?php esc_html_e( '*', 'ht-mega-for-elementor' ); ?></span></span></p>
+                        <p class="comment-form-comment"><label for="comment"><?php esc_html_e( 'Comment', 'ht-mega-for-elementor' ); ?> <span class="required"><?php esc_html_e( '*', 'ht-mega-for-elementor' ); ?></span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="" autocomplete="off" spellcheck="false" data-ms-editor="true"></textarea></p>
                         <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" autocomplete="off"> <input type="hidden" name="comment_post_ID" value="534" id="comment_post_ID" autocomplete="off">
                     </form>
                 </div>
@@ -336,7 +336,7 @@ class Bl_Post_Comments_ELement extends Widget_Base {
             if( !comments_open() ){
                 ?>
                     <span class="htcomment-close">
-                        <?php esc_html_e( 'Comments Are Closed', 'htmega-addons' ); ?>
+                        <?php esc_html_e( 'Comments Are Closed', 'ht-mega-for-elementor' ); ?>
                     </span>
                 <?php
             }else{

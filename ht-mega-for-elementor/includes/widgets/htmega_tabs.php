@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Tabs', 'htmega-addons' );
+        return __( 'Tabs', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -31,23 +31,23 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
         $this->start_controls_section(
             'tab_content',
             [
-                'label' => esc_html__( 'Tabs', 'htmega-addons' ),
+                'label' => esc_html__( 'Tabs', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'tab_style',
                 [
-                    'label' => esc_html__( 'Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1' => __( 'Style One', 'htmega-addons' ),
-                        '2' => __( 'Style Two', 'htmega-addons' ),
-                        '3' => __( 'Style Three', 'htmega-addons' ),
-                        '4' => __( 'Style Four', 'htmega-addons' ),
-                        '5' => __( 'Style Five', 'htmega-addons' ),
-                        '6' => __( 'Style Six (Pro)', 'htmega-addons' ),
+                        '1' => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2' => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3' => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4' => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5' => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6' => __( 'Style Six (Pro)', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -60,35 +60,35 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 $repeater->start_controls_tab(
                     'tab_content_item_area',
                     [
-                        'label' => esc_html__( 'Content', 'htmega-addons' ),
+                        'label' => esc_html__( 'Content', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $repeater->add_control(
                         'tab_title',
                         [
-                            'label'   => esc_html__( 'Title', 'htmega-addons' ),
+                            'label'   => esc_html__( 'Title', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::TEXT,
-                            'default' => esc_html__( 'Tab #1', 'htmega-addons' ),
+                            'default' => esc_html__( 'Tab #1', 'ht-mega-for-elementor' ),
                         ]
                     );
 
                     $repeater->add_control(
                         'icon_type',
                         [
-                            'label'   => __( 'Icon Type', 'htmega-addons' ),
+                            'label'   => __( 'Icon Type', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::CHOOSE,
                             'options' => [
                                 'none' => [
-                                    'title' => __( 'None', 'htmega-addons' ),
+                                    'title' => __( 'None', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-ban',
                                 ],
                                 'icon' => [
-                                    'title' => __( 'Icon', 'htmega-addons' ),
+                                    'title' => __( 'Icon', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-info-circle',
                                 ],
                                 'image' => [
-                                    'title' => __( 'Image', 'htmega-addons' ),
+                                    'title' => __( 'Image', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-image-bold',
                                 ],
                             ],
@@ -98,7 +98,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $repeater->add_control(
                         'tab_icon',
                         [
-                            'label'   => esc_html__( 'Icon', 'htmega-addons' ),
+                            'label'   => esc_html__( 'Icon', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::ICONS,
                             'condition'   => [
                                 'icon_type' => "icon"
@@ -108,7 +108,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $repeater->add_control(
                         'tab_icon_image',
                         [
-                            'label' => __('Image','htmega-addons'),
+                            'label' => __('Image','ht-mega-for-elementor'),
                             'type'=>Controls_Manager::MEDIA,
                             'dynamic' => [
                                 'active' => true,
@@ -133,12 +133,12 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $repeater->add_control(
                         'content_source',
                         [
-                            'label'   => esc_html__( 'Select Content Source', 'htmega-addons' ),
+                            'label'   => esc_html__( 'Select Content Source', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::SELECT,
                             'default' => 'custom',
                             'options' => [
-                                'custom'    => esc_html__( 'Custom', 'htmega-addons' ),
-                                "elementor" => esc_html__( 'Elementor Template', 'htmega-addons' ),
+                                'custom'    => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
+                                "elementor" => esc_html__( 'Elementor Template', 'ht-mega-for-elementor' ),
                             ],
                             'separator' => 'before'
                         ]
@@ -147,7 +147,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                      $repeater->add_control(
                         'template_id',
                         [
-                            'label'       => __( 'Content', 'htmega-addons' ),
+                            'label'       => __( 'Content', 'ht-mega-for-elementor' ),
                             'type'        => Controls_Manager::SELECT,
                             'default'     => '0',
                             'options'     => htmega_elementor_template(),
@@ -160,9 +160,9 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                      $repeater->add_control(
                         'custom_content',
                         [
-                            'label' => esc_html__( 'Content', 'htmega-addons' ),
+                            'label' => esc_html__( 'Content', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::WYSIWYG,
-                            'title' => __( 'Content', 'htmega-addons' ),
+                            'title' => __( 'Content', 'ht-mega-for-elementor' ),
                             'show_label' => false,
                             'condition' => [
                                 'content_source' =>'custom',
@@ -175,14 +175,14 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 $repeater->start_controls_tab(
                     'tab_item_style_area',
                     [
-                        'label' => esc_html__( 'Style', 'htmega-addons' ),
+                        'label' => esc_html__( 'Style', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $repeater->add_control(
                         'tab_title_color',
                         [
-                            'label'     => esc_html__( 'Title Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Title Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a{{CURRENT_ITEM}}' => 'color: {{VALUE}}',
@@ -194,7 +194,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'title_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a{{CURRENT_ITEM}}',
                         ]
@@ -203,7 +203,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $repeater->add_control(
                         'tab_title_active_color',
                         [
-                            'label'     => esc_html__( 'Title Active Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Title Active Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a.htb-active{{CURRENT_ITEM}}' => 'color: {{VALUE}}',
@@ -215,7 +215,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'title_active_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a.htb-active{{CURRENT_ITEM}}',
                         ]
@@ -224,7 +224,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $repeater->add_control(
                         'tab_icon_color',
                         [
-                            'label'     => esc_html__( 'Icon Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Icon Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a{{CURRENT_ITEM}} i' => 'color: {{VALUE}}',
@@ -241,7 +241,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $repeater->add_control(
                         'tab_icon_active_color',
                         [
-                            'label'     => esc_html__( 'Active Icon Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Active Icon Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a.htb-active{{CURRENT_ITEM}} i' => 'color: {{VALUE}}',
@@ -265,16 +265,16 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     'fields'  => $repeater->get_controls(),
                     'default' => [
                         [
-                            'tab_title' => esc_html__( 'Title #1', 'htmega-addons' ),
-                            'custom_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate.','htmega-addons' ),
+                            'tab_title' => esc_html__( 'Title #1', 'ht-mega-for-elementor' ),
+                            'custom_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate.','ht-mega-for-elementor' ),
                         ],
                         [
-                            'tab_title' => esc_html__( 'Title #2', 'htmega-addons' ),
-                            'custom_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate.','htmega-addons' ),
+                            'tab_title' => esc_html__( 'Title #2', 'ht-mega-for-elementor' ),
+                            'custom_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate.','ht-mega-for-elementor' ),
                         ],
                         [
-                            'tab_title' => esc_html__( 'Title #3', 'htmega-addons' ),
-                            'custom_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate.','htmega-addons' ),
+                            'tab_title' => esc_html__( 'Title #3', 'ht-mega-for-elementor' ),
+                            'custom_content' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate.','ht-mega-for-elementor' ),
                         ],
                     ],
                     'title_field' => '{{{ tab_title }}}',
@@ -283,8 +283,8 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'active_item_index',
                 [
-                    'label' => esc_html__('Active Item Index', 'htmega-addons'),
-                    'description' => esc_html__('Set the active item index. Default 1', 'htmega-addons'),
+                    'label' => esc_html__('Active Item Index', 'ht-mega-for-elementor'),
+                    'description' => esc_html__('Set the active item index. Default 1', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'step' => 1,
@@ -298,7 +298,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
         $this->start_controls_section(
             'tab_menu_style_section',
             [
-                'label' => esc_html__( 'Tab Menu', 'htmega-addons' ),
+                'label' => esc_html__( 'Tab Menu', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -306,20 +306,20 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_style_area',
                 [
-                    'label' => esc_html__( 'Tab Area Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Tab Area Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                 ]
             );
             $this->add_responsive_control(
                 'tab_menu_wrapper_width',
                 [
-                    'label' => esc_html__( 'Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'inherit',
                     'options' => [
-                        'inherit' => esc_html__( 'Full Width', 'htmega-addons' ) . ' (100%)',
-                        'max-content' => esc_html__( 'Inline', 'htmega-addons' ) . ' (auto)',
-                        'initial' => esc_html__( 'Custom', 'htmega-addons' ),
+                        'inherit' => esc_html__( 'Full Width', 'ht-mega-for-elementor' ) . ' (100%)',
+                        'max-content' => esc_html__( 'Inline', 'ht-mega-for-elementor' ) . ' (auto)',
+                        'initial' => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
                     ],
                     'selectors_dictionary' => [
                         'inherit' => '100%',
@@ -336,7 +336,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_menu_wrapper_custom_width',
                 [
-                    'label' => esc_html__( 'Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'default' => [
                         'unit' => 'px',
@@ -363,7 +363,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_menu_area_width',
                 [
-                    'label' => esc_html__( 'Tab Menu Width (%)', 'htmega-addons' ),
+                    'label' => esc_html__( 'Tab Menu Width (%)', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%', 'custom' ],
                     'range' => [
@@ -392,7 +392,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_content_area_width',
                 [
-                    'label' => esc_html__( 'Tab Content Width (%)', 'htmega-addons' ),
+                    'label' => esc_html__( 'Tab Content Width (%)', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%', 'custom' ],
 
@@ -420,19 +420,19 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_area_v_align',
                 [
-                    'label' => __('Vertical Alignment', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+                    'label' => __('Vertical Alignment', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'start' => [
-                            'title' => __('Top', 'htmega-addons'),
+                            'title' => __('Top', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-v-align-top',
                         ],
                         'center' => [
-                            'title' => __('Center', 'htmega-addons'),
+                            'title' => __('Center', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-v-align-middle',
                         ],
                         'flex-end' => [
-                            'title' => __('Bottom', 'htmega-addons'),
+                            'title' => __('Bottom', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-v-align-bottom',
                         ],
                     ],
@@ -448,7 +448,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'tab_menu_area_background',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}}  .htmega-tab-nav',
                 ]
@@ -458,7 +458,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'tab_menu_area_border',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-tab-nav',
                     'separator' => 'before',
                 ]
@@ -467,7 +467,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_menu_area_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-tab-nav' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -478,7 +478,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_menu_area_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -491,7 +491,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_menu_area_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -503,7 +503,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_Separator',
                 [
-                    'label' => esc_html__( 'Separator Area', 'htmega-addons' ),
+                    'label' => esc_html__( 'Separator Area', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
@@ -515,7 +515,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_area_separator',
                 [
-                    'label'   => __( 'Separator', 'htmega-addons' ),
+                    'label'   => __( 'Separator', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'yes',
                     'return_value' => 'yes',
@@ -529,7 +529,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_separator_color',
                 [
-                    'label'     => esc_html__( 'Separator Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Separator Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-tab-style-5 .htmega-tab-content-area::before' => 'background: {{VALUE}}',
@@ -545,7 +545,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_area_separator_height',
                 [
-                    'label' => esc_html__( 'Separator Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Separator Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -576,7 +576,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_area_separator_width',
                 [
-                    'label' => esc_html__( 'Separator Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Separator Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -604,7 +604,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_area_separator_position',
                 [
-                    'label' => esc_html__( 'Separator Position', 'htmega-addons' ),
+                    'label' => esc_html__( 'Separator Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -631,7 +631,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_style',
                 [
-                    'label' => esc_html__( 'Tab Manu Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Tab Manu Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -642,26 +642,26 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_menu_style_normal_tab',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_responsive_control(
                         'tab_menu_align',
                         [
-                            'label'   => __( 'Alignment', 'htmega-addons' ),
+                            'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::CHOOSE,
                             'options' => [
                                 'start'    => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-center',
                                 ],
                                 'end' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-right',
                                 ],
                             ],
@@ -677,7 +677,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_control(
                         'tab_menu_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a' => 'color: {{VALUE}}',
@@ -689,7 +689,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'tab_menu_typography',
-                            'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a:not(i)',
                             'separator' => 'before',
                         ]
@@ -699,7 +699,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'tab_menu_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a',
                         ]
@@ -708,7 +708,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_responsive_control(
                         'tab_menu_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -721,7 +721,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_responsive_control(
                         'tab_menu_margin',
                         [
-                            'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -734,7 +734,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'tab_menu_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a',
                         ]
                     );
@@ -742,7 +742,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_responsive_control(
                         'tab_menu_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -756,14 +756,14 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_menu_style_active_tab',
                     [
-                        'label' => esc_html__( 'Active', 'htmega-addons' ),
+                        'label' => esc_html__( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'tab_menu_active_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a.htb-active' => 'color: {{VALUE}}',
@@ -776,7 +776,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'tab_menu_active_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a.htb-active',
                         ]
@@ -786,7 +786,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'tab_menu_active_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a.htb-active',
                         ]
                     );
@@ -794,7 +794,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_responsive_control(
                         'tab_menu_active_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a.htb-active' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -809,7 +809,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_menu_icon_box_style',
                 [
-                    'label' => esc_html__( 'Tab Icon Box Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Tab Icon Box Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -820,14 +820,14 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_icon_normal_tab',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'tab_icon_global_color',
                         [
-                            'label'     => esc_html__( 'Icon Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Icon Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a i' => 'color: {{VALUE}}',
@@ -840,7 +840,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_control(
                         'tab_icon_global_size',
                         [
-                            'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -861,23 +861,23 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_control(
                         'icon_position',
                         [
-                            'label' => __('Icon Position', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+                            'label' => __('Icon Position', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'unset' => [
-                                    'title' => __('Left', 'htmega-addons'),
+                                    'title' => __('Left', 'ht-mega-for-elementor'),
                                     'icon' => 'eicon-h-align-left',
                                 ],
                                 'column' => [
-                                    'title' => __('Top', 'htmega-addons'),
+                                    'title' => __('Top', 'ht-mega-for-elementor'),
                                     'icon' => 'eicon-v-align-top',
                                 ],
                                 'row-reverse' => [
-                                    'title' => __('Right', 'htmega-addons'),
+                                    'title' => __('Right', 'ht-mega-for-elementor'),
                                     'icon' => 'eicon-h-align-right',
                                 ],
                                 'column-reverse' => [
-                                    'title' => __('Bottom', 'htmega-addons'),
+                                    'title' => __('Bottom', 'ht-mega-for-elementor'),
                                     'icon' => 'eicon-v-align-bottom',
                                 ],
 
@@ -891,7 +891,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'tab_icon_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a i, {{WRAPPER}} .htmega-tab-nav a .htmega-tab-svg-icon',
                         ]
@@ -901,7 +901,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'tab_icon_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a i, {{WRAPPER}} .htmega-tab-nav a .htmega-tab-svg-icon',
                         ]
                     );
@@ -909,7 +909,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_responsive_control(
                         'tab_icon_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a i, {{WRAPPER}} .htmega-tab-nav a .htmega-tab-svg-icon' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -920,7 +920,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_control(
                         'tab_icon_width_size',
                         [
-                            'label' => esc_html__( 'Icon Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Width', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -941,7 +941,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_control(
                         'tab_icon_height_size',
                         [
-                            'label' => esc_html__( 'Icon Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -964,14 +964,14 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_icon_Active_tab',
                     [
-                        'label' => esc_html__( 'Active', 'htmega-addons' ),
+                        'label' => esc_html__( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
                 
                     $this->add_control(
                         'tab_icon_global_color_active',
                         [
-                            'label'     => esc_html__( 'Icon Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Icon Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a.htb-active i' => 'color: {{VALUE}}',
@@ -985,7 +985,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'tab_icon_background_active',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a.htb-active i, {{WRAPPER}} .htmega-tab-nav a.htb-active .htmega-tab-svg-icon',
                         ]
@@ -996,7 +996,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'tab_icon_border_active',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-tab-nav a.htb-active i, {{WRAPPER}} .htmega-tab-nav a.htb-active .htmega-tab-svg-icon',
                         ]
                     );
@@ -1004,7 +1004,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                     $this->add_responsive_control(
                         'tab_icon_border_radius_active',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tab-nav a.htb-active i, {{WRAPPER}} .htmega-tab-nav a.htb-active .htmega-tab-svg-icon' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1022,7 +1022,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
         $this->start_controls_section(
             'tab_style_content_section',
             [
-                'label' => esc_html__( 'Content', 'htmega-addons' ),
+                'label' => esc_html__( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1030,7 +1030,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_control(
                 'tab_content_color',
                 [
-                    'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-tab-content-area .htmega-tab-content p' => 'color: {{VALUE}}',
@@ -1051,7 +1051,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'tab_content_background',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-single-tab',
                 ]
@@ -1061,7 +1061,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'tab_content_border',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-tab',
                 ]
             );
@@ -1069,7 +1069,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_content_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-tab' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1080,7 +1080,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_content_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1093,7 +1093,7 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
             $this->add_responsive_control(
                 'tab_content_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1117,9 +1117,9 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
         $id = $this->get_id();
         $item_active_index = ( count( $settings['htmega_tabs_list'] ) < $settings['active_item_index']) ? 1 : esc_attr( $settings['active_item_index'] );
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_tab_attr' ); ?>>
+            <div <?php echo $this->get_render_attribute_string( 'htmega_tab_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
 
-                <div <?php echo $this->get_render_attribute_string( 'htmega_tab_menu_attr' ); ?>>
+                <div <?php echo $this->get_render_attribute_string( 'htmega_tab_menu_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                     <?php
                         $i=0;
                         foreach ( $settings['htmega_tabs_list'] as $item ) {
@@ -1130,9 +1130,9 @@ class HTMega_Elementor_Widget_Tabs extends Widget_Base {
                                 esc_attr( $active_tab ), 
                                 esc_attr( $id.$i ), 
                                 ( isset( $item['tab_icon']['library'] ) && $item['tab_icon']['library']  == "svg" ) ? 
-                                        '<div class="htmega-tab-svg-icon">' . HTMega_Icon_manager::render_icon( $item['tab_icon'], [ 'aria-hidden' => 'true' ] ) . '</div>' .wp_kses_post( $item['tab_title'] ) : 
-                                        ( ( 'image' == $item['icon_type'] && $item['tab_icon_image']['url'] ) ? 
-                                        '<div class="htmega-tab-svg-icon">'.Group_Control_Image_Size::get_attachment_image_html( $item, 'tab_icon_imagesize', 'tab_icon_image' ).'</div>'. wp_kses_post( $item['tab_title'] ) :
+                                        '<div class="htmega-tab-svg-icon">' . HTMega_Icon_manager::render_icon( $item['tab_icon'], [ 'aria-hidden' => 'true' ] ) . '</div>' .wp_kses_post( $item['tab_title'] ) : // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
+                                        ( ( 'image' == $item['icon_type'] && $item['tab_icon_image']['url'] ) ?
+                                        '<div class="htmega-tab-svg-icon">'.Group_Control_Image_Size::get_attachment_image_html( $item, 'tab_icon_imagesize', 'tab_icon_image' ).'</div>'. wp_kses_post( $item['tab_title'] ) : // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                                         HTMega_Icon_manager::render_icon( $item['tab_icon'], [ 'aria-hidden' => 'true' ] ). wp_kses_post( $item['tab_title'] ) ), 
                                     'elementor-repeater-item-'.esc_attr( $item['_id'] )
                             );

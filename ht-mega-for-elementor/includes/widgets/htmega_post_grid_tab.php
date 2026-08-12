@@ -12,7 +12,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Post Grid Tab', 'htmega-addons' );
+        return __( 'Post Grid Tab', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -35,22 +35,22 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_gridtab_content',
             [
-                'label' => __( 'Post Grid Tab', 'htmega-addons' ),
+                'label' => __( 'Post Grid Tab', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'post_grid_style',
                 [
-                    'label' => __( 'Layout', 'htmega-addons' ),
+                    'label' => __( 'Layout', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Layout One', 'htmega-addons' ),
-                        '2'   => __( 'Layout Two', 'htmega-addons' ),
-                        '3'   => __( 'Layout Three', 'htmega-addons' ),
-                        '4'   => __( 'Layout Four', 'htmega-addons' ),
-                        '5'   => __( 'Layout Five', 'htmega-addons' ),
+                        '1'   => __( 'Layout One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Layout Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Layout Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Layout Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Layout Five', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -61,7 +61,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_content_option',
             [
-                'label' => __( 'Post Option', 'htmega-addons' ),
+                'label' => __( 'Post Option', 'ht-mega-for-elementor' ),
             ]
         );
             $this->show_post_source();
@@ -69,7 +69,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'show_title',
                 [
-                    'label' => esc_html__( 'Title', 'htmega-addons' ),
+                    'label' => esc_html__( 'Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -78,7 +78,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'title_length',
                 [
-                    'label' => __('Title Length', 'htmega-addons'),
+                    'label' => __('Title Length', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 8,
                     'condition' =>[
@@ -90,7 +90,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'show_content',
                 [
-                    'label' => esc_html__( 'Content', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -99,7 +99,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'content_limit',
                 [
-                    'label' => __('Content Length', 'htmega-addons'),
+                    'label' => __('Content Length', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 50,
                     'condition' =>[
@@ -111,7 +111,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'show_category',
                 [
-                    'label' => esc_html__( 'Category', 'htmega-addons' ),
+                    'label' => esc_html__( 'Category', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -121,7 +121,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'show_date',
                 [
-                    'label' => esc_html__( 'Meta', 'htmega-addons' ),
+                    'label' => esc_html__( 'Meta', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -131,7 +131,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'show_read_more_btn',
                 [
-                    'label' => esc_html__( 'Read More', 'htmega-addons' ),
+                    'label' => esc_html__( 'Read More', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -141,10 +141,10 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'read_more_txt',
                 [
-                    'label' => __( 'Read More button text', 'htmega-addons' ),
+                    'label' => __( 'Read More button text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Read More', 'htmega-addons' ),
-                    'placeholder' => __( 'Read More', 'htmega-addons' ),
+                    'default' => __( 'Read More', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Read More', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_read_more_btn'=>'yes',
                     ]
@@ -157,7 +157,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_gridtab_style_section',
             [
-                'label' => __( 'Expand Box Style', 'htmega-addons' ),
+                'label' => __( 'Expand Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -166,7 +166,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'post_gridtab_item_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .single-post-grid-tab',
                 ]
@@ -176,7 +176,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'post_gridtab_item_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .single-post-grid-tab',
                 ]
             );
@@ -184,7 +184,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_item_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .single-post-grid-tab' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -195,7 +195,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_item_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -211,7 +211,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_item_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -222,7 +222,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_item_border_radius_image',
                 [
-                    'label' => esc_html__( 'Image Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Image Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .single-post-grid-tab .thumb' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -233,7 +233,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'Content_box_heading',
                 [
-                    'label' => __( 'Content Box Style', 'htmega-addons' ),
+                    'label' => __( 'Content Box Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' =>'before',
                 ]
@@ -242,7 +242,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'post_gridtab_item_background_box',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .ht-mega-post-grid-right .content',
                 ]
@@ -252,7 +252,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'post_gridtab_item_border_box',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .ht-mega-post-grid-right .content',
                 ]
             );
@@ -260,7 +260,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_item_border_radius_box',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .ht-mega-post-grid-right .content' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -271,7 +271,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_item_margin_box',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -284,7 +284,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_item_padding_box',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -295,19 +295,19 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_item_alignment_box',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -324,7 +324,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_slider_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_title'=>'yes',
@@ -334,7 +334,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#494849',
                     'selectors' => [
@@ -345,7 +345,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'title_color_hover',
                 [
-                    'label' => __( 'Hover Color', 'htmega-addons' ),
+                    'label' => __( 'Hover Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .single-post-grid-tab .post-inner h2 a:hover' => 'color: {{VALUE}}',
@@ -357,7 +357,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner h2',
                 ]
             );
@@ -365,7 +365,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -377,7 +377,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -389,23 +389,23 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'title_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -421,7 +421,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_slider_content_style_section',
             [
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_content'=>'yes',
@@ -431,7 +431,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#494849',
                     'selectors' => [
@@ -444,7 +444,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'content_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner p',
                 ]
             );
@@ -452,7 +452,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -464,7 +464,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -476,23 +476,23 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'content_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -508,7 +508,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_slider_category_style_section',
             [
-                'label' => __( 'Category', 'htmega-addons' ),
+                'label' => __( 'Category', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_category'=>'yes',
@@ -521,14 +521,14 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->start_controls_tab(
                     'category_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'category_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#ffffff',
                             'selectors' => [
@@ -541,7 +541,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'category_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
     
                             'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .post-category li a',
                         ]
@@ -550,7 +550,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                     $this->add_responsive_control(
                         'category_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -562,7 +562,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                     $this->add_responsive_control(
                         'category_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -575,7 +575,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'category_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .post-category li a',
                         ]
@@ -586,13 +586,13 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->start_controls_tab(
                     'category_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'category_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#ffffff',
                             'selectors' => [
@@ -605,7 +605,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'category_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .post-category li a:hover',
                         ]
@@ -621,7 +621,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_meta_style_section',
             [
-                'label' => __( 'Meta', 'htmega-addons' ),
+                'label' => __( 'Meta', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_date'=>'yes',
@@ -632,7 +632,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'meta_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#464545',
                     'selectors' => [
@@ -644,7 +644,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'meta_color_hover',
                 [
-                    'label' => __( 'Meta Hover Color', 'htmega-addons' ),
+                    'label' => __( 'Meta Hover Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .single-post-grid-tab .post-inner .meta li a:hover' => 'color: {{VALUE}}',
@@ -654,7 +654,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'meta_icon_color',
                 [
-                    'label' => __( 'Icon Color', 'htmega-addons' ),
+                    'label' => __( 'Icon Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .single-post-grid-tab .post-inner .meta i' => 'color: {{VALUE}}',
@@ -667,7 +667,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'meta_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .meta li',
                 ]
             );
@@ -675,7 +675,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'meta_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -687,7 +687,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'meta_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -699,19 +699,19 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'meta_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'start' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'end' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -727,7 +727,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_slider_readmore_style_section',
             [
-                'label' => __( 'Read More', 'htmega-addons' ),
+                'label' => __( 'Read More', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_read_more_btn'=>'yes',
@@ -741,14 +741,14 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->start_controls_tab(
                     'readmore_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'readmore_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#494849',
                             'selectors' => [
@@ -761,7 +761,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'readmore_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
     
                             'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .post-btn a.readmore-btn',
                         ]
@@ -770,7 +770,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                     $this->add_responsive_control(
                         'readmore_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -782,7 +782,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                     $this->add_responsive_control(
                         'readmore_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -795,7 +795,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'readmore_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .post-btn a.readmore-btn',
                         ]
@@ -805,7 +805,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'readmore_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .post-btn a.readmore-btn',
                         ]
                     );
@@ -813,7 +813,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                     $this->add_responsive_control(
                         'readmore_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .single-post-grid-tab .post-inner .post-btn a.readmore-btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -826,13 +826,13 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->start_controls_tab(
                     'readmore_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'readmore_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#494849',
                             'selectors' => [
@@ -845,7 +845,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'readmore_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .post-btn a.readmore-btn:hover',
                         ]
@@ -855,7 +855,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'readmore_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .single-post-grid-tab .post-inner .post-btn a.readmore-btn:hover',
                         ]
                     );
@@ -863,7 +863,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                     $this->add_responsive_control(
                         'readmore_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .single-post-grid-tab .post-inner .post-btn a.readmore-btn:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -881,7 +881,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_slider_close_style_section',
             [
-                'label' => __( 'Close', 'htmega-addons' ),
+                'label' => __( 'Close', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -891,14 +891,14 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->start_controls_tab(
                     'post_slider_close_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_slider_close_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#ffffff',
                             'selectors' => [
@@ -910,7 +910,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'post_slider_close_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .post-content .close__wrap button',
                         ]
@@ -919,14 +919,14 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'closer_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .post-content .close__wrap button',
                         ]
                     );                   
                     $this->add_responsive_control(
                         'closer_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .post-content .close__wrap button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -936,7 +936,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                     $this->add_responsive_control(
                         'closer_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -949,14 +949,14 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->start_controls_tab(
                     'post_slider_close_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_slider_close_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#ffffff',
                             'selectors' => [
@@ -968,7 +968,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'post_slider_close_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .post-content .close__wrap button:hover',
                         ]
@@ -977,7 +977,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'closer_border_hover',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .post-content .close__wrap button:hover',
                         ]
                     ); 
@@ -990,7 +990,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_gridtab_style_items',
             [
-                'label' => __( 'Group Item Style', 'htmega-addons' ),
+                'label' => __( 'Group Item Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -999,7 +999,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'post_gridtab_items_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .single-post-grid-tab',
                 ]
@@ -1009,7 +1009,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'post_gridtab_items_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .post-grid',
                 ]
             );
@@ -1017,7 +1017,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_items_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .post-grid' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1028,7 +1028,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_items_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1044,7 +1044,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_responsive_control(
                 'post_gridtab_items_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1058,7 +1058,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->start_controls_section(
             'post_gridtab_gradients_tyle_items',
             [
-                'label' => __( 'Custom Gradient Color', 'htmega-addons' ),
+                'label' => __( 'Custom Gradient Color', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=> [
                     'post_grid_style'=> array('1','5'),
@@ -1069,7 +1069,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'gradient1_heading',
                 [
-                    'label' => __( 'Item One Gradient', 'htmega-addons' ),
+                    'label' => __( 'Item One Gradient', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                 ]
             );  
@@ -1077,7 +1077,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'gradient1',
-                    'label' => __( 'Gradient One', 'htmega-addons' ),
+                    'label' => __( 'Gradient One', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gradient-overlay.gradient-overlay-1 .thumb a::before',
                     'separator'=>'after'
@@ -1086,7 +1086,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'gradient2_heading',
                 [
-                    'label' => __( 'Item Two Gradient', 'htmega-addons' ),
+                    'label' => __( 'Item Two Gradient', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator'=>'before'
                 ]
@@ -1095,7 +1095,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'gradient2',
-                    'label' => __( 'Gradient One', 'htmega-addons' ),
+                    'label' => __( 'Gradient One', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gradient-overlay.gradient-overlay-2 .thumb a::before',
                     'separator'=>'before'
@@ -1104,7 +1104,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'gradient3_heading',
                 [
-                    'label' => __( 'Item Three Gradient', 'htmega-addons' ),
+                    'label' => __( 'Item Three Gradient', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator'=>'before'
                 ]
@@ -1113,7 +1113,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'gradient3',
-                    'label' => __( 'Gradient Three', 'htmega-addons' ),
+                    'label' => __( 'Gradient Three', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gradient-overlay.gradient-overlay-3 .thumb a::before',
                     'separator'=>'before'
@@ -1122,7 +1122,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'gradient4_heading',
                 [
-                    'label' => __( 'Item Four Gradient', 'htmega-addons' ),
+                    'label' => __( 'Item Four Gradient', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator'=>'before'
                 ]
@@ -1131,7 +1131,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'gradient4',
-                    'label' => __( 'Gradient Four', 'htmega-addons' ),
+                    'label' => __( 'Gradient Four', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gradient-overlay.gradient-overlay-4 .thumb a::before',
                     'separator'=>'before'
@@ -1140,7 +1140,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'gradient5_heading',
                 [
-                    'label' => __( 'Item Five Gradient', 'htmega-addons' ),
+                    'label' => __( 'Item Five Gradient', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator'=>'before'
                 ]
@@ -1149,7 +1149,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'gradient5',
-                    'label' => __( 'Gradient Five', 'htmega-addons' ),
+                    'label' => __( 'Gradient Five', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gradient-overlay.gradient-overlay-5 .thumb a::before',
                     'separator'=>'before'
@@ -1158,7 +1158,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'gradient6_heading',
                 [
-                    'label' => __( 'Item Six Gradient', 'htmega-addons' ),
+                    'label' => __( 'Item Six Gradient', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator'=>'before'
                 ]
@@ -1167,7 +1167,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'gradient6',
-                    'label' => __( 'Gradient ', 'htmega-addons' ),
+                    'label' => __( 'Gradient ', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gradient-overlay.gradient-overlay-6 .thumb a::before',
                     'separator'=>'before'
@@ -1176,7 +1176,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $this->add_control(
                 'gradient7_heading',
                 [
-                    'label' => __( 'Item Seven Gradient', 'htmega-addons' ),
+                    'label' => __( 'Item Seven Gradient', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator'=>'before'
                 ]
@@ -1185,7 +1185,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'gradient7',
-                    'label' => __( 'Gradient ', 'htmega-addons' ),
+                    'label' => __( 'Gradient ', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gradient-overlay.gradient-overlay-7 .thumb a::before',
                     'separator'=>'before'
@@ -1234,7 +1234,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                     $category_name['0'] = 'product_cat';
                 }
                 $field_name = is_numeric( $post_categorys[0] ) ? 'term_id' : 'slug';
-                $args['tax_query'] = array(
+                $args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- intentional: implements the widget's category filter controls (`grid_categories` / `grid_prod_categories` / `{post_type}_post_category`) letting the site builder restrict the grid tab to chosen terms.
                     array(
                         'taxonomy' => $category_name[0],
                         'terms' => $post_categorys,
@@ -1288,7 +1288,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
             $exclude_merge[] = get_the_ID();
         }
         if ( ! empty( $exclude_merge ) ) {
-            $args['post__not_in'] = array_values( array_unique( $exclude_merge ) );
+            $args['post__not_in'] = array_values( array_unique( $exclude_merge ) ); // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in -- intentional: implements the widget's "Exclude Posts" control (`$settings['exclude_posts']`) and "Hide Current Post" toggle (`$settings['hide_current_post']`).
         }
 
         // Order check
@@ -1297,7 +1297,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         }
         // empty thumbnail post
         if ( 'yes' === $settings['hide_empty_thumbnail_post'] ) {
-            $args['meta_query'] = [
+            $args['meta_query'] = [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- intentional: implements the widget's "Hide post without featured image" toggle (`$settings['hide_empty_thumbnail_post']`), filtering to posts that have a `_thumbnail_id` meta value.
                 [
                     'key' => '_thumbnail_id',
                     'compare' => 'EXISTS'
@@ -1311,6 +1311,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_render_attribute( 'htmega_post_gridtab', 'data-postgridtab', wp_json_encode( $tabs_options ) );
        
         ?>
+            <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
             <div <?php echo $this->get_render_attribute_string( 'htmega_post_gridtab' ); ?>>
                 <?php
                 if( $grid_post->have_posts() ):
@@ -1475,9 +1476,9 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                         <?php endif;?>
 
                         <?php 
-                    endwhile; wp_reset_postdata(); wp_reset_query(); 
+                    endwhile; wp_reset_postdata(); 
                 else:
-                    echo "<div class='htmega-error-notice'>".esc_html__('There are no posts in this query','htmega-addons')."</div>";
+                    echo "<div class='htmega-error-notice'>".esc_html__('There are no posts in this query','ht-mega-for-elementor')."</div>";
                 endif;
                 ?>
 
@@ -1559,6 +1560,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
 
                                 <?php endif; if( $settings['show_read_more_btn'] == 'yes' ): ?>
                                     <div class="post-btn">
+                                        <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php. ?>
                                         <a class="readmore-btn" href="<?php the_permalink();?>"><?php echo htmega_kses_desc( $settings['read_more_txt'] );?></a>
                                     </div>
                                 <?php endif;?>
@@ -1581,7 +1583,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             'grid_post_type',
             [
-                'label' => esc_html__( 'Post Type', 'htmega-addons' ),
+                'label' => esc_html__( 'Post Type', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
                 'options' => htmega_get_post_types(),
@@ -1593,21 +1595,21 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             'include_by',
             [
-                'label' => __( 'Include By', 'htmega-addons' ),
+                'label' => __( 'Include By', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
                 'multiple' => true,
                 'default' =>'in_category',
                 'options' => [
-                    'in_author'      => __( 'Author', 'htmega-addons' ),
-                    'in_category'      => __( 'Category', 'htmega-addons' ),
+                    'in_author'      => __( 'Author', 'ht-mega-for-elementor' ),
+                    'in_category'      => __( 'Category', 'ht-mega-for-elementor' ),
                 ],
             ]
         );
         $this->add_control(
             'post_author',
             [
-                'label' => esc_html__( 'Authors', 'htmega-addons' ),
+                'label' => esc_html__( 'Authors', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
                 'multiple' => true,
@@ -1624,7 +1626,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->add_control(
                     'grid_categories',
                     [
-                        'label' => esc_html__( 'Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -1639,7 +1641,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->add_control(
                     'grid_prod_categories',
                     [
-                        'label' => esc_html__( 'Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -1655,7 +1657,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
                 $this->add_control(
                     "{$post_key}_post_category",
                     [
-                        'label' => esc_html__( 'Select Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Select Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -1672,17 +1674,17 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             "exclude_posts",
             [
-                'label' => esc_html__( 'Exclude Posts', 'htmega-addons' ),
+                'label' => esc_html__( 'Exclude Posts', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'placeholder' => esc_html__( 'Example: 10,11,105', 'htmega-addons' ),
-                'description' => esc_html__( "To Exclude Post, Enter  the post id separated by ','", 'htmega-addons' ),
+                'placeholder' => esc_html__( 'Example: 10,11,105', 'ht-mega-for-elementor' ),
+                'description' => esc_html__( "To Exclude Post, Enter  the post id separated by ','", 'ht-mega-for-elementor' ),
             ]
         );
         $this->add_control(
             'post_limit',
             [
-                'label' => __('Limit', 'htmega-addons'),
+                'label' => __('Limit', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 5,
                 'separator'=>'before',
@@ -1692,23 +1694,23 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             'orderby',
             [
-                'label' => esc_html__( 'Order By', 'htmega-addons' ),
+                'label' => esc_html__( 'Order By', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'date',
                 'options' => [
-                    'ID'            => esc_html__('ID','htmega-addons'),
-                    'date'          => esc_html__('Date','htmega-addons'),
-                    'name'          => esc_html__('Name','htmega-addons'),
-                    'title'         => esc_html__('Title','htmega-addons'),
-                    'comment_count' => esc_html__('Comment count','htmega-addons'),
-                    'rand'          => esc_html__('Random','htmega-addons'),
+                    'ID'            => esc_html__('ID','ht-mega-for-elementor'),
+                    'date'          => esc_html__('Date','ht-mega-for-elementor'),
+                    'name'          => esc_html__('Name','ht-mega-for-elementor'),
+                    'title'         => esc_html__('Title','ht-mega-for-elementor'),
+                    'comment_count' => esc_html__('Comment count','ht-mega-for-elementor'),
+                    'rand'          => esc_html__('Random','ht-mega-for-elementor'),
                 ],
             ]
         );
         $this->add_control(
             'custom_order_by_date',
             [
-                'label' => esc_html__( 'Custom Date', 'htmega-addons' ),
+                'label' => esc_html__( 'Custom Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'no',
@@ -1720,7 +1722,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             'order_by_date_before',
             [
-                'label' => __( 'Before Date', 'htmega-addons' ),
+                'label' => __( 'Before Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DATE_TIME,
                 'condition' =>[
                     'orderby'=>'date',
@@ -1731,7 +1733,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             'order_by_date_after',
             [
-                'label' => __( 'After Date', 'htmega-addons' ),
+                'label' => __( 'After Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DATE_TIME,
                 'condition' =>[
                     'orderby'=>'date',
@@ -1742,12 +1744,12 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             'postorder',
             [
-                'label' => esc_html__( 'Order', 'htmega-addons' ),
+                'label' => esc_html__( 'Order', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'DESC',
                 'options' => [
-                    'DESC'  => esc_html__('Descending','htmega-addons'),
-                    'ASC'   => esc_html__('Ascending','htmega-addons'),
+                    'DESC'  => esc_html__('Descending','ht-mega-for-elementor'),
+                    'ASC'   => esc_html__('Ascending','ht-mega-for-elementor'),
                 ],
 
             ]
@@ -1755,7 +1757,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             'hide_empty_thumbnail_post',
             [
-                'label'         => esc_html__( 'Hide Empty Thumbnail', 'htmega-addons' ),
+                'label'         => esc_html__( 'Hide Empty Thumbnail', 'ht-mega-for-elementor' ),
                 'type'          => Controls_Manager::SWITCHER,
                 'return_value'  => 'yes',
                 'default'       => 'no',
@@ -1764,7 +1766,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
         $this->add_control(
             'hide_current_post',
             [
-                'label'         => esc_html__( 'Hide Current Post', 'htmega-addons' ),
+                'label'         => esc_html__( 'Hide Current Post', 'ht-mega-for-elementor' ),
                 'type'          => Controls_Manager::SWITCHER,
                 'return_value'  => 'yes',
                 'default'       => 'no',

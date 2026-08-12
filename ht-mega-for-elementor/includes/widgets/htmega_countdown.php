@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Countdown', 'htmega-addons' );
+        return __( 'Countdown', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -36,7 +36,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 'post_type'      => \Tribe__Events__Main::POSTTYPE,
             ));
 
-            $event_items = ['0' => __( 'Select Event', 'htmega-addons' ) ];
+            $event_items = ['0' => __( 'Select Event', 'ht-mega-for-elementor' ) ];
 
             foreach ($event_item as $key => $value) {
                 $event_items[$value] = get_the_title($value);
@@ -44,7 +44,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
 
             wp_reset_postdata();
         } else {
-            $event_items = ['0' => __( 'Event Calendar Not Installed', 'htmega-addons' ) ];
+            $event_items = ['0' => __( 'Event Calendar Not Installed', 'ht-mega-for-elementor' ) ];
         }
         return $event_items;
     }
@@ -61,14 +61,14 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         $this->start_controls_section(
             'countdown_content',
             [
-                'label' => __( 'Countdown', 'htmega-addons' ),
+                'label' => __( 'Countdown', 'ht-mega-for-elementor' ),
             ]
         );
         
             $this->add_control(
                 'show_event_list',
                 [
-                    'label'   => __( 'Event Countdown', 'htmega-addons' ),
+                    'label'   => __( 'Event Countdown', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'no',
                 ]
@@ -77,7 +77,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'event_id',
                 [
-                    'label'       => __( 'Event List', 'htmega-addons' ),
+                    'label'       => __( 'Event List', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'options'     => $this->get_event_list(),
                     'default'     => '0',
@@ -90,14 +90,14 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'htmega_count_style',
                 [
-                    'label'          => __( 'Style', 'htmega-addons' ),
+                    'label'          => __( 'Style', 'ht-mega-for-elementor' ),
                     'type'           => 'htmega-preset-select',
                     'default'        => '1',
                     'options'        => [
-                        '1' => __( 'Style one', 'htmega-addons' ),
-                        '2' => __( 'Style Two', 'htmega-addons' ),
-                        '3' => __( 'Style Three', 'htmega-addons' ),
-                        'flip' => __( 'Style Four (Flip)', 'htmega-addons' ),
+                        '1' => __( 'Style one', 'ht-mega-for-elementor' ),
+                        '2' => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3' => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        'flip' => __( 'Style Four (Flip)', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -105,7 +105,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'target_date',
                 [
-                    'label'       => __( 'Due Date', 'htmega-addons' ),
+                    'label'       => __( 'Due Date', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::DATE_TIME,
                     'picker_options'=>array(
                         'dateFormat' =>"Y/m/d",
@@ -123,7 +123,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'counter_timing_heading',
                 [
-                    'label' => __( 'Time Setting', 'htmega-addons' ),
+                    'label' => __( 'Time Setting', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                 ]
             );
@@ -131,7 +131,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_down_days',
                 [
-                    'label'        => __( 'Day', 'htmega-addons' ),
+                    'label'        => __( 'Day', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' =>'yes',
@@ -141,7 +141,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_down_hours',
                 [
-                    'label'        => __( 'Hours', 'htmega-addons' ),
+                    'label'        => __( 'Hours', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' =>'yes',
@@ -151,7 +151,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_down_miniute',
                 [
-                    'label'        => __( 'Minutes', 'htmega-addons' ),
+                    'label'        => __( 'Minutes', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' =>'yes',
@@ -161,7 +161,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_down_second',
                 [
-                    'label'        => __( 'Seconds', 'htmega-addons' ),
+                    'label'        => __( 'Seconds', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' =>'yes',
@@ -171,7 +171,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'counter_lavel_heading',
                 [
-                    'label' => __( 'Label Setting', 'htmega-addons' ),
+                    'label' => __( 'Label Setting', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                 ]
             );
@@ -179,7 +179,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_down_labels',
                 [
-                    'label'        => __( 'Hide Label', 'htmega-addons' ),
+                    'label'        => __( 'Hide Label', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' =>'no',
@@ -189,7 +189,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'custom_labels',
                 [
-                    'label'        => __( 'Custom Label', 'htmega-addons' ),
+                    'label'        => __( 'Custom Label', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'condition'   => [
@@ -201,9 +201,9 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'customlabel_days',
                 [
-                    'label'       => __( 'Days', 'htmega-addons' ),
+                    'label'       => __( 'Days', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Days', 'htmega-addons' ),
+                    'placeholder' => __( 'Days', 'ht-mega-for-elementor' ),
                     'condition'   => [
                         'custom_labels!'     => '',
                         'count_down_labels!' => 'yes',
@@ -215,9 +215,9 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'customlabel_hours',
                 [
-                    'label'       => __( 'Hours', 'htmega-addons' ),
+                    'label'       => __( 'Hours', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Hours', 'htmega-addons' ),
+                    'placeholder' => __( 'Hours', 'ht-mega-for-elementor' ),
                     'condition'   => [
                         'custom_labels!'     => '',
                         'count_down_labels!' => 'yes',
@@ -229,9 +229,9 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'customlabel_minutes',
                 [
-                    'label'       => __( 'Minutes', 'htmega-addons' ),
+                    'label'       => __( 'Minutes', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Minutes', 'htmega-addons' ),
+                    'placeholder' => __( 'Minutes', 'ht-mega-for-elementor' ),
                     'condition'   => [
                         'custom_labels!'     => '',
                         'count_down_labels!' => 'yes',
@@ -243,9 +243,9 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'customlabel_seconds',
                 [
-                    'label'       => __( 'Seconds', 'htmega-addons' ),
+                    'label'       => __( 'Seconds', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Seconds', 'htmega-addons' ),
+                    'placeholder' => __( 'Seconds', 'ht-mega-for-elementor' ),
                     'condition'   => [
                         'custom_labels!'     => '',
                         'count_down_labels!' => 'yes',
@@ -260,7 +260,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         $this->start_controls_section(
             'countdown_event_button',
             [
-                'label' => __( 'Event Button', 'htmega-addons' ),
+                'label' => __( 'Event Button', 'ht-mega-for-elementor' ),
                 'condition'=>[
                     'show_event_list'=>'yes',
                 ]
@@ -270,16 +270,16 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'button_text',
                 [
-                    'label' => __( 'Text', 'htmega-addons' ),
+                    'label' => __( 'Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default'=>__('Details','htmega-addons'),
+                    'default'=>__('Details','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'button_icon',
                 [
-                    'label' => __( 'Icon', 'htmega-addons' ),
+                    'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                 ]
             );
@@ -290,7 +290,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         $this->start_controls_section(
             'countdown_layout',
             [
-                'label' => __( 'Count Layout', 'htmega-addons' ),
+                'label' => __( 'Count Layout', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -299,7 +299,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'column_width',
                 [
-                    'label'   => __( 'Column Width', 'htmega-addons' ),
+                    'label'   => __( 'Column Width', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SLIDER,
                     'default' => [
                         'unit' => 'px',
@@ -335,7 +335,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'column_height',
                 [
-                    'label'   => __( 'Column Height', 'htmega-addons' ),
+                    'label'   => __( 'Column Height', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SLIDER,
                     'default' => [
                         'unit' => 'px',
@@ -372,7 +372,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_down_specing',
                 [
-                    'label' => __( 'Column Spacing', 'htmega-addons' ),
+                    'label' => __( 'Column Spacing', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -403,7 +403,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         $this->start_controls_section(
             'htmega_countdown_style',
             [
-                'label' => __( 'Count Area', 'htmega-addons' ),
+                'label' => __( 'Count Area', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -412,7 +412,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} span.ht-count',
                     'condition'=>[
@@ -424,7 +424,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'counter_background_daly_heading',
                 [
-                    'label' => esc_html__( '1. Background Days', 'htmega-addons' ),
+                    'label' => esc_html__( '1. Background Days', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'condition'=>[
                         'htmega_count_style'=> 'flip',
@@ -437,7 +437,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_background_daly_flip',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-flash-flip-countdown-timer .ht-countdown .htmega-days .ht-count',
                     'condition'=>[
@@ -449,7 +449,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'counter_background_hours_heading',
                 [
-                    'label' => esc_html__( '2. Background Hours', 'htmega-addons' ),
+                    'label' => esc_html__( '2. Background Hours', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition'=>[
@@ -462,7 +462,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_background_hours_flip',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-flash-flip-countdown-timer .ht-countdown .htmega-hours .ht-count',
                     'condition'=>[
@@ -474,7 +474,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'counter_background_minutes_heading',
                 [
-                    'label' => esc_html__( '3. Background Minutes', 'htmega-addons' ),
+                    'label' => esc_html__( '3. Background Minutes', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition'=>[
@@ -487,7 +487,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_background_minutes_flip',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-flash-flip-countdown-timer .ht-countdown .htmega-mins .ht-count',
                     'condition'=>[
@@ -499,7 +499,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'counter_background_seconds_heading',
                 [
-                    'label' => esc_html__( '4. Background Seconds', 'htmega-addons' ),
+                    'label' => esc_html__( '4. Background Seconds', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition'=>[
@@ -512,7 +512,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_background_seconds_flip',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-flash-flip-countdown-timer .ht-countdown .htmega-secs .ht-count',
                     'condition'=>[
@@ -525,7 +525,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'counter_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} span.ht-count, {{WRAPPER}} .ht-countdown-flip .htmega-time .htmega-time-inner',
                 ]
             );
@@ -534,7 +534,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'countborder',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} span.ht-count',
                     'condition'=>[
                         'htmega_count_style'=> ['1', '2', '3'],
@@ -546,7 +546,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'countborder_flip',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .ht-countdown-flip .htmega-time .htmega-time-inner',
                     'condition'=>[
                         'htmega_count_style'=> 'flip',
@@ -558,7 +558,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} span.ht-count' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -574,7 +574,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'countpadding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -590,7 +590,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'countmargin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -606,23 +606,23 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'itemaligntitle',
                 [
-                    'label' => __( 'Item Alignment', 'htmega-addons' ),
+                    'label' => __( 'Item Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -638,23 +638,23 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'aligntitle',
                 [
-                    'label' => __( 'Content Alignment', 'htmega-addons' ),
+                    'label' => __( 'Content Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -672,7 +672,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'counter_separator',
                 [
-                    'label'        => __( 'Counter separator', 'htmega-addons' ),
+                    'label'        => __( 'Counter separator', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' =>'yes',
@@ -686,7 +686,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_seperator_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#5e5b60',
                     'selectors' => [
@@ -702,7 +702,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_seperator_image',
                 [
-                    'label' => esc_html__( 'Choose Area Seperator Image', 'htmega-addons' ),
+                    'label' => esc_html__( 'Choose Area Seperator Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'condition'=>[
                         'counter_separator'=>'yes',
@@ -715,7 +715,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_timer_separator_position',
                 [
-                    'label' => esc_html__( 'Separator Position', 'htmega-addons' ),
+                    'label' => esc_html__( 'Separator Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -740,7 +740,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         $this->start_controls_section(
             'htmega_countdown_time_style',
             [
-                'label'     => __( 'Timer', 'htmega-addons' ),
+                'label'     => __( 'Timer', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -748,7 +748,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_timer_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#242424',
                     'selectors' => [
@@ -770,7 +770,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Text_Shadow::get_type(),
                 [
                     'name' => 'count_timer_shadow',
-                    'label' => __( 'Text Shadow', 'htmega-addons' ),
+                    'label' => __( 'Text Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-countbox span.time-count',
                     'condition'=>[
                         'htmega_count_style'=> ['1', '2', '3'],
@@ -782,7 +782,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'count_timer_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-countbox span.time-count',
                     'condition'=>[
@@ -795,7 +795,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'count_timer_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-countbox span.time-count',
                     'condition'=>[
                         'htmega_count_style'=> ['1', '2', '3'],
@@ -806,7 +806,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_timer_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-countbox span.time-count' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -821,7 +821,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_timer_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -837,7 +837,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_timer_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -853,7 +853,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'counter_timer_separator',
                 [
-                    'label'        => __( 'Timer separator', 'htmega-addons' ),
+                    'label'        => __( 'Timer separator', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' =>'yes',
@@ -868,7 +868,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'count_timer_separator_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-countbox span.time-count::before',
                     'condition'=>[
@@ -881,7 +881,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_timer_separator_background_width',
                 [
-                    'label' => esc_html__( 'Separator Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Separator Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ '%' ],
                     'range' => [
@@ -911,7 +911,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         $this->start_controls_section(
             'htmega_countdown_label_style',
             [
-                'label' => __( 'Label', 'htmega-addons' ),
+                'label' => __( 'Label', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'count_down_labels!' => 'yes',
@@ -921,7 +921,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_control(
                 'count_lavel_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#242424',
                     'selectors' => [
@@ -943,7 +943,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Text_Shadow::get_type(),
                 [
                     'name' => 'count_lavel_shadow',
-                    'label' => __( 'Text Shadow', 'htmega-addons' ),
+                    'label' => __( 'Text Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-countbox span span.count-inner p, {{WRAPPER}} .ht-countdown-flip .htmega-time .htmega-label p',
                 ]
             );
@@ -952,7 +952,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'count_lavel_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-countbox span span.count-inner p, {{WRAPPER}} .ht-countdown-flip .htmega-time .htmega-label p',
                 ]
@@ -962,7 +962,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'count_lavel_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-countbox span span.count-inner p, {{WRAPPER}} .ht-countdown-flip .htmega-time .htmega-label p',
                 ]
             );
@@ -970,7 +970,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_lavel_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-countbox span span.count-inner p' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -983,7 +983,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_lavel_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -997,7 +997,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             $this->add_responsive_control(
                 'count_lavel_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1014,7 +1014,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         $this->start_controls_section(
             'button_style_section',
             [
-                'label' => __( 'Button Style', 'htmega-addons' ),
+                'label' => __( 'Button Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_event_list'=>'yes',
@@ -1027,7 +1027,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
@@ -1035,7 +1035,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'button_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega_event_button a',
                         ]
                     );
@@ -1043,7 +1043,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     $this->add_control(
                         'button_text_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -1072,7 +1072,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     $this->add_group_control(
                         Group_Control_Border::get_type(), [
                             'name' => 'button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default' => '1px',
                             'selector' => '{{WRAPPER}} .htmega_event_button a',
@@ -1083,7 +1083,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     $this->add_control(
                         'button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -1095,7 +1095,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     $this->add_control(
                         'button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -1107,7 +1107,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     $this->add_control(
                         'button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -1122,13 +1122,13 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'button_hover_text_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -1157,7 +1157,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     $this->add_group_control(
                         Group_Control_Border::get_type(), [
                             'name' => 'button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default' => '1px',
                             'selector' => '{{WRAPPER}} .htmega_event_button a:hover',
@@ -1168,7 +1168,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                     $this->add_control(
                         'button_hover_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -1206,19 +1206,19 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         // Custom Label
         $data_options['htmegadaytxt'] = ! empty( $settings['customlabel_days'] ) ? 
         htmlspecialchars( wp_strip_all_tags($settings['customlabel_days']) ) : 
-        esc_html__( 'Days', 'htmega-addons' );
+        esc_html__( 'Days', 'ht-mega-for-elementor' );
     
         $data_options['htmegahourtxt'] = ! empty( $settings['customlabel_hours'] ) ? 
             htmlspecialchars( wp_strip_all_tags($settings['customlabel_hours']) ) : 
-            esc_html__( 'Hours', 'htmega-addons' );
+            esc_html__( 'Hours', 'ht-mega-for-elementor' );
         
         $data_options['htmegaminutestxt'] = ! empty( $settings['customlabel_minutes'] ) ? 
             htmlspecialchars( wp_strip_all_tags($settings['customlabel_minutes']) ) : 
-            esc_html__( 'Minutes', 'htmega-addons' );
+            esc_html__( 'Minutes', 'ht-mega-for-elementor' );
         
         $data_options['htmegasecondstxt'] = ! empty( $settings['customlabel_seconds'] ) ? 
             htmlspecialchars( wp_strip_all_tags($settings['customlabel_seconds']) ) : 
-            esc_html__( 'Seconds', 'htmega-addons' );
+            esc_html__( 'Seconds', 'ht-mega-for-elementor' );
 
 
         
@@ -1252,7 +1252,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
         }
 
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'countdown_wrapper_attr' ); ?> >
+            <div <?php echo $this->get_render_attribute_string( 'countdown_wrapper_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                 <div class="htmega-box-timer">
                     <div class="<?php echo esc_attr( $countdownClassOne ) ?>">
                         <?php
@@ -1264,8 +1264,8 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                                 <a class="elementor-button" href="<?php echo esc_url( get_permalink( $settings['event_id'] ) );?>">
                                     <?php
                                         if( !empty( $settings['button_icon']['value'] ) ){
-                                            echo HTMega_Icon_manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] );
-                                        } 
+                                            echo HTMega_Icon_manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
+                                        }
                                         if( !empty( $settings['button_text'] ) ){
                                             echo wp_kses_post( $settings['button_text'] );
                                         }
@@ -1279,6 +1279,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
             </div>
 
             <?php if($settings['counter_separator'] == 'yes'): ?>
+                <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php ?>
                 <style><?php echo esc_html( '.'.$sectionid ) ?> .htmega-countbox .ht-count::before{ content: <?php echo htmega_kses_desc($count_area_seperator) ?>;}</style>
            <?php endif;
     }

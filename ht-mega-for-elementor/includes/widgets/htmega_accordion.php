@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Accordion / FAQ', 'htmega-addons' );
+        return __( 'Accordion / FAQ', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -41,22 +41,22 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'accordion_content',
             [
-                'label' => __( 'Accordion', 'htmega-addons' ),
+                'label' => __( 'Accordion', 'ht-mega-for-elementor' ),
             ]
         );
         
             $this->add_control(
                 'accordiantstyle',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => 'one',
                     'options' => [
-                        'one'   => __( 'Style One', 'htmega-addons' ),
-                        'two'   => __( 'Style Two', 'htmega-addons' ),
-                        'three' => __( 'Style Three', 'htmega-addons' ),
-                        'four'  => __( 'Style Four', 'htmega-addons' ),
-                        'five'  => __( 'Style Five', 'htmega-addons' ),
+                        'one'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        'two'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        'three' => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        'four'  => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        'five'  => __( 'Style Five', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -67,26 +67,26 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $repeater->add_control(
                 'accordion_title', 
                 [
-                    'label'       => __( 'Title', 'htmega-addons' ),
+                    'label'       => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
                 ]
             );
             $repeater->add_control(
                 'icon_type',
                 [
-                    'label' => __('Title Icon', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+                    'label' => __('Title Icon', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'none' => [
-                            'title' => __( 'None', 'htmega-addons' ),
+                            'title' => __( 'None', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-ban',
                         ],
                         'icon' => [
-                            'title' => __( 'Icon', 'htmega-addons' ),
+                            'title' => __( 'Icon', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-info-circle',
                         ],
                         'image' => [
-                            'title' => __( 'Image', 'htmega-addons' ),
+                            'title' => __( 'Image', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-image-bold',
                         ],
                     ],
@@ -109,19 +109,19 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $repeater->add_control(
                 'content_source', 
                 [
-                    'label'   => __( 'Select Content Source', 'htmega-addons' ),
+                    'label'   => __( 'Select Content Source', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'    => __( 'Custom', 'htmega-addons' ),
-                        "elementor" => __( 'Elementor Template', 'htmega-addons' ),
+                        'custom'    => __( 'Custom', 'ht-mega-for-elementor' ),
+                        "elementor" => __( 'Elementor Template', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
             $repeater->add_control(
                 'accordion_content', 
                 [
-                    'label'       => __( 'Accordion Content', 'htmega-addons' ),
+                    'label'       => __( 'Accordion Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::WYSIWYG,
                     'condition'   => [
                     'content_source' =>'custom',
@@ -132,7 +132,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 'template_id', 
                 [
                     
-                    'label'       => __( 'Accordion Content', 'htmega-addons' ),
+                    'label'       => __( 'Accordion Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_elementor_template(),
@@ -145,7 +145,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
             'htmega_accordion_list',
             [
-                'label'     => __( 'Accordion Items', 'htmega-addons' ),
+                'label'     => __( 'Accordion Items', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::REPEATER,
                 'fields'    => $repeater->get_controls(),
                 'condition' => [
@@ -153,17 +153,17 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 ],
                 'default' => [
                     [
-                        'accordion_title'   => __( 'Accordion Title One', 'htmega-addons' ),
-                        'accordion_content' => __( 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably have not heard of them accusamus labore sustainable VHS.', 'htmega-addons' ),
+                        'accordion_title'   => __( 'Accordion Title One', 'ht-mega-for-elementor' ),
+                        'accordion_content' => __( 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably have not heard of them accusamus labore sustainable VHS.', 'ht-mega-for-elementor' ),
                         
                     ],
                     [
-                        'accordion_title'   => __( 'Accordion Title Two', 'htmega-addons' ),
-                        'accordion_content' => __( 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably have not heard of them accusamus labore sustainable VHS.', 'htmega-addons' ),
+                        'accordion_title'   => __( 'Accordion Title Two', 'ht-mega-for-elementor' ),
+                        'accordion_content' => __( 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably have not heard of them accusamus labore sustainable VHS.', 'ht-mega-for-elementor' ),
                     ],
                     [
-                        'accordion_title'   => __( 'Accordion Title Two', 'htmega-addons' ),
-                        'accordion_content' => __( 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably have not heard of them accusamus labore sustainable VHS.', 'htmega-addons' ),
+                        'accordion_title'   => __( 'Accordion Title Two', 'ht-mega-for-elementor' ),
+                        'accordion_content' => __( 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably have not heard of them accusamus labore sustainable VHS.', 'ht-mega-for-elementor' ),
                     ],
                 ],
                 'title_field' => '{{{ accordion_title }}}',
@@ -177,14 +177,14 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $repeater2->add_control(
                 'accordion_title', 
                 [
-                    'label'       => __( 'Title', 'htmega-addons' ),
+                    'label'       => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
                 ]
             );
             $repeater2->add_control(
                 'accordion_image', 
                 [
-                     'label'      => __( 'Image', 'htmega-addons' ),
+                     'label'      => __( 'Image', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::MEDIA,
                     'default'     => [
                         'url'     => Utils::get_placeholder_image_src(),
@@ -195,7 +195,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
             'htmega_accordion_list_two',
             [
-                'label'     => __( 'Accordion Items', 'htmega-addons' ),
+                'label'     => __( 'Accordion Items', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::REPEATER,
                 'fields'    => $repeater2->get_controls(),
                 'condition' => [
@@ -203,7 +203,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 ],
                 'default' => [
                     [
-                        'accordion_title'   => __( 'Accordion Title', 'htmega-addons' ),
+                        'accordion_title'   => __( 'Accordion Title', 'ht-mega-for-elementor' ),
                         
                     ],
                 ],
@@ -220,14 +220,14 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $repeater3->add_control(
                 'accordion_title', 
                 [
-                    'label'       => __( 'Title', 'htmega-addons' ),
+                    'label'       => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
                 ]
             );
             $repeater3->add_control(
                 'accordion_image', 
                 [
-                     'label'      => __( 'Image', 'htmega-addons' ),
+                     'label'      => __( 'Image', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::MEDIA,
                     'default'     => [
                         'url'     => Utils::get_placeholder_image_src(),
@@ -237,12 +237,12 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $repeater3->add_control(
                 'content_source', 
                 [
-                    'label'   => __( 'Select Content Source', 'htmega-addons' ),
+                    'label'   => __( 'Select Content Source', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'    => __( 'Custom', 'htmega-addons' ),
-                        "elementor" => __( 'Elementor Template', 'htmega-addons' ),
+                        'custom'    => __( 'Custom', 'ht-mega-for-elementor' ),
+                        "elementor" => __( 'Elementor Template', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -250,9 +250,9 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 'accordion_content', 
                 [
                     
-                    'label'      => __( 'Accordion Content', 'htmega-addons' ),
+                    'label'      => __( 'Accordion Content', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::WYSIWYG,
-                    'default'    => __( 'Accordion Content', 'htmega-addons' ),
+                    'default'    => __( 'Accordion Content', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'content_source' =>'custom',
                     ],
@@ -261,7 +261,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $repeater3->add_control(
                 'template_id', 
                 [
-                    'label'       => __( 'Accordion Content', 'htmega-addons' ),
+                    'label'       => __( 'Accordion Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_elementor_template(),
@@ -274,7 +274,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
             'htmega_accordion_list_three',
             [
-                'label'     => __( 'Accordion Items', 'htmega-addons' ),
+                'label'     => __( 'Accordion Items', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::REPEATER,
                 'fields'    => $repeater3->get_controls(),
                 'condition' => [
@@ -282,8 +282,8 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 ],
                 'default' => [
                         [
-                        'accordion_title'   => __( 'Accordion Title One', 'htmega-addons' ),
-                        'accordion_content' => __('Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably have not heard of them accusamus labore sustainable VHS.','htmega-addons'),
+                        'accordion_title'   => __( 'Accordion Title One', 'ht-mega-for-elementor' ),
+                        'accordion_content' => __('Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably have not heard of them accusamus labore sustainable VHS.','ht-mega-for-elementor'),
                         ],
                         
                     ],
@@ -295,7 +295,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accourdion_title_html_tag',
                 [
-                    'label'   => __( 'Title HTML Tag', 'htmega-addons' ),
+                    'label'   => __( 'Title HTML Tag', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => htmega_html_tag_lists(),
                     'default' => 'h2',
@@ -308,7 +308,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_open_icon',
                 [
-                    'label'       => __( 'Item Collapse Icon', 'htmega-addons' ),
+                    'label'       => __( 'Item Collapse Icon', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fas fa-plus',
@@ -323,7 +323,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_close_icon',
                 [
-                    'label'       => __( 'Open Item Icon', 'htmega-addons' ),
+                    'label'       => __( 'Open Item Icon', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fas fa-minus',
@@ -337,7 +337,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'show_short_description',
                 [
-                    'label'   => __( 'Show Short Description ', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                    'label'   => __( 'Show Short Description ', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'no',
                     'return_value' => 'yes',
@@ -351,7 +351,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_close_all',
                 [
-                    'label'   => __( 'Close All Item', 'htmega-addons' ),
+                    'label'   => __( 'Close All Item', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'yes',
                     'return_value' => 'yes',
@@ -363,7 +363,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_multiple',
                 [
-                    'label' => __( 'Multiple Item Open', 'htmega-addons' ),
+                    'label' => __( 'Multiple Item Open', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'condition' => [
@@ -375,7 +375,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'current_item',
                 [
-                    'label' => __( 'Current Item No', 'htmega-addons' ),
+                    'label' => __( 'Current Item No', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::NUMBER,
                     'min'   => 1,
                     'max'   => 50,
@@ -387,7 +387,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'show_title_icon',
                 [
-                    'label'   => __( 'Show Title Icon ', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                    'label'   => __( 'Show Title Icon ', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'no',
                     'return_value' => 'yes',
@@ -403,7 +403,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'accordion_additional_option',
             [
-                'label' => __( 'Additional Options', 'htmega-addons' ),
+                'label' => __( 'Additional Options', 'ht-mega-for-elementor' ),
                 'condition' => [
                     'accordiantstyle' =>'four',
                 ],
@@ -413,7 +413,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_visible_items',
                 [
-                    'label' => __( 'Visible Item', 'htmega-addons' ),
+                    'label' => __( 'Visible Item', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -430,7 +430,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
              $this->add_control(
                 'accordion_display_height',
                 [
-                    'label' => __( 'Accordion Height', 'htmega-addons' ),
+                    'label' => __( 'Accordion Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -447,7 +447,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_expand_items_height',
                 [
-                    'label' => __( 'Expand Item Height', 'htmega-addons' ),
+                    'label' => __( 'Expand Item Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -468,7 +468,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'htmega_button_style_section',
             [
-                'label' => __( 'Accordion Item', 'htmega-addons' ),
+                'label' => __( 'Accordion Item', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'accordiantstyle' => ['five','one'],
@@ -478,7 +478,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_item_spacing',
                 [
-                    'label' => __( 'Accordion Item Spacing', 'htmega-addons' ),
+                    'label' => __( 'Accordion Item Spacing', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -501,7 +501,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'htmega_accordion_title_style',
             [
-                'label'     => __( 'Accordion Title', 'htmega-addons' ),
+                'label'     => __( 'Accordion Title', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'accordiantstyle' => ['five','one'],
@@ -511,19 +511,19 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'titlealign',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left'    => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],
@@ -536,7 +536,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -549,7 +549,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding',
                     'separator' => 'before',
                 ]
@@ -558,7 +558,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'title_color_border_heading',
                 [
-                    'label' => __( 'Colors and Border', 'htmega-addons' ),
+                    'label' => __( 'Colors and Border', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -568,14 +568,14 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 $this->start_controls_tab(
                     'accordion_title_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'accordion_title_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htb-collapsed.htmega-items-hedding' => 'color: {{VALUE}};',
@@ -587,7 +587,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htb-collapsed.htmega-items-hedding',
                         ]
@@ -597,7 +597,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'accordion_title_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htb-collapsed.htmega-items-hedding',
                             'separator' => 'before',
                         ]
@@ -606,7 +606,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                     $this->add_responsive_control(
                         'accordion_title_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htb-collapsed.htmega-items-hedding' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -618,7 +618,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'title_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htb-collapsed.htmega-items-hedding',
                         ]
                     );
@@ -629,14 +629,14 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 $this->start_controls_tab(
                     'accordion_title_style_active_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
                 
                     $this->add_control(
                         'accordion_title_active_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-items-hedding' => 'color: {{VALUE}};',
@@ -647,7 +647,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'activebackground',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-items-hedding',
                         ]
@@ -657,7 +657,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'accordion_title_active_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-items-hedding',
                             'separator' => 'before',
                         ]
@@ -666,7 +666,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                     $this->add_responsive_control(
                         'accordion_title_active_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-items-hedding' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -678,7 +678,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'title_active_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-items-hedding',
                             'separator' => 'before',
                         ]
@@ -694,7 +694,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'htmega_accordion_title_three_collapsed_style',
             [
-                'label'     => __( 'Accordion Title Collapsed', 'htmega-addons' ),
+                'label'     => __( 'Accordion Title Collapsed', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'accordiantstyle' => array( 'three'),
@@ -706,7 +706,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'titlethree_collapsed_align_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} ul.accordion--4 li .heading',
                     'separator' => 'before',
                 ]
@@ -715,19 +715,19 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'title_three_collapsed_align',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left'    => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],
@@ -740,7 +740,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_title_three_collapsed_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .accordion--4 .heading'   => 'color: {{VALUE}};',
@@ -753,7 +753,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'title_three_collapsed_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .accordion--4 .heading',
                 ]
@@ -762,7 +762,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'title_three_collapsed_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -775,7 +775,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'title_three_collapsed_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -792,7 +792,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'htmega_accordion_item_two_style',
             [
-                'label'     => __( 'Accordion Item Box', 'htmega-addons' ),
+                'label'     => __( 'Accordion Item Box', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'accordiantstyle' => array( 'two' ),
@@ -804,7 +804,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'itemboxbackground',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gallery-wrap .item',
                 ]
@@ -813,7 +813,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_content_margin_gallery_wrap',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -827,7 +827,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'accordion_itembox_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .gallery-wrap .item',
                 ]
             );
@@ -835,7 +835,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_itembox_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .gallery-wrap .item' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -848,7 +848,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'titlethree_box_shadow_2',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} h2.heading-three',
                     'selector' => '{{WRAPPER}} .accordion--5 .single_accordion .va-title',
                     'separator' => 'before',
@@ -862,7 +862,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'htmega_accordion_title_three_style',
             [
-                'label'     => __( 'Accordion Title', 'htmega-addons' ),
+                'label'     => __( 'Accordion Title', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'accordiantstyle' => array( 'three','four' ),
@@ -873,19 +873,19 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'titlethreealign',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left'    => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],
@@ -900,7 +900,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'tithethreebackground',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} h2.heading-three',
                     'selector' => '{{WRAPPER}} .accordion--5 .single_accordion .va-title',
@@ -910,7 +910,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_titlethree_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -925,7 +925,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'accordion_titlethree_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} h2.heading-three',
                     'selector' => '{{WRAPPER}} .accordion--5 .single_accordion .va-title',
                 ]
@@ -934,7 +934,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_titlethree_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} h2.heading-three' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -948,7 +948,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'titlethree_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} h2.heading-three',
                     'selector' => '{{WRAPPER}} .accordion--5 .single_accordion .va-title',
                     'separator' => 'before',
@@ -958,7 +958,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_titlethree_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} h2.heading-three' => 'color: {{VALUE}};',
@@ -972,7 +972,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'titlethree_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} h2.heading-three, {{WRAPPER}} .accordion--5 .single_accordion .va-title',
                     'separator' => 'before',
                 ]
@@ -981,7 +981,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'titlethree_margin',
                 [
-                    'label' => __( 'Active Title Space', 'htmega-addons' ),
+                    'label' => __( 'Active Title Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [
@@ -996,7 +996,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'titlefour_lineheight',
                 [
-                    'label' => __( 'Active Title Line Height', 'htmega-addons' ),
+                    'label' => __( 'Active Title Line Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [
@@ -1015,7 +1015,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'htmega_accordion_icon_style',
             [
-                'label'     => __( 'Accordion Icon', 'htmega-addons' ),
+                'label'     => __( 'Accordion Icon', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'accordiantstyle' => ['five','one'],
@@ -1025,7 +1025,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_icon_size',
                 [
-                    'label' => __( 'Icon Size', 'htmega-addons' ),
+                    'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1043,15 +1043,15 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_icon_align',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Start', 'htmega-addons' ),
+                            'title' => __( 'Start', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-left',
                         ],
                         'right' => [
-                            'title' => __( 'End', 'htmega-addons' ),
+                            'title' => __( 'End', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-right',
                         ],
                     ],
@@ -1063,7 +1063,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_icon_width',
                 [
-                    'label' => __( 'Icon Box Width', 'htmega-addons' ),
+                    'label' => __( 'Icon Box Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1080,7 +1080,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_icon_height',
                 [
-                    'label' => __( 'Icon Box Height', 'htmega-addons' ),
+                    'label' => __( 'Icon Box Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1097,7 +1097,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_icon_box_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1108,7 +1108,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_icon_color_border_heading',
                 [
-                    'label' => __( 'Colors and Border', 'htmega-addons' ),
+                    'label' => __( 'Colors and Border', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1120,13 +1120,13 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 $this->start_controls_tab(
                     'accordion_icon_style_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'accordion_icon_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding.htb-collapsed .accourdion-icon' => 'color: {{VALUE}};',
@@ -1139,7 +1139,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'iconbackground',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding.htb-collapsed .accourdion-icon',
                         ]
@@ -1148,7 +1148,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'accordion_icon_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding.htb-collapsed .accourdion-icon',
                             'separator' => 'before',
                         ]
@@ -1157,7 +1157,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                     $this->add_responsive_control(
                         'accordion_icon_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding.htb-collapsed .accourdion-icon' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1169,7 +1169,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'icon_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding.htb-collapsed .accourdion-icon',
                         ]
                     );
@@ -1180,14 +1180,14 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 $this->start_controls_tab(
                     'accordion_active_icon_style_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'accordion_active_icon_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding .accourdion-icon' => 'color: {{VALUE}};',
@@ -1199,7 +1199,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'iconactivebackground',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding .accourdion-icon',
                         ]
@@ -1209,7 +1209,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'accordion_active_icon_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding .accourdion-icon',
                             'separator' => 'before',
                         ]
@@ -1218,7 +1218,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                     $this->add_responsive_control(
                         'accordion_active_icon_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding .accourdion-icon' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1230,7 +1230,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'icon_active_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-accourdion-title .htmega-items-hedding .accourdion-icon',
                         ]
                     );
@@ -1246,7 +1246,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
         $this->start_controls_section(
             'htmega_accordion_content_style',
             [
-                'label'     => __( 'Accordion Content', 'htmega-addons' ),
+                'label'     => __( 'Accordion Content', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'accordiantstyle' => array( 'one','three','four', 'five'),
@@ -1257,23 +1257,23 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'content_align',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left'    => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1286,7 +1286,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'content_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .accordion-content',
                     'separator' => 'before',
                 ]
@@ -1295,7 +1295,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_control(
                 'accordion_content_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .accordion-content' => 'color: {{VALUE}};',
@@ -1307,7 +1307,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1321,7 +1321,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1335,7 +1335,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'contentbackground',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .accordion-content',
                 ]
@@ -1345,7 +1345,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'accordion_content_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .accordion-content',
                 ]
             );
@@ -1353,7 +1353,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'accordion_content_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .accordion-content' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1366,7 +1366,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'content_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .accordion-content',
                     'separator' => 'before',
                 ]
@@ -1375,19 +1375,19 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $this->add_responsive_control(
                 'contentthreealign',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left'    => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],
@@ -1434,10 +1434,10 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                     foreach ( $accordion_list_three as $itemthree ) {
                         ?>
                             <li <?php if( !empty($itemthree['accordion_image']['url']) ){ echo 'style="background-image:url('. esc_url( $itemthree['accordion_image']['url'] ).')"'; } ?>>
-                                <div class="heading"><?php echo htmega_kses_title( $itemthree['accordion_title'] ); ?></div>
+                                <div class="heading"><?php echo htmega_kses_title( $itemthree['accordion_title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php ?></div>
                                 <div class="bgDescription" style="background: transparent url(<?php echo esc_url( HTMEGA_ADDONS_PL_URL.'/assets/images/bg/bgDescription.png' );?>) repeat-x top left;"></div>
                                 <div class="description">
-                                    <h2 class="heading-three"><?php echo htmega_kses_title( $itemthree['accordion_title'] ); ?></h2>
+                                    <h2 class="heading-three"><?php echo htmega_kses_title( $itemthree['accordion_title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php ?></h2>
                                     <div class="accordion-content">
                                        <?php 
                                             if ( $itemthree['content_source'] == 'custom' && !empty( $itemthree['accordion_content'] ) ) {
@@ -1466,7 +1466,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                     foreach ( $accordion_list_three as $itemthree ) {
                         ?>
                             <div class="single_accordion" <?php if( !empty($itemthree['accordion_image']['url']) ){ echo 'style="background-image:url('. esc_url( $itemthree['accordion_image']['url'] ).')"'; } ?>>
-                                <h3 class="va-title"><?php echo htmega_kses_title( $itemthree['accordion_title'] ); ?></h3>
+                                <h3 class="va-title"><?php echo htmega_kses_title( $itemthree['accordion_title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php ?></h3>
                                 <div class="va-content">
                                     <div class="accordion-content">
                                        <?php 
@@ -1507,19 +1507,19 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
                                 <div class="htmega-accourdion-title">
                                     <?php
                                         if( ( $current_item == $i ) && ( $settings['accordion_close_all'] != 'yes' ) ){
-                                            printf('<%1$s %2$s data-target="#htmega-collapse%3$s" class="htmega-items-hedding">%4$s %5$s</%1$s>', 
-                                                esc_attr( $title_tag ), 
-                                                $this->get_render_attribute_string( 'accordion_heading' ),
-                                                esc_attr( $j ), 
-                                                htmega_kses_title( $item['accordion_title'] ), 
+                                            printf('<%1$s %2$s data-target="#htmega-collapse%3$s" class="htmega-items-hedding">%4$s %5$s</%1$s>',
+                                                esc_attr( $title_tag ),
+                                                $this->get_render_attribute_string( 'accordion_heading' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
+                                                esc_attr( $j ),
+                                                htmega_kses_title( $item['accordion_title'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                                 $buttonicon // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                             );
                                         }else{
-                                            printf('<%1$s %2$s data-target="#htmega-collapse%3$s" class="htb-collapsed htmega-items-hedding">%4$s %5$s</%1$s>', 
-                                                esc_attr( $title_tag ), 
-                                                $this->get_render_attribute_string( 'accordion_heading' ),
-                                                esc_attr( $j ), 
-                                                htmega_kses_title( $item['accordion_title'] ),  
+                                            printf('<%1$s %2$s data-target="#htmega-collapse%3$s" class="htb-collapsed htmega-items-hedding">%4$s %5$s</%1$s>',
+                                                esc_attr( $title_tag ),
+                                                $this->get_render_attribute_string( 'accordion_heading' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
+                                                esc_attr( $j ),
+                                                htmega_kses_title( $item['accordion_title'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                                 $buttonicon  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                             );
                                         }

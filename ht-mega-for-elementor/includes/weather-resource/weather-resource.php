@@ -1,6 +1,8 @@
-<?php 
+<?php
 
 namespace Elementor\HtMega\Weather;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class weatherResource{
 
@@ -35,12 +37,12 @@ class weatherResource{
 
         if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
             //check ip from share internet
-            $ip = sanitize_text_field( $_SERVER['HTTP_CLIENT_IP'] );
+            $ip = sanitize_text_field( wp_unslash( $_SERVER['HTTP_CLIENT_IP'] ) );
         } elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
             //to check ip is pass from proxy
-            $ip = sanitize_text_field( $_SERVER['HTTP_X_FORWARDED_FOR'] );
+            $ip = sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_FORWARDED_FOR'] ) );
         } else {
-            $ip = sanitize_text_field( $_SERVER['REMOTE_ADDR'] );
+            $ip = ! empty( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
         }
 
         $country_info = wp_remote_get('https://freegeoip.app/json/'.$ip);
@@ -106,7 +108,7 @@ class weatherResource{
         // set wind
         $wind_speed 		=  round($city_weather->wind_speed);
         $wind_direction 	=  fmod((($city_weather->wind_deg + 11) / 22.5),16);
-        $wind_speed_text 	= __('m/s', 'htmega-addons');
+        $wind_speed_text 	= __('m/s', 'ht-mega-for-elementor');
         
         $weather_data['current']['wind_speed'] 					= $wind_speed;		
         $weather_data['current']['wind_direction'] 				= $this->wind_label[ $wind_direction ];

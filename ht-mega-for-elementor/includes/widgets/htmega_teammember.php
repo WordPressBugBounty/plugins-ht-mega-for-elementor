@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Team Member', 'htmega-addons' );
+        return __( 'Team Member', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -38,37 +38,37 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         $this->start_controls_section(
             'htmega_teammember_content',
             [
-                'label' => __( 'Team Member', 'htmega-addons' ),
+                'label' => __( 'Team Member', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'htmega_team_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
-                        '6'   => __( 'Style Six', 'htmega-addons' ),
-                        '7'   => __( 'Style Seven', 'htmega-addons' ),
-                        '8'   => __( 'Style Eight', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6'   => __( 'Style Six', 'ht-mega-for-elementor' ),
+                        '7'   => __( 'Style Seven', 'ht-mega-for-elementor' ),
+                        '8'   => __( 'Style Eight', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
             $this->add_control(
                 'htmega_team_content_style',
                 [
-                    'label' => __( 'Content Style', 'htmega-addons' ),
+                    'label' => __( 'Content Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'one',
                     'options' => [
-                        'one'      => __( 'Style One', 'htmega-addons' ),
-                        'two'      => __( 'Style Two', 'htmega-addons' ),
+                        'one'      => __( 'Style One', 'ht-mega-for-elementor' ),
+                        'two'      => __( 'Style Two', 'ht-mega-for-elementor' ),
                     ],
                     'condition' =>[
                         'htmega_team_style' => array('2'),
@@ -78,13 +78,13 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'htmega_team_content_style2',
                 [
-                    'label' => __( 'Content Style', 'htmega-addons' ),
+                    'label' => __( 'Content Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'one',
                     'options' => [
-                        'one'      => __( 'Style One', 'htmega-addons' ),
-                        'two'      => __( 'Style Two', 'htmega-addons' ),
-                        'three'      => __( 'Style Three', 'htmega-addons' ),
+                        'one'      => __( 'Style One', 'ht-mega-for-elementor' ),
+                        'two'      => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        'three'      => __( 'Style Three', 'ht-mega-for-elementor' ),
                     ],
                     'condition' =>[
                         'htmega_team_style' => array('8'),
@@ -95,15 +95,15 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'htmega_team_image_hover_style',
                 [
-                    'label' => __( 'Image Hover Animate', 'htmega-addons' ),
+                    'label' => __( 'Image Hover Animate', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'top',
                     'options' => [
-                        'none'      => __( 'None', 'htmega-addons' ),
-                        'left'      => __( 'Left', 'htmega-addons' ),
-                        'right'     => __( 'Right', 'htmega-addons' ),
-                        'top'       => __( 'Top', 'htmega-addons' ),
-                        'bottom'    => __( 'Bottom', 'htmega-addons' ),
+                        'none'      => __( 'None', 'ht-mega-for-elementor' ),
+                        'left'      => __( 'Left', 'ht-mega-for-elementor' ),
+                        'right'     => __( 'Right', 'ht-mega-for-elementor' ),
+                        'top'       => __( 'Top', 'ht-mega-for-elementor' ),
+                        'bottom'    => __( 'Bottom', 'ht-mega-for-elementor' ),
                     ],
                     'condition' =>[
                         'htmega_team_style' =>'4',
@@ -114,7 +114,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'htmega_team_image_hover_on_mobile',
                 [
-                    'label' => esc_html__( 'Animate Top on Mobile Layout', 'htmega-addons' ),
+                    'label' => esc_html__( 'Animate Top on Mobile Layout', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -128,7 +128,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'htmega_member_image',
                 [
-                    'label' => __( 'Member image', 'htmega-addons' ),
+                    'label' => __( 'Member image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -148,19 +148,19 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'htmega_member_name',
                 [
-                    'label' => __( 'Name', 'htmega-addons' ),
+                    'label' => __( 'Name', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'default' => 'Sams Roy',
-                    'placeholder' => __( 'Sams Roy', 'htmega-addons' ),
+                    'placeholder' => __( 'Sams Roy', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'htmega_member_designation',
                 [
-                    'label' => __( 'Designation', 'htmega-addons' ),
+                    'label' => __( 'Designation', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Managing director', 'htmega-addons' ),
+                    'placeholder' => __( 'Managing director', 'ht-mega-for-elementor' ),
                     'condition' =>[
                         'htmega_team_style' => array('1','3','5','6','7','8','2','4'),
                     ],
@@ -170,9 +170,9 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'htmega_member_bioinfo',
                 [
-                    'label' => __( 'Bio Info', 'htmega-addons' ),
+                    'label' => __( 'Bio Info', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'I am web developer.', 'htmega-addons' ),
+                    'placeholder' => __( 'I am web developer.', 'ht-mega-for-elementor' ),
 
                     'conditions' => [
                         'relation' => 'or',
@@ -200,7 +200,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         $this->start_controls_section(
             'htmega_team_member_social_link',
             [
-                'label' => __( 'Social Media', 'htmega-addons' ),
+                'label' => __( 'Social Media', 'ht-mega-for-elementor' ),
             ]
         );
 
@@ -209,7 +209,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $repeater->add_control(
                 'htmega_social_title',
                 [
-                    'label'   => __( 'Title', 'htmega-addons' ),
+                    'label'   => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                     'default' => 'Facebook',
                 ]
@@ -218,16 +218,16 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $repeater->add_control(
                 'htmega_social_link',
                 [
-                    'label'   => __( 'Link', 'htmega-addons' ),
+                    'label'   => __( 'Link', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __( 'https://www.facebook.com/hastech.company/', 'htmega-addons' ),
+                    'default' => __( 'https://www.facebook.com/hastech.company/', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $repeater->add_control(
                 'htmega_social_icon',
                 [
-                    'label'   => __( 'Icon', 'htmega-addons' ),
+                    'label'   => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fab fa-facebook-square',
@@ -239,7 +239,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $repeater->add_control(
                 'htmega_icon_color',
                 [
-                    'label'     => __( 'Icon Color', 'htmega-addons' ),
+                    'label'     => __( 'Icon Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team .htmega-social-network {{CURRENT_ITEM}} a' => 'color: {{VALUE}}',
@@ -251,7 +251,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $repeater->add_control(
                 'htmeha_icon_background',
                 [
-                    'label'     => __( 'Icon Background', 'htmega-addons' ),
+                    'label'     => __( 'Icon Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team .htmega-social-network {{CURRENT_ITEM}} a' => 'background-color: {{VALUE}}',
@@ -262,7 +262,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $repeater->add_control(
                 'htmega_icon_hover_color',
                 [
-                    'label'     => __( 'Icon Hover Color', 'htmega-addons' ),
+                    'label'     => __( 'Icon Hover Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team .htmega-social-network {{CURRENT_ITEM}} a:hover' => 'color: {{VALUE}}',
@@ -274,7 +274,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $repeater->add_control(
                 'htmeha_icon_hover_background',
                 [
-                    'label'     => __( 'Icon Hover Background', 'htmega-addons' ),
+                    'label'     => __( 'Icon Hover Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team .htmega-social-network {{CURRENT_ITEM}} a:hover' => 'background-color: {{VALUE}}',
@@ -285,7 +285,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $repeater->add_control(
                 'htmeha_icon_hover_border_color',
                 [
-                    'label'     => __( 'Icon Hover border color', 'htmega-addons' ),
+                    'label'     => __( 'Icon Hover border color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team .htmega-social-network {{CURRENT_ITEM}} a:hover' => 'border-color: {{VALUE}}',
@@ -303,7 +303,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                         [
                             'htmega_social_title'      => 'Facebook',
                             'htmega_social_icon'       => 'fab fa-facebook-f',
-                            'htmega_social_link'       => __( 'https://www.facebook.com/hastech.company/', 'htmega-addons' ),
+                            'htmega_social_link'       => __( 'https://www.facebook.com/hastech.company/', 'ht-mega-for-elementor' ),
                         ],
                     ],
                     'title_field' => '{{{ htmega_social_title }}}',
@@ -317,7 +317,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         $this->start_controls_section(
             'htmega_team_member_style',
             [
-                'label' => __( 'Team Box Style', 'htmega-addons' ),
+                'label' => __( 'Team Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -325,7 +325,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_member_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -338,7 +338,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_member_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -354,7 +354,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'team_item_border_box',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-team',
                     'separator' =>'before',
                     'condition' =>[
@@ -366,7 +366,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_item_border_radius_box',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team,{{WRAPPER}} .htmega-team-style-2 .htmega-thumb img, {{WRAPPER}} .htmega-team-style-4 .htmega-thumb,{{WRAPPER}} .htmega-team-style-4 .htmega-thumb img,{{WRAPPER}} .htmega-team-style-4 .htmega-team-hover-action::before,{{WRAPPER}} .htmega-team-style-4 .htmega-team-hover-action' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -381,7 +381,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'team_member_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-team,{{WRAPPER}} .htmega-team-style-6 .htmega-team-info',
                     'separator' =>'before',
@@ -394,7 +394,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'team_item_boxshadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-team-style-7, {{WRAPPER}} .htmega-team',
                     'separator' =>'before',
                 ]
@@ -403,7 +403,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'team_item_hover_boxshadow',
-                    'label' => __( 'Box Shadow Hover', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow Hover', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-team:hover',
                     'separator' =>'before',
                 ]
@@ -411,7 +411,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'team_member_hover_content_bg',
                 [
-                    'label' => __( 'Hover Background Color', 'htmega-addons' ),
+                    'label' => __( 'Hover Background Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => 'rgba(24, 1, 44, 0.6)',
                     'selectors' => [
@@ -427,7 +427,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_member_hover_st4_space',
                 [
-                    'label' => __( 'Hover Round Space', 'htmega-addons' ),
+                    'label' => __( 'Hover Round Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -445,7 +445,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'team_member_hover_content_bg_2',
                 [
-                    'label' => __( 'Hover Content background color', 'htmega-addons' ),
+                    'label' => __( 'Hover Content background color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#18012c',
                     'selectors' => [
@@ -476,7 +476,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'team_member_plus_icon_color',
                 [
-                    'label' => __( 'Plus Icon Color', 'htmega-addons' ),
+                    'label' => __( 'Plus Icon Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team-style-3 .plus_click::before' => 'color: {{VALUE}};',
@@ -491,7 +491,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'team_member_plus_icon_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-team-style-3 .plus_click::before',
                     'condition' =>[
@@ -504,7 +504,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'team_member_plus_icon_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-team-style-3 .plus_click::before',
                     'condition' =>[
                         'htmega_team_style' => array('3'),
@@ -515,7 +515,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'content_box_bg_heading',
                 [
-                    'label' => __( 'Content Box Background', 'htmega-addons' ),
+                    'label' => __( 'Content Box Background', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' =>'before',
                     'condition' =>[
@@ -527,7 +527,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'team_content_background_box',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-team .htmega-team-content,{{WRAPPER}} .htmega-team-style-2 .htmega-team-hover-action .htmega-hover-action, {{WRAPPER}} .htmega-team-hover-action.htmega-action-hover-st2 .htmega-hover-action',
                     'condition' =>[
@@ -538,7 +538,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'content_box_bg_hover_heading',
                 [
-                    'label' => __( 'Content Box Hover Background', 'htmega-addons' ),
+                    'label' => __( 'Content Box Hover Background', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' =>'before',
                     'condition' =>[
@@ -550,7 +550,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'team_content_hover_background_box',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-team-style-8 .htmega-team-hover-action',
                     'condition' =>[
@@ -562,7 +562,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'team_content_border_box',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-team .htmega-team-content',
                     'condition' =>[
                         'htmega_team_style!' => array( '4','6','3','5' ),
@@ -573,7 +573,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_content_border_radius_box',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team .htmega-team-content,{{WRAPPER}} .htmega-team-style-2 .htmega-team-hover-action .htmega-hover-action' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -587,7 +587,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_content_margin_box',
                 [
-                    'label' => __( 'Content Box Margin', 'htmega-addons' ),
+                    'label' => __( 'Content Box Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -602,7 +602,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_content_padding_box',
                 [
-                    'label' => __( 'Content Box Padding', 'htmega-addons' ),
+                    'label' => __( 'Content Box Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -616,19 +616,19 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_content_alignment_box',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -643,8 +643,8 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'team_content_corner_shape_color',
                 [
-                    'label' => __( 'Corner Shape Color', 'htmega-addons' ),
-                    'description' => __( 'To hide the shape, please set the color to transparent.', 'htmega-addons' ),
+                    'label' => __( 'Corner Shape Color', 'ht-mega-for-elementor' ),
+                    'description' => __( 'To hide the shape, please set the color to transparent.', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#8e74ff',
                     'selectors' => [
@@ -658,8 +658,8 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'team_content_corner_shape_hover',
                 [
-                    'label' => __( 'Hover Shape Color', 'htmega-addons' ),
-                    'description' => __( 'To hide the shape, please set the color to transparent.', 'htmega-addons' ),
+                    'label' => __( 'Hover Shape Color', 'ht-mega-for-elementor' ),
+                    'description' => __( 'To hide the shape, please set the color to transparent.', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#fff',
                     'selectors' => [
@@ -673,7 +673,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'show_img_animation',
                 [
-                    'label' => esc_html__( 'ON/OFF Image Hover rotation', 'htmega-addons' ),
+                    'label' => esc_html__( 'ON/OFF Image Hover rotation', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'no',
                     'default' => 'yes',
@@ -688,7 +688,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         $this->start_controls_section(
             'htmega_team_member_image_style',
             [
-                'label'     => __( 'Image', 'htmega-addons' ),
+                'label'     => __( 'Image', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -696,7 +696,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'team_image_border',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-thumb img',
                 ]
             );
@@ -704,7 +704,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_image_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -716,14 +716,14 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'team_image_boxshadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-thumb img',
                 ]
             );
             $this->add_responsive_control(
                 'team_image_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -738,7 +738,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         $this->start_controls_section(
             'htmega_team_member_name_style',
             [
-                'label'     => __( 'Name', 'htmega-addons' ),
+                'label'     => __( 'Name', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'htmega_member_name!' => '',
@@ -749,7 +749,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'team_name_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team .htmega-team-name' => 'color: {{VALUE}};',
@@ -768,7 +768,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_name_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -781,7 +781,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_name_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -794,23 +794,23 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_name_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -827,7 +827,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         $this->start_controls_section(
             'htmega_team_member_designation_style',
             [
-                'label'     => __( 'Designation', 'htmega-addons' ),
+                'label'     => __( 'Designation', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'htmega_member_designation!' => '',
@@ -839,7 +839,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'team_designation_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-team .htmega-team-designation' => 'color: {{VALUE}};',
@@ -858,7 +858,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_designation_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -871,7 +871,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_designation_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -884,23 +884,23 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_designation_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -917,7 +917,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         $this->start_controls_section(
             'htmega_team_member_bioinfo_style',
             [
-                'label'     => __( 'Bio info', 'htmega-addons' ),
+                'label'     => __( 'Bio info', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'htmega_member_bioinfo!' => '',
@@ -929,7 +929,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'team_bioinfo_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#ffffff',
                     'selectors' => [
@@ -949,7 +949,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_bioinfo_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -962,7 +962,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_bioinfo_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -975,23 +975,23 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_bioinfo_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1008,14 +1008,14 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         $this->start_controls_section(
             'htmega_team_member_socialmedia_style',
             [
-                'label'     => __( 'Social Media', 'htmega-addons' ),
+                'label'     => __( 'Social Media', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'team_socialmedia_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1028,7 +1028,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_socialmedia_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1041,23 +1041,23 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_socialmedia_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1072,7 +1072,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'team_socialmedia_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-social-network li a',
                 ]
             );
@@ -1080,7 +1080,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_socialmedia_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-social-network li a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1091,7 +1091,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'team_socialmedia_boxshadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-social-network li a',
                 ]
             );
@@ -1099,7 +1099,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_socialmedia_font_size',
                 [
-                    'label' => __( 'Font Size', 'htmega-addons' ),
+                    'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px'],
                     'range' => [
@@ -1122,7 +1122,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_responsive_control(
                 'team_socialmedia_height_widht',
                 [
-                    'label' => __( 'Height and Width', 'htmega-addons' ),
+                    'label' => __( 'Height and Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -1147,7 +1147,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
             $this->add_control(
                 'social_border_top_heading',
                 [
-                    'label' => __( 'Social container Border', 'htmega-addons' ),
+                    'label' => __( 'Social container Border', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
@@ -1159,7 +1159,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'team_social_box_border',
-                    'label' => esc_html__( 'Social container Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Social container Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-team-style-6 .htmega-team-info .htmega-social-network',
                     'condition' => [
                         'htmega_team_style' =>['6'],
@@ -1198,11 +1198,11 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
         }
        
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'team_area_attr' ); ?> >
+            <div <?php echo $this->get_render_attribute_string( 'team_area_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
 
                 <?php if( $settings['htmega_team_style'] == 2 ): ?>
                     <div class="htmega-thumb">
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                         // for new design
                         if( 'two'== $settings['htmega_team_content_style'] ){ ?>
                             <div class="htmega-team-hover-action htmega-action-hover-st2">
@@ -1210,6 +1210,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                                     <div class="htmega-hover-content-box-st2">
                                         <?php
                                         if( !empty($settings['htmega_member_name']) ){
+                                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                             echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                                         }
                                         if( !empty($settings['htmega_member_designation']) ){
@@ -1219,7 +1220,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                                     </div>
                                     <ul class="htmega-social-network">
                                         <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -1230,6 +1231,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                                 <div class="htmega-hover-action">
                                     <?php
                                         if( !empty($settings['htmega_member_name']) ){
+                                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                             echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                                         }
                                         if( !empty($settings['htmega_member_designation']) ){
@@ -1238,7 +1240,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                                     ?>
                                     <ul class="htmega-social-network">
                                         <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -1249,13 +1251,14 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
 
                 <?php elseif( $settings['htmega_team_style'] == 3 ):?>
                     <div class="htmega-thumb">
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );?>
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                         <div class="htmega-team-hover-action">
 
                             <div class="htmega-team-click-action">
                                 <div class="plus_click"></div>
                                 <?php
                                     if( !empty($settings['htmega_member_name']) ){
+                                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                         echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                                     }
                                     if( !empty($settings['htmega_member_designation']) ){
@@ -1264,7 +1267,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                                 ?>
                                 <ul class="htmega-social-network">
                                     <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                        <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                        <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -1277,23 +1280,25 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                     $this->add_render_attribute( 'team_thumb_attr', 'class', 'htmega-thumb' );
                     $this->add_render_attribute( 'team_thumb_attr', 'class', 'htmega-team-image-hover-' . esc_attr( $settings['htmega_team_image_hover_style'] ) );
                 ?>
-                    <div <?php echo $this->get_render_attribute_string( 'team_thumb_attr' ); ?>>
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );?>
+                    <div <?php echo $this->get_render_attribute_string( 'team_thumb_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                         <div class="htmega-team-hover-action">
                             <div class="htmega-hover-action">
                                 <?php
                                     if( !empty($settings['htmega_member_name']) ){
+                                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                         echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                                     } 
                                     if( !empty($settings['htmega_member_designation']) ){
                                         echo '<span class="htmega-team-designation">'.esc_html( $settings['htmega_member_designation'] ).'</span>';
                                     }
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                     if( !empty($settings['htmega_member_bioinfo']) ){ echo '<p class="htmega-team-bio-info">'.htmega_kses_desc( $settings['htmega_member_bioinfo'] ).'</p>'; }
                                     if( $settings['htmega_team_member_social_link_list'] ): 
                                 ?>
                                     <ul class="htmega-social-network">
                                         <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif;?>
@@ -1303,22 +1308,24 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
 
                 <?php elseif( $settings['htmega_team_style'] == 5 ):?>
                     <div class="htmega-thumb">
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );?>
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                         <div class="htmega-team-hover-action">
                             <div class="htmega-hover-action">
                                 <?php
                                     if( !empty($settings['htmega_member_name']) ){
+                                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                         echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                                     }
                                     if( !empty($settings['htmega_member_designation']) ){
                                         echo '<span class="htmega-team-designation">'.esc_html( $settings['htmega_member_designation'] ).'</span>';
                                     }
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                     if( !empty($settings['htmega_member_bioinfo']) ){ echo '<p class="htmega-team-bio-info">'.htmega_kses_desc( $settings['htmega_member_bioinfo'] ).'</p>'; }
                                 ?>
                                 <?php if( $settings['htmega_team_member_social_link_list'] ): ?>
                                     <ul class="htmega-social-network">
                                         <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif;?>
@@ -1328,24 +1335,26 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
 
                 <?php elseif( $settings['htmega_team_style'] == 6 ):?>
                     <div class="htmega-thumb">
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );?>
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                     </div>
                     <div class="htmega-team-info">
                         <div class="htmega-team-content">
                             <?php
                                 if( !empty($settings['htmega_member_name']) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                     echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                                 }
                                 if( !empty($settings['htmega_member_designation']) ){
                                     echo '<span class="htmega-team-designation">'.esc_html( $settings['htmega_member_designation'] ).'</span>';
                                 }
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                 if( !empty($settings['htmega_member_bioinfo']) ){ echo '<p class="htmega-team-bio-info">'.htmega_kses_desc( $settings['htmega_member_bioinfo'] ).'</p>'; }
                             ?>
                         </div>
                         <?php if( $settings['htmega_team_member_social_link_list'] ): ?>
                             <ul class="htmega-social-network">
                                 <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                    <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                    <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif;?>
@@ -1354,13 +1363,13 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 <?php elseif( $settings['htmega_team_style'] == 7 ):?>
 
                     <div class="htmega-thumb">
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );?>
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                         <div class="htmega-team-hover-action">
                             <div class="htmega-hover-action">
                                 <?php if( $settings['htmega_team_member_social_link_list'] ): ?>
                                     <ul class="htmega-social-network">
                                         <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif;?>
@@ -1370,6 +1379,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                     <div class="htmega-team-content">
                         <?php
                             if( !empty($settings['htmega_member_name']) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                             }
                             if( !empty($settings['htmega_member_designation']) ){
@@ -1380,13 +1390,13 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 <?php elseif( $settings['htmega_team_style'] == 7 ):?>
 
                     <div class="htmega-thumb">
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );?>
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                         <div class="htmega-team-hover-action">
                             <div class="htmega-hover-action">
                                 <?php if( $settings['htmega_team_member_social_link_list'] ): ?>
                                     <ul class="htmega-social-network">
                                         <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif;?>
@@ -1396,6 +1406,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                     <div class="htmega-team-content">
                         <?php
                             if( !empty($settings['htmega_member_name']) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                             }
                             if( !empty($settings['htmega_member_designation']) ){
@@ -1406,11 +1417,12 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                 <?php elseif( $settings['htmega_team_style'] == 8 ):?>
 
                     <div class="htmega-thumb">
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );?>
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                     </div>
                     <div class="htmega-team-content">
                         <?php
                             if( !empty($settings['htmega_member_name']) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                             }
                             if( !empty($settings['htmega_member_designation']) ){
@@ -1423,7 +1435,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                                 
                                     <ul class="htmega-social-network">
                                         <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                             </div>
@@ -1432,16 +1444,17 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                     </div>                    
                 <?php else:?>
                     <div class="htmega-thumb">
-                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' );?>
+                        <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'htmega_member_imagesize', 'htmega_member_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                         <div class="htmega-team-hover-action">
                             <div class="htmega-team-hover">
                                 <?php if( $settings['htmega_team_member_social_link_list'] ): ?>
                                     <ul class="htmega-social-network">
                                         <?php foreach ( $settings['htmega_team_member_social_link_list'] as $socialprofile ) :?>
-                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); ?></a></li>
+                                            <li class="elementor-repeater-item-<?php echo esc_attr( $socialprofile['_id'] ); ?>" ><a href="<?php echo esc_url( $socialprofile['htmega_social_link'] ); ?>"><?php echo HTMega_Icon_manager::render_icon( $socialprofile['htmega_social_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output. ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif;?>
+                                <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php ?>
                                 <?php if( !empty($settings['htmega_member_bioinfo']) ){ echo '<p class="htmega-team-bio-info">'.htmega_kses_desc( $settings['htmega_member_bioinfo'] ).'</p>'; }?>
                             </div>
                         </div>
@@ -1449,6 +1462,7 @@ class HTMega_Elementor_Widget_TeamMember extends Widget_Base {
                     <div class="htmega-team-content">
                         <?php
                             if( !empty($settings['htmega_member_name']) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4 class="htmega-team-name">'.htmega_kses_title( $settings['htmega_member_name'] ).'</h4>';
                             }
                             if( !empty($settings['htmega_member_designation']) ){

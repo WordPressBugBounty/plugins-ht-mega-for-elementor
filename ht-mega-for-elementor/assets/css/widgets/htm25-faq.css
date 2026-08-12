@@ -238,33 +238,27 @@
   color: var(--htm25-accent-primary);
 }
 
-/* ── Answer body ── */
+/* ── Answer body ──
+   Height is 0/auto by default (no-JS / reduced-motion baseline — instant
+   native <details> toggle). When JS is available (see inline script in
+   render()) it intercepts the click and animates the height itself via
+   the Web Animations API instead — that's the actual open/close motion
+   in practice, since CSS transitions on <details> content are still
+   inconsistently supported for the *closing* direction across browsers.
+   content-visibility: visible keeps the body measurable/paintable while
+   JS is animating it, regardless of the browser's own <details> hidden
+   state for the [open] attribute. */
 .htm25-faq__item-body {
+  height: 0;
   overflow: hidden;
-  /* Smooth reveal: height animates from 0 to auto via grid trick */
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease;
-}
-
-/* Fallback for browsers without grid-template-rows animation (uses max-height) */
-@supports not (grid-template-rows: 0fr) {
-  .htm25-faq__item-body {
-    display: block;
-    max-height: 0;
-    transition: max-height 0.3s ease;
-  }
-
-  .htm25-faq__item[open] .htm25-faq__item-body {
-    max-height: 600px;
-  }
+  content-visibility: visible;
 }
 
 .htm25-faq__item[open] .htm25-faq__item-body {
-  grid-template-rows: 1fr;
+  height: auto;
 }
 
-/* The inner div collapses to overflow:hidden when grid row = 0fr */
+/* The inner div collapses to overflow:hidden when height is 0 */
 .htm25-faq__item-body > * {
   overflow: hidden;
 }

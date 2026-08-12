@@ -43,13 +43,18 @@ class Blocks_init {
      */
     public function register_blocks(){
 
-        if( isset( $_SERVER['QUERY_STRING'] ) ){
-            parse_str( $_SERVER['QUERY_STRING'], $query_arr );
+        // Read-only inspection of the current request context (which admin
+        // screen/action is loading) to decide whether to register these
+        // blocks — no data is written, so nonce verification is not
+        // applicable here.
+        if( isset( $_SERVER['QUERY_STRING'] ) ){ // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            parse_str( sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ), $query_arr );
         } else {
             $query_arr = [];
         }
 
-        $post_add_new_screen = basename( $_SERVER['PHP_SELF'] ) === 'post-new.php' ? true : false;
+        $php_self             = isset( $_SERVER['PHP_SELF'] ) ? sanitize_text_field( wp_unslash( $_SERVER['PHP_SELF'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $post_add_new_screen = basename( $php_self ) === 'post-new.php' ? true : false;
         if( $post_add_new_screen === false ){
             if( is_admin() && empty( $query_arr['action'] ) ){
                 return;
@@ -134,9 +139,9 @@ class Blocks_init {
                     $css    = \HtMegaBlocks\Blocks_Css::build_block_css( $full_block_name, $settings );
                     $script = \HtMegaBlocks\Blocks_Css::build_block_script( $full_block_name, $settings );
                     $out = '';
-                    if ( $css )    $out .= '<style>' . $css . '</style>';
-                    $out .= $content;
-                    if ( $script ) $out .= $script;
+                    if ( $css )    $out .= '<style>' . wp_strip_all_tags( $css ) . '</style>';
+                    $out .= wp_kses_post( $content );
+                    if ( $script ) $out .= $script; // esc_js()-scoped inside Blocks_Css::build_block_script()
                     return $out;
                 }
                 ob_start();
@@ -176,12 +181,12 @@ class Blocks_init {
         
         // Enqueue style.
         if( $block['enqueue_style'] ) {
-            wp_enqueue_style( $handle, $block['enqueue_style'], [], false, 'all' );
+            wp_enqueue_style( $handle, $block['enqueue_style'], [], HTMEGA_VERSION, 'all' );
         }
-        
+
         // Enqueue script.
         if( $block['enqueue_script'] ) {
-            wp_enqueue_script( $handle, $block['enqueue_script'], [], false, true );
+            wp_enqueue_script( $handle, $block['enqueue_script'], [], HTMEGA_VERSION, true );
         }
         
         // Enqueue assets callback.

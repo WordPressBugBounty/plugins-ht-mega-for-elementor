@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Animated Heading', 'htmega-addons' );
+        return __( 'Animated Heading', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -47,24 +47,24 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
         $this->start_controls_section(
             'animatedheading_content',
             [
-                'label' => __( 'Animated Heading', 'htmega-addons' ),
+                'label' => __( 'Animated Heading', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'layout_style',
                 [
-                    'label'   => __( 'Layout', 'htmega-addons' ),
+                    'label'   => __( 'Layout', 'ht-mega-for-elementor' ),
                     'type'    => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1' => __( 'Style One', 'htmega-addons' ),
-                        '2' => __( 'Style Two', 'htmega-addons' ),
-                        '3' => __( 'Style Three', 'htmega-addons' ),
-                        '4' => __( 'Style Four', 'htmega-addons' ),
-                        '5' => __( 'Style Five', 'htmega-addons' ),
-                        '6' => __( 'Style Six', 'htmega-addons' ),
-                        '7' => __( 'Style Seven', 'htmega-addons' ),
+                        '1' => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2' => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3' => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4' => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5' => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6' => __( 'Style Six', 'ht-mega-for-elementor' ),
+                        '7' => __( 'Style Seven', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -72,20 +72,20 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'animation_type',
                 [
-                    'label'   => __( 'Animation Type', 'htmega-addons' ),
+                    'label'   => __( 'Animation Type', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'slide',
                     'options' => [
-                        'type'          => __( 'Type', 'htmega-addons' ),
-                        'loading-bar'   => __( 'Loading bar', 'htmega-addons' ),
-                        'slide'         => __( 'Slide', 'htmega-addons' ),
-                        'clip'          => __( 'Clip', 'htmega-addons' ),
-                        'zoom'          => __( 'Zoom', 'htmega-addons' ),
-                        'scale'         => __( 'Scale', 'htmega-addons' ),
-                        'push'          => __( 'Push', 'htmega-addons' ),
-                        'rotate-1'      => __( 'Rotate Style One', 'htmega-addons' ),
-                        'rotate-2'      => __( 'Rotate Style Two', 'htmega-addons' ),
-                        'rotate-3'      => __( 'Rotate Style Three', 'htmega-addons' ),
+                        'type'          => __( 'Type', 'ht-mega-for-elementor' ),
+                        'loading-bar'   => __( 'Loading bar', 'ht-mega-for-elementor' ),
+                        'slide'         => __( 'Slide', 'ht-mega-for-elementor' ),
+                        'clip'          => __( 'Clip', 'ht-mega-for-elementor' ),
+                        'zoom'          => __( 'Zoom', 'ht-mega-for-elementor' ),
+                        'scale'         => __( 'Scale', 'ht-mega-for-elementor' ),
+                        'push'          => __( 'Push', 'ht-mega-for-elementor' ),
+                        'rotate-1'      => __( 'Rotate Style One', 'ht-mega-for-elementor' ),
+                        'rotate-2'      => __( 'Rotate Style Two', 'ht-mega-for-elementor' ),
+                        'rotate-3'      => __( 'Rotate Style Three', 'ht-mega-for-elementor' ),
                     ],
                     'condition'=>[
                         'layout_style!' => '2',
@@ -96,9 +96,9 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'animated_before_text',
                 [
-                    'label' => __( 'Heading Before Text', 'htmega-addons' ),
+                    'label' => __( 'Heading Before Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Honesty is the best policy', 'htmega-addons' ),
+                    'default' => __( 'Honesty is the best policy', 'ht-mega-for-elementor' ),
                     'label_block' => true,
                     'separator' => 'before',
                 ]
@@ -107,9 +107,9 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'animated_heading_text',
                 [
-                    'label'       => __( 'Animated Heading Text', 'htmega-addons' ),
+                    'label'       => __( 'Animated Heading Text', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXTAREA,
-                    'default'     => __( "Purpose,policy,Company", 'htmega-addons' ),
+                    'default'     => __( "Purpose,policy,Company", 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'layout_style!' => '2',
                     ],
@@ -119,7 +119,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'visible_items',
                 [
-                    'label' => __( 'Visible Item Number', 'htmega-addons' ),
+                    'label' => __( 'Visible Item Number', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'step' => 1,
@@ -133,7 +133,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'animated_after_text',
                 [
-                    'label' => __( 'Heading After Text', 'htmega-addons' ),
+                    'label' => __( 'Heading After Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => true,
                     'separator' => 'before',
@@ -143,7 +143,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'animated_placeholder_text',
                 [
-                    'label' => __( 'Heading Placeholder Text', 'htmega-addons' ),
+                    'label' => __( 'Heading Placeholder Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => true,
                     'separator' => 'before',
@@ -152,19 +152,19 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_align',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left'    => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],
@@ -181,7 +181,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
         $this->start_controls_section(
             'animated_heading_beforetext_style',
             [
-                'label' => __( 'Before Text Style', 'htmega-addons' ),
+                'label' => __( 'Before Text Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'animated_before_text!'=>'',
@@ -191,7 +191,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'heading_before_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -204,7 +204,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'heading_before_text_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading h4 span.beforetext',
                 ]
             );
@@ -213,7 +213,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'heading_before_text_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading h4 span.beforetext',
                 ]
             );
@@ -221,7 +221,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_before_text_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-animated-heading h4 span.beforetext' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -233,7 +233,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'heading_before_text_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-animated-heading h4 span.beforetext',
                     'separator' => 'before',
@@ -244,7 +244,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'heading_before_text_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading h4 span.beforetext',
                 ]
             );
@@ -252,7 +252,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_before_text_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -265,7 +265,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'heading_placeholder_options_title',
                     [
-                        'label' => esc_html__( 'Placeholder Text', 'htmega-addons' ),
+                        'label' => esc_html__( 'Placeholder Text', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::HEADING,
                         'separator' => 'before',
                     ]
@@ -274,7 +274,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'heading_placeholder_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -288,7 +288,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'heading_placeholder_text_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading .cd-headline::before',
                     'separator' => 'before'
                 ]
@@ -297,7 +297,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_placeholder_text_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -312,7 +312,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
         $this->start_controls_section(
             'animated_heading_aftertext_style',
             [
-                'label' => __( 'After Text Style', 'htmega-addons' ),
+                'label' => __( 'After Text Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'animated_after_text!'=>'',
@@ -322,7 +322,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'heading_after_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -335,7 +335,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'heading_after_text_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading h4 span.aftertext',
                 ]
             );
@@ -344,7 +344,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'heading_after_text_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading h4 span.aftertext',
                 ]
             );
@@ -352,7 +352,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_after_text_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-animated-heading h4 span.aftertext' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -364,7 +364,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'heading_after_text_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-animated-heading h4 span.aftertext',
                     'separator' => 'before',
@@ -375,7 +375,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'heading_after_text_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading h4 span.aftertext',
                 ]
             );
@@ -383,7 +383,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_after_text_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -399,7 +399,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
         $this->start_controls_section(
             'animated_heading_text_style',
             [
-                'label' => __( 'Animated Text Style', 'htmega-addons' ),
+                'label' => __( 'Animated Text Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'layout_style!'=>'2',
@@ -409,7 +409,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'heading_animated_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -423,7 +423,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'heading_animated_text_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading .cd-words-wrapper b',
                 ]
             );
@@ -432,7 +432,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'heading_animated_text_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading .cd-words-wrapper b',
                 ]
             );
@@ -440,7 +440,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_animated_text_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-animated-heading .cd-words-wrapper b' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -452,7 +452,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'heading_animated_text_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-animated-heading .cd-words-wrapper b',
                     'separator' => 'before',
@@ -463,7 +463,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'heading_animated_text_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-animated-heading .cd-words-wrapper b',
                 ]
             );
@@ -471,7 +471,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_animated_text_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -484,7 +484,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_responsive_control(
                 'heading_animated_after_clip',
                 [
-                    'label'     => __( 'Clip Color', 'htmega-addons' ),
+                    'label'     => __( 'Clip Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'condition'=>[
@@ -500,7 +500,7 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
             $this->add_control(
                 'heading_animated_after_clip_width',
                 [
-                    'label' => esc_html__( 'Clip Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Clip Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'placeholder' => '0',
                     'min' => 0,
@@ -536,12 +536,12 @@ class HTMega_Elementor_Widget_Animated_Heading extends Widget_Base {
        
         ?>
 
-            <div <?php echo $this->get_render_attribute_string( 'heading_area_attr' ); ?> >
-                <h4 
+            <div <?php echo $this->get_render_attribute_string( 'heading_area_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >
+                <h4
                     <?php if($settings['animated_placeholder_text'] !== ''): ?>
-                        data-pltext="<?php echo esc_attr( $settings['animated_placeholder_text'] ) ?>" 
+                        data-pltext="<?php echo esc_attr( $settings['animated_placeholder_text'] ) ?>"
                     <?php endif ?>
-                    <?php echo $this->get_render_attribute_string( 'heading_attr' ); ?>>
+                    <?php echo $this->get_render_attribute_string( 'heading_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
                     <?php
                         if( !empty( $settings['animated_before_text'] ) ){
                             echo '<span class="beforetext">'.esc_html( $settings['animated_before_text'] ).'</span>';

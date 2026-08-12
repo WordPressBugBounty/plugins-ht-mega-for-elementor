@@ -11,7 +11,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Inline Mega Menu', 'htmega-addons' );
+        return __( 'Inline Mega Menu', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -27,14 +27,14 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->start_controls_section(
             'section_menu_options',
             array(
-                'label' => __( 'Menu', 'htmega-addons' ),
+                'label' => __( 'Menu', 'ht-mega-for-elementor' ),
             )
         );
 
             $this->add_control(
                 'menu',
                 array(
-                    'label'   => __( 'Select Menu', 'htmega-addons' ),
+                    'label'   => __( 'Select Menu', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => '',
                     'options' => htmega_get_all_create_menus(),
@@ -44,7 +44,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'dropdown_icon',
                 array(
-                    'label'       => __( 'Dropdown Icon', 'htmega-addons' ),
+                    'label'       => __( 'Dropdown Icon', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::ICONS,
                     'label_block' => true,
                     'default'     => [
@@ -53,54 +53,17 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                     ],
                 )
             );
-            if ( htmega_is_pro_active() ) {
-
-                $this->add_responsive_control(
-                    'menu_badge',
-                    [
-                        'label' => esc_html__( 'Hide Menu Badge', 'htmega-addons' ),
-                        'type' => Controls_Manager::SWITCHER,
-                        'return_value' => 'none',
-                        'default' => 'block',
-                        'selectors'  => array(
-                            '{{WRAPPER}} .htmenu-menu-tag' => 'display: {{VALUE}}',
-                        ),
-                    ]
-                );
-                $this->add_responsive_control(
-                    'menu_badge_arrow',
-                    [
-                        'label' => esc_html__( 'Hide Menu Badge Arrow', 'htmega-addons' ),
-                        'type' => Controls_Manager::SWITCHER,
-                        'return_value' => 'none',
-                        'default' => 'block',
-                        'selectors'  => array(
-                            '{{WRAPPER}} .htmega-arrow-down-icon' => 'display: {{VALUE}}',
-                        ),
-                        'condition' => [
-                            'menu_badge!' => 'none',
-                        ]
-                    ]
-                );
-            } else {
-                $this->add_control(
-                    'menu_badge_free',
-                    [
-                        'label' => esc_html__( 'Show Menu Badge ', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
-                        'type' => Controls_Manager::SWITCHER,
-                        'return_value' => 'ture',
-                        'default' => 'false',
-                        'classes' => 'htmega-disable-control',
-                    ]
-                );
-            }
+            // "Hide Menu Badge" / "Hide Menu Badge Arrow" controls (pro-only) are
+            // injected here by htmega-pro via the
+            // elementor/element/htmega-menu-inline-menu/section_menu_options/before_section_end
+            // hook — see htmega-pro/extensions/ht-menu/widgets/inline-mega-menu-pro.php
         $this->end_controls_section();
 
         // Menu Style
         $this->start_controls_section(
             'section_main_menu_style',
             array(
-                'label'      => __( 'Menu Area', 'htmega-addons' ),
+                'label'      => __( 'Menu Area', 'ht-mega-for-elementor' ),
                 'tab'        => Controls_Manager::TAB_STYLE,
             )
         );
@@ -108,7 +71,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'menu_wrap_width',
                 array(
-                    'label' => __( 'Main Menu Width', 'htmega-addons' ),
+                    'label' => __( 'Main Menu Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'size_units' => array(
                         '%', 'px',
@@ -144,7 +107,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'main_menu_margin',
                 array(
-                    'label'      => __( 'Margin', 'htmega-addons' ),
+                    'label'      => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => array( 'px', '%', 'em' ),
                     'selectors'  => array(
@@ -156,7 +119,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'main_menu_padding',
                 array(
-                    'label'      => __( 'Padding', 'htmega-addons' ),
+                    'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => array( 'px', '%' ),
                     'selectors'  => array(
@@ -168,7 +131,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'main_menu_border_radius',
                 array(
-                    'label'      => __( 'Border Radius', 'htmega-addons' ),
+                    'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => array( 'px', '%' ),
                     'selectors'  => array(
@@ -181,7 +144,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 Group_Control_Border::get_type(),
                 array(
                     'name'        => 'main_menu_border',
-                    'label'       => __( 'Border', 'htmega-addons' ),
+                    'label'       => __( 'Border', 'ht-mega-for-elementor' ),
                     'placeholder' => '1px',
                     'default'     => '1px',
                     'selector'    => '{{WRAPPER}} .htmega-menu-area',
@@ -199,19 +162,19 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'main_menu_alignment',
                 array(
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => array(
                         'left'    => array(
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-left',
                         ),
                         'center' => array(
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-center',
                         ),
                         'right' => array(
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-right',
                         ),
                     ),
@@ -232,7 +195,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->start_controls_section(
             'section_sub_menu_style',
             array(
-                'label'      => __( 'Sub Menu', 'htmega-addons' ),
+                'label'      => __( 'Sub Menu', 'ht-mega-for-elementor' ),
                 'tab'        => Controls_Manager::TAB_STYLE,
             )
         );
@@ -240,7 +203,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'sub_menu_width',
                 array(
-                    'label' => __( 'Sub Menu Width', 'htmega-addons' ),
+                    'label' => __( 'Sub Menu Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'size_units' => array(
                         '%', 'px',
@@ -276,7 +239,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'sub_menu_padding',
                 array(
-                    'label'      => __( 'Padding', 'htmega-addons' ),
+                    'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => array( 'px', '%' ),
                     'selectors'  => array(
@@ -288,7 +251,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'sub_menu_border_radius',
                 array(
-                    'label'      => __( 'Border Radius', 'htmega-addons' ),
+                    'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => array( 'px', '%' ),
                     'selectors'  => array(
@@ -301,7 +264,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 Group_Control_Border::get_type(),
                 array(
                     'name'        => 'sub_menu_border',
-                    'label'       => __( 'Border', 'htmega-addons' ),
+                    'label'       => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector'    => '{{WRAPPER}} .htmega-menu-area .sub-menu',
                 )
             );
@@ -317,7 +280,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'sub_menu_items_padding',
                 array(
-                    'label'      => __( 'Item Padding', 'htmega-addons' ),
+                    'label'      => __( 'Item Padding', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => array( 'px', '%' ),
                     'selectors'  => array(
@@ -329,7 +292,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'sub_menu_items_color',
                 array(
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => array(
                         '{{WRAPPER}} .htmega-menu-area ul > li > ul.sub-menu li a' => 'color: {{VALUE}}',
@@ -349,7 +312,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'sub_menu_items_hover_color',
                 array(
-                    'label'     => __( 'Hover Color', 'htmega-addons' ),
+                    'label'     => __( 'Hover Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => array(
                         '{{WRAPPER}} .htmega-menu-area ul > li > ul.sub-menu li a:hover' => 'color: {{VALUE}}',
@@ -363,7 +326,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->start_controls_section(
             'section_mega_menu_style',
             array(
-                'label'      => __( 'Mega Menu', 'htmega-addons' ),
+                'label'      => __( 'Mega Menu', 'ht-mega-for-elementor' ),
                 'tab'        => Controls_Manager::TAB_STYLE,
             )
         );
@@ -371,13 +334,13 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'mega_menu_width_op',
                 [
-                    'label' => esc_html__( 'Mega Menu Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Mega Menu Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'inherit' => esc_html__( 'Default', 'htmega-addons' ),
-                        'fullwidth' => esc_html__( 'Full Width', 'htmega-addons' ) . ' (100%)',
-                        'custom' => esc_html__( 'Custom', 'htmega-addons' ),
+                        'inherit' => esc_html__( 'Default', 'ht-mega-for-elementor' ),
+                        'fullwidth' => esc_html__( 'Full Width', 'ht-mega-for-elementor' ) . ' (100%)',
+                        'custom' => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -385,7 +348,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'menu_full_width_hidden',
                 [
-                    'label' => esc_html__( 'Full Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Full Width', 'ht-mega-for-elementor' ),
                     'type' => \Elementor\Controls_Manager::HIDDEN,
                     'default' => 'traditional',
                     'condition' => [
@@ -400,7 +363,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'mega_menu_width',
                 array(
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'size_units' => array(
                         '%', 'px',
@@ -439,7 +402,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'mega_menu_padding',
                 array(
-                    'label'      => __( 'Padding', 'htmega-addons' ),
+                    'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => array( 'px', '%' ),
                     'selectors'  => array(
@@ -451,7 +414,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_responsive_control(
                 'mega_menu_border_radius',
                 array(
-                    'label'      => __( 'Border Radius', 'htmega-addons' ),
+                    'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => array( 'px', '%' ),
                     'selectors'  => array(
@@ -464,7 +427,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 Group_Control_Border::get_type(),
                 array(
                     'name'        => 'mega_menu_border',
-                    'label'       => __( 'Border', 'htmega-addons' ),
+                    'label'       => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector'    => '{{WRAPPER}} .htmega-menu-area .htmegamenu-content-wrapper',
                 )
             );
@@ -483,7 +446,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->start_controls_section(
             'section_main_menu_items_style',
             array(
-                'label'      => __( 'Main Menu Items', 'htmega-addons' ),
+                'label'      => __( 'Main Menu Items', 'ht-mega-for-elementor' ),
                 'tab'        => Controls_Manager::TAB_STYLE,
             )
         );
@@ -494,14 +457,14 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 $this->start_controls_tab(
                     'main_menu_item_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'main_menu_items_color',
                         array(
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => array(
                                 '{{WRAPPER}} .htmega-menu-area ul > li > a' => 'color: {{VALUE}}',
@@ -522,7 +485,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'main_menu_items_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-menu-area ul > li',
                         ]
                     );
@@ -537,6 +500,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                                     'default' => 'classic',
                                 )
                             ),
+                            // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image, position, etc.) appear in the Elementor Style panel, not a WP_Query exclude arg.
                             'exclude' => array(
                                 'image',
                                 'position',
@@ -551,7 +515,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                     $this->add_responsive_control(
                         'main_menu_items_padding',
                         array(
-                            'label'      => __( 'Padding', 'htmega-addons' ),
+                            'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => array( 'px', '%' ),
                             'selectors'  => array(
@@ -566,14 +530,14 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 $this->start_controls_tab(
                     'main_menu_item_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'main_menu_items_hover_color',
                         array(
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => array(
                                 '{{WRAPPER}} .htmega-menu-area ul > li > a:hover' => 'color: {{VALUE}}',
@@ -586,7 +550,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'main_menu_items_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-menu-area ul > li:hover',
                         ]
                     );
@@ -601,6 +565,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                                     'default' => 'classic',
                                 )
                             ),
+                            // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image, position, etc.) appear in the Elementor Style panel, not a WP_Query exclude arg.
                             'exclude' => array(
                                 'image',
                                 'position',
@@ -622,7 +587,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->start_controls_section(
             'dorpdown_icon_style',
             array(
-                'label'      => __( 'Dropdown Icon', 'htmega-addons' ),
+                'label'      => __( 'Dropdown Icon', 'ht-mega-for-elementor' ),
                 'tab'        => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'dropdown_icon[value]!' => '',
@@ -632,7 +597,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->add_control(
             'dropdown_icon_color',
             array(
-                'label'     => __( 'Color', 'htmega-addons' ),
+                'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => array(
                     '{{WRAPPER}} .htmega-menu-area ul > li > a > span.htmenu-icon' => 'color: {{VALUE}}',
@@ -643,7 +608,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->add_responsive_control(
             'dropdown_icon_fontsize',
             [
-                'label' => __( 'Icon Size', 'htmega-addons' ),
+                'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px'],
                 'range' => [
@@ -666,7 +631,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->add_responsive_control(
             'icon_inner_space',
             [
-                'label' => esc_html__( 'Inner Sapce', 'htmega-addons' ),
+                'label' => esc_html__( 'Inner Sapce', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::NUMBER,
                 'min' => -100,
                 'max' => 100,
@@ -679,106 +644,29 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         );
         $this->end_controls_section();
 
-        if ( htmega_is_pro_active() ) {
-        //Badge Style
-            $this->start_controls_section(
-                'menu_badge_style',
-                array(
-                    'label'      => __( 'Menu Badge', 'htmega-addons' ),
-                    'tab'        => Controls_Manager::TAB_STYLE,
-                    'condition'  => [
-                        'menu_badge!' => 'none',
-                    ]
-                )
-            ); 
-            $this->add_group_control(
-                Group_Control_Typography::get_type(),
-                array(
-                    'name'     => 'menu_badge_typography',
-                    'selector' => '{{WRAPPER}} .htmenu-menu-tag',
-                    'condition' => [
-                        'menu_badge!' => 'none',
-                    ]
-                )
-            );
-            $this->add_responsive_control(
-                'menu_badge_position_v',
-                [
-                    'label' => __( 'Vertical Position', 'htmega-addons' ),
-                    'type' => Controls_Manager::SLIDER,
-                    'size_units' => [ 'px'],
-                    'range' => [
-                        'px' => [
-                            'min' => -100,
-                            'max' => 100,
-                            'step' => 1,
-                        ],
-                    ],
-                    'selectors' => [
-                        '{{WRAPPER}} .htmenu-menu-tag' => 'top: {{SIZE}}{{UNIT}};',
-                    ],
-                ]
-            );
-            $this->add_responsive_control(
-                'menu_badge_position_h',
-                [
-                    'label' => __( 'Horizontal Position', 'htmega-addons' ),
-                    'type' => Controls_Manager::SLIDER,
-                    'size_units' => [ 'px'],
-                    'range' => [
-                        'px' => [
-                            'min' => -100,
-                            'max' => 100,
-                            'step' => 1,
-                        ],
-                    ],
-                    'selectors' => [
-                        '{{WRAPPER}} .htmenu-menu-tag' => 'right: {{SIZE}}{{UNIT}};',
-                    ],
-                ]
-            );
-            $this->add_responsive_control(
-                'menu_badge_padding',
-                array(
-                    'label'      => __( 'Padding', 'htmega-addons' ),
-                    'type'       => Controls_Manager::DIMENSIONS,
-                    'selectors'  => array(
-                        '{{WRAPPER}} .htmenu-menu-tag' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    ),
-                )
-            );
-            $this->add_responsive_control(
-                'menu_badge_border_radius',
-                [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
-                    'type' => Controls_Manager::DIMENSIONS,
-                    'selectors' => [
-                        '{{WRAPPER}} .htmenu-menu-tag' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
-                    ],
-                ]
-            );
-            $this->end_controls_section();
-        }
+        // "Menu Badge" style section (pro-only) is appended here by htmega-pro via the
+        // elementor/element/htmega-menu-inline-menu/dorpdown_icon_style/after_section_end
+        // hook — see htmega-pro/extensions/ht-menu/widgets/inline-mega-menu-pro.php
         // Button Icon style tab start
         $this->start_controls_section(
             'toggle_button_section',
             [
-                'label'     => __( 'Toggle Button', 'htmega-addons' ),
+                'label'     => __( 'Toggle Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'toggle_button_alignment',
                 array(
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => array(
                         'left'    => array(
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-left',
                         ),
                         'right' => array(
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-right',
                         ),
                     ),
@@ -791,7 +679,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'toggle_button_fontsize',
                 [
-                    'label' => __( 'Icon Size', 'htmega-addons' ),
+                    'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px'],
                     'range' => [
@@ -815,7 +703,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'toggle_button_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -832,14 +720,14 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 $this->start_controls_tab(
                     'buttonicon_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'htmega_toggle_button_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-menu-area .htmobile-aside-button i' => 'color: {{VALUE}};',
@@ -852,7 +740,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'toggle_button_background',
-                            'label' => __( 'Icon Background', 'htmega-addons' ),
+                            'label' => __( 'Icon Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-menu-area .htmobile-aside-button',
                             'separator' => 'before',
@@ -863,7 +751,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'toggle_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-menu-area .htmobile-aside-button',
                         ]
                     );
@@ -871,7 +759,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                     $this->add_control(
                         'toggle_button_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-menu-area .htmobile-aside-button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -884,7 +772,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'toggle_button_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-menu-area .htmobile-aside-button',
                         ]
                     );
@@ -895,14 +783,14 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 $this->start_controls_tab(
                     'toggle_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'toggle_button_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-menu-area .htmobile-aside-button:hover i' => 'color: {{VALUE}};',
@@ -914,7 +802,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'toggle_button_border_hover',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-menu-area .htmobile-aside-button:hover',
                         ]
                     );
@@ -922,7 +810,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'toggle_button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-menu-area .htmobile-aside-button:hover',
                         ]
@@ -937,14 +825,14 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->start_controls_section(
             'toggle_button_close_section',
             [
-                'label'     => __( 'Toggle Close Button', 'htmega-addons' ),
+                'label'     => __( 'Toggle Close Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'htmega_toggle_close_button_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmobile-menu-wrap .htmobile-aside-close i' => 'color: {{VALUE}};',
@@ -957,7 +845,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'toggle_close_button_background',
-                    'label' => __( 'Icon Background', 'htmega-addons' ),
+                    'label' => __( 'Icon Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmobile-menu-wrap .htmobile-aside-close',
                     'separator' => 'before',
@@ -969,7 +857,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
         $this->start_controls_section(
             'section_mobile_menu_items_style',
             array(
-                'label'      => __( 'Mobile Menu', 'htmega-addons' ),
+                'label'      => __( 'Mobile Menu', 'ht-mega-for-elementor' ),
                 'tab'        => Controls_Manager::TAB_STYLE,
             )
         );
@@ -977,7 +865,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'mobile_menu_items_color',
                 array(
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => array(
                         '{{WRAPPER}} .htmobile-menu-wrap .htmobile-navigation .htmega-megamenu > li > a,
@@ -988,7 +876,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'mobile_menu_items_hover_color',
                 array(
-                    'label'     => __( 'Text Hover Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Hover Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => array(
                         '{{WRAPPER}} .htmobile-menu-wrap .htmobile-navigation .htmega-megamenu > li:hover > a,
@@ -1008,7 +896,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
             $this->add_control(
                 'mobile_expand_color',
                 array(
-                    'label'     => __( 'Expand Icon Color', 'htmega-addons' ),
+                    'label'     => __( 'Expand Icon Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => array(
                         '{{WRAPPER}} .htmobile-menu-wrap .menu-expand i'=>'color: {{VALUE}}',
@@ -1019,7 +907,7 @@ class HTMegaMenu_Inline_Menu extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'shtmobile_menu_wrap_bg',
-                    'label' => __( 'Icon Background', 'htmega-addons' ),
+                    'label' => __( 'Icon Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmobile-menu-wrap',
                 ]

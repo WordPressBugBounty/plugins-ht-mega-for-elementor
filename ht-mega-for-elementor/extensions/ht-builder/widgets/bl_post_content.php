@@ -19,7 +19,7 @@ class Bl_Post_Content_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Post Content', 'htmega-addons' );
+        return __( 'Post Content', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -40,29 +40,29 @@ class Bl_Post_Content_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_content_section',
             array(
-                'label' => __( 'Post Content', 'htmega-addons' ),
+                'label' => __( 'Post Content', 'ht-mega-for-elementor' ),
             )
         );
         $this->add_responsive_control(
             'post_contnet_align',
             [
-                'label'        => __( 'Alignment', 'htmega-addons' ),
+                'label'        => __( 'Alignment', 'ht-mega-for-elementor' ),
                 'type'         => Controls_Manager::CHOOSE,
                 'options'      => [
                     'left'   => [
-                        'title' => __( 'Left', 'htmega-addons' ),
+                        'title' => __( 'Left', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'htmega-addons' ),
+                        'title' => __( 'Center', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'right'  => [
-                        'title' => __( 'Right', 'htmega-addons' ),
+                        'title' => __( 'Right', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                     'justify' => [
-                        'title' => __( 'Justified', 'htmega-addons' ),
+                        'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-justify',
                     ],
                 ],
@@ -75,7 +75,7 @@ class Bl_Post_Content_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_content_style_section',
             array(
-                'label' => __( 'Post Content Style', 'htmega-addons' ),
+                'label' => __( 'Post Content Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -83,7 +83,7 @@ class Bl_Post_Content_ELement extends Widget_Base {
             $this->add_control(
                 'post_content_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}}' => 'color: {{VALUE}};',
@@ -95,7 +95,7 @@ class Bl_Post_Content_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'post_content_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}}',
                 )
             );
@@ -111,8 +111,8 @@ class Bl_Post_Content_ELement extends Widget_Base {
         $post = get_post();
         
         if( Elementor::instance()->editor->is_edit_mode() ){
-           // echo '<h3>' . __('Post Content', 'htmega-addons' ). '</h3>';
-            echo '<p>' . esc_html__('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like.', 'htmega-addons' ). '</p>';
+           // echo '<h3>' . __('Post Content', 'ht-mega-for-elementor' ). '</h3>';
+            echo '<p>' . esc_html__('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like.', 'ht-mega-for-elementor' ). '</p>';
         }else{
 
             if ( post_password_required( $post->ID ) ) {
@@ -136,11 +136,11 @@ class Bl_Post_Content_ELement extends Widget_Base {
             }else{
                 echo apply_filters( 'the_content', get_the_content() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 wp_link_pages( [
-                    'before' => '<div class="page-links"><span class="page-links-title elementor-page-links-title">' . __( 'Pages:', 'htmega-addons' ) . '</span>',
+                    'before' => '<div class="page-links"><span class="page-links-title elementor-page-links-title">' . __( 'Pages:', 'ht-mega-for-elementor' ) . '</span>',
                     'after' => '</div>',
                     'link_before' => '<span>',
                     'link_after' => '</span>',
-                    'pagelink' => '<span class="screen-reader-text">' . __( 'Page', 'htmega-addons' ) . ' </span>%',
+                    'pagelink' => '<span class="screen-reader-text">' . __( 'Page', 'ht-mega-for-elementor' ) . ' </span>%',
                     'separator' => '<span class="screen-reader-text">, </span>',
                 ] );
             }

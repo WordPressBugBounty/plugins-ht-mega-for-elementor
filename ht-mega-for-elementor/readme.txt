@@ -1,19 +1,19 @@
 === HT Mega Addons for Elementor - Elementor Widgets & Template Builder ===
 Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhusudandev
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
-Requires at least: 5.0
+Requires at least: 5.9
 Tested up to: 7.0
-Stable tag: 3.2.2
+Stable tag: 3.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Elementor addon offering 146+ widgets — Mega Menu, Ready Templates, Page Builder, Slider, Gallery, Post Grid, AI Writer & more.
+Elementor addon offering 146+ widgets, AI Builder, Mega Menu, Ready Templates, Page Builder, Slider, Gallery, Post Grid & more.
 
 == Description ==
 
 ### Transform Your Elementor Page Builder into a Design Powerhouse
 
-Are you tired of Elementor's limitations holding back your creativity? **HT Mega** is the ultimate Elementor addon plugin that unlocks your full design potential with **146+ professional widgets**, **AI-powered content writer**, **theme builder**, and **850+ ready-made blocks & sections**.
+Are you tired of Elementor's limitations holding back your creativity? **HT Mega** is the ultimate Elementor addon plugin that unlocks your full design potential with **146+ professional widgets**, **AI Builder**, **theme builder**, and **850+ ready-made blocks & sections**.
 
 Join WordPress professionals who’ve already transformed their workflow and build stunning websites 73% faster than before.
 
@@ -26,7 +26,7 @@ Join WordPress professionals who’ve already transformed their workflow and bui
 ### 🚀 Why Choose HT Mega?
 
 ✅ **All-in-One Solution**: Stop juggling multiple plugins. Get everything in one optimized package
-✅ **AI Content Writer**: Create Elementor content instantly with GPT-4, Claude & Gemini
+✅ **AI Builder**: Generate full sections or entire multi-section pages from a prompt — choose from 6 AI engines (OpenAI, Claude, Gemini, DeepSeek, Kimi, Z.ai)
 ✅ **146+ Professional Widgets**: From basic to advanced - we've got you covered
 ✅ **Theme Builder Included**: Design headers, footers, archives, and single posts
 ✅ **850+ Ready Blocks & Sections**: Pre-designed sections across 100+ categories
@@ -50,9 +50,9 @@ Built around 2026's top design trends — Bento Grid, Glassmorphism, Dark Minima
 
 [youtube https://youtu.be/BUV58QPVCDM]
 
-* **Hero**: Landing page hero sections with headline, description, and CTA layouts
+* **Hero**: Landing page hero sections with headline, description, and CTA layouts — [▶ Watch demo](https://youtu.be/BUV58QPVCDM)
 * **About / Feature**: Feature highlight sections with image + content columns
-* **Services**: Service showcase sections in grid, list, or centered layouts
+* **Services**: Service showcase sections in grid, list, or centered layouts — [▶ Watch demo](https://www.youtube.com/watch?v=G-ylH2jN3nw)
 * **Testimonials**: Customer review sections in grid, masonry, or centered layouts
 * **Pricing Table**: Plan comparison sections with monthly/annual billing toggle
 * **Stats / Counter**: Animated number counter sections in row, grid, or bento layouts
@@ -183,15 +183,22 @@ Built around 2026's top design trends — Bento Grid, Glassmorphism, Dark Minima
 5. **[Custom CSS](https://wphtmega.com/modules/)** - Add custom styling per widget
 6. **[Cross-Domain Copy Paste](https://wphtmega.com/modules/)** - Copy elements between websites
 
-### 🤖 AI Content Writer - Industry First!
+### 🤖 AI Builder
 
-Generate compelling content instantly with our integrated AI writer supporting:
+Describe what you want and let AI build it — right inside Elementor. Choose from 6 AI engines:
 
-* OpenAI (GPT-4, GPT-3.5)
+* OpenAI
 * Anthropic Claude
 * Google Gemini
+* DeepSeek
+* Kimi (Moonshot AI)
+* Z.ai (GLM)
 
-No more writer's block! Create headlines, descriptions, and full content with AI assistance directly in Elementor.
+**Prompt-to-section**: Type a description (e.g. "services section for a law firm, dark and serious") and AI Builder generates a fully designed, ready-to-edit section using HT Mega's section widgets.
+**Prompt-to-page**: Switch to "Build a full page" to generate an entire multi-section page — hero, features, testimonials, pricing, and more — from a single prompt.
+**Improve existing content**: Already have a section? Use AI to rewrite headlines, descriptions, and copy in place, directly on the widget fields.
+
+No more writer's block, and no more starting from a blank canvas.
 
 ### 📁 Extensive Template Library
 
@@ -253,7 +260,68 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 **📧 [HT Contact Form](https://wordpress.org/plugins/ht-contactform/)** – Seamlessly integrate Contact Form 7 with Elementor. **Drag, drop, and style your forms with ease**.
 
 
+== Source Code ==
+
+This plugin ships some JavaScript/CSS assets in compiled/minified form. The full human-readable source for those assets, including build instructions, is published at:
+https://github.com/devitemsllc/ht-mega-for-elementor
+
+The bundled `jQuery Countdown` library (`assets/js/jquery-countdown.min.js`) is a third-party project; its source is maintained upstream at https://github.com/hilios/jQuery.countdown.
+
+== External services ==
+
+This plugin connects to the following third-party services for specific, optional widgets and features. None of these connections are required for the plugin's core functionality; each is only used when the related widget or feature is actively configured by the site owner.
+
+**AI Builder (AI Writer widget)**
+This plugin can connect to an AI provider chosen by the site admin to generate or improve section/page content from a text prompt. The prompt text and relevant page context you submit are sent to the selected provider's API to generate a response, which is inserted into the editor.
+* OpenAI: [Terms of Use](https://openai.com/policies/row-terms-of-use/), [Privacy Policy](https://openai.com/policies/row-privacy-policy/)
+* Anthropic (Claude): [Terms of Service](https://www.anthropic.com/legal/consumer-terms), [Privacy Policy](https://www.anthropic.com/legal/privacy)
+* Google (Gemini): [Terms of Service](https://policies.google.com/terms), [Privacy Policy](https://policies.google.com/privacy)
+* DeepSeek: [Terms of Use](https://chat.deepseek.com/downloads/DeepSeek%20Terms%20of%20Use.html), [Privacy Policy](https://chat.deepseek.com/downloads/DeepSeek%20Privacy%20Policy.html)
+* Moonshot AI (Kimi): [Terms of Service](https://www.moonshot.ai/agreement), [Privacy Policy](https://www.moonshot.ai/policy/privacy)
+* Z.ai (GLM): [Terms of Service](https://z.ai/help/policies), [Privacy Policy](https://z.ai/help/policies)
+An API key for the chosen provider must be supplied by the site admin; no request is sent unless AI Builder is actively used.
+
+**Weather widget**
+When the Weather widget is added to a page, the configured location is sent to OpenWeatherMap to retrieve current weather data for display.
+Service: OpenWeatherMap — [Terms of Service](https://openweathermap.org/terms), [Privacy Policy](https://openweathermap.org/privacy-policy)
+
+**Twitter/X Feed widget**
+When the Twitter/X Feed widget is used, the plugin authenticates with the Twitter/X API (via OAuth, using credentials the site admin supplies) to retrieve and display recent tweets, including author profile images, for the configured account.
+Service: X (Twitter) — [Terms of Service](https://x.com/en/tos), [Privacy Policy](https://x.com/en/privacy)
+
+**Instagram Feed widget**
+When the Instagram widget is used, the plugin connects to the Instagram Graph API (using credentials the site admin supplies) to retrieve and display recent media from the configured Instagram account.
+Service: Meta/Instagram — [Terms of Service](https://help.instagram.com/581066165581870), [Privacy Policy](https://privacycenter.instagram.com/policy)
+
+**Social share counters**
+When a widget with social share-count display is used, the relevant network is queried to retrieve the current share/like count for the page URL being viewed.
+* Facebook — [Terms](https://www.facebook.com/terms.php), [Privacy Policy](https://www.facebook.com/privacy/policy/)
+* Pinterest — [Terms of Service](https://policy.pinterest.com/en/terms-of-service), [Privacy Policy](https://policy.pinterest.com/en/privacy-policy)
+* Reddit — [User Agreement](https://www.redditinc.com/policies/user-agreement), [Privacy Policy](https://www.reddit.com/policies/privacy-policy)
+* Tumblr — [Terms of Service](https://www.tumblr.com/policy/en/terms-of-service), [Privacy Policy](https://www.tumblr.com/policy/en/privacy)
+* Buffer — [Terms of Service](https://buffer.com/terms), [Privacy Policy](https://buffer.com/privacy)
+* Yahoo (used to retrieve Surfingbird share counts via the YQL API) — [Terms of Service](https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html), [Privacy Policy](https://legal.yahoo.com/us/en/yahoo/privacy/index.html)
+
+**Deactivation feedback**
+When the plugin is deactivated, the site's public IP address is sent to ip-api.com to determine the site's approximate country, used only to route anonymous deactivation-survey feedback by region.
+Service: ip-api.com — [Terms of Use](https://ip-api.com/docs/legal), no separate privacy policy published by the service.
+
+
 == Changelog ==
+
+= Version 3.2.3 - Date: 2026-08-12 =
+* Updated: AI Writer renamed to AI Builder — generate a full section or an entire multi-section page from a single prompt using HT Mega's section widgets, in addition to improving existing section content with AI.
+* Added: 3 new AI engines for AI Builder — DeepSeek, Kimi (Moonshot AI), and Z.ai (GLM) — alongside existing OpenAI, Claude, and Gemini support.
+* Added: Author avatar style controls (size, border radius, border) in Blog/Posts 2026 widget.
+* Changed: Reading Progress Bar and Scroll To Top global enable/disable setting is now managed via HT Mega Pro; per-page enable and style controls are unaffected and continue to work as before. Existing pro users should update HT Mega Pro alongside this release to keep the global setting active.
+* Improved: Hardened output escaping, input sanitization, and nonce verification across widgets, AJAX handlers, and the AI Builder integration.
+* Updated: Bundled third-party libraries — Swiper now uses Elementor's own bundled copy (reduces plugin size), fontIconPicker, anime.js, and Isotope updated to their latest stable releases.
+* Fixed: Text domain corrected from `htmega-addons` to `ht-mega-for-elementor` (WordPress.org requirement — the domain must match the plugin slug). If you maintain custom translations via Loco Translate or Poedit, rename your `.mo`/`.po` files from `htmega-addons-{locale}` to `ht-mega-for-elementor-{locale}`.
+* Fixed: FAQ 2026 widget accordion open/close animation not working reliably, in both Elementor and Gutenberg (block editor).
+* Fixed: Testimonials 2026 widget masonry layout rendering incorrectly in Safari (Elementor and Gutenberg).
+* Fixed: Twitter Feed widget security and reliability — no longer uses a bundled fallback configuration when left unconfigured.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.2 - Date: 2026-07-28 =
 * Added: 55 Sections Templates in HT Mega Templates Library.
@@ -400,35 +468,6 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 * Fixed: A few minor issues.
 * Tested: Compatibility with the latest version of Elementor.
 
-= Version 2.9.2 - Date: 2025-07-30 =
-* Added: [Yogabes - Yoga Template Kit](https://library.wphtmega.com/yogabes-yoga-template/).
-* Added: [Xova - Business Agency Template Kit](https://library.wphtmega.com/xova-business-agency-template/).
-* Added: [Travlo - Traveling Template Kit](https://library.wphtmega.com/travlo-traveling-template/).
-* Added: [Zyift - Fitness Template Kit](https://library.wphtmega.com/zyift-fitness-template/).
-* Added: [TechZen - Technology Template Kit](https://library.wphtmega.com/techzen-technology-template/) (Pro).
-* Added: Dynamic tag support in Services widget.
-* Added: Image Border, Border Radius, Shadow and Image width options in Working Process widget.
-* Fixed: Page Redirect issue after template creation in Theme Builder.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.9.1 - Date: 2025-07-16 =
-* Added: [Vrzion - Technology Template Kit](https://library.wphtmega.com/vrzion-technology-template/).
-* Added: [Arfito - IT Consulting Template Kit](https://library.wphtmega.com/arfito-it-consulting-template/).
-* Added: [Markio - Marketing Agency Template Kit](https://library.wphtmega.com/markio-marketing-agency-template/).
-* Added: Mega Menu width and position value placeholder in Mega Menu Settings.
-* Fixed: Carousel Responsive Breakpoint issue in Carousel widget.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
-
-= Version 2.9.0 - Date: 2025-07-02 =
-* Added: AI Writer for Widgets content generation( OpenAI, Claude, Google AI )
-* Added: [Prolio - Portfolio Template Kit](https://library.wphtmega.com/prolio-portfolio-template/).
-* Added: [Intario - Interior Design Template Kit](https://library.wphtmega.com/intario-interior-design-template/).
-* Added: [Arcbes - Architecture Template Kit](https://library.wphtmega.com/arcbes-architecture-template/).
-* Fixed: Gutenberg Button Block display issue.
-* Fixed: A few minor issues.
-* Tested: Compatibility with the latest version of Elementor.
 
 
 == Installation ==
@@ -527,11 +566,13 @@ The pro version of HT Mega gives you access to numerous incredible features that
 3. 1170+ Ready-to-Import Templates - Professional Designs for Every Industry
 4. Extensive Widget Library - 145+ Free & Pro Widgets Organized by Category
 5. Stunning Websites Built with HT Mega - Professional Results in Hours, Not Weeks
-6. Powerful Modules Beyond Widgets - Theme Builder, Mega Menu, AI Writer & More
+6. Powerful Modules Beyond Widgets - Theme Builder, Mega Menu, AI Builder & More
 7. Complete Theme Customization - Design Every Part of Your WordPress Site
 8. Works Seamlessly with Your Favorite Plugins - WooCommerce, Form Builders & More
-9. NEW: AI-Powered Content Generation - Create SEO-Optimized Content with OpenAI, Claude & Gemini
+9. NEW: AI Builder - Generate Sections or Full Pages from a Prompt with 6 AI Engines (OpenAI, Claude, Gemini, DeepSeek, Kimi, Z.ai)
 10. Create stunning sliders and carousels that capture attention and drive engagement
 11. Present information beautifully with interactive galleries, dynamic charts, and engaging info boxes
 12. Guide visitors to conversion with interactive pricing tables, compelling comparisons, and trust-building progress displays
 13. Get 24/7 Support, Tutorials & Regular Updates
+14. AI Builder - Generate Any Section Instantly with OpenAI, Claude, Gemini, DeepSeek, Kimi & Z.ai
+15. Build Faster with Ready-Made Sections - 10+ Section Types in 5 Design Styles Each (Hero, Services, CTA, Pricing, About/Feature, Stats/Counter, Team, Blog/Posts, Testimonials, FAQ, Contact)

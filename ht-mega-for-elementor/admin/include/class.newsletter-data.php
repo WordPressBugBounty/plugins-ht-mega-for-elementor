@@ -45,7 +45,7 @@ if ( ! class_exists( 'HTMega_Newsletter_Data' ) ) {
 
             check_ajax_referer('htmega-admin-ajax-request', 'security');
 
-            $email = ( isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '' );
+            $email = ( isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '' );
 
             $response = array();
 
@@ -58,27 +58,27 @@ if ( ! class_exists( 'HTMega_Newsletter_Data' ) ) {
                     if ( ! is_wp_error( $request ) ) {
                         $response = array(
                             'status' => 'success',
-                            'message' => esc_html__( 'Successfully subscribed.', 'htmega-addons' ),
+                            'message' => esc_html__( 'Successfully subscribed.', 'ht-mega-for-elementor' ),
                         );
 
                         update_option( 'htmega_newsletter_subscribed', true );
                     } else {
                         $response = array(
                             'status' => 'error',
-                            'message' => esc_html__( 'Something went wrong.', 'htmega-addons' ),
+                            'message' => esc_html__( 'Something went wrong.', 'ht-mega-for-elementor' ),
                             'request' => $request,
                         );
                     }
                 } else {
                     $response = array(
                         'status' => 'error',
-                        'message' => esc_html__( 'Invalid data.', 'htmega-addons' ),
+                        'message' => esc_html__( 'Invalid data.', 'ht-mega-for-elementor' ),
                     );
                 }
             } else {
                 $response = array(
                     'status' => 'error',
-                    'message' => esc_html__( 'Invalid email.', 'htmega-addons' ),
+                    'message' => esc_html__( 'Invalid email.', 'ht-mega-for-elementor' ),
                 );
             }
 

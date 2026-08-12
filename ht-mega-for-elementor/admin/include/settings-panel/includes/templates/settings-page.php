@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="wrap htmega-settings-page-wrapper">
     <?php do_action('htmega_admin_notices'); ?>
     <div id="htmega-opt-admin-app"></div>

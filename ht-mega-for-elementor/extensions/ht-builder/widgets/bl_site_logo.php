@@ -21,7 +21,7 @@ class Bl_Site_Logo_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Site Logo', 'htmega-addons' );
+        return __( 'Site Logo', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -44,22 +44,22 @@ class Bl_Site_Logo_ELement extends Widget_Base {
         $this->start_controls_section(
             'title_content',
             [
-                'label' => __( 'Site Title', 'htmega-addons' ),
+                'label' => __( 'Site Title', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'logo_type',
                 [
-                    'label' => __( 'Logo', 'htmega-addons' ),
+                    'label' => __( 'Logo', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'default' => [
-                            'title' => __( 'Default', 'htmega-addons' ),
+                            'title' => __( 'Default', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-site-logo',
                         ],
                         'custom' => [
-                            'title' => __( 'Custom', 'htmega-addons' ),
+                            'title' => __( 'Custom', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-image-rollover',
                         ]
                         
@@ -72,7 +72,7 @@ class Bl_Site_Logo_ELement extends Widget_Base {
             $this->add_control(
                 'sitelogo_image',
                 [
-                    'label' => __( 'Site Logo', 'htmega-addons' ),
+                    'label' => __( 'Site Logo', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -102,7 +102,7 @@ class Bl_Site_Logo_ELement extends Widget_Base {
         $this->start_controls_section(
             'logo_style_section',
             array(
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => __( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -111,7 +111,7 @@ class Bl_Site_Logo_ELement extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'logo_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}}',
                     'separator' => 'before',
                 ]
@@ -120,7 +120,7 @@ class Bl_Site_Logo_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'logo_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -133,7 +133,7 @@ class Bl_Site_Logo_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'logo_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -146,7 +146,7 @@ class Bl_Site_Logo_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'logo_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -158,23 +158,23 @@ class Bl_Site_Logo_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'logo_align',
                 [
-                    'label'        => __( 'Alignment', 'htmega-addons' ),
+                    'label'        => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::CHOOSE,
                     'options'      => [
                         'left'   => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right'  => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],

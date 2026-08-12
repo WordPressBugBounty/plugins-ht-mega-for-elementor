@@ -103,7 +103,7 @@ class Manage_Styles {
 			if ( ! $post ) {
 				return [
 					'success' => false,
-					'message' => __('Post not found.', 'htmega-addons' )
+					'message' => __('Post not found.', 'ht-mega-for-elementor' )
 				];
 			}
 
@@ -111,19 +111,19 @@ class Manage_Styles {
 			if ( ! current_user_can( 'manage_options' ) && get_current_user_id() !== (int) $post->post_author ) {
 				return [
 					'success' => false,
-					'message' => __('You do not have permission to access this content.', 'htmega-addons' )
+					'message' => __('You do not have permission to access this content.', 'ht-mega-for-elementor' )
 				];
 			}
 
 			return [
 				'success' => true, 
 				'data' 	  => $post->post_content, 
-				'message' => __('Post Data found.', 'htmega-addons' )
+				'message' => __('Post Data found.', 'ht-mega-for-elementor' )
 			];
 		} else {
 			return [
 				'success' => false, 
-				'message' => __('Post Data not found.', 'htmega-addons' )
+				'message' => __('Post Data not found.', 'ht-mega-for-elementor' )
 			];
 		}
 	}
@@ -142,7 +142,7 @@ class Manage_Styles {
 				( ! current_user_can( 'manage_options' ) && 
 				get_current_user_id() !== (int) $post->post_author )
 			) {
-				throw new Exception( __('You do not have permission to manage CSS for this post.', 'htmega-addons' ) );
+				throw new Exception( __('You do not have permission to manage CSS for this post.', 'ht-mega-for-elementor' ) );
 			}
 
 
@@ -158,7 +158,7 @@ class Manage_Styles {
 
 				return [
 					'success' => true, 
-					'message' => __('Widget CSS Saved.', 'htmega-addons')
+					'message' => __('Widget CSS Saved.', 'ht-mega-for-elementor')
 				];
 			}
 			
@@ -178,11 +178,11 @@ class Manage_Styles {
 
 				update_post_meta( $post_id, '_htmega_css', sanitize_text_field( $all_block_css ) );
 				if ( ! $wp_filesystem->put_contents( $dirname . $filename, sanitize_text_field( $all_block_css ) ) ) {
-					throw new Exception( __('You are not permitted to save CSS.', 'htmega-addons' ) ); 
+					throw new Exception( __('You are not permitted to save CSS.', 'ht-mega-for-elementor' ) ); 
 				}
 				return [
 					'success' => true,
-					'message' =>__('HtMega Blocks css file update.', 'htmega-addons' )
+					'message' =>__('HtMega Blocks css file update.', 'ht-mega-for-elementor' )
 				];
 			} else {
 				delete_post_meta( $post_id, '_htmega_active' );
@@ -193,7 +193,7 @@ class Manage_Styles {
 				delete_post_meta( $post_id, '_htmega_css' );
 				return [
 					'success' => true,
-					'message' => __('HtMega Blocks CSS Delete.', 'htmega-addons' )
+					'message' => __('HtMega Blocks CSS Delete.', 'ht-mega-for-elementor' )
 				];
 			}
 		} catch( Exception $e ){
@@ -219,7 +219,7 @@ class Manage_Styles {
 				( ! current_user_can( 'manage_options' ) && 
 				get_current_user_id() !== (int) $post->post_author )
 			) {
-				throw new Exception( __('You do not have permission to manage CSS for this post.', 'htmega-addons' ) );
+				throw new Exception( __('You do not have permission to manage CSS for this post.', 'ht-mega-for-elementor' ) );
 			}
 
 			global $wp_filesystem;
@@ -242,13 +242,13 @@ class Manage_Styles {
 			update_post_meta( $post_id, '_htmega_active', 'yes' );
 			
 			if ( ! $wp_filesystem->put_contents( $dirname . $filename, sanitize_text_field( $css ) ) ) {
-				throw new Exception( esc_html__('You are not permitted to save CSS.', 'htmega-addons' ) );
+				throw new Exception( esc_html__('You are not permitted to save CSS.', 'ht-mega-for-elementor' ) );
 			}
 
 			wp_send_json_success(
 				[
 					'success' => true, 
-					'message' => __('Data fetch', 'htmega-addons' )
+					'message' => __('Data fetch', 'ht-mega-for-elementor' )
 				]
 			);
 

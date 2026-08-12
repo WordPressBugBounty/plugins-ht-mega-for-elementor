@@ -148,17 +148,62 @@
 .htm25-testimonials--grid .htm25-testimonials__grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
 .htm25-testimonials--grid .htm25-testimonials__grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
 
-/* Masonry layout: CSS multi-column */
-.htm25-testimonials--masonry .htm25-testimonials__grid {
+/* Masonry layout — two structures share this stylesheet right now:
+   1. Round-robin flex columns (Elementor): PHP pre-distributes cards into
+      real .htm25-testimonials__masonry-col divs, plain flex layout, no
+      CSS fragmentation — nothing for Safari to get wrong. This is the
+      fixed version.
+   2. Legacy CSS column-count (Gutenberg testimonials-2025 block, not yet
+      migrated): cards are direct children of .grid, no column-count
+      recalculation. Kept working as before — the block still has known
+      Safari rendering bugs (splitting / ghost paint at column
+      boundaries) that this legacy path cannot fully avoid.
+   The two are distinguished structurally (:has() / direct-child
+   selector) so fixing one doesn't touch the other. */
+
+.htm25-testimonials__masonry-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--htm25-space-6);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.htm25-testimonials--masonry .htm25-testimonials__grid:has(.htm25-testimonials__masonry-col) {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--htm25-space-6);
+}
+
+/* Legacy column-count path only (grid with no .masonry-col children) */
+.htm25-testimonials--masonry .htm25-testimonials__grid:not(:has(.htm25-testimonials__masonry-col)) {
   display: block;
 }
-.htm25-testimonials--masonry .htm25-testimonials__grid--cols-2 { column-count: 2; column-gap: var(--htm25-space-6); }
-.htm25-testimonials--masonry .htm25-testimonials__grid--cols-3 { column-count: 3; column-gap: var(--htm25-space-6); }
-.htm25-testimonials--masonry .htm25-testimonials__grid--cols-4 { column-count: 4; column-gap: var(--htm25-space-6); }
+.htm25-testimonials--masonry .htm25-testimonials__grid--cols-2:not(:has(.htm25-testimonials__masonry-col)) { column-count: 2; column-gap: var(--htm25-space-6); }
+.htm25-testimonials--masonry .htm25-testimonials__grid--cols-3:not(:has(.htm25-testimonials__masonry-col)) { column-count: 3; column-gap: var(--htm25-space-6); }
+.htm25-testimonials--masonry .htm25-testimonials__grid--cols-4:not(:has(.htm25-testimonials__masonry-col)) { column-count: 4; column-gap: var(--htm25-space-6); }
 
-.htm25-testimonials--masonry .htm25-testimonials__card {
+/* Safari doesn't reliably honor break-inside: avoid on flex containers
+   inside CSS multi-column layout (cards split/duplicate across columns),
+   and separately fails to repaint transformed elements correctly inside
+   column fragmentation (hover leaves a ghost/duplicate render until the
+   next reflow). Mitigate both for the legacy path only — direct-child
+   selector so this never touches cards inside a .masonry-col. */
+.htm25-testimonials--masonry .htm25-testimonials__grid > .htm25-testimonials__card {
+  display: block;
   break-inside: avoid;
+  -webkit-column-break-inside: avoid;
   margin-bottom: var(--htm25-space-6);
+  isolation: isolate;
+}
+
+.htm25-testimonials--masonry .htm25-testimonials__grid > .htm25-testimonials__card .htm25-testimonials__card-quote {
+  margin-bottom: var(--htm25-space-6);
+}
+
+.htm25-testimonials--masonry .htm25-testimonials__grid > .htm25-testimonials__card:hover,
+.htm25-testimonials--masonry.htm25-style--neo .htm25-testimonials__grid > .htm25-testimonials__card:hover {
+  transform: none;
 }
 
 /* Centered layout: single centered column */
@@ -446,7 +491,7 @@
   .htm25-testimonials--grid .htm25-testimonials__grid--cols-4 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-4 {
+  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-4:not(:has(.htm25-testimonials__masonry-col)) {
     column-count: 2;
   }
 }
@@ -456,8 +501,19 @@
   .htm25-testimonials--grid .htm25-testimonials__grid--cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-3 {
+  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-3:not(:has(.htm25-testimonials__masonry-col)) {
     column-count: 2;
+  }
+
+  /* Round-robin flex columns are fixed server-side, so they can't
+     dynamically regroup into fewer columns at this breakpoint — collapse
+     straight to a single natural-order column. display:contents unwraps
+     each column div so cards resume normal DOM order. */
+  .htm25-testimonials--masonry .htm25-testimonials__grid:has(.htm25-testimonials__masonry-col) {
+    flex-direction: column;
+  }
+  .htm25-testimonials__masonry-col {
+    display: contents;
   }
 }
 
@@ -473,9 +529,9 @@
     grid-template-columns: 1fr;
   }
 
-  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-2,
-  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-3,
-  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-4 {
+  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-2:not(:has(.htm25-testimonials__masonry-col)),
+  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-3:not(:has(.htm25-testimonials__masonry-col)),
+  .htm25-testimonials--masonry .htm25-testimonials__grid--cols-4:not(:has(.htm25-testimonials__masonry-col)) {
     column-count: 1;
   }
 

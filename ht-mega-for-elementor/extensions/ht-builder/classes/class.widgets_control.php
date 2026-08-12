@@ -38,7 +38,7 @@ class HTMegaBuilder_Widgets_Control{
         $elements_manager->add_category(
             'htmega_builder',
             [
-                'title' => __( 'HTMega Builder', 'htmega-addons' ),
+                'title' => __( 'HTMega Builder', 'ht-mega-for-elementor' ),
                 'icon' => 'fa fa-snowflake-o',
             ]
         );

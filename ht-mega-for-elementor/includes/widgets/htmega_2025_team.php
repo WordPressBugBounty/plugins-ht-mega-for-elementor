@@ -28,7 +28,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 	 * {@inheritdoc}
 	 */
 	public function get_title() {
-		return esc_html__( 'Team 2026', 'htmega-addons' );
+		return esc_html__( 'Team 2026', 'ht-mega-for-elementor' );
 	}
 
 	/**
@@ -63,7 +63,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_design_style',
 			[
-				'label' => esc_html__( 'Design Style', 'htmega-addons' ),
+				'label' => esc_html__( 'Design Style', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -71,15 +71,15 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'design_style',
 			[
-				'label'   => esc_html__( 'Style Preset', 'htmega-addons' ),
+				'label'   => esc_html__( 'Style Preset', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'bento',
 				'options' => [
-					'bento'  => esc_html__( 'Bento Grid',     'htmega-addons' ),
-					'glass'  => esc_html__( 'Glassmorphism',  'htmega-addons' ),
-					'dark'   => esc_html__( 'Dark Minimal',   'htmega-addons' ),
-					'aurora' => esc_html__( 'Aurora',         'htmega-addons' ),
-					'neo'    => esc_html__( 'Neo-Brutalist',  'htmega-addons' ),
+					'bento'  => esc_html__( 'Bento Grid',     'ht-mega-for-elementor' ),
+					'glass'  => esc_html__( 'Glassmorphism',  'ht-mega-for-elementor' ),
+					'dark'   => esc_html__( 'Dark Minimal',   'ht-mega-for-elementor' ),
+					'aurora' => esc_html__( 'Aurora',         'ht-mega-for-elementor' ),
+					'neo'    => esc_html__( 'Neo-Brutalist',  'ht-mega-for-elementor' ),
 				],
 			]
 		);
@@ -87,13 +87,13 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'layout',
 			[
-				'label'   => esc_html__( 'Layout', 'htmega-addons' ),
+				'label'   => esc_html__( 'Layout', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'grid',
 				'options' => [
-					'grid'     => esc_html__( 'Grid',     'htmega-addons' ),
-					'list'     => esc_html__( 'List',     'htmega-addons' ),
-					'featured' => esc_html__( 'Featured', 'htmega-addons' ),
+					'grid'     => esc_html__( 'Grid',     'ht-mega-for-elementor' ),
+					'list'     => esc_html__( 'List',     'ht-mega-for-elementor' ),
+					'featured' => esc_html__( 'Featured', 'ht-mega-for-elementor' ),
 				],
 			]
 		);
@@ -101,13 +101,13 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'team_columns',
 			[
-				'label'     => esc_html__( 'Columns', 'htmega-addons' ),
+				'label'     => esc_html__( 'Columns', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => '3',
 				'options'   => [
-					'2' => esc_html__( '2 Columns', 'htmega-addons' ),
-					'3' => esc_html__( '3 Columns', 'htmega-addons' ),
-					'4' => esc_html__( '4 Columns', 'htmega-addons' ),
+					'2' => esc_html__( '2 Columns', 'ht-mega-for-elementor' ),
+					'3' => esc_html__( '3 Columns', 'ht-mega-for-elementor' ),
+					'4' => esc_html__( '4 Columns', 'ht-mega-for-elementor' ),
 				],
 				'condition' => [ 'layout' => [ 'grid', 'featured' ] ],
 			]
@@ -119,7 +119,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_header',
 			[
-				'label' => esc_html__( 'Section Header', 'htmega-addons' ),
+				'label' => esc_html__( 'Section Header', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -127,10 +127,10 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'show_section_label',
 			[
-				'label'        => esc_html__( 'Show Section Label', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show Section Label', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'htmega-addons' ),
-				'label_off'    => esc_html__( 'No',  'htmega-addons' ),
+				'label_on'     => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+				'label_off'    => esc_html__( 'No',  'ht-mega-for-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -139,9 +139,9 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'section_label_text',
 			[
-				'label'     => esc_html__( 'Label Text', 'htmega-addons' ),
+				'label'     => esc_html__( 'Label Text', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Meet The Team', 'htmega-addons' ),
+				'default'   => esc_html__( 'Meet The Team', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_section_label' => 'yes' ],
 			]
 		);
@@ -149,26 +149,26 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'headline',
 			[
-				'label'   => esc_html__( 'Headline', 'htmega-addons' ),
+				'label'   => esc_html__( 'Headline', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'The People Behind the Product', 'htmega-addons' ),
+				'default' => esc_html__( 'The People Behind the Product', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'headline_highlight',
 			[
-				'label'       => esc_html__( 'Headline Highlight', 'htmega-addons' ),
+				'label'       => esc_html__( 'Headline Highlight', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'People', 'htmega-addons' ),
-				'description' => esc_html__( 'Word or phrase within the headline to accent with colour.', 'htmega-addons' ),
+				'default'     => esc_html__( 'People', 'ht-mega-for-elementor' ),
+				'description' => esc_html__( 'Word or phrase within the headline to accent with colour.', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'headline_tag',
 			[
-				'label'   => esc_html__( 'Headline Tag', 'htmega-addons' ),
+				'label'   => esc_html__( 'Headline Tag', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'h2',
 				'options' => [
@@ -183,10 +183,10 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'description',
 			[
-				'label'   => esc_html__( 'Description', 'htmega-addons' ),
+				'label'   => esc_html__( 'Description', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'rows'    => 3,
-				'default' => esc_html__( 'A passionate group of builders, designers, and thinkers dedicated to crafting exceptional digital experiences.', 'htmega-addons' ),
+				'default' => esc_html__( 'A passionate group of builders, designers, and thinkers dedicated to crafting exceptional digital experiences.', 'ht-mega-for-elementor' ),
 			]
 		);
 
@@ -196,7 +196,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_team_members',
 			[
-				'label' => esc_html__( 'Team Members', 'htmega-addons' ),
+				'label' => esc_html__( 'Team Members', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -206,7 +206,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$repeater->add_control(
 			'member_photo',
 			[
-				'label'   => esc_html__( 'Photo', 'htmega-addons' ),
+				'label'   => esc_html__( 'Photo', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [ 'url' => '' ],
 			]
@@ -215,46 +215,46 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$repeater->add_control(
 			'member_name',
 			[
-				'label'   => esc_html__( 'Name', 'htmega-addons' ),
+				'label'   => esc_html__( 'Name', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Team Member', 'htmega-addons' ),
+				'default' => esc_html__( 'Team Member', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'member_role',
 			[
-				'label'   => esc_html__( 'Role / Title', 'htmega-addons' ),
+				'label'   => esc_html__( 'Role / Title', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Product Designer', 'htmega-addons' ),
+				'default' => esc_html__( 'Product Designer', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'member_bio',
 			[
-				'label'       => esc_html__( 'Short Bio', 'htmega-addons' ),
+				'label'       => esc_html__( 'Short Bio', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'rows'        => 3,
 				'default'     => '',
-				'placeholder' => esc_html__( 'A brief introduction about this person…', 'htmega-addons' ),
+				'placeholder' => esc_html__( 'A brief introduction about this person…', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'member_department',
 			[
-				'label'       => esc_html__( 'Department Tag', 'htmega-addons' ),
+				'label'       => esc_html__( 'Department Tag', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
-				'placeholder' => esc_html__( 'e.g. Engineering', 'htmega-addons' ),
+				'placeholder' => esc_html__( 'e.g. Engineering', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'social_heading',
 			[
-				'label'     => esc_html__( 'Social Links', 'htmega-addons' ),
+				'label'     => esc_html__( 'Social Links', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -263,7 +263,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$repeater->add_control(
 			'social_linkedin',
 			[
-				'label'       => esc_html__( 'LinkedIn URL', 'htmega-addons' ),
+				'label'       => esc_html__( 'LinkedIn URL', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'https://linkedin.com/in/username',
 				'default'     => [ 'url' => '' ],
@@ -273,7 +273,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$repeater->add_control(
 			'social_twitter',
 			[
-				'label'       => esc_html__( 'X / Twitter URL', 'htmega-addons' ),
+				'label'       => esc_html__( 'X / Twitter URL', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'https://twitter.com/username',
 				'default'     => [ 'url' => '' ],
@@ -283,7 +283,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$repeater->add_control(
 			'social_github',
 			[
-				'label'       => esc_html__( 'GitHub URL', 'htmega-addons' ),
+				'label'       => esc_html__( 'GitHub URL', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'https://github.com/username',
 				'default'     => [ 'url' => '' ],
@@ -293,10 +293,10 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$repeater->add_control(
 			'is_featured',
 			[
-				'label'        => esc_html__( 'Featured Member', 'htmega-addons' ),
+				'label'        => esc_html__( 'Featured Member', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'htmega-addons' ),
-				'label_off'    => esc_html__( 'No',  'htmega-addons' ),
+				'label_on'     => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+				'label_off'    => esc_html__( 'No',  'ht-mega-for-elementor' ),
 				'return_value' => 'yes',
 				'default'      => '',
 				'separator'    => 'before',
@@ -306,7 +306,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'team_members',
 			[
-				'label'       => esc_html__( 'Team Members', 'htmega-addons' ),
+				'label'       => esc_html__( 'Team Members', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'title_field' => '{{{ member_name }}}',
@@ -348,7 +348,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_section',
 			[
-				'label' => esc_html__( 'Section', 'htmega-addons' ),
+				'label' => esc_html__( 'Section', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -356,7 +356,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'section_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -369,7 +369,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'section_bg',
-				'label'    => esc_html__( 'Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-team',
 			]
@@ -381,7 +381,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_section_label',
 			[
-				'label'     => esc_html__( 'Section Label', 'htmega-addons' ),
+				'label'     => esc_html__( 'Section Label', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [ 'show_section_label' => 'yes' ],
 			]
@@ -391,7 +391,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'section_label_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__section-label',
 			]
 		);
@@ -399,7 +399,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'section_label_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__section-label' => 'color: {{VALUE}};',
@@ -410,7 +410,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'section_label_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__section-label' => 'background-color: {{VALUE}};',
@@ -421,7 +421,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'section_label_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -433,7 +433,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'section_label_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -448,7 +448,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_headline',
 			[
-				'label' => esc_html__( 'Headline', 'htmega-addons' ),
+				'label' => esc_html__( 'Headline', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -457,7 +457,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'headline_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__headline',
 			]
 		);
@@ -465,7 +465,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'headline_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__headline' => 'color: {{VALUE}};',
@@ -476,7 +476,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'headline_margin',
 			[
-				'label'      => esc_html__( 'Margin', 'htmega-addons' ),
+				'label'      => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -488,7 +488,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'headline_accent_heading',
 			[
-				'label'     => esc_html__( 'Headline Accent', 'htmega-addons' ),
+				'label'     => esc_html__( 'Headline Accent', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -497,7 +497,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'headline_highlight_color',
 			[
-				'label'     => esc_html__( 'Accent Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Accent Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__headline-accent' => 'background-color: {{VALUE}}; background-image: none;',
@@ -509,12 +509,12 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'           => 'headline_highlight_gradient',
-				'label'          => esc_html__( 'Accent Gradient', 'htmega-addons' ),
+				'label'          => esc_html__( 'Accent Gradient', 'ht-mega-for-elementor' ),
 				'types'          => [ 'gradient' ],
 				'selector'       => '{{WRAPPER}} .htm25-team__headline-accent',
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Gradient Color', 'htmega-addons' ),
+						'label' => esc_html__( 'Gradient Color', 'ht-mega-for-elementor' ),
 					],
 				],
 			]
@@ -526,7 +526,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_description',
 			[
-				'label' => esc_html__( 'Description', 'htmega-addons' ),
+				'label' => esc_html__( 'Description', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -535,7 +535,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'description_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__description',
 			]
 		);
@@ -543,7 +543,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'description_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__description' => 'color: {{VALUE}};',
@@ -557,7 +557,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_card',
 			[
-				'label' => esc_html__( 'Team Card', 'htmega-addons' ),
+				'label' => esc_html__( 'Team Card', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -566,7 +566,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'card_bg',
-				'label'    => esc_html__( 'Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-team__card',
 			]
@@ -575,7 +575,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'card_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -587,7 +587,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'card_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -600,7 +600,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'card_border',
-				'label'    => esc_html__( 'Border', 'htmega-addons' ),
+				'label'    => esc_html__( 'Border', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__card',
 			]
 		);
@@ -609,7 +609,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'card_box_shadow',
-				'label'    => esc_html__( 'Box Shadow', 'htmega-addons' ),
+				'label'    => esc_html__( 'Box Shadow', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__card',
 			]
 		);
@@ -620,7 +620,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_member_photo',
 			[
-				'label' => esc_html__( 'Member Photo', 'htmega-addons' ),
+				'label' => esc_html__( 'Member Photo', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -628,7 +628,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'photo_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -643,7 +643,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'photo_box_shadow',
-				'label'    => esc_html__( 'Box Shadow', 'htmega-addons' ),
+				'label'    => esc_html__( 'Box Shadow', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__card-photo-wrap',
 			]
 		);
@@ -654,7 +654,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_member_name',
 			[
-				'label' => esc_html__( 'Member Name', 'htmega-addons' ),
+				'label' => esc_html__( 'Member Name', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -663,7 +663,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'member_name_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__card-name',
 			]
 		);
@@ -671,7 +671,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'member_name_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-name' => 'color: {{VALUE}};',
@@ -685,7 +685,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_member_role',
 			[
-				'label' => esc_html__( 'Member Role / Position', 'htmega-addons' ),
+				'label' => esc_html__( 'Member Role / Position', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -694,7 +694,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'member_role_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__card-role',
 			]
 		);
@@ -702,7 +702,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'member_role_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-role' => 'color: {{VALUE}};',
@@ -716,7 +716,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_member_bio',
 			[
-				'label' => esc_html__( 'Member Bio', 'htmega-addons' ),
+				'label' => esc_html__( 'Member Bio', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -725,7 +725,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'member_bio_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__card-bio',
 			]
 		);
@@ -733,7 +733,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'member_bio_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-bio' => 'color: {{VALUE}};',
@@ -747,7 +747,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_social_links',
 			[
-				'label' => esc_html__( 'Social Links', 'htmega-addons' ),
+				'label' => esc_html__( 'Social Links', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -755,7 +755,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'social_icon_size',
 			[
-				'label'      => esc_html__( 'Icon Size', 'htmega-addons' ),
+				'label'      => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range'      => [
@@ -774,7 +774,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'social_icon_color',
 			[
-				'label'     => esc_html__( 'Icon Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-social .htm25-team__card-social-link i'                => 'color: {{VALUE}};',
@@ -790,7 +790,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'social_icon_bg_color',
 			[
-				'label'     => esc_html__( 'Icon Background Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Background Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-social .htm25-team__card-social-link'         => 'background-color: {{VALUE}};',
@@ -802,7 +802,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'social_icon_border_color',
 			[
-				'label'     => esc_html__( 'Border Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-social .htm25-team__card-social-link'         => 'border-color: {{VALUE}};',
@@ -814,7 +814,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'social_icon_border_width',
 			[
-				'label'      => esc_html__( 'Border Width', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Width', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -830,7 +830,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'social_icon_bg_border_radius',
 			[
-				'label'      => esc_html__( 'Icon Background Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Icon Background Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -843,7 +843,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'social_icon_hover_color',
 			[
-				'label'     => esc_html__( 'Icon Hover Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Hover Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
@@ -860,7 +860,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'social_icon_hover_bg_color',
 			[
-				'label'     => esc_html__( 'Icon Hover Background Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Hover Background Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-social .htm25-team__card-social-link:hover'         => 'background-color: {{VALUE}};',
@@ -872,7 +872,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'social_icon_hover_border_color',
 			[
-				'label'     => esc_html__( 'Icon Hover Border Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Hover Border Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-social .htm25-team__card-social-link:hover'         => 'border-color: {{VALUE}};',
@@ -887,7 +887,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_department_tag',
 			[
-				'label' => esc_html__( 'Department Tag', 'htmega-addons' ),
+				'label' => esc_html__( 'Department Tag', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -896,7 +896,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'department_tag_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-team__card-department',
 			]
 		);
@@ -904,7 +904,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'department_tag_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-department' => 'color: {{VALUE}};',
@@ -915,7 +915,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_control(
 			'department_tag_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-team__card-department' => 'background-color: {{VALUE}};',
@@ -926,7 +926,7 @@ class HTMega_Elementor_Widget_Team_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'department_tag_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [

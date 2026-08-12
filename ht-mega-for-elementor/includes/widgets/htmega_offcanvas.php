@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Offcanvas', 'htmega-addons' );
+        return __( 'Offcanvas', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -37,20 +37,20 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
         $this->start_controls_section(
             'offcanvas_content',
             [
-                'label' => __( 'Offcanvas', 'htmega-addons' ),
+                'label' => __( 'Offcanvas', 'ht-mega-for-elementor' ),
             ]
         );
 
         $this->add_control(
             'content_source',
             [
-                'label'   => __( 'Select Source', 'htmega-addons' ),
+                'label'   => __( 'Select Source', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'label_block' => 'true',
                 'default' => 'sidebar',
                 'options' => [
-                    'sidebar'   => __( 'Sidebar', 'htmega-addons' ),
-                    'elementor' => __( 'Elementor Template', 'htmega-addons' ),
+                    'sidebar'   => __( 'Sidebar', 'ht-mega-for-elementor' ),
+                    'elementor' => __( 'Elementor Template', 'ht-mega-for-elementor' ),
                 ],          
             ]
         );
@@ -58,7 +58,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_control(
                 'template_id',
                 [
-                    'label'       => __( 'Select Template', 'htmega-addons' ),
+                    'label'       => __( 'Select Template', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'label_block' => 'true',
                     'default'     => '0',
@@ -72,7 +72,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_control(
                 'sidebars_id',
                 [
-                    'label'       => __( 'Select Sidebar', 'htmega-addons' ),
+                    'label'       => __( 'Select Sidebar', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_sidebar_options(),
@@ -86,15 +86,15 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_control(
                 'offcanvas_position',
                 [
-                    'label'   => __( 'Offcanvas Position', 'htmega-addons' ),
+                    'label'   => __( 'Offcanvas Position', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'label_block' => 'true',
                     'default' => 'left',
                     'options' => [
-                        'left'   => __( 'Left', 'htmega-addons' ),
-                        'right' => __( 'Right', 'htmega-addons' ),
-                        'top' => __( 'Top', 'htmega-addons' ),
-                        'bottom' => __( 'Bottom', 'htmega-addons' ),
+                        'left'   => __( 'Left', 'ht-mega-for-elementor' ),
+                        'right' => __( 'Right', 'ht-mega-for-elementor' ),
+                        'top' => __( 'Top', 'ht-mega-for-elementor' ),
+                        'bottom' => __( 'Bottom', 'ht-mega-for-elementor' ),
                     ],          
                 ]
             );
@@ -102,7 +102,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_responsive_control(
                 'offcanvas_position_width',
                 [
-                    'label' => __( 'Offcanvas Width', 'htmega-addons' ),
+                    'label' => __( 'Offcanvas Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -132,7 +132,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_responsive_control(
                 'offcanvas_position_height',
                 [
-                    'label' => __( 'Offcanvas Height', 'htmega-addons' ),
+                    'label' => __( 'Offcanvas Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -164,22 +164,22 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
         $this->start_controls_section(
             'offcanvas_button',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'button_text',
                 [
-                    'label' => __( 'Button Text', 'htmega-addons' ),
+                    'label' => __( 'Button Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Offcanvas', 'htmega-addons' ),
+                    'default' => __( 'Offcanvas', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'button_icon',
                 [
-                    'label' => __( 'Button Icon', 'htmega-addons' ),
+                    'label' => __( 'Button Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                 ]
             );
@@ -187,16 +187,16 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_control(
                 'button_icon_pos',
                 [
-                    'label' => __('Icon Position', 'htmega-addons'),
+                    'label' => __('Icon Position', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::CHOOSE,
                     'label_block' => false,
                     'options' => [
                         'left' => [
-                            'title' => __('Left', 'htmega-addons'),
+                            'title' => __('Left', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-h-align-left',
                         ],
                         'right' => [
-                            'title' => __('Right', 'htmega-addons'),
+                            'title' => __('Right', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-h-align-right',
                         ],
                     ],
@@ -211,7 +211,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_control(
                 'button_icon_space',
                 [
-                    'label'   => esc_html__( 'Icon Spacing', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Icon Spacing', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 5,
@@ -236,7 +236,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_responsive_control(
                 'button_svg_icon_size',
                 [
-                    'label' => __('SVG Icon Size', 'htmega-addons'),
+                    'label' => __('SVG Icon Size', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px', '%'],
                     'range' => [
@@ -267,19 +267,19 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_responsive_control(
                 'offcanvas_button_alignment',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -296,7 +296,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
         $this->start_controls_section(
             'offcanvas_style_section',
             [
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => __( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -304,7 +304,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_control(
                 'offcanvas_content_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .site-menu *' => 'color: {{VALUE}};',
@@ -315,7 +315,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_control(
                 'offcanvas_link_color',
                 [
-                    'label'     => esc_html__( 'Link Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Link Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .site-menu a' => 'color: {{VALUE}};',
@@ -326,7 +326,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_control(
                 'offcanvas_link_hover_color',
                 [
-                    'label'     => esc_html__( 'Link Hover Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Link Hover Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .site-menu a:hover' => 'color: {{VALUE}};',
@@ -337,7 +337,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_responsive_control(
                 'offcanvas_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -350,7 +350,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'offcanvas_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .site-menu',
                 ]
@@ -359,23 +359,23 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
             $this->add_responsive_control(
                 'offcanvas_aligntitle',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -392,7 +392,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
         $this->start_controls_section(
             'offcanvas_button_style_section',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -402,14 +402,14 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                 $this->start_controls_tab(
                     'offcanvas_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'offcanvas_button_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .offcanvas .canvas-btn' => 'color: {{VALUE}};',
@@ -429,7 +429,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                     $this->add_responsive_control(
                         'offcanvas_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -442,7 +442,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'offcanvas_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .offcanvas .canvas-btn',
                         ]
                     );
@@ -450,7 +450,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                     $this->add_responsive_control(
                         'offcanvas_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .offcanvas .canvas-btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -462,7 +462,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'offcanvas_button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .offcanvas .canvas-btn',
                         ]
@@ -474,14 +474,14 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                 $this->start_controls_tab(
                     'offcanvas_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'offcanvas_button_hover_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .offcanvas .canvas-btn:hover' => 'color: {{VALUE}};',
@@ -493,7 +493,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'offcanvas_button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .offcanvas .canvas-btn:hover',
                         ]
@@ -503,7 +503,7 @@ class HTMega_Elementor_Widget_Offcanvas extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'offcanvas_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .offcanvas .canvas-btn:hover',
                         ]
                     );

@@ -19,7 +19,7 @@ class Bl_Post_Excerpt_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Post Excerpt', 'htmega-addons' );
+        return __( 'Post Excerpt', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -43,29 +43,29 @@ class Bl_Post_Excerpt_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_excerpt_section',
             array(
-                'label' => __( 'Post Excerpt', 'htmega-addons' ),
+                'label' => __( 'Post Excerpt', 'ht-mega-for-elementor' ),
             )
         );
             $this->add_responsive_control(
                 'post_excerpt_align',
                 [
-                    'label'        => __( 'Alignment', 'htmega-addons' ),
+                    'label'        => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::CHOOSE,
                     'options'      => [
                         'left'   => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right'  => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],                    
@@ -77,7 +77,7 @@ class Bl_Post_Excerpt_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_excerpt_style_section',
             array(
-                'label' => __( 'Post Excerpt', 'htmega-addons' ),
+                'label' => __( 'Post Excerpt', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -85,7 +85,7 @@ class Bl_Post_Excerpt_ELement extends Widget_Base {
             $this->add_control(
                 'post_excerpt_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}}' => 'color: {{VALUE}};',
@@ -97,7 +97,7 @@ class Bl_Post_Excerpt_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'post_excerpt_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}}',
                 )
             );
@@ -111,7 +111,7 @@ class Bl_Post_Excerpt_ELement extends Widget_Base {
         $post = get_post();
         
         if( Elementor::instance()->editor->is_edit_mode() ){
-            echo '<h3>' . esc_html__('Post Excerpt', 'htmega-addons' ). '</h3>';
+            echo '<h3>' . esc_html__('Post Excerpt', 'ht-mega-for-elementor' ). '</h3>';
         }else{
             if ( post_password_required( $post->ID ) ) {
                 echo get_the_password_form( $post->ID ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

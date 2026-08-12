@@ -2,6 +2,8 @@
 
 namespace Elementor\HtMega\Weather;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 class WeatherMap{
 
     /**

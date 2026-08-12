@@ -19,7 +19,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Post Search Form', 'htmega-addons' );
+        return __( 'Post Search Form', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -42,31 +42,31 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_search_form_section',
             [
-                'label' => __( 'Search Form', 'htmega-addons' ),
+                'label' => __( 'Search Form', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'placeholdertxt',
                 [
-                    'label' => __( 'Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Search ...', 'htmega-addons' ),
+                    'default' => __( 'Search ...', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'button_type',
                 [
-                    'label' => __( 'Button Type', 'htmega-addons' ),
+                    'label' => __( 'Button Type', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'text' => [
-                            'title' => __( 'Text', 'htmega-addons' ),
+                            'title' => __( 'Text', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-t-letter',
                         ],
                         'icon' => [
-                            'title' => __( 'Icon', 'htmega-addons' ),
+                            'title' => __( 'Icon', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-editor-italic',
                         ],
                     ],
@@ -78,7 +78,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
             $this->add_control(
                 'button_icon',
                 [
-                    'label' => __( 'Icon', 'htmega-addons' ),
+                    'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fa fa-search',
@@ -107,10 +107,10 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
             $this->add_control(
                 'button_text',
                 [
-                    'label' => __( 'Button Text', 'htmega-addons' ),
+                    'label' => __( 'Button Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Search', 'htmega-addons' ),
-                    'placeholder' => __( 'Enter you text', 'htmega-addons' ),
+                    'default' => __( 'Search', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Enter you text', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'button_type' => 'text',
                     ]
@@ -123,7 +123,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_search_inputbox_style_section',
             array(
-                'label' => __( 'Input Box', 'htmega-addons' ),
+                'label' => __( 'Input Box', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -131,7 +131,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
             $this->add_control(
                 'post_search_inputbox_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htbuilder-search-form input.htbuilder-search-form-input' => 'color: {{VALUE}};',
@@ -143,7 +143,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'post_search_inputbox_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}} .htbuilder-search-form input.htbuilder-search-form-input',
                 )
             );
@@ -152,7 +152,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'post_search_inputbox_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htbuilder-search-form input.htbuilder-search-form-input',
                 ]
             );
@@ -160,7 +160,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'post_search_inputbox_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -172,7 +172,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'post_search_inputbox_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -187,7 +187,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_search_button_style_section',
             array(
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -198,14 +198,14 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'search_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_search_button_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit' => 'color: {{VALUE}};',
@@ -216,7 +216,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                     $this->add_control(
                         'post_search_button_bg_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit' => 'background-color: {{VALUE}};',
@@ -228,7 +228,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         array(
                             'name'      => 'post_search_button_typography',
-                            'label'     => __( 'Typography', 'htmega-addons' ),
+                            'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector'  => '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit',
                             'condition' => [
                                 'button_type' => 'text',
@@ -238,7 +238,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_search_button_icon_size',
                         [
-                            'label' => __( 'Iocn Size', 'htmega-pro' ),
+                            'label' => __( 'Iocn Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -268,7 +268,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'post_search_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit',
                         ]
                     );
@@ -276,7 +276,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_search_button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -288,7 +288,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_search_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -303,14 +303,14 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'search_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_search_button_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit:hover' => 'color: {{VALUE}};',
@@ -321,7 +321,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                     $this->add_control(
                         'post_search_button_hover_bg_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit:hover' => 'background-color: {{VALUE}};',
@@ -333,7 +333,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'post_search_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-search-form button.htbuilder-submit:hover',
                         ]
                     );
@@ -356,7 +356,7 @@ class Bl_Post_Search_Form_ELement extends Widget_Base {
                 'class' => 'htbuilder-search-form-input',
                 'type' => 'search',
                 'name' => 's',
-                'title' => __( 'Search', 'htmega-addons' ),
+                'title' => __( 'Search', 'ht-mega-for-elementor' ),
                 'value' => get_search_query(),
             ]
         );

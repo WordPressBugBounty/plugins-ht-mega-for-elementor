@@ -15,7 +15,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Twitter Feed', 'htmega-addons' );
+        return __( 'Twitter Feed', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -49,22 +49,22 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'twitterfeed_content',
             [
-                'label' => __( 'Twitter Feed', 'htmega-addons' ),
+                'label' => __( 'Twitter Feed', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'twitter_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -72,9 +72,9 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'username',
                 [
-                    'label' => __( 'UserName', 'htmega-addons' ),
+                    'label' => __( 'UserName', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'hastechit', 'htmega-addons' ),
+                    'placeholder' => __( 'hastechit', 'ht-mega-for-elementor' ),
                     'label_block' => true,
                     'separator' => 'before',
                 ]
@@ -83,9 +83,9 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'consumer_key',
                 [
-                    'label' => __( 'Consumer Key', 'htmega-addons' ),
+                    'label' => __( 'Consumer Key', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Twitter consumer key.', 'htmega-addons' ),
+                    'placeholder' => __( 'Twitter consumer key.', 'ht-mega-for-elementor' ),
                     'label_block' => true,
                 ]
             );
@@ -93,9 +93,9 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'consumer_secret',
                 [
-                    'label' => __( 'Consumer Secret', 'htmega-addons' ),
+                    'label' => __( 'Consumer Secret', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Twitter consumer secret.', 'htmega-addons' ),
+                    'placeholder' => __( 'Twitter consumer secret.', 'ht-mega-for-elementor' ),
                     'label_block' => true,
                 ]
             );
@@ -103,9 +103,9 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'access_token',
                 [
-                    'label' => __( 'Access Token', 'htmega-addons' ),
+                    'label' => __( 'Access Token', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Twitter access token.', 'htmega-addons' ),
+                    'placeholder' => __( 'Twitter access token.', 'ht-mega-for-elementor' ),
                     'label_block' => true,
                 ]
             );
@@ -113,9 +113,9 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'access_token_secret',
                 [
-                    'label' => __( 'Access Token Secret', 'htmega-addons' ),
+                    'label' => __( 'Access Token Secret', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Twitter access token secret.', 'htmega-addons' ),
+                    'placeholder' => __( 'Twitter access token secret.', 'ht-mega-for-elementor' ),
                     'label_block' => true,
                 ]
             );
@@ -123,7 +123,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'limit',
                 [
-                    'label' => __( 'Limit', 'htmega-addons' ),
+                    'label' => __( 'Limit', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'step' => 1,
                     'default' => 5,
@@ -134,7 +134,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'content_length',
                 [
-                    'label' => __( 'Content Length', 'htmega-addons' ),
+                    'label' => __( 'Content Length', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'step' => 1,
                     'default' => 20,
@@ -145,10 +145,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'twitter_meta',
                 [
-                    'label' => __( 'Show Twitter Meta', 'htmega-addons' ),
+                    'label' => __( 'Show Twitter Meta', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -157,10 +157,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'author_image',
                 [
-                    'label' => __( 'Show Author Image', 'htmega-addons' ),
+                    'label' => __( 'Show Author Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -169,10 +169,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'author_name',
                 [
-                    'label' => __( 'Show Author Name', 'htmega-addons' ),
+                    'label' => __( 'Show Author Name', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -181,10 +181,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'show_time',
                 [
-                    'label' => __( 'Show Time', 'htmega-addons' ),
+                    'label' => __( 'Show Time', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -193,10 +193,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'relative_time',
                 [
-                    'label' => __( 'Show Relative Time', 'htmega-addons' ),
+                    'label' => __( 'Show Relative Time', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                     'condition'=>[
@@ -207,10 +207,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'show_time_icon',
                 [
-                    'label' => __( 'Show Time Icon', 'htmega-addons' ),
+                    'label' => __( 'Show Time Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -218,10 +218,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slider_on',
                 [
-                    'label'         => __( 'Slider', 'htmega-addons' ),
+                    'label'         => __( 'Slider', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
-                    'label_on'      => __( 'On', 'htmega-addons' ),
-                    'label_off'     => __( 'Off', 'htmega-addons' ),
+                    'label_on'      => __( 'On', 'ht-mega-for-elementor' ),
+                    'label_off'     => __( 'Off', 'ht-mega-for-elementor' ),
                     'return_value'  => 'yes',
                     'default'       => 'yes',
                 ]
@@ -233,7 +233,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'instagram_slider_option',
             [
-                'label' => esc_html__( 'Slider Option', 'htmega-addons' ),
+                'label' => esc_html__( 'Slider Option', 'ht-mega-for-elementor' ),
                 'condition' => [
                     'slider_on' => 'yes',
                 ]
@@ -243,7 +243,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slitems',
                 [
-                    'label' => esc_html__( 'Slider Items', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Items', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 20,
@@ -258,7 +258,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_responsive_control(
                 'sli_gutter',
                 [
-                    'label' => esc_html__( 'Column Space', 'htmega-addons' ),
+                    'label' => esc_html__( 'Column Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 200,
@@ -275,7 +275,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slarrows',
                 [
-                    'label' => esc_html__( 'Slider Arrow', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Arrow', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -288,7 +288,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slprevicon',
                 [
-                    'label' => __( 'Previous icon', 'htmega-addons' ),
+                    'label' => __( 'Previous icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-left',
@@ -304,7 +304,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slnexticon',
                 [
-                    'label' => __( 'Next icon', 'htmega-addons' ),
+                    'label' => __( 'Next icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-right',
@@ -320,7 +320,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'sldots',
                 [
-                    'label' => esc_html__( 'Slider dots', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider dots', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -334,11 +334,11 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 'slpause_on_hover',
                 [
                     'type' => Controls_Manager::SWITCHER,
-                    'label_off' => __('No', 'htmega-addons'),
-                    'label_on' => __('Yes', 'htmega-addons'),
+                    'label_off' => __('No', 'ht-mega-for-elementor'),
+                    'label_on' => __('Yes', 'ht-mega-for-elementor'),
                     'return_value' => 'yes',
                     'default' => 'yes',
-                    'label' => __('Pause on Hover?', 'htmega-addons'),
+                    'label' => __('Pause on Hover?', 'ht-mega-for-elementor'),
                     'condition' => [
                         'slider_on' => 'yes',
                     ]
@@ -348,7 +348,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slcentermode',
                 [
-                    'label' => esc_html__( 'Center Mode', 'htmega-addons' ),
+                    'label' => esc_html__( 'Center Mode', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -361,7 +361,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slcenterpadding',
                 [
-                    'label' => esc_html__( 'Center padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Center padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 500,
@@ -377,7 +377,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slautolay',
                 [
-                    'label' => esc_html__( 'Slider auto play', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider auto play', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -391,7 +391,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slautoplay_speed',
                 [
-                    'label' => __('Autoplay speed', 'htmega-addons'),
+                    'label' => __('Autoplay speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 3000,
                     'condition' => [
@@ -404,7 +404,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slanimation_speed',
                 [
-                    'label' => __('Autoplay animation speed', 'htmega-addons'),
+                    'label' => __('Autoplay animation speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 300,
                     'condition' => [
@@ -416,7 +416,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slscroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 10,
@@ -431,7 +431,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'heading_tablet',
                 [
-                    'label' => __( 'Tablet', 'htmega-addons' ),
+                    'label' => __( 'Tablet', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition' => [
@@ -443,7 +443,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'sltablet_display_columns',
                 [
-                    'label' => __('Slider Items', 'htmega-addons'),
+                    'label' => __('Slider Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 8,
@@ -458,7 +458,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'sltablet_scroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 8,
@@ -473,8 +473,8 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'sltablet_width',
                 [
-                    'label' => __('Tablet Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to tablet.', 'htmega-addons'),
+                    'label' => __('Tablet Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to tablet.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 750,
                     'condition' => [
@@ -486,7 +486,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'heading_mobile',
                 [
-                    'label' => __( 'Mobile Phone', 'htmega-addons' ),
+                    'label' => __( 'Mobile Phone', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition' => [
@@ -498,7 +498,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slmobile_display_columns',
                 [
-                    'label' => __('Slider Items', 'htmega-addons'),
+                    'label' => __('Slider Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -513,7 +513,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slmobile_scroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -528,8 +528,8 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'slmobile_width',
                 [
-                    'label' => __('Mobile Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to mobile.', 'htmega-addons'),
+                    'label' => __('Mobile Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to mobile.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 480,
                     'condition' => [
@@ -544,7 +544,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'twitterfeed_item_style_section',
             [
-                'label' => __( 'Single Item', 'htmega-addons' ),
+                'label' => __( 'Single Item', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -553,7 +553,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'twitterfeed_item_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-twitter-area .htmega-twitter-single',
                 ]
@@ -563,7 +563,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'twitterfeed_item_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-twitter-area .htmega-twitter-single',
                 ]
             );
@@ -571,7 +571,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_responsive_control(
                 'twitterfeed_item_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -584,7 +584,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_responsive_control(
                 'twitterfeed_item_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -598,7 +598,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'twitterfeed_item_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-twitter-area .htmega-twitter-single',
                 ]
             );
@@ -606,7 +606,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_responsive_control(
                 'twitterfeed_item_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-twitter-area .htmega-twitter-single' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -620,7 +620,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'twitterfeed_style_section',
             [
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -628,7 +628,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'twitterfeed_content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#434343',
                     'selectors' => [
@@ -640,7 +640,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'twitterfeed_content_link_color',
                 [
-                    'label' => __( 'Link Color', 'htmega-addons' ),
+                    'label' => __( 'Link Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#00c8fa',
                     'selectors' => [
@@ -660,7 +660,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_responsive_control(
                 'twitterfeed_content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -673,7 +673,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_responsive_control(
                 'twitterfeed_content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -689,7 +689,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'twitterfeed_author_style_section',
             [
-                'label' => __( 'Author', 'htmega-addons' ),
+                'label' => __( 'Author', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'author_name'=>'yes',
@@ -702,14 +702,14 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->start_controls_tab(
                     'author_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'twitterfeed_author_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#5c5c5c',
                             'selectors' => [
@@ -729,7 +729,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitterfeed_author_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -742,7 +742,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitterfeed_author_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -755,7 +755,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->add_control(
                     'author_image_heading',
                     [
-                        'label' => __( 'Author Image Style', 'htmega-addons' ),
+                        'label' => __( 'Author Image Style', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::HEADING,
                         'separator' =>'before',
                         'condition' =>[
@@ -767,7 +767,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'author_image_border',
-                        'label' => __( 'Border', 'htmega-addons' ),
+                        'label' => __( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-twitter-single .htmega-thumb img',
                         'separator' => 'before',
                         'condition'=>[
@@ -778,7 +778,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->add_responsive_control(
                     'author_image_radius',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -793,7 +793,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->add_responsive_control(
                     'author_image_margin',
                     [
-                        'label' => __( 'Margin', 'htmega-addons' ),
+                        'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -808,7 +808,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->add_responsive_control(
                     'image_box_width',
                     [
-                        'label' => __( 'Image Width', 'htmega-addons' ),
+                        'label' => __( 'Image Width', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'range' => [
@@ -834,7 +834,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->add_control(
                     'author_user_name',
                     [
-                        'label' => __( 'User Name Style', 'htmega-addons' ),
+                        'label' => __( 'User Name Style', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::HEADING,
                         'separator' =>'before',
                         'condition' =>[
@@ -845,7 +845,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->add_control(
                     'twitterfeed_user_color',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-twitter-style-2 .ht-twitter-container .htmega-content .htmega-author h6 a span' => 'color: {{VALUE}};',
@@ -872,13 +872,13 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->start_controls_tab(
                     'author_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'twitterfeed_author_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#5c5c5c',
                             'selectors' => [
@@ -897,7 +897,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'twitterfeed_time_style_section',
             [
-                'label' => __( 'Time', 'htmega-addons' ),
+                'label' => __( 'Time', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_time'=>'yes',
@@ -908,7 +908,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_control(
                 'twitterfeed_time_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#000000',
                     'selectors' => [
@@ -929,7 +929,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_responsive_control(
                 'twitterfeed_time_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -942,7 +942,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_responsive_control(
                 'twitterfeed_time_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -958,7 +958,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'twitterfeed_meta_button_style_section',
             [
-                'label' => __( 'Meta Button', 'htmega-addons' ),
+                'label' => __( 'Meta Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'twitter_meta'=>'yes',
@@ -971,14 +971,14 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->start_controls_tab(
                     'meta_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'twitterfeed_button_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#aaaaaa',
                             'selectors' => [
@@ -990,7 +990,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitterfeed_button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1003,7 +1003,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitterfeed_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1016,7 +1016,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'twitter_meta_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-twitter-style-4 .htmega-content ul.twitter-meta',
                             'condition' =>[
                                 'twitter_style' => '4',
@@ -1029,13 +1029,13 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->start_controls_tab(
                     'meta_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'twitterfeed_button_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#18012c',
                             'selectors' => [
@@ -1054,7 +1054,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'twitter_arrow_style',
             [
-                'label'     => __( 'Arrow', 'htmega-addons' ),
+                'label'     => __( 'Arrow', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'slider_on' => 'yes',
@@ -1069,14 +1069,14 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->start_controls_tab(
                     'twitter_arrow_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'twitter_arrow_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#2d3e50',
                             'selectors' => [
@@ -1089,7 +1089,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitter_arrow_fontsize',
                         [
-                            'label' => __( 'Font Size', 'htmega-addons' ),
+                            'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1118,7 +1118,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'twitter_arrow_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-twitter-area .slick-arrow',
                         ]
@@ -1128,7 +1128,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'twitter_arrow_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-twitter-area .slick-arrow',
                         ]
                     );
@@ -1136,7 +1136,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitter_arrow_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-twitter-area .slick-arrow' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1147,7 +1147,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_control(
                         'twitter_arrow_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1170,7 +1170,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_control(
                         'twitter_arrow_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1193,7 +1193,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitter_arrow_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1205,7 +1205,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_horizontal_postion',
                         [
-                            'label' => __( 'Horizontal Position', 'htmega-addons' ),
+                            'label' => __( 'Horizontal Position', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1234,14 +1234,14 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->start_controls_tab(
                     'twitter_arrow_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'twitter_arrow_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#2d3e50',
                             'selectors' => [
@@ -1255,7 +1255,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'twitter_arrow_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-twitter-area .slick-arrow:hover',
                         ]
@@ -1265,7 +1265,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'twitter_arrow_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-twitter-area .slick-arrow:hover',
                         ]
                     );
@@ -1273,7 +1273,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitter_arrow_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-twitter-area .slick-arrow:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1292,7 +1292,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $this->start_controls_section(
             'twitter_dots_style',
             [
-                'label'     => __( 'Pagination', 'htmega-addons' ),
+                'label'     => __( 'Pagination', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'slider_on' => 'yes',
@@ -1307,7 +1307,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->start_controls_tab(
                     'twitter_dots_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -1315,7 +1315,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'twitter_dots_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-twitter-area .slick-dots li button',
                         ]
@@ -1325,7 +1325,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'twitter_instagram_dots_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-twitter-area .slick-dots li button',
                         ]
                     );
@@ -1333,7 +1333,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitter_dots_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-twitter-area .slick-dots li button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1344,7 +1344,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_control(
                         'twitter_dots_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1372,7 +1372,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_control(
                         'twitter_dots_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1399,7 +1399,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitter_dots_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1411,7 +1411,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitter_vertical_width',
                         [
-                            'label' => __( 'Vertical Space', 'htmega-addons' ),
+                            'label' => __( 'Vertical Space', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1436,7 +1436,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                 $this->start_controls_tab(
                     'twitter_dots_style_hover_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -1444,7 +1444,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'twitter_dots_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-twitter-area .slick-dots li.slick-active button',
                         ]
@@ -1454,7 +1454,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'twitter_dots_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-twitter-area .slick-dots li.slick-active button',
                         ]
                     );
@@ -1462,7 +1462,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                     $this->add_responsive_control(
                         'twitter_dots_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-twitter-area .slick-dots li.slick-active button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1519,12 +1519,16 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
             $this->add_render_attribute( 'htmega_twitter_attr', 'data-settings', wp_json_encode( $slider_settings ) );
         }
 
-        $consumer_key = ( !empty( $settings['consumer_key'] ) ) ? sanitize_text_field( $settings['consumer_key'] ) : 'f8rgdbh1TRxnyOmKZRzVooMEQ';
-        $consumer_secret = ( !empty( $settings['consumer_secret'] ) ) ? sanitize_text_field( $settings['consumer_secret'] ) : 'KQTDmHzIMig6PGElowd4KXEjeU0MDAV189vKmyTT6kvumO0giK';
-        $access_token = ( !empty( $settings['access_token'] ) ) ? sanitize_text_field( $settings['access_token'] ) : '1062990223171145729-fcehRzuBPGjD2dkQi44hqgS7ApMSX2';
-        $access_token_secret = ( !empty( $settings['access_token_secret'] ) ) ? sanitize_text_field( $settings['access_token_secret'] ) : '7Ip9Z5uiWP8iYZOCd8EYtOY8Wti4MaWwbUkMFuZndevEo';
-        $username = ( !empty( $settings['username'] ) ) ? sanitize_text_field( $settings['username'] ) : 'hastechit';
+        $consumer_key = ( !empty( $settings['consumer_key'] ) ) ? sanitize_text_field( $settings['consumer_key'] ) : '';
+        $consumer_secret = ( !empty( $settings['consumer_secret'] ) ) ? sanitize_text_field( $settings['consumer_secret'] ) : '';
+        $access_token = ( !empty( $settings['access_token'] ) ) ? sanitize_text_field( $settings['access_token'] ) : '';
+        $access_token_secret = ( !empty( $settings['access_token_secret'] ) ) ? sanitize_text_field( $settings['access_token_secret'] ) : '';
+        $username = ( !empty( $settings['username'] ) ) ? sanitize_text_field( $settings['username'] ) : '';
 
+        if ( empty( $consumer_key ) || empty( $consumer_secret ) || empty( $access_token ) || empty( $access_token_secret ) || empty( $username ) ) {
+            echo '<p>' . esc_html__( 'Please enter your Twitter API credentials.', 'ht-mega-for-elementor' ) . '</p>';
+            return;
+        }
 
         $relative_time      = $settings['relative_time'];
         $show_time_icon      = $settings['show_time_icon'];
@@ -1536,7 +1540,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
         $s_display_none = ( 'yes' == $settings['slider_on'] ) ? ' style="display:none;"':'';
 
         if( !isset( $tweets->errors ) && is_array( $tweets ) ):
-            ?> <div <?php echo $this->get_render_attribute_string('htmega_twitter_attr').$s_display_none; ?>> <?php
+            ?> <div <?php echo $this->get_render_attribute_string('htmega_twitter_attr').$s_display_none; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core (escapes attrs); $s_display_none is a fixed literal from a ternary of hardcoded strings, not user input. ?>> <?php
                 foreach( $tweets as $tweet ):
                     $tweet_link = 'http://twitter.com/'.$tweet->user->screen_name.'/statuses/'.$tweet->id_str;
                     $user_link = 'http://twitter.com/'.$tweet->user->screen_name;
@@ -1579,10 +1583,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                                             echo '<i class="fa fa-clock-o"></i> ';
                                         }
                                             if( $relative_time == 'yes' ){
-                                                echo $this->relative_time($tweet->created_at);
+                                                echo $this->relative_time($tweet->created_at);  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- relative_time() returns esc_html__() translated strings concatenated with a computed integer only, see method definition.
                                             }
                                             else{
-                                                echo $this->date_format( $tweet->created_at );
+                                                echo $this->date_format( $tweet->created_at );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- date_format() returns mysql2date() formatted output using site date/time format options, no raw user input reflected.
                                             }
                                         ?>
                                     </span>
@@ -1618,10 +1622,10 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
                                                     echo '<i class="fa fa-clock-o"></i> ';
                                                 }
                                                 if( $relative_time == 'yes' ){
-                                                    echo $this->relative_time($tweet->created_at);
+                                                    echo $this->relative_time($tweet->created_at);  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- relative_time() returns esc_html__() translated strings concatenated with a computed integer only, see method definition.
                                                 }
                                                 else{
-                                                    echo $this->date_format( $tweet->created_at );
+                                                    echo $this->date_format( $tweet->created_at );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- date_format() returns mysql2date() formatted output using site date/time format options, no raw user input reflected.
                                                 }
                                             ?>
                                         </span>
@@ -1666,29 +1670,29 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
 
         $delta = strtotime('+0 hours') - strtotime($time);
         if ($delta < 2 * $minute) {
-            return esc_html__('1 min ago', 'htmega-addons');
+            return esc_html__('1 min ago', 'ht-mega-for-elementor');
         }
         if ($delta < 45 * $minute) {
-            return floor($delta / $minute) . esc_html__(' min ago', 'htmega-addons');
+            return floor($delta / $minute) . esc_html__(' min ago', 'ht-mega-for-elementor');
         }
         if ($delta < 90 * $minute) {
-            return esc_html__('1 hour ago', 'htmega-addons');
+            return esc_html__('1 hour ago', 'ht-mega-for-elementor');
         }
         if ($delta < 24 * $hour) {
-            return floor($delta / $hour) . esc_html__(' hours ago', 'htmega-addons');
+            return floor($delta / $hour) . esc_html__(' hours ago', 'ht-mega-for-elementor');
         }
         if ($delta < 48 * $hour) {
-            return esc_html__('yesterday', 'htmega-addons');
+            return esc_html__('yesterday', 'ht-mega-for-elementor');
         }
         if ($delta < 30 * $day) {
-            return floor($delta / $day) . esc_html__(' days ago', 'htmega-addons');
+            return floor($delta / $day) . esc_html__(' days ago', 'ht-mega-for-elementor');
         }
         if ($delta < 12 * $month) {
             $months = floor($delta / $day / 30);
-            return $months <= 1 ? esc_html__('1 month ago', 'htmega-addons') : $months . esc_html__(' months ago', 'htmega-addons');
+            return $months <= 1 ? esc_html__('1 month ago', 'ht-mega-for-elementor') : $months . esc_html__(' months ago', 'ht-mega-for-elementor');
         } else {
             $years = floor($delta / $day / 365);
-            return $years <= 1 ? esc_html__('1 year ago', 'htmega-addons') : $years . esc_html__(' years ago', 'htmega-addons');
+            return $years <= 1 ? esc_html__('1 year ago', 'ht-mega-for-elementor') : $years . esc_html__(' years ago', 'ht-mega-for-elementor');
         }
     }
         
@@ -1697,22 +1701,9 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
     }
     
     public function get_short_link($url){
-        $result = wp_remote_post( add_query_arg( 'key', apply_filters( 'google_api_key', 'AIzaSyBEPh-As7b5US77SgxbZUfMXAwWYjfpWYg' ), 'https://www.googleapis.com/urlshortener/v1/url' ), array(
-            'body' => wp_json_encode( array( 'longUrl' => esc_url_raw( $url ) ) ),
-            'headers' => array( 'Content-Type' => 'application/json' ),
-        ) );
-
-        /* Return the URL if the request got an error. */
-        if( is_wp_error( $result ) ){
-            return '';
-        }
-        $result = json_decode( $result['body'] );
-        if(isset($result->id)){
-            $shortlink = $result->id;
-            if( $shortlink ){
-                return $shortlink;
-            }
-        }
+        // Google's URL Shortener API (googleapis.com/urlshortener) was shut down in 2019;
+        // this always resulted in an error response, so the short-link display branches
+        // (guarded by `!empty( $tweet_short_link )`) already never fired. No network call.
         return '';
     }
 

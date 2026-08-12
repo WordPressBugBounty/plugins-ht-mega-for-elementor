@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Dropcaps', 'htmega-addons' );
+        return __( 'Dropcaps', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -33,22 +33,22 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
         $this->start_controls_section(
             'dropcaps_content',
             [
-                'label' => __( 'Dropcaps', 'htmega-addons' ),
+                'label' => __( 'Dropcaps', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'dropcaps_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -56,10 +56,10 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_control(
                 'dropcaps_text',
                 [
-                    'label'         => __( 'Content', 'htmega-addons' ),
+                    'label'         => __( 'Content', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::TEXTAREA,
-                    'default'       => __( 'Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exl Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'htmega-addons' ),
-                    'placeholder'   => __( 'Enter Your Dropcaps Content.', 'htmega-addons' ),
+                    'default'       => __( 'Lorem ipsum dolor sit amet, consec adipisicing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exl Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.', 'ht-mega-for-elementor' ),
+                    'placeholder'   => __( 'Enter Your Dropcaps Content.', 'ht-mega-for-elementor' ),
                     'separator'=>'before',
                     'dynamic' => [
                         'active' => true,
@@ -73,7 +73,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
         $this->start_controls_section(
             'htmega_dropcaps_style_section',
             [
-                'label' => __( 'Content Style', 'htmega-addons' ),
+                'label' => __( 'Content Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -81,23 +81,23 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_dropcaps_content_align',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left'    => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-justify',
                         ],
                     ],
@@ -110,7 +110,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_control(
                 'content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#434343',
                     'selectors' => [
@@ -132,7 +132,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'content_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-dropcaps-area .htmega-dropcaps-inner',
                 ]
@@ -141,7 +141,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_responsive_control(
                 'content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -154,7 +154,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_responsive_control(
                 'content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -167,7 +167,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'content_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-dropcaps-area .htmega-dropcaps-inner',
                 ]
             );
@@ -175,7 +175,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_responsive_control(
                 'content_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-dropcaps-area .htmega-dropcaps-inner' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -189,14 +189,14 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
         $this->start_controls_section(
             'htmega_dropcaps_letter_style_section',
             [
-                'label' => __( 'Dropcap Letter', 'htmega-addons' ),
+                'label' => __( 'Dropcap Letter', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'htmega_dropcaps_letter_font_text_backround',
                 [
-                    'label' => esc_html__( 'Backround Image as Text Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Backround Image as Text Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -206,7 +206,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_control(
                 'content_dropcaps_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#d6d6d6',
                     'selectors' => [
@@ -231,7 +231,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'content_dropcaps_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-dropcaps-area .htmega-dropcaps-inner p:first-of-type:first-letter,{{WRAPPER}} .htmega-dropcaps-area .htmega-dropcaps-inner:first-of-type:first-letter',
                 ]
@@ -240,7 +240,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_responsive_control(
                 'content_dropcaps_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -254,7 +254,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_responsive_control(
                 'content_dropcaps_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -268,7 +268,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'content_dropcaps_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-dropcaps-area .htmega-dropcaps-inner:first-of-type:first-letter',
                     'selector' => '{{WRAPPER}} .htmega-dropcaps-area .htmega-dropcaps-inner p:first-of-type:first-letter',
                 ]
@@ -277,7 +277,7 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
             $this->add_responsive_control(
                 'content_dropcaps_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-dropcaps-area .htmega-dropcaps-inner:first-of-type:first-letter' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -299,11 +299,11 @@ class HTMega_Elementor_Widget_Dropcaps extends Widget_Base {
         $this->add_render_attribute( 'htmega_dropcaps_attr', 'class', 'htmega-dropcaps-style-' . esc_attr( $settings['dropcaps_style'] ) );
        
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_dropcaps_attr' ); ?>>
+            <div <?php echo $this->get_render_attribute_string( 'htmega_dropcaps_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, values added via add_render_attribute() were esc_attr()'d above ?>>
                 <?php
                     $dropcap_text = esc_textarea( $settings['dropcaps_text'] );
                     if( !empty( $dropcap_text ) ){
-                        echo '<div class="htmega-dropcaps-inner">'.wpautop( $dropcap_text ).'</div>';
+                        echo '<div class="htmega-dropcaps-inner">'.wpautop( $dropcap_text ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $dropcap_text is esc_textarea()'d above (htmlspecialchars encodes <,>,&,quotes to entities) before being passed into wpautop(), so no executable markup reaches output.
                     }
                 ?>
             </div>

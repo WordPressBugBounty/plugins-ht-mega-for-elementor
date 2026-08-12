@@ -19,7 +19,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Page Title', 'htmega-addons' );
+        return __( 'Page Title', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -42,13 +42,13 @@ class Bl_Page_Title_ELement extends Widget_Base {
         $this->start_controls_section(
             'title_content',
             [
-                'label' => __( 'Page Title', 'htmega-addons' ),
+                'label' => __( 'Page Title', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'title_html_tag',
                 [
-                    'label'   => __( 'Title HTML Tag', 'htmega-addons' ),
+                    'label'   => __( 'Title HTML Tag', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => htmega_html_tag_lists(),
                     'default' => 'h1',
@@ -61,7 +61,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
         $this->start_controls_section(
             'title_style_section',
             array(
-                'label' => __( 'Page Title', 'htmega-addons' ),
+                'label' => __( 'Page Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -69,7 +69,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
             $this->add_control(
                 'title_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htpage-title' => 'color: {{VALUE}};',
@@ -81,7 +81,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'title_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}} .htpage-title',
                 )
             );
@@ -90,7 +90,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htpage-title',
                     'separator' => 'before',
                 ]
@@ -99,7 +99,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'title_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -111,7 +111,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -124,7 +124,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -136,23 +136,23 @@ class Bl_Page_Title_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'title_align',
                 [
-                    'label'        => __( 'Alignment', 'htmega-addons' ),
+                    'label'        => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::CHOOSE,
                     'options'      => [
                         'left'   => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right'  => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],                    
@@ -171,7 +171,7 @@ class Bl_Page_Title_ELement extends Widget_Base {
         $title_tag = htmega_validate_html_tag( $settings['title_html_tag'] );
 
         if( Elementor::instance()->editor->is_edit_mode() ){
-            echo sprintf( '<%1$s class="htpage-title">' . esc_html__('Page Title', 'htmega-addons' ). '</%1$s>', esc_attr( $title_tag ) );
+            echo sprintf( '<%1$s class="htpage-title">' . esc_html__('Page Title', 'ht-mega-for-elementor' ). '</%1$s>', esc_attr( $title_tag ) );
         }else{
             echo sprintf( '<%1$s class="htpage-title">%2$s</%1$s>', esc_attr( $title_tag ), wp_title( '', false )  );
         }

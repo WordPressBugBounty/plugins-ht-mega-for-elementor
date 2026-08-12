@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="htm-weather-wraper" style="background:transparent url('<?php echo esc_url(HTMEGA_ADDONS_PL_URL . 'assets/images/weather/weather-background.jpg');?>') no-repeat center center/cover;">
     <h3 class="htm-weather-title"><?php echo $settings['overridetitle'] ? esc_html($settings['overridetitle']) : esc_html($weather['name']) ; ?></h3>
     <div class="htm-current-weather">

@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Switcher', 'htmega-addons' );
+        return __( 'Switcher', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -32,30 +32,30 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
         $this->start_controls_section(
             'htmega_switch_layout',
             [
-                'label' => __( 'Switcher Layout', 'htmega-addons' ),
+                'label' => __( 'Switcher Layout', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'htmega_switcher_layout_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => 'layout-1',
                     'options' => [
-                        'layout-1' => __( 'Layout One', 'htmega-addons' ),
-                        'layout-2'   => __( 'Layout Two', 'htmega-addons' ),
+                        'layout-1' => __( 'Layout One', 'ht-mega-for-elementor' ),
+                        'layout-2'   => __( 'Layout Two', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
             $this->add_control(
                 'htmega_active_switcher',
                 [
-                    'label' => __( 'Active Item', 'htmega-addons' ),
+                    'label' => __( 'Active Item', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'options' => [
-                        'active1' => __( 'Item One', 'htmega-addons' ),
-                        'active2'   => __( 'Item Two', 'htmega-addons' ),
+                        'active1' => __( 'Item One', 'ht-mega-for-elementor' ),
+                        'active2'   => __( 'Item Two', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -65,16 +65,16 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
         $this->start_controls_section(
             'switch_one_content',
             [
-                'label' => __( 'Switcher One', 'htmega-addons' ),
+                'label' => __( 'Switcher One', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'switch_one_title',
                 [
-                    'label'     => __( 'Title', 'htmega-addons' ),
+                    'label'     => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::TEXT,
-                    'default'   => __( 'Switch One' , 'htmega-addons' ),
-                    'title' => __( 'Switcher Title', 'htmega-addons' ),
+                    'default'   => __( 'Switch One' , 'ht-mega-for-elementor' ),
+                    'title' => __( 'Switcher Title', 'ht-mega-for-elementor' ),
                     'dynamic'   => [ 'active' => true ],
                 ]
             );
@@ -82,16 +82,16 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_one_icon',
                 [
-                    'label'     => __( 'Icon', 'htmega-addons' ),
+                    'label'     => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::ICONS,
-                    'title' => __( 'Switcher Title Icon', 'htmega-addons' ),
+                    'title' => __( 'Switcher Title Icon', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'switcher_one_icon_size',
                 [
-                    'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -111,12 +111,12 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_one_content_source',
                 [
-                    'label'   => esc_html__( 'Select Content Source', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Content Source', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'    => esc_html__( 'Custom', 'htmega-addons' ),
-                        "elementor" => esc_html__( 'Elementor Template', 'htmega-addons' ),
+                        'custom'    => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
+                        "elementor" => esc_html__( 'Elementor Template', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -124,7 +124,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_one_template_id',
                 [
-                    'label'       => __( 'Content', 'htmega-addons' ),
+                    'label'       => __( 'Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_elementor_template(),
@@ -137,15 +137,15 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_one_custom_content',
                 [
-                    'label' => __( 'Content', 'htmega-addons' ),
+                    'label' => __( 'Content', 'ht-mega-for-elementor' ),
                     'show_label' =>false,
                     'type' => Controls_Manager::WYSIWYG,
-                    'title' => __( 'Content', 'htmega-addons' ),
+                    'title' => __( 'Content', 'ht-mega-for-elementor' ),
                     'dynamic'    => [ 'active' => true ],
                     'condition' => [
                         'switcher_one_content_source' =>'custom',
                     ],
-                    'default' =>__('Switcher Content One', 'htmega-addons'),
+                    'default' =>__('Switcher Content One', 'ht-mega-for-elementor'),
                 ]
             );
 
@@ -156,16 +156,16 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
         $this->start_controls_section(
             'switch_two_content',
             [
-                'label' => __( 'Switcher Two', 'htmega-addons' ),
+                'label' => __( 'Switcher Two', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'switch_two_title',
                 [
-                    'label'     => __( 'Title', 'htmega-addons' ),
+                    'label'     => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::TEXT,
-                    'default'   => __( 'Switch Two' , 'htmega-addons' ),
-                    'title' => __( 'Switcher Title', 'htmega-addons' ),
+                    'default'   => __( 'Switch Two' , 'ht-mega-for-elementor' ),
+                    'title' => __( 'Switcher Title', 'ht-mega-for-elementor' ),
                     'dynamic'   => [ 'active' => true ],
                 ]
             );
@@ -173,16 +173,16 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_two_icon',
                 [
-                    'label'     => __( 'Icon', 'htmega-addons' ),
+                    'label'     => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::ICONS,
-                    'title' => __( 'Switcher Title Icon', 'htmega-addons' ),
+                    'title' => __( 'Switcher Title Icon', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'switcher_two_icon_size',
                 [
-                    'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -203,12 +203,12 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_two_content_source',
                 [
-                    'label'   => esc_html__( 'Select Content Source', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Content Source', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'    => esc_html__( 'Custom', 'htmega-addons' ),
-                        "elementor" => esc_html__( 'Elementor Template', 'htmega-addons' ),
+                        'custom'    => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
+                        "elementor" => esc_html__( 'Elementor Template', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -216,7 +216,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_two_template_id',
                 [
-                    'label'       => __( 'Content', 'htmega-addons' ),
+                    'label'       => __( 'Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_elementor_template(),
@@ -229,15 +229,15 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_two_custom_content',
                 [
-                    'label' => __( 'Content', 'htmega-addons' ),
+                    'label' => __( 'Content', 'ht-mega-for-elementor' ),
                     'show_label' =>false,
                     'type' => Controls_Manager::WYSIWYG,
-                    'title' => __( 'Content', 'htmega-addons' ),
+                    'title' => __( 'Content', 'ht-mega-for-elementor' ),
                     'dynamic'    => [ 'active' => true ],
                     'condition' => [
                         'switcher_two_content_source' =>'custom',
                     ],
-                    'default' =>__('Switcher Content Two', 'htmega-addons'),
+                    'default' =>__('Switcher Content Two', 'ht-mega-for-elementor'),
                 ]
             );
 
@@ -247,7 +247,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
         $this->start_controls_section(
             'htmega_switcher_style_section',
             [
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => __( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -255,7 +255,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_responsive_control(
                 'switcher_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -267,7 +267,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_responsive_control(
                 'switcher_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -284,7 +284,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
         $this->start_controls_section(
             'switcher_button_style_section',
             [
-                'label' => __( 'Switcher Button', 'htmega-addons' ),
+                'label' => __( 'Switcher Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -293,7 +293,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'switcher_button_area_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-switcher-nav',
                     'condition'   => [
@@ -306,7 +306,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'switcher_button_area_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-switcher-nav',
                     'condition'   => [
                         'htmega_switcher_layout_style' => "layout-1"
@@ -317,7 +317,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_responsive_control(
                 'switcher_button_area_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-switcher-nav' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -331,7 +331,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_toggle_button_title_color',
                 [
-                    'label' => __( 'Title Color', 'htmega-addons' ),
+                    'label' => __( 'Title Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#444444',
                     'selectors' => [
@@ -360,14 +360,14 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                 $this->start_controls_tab(
                     'switcher_button_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'switcher_button_color',
                         [
-                            'label' => __( 'Title Color', 'htmega-addons' ),
+                            'label' => __( 'Title Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#444444',
                             'selectors' => [
@@ -394,7 +394,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                     $this->add_responsive_control(
                         'switcher_button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -408,7 +408,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                     $this->add_responsive_control(
                         'switcher_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -425,7 +425,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'switcher_button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-switcher-nav span,{{WRAPPER}} input+.htmega-switche-toggle-slider',
                         ]
@@ -434,7 +434,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                     $this->add_control(
                         'switcher_button_toggle_color',
                         [
-                            'label' => __( 'Toggle Color', 'htmega-addons' ),
+                            'label' => __( 'Toggle Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-switcher-toggle input+.htmega-switche-toggle-slider:before' => 'background-color: {{VALUE}};',
@@ -449,7 +449,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'switcher_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-switcher-nav span',
                             'condition'   => [
                                 'htmega_switcher_layout_style' => "layout-1"
@@ -460,7 +460,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                     $this->add_responsive_control(
                         'switcher_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-switcher-nav span' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -477,13 +477,13 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                 $this->start_controls_tab(
                     'switcher_button_active_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'switcher_button_active_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -500,7 +500,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'switcher_button_active_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-switcher-nav span.htb-active, {{WRAPPER}} .htmega-switcher-nav span.htb-active::before,{{WRAPPER}} input:checked+.htmega-switche-toggle-slider',
                         ]
@@ -509,7 +509,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                     $this->add_control(
                         'switcher_button_toggle_active_color',
                         [
-                            'label' => __( 'Toggle Color', 'htmega-addons' ),
+                            'label' => __( 'Toggle Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-switcher-toggle input:checked+.htmega-switche-toggle-slider:before' => 'background-color: {{VALUE}};',
@@ -524,7 +524,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'switcher_button_active_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-switcher-nav span.htb-active',
                             'condition'   => [
                                 'htmega_switcher_layout_style' => "layout-1"
@@ -535,7 +535,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                     $this->add_responsive_control(
                         'switcher_button_active_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-switcher-nav span.htb-active' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -554,7 +554,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
         $this->start_controls_section(
             'htmega_switcher_content_style_section',
             [
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -562,14 +562,14 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_control(
                 'switcher_content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#000000',
                     'selectors' => [
                         '{{WRAPPER}} .htmega-switcher-area .htmega_switcher_content' => 'color: {{VALUE}};',
                         '{{WRAPPER}} .htmega-switcher-toggle-area .htmega_switcher_content' => 'color: {{VALUE}};',
                     ],
-                    'decsription' =>__( 'Only for custom content.', 'htmega-addons' ),
+                    'decsription' =>__( 'Only for custom content.', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -578,14 +578,14 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                 [
                     'name' => 'switcher_content_typography',
                     'selector' => '{{WRAPPER}} .htmega-switcher-area .htmega_switcher_content,{{WRAPPER}} .htmega-switcher-toggle-area .htmega_switcher_content',
-                    'decsription' =>__( 'Only for custom content.', 'htmega-addons' ),
+                    'decsription' =>__( 'Only for custom content.', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_responsive_control(
                 'switcher_content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -597,7 +597,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_responsive_control(
                 'switcher_content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -612,7 +612,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'switcher_content_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-switcher-area .htmega-single-switch,{{WRAPPER}} .htmega-switcher-toggle-area .htmega_switcher_content',
                 ]
@@ -622,7 +622,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'switcher_content_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-switcher-area .htmega-single-switch,{{WRAPPER}} .htmega-switcher-toggle-area .htmega_switcher_content',
                 ]
             );
@@ -630,7 +630,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_responsive_control(
                 'switcher_content_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-switcher-area .htmega-single-switch' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -652,14 +652,14 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
             $this->add_render_attribute( 'htmega_switcher_attr', 'class', 'htmega-switcher-area' );
             $active_item = ('active2' == $active_item ) ? 'active2' : 'active1';
             ?>
-                <div <?php echo $this->get_render_attribute_string( 'htmega_switcher_attr' ); ?>>
+                <div <?php echo $this->get_render_attribute_string( 'htmega_switcher_attr' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                     <!-- Switcher Menu area start  -->
                     <div class="htmega-switcher-btn">
                         <div class="htmega-switcher-nav htb-nav" role="tablist">
                             <span class="htb-nav-link switcher_one_icon <?php echo ( 'active1' == $active_item ) ? ' htb-active htb-show' : ''; ?>" data-toggle="htbtab" data-target="#switcherone<?php echo esc_attr( $sectionid ); ?>">
                                 <?php
                                     if( $settings['switcher_one_icon']['value'] != ''){
-                                        echo HTMega_Icon_manager::render_icon( $settings['switcher_one_icon'], [ 'aria-hidden' => 'true' ] ).esc_html( $settings['switch_one_title'] );
+                                        echo HTMega_Icon_manager::render_icon( $settings['switcher_one_icon'], [ 'aria-hidden' => 'true' ] ).esc_html( $settings['switch_one_title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }else{
                                         echo esc_html( $settings['switch_one_title'] );
                                     }
@@ -668,7 +668,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                             <span class="htb-nav-link switcher_two_icon <?php echo ( 'active2' == $active_item ) ? ' htb-active htb-show' : ''; ?>" data-toggle="htbtab" data-target="#switchertwo<?php echo esc_attr( $sectionid ); ?>">
                                 <?php
                                     if( $settings['switcher_two_icon']['value'] != ''){
-                                        echo HTMega_Icon_manager::render_icon( $settings['switcher_two_icon'], [ 'aria-hidden' => 'true' ] ).esc_html( $settings['switch_two_title'] );
+                                        echo HTMega_Icon_manager::render_icon( $settings['switcher_two_icon'], [ 'aria-hidden' => 'true' ] ).esc_html( $settings['switch_two_title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }else{
                                         echo esc_html( $settings['switch_two_title'] );
                                     }
@@ -715,12 +715,12 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
 
             $active_item = ( 'active1' == $active_item ) ? 'active1' : 'active2';
             ?>
-                <div <?php echo $this->get_render_attribute_string( 'htmega_switcher_toggle_attr' ); ?>>
+                <div <?php echo $this->get_render_attribute_string( 'htmega_switcher_toggle_attr' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                     <div class="htmega-switcher-toggle">
                         <span class="htmega-switcher-toggle-title">
                             <?php
                                 if( $settings['switcher_one_icon']['value'] != ''){
-                                    echo HTMega_Icon_manager::render_icon( $settings['switcher_one_icon'], [ 'aria-hidden' => 'true' ] ).esc_html( $settings['switch_one_title'] );
+                                    echo HTMega_Icon_manager::render_icon( $settings['switcher_one_icon'], [ 'aria-hidden' => 'true' ] ).esc_html( $settings['switch_one_title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                 }else{
                                     echo esc_html( $settings['switch_one_title'] );
                                 }
@@ -733,7 +733,7 @@ class HTMega_Elementor_Widget_Switcher extends Widget_Base {
                         <span class="htmega-switcher-toggle-title">
                             <?php
                                 if( $settings['switcher_two_icon']['value'] != ''){
-                                    echo HTMega_Icon_manager::render_icon( $settings['switcher_two_icon'], [ 'aria-hidden' => 'true' ] ).esc_html( $settings['switch_two_title'] );
+                                    echo HTMega_Icon_manager::render_icon( $settings['switcher_two_icon'], [ 'aria-hidden' => 'true' ] ).esc_html( $settings['switch_two_title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                 }else{
                                     echo esc_html( $settings['switch_two_title'] );
                                 }

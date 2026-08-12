@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'TablePress', 'htmega-addons' );
+        return __( 'TablePress', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -29,7 +29,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         return 'https://wphtmega.com/docs/3rd-party-plugin-widgets/tablepress-widget/';
     }
     public function htmega_tablepress_table_list() {
-        $table_data = array('0' => esc_html__( 'Select Table', 'htmega-addons' ));
+        $table_data = array('0' => esc_html__( 'Select Table', 'ht-mega-for-elementor' ));
         
         if ( class_exists( 'TablePress' ) && isset( \TablePress::$model_table ) ) {
             $table_ids = \TablePress::$model_table->load_all( false );
@@ -37,7 +37,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             foreach ( $table_ids as $table_id ) {
                 $table = \TablePress::$model_table->load( $table_id, false, false );
                 if ( '' === trim( $table['name'] ) ) {
-                    $table['name'] = __( '(no name)', 'htmega-addons' );
+                    $table['name'] = __( '(no name)', 'ht-mega-for-elementor' );
                 }
                 $table_data[$table['id']] = $table['name'];
             }
@@ -57,7 +57,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Tablepress', 'htmega-addons' ),
+                'label' => __( 'Tablepress', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -65,7 +65,8 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: Plugin name (Tablepress) with an install/activate link, repeated twice in the sentence */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Tablepress&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">Tablepress</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -77,7 +78,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                 'parent_plugin_install',
                 [
                     'type' => Controls_Manager::RAW_HTML,
-                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Tablepress&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate Tablepress', 'htmega-addons' ) . '</a>',
+                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Tablepress&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate Tablepress', 'ht-mega-for-elementor' ) . '</a>',
                 ]
             );
             
@@ -89,14 +90,14 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         $this->start_controls_section(
             'tablepress_content',
             [
-                'label' => __( 'TablePress', 'htmega-addons' ),
+                'label' => __( 'TablePress', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'table_id',
                 [
-                    'label'   => esc_html__( 'Select Table', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Table', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => '0',
                     'options' => $this->htmega_tablepress_table_list(),
@@ -109,14 +110,14 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         $this->start_controls_section(
             'tablepress_options',
             [
-                'label' => __( 'Options', 'htmega-addons' ),
+                'label' => __( 'Options', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'entries_hide',
                 [
-                    'label'   => esc_html__( 'Entries Hide', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Entries Hide', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-tablepress .dataTables_length' => 'display: none;',
@@ -127,7 +128,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_control(
                 'pagination_hide',
                 [
-                    'label'   => esc_html__( 'Pagination Hide', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Pagination Hide', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-tablepress .dataTables_paginate' => 'display: none;',
@@ -138,7 +139,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_control(
                 'search_hide',
                 [
-                    'label'   => esc_html__( 'Search Hide', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Search Hide', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-tablepress .dataTables_filter' => 'display: none;',
@@ -149,7 +150,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_control(
                 'footer_info_hide',
                 [
-                    'label'   => esc_html__( 'Footer text Hide', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Footer text Hide', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-tablepress .dataTables_info' => 'display: none;',
@@ -164,7 +165,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         $this->start_controls_section(
             'tablepress_table_style_section',
             [
-                'label' => __( 'Table', 'htmega-addons' ),
+                'label' => __( 'Table', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -173,7 +174,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'tablepress_table_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-tablepress table.tablepress',
                 ]
             );
@@ -184,7 +185,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         $this->start_controls_section(
             'tablepress_header_style_section',
             [
-                'label' => __( 'Header', 'htmega-addons' ),
+                'label' => __( 'Header', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -192,7 +193,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_control(
                 'tablepress_header_background',
                 [
-                    'label'     => __( 'Background', 'htmega-addons' ),
+                    'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#d9edf7',
                     'selectors' => [
@@ -204,7 +205,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_control(
                 'tablepress_header_active_background',
                 [
-                    'label'     => __( 'Hover Background', 'htmega-addons' ),
+                    'label'     => __( 'Hover Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#049cdb',
                     'selectors' => [
@@ -216,7 +217,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_control(
                 'tablepress_header_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#212529',
                     'selectors' => [
@@ -229,7 +230,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'tablepress_header_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-tablepress .tablepress th',
                 ]
             );
@@ -237,7 +238,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_responsive_control(
                 'tablepress_header_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -250,23 +251,23 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_responsive_control(
                 'tablepress_header_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'start' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'end' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -283,7 +284,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         $this->start_controls_section(
             'tablepress_body_style_section',
             [
-                'label' => __( 'Body', 'htmega-addons' ),
+                'label' => __( 'Body', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -292,7 +293,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'tablepress_body_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-tablepress .tablepress td',
                 ]
             );
@@ -304,14 +305,14 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                 $this->start_controls_tab(
                     'tablepress_body_odd_style_normal_tab',
                     [
-                        'label' => __( 'Event Cell', 'htmega-addons' ),
+                        'label' => __( 'Event Cell', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'tablepress_body_odd_background',
                         [
-                            'label'     => __( 'Background', 'htmega-addons' ),
+                            'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   => '#f9f9f9',
                             'selectors' => [
@@ -323,7 +324,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                     $this->add_control(
                         'tablepress_body_odd_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tablepress .tablepress .odd td' => 'color: {{VALUE}};',
@@ -334,7 +335,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                     $this->add_control(
                         'tablepress_body_odd_border_color',
                         [
-                            'label'     => __( 'Border Color', 'htmega-addons' ),
+                            'label'     => __( 'Border Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   => '#ccc',
                             'selectors' => [
@@ -348,14 +349,14 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                 $this->start_controls_tab(
                     'tablepress_body_event_style_normal_tab',
                     [
-                        'label' => __( 'Odd Cell', 'htmega-addons' ),
+                        'label' => __( 'Odd Cell', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'tablepress_body_event_background',
                         [
-                            'label'     => __( 'Background', 'htmega-addons' ),
+                            'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   => '#ffffff',
                             'selectors' => [
@@ -367,7 +368,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                     $this->add_control(
                         'tablepress_body_event_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tablepress .tablepress .even td' => 'color: {{VALUE}};',
@@ -378,7 +379,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
                     $this->add_control(
                         'tablepress_body_event_border_color',
                         [
-                            'label'     => __( 'Border Color', 'htmega-addons' ),
+                            'label'     => __( 'Border Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   => '#ccc',
                             'selectors' => [
@@ -394,7 +395,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_responsive_control(
                 'tablepress_body_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -407,23 +408,23 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_responsive_control(
                 'tablepress_body_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'start' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'end' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -440,7 +441,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         $this->start_controls_section(
             'tablepress_footer_style_section',
             [
-                'label' => __( 'Footer text', 'htmega-addons' ),
+                'label' => __( 'Footer text', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'footer_info_hide!'=>'yes',
@@ -451,7 +452,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_control(
                 'tablepress_footer_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'=>'#212529',
                     'selectors' => [
@@ -463,7 +464,7 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
             $this->add_responsive_control(
                 'tablepress_footer_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -481,12 +482,12 @@ class HTMega_Elementor_Widget_Tablepress extends Widget_Base {
         $settings   = $this->get_settings_for_display();
 
         if ( ! is_plugin_active('tablepress/tablepress.php') ) {
-            htmega_plugin_missing_alert( __('Tablepress', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Tablepress', 'ht-mega-for-elementor') );
             return;
         }
 
         if ( !$settings['table_id'] ) {
-            echo '<p>'.esc_html_e( "Please Select table","htmega-addons").'</p>';
+            echo '<p>'.esc_html_e( "Please Select table","ht-mega-for-elementor").'</p>';
         }else{
             if ( Plugin::instance()->editor->is_edit_mode() ) {
                 \TablePress::load_controller( 'frontend' );

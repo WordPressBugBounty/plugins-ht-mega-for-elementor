@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 final class HTMega_Addons_Elementor {
     
     const MINIMUM_ELEMENTOR_VERSION = '2.5.0';
@@ -47,7 +49,29 @@ final class HTMega_Addons_Elementor {
      * @return [void]
      */
     public function i18n() {
-        load_plugin_textdomain( 'htmega-addons', false, dirname( plugin_basename( HTMEGA_ADDONS_PL_ROOT ) ) . '/languages/' );
+        $htmega_lang_dir = dirname( plugin_basename( HTMEGA_ADDONS_PL_ROOT ) ) . '/languages/';
+        load_plugin_textdomain( 'ht-mega-for-elementor', false, $htmega_lang_dir ); // phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound -- kept intentionally: the legacy-domain fallback below checks is_textdomain_loaded(), which depends on this call having run; removing it would break the htmega-addons -> ht-mega-for-elementor migration safety net for site owners with local Loco/Poedit translations.
+
+        // Adopt any translation a site owner saved locally under the old domain
+        // (e.g. via Loco Translate/Poedit) so it doesn't silently vanish for
+        // one release cycle after the WordPress.org-required domain rename.
+        // Checks all three locations Loco Translate can save to (Custom is Loco's
+        // own default, System is the WP-standard location, Author is inside the
+        // plugin's own folder) — not just the WP-standard one.
+        $htmega_locale = determine_locale();
+        if ( ! is_textdomain_loaded( 'ht-mega-for-elementor' ) ) {
+            $htmega_legacy_paths = array(
+                WP_LANG_DIR . '/loco/plugins/htmega-addons-' . $htmega_locale . '.mo',
+                WP_LANG_DIR . '/plugins/htmega-addons-' . $htmega_locale . '.mo',
+                HTMEGA_ADDONS_PL_PATH . 'languages/htmega-addons-' . $htmega_locale . '.mo',
+            );
+            foreach ( $htmega_legacy_paths as $htmega_legacy_mo ) {
+                if ( file_exists( $htmega_legacy_mo ) ) {
+                    load_textdomain( 'ht-mega-for-elementor', $htmega_legacy_mo );
+                    break;
+                }
+            }
+        }
     }
 
     /**
@@ -217,9 +241,17 @@ final class HTMega_Addons_Elementor {
             }
 
         } else {
-            
+
             if  (  htmega_get_option( 'htmega_rpbar', 'htmega_advance_element_tabs', 'off' ) === 'on' ){
                 require_once( HTMEGA_ADDONS_PL_PATH . 'extensions/reading-progress-bar/class.reading-progress-bar.php' );
+            }
+        }
+        // Reading Progress Bar sitewide auto-enable (pro-only convenience, see A2 relocation)
+        if ( htmega_is_pro_active() ) {
+            if ( file_exists( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/reading-progress-bar/class.reading-progress-bar-pro.php' ) ) {
+                require_once( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/reading-progress-bar/class.reading-progress-bar-pro.php' );
+            } else {
+                htmega_notify_missing_pro_extension_file( 'Reading Progress Bar' );
             }
         }
         //Scroll To Top Module
@@ -228,6 +260,14 @@ final class HTMega_Addons_Elementor {
 
         if( ! empty ( $htmega_stt_module_settings['stt_enable'] ) && 'on' == $htmega_stt_module_settings['stt_enable'] ) {
             require_once( HTMEGA_ADDONS_PL_PATH . 'extensions/scroll-to-top/class.scroll-to-top.php' );
+        }
+        // Scroll To Top sitewide auto-enable (pro-only convenience, see A2 relocation)
+        if ( htmega_is_pro_active() ) {
+            if ( file_exists( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/scroll-to-top/class.scroll-to-top-pro.php' ) ) {
+                require_once( HTMEGA_ADDONS_PL_PATH_PRO . 'extensions/scroll-to-top/class.scroll-to-top-pro.php' );
+            } else {
+                htmega_notify_missing_pro_extension_file( 'Scroll To Top' );
+            }
         }
         // Floating Effects Module
         if( htmega_get_option( 'floating_effects', 'htmega_advance_element_tabs', 'off' ) === 'on' ){
@@ -244,8 +284,18 @@ final class HTMega_Addons_Elementor {
          * Load HT Mega AI Integration
          */
         if (file_exists(HTMEGA_ADDONS_PL_PATH . 'includes/ai/htmega-ai-integration.php')) {
-           
+
             require_once HTMEGA_ADDONS_PL_PATH . 'includes/ai/htmega-ai-integration.php';
+        }
+
+        /**
+         * Load HT Mega AI Section Assistant (widget manifest + generation endpoint)
+         */
+        if (file_exists(HTMEGA_ADDONS_PL_PATH . 'includes/ai/section-manifest.php')) {
+            require_once HTMEGA_ADDONS_PL_PATH . 'includes/ai/section-manifest.php';
+        }
+        if (file_exists(HTMEGA_ADDONS_PL_PATH . 'includes/ai/section-assistant.php')) {
+            require_once HTMEGA_ADDONS_PL_PATH . 'includes/ai/section-assistant.php';
         }
     }
     
@@ -257,9 +307,9 @@ final class HTMega_Addons_Elementor {
     
         if ( $plugin_file === HTMEGA_ADDONS_PLUGIN_BASE ) {
             $new_links = array(
-                'docs'          => '<a href="https://wphtmega.com/docs/" target="_blank"><span class="dashicons dashicons-search"></span>' . esc_html__( 'Documentation', 'htmega-addons' ) . '</a>',
-                'facebookgroup' => '<a href="https://www.facebook.com/groups/woolentor" target="_blank"><span class="dashicons dashicons-facebook" style="font-size:14px;line-height:1.3"></span>' . esc_html__( 'Facebook Group', 'htmega-addons' ) . '</a>',
-                'rateus'        => '<a href="https://wordpress.org/support/plugin/ht-mega-for-elementor/reviews/?filter=5#new-post" target="_blank"><span class="dashicons dashicons-star-filled" style="font-size:14px;line-height:1.3"></span>' . esc_html__( 'Rate the plugin', 'htmega-addons' ) . '</a>',
+                'docs'          => '<a href="https://wphtmega.com/docs/" target="_blank"><span class="dashicons dashicons-search"></span>' . esc_html__( 'Documentation', 'ht-mega-for-elementor' ) . '</a>',
+                'facebookgroup' => '<a href="https://www.facebook.com/groups/woolentor" target="_blank"><span class="dashicons dashicons-facebook" style="font-size:14px;line-height:1.3"></span>' . esc_html__( 'Facebook Group', 'ht-mega-for-elementor' ) . '</a>',
+                'rateus'        => '<a href="https://wordpress.org/support/plugin/ht-mega-for-elementor/reviews/#new-post" target="_blank"><span class="dashicons dashicons-star-filled" style="font-size:14px;line-height:1.3"></span>' . esc_html__( 'Rate the plugin', 'ht-mega-for-elementor' ) . '</a>',
 
                 );
             
@@ -287,17 +337,17 @@ final class HTMega_Addons_Elementor {
 
         $message = '<div class="hastech-review-notice-wrap">
                     <div class="hastech-rating-notice-logo">
-                        <img src="' . $logo_url . '" alt="' . esc_attr__('HT Mega','htmega-addons') . '" style="max-width:85px"/>
+                        <img src="' . $logo_url . '" alt="' . esc_attr__('HT Mega','ht-mega-for-elementor') . '" style="max-width:85px"/>
                     </div>
                     <div class="hastech-review-notice-content">
-                        <h3>' . esc_html__('Hi there! Thanks a lot for choosing HT Mega Elementor Addons to take your WordPress website to the next level.','htmega-addons').'</h3>
-                        <p>' . esc_html__('It would be greatly appreciated if you consider giving us a review in WordPress. These reviews help us improve the plugin further and make it easier for other users to decide when exploring HT Mega Elementor Addons!', 'htmega-addons') . '</p>
+                        <h3>' . esc_html__('Hi there! Thanks a lot for choosing HT Mega Elementor Addons to take your WordPress website to the next level.','ht-mega-for-elementor').'</h3>
+                        <p>' . esc_html__('It would be greatly appreciated if you consider giving us a review in WordPress. These reviews help us improve the plugin further and make it easier for other users to decide when exploring HT Mega Elementor Addons!', 'ht-mega-for-elementor') . '</p>
                         <div class="hastech-review-notice-action">
-                            <a href="https://wordpress.org/support/plugin/ht-mega-for-elementor/reviews/?filter=5#new-post" class="hastech-review-notice button-primary" target="_blank">' . esc_html__('Ok, you deserve it!','htmega-addons') . '</a>
+                            <a href="https://wordpress.org/support/plugin/ht-mega-for-elementor/reviews/#new-post" class="hastech-review-notice button-primary" target="_blank">' . esc_html__('Ok, you deserve it!','ht-mega-for-elementor') . '</a>
                             <span class="dashicons dashicons-calendar"></span>
-                            <a href="#" class="hastech-notice-close hastech-review-notice">' . esc_html__('Maybe Later','htmega-addons').'</a>
+                            <a href="#" class="hastech-notice-close hastech-review-notice">' . esc_html__('Maybe Later','ht-mega-for-elementor').'</a>
                             <span class="dashicons dashicons-smiley"></span>
-                            <a href="#" data-already-did="yes" class="hastech-notice-close hastech-review-notice">' . esc_html__('I already did','htmega-addons') . '</a>
+                            <a href="#" data-already-did="yes" class="hastech-notice-close hastech-review-notice">' . esc_html__('I already did','ht-mega-for-elementor') . '</a>
                         </div>
                     </div>
                 </div>';
@@ -348,7 +398,11 @@ final class HTMega_Addons_Elementor {
         if ( version_compare( HTMEGA_VERSION_PRO, self::MINIMUM_HTMEGA_PRO_VERSION, '>=' ) ) {
             return;
         }
-        $message = '<p>' . __( 'To ensure smooth functionality of <strong>HT MEGA Addons for Elementor</strong>, please update to version '. self::MINIMUM_HTMEGA_PRO_VERSION .' or greater of <strong>HT Mega Pro</strong> for seamless compatibility.', 'htmega-addons' ) . '</p>';
+        $message = '<p>' . sprintf(
+            /* translators: %s: minimum required HT Mega Pro version number */
+            __( 'To ensure smooth functionality of <strong>HT MEGA Addons for Elementor</strong>, please update to version %s or greater of <strong>HT Mega Pro</strong> for seamless compatibility.', 'ht-mega-for-elementor' ),
+            self::MINIMUM_HTMEGA_PRO_VERSION
+        ) . '</p>';
 
         \HasTech_Notices::set_notice(
             [
@@ -391,6 +445,7 @@ final class HTMega_Addons_Elementor {
      */
     public function admin_notice_missing_main_plugin() {
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only: only checks/unsets presence of $_GET['activate'] (core admin-notice pattern to suppress WP's own "Plugin activated" query var from leaking into this notice); the value itself is never read or used for any state change.
         if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
 
         $elementor = 'elementor/elementor.php';
@@ -399,16 +454,16 @@ final class HTMega_Addons_Elementor {
 
             $activation_url = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $elementor . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $elementor );
 
-            $message = '<p>' . __( '<strong>HTMEGA Addons for Elementor</strong> requires "<strong>Elementor</strong>" plugin to be active. Please activate Elementor to continue.', 'htmega-addons' ) . '</p>';
-            $message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, __( 'Elementor Activate Now', 'htmega-addons' ) ) . '</p>';
+            $message = '<p>' . __( '<strong>HTMEGA Addons for Elementor</strong> requires "<strong>Elementor</strong>" plugin to be active. Please activate Elementor to continue.', 'ht-mega-for-elementor' ) . '</p>';
+            $message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, __( 'Elementor Activate Now', 'ht-mega-for-elementor' ) ) . '</p>';
         } else {
             if ( ! current_user_can( 'install_plugins' ) ) { return; }
 
             $install_url = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
 
-            $message = '<p>' . __( '<strong>HTMEGA Addons for Elementor</strong> requires "<strong>Elementor</strong>" plugin to be active. Please install the Elementor plugin to continue.', 'htmega-addons' ) . '</p>';
+            $message = '<p>' . __( '<strong>HTMEGA Addons for Elementor</strong> requires "<strong>Elementor</strong>" plugin to be active. Please install the Elementor plugin to continue.', 'ht-mega-for-elementor' ) . '</p>';
 
-            $message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, esc_html__( 'Elementor Install Now', 'htmega-addons' ) ) . '</p>';
+            $message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $install_url, esc_html__( 'Elementor Install Now', 'ht-mega-for-elementor' ) ) . '</p>';
         }
         echo '<div class="error"><p>' . $message . '</p></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
@@ -418,12 +473,13 @@ final class HTMega_Addons_Elementor {
      * @return [void] Elementor Required version check with current version
      */
     public function admin_notice_minimum_elementor_version() {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only: only checks/unsets presence of $_GET['activate'] (core admin-notice pattern to suppress WP's own "Plugin activated" query var from leaking into this notice); the value itself is never read or used for any state change.
         if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
         $message = sprintf(
             /* translators: 1: Plugin name (HTMega Addons), 2: Required plugin name (Elementor), 3: Minimum required version */
-            __( '"%1$s" requires "%2$s" version %3$s or greater.', 'htmega-addons' ),
-            '<strong>' . __( 'HTMega Addons', 'htmega-addons' ) . '</strong>',
-            '<strong>' . __( 'Elementor', 'htmega-addons' ) . '</strong>',
+            __( '"%1$s" requires "%2$s" version %3$s or greater.', 'ht-mega-for-elementor' ),
+            '<strong>' . __( 'HTMega Addons', 'ht-mega-for-elementor' ) . '</strong>',
+            '<strong>' . __( 'Elementor', 'ht-mega-for-elementor' ) . '</strong>',
              self::MINIMUM_ELEMENTOR_VERSION
         );
         printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -434,11 +490,12 @@ final class HTMega_Addons_Elementor {
      * @return [void]
      */
     public function admin_notice_minimum_php_version() {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only: only checks/unsets presence of $_GET['activate'] (core admin-notice pattern to suppress WP's own "Plugin activated" query var from leaking into this notice); the value itself is never read or used for any state change.
         if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
         $message = sprintf( /* translators: 1: Plugin name (HTMega Addons), 2: Required component name (PHP), 3: Minimum required version */
-            __( '"%1$s" requires "%2$s" version %3$s or greater.', 'htmega-addons' ),
-            '<strong>' . __( 'HTMega Addons', 'htmega-addons' ) . '</strong>',
-            '<strong>' . __( 'PHP', 'htmega-addons' ) . '</strong>',
+            __( '"%1$s" requires "%2$s" version %3$s or greater.', 'ht-mega-for-elementor' ),
+            '<strong>' . __( 'HTMega Addons', 'ht-mega-for-elementor' ) . '</strong>',
+            '<strong>' . __( 'PHP', 'ht-mega-for-elementor' ) . '</strong>',
              self::MINIMUM_PHP_VERSION
         );
         printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -450,10 +507,10 @@ final class HTMega_Addons_Elementor {
      * @return [array] plugin menu list.
      */
     public function plugins_setting_links( $links ) {
-        $htmega_settings_link = '<a href="admin.php?page=htmega-addons#/general">'.esc_html__( 'Settings', 'htmega-addons' ).'</a>';
+        $htmega_settings_link = '<a href="admin.php?page=htmega-addons#/general">'.esc_html__( 'Settings', 'ht-mega-for-elementor' ).'</a>';
         array_unshift( $links, $htmega_settings_link );
         if( !htmega_is_pro_active() ){
-            $links['htmegago_pro'] = sprintf('<a href="https://wphtmega.com/pricing/" target="_blank" style="color: #39b54a; font-weight: bold;">' . esc_html__('Go Pro','htmega-addons') . '</a>');
+            $links['htmegago_pro'] = sprintf('<a href="https://wphtmega.com/pricing/" target="_blank" style="color: #39b54a; font-weight: bold;">' . esc_html__('Go Pro','ht-mega-for-elementor') . '</a>');
         }
         return $links; 
     }
@@ -499,8 +556,9 @@ final class HTMega_Addons_Elementor {
         }
         if ( get_option( 'htmega_do_activation_redirect', false ) ) {
             delete_option('htmega_do_activation_redirect');
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only: only checks presence of $_GET['activate-multi'], value never read. The redirect itself is gated by the 'htmega_do_activation_redirect' option, which this plugin only sets from its own register_activation_hook callback (plugin_activate_hook()) — not from any request data — so there is no state change driven by user input here.
             if( !isset( $_GET['activate-multi'] ) ) {
-                wp_redirect( admin_url("admin.php?page=htmega-addons") );
+                wp_safe_redirect( admin_url("admin.php?page=htmega-addons") );
             }
         }
     }

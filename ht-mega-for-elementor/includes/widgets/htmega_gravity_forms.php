@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Gravity Forms', 'htmega-addons' );
+        return __( 'Gravity Forms', 'ht-mega-for-elementor' );
     }
 
     public function get_keywords() {
@@ -41,14 +41,14 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Gravity Forms', 'htmega-addons' ),
+                'label' => __( 'Gravity Forms', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'htmega_plugin_parent_missing_notice',
                 [
                     'type' => Controls_Manager::RAW_HTML,
-                    'raw' => esc_html__( 'It appears that Gravity Forms is not currently installed on your site. Please install or activate Gravity Forms, and remember to refresh the page after installation or activation.', 'htmega-addons' ),
+                    'raw' => esc_html__( 'It appears that Gravity Forms is not currently installed on your site. Please install or activate Gravity Forms, and remember to refresh the page after installation or activation.', 'ht-mega-for-elementor' ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
                 ]
             );
@@ -59,14 +59,14 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
     public function htmega_gravity_forms_options() {
         if ( class_exists( 'GFCommon' ) ) {
             $contact_forms = \RGFormsModel::get_forms( null, 'title' );
-            $form_options = ['0' => esc_html__( 'Select Form', 'htmega-addons' )];
+            $form_options = ['0' => esc_html__( 'Select Form', 'ht-mega-for-elementor' )];
             if ( ! empty( $contact_forms ) && ! is_wp_error( $contact_forms ) ) {
                 foreach ( $contact_forms as $form ) {
                     $form_options[ $form->id ] = $form->title;
                 }
             }
         } else {
-            $form_options = ['0' => esc_html__( 'Form Not Found!', 'htmega-addons' ) ];
+            $form_options = ['0' => esc_html__( 'Form Not Found!', 'ht-mega-for-elementor' ) ];
         }
 
         return $form_options;
@@ -77,14 +77,14 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
         $this->start_controls_section(
             'gravityforms_content',
             [
-                'label' => __( 'Gravity Forms', 'htmega-addons' ),
+                'label' => __( 'Gravity Forms', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'gravity_form',
                 [
-                    'label'   => esc_html__( 'Select Form', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Form', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => '0',
                     'options' => $this->htmega_gravity_forms_options(),
@@ -94,11 +94,11 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'show_title',
                 [
-                    'label'        => __( 'Show Title', 'htmega-addons' ),
+                    'label'        => __( 'Show Title', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'default'      => 'no',
-                    'label_on'     => __( 'Show', 'htmega-addons' ),
-                    'label_off'    => __( 'Hide', 'htmega-addons' ),
+                    'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                 ]
             );
@@ -106,11 +106,11 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'show_description',
                 [
-                    'label'        => __( 'Show Description', 'htmega-addons' ),
+                    'label'        => __( 'Show Description', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'default'      => 'no',
-                    'label_on'     => __( 'Show', 'htmega-addons' ),
-                    'label_off'    => __( 'Hide', 'htmega-addons' ),
+                    'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                 ]
             );
@@ -118,11 +118,11 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'form_ajax',
                 [
-                    'label'        => __( 'From Ajax', 'htmega-addons' ),
+                    'label'        => __( 'From Ajax', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'default'      => 'no',
-                    'label_on'     => __( 'Yes', 'htmega-addons' ),
-                    'label_off'    => __( 'No', 'htmega-addons' ),
+                    'label_on'     => __( 'Yes', 'ht-mega-for-elementor' ),
+                    'label_off'    => __( 'No', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                 ]
             );
@@ -134,7 +134,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
         $this->start_controls_section(
             'gravityforms_title_style',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=> [
                     'show_title'=>'yes',
@@ -145,7 +145,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'gravityforms_title_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gform_wrapper .gform_heading .gform_title'   => 'color: {{VALUE}};',
@@ -163,19 +163,19 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_responsive_control(
                 'title_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -190,7 +190,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
         $this->start_controls_section(
             'gravityforms_description_style',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=> [
                     'show_description'=>'yes',
@@ -201,7 +201,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'gravityforms_description_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gform_wrapper .gform_heading .gform_description'   => 'color: {{VALUE}};',
@@ -219,19 +219,19 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_responsive_control(
                 'title_description_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -246,26 +246,26 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
         $this->start_controls_section(
             'gravityforms_label_style',
             [
-                'label' => __( 'Labels', 'htmega-addons' ),
+                'label' => __( 'Labels', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'label_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -277,7 +277,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'gravityforms_label_background',
                 [
-                    'label'     => __( 'Background', 'htmega-addons' ),
+                    'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gform_wrapper .gfield label, {{WRAPPER}} .gform_wrapper .gfield_label'   => 'background-color: {{VALUE}};',
@@ -288,7 +288,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'gravityforms_label_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gform_wrapper .gfield label,{{WRAPPER}} .gform_wrapper .gfield_label'   => 'color: {{VALUE}};',
@@ -298,7 +298,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'gravityforms_required_text_color',
                 [
-                    'label'     => __( 'Required Color', 'htmega-addons' ),
+                    'label'     => __( 'Required Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gform_wrapper .gfield_required'   => 'color: {{VALUE}};',
@@ -318,7 +318,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'gravityforms_label_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .gform_wrapper .gfield label,{{WRAPPER}} .gform_wrapper .gfield_label',
                 ]
             );
@@ -326,7 +326,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_responsive_control(
                 'gravityforms_label_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .gform_wrapper .gfield label,{{WRAPPER}} .gform_wrapper .gfield_label' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -337,7 +337,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_responsive_control(
                 'gravityforms_label_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -349,7 +349,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_responsive_control(
                 'gravityforms_label_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -361,7 +361,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'description_headline',
                 [
-                    'label' => __( 'Description Style', 'htmega-addons' ),
+                    'label' => __( 'Description Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -369,7 +369,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'htmega_description_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#212529',
                     'selectors' => [
@@ -389,7 +389,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -405,7 +405,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
         $this->start_controls_section(
             'gravityforms_input_style_section',
             [
-                'label' => __( 'Input', 'htmega-addons' ),
+                'label' => __( 'Input', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -416,13 +416,13 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->start_controls_tab(
                         'style_input_normal_tab',
                         [
-                            'label' => __( 'Normal', 'htmega-addons' ),
+                            'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                         ]
                     );
                     $this->add_control(
                         'gravityforms_input_background_color',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gfield input[type="text"], {{WRAPPER}} .gform_wrapper .gfield textarea, {{WRAPPER}} .gform_wrapper .gfield select,{{WRAPPER}} .gform_wrapper .gfield input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file])' => 'background-color: {{VALUE}}',
@@ -433,7 +433,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_control(
                         'gravityforms_input_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .gform_wrapper .gfield input[type="text"], {{WRAPPER}} .gform_wrapper .gfield textarea, {{WRAPPER}} .gform_wrapper .gfield select,{{WRAPPER}} .gform_wrapper .gfield input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file])' => 'color: {{VALUE}}',
@@ -443,7 +443,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_control(
                         'htmega_input_placeholder_color',
                         [
-                            'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .gform_wrapper .gfield input::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -466,7 +466,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_input_height',
                         [
-                            'label'             => __( 'Height', 'htmega-addons' ),
+                            'label'             => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'              => Controls_Manager::SLIDER,
                             'range'             => [
                                 'px' => [
@@ -484,7 +484,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_textarea_height',
                         [
-                            'label'             => __( 'Textarea Height', 'htmega-addons' ),
+                            'label'             => __( 'Textarea Height', 'ht-mega-for-elementor' ),
                             'type'              => Controls_Manager::SLIDER,
                             'range'             => [
                                 'px' => [
@@ -503,7 +503,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_input_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -516,7 +516,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_input_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -529,7 +529,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'gravityforms_input_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), 
                             {{WRAPPER}} .gform_wrapper .gfield textarea,{{WRAPPER}} .gform_wrapper .gfield select',
                         ]
@@ -538,7 +538,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_input_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gfield input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), 
@@ -550,7 +550,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_input_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .gform_wrapper .gfield input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), 
                             {{WRAPPER}} .gform_wrapper .gfield textarea,{{WRAPPER}} .gform_wrapper .gfield select',
                         ]
@@ -558,19 +558,19 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'input_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ]
                             ],
@@ -586,13 +586,13 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->start_controls_tab(
                         'style_input_foucs_tab',
                         [
-                            'label' => __( 'Focus', 'htmega-addons' ),
+                            'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                         ]
                     );
                     $this->add_control(
                         'gravityforms_input_background_color_focus',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gfield input[type="text"]:focus, {{WRAPPER}} .gform_wrapper .gfield textarea, {{WRAPPER}} .gform_wrapper .gfield select:focus,{{WRAPPER}} .gform_wrapper .gfield input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus' => 'background-color: {{VALUE}}',
@@ -603,7 +603,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_control(
                         'gravityforms_input_color_focus',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .gform_wrapper .gfield input[type="text"]:focus, {{WRAPPER}} .gform_wrapper .gfield textarea, {{WRAPPER}} .gform_wrapper .gfield select:focus,{{WRAPPER}} .gform_wrapper .gfield input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus' => 'color: {{VALUE}}',
@@ -614,7 +614,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'gravityforms_input_border_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, 
                             {{WRAPPER}} .gform_wrapper .gfield textarea:focus,{{WRAPPER}} .gform_wrapper .gfield select:focus',
                         ]
@@ -623,7 +623,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_input_border_radius_focus',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gfield input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, 
@@ -635,7 +635,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_input_box_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .gform_wrapper .gfield input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, 
                             {{WRAPPER}} .gform_wrapper .gfield textarea:focus,{{WRAPPER}} .gform_wrapper .gfield select:focus',
                         ]
@@ -648,7 +648,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
         $this->start_controls_section(
             'gravityforms_inputsubmit_style',
             [
-                'label'     => __( 'Button', 'htmega-addons' ),
+                'label'     => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -658,14 +658,14 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                 $this->start_controls_tab(
                     'gravityforms_submit_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'gravityforms_input_submit_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -680,7 +680,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -713,7 +713,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_control(
                         'gravityforms_input_submit_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]'  => 'color: {{VALUE}};',
@@ -724,7 +724,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_control(
                         'gravityforms_input_submit_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]'  => 'background-color: {{VALUE}};',
@@ -735,7 +735,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_input_submit_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -748,7 +748,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_input_submit_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -762,7 +762,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'gravityforms_input_submit_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]',
                         ]
                     );
@@ -770,7 +770,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_responsive_control(
                         'gravityforms_input_submit_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -782,26 +782,26 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'gravityforms_input_submit_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]',
                         ]
                     );
                     $this->add_responsive_control(
                         'button_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ]
                             ],
@@ -816,14 +816,14 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                 $this->start_controls_tab(
                     'gravityforms_submit_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'gravityforms_input_submithover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover'  => 'color: {{VALUE}};',
@@ -834,7 +834,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                     $this->add_control(
                         'gravityforms_input_submithover_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover'  => 'background-color: {{VALUE}};',
@@ -846,7 +846,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'gravityforms_input_submithover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover',
                         ]
                     );
@@ -860,7 +860,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
         $this->start_controls_section(
             'htmega_input_error_style',
             [
-                'label'     => __( 'Errors and Confirmation Style', 'htmega-addons' ),
+                'label'     => __( 'Errors and Confirmation Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -868,7 +868,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'htmega_error_text_color',
                 [
-                    'label'     => __( 'Error Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Error Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gform_wrapper .gfield_error .gfield_repeater_cell label, {{WRAPPER}} .gform_wrapper .gfield_error label, {{WRAPPER}} .gform_wrapper .gfield_error legend, {{WRAPPER}} .gform_wrapper .gfield_validation_message, {{WRAPPER}} .gform_wrapper .validation_message, {{WRAPPER}} .gform_wrapper [aria-invalid=true]+label, {{WRAPPER}} .gform_wrapper label+[aria-invalid=true],{{WRAPPER}} .validation_message,{{WRAPPER}} .gform_wrapper .gform_validation_errors>h2'  => 'color: {{VALUE}};',
@@ -885,7 +885,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'htmega_error_border_color',
                 [
-                    'label'     => __( 'Border Color', 'htmega-addons' ),
+                    'label'     => __( 'Border Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gform_wrapper .gfield_validation_message, {{WRAPPER}} .gform_wrapper .validation_message,{{WRAPPER}} .gform_wrapper .gfield_error [aria-invalid=true],{{WRAPPER}} .gform_wrapper .gform_validation_errors'  => 'border-color: {{VALUE}}!important;',
@@ -896,7 +896,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'htmega_error_submit_feedback_style',
                 [
-                    'label' => __( 'Confirmation Style', 'htmega-addons' ),
+                    'label' => __( 'Confirmation Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -904,7 +904,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
             $this->add_control(
                 'htmega_feedback_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gform_confirmation_message'  => 'color: {{VALUE}};',
@@ -925,7 +925,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
 
         $settings   = $this->get_settings_for_display();
         if ( ! is_plugin_active('gravityforms/gravityforms.php') ) {
-            htmega_plugin_missing_alert( __('Gravity Forms', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Gravity Forms', 'ht-mega-for-elementor') );
             return;
         }
        $form_attributes = [

@@ -19,7 +19,7 @@
 				printf('<span class="htmega-cta-sub-title">%s</span>', wp_kses_post(html_entity_decode($settings['subTitle'])));
 			}
 			if($settings['showTitle']) {
-				printf('<%1$s class="htmega-cta-title">%2$s</%1$s>', htmegaBlocks_sanitize_tag($settings['titleTag']), wp_kses_post(html_entity_decode($settings['title'])));
+				printf('<%1$s class="htmega-cta-title">%2$s</%1$s>', htmegaBlocks_sanitize_tag($settings['titleTag']), wp_kses_post(html_entity_decode($settings['title']))); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmegaBlocks_sanitize_tag() whitelists against a fixed tag array, see htmega-blocks/includes/helper-functions.php.
 			}
 			if($settings['showDescription']) {
 				printf('<p class="htmega-cta-desc">%s</p>', wp_kses_post(html_entity_decode($settings['description'])));

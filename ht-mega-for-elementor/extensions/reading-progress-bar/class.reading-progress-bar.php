@@ -62,49 +62,34 @@ class HTMegaReadingProgressBar_Elementor {
         $htmega_rpbar_module_settings = htmega_get_option( 'htmega_rpbar', 'htmega_rpbar_module_settings' );
         $htmega_rpbar_module_settings = json_decode( $htmega_rpbar_module_settings, true );
 
-        $rpbar_global = isset( $htmega_rpbar_module_settings['rpbar_global'] ) ? $htmega_rpbar_module_settings['rpbar_global'] : 'off';
-            $rpbar_enable_label =  ( 'on' == $rpbar_global && htmega_is_pro_active() ) ? __('Enable to Custom Style', 'htmega-addons') : __('Enable Reading Progress Bar', 'htmega-addons');
-        
 		$tabs = Controls_Manager::TAB_SETTINGS;
 
 		$element->start_controls_section(
 			'section_htmega_rpbar_section',
 			array(
-				'label' => __( 'HTMega Reading Progress Bar', 'htmega-addons' ),
+				'label' => __( 'HTMega Reading Progress Bar', 'ht-mega-for-elementor' ),
 				'tab'   => $tabs,
 			)
 		);
 
-        if( 'on' == $rpbar_global && htmega_is_pro_active() ) {
-            $element->add_control(
-                'htmega_rpbar_disable',
-                [
-                    'label' => __('Disable Reading Progress Bar', 'htmega-addons'),
-                    'description' => __('Disable Reading Progress Bar for this  pages', 'htmega-addons'),
-                    'type' => Controls_Manager::SWITCHER,
-                    'default' => 'no',
-                    'label_on' => __('Yes', 'htmega-addons'),
-                    'label_off' => __('No', 'htmega-addons'),
-                    'return_value' => 'yes',
-                ]
-            );
-
-        } 
+        // Sitewide auto-enable (pro-only) injects its own "Disable for this page"
+        // control here via Elementor's start_injection/end_injection API — see
+        // htmega-pro/extensions/reading-progress-bar/class.reading-progress-bar-pro.php
         $element->add_control(
             'htmega_rpbar_enable',
             [
-                'label' =>  $rpbar_enable_label,
+                'label' =>  __('Enable Reading Progress Bar', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'no',
-                'label_on' => __('Yes', 'htmega-addons'),
-                'label_off' => __('No', 'htmega-addons'),
+                'label_on' => __('Yes', 'ht-mega-for-elementor'),
+                'label_off' => __('No', 'ht-mega-for-elementor'),
                 'return_value' => 'yes',
             ]
         );
         $element->add_control(
             'htmega_rpbar_notice',
             [
-                'raw'             => __( 'The <b>Reading Progress Bar settings</b> are not functional in Editor mode. Please preview the page  & Scroll to see the desired result.', 'htmega-addons' ),
+                'raw'             => __( 'The <b>Reading Progress Bar settings</b> are not functional in Editor mode. Please preview the page  & Scroll to see the desired result.', 'ht-mega-for-elementor' ),
                 'type'            => Controls_Manager::RAW_HTML,
                 'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 'condition'   => [
@@ -115,13 +100,13 @@ class HTMegaReadingProgressBar_Elementor {
         $element->add_control(
             'htmega_rpbar_position',
             [
-                'label' => esc_html__('Position', 'htmega-addons'),
+                'label' => esc_html__('Position', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'top',
                 'label_block' => false,
                 'options' => [
-                    'top' => esc_html__('Top', 'htmega-addons'),
-                    'bottom' => esc_html__('Bottom', 'htmega-addons'),
+                    'top' => esc_html__('Top', 'ht-mega-for-elementor'),
+                    'bottom' => esc_html__('Bottom', 'ht-mega-for-elementor'),
                 ],
                 'separator' => 'before',
                 'condition' => [
@@ -140,7 +125,7 @@ class HTMegaReadingProgressBar_Elementor {
         $element->add_control(
             'htmega_rpbar_height',
             [
-                'label' => __('Height', 'htmega-addons'),
+                'label' => __('Height', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -167,7 +152,7 @@ class HTMegaReadingProgressBar_Elementor {
         $element->add_control(
             'htmega_rpbar_bg_color',
             [
-                'label' => __('Background Color', 'htmega-addons'),
+                'label' => __('Background Color', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -183,7 +168,7 @@ class HTMegaReadingProgressBar_Elementor {
         $element->add_control(
             'htmega_rpbar_fill_color',
             [
-                'label' => __('Fill Color', 'htmega-addons'),
+                'label' => __('Fill Color', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#D43A6B',
                 'selectors' => [
@@ -199,7 +184,7 @@ class HTMegaReadingProgressBar_Elementor {
         $element->add_control(
             'htmega_rpbar_animation_speed',
             [
-                'label' => __('Animation Speed', 'htmega-addons'),
+                'label' => __('Animation Speed', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [

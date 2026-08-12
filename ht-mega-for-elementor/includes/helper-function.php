@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * [htmega_get_elementor] Get elementor instance
  * @return [\Elementor\Plugin]
@@ -116,7 +118,7 @@ if( !function_exists('htmega_elementor_template') ){
                 'posts_per_page' => -1,
                 'orderby' => 'title',
                 'order' => 'ASC',
-                'meta_query' => [
+                'meta_query' => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- intentional: builds the "Select Template" dropdown options for widgets such as Off-Canvas and Template Selector, restricting the list to actual Elementor template types (`_elementor_template_type`).
                     [
                         'key' => '_elementor_template_type',
                         'value' => $template_instance::get_template_types()
@@ -129,19 +131,19 @@ if( !function_exists('htmega_elementor_template') ){
 
             $templates = [];
             if ( $templates_query->have_posts() ) {
-                $templates = [ '0' => __( 'Select Template', 'htmega-addons' ) ];
+                $templates = [ '0' => __( 'Select Template', 'ht-mega-for-elementor' ) ];
                 foreach ( $templates_query->get_posts() as $post ) {
                     $templates[$post->ID] = $post->post_title . '(' . $template_instance::get_template_type( $post->ID ). ')';
                 }
             }else{
-                $templates = [ '0' => __( 'No saved templates found!', 'htmega-addons' ) ];
+                $templates = [ '0' => __( 'No saved templates found!', 'ht-mega-for-elementor' ) ];
             }
             wp_reset_postdata();
 
             return $templates;
 
         }else{
-            return array( '0' => __( 'No saved templates found!', 'htmega-addons' ) );
+            return array( '0' => __( 'No saved templates found!', 'ht-mega-for-elementor' ) );
         }
     }
 }
@@ -164,8 +166,9 @@ if( !function_exists('htmega_theme_builder_templates') ){
         );
 
         if( is_array( $type ) && count( $type ) > 0 ){
+            // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- intentional: filters the theme-builder templates list by type (e.g. 'single_blog_page', 'header_page') for the corresponding admin settings dropdowns in Options_field.php, via the $type argument passed by each caller.
             $args['meta_key'] = '_htmega_template_type';
-            $args['meta_value'] = $type;
+            $args['meta_value'] = $type; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value -- intentional: same theme-builder template type filter as above, driven by the $type argument.
             $args['meta_compare'] = 'IN';
         }
 
@@ -176,7 +179,7 @@ if( !function_exists('htmega_theme_builder_templates') ){
                 $template_lists[ $post->ID ] = $post->post_title;
             }
         }
-        wp_reset_query();
+        wp_reset_postdata();
         return $template_lists;
 
     }
@@ -211,9 +214,9 @@ if( !function_exists('htmega_sidebar_options') ){
         $sidebar_options = array();
 
         if ( ! $wp_registered_sidebars ) {
-            $sidebar_options['0'] = __( 'No sidebars were found', 'htmega-addons' );
+            $sidebar_options['0'] = __( 'No sidebars were found', 'ht-mega-for-elementor' );
         } else {
-            $sidebar_options['0'] = __( 'Select Sidebar', 'htmega-addons' );
+            $sidebar_options['0'] = __( 'Select Sidebar', 'ht-mega-for-elementor' );
             foreach ( $wp_registered_sidebars as $sidebar_id => $sidebar ) {
                 $sidebar_options[ $sidebar_id ] = $sidebar['name'];
             }
@@ -274,15 +277,15 @@ if( !function_exists('htmega_get_post_types') ){
 if( !function_exists('htmega_html_tag_lists') ){
     function htmega_html_tag_lists() {
         $html_tag_list = [
-            'h1'   => __( 'H1', 'htmega-addons' ),
-            'h2'   => __( 'H2', 'htmega-addons' ),
-            'h3'   => __( 'H3', 'htmega-addons' ),
-            'h4'   => __( 'H4', 'htmega-addons' ),
-            'h5'   => __( 'H5', 'htmega-addons' ),
-            'h6'   => __( 'H6', 'htmega-addons' ),
-            'p'    => __( 'p', 'htmega-addons' ),
-            'div'  => __( 'div', 'htmega-addons' ),
-            'span' => __( 'span', 'htmega-addons' ),
+            'h1'   => __( 'H1', 'ht-mega-for-elementor' ),
+            'h2'   => __( 'H2', 'ht-mega-for-elementor' ),
+            'h3'   => __( 'H3', 'ht-mega-for-elementor' ),
+            'h4'   => __( 'H4', 'ht-mega-for-elementor' ),
+            'h5'   => __( 'H5', 'ht-mega-for-elementor' ),
+            'h6'   => __( 'H6', 'ht-mega-for-elementor' ),
+            'p'    => __( 'p', 'ht-mega-for-elementor' ),
+            'div'  => __( 'div', 'ht-mega-for-elementor' ),
+            'span' => __( 'span', 'ht-mega-for-elementor' ),
         ];
         return $html_tag_list;
     }
@@ -354,7 +357,7 @@ if( !function_exists('htmega_contact_form_seven') ){
                 $countactform[$htmega_form->ID] = $htmega_form->post_title;
             }
         }else{
-            $countactform[ esc_html__( 'No contact form found', 'htmega-addons' ) ] = 0;
+            $countactform[ esc_html__( 'No contact form found', 'ht-mega-for-elementor' ) ] = 0;
         }
         return $countactform;
     }
@@ -371,7 +374,7 @@ if( !function_exists('htmega_post_name') ){
             $limit = htmega_get_option( 'loadpostlimit', 'htmega_general_tabs', '20' );
         }
         $options = array();
-        $options = ['0' => esc_html__( 'None', 'htmega-addons' )];
+        $options = ['0' => esc_html__( 'None', 'ht-mega-for-elementor' )];
         $wh_post = array( 'posts_per_page' => $limit, 'post_type'=> $post_type );
         $wh_post_terms = get_posts( $wh_post );
         if ( ! empty( $wh_post_terms ) && ! is_wp_error( $wh_post_terms ) ){
@@ -422,7 +425,7 @@ if( !function_exists('htmega_caldera_forms_options') ){
     function htmega_caldera_forms_options() {
         if ( class_exists( 'Caldera_Forms' ) ) {
             $caldera_forms = Caldera_Forms_Forms::get_forms( true, true );
-            $form_options  = ['0' => esc_html__( 'Select Form', 'htmega-addons' )];
+            $form_options  = ['0' => esc_html__( 'Select Form', 'ht-mega-for-elementor' )];
             $form          = array();
             if ( ! empty( $caldera_forms ) && ! is_wp_error( $caldera_forms ) ) {
                 foreach ( $caldera_forms as $form ) {
@@ -432,7 +435,7 @@ if( !function_exists('htmega_caldera_forms_options') ){
                 }
             }
         } else {
-            $form_options = ['0' => esc_html__( 'Form Not Found!', 'htmega-addons' ) ];
+            $form_options = ['0' => esc_html__( 'Form Not Found!', 'ht-mega-for-elementor' ) ];
         }
         return $form_options;
     }
@@ -460,22 +463,22 @@ function htmega_ajax_login_init() {
 function htmega_ajax_login(){
     check_ajax_referer( 'ajax-login-nonce', 'security' );
     $user_data = array();
-    $user_data['user_login'] = !empty( $_POST['username'] ) ? sanitize_text_field( $_POST['username'] ): "";
-    $user_data['user_password'] = !empty( $_POST['password'] ) ? sanitize_text_field( $_POST['password'] ): "";
+    $user_data['user_login'] = !empty( $_POST['username'] ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ): "";
+    $user_data['user_password'] = !empty( $_POST['password'] ) ? sanitize_text_field( wp_unslash( $_POST['password'] ) ): "";
     $user_data['remember'] = true;
     $user_signon = wp_signon( $user_data, false );
 
-    $messages = !empty( $_POST['messages'] ) ? $_POST['messages']: "";
+    $messages = !empty( $_POST['messages'] ) ? wp_unslash( $_POST['messages'] ) : ""; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- JSON payload; sanitize_text_field() would corrupt the JSON structure. Decoded below, and every value is escaped at the point of output (esc_html()).
     if( $messages ){
-        $messages = json_decode( stripslashes( $messages ), true );
+        $messages = json_decode( $messages, true );
     }
 
     if ( is_wp_error($user_signon) ){
 
-        $invalid_info = !empty( $messages['invalid_info'] ) ? esc_html( $messages['invalid_info'] ) : esc_html__('Invalid username or password!', 'htmega-addons');
+        $invalid_info = !empty( $messages['invalid_info'] ) ? esc_html( $messages['invalid_info'] ) : esc_html__('Invalid username or password!', 'ht-mega-for-elementor');
         echo wp_json_encode( [ 'loggeauth'=>false, 'message'=> $invalid_info ] );
     } else {
-        $success_msg = !empty( $messages['success_msg'] ) ? esc_html( $messages['success_msg'] ) : esc_html__('Login Successfully', 'htmega-addons');
+        $success_msg = !empty( $messages['success_msg'] ) ? esc_html( $messages['success_msg'] ) : esc_html__('Login Successfully', 'ht-mega-for-elementor');
         echo wp_json_encode( [ 'loggeauth'=>true, 'message'=> $success_msg ] );
     }
     wp_die();
@@ -494,35 +497,35 @@ function htmega_ajax_register_init() {
 function htmega_ajax_register() {
 
 	if ( ! isset( $_POST['nonce'] ) ) {
-		echo wp_json_encode( [ 'registerauth' =>false, 'message'=> esc_html__( 'Invalid Request', 'htmega-addons' ) ] );
+		echo wp_json_encode( [ 'registerauth' =>false, 'message'=> esc_html__( 'Invalid Request', 'ht-mega-for-elementor' ) ] );
 		wp_die();
 	}
 
-    $verified_nonce = wp_verify_nonce( $_POST['nonce'], 'htmega_register_nonce' );
-    
+    $verified_nonce = wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'htmega_register_nonce' );
+
     if ( ! $verified_nonce ) {
-        echo wp_json_encode( [ 'registerauth' =>false, 'message'=> esc_html__( 'Invalid Request', 'htmega-addons' ) ] );
+        echo wp_json_encode( [ 'registerauth' =>false, 'message'=> esc_html__( 'Invalid Request', 'ht-mega-for-elementor' ) ] );
         wp_die();
     }
     if ( ! get_option( 'users_can_register' ) ) {
-        echo wp_json_encode( [ 'registerauth' =>false, 'message'=> esc_html__( 'User registration is currently not allowed.', 'htmega-addons' ) ] );
+        echo wp_json_encode( [ 'registerauth' =>false, 'message'=> esc_html__( 'User registration is currently not allowed.', 'ht-mega-for-elementor' ) ] );
         wp_die();
     }
 
 
     $user_data = array(
-        'user_login'    => ! empty( $_POST['reg_name'] ) ? sanitize_text_field( $_POST['reg_name'] ) : "",
-        'user_pass'     => ! empty( $_POST['reg_password'] ) ? sanitize_text_field( $_POST['reg_password'] ) : "",
-        'user_email'    => ! empty( $_POST['reg_email'] ) ? sanitize_email( $_POST['reg_email'] ) : "",
-        'user_url'      => ! empty( $_POST['reg_website'] ) ? esc_url( $_POST['reg_website'] ) : "",
-        'first_name'    => ! empty( $_POST['reg_fname'] ) ? sanitize_text_field( $_POST['reg_fname'] ) : "",
-        'last_name'     => ! empty( $_POST['reg_lname'] ) ? sanitize_text_field( $_POST['reg_lname'] ) : "",
-        'nickname'      => ! empty( $_POST['reg_nickname'] ) ? sanitize_text_field( $_POST['reg_nickname'] ) : "",
-        'description' => !empty( $_POST['reg_bio'] ) ? sanitize_text_field( $_POST['reg_bio'] ) : "",
+        'user_login'    => ! empty( $_POST['reg_name'] ) ? sanitize_text_field( wp_unslash( $_POST['reg_name'] ) ) : "",
+        'user_pass'     => ! empty( $_POST['reg_password'] ) ? sanitize_text_field( wp_unslash( $_POST['reg_password'] ) ) : "",
+        'user_email'    => ! empty( $_POST['reg_email'] ) ? sanitize_email( wp_unslash( $_POST['reg_email'] ) ) : "",
+        'user_url'      => ! empty( $_POST['reg_website'] ) ? esc_url_raw( wp_unslash( $_POST['reg_website'] ) ) : "",
+        'first_name'    => ! empty( $_POST['reg_fname'] ) ? sanitize_text_field( wp_unslash( $_POST['reg_fname'] ) ) : "",
+        'last_name'     => ! empty( $_POST['reg_lname'] ) ? sanitize_text_field( wp_unslash( $_POST['reg_lname'] ) ) : "",
+        'nickname'      => ! empty( $_POST['reg_nickname'] ) ? sanitize_text_field( wp_unslash( $_POST['reg_nickname'] ) ) : "",
+        'description' => !empty( $_POST['reg_bio'] ) ? sanitize_text_field( wp_unslash( $_POST['reg_bio'] ) ) : "",
     );
-    $messages = ! empty( $_POST['messages'] ) ? $_POST['messages'] : "";
+    $messages = ! empty( $_POST['messages'] ) ? wp_unslash( $_POST['messages'] ) : ""; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- JSON payload; sanitize_text_field() would corrupt the JSON structure. Decoded below, and every value is escaped at the point of output (esc_html()).
     if ( $messages ) {
-        $messages = json_decode( stripslashes( $messages ), true );
+        $messages = json_decode( $messages, true );
     }
 
     if ( htmega_validation_data( $user_data ) !== true ) {
@@ -531,10 +534,10 @@ function htmega_ajax_register() {
         $register_user = wp_insert_user( $user_data );
 
         if ( is_wp_error( $register_user ) ){
-            $server_error_msg = !empty( $messages['server_error_msg'] ) ? esc_html( $messages['server_error_msg'] ) : esc_html__('Something is wrong please check again!', 'htmega-addons');
+            $server_error_msg = !empty( $messages['server_error_msg'] ) ? esc_html( $messages['server_error_msg'] ) : esc_html__('Something is wrong please check again!', 'ht-mega-for-elementor');
             echo wp_json_encode( [ 'registerauth' =>false, 'message'=> $server_error_msg ] );
         } else {
-            $success_msg = !empty( $messages['success_msg'] ) ? esc_html( $messages['success_msg'] ) : esc_html__('Successfully Register', 'htmega-addons');
+            $success_msg = !empty( $messages['success_msg'] ) ? esc_html( $messages['success_msg'] ) : esc_html__('Successfully Register', 'ht-mega-for-elementor');
             echo wp_json_encode( [ 'registerauth' =>true, 'message'=> $success_msg ] );
         }
     }
@@ -547,26 +550,26 @@ function htmega_validation_data( $user_data = null, $messages = null ){
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended
     if( empty( $user_data['user_login'] ) || empty( $_POST['reg_email'] ) || empty( $_POST['reg_password'] ) ){ // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
-        $required_msg = !empty( $messages['required_msg'] ) ? esc_html( $messages['required_msg'] ) : esc_html__('Username, Password and E-Mail are required', 'htmega-addons');
+        $required_msg = !empty( $messages['required_msg'] ) ? esc_html( $messages['required_msg'] ) : esc_html__('Username, Password and E-Mail are required', 'ht-mega-for-elementor');
         return wp_json_encode( [ 'registerauth' =>false, 'message'=> $required_msg ] );
     }
     if( !empty( $user_data['user_login'] ) ){
 
         if ( 4 > strlen( $user_data['user_login'] ) ) {
-            $user_length_msg = !empty( $messages['user_length_msg'] ) ? esc_html( $messages['user_length_msg'] ) : esc_html__('Username too short. At least 4 characters is required', 'htmega-addons');
+            $user_length_msg = !empty( $messages['user_length_msg'] ) ? esc_html( $messages['user_length_msg'] ) : esc_html__('Username too short. At least 4 characters is required', 'ht-mega-for-elementor');
 
             return wp_json_encode( [ 'registerauth' =>false, 'message'=> $user_length_msg ] );
         }
 
         if ( username_exists( $user_data['user_login'] ) ){
-            $user_exists_msg = !empty( $messages['user_exists_msg'] ) ? esc_html( $messages['user_exists_msg'] ) : esc_html__('Sorry, that username already exists!', 'htmega-addons');
+            $user_exists_msg = !empty( $messages['user_exists_msg'] ) ? esc_html( $messages['user_exists_msg'] ) : esc_html__('Sorry, that username already exists!', 'ht-mega-for-elementor');
             
             return wp_json_encode( [ 'registerauth' =>false, 'message'=> $user_exists_msg ] );
         }
 
         if ( !validate_username( $user_data['user_login'] ) ) {
 
-            $user_invalid_msg = !empty( $messages['user_invalid_msg'] ) ? esc_html( $messages['user_invalid_msg'] ) : esc_html__('Sorry, the username you entered is not valid', 'htmega-addons');
+            $user_invalid_msg = !empty( $messages['user_invalid_msg'] ) ? esc_html( $messages['user_invalid_msg'] ) : esc_html__('Sorry, the username you entered is not valid', 'ht-mega-for-elementor');
             
             return wp_json_encode( [ 'registerauth' =>false, 'message'=> $user_invalid_msg ] );
         }
@@ -575,7 +578,7 @@ function htmega_validation_data( $user_data = null, $messages = null ){
     if( !empty( $user_data['user_pass'] ) ){
         if ( 5 > strlen( $user_data['user_pass'] ) ) {
 
-            $password_length_msg = !empty( $messages['password_length_msg'] ) ? esc_html( $messages['password_length_msg'] ) : esc_html__('Password length must be greater than 5', 'htmega-addons');
+            $password_length_msg = !empty( $messages['password_length_msg'] ) ? esc_html( $messages['password_length_msg'] ) : esc_html__('Password length must be greater than 5', 'ht-mega-for-elementor');
             
             return wp_json_encode( [ 'registerauth' =>false, 'message'=> $password_length_msg ] );
         }
@@ -583,18 +586,18 @@ function htmega_validation_data( $user_data = null, $messages = null ){
 
     if ( !is_email( $user_data['user_email'] ) ) {
 
-        $invalid_email_msg = !empty( $messages['invalid_email_msg'] ) ? esc_html( $messages['invalid_email_msg'] ) : esc_html__('Email is not valid', 'htmega-addons');
+        $invalid_email_msg = !empty( $messages['invalid_email_msg'] ) ? esc_html( $messages['invalid_email_msg'] ) : esc_html__('Email is not valid', 'ht-mega-for-elementor');
         
         return wp_json_encode( [ 'registerauth' =>false, 'message'=> $invalid_email_msg ] );
     }
     if ( email_exists( $user_data['user_email'] ) ) {
-        $email_exists_msg = !empty( $messages['email_exists_msg'] ) ? esc_html( $messages['email_exists_msg'] ) : esc_html__('Email Already in Use', 'htmega-addons');
+        $email_exists_msg = !empty( $messages['email_exists_msg'] ) ? esc_html( $messages['email_exists_msg'] ) : esc_html__('Email Already in Use', 'ht-mega-for-elementor');
         
         return wp_json_encode( [ 'registerauth' =>false, 'message'=> $email_exists_msg ] );
     }
     if( !empty( $user_data['user_url'] ) ){
         if ( !filter_var( $user_data['user_url'], FILTER_VALIDATE_URL ) ) {
-            $invalid_url_msg = !empty( $messages['invalid_url_msg'] ) ? esc_html( $messages['invalid_url_msg'] ) : esc_html__('Website is not a valid URL', 'htmega-addons');
+            $invalid_url_msg = !empty( $messages['invalid_url_msg'] ) ? esc_html( $messages['invalid_url_msg'] ) : esc_html__('Website is not a valid URL', 'ht-mega-for-elementor');
             
             return wp_json_encode( [ 'registerauth' =>false, 'message'=> $invalid_url_msg ] );
         }
@@ -610,7 +613,7 @@ if( !function_exists('htmega_redirect_404') ){
     function htmega_redirect_404() {
         $errorpage_id = htmega_get_option( 'errorpage','htmega_general_tabs' );
         if ( is_404() && !empty ( $errorpage_id ) ) {
-            wp_redirect( esc_url( get_page_link( $errorpage_id ) ) ); die();
+            wp_safe_redirect( esc_url( get_page_link( $errorpage_id ) ) ); die();
         }
     }
     add_action('template_redirect','htmega_redirect_404');
@@ -863,7 +866,7 @@ if ( ! function_exists( 'htmega_get_allowed_tag_desc' ) ) {
         }
 
         $tags_string = '<' . implode('>,<', array_keys(htmega_get_html_allowed_tags( $tag_type ))) . '>';
-        return sprintf( /* translators: %s: List of supported HTML tags */ __('This input field supports the following HTML tags: %1$s', 'htmega-addons'), '<code>' . esc_html($tags_string) . '</code>');
+        return sprintf( /* translators: %s: List of supported HTML tags */ __('This input field supports the following HTML tags: %1$s', 'ht-mega-for-elementor'), '<code>' . esc_html($tags_string) . '</code>');
     }
 }
 
@@ -900,7 +903,7 @@ if (!function_exists('htmega_escape_tags')) {
 if( !function_exists('htmega_get_page_list') ){
 function htmega_get_page_list( $post_type = 'page' ){
     $options = array();
-    $options['0'] = __('Select','htmega-addons');
+    $options['0'] = __('Select','ht-mega-for-elementor');
     $perpage = -1;
     $all_post = array( 'posts_per_page' => $perpage, 'post_type'=> $post_type );
     $post_terms = get_posts( $all_post );
@@ -924,7 +927,7 @@ if( !function_exists('htmega_instagram_feed_list') ){
         $table_name     =  esc_sql( $wpdb->prefix . 'sbi_sources' );
         $feeds_sql      = "SELECT username FROM $table_name WHERE %d";
         $feeds_query    = $wpdb->prepare( $feeds_sql, 1 ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
-        $get_feeds      = $wpdb->get_results( $feeds_query, ARRAY_A ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+        $get_feeds      = $wpdb->get_results( $feeds_query, ARRAY_A ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- reads a third-party plugin's custom table (Smash Balloon "sbi_sources"), no WP_Query/get_posts equivalent exists for arbitrary custom tables; only called to populate an admin-editor dropdown, not a hot frontend path, so caching isn't worth the added complexity.
         $all_feeds      = array();
         if( !empty( $get_feeds ) ){
             foreach($get_feeds as $value){
@@ -941,6 +944,7 @@ if( !function_exists('htmega_instagram_feed_list') ){
  * return Array
 */
 if( !function_exists('all_object_taxonomie_show_catagory') ){
+    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- shared between this plugin and htmega-pro (11+ call sites across both), already guarded by function_exists() which prevents the redeclaration collision this sniff is meant to guard against. Renaming would require perfectly-synced updates across both plugins for a naming-only warning, not worth the coordinated-release risk.
     function all_object_taxonomie_show_catagory($taxonomieName){
 
         $allTaxonomie =  get_object_taxonomies($taxonomieName);
@@ -992,7 +996,7 @@ if( !function_exists('htmega_get_authors_list') ){
  */
 if (!function_exists('htmega_get_elementor_section_icon')) {
 	function htmega_get_elementor_section_icon() {
-		return "<img class='ht-badge-icon' src='".HTMEGA_ADDONS_PL_URL."admin/assets/images/menu-icon-collerd.png' alt='".esc_attr('HT','htmega-addons')."'>";
+		return "<img class='ht-badge-icon' src='".HTMEGA_ADDONS_PL_URL."admin/assets/images/menu-icon-collerd.png' alt='".esc_attr('HT','ht-mega-for-elementor')."'>";
 	}
 }
 
@@ -1012,7 +1016,7 @@ function htmega_pro_notice( $repeater,$condition_key, $array_value, $type ){
         [
             'type' => $type,
             'raw' => sprintf(/* translators: 1: Opening strong and anchor tags for Pro Version link, 2: Closing anchor and strong tags */
-                __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'htmega-addons'),
+                __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'ht-mega-for-elementor'),
                 '<strong><a href="https://wphtmega.com/pricing/" target="_blank">',
                 '</a></strong>'),
             'content_classes' => 'htmega-addons-notice',
@@ -1357,7 +1361,7 @@ if ( !function_exists('htmega_get_template_content_by_id') ) {
         if ( $template_post && $template_post->post_status === 'publish' ) {
             $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $template_id );
         } else {
-            $content = esc_html__( 'Template not published or does not exist', 'htmega-addons' );
+            $content = esc_html__( 'Template not published or does not exist', 'ht-mega-for-elementor' );
         }
 
         $template_cache[ $cache_key ] = $content;
@@ -1943,8 +1947,35 @@ function htmega_plugin_missing_alert($plugin) {
             printf(
                 '<div %s>%s</div>',
                 'style="margin: 1rem;padding: 1rem 1.25rem;border-left: 5px solid #ffe58f;color: rgb(0 0 0 / 88%);background-color: #fffbe6;"',
-                $plugin . __(' is missing! Please install and activate ', 'htmega-addons') . $plugin . '.'
+                esc_html( $plugin . __(' is missing! Please install and activate ', 'ht-mega-for-elementor') . $plugin . '.' )
             );
         }
     }
+}
+
+/**
+ * Show an admin notice when HT Mega Pro is active but a pro-only
+ * extension file it should ship is missing (stale/outdated pro plugin
+ * version) — so a sitewide-toggle feature doesn't just silently stop
+ * working after a free-plugin update with no explanation.
+ *
+ * @param string $feature_label Human-readable feature name for the notice.
+ * @return void
+ */
+if ( ! function_exists( 'htmega_notify_missing_pro_extension_file' ) ) {
+function htmega_notify_missing_pro_extension_file( $feature_label ) {
+    add_action( 'admin_notices', function() use ( $feature_label ) {
+        if ( ! current_user_can( 'activate_plugins' ) ) {
+            return;
+        }
+        printf(
+            '<div class="notice notice-warning"><p>%s</p></div>',
+            sprintf(
+                /* translators: %s: feature name, e.g. "Reading Progress Bar" */
+                esc_html__( 'HT Mega: please update HT Mega Pro to keep the %s sitewide setting working.', 'ht-mega-for-elementor' ),
+                esc_html( $feature_label )
+            )
+        );
+    } );
+}
 }

@@ -45,8 +45,8 @@ class HTmega_Plugin_Deactivation_Feedback {
             return;
         }
 
-        $reason = sanitize_text_field($_POST['reason']);
-        $message = sanitize_textarea_field($_POST['message']);
+        $reason  = isset( $_POST['reason'] ) ? sanitize_text_field( wp_unslash( $_POST['reason'] ) ) : '';
+        $message = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
 
         $data = array_merge(
             [
@@ -153,7 +153,7 @@ class HTmega_Plugin_Deactivation_Feedback {
     private function get_server_info() {
         global $wpdb;
 
-        $software = ( isset ( $_SERVER['SERVER_SOFTWARE'] ) && !empty ( $_SERVER['SERVER_SOFTWARE'] ) ) ? $_SERVER['SERVER_SOFTWARE'] : '';
+        $software = ( isset ( $_SERVER['SERVER_SOFTWARE'] ) && !empty ( $_SERVER['SERVER_SOFTWARE'] ) ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : '';
         $php_version = function_exists ( 'phpversion' ) ? phpversion () : '';
         $mysql_version = method_exists ( $wpdb, 'db_version' ) ? $wpdb->db_version () : '';
 
@@ -368,24 +368,24 @@ class HTmega_Plugin_Deactivation_Feedback {
             </button>
             <div class="htm-header-content">
                 <div class="htm-header-icon">
-                    <img src="<?php echo esc_url( HTMEGA_ADDONS_PL_URL . 'admin/assets/images/logo.png' ); ?>" alt="<?php esc_attr_e('HT Mega Logo', 'htmega-addons'); ?>">
+                    <img src="<?php echo esc_url( HTMEGA_ADDONS_PL_URL . 'admin/assets/images/logo.png' ); ?>" alt="<?php esc_attr_e('HT Mega Logo', 'ht-mega-for-elementor'); ?>">
                 </div>
                 <div class="htm-header-text">
-                    <h3><?php esc_html_e("We're Sorry to See You Go!", 'htmega-addons') ?></h3>
-                    <p><?php esc_html_e('Your feedback helps us improve HT Mega for everyone.', 'htmega-addons') ?></p>
+                    <h3><?php esc_html_e("We're Sorry to See You Go!", 'ht-mega-for-elementor') ?></h3>
+                    <p><?php esc_html_e('Your feedback helps us improve HT Mega for everyone.', 'ht-mega-for-elementor') ?></p>
                 </div>
             </div>
         </div>
 
         <!-- Body -->
         <div class="htm-deactivate-body">
-            <p class="htm-body-title"><?php esc_html_e('Please share why you\'re deactivating HT Mega:', 'htmega-addons') ?></p>
+            <p class="htm-body-title"><?php esc_html_e('Please share why you\'re deactivating HT Mega:', 'ht-mega-for-elementor') ?></p>
 
             <form id="htmega-deactivation-feedback-form">
                 <div class="htm-reasons-list">
                     <!-- Reason 1: Temporary -->
                     <div class="htm-reason-item">
-                        <input type="radio" name="reason" id="htm_reason_temporary" data-id="" value="<?php esc_attr_e("It's a temporary deactivation", 'htmega-addons') ?>">
+                        <input type="radio" name="reason" id="htm_reason_temporary" data-id="" value="<?php esc_attr_e("It's a temporary deactivation", 'ht-mega-for-elementor') ?>">
                         <label for="htm_reason_temporary" class="htm-reason-label">
                             <span class="htm-reason-radio"></span>
                             <span class="htm-reason-icon">
@@ -395,14 +395,14 @@ class HTmega_Plugin_Deactivation_Feedback {
                                 </svg>
                             </span>
                             <span class="htm-reason-text">
-                                <span><?php esc_html_e("It's a temporary deactivation", 'htmega-addons') ?></span>
+                                <span><?php esc_html_e("It's a temporary deactivation", 'ht-mega-for-elementor') ?></span>
                             </span>
                         </label>
                     </div>
 
                     <!-- Reason 2: No longer need -->
                     <div class="htm-reason-item">
-                        <input type="radio" name="reason" id="htm_reason_no_need" data-id="" value="<?php esc_attr_e('I no longer need the plugin', 'htmega-addons') ?>">
+                        <input type="radio" name="reason" id="htm_reason_no_need" data-id="" value="<?php esc_attr_e('I no longer need the plugin', 'ht-mega-for-elementor') ?>">
                         <label for="htm_reason_no_need" class="htm-reason-label">
                             <span class="htm-reason-radio"></span>
                             <span class="htm-reason-icon">
@@ -411,14 +411,14 @@ class HTmega_Plugin_Deactivation_Feedback {
                                 </svg>
                             </span>
                             <span class="htm-reason-text">
-                                <span><?php esc_html_e('I no longer need the plugin', 'htmega-addons') ?></span>
+                                <span><?php esc_html_e('I no longer need the plugin', 'ht-mega-for-elementor') ?></span>
                             </span>
                         </label>
                     </div>
 
                     <!-- Reason 3: Found better -->
                     <div class="htm-reason-item">
-                        <input type="radio" name="reason" id="htm_reason_better" data-id="found_better" value="<?php esc_attr_e('I found a better plugin', 'htmega-addons') ?>">
+                        <input type="radio" name="reason" id="htm_reason_better" data-id="found_better" value="<?php esc_attr_e('I found a better plugin', 'ht-mega-for-elementor') ?>">
                         <label for="htm_reason_better" class="htm-reason-label">
                             <span class="htm-reason-radio"></span>
                             <span class="htm-reason-icon">
@@ -428,17 +428,17 @@ class HTmega_Plugin_Deactivation_Feedback {
                                 </svg>
                             </span>
                             <span class="htm-reason-text">
-                                <span><?php esc_html_e('I found a better plugin', 'htmega-addons') ?></span>
+                                <span><?php esc_html_e('I found a better plugin', 'ht-mega-for-elementor') ?></span>
                             </span>
                         </label>
                     </div>
                     <div id="htmega-found_better-reason-text" class="htm-additional-input htmega-deactivation-reason-input">
-                        <textarea name="found_better_reason" placeholder="<?php esc_attr_e('Which plugin are you switching to? We\'d love to know...', 'htmega-addons') ?>"></textarea>
+                        <textarea name="found_better_reason" placeholder="<?php esc_attr_e('Which plugin are you switching to? We\'d love to know...', 'ht-mega-for-elementor') ?>"></textarea>
                     </div>
 
                     <!-- Reason 4: Not working -->
                     <div class="htm-reason-item">
-                        <input type="radio" name="reason" id="htm_reason_not_working" data-id="stopped_working" value="<?php esc_attr_e('The plugin suddenly stopped working', 'htmega-addons') ?>">
+                        <input type="radio" name="reason" id="htm_reason_not_working" data-id="stopped_working" value="<?php esc_attr_e('The plugin suddenly stopped working', 'ht-mega-for-elementor') ?>">
                         <label for="htm_reason_not_working" class="htm-reason-label">
                             <span class="htm-reason-radio"></span>
                             <span class="htm-reason-icon">
@@ -449,17 +449,17 @@ class HTmega_Plugin_Deactivation_Feedback {
                                 </svg>
                             </span>
                             <span class="htm-reason-text">
-                                <span><?php esc_html_e('The plugin suddenly stopped working', 'htmega-addons') ?></span>
+                                <span><?php esc_html_e('The plugin suddenly stopped working', 'ht-mega-for-elementor') ?></span>
                             </span>
                         </label>
                     </div>
                     <div id="htmega-stopped_working-reason-text" class="htm-additional-input htmega-deactivation-reason-input">
-                        <textarea name="stopped_working_reason" placeholder="<?php esc_attr_e('Please describe the issue you\'re experiencing...', 'htmega-addons') ?>"></textarea>
+                        <textarea name="stopped_working_reason" placeholder="<?php esc_attr_e('Please describe the issue you\'re experiencing...', 'ht-mega-for-elementor') ?>"></textarea>
                     </div>
 
                     <!-- Reason 5: Bug -->
                     <div class="htm-reason-item">
-                        <input type="radio" name="reason" id="htm_reason_bug" data-id="found_bug" value="<?php esc_attr_e('I encountered an error or bug', 'htmega-addons') ?>">
+                        <input type="radio" name="reason" id="htm_reason_bug" data-id="found_bug" value="<?php esc_attr_e('I encountered an error or bug', 'ht-mega-for-elementor') ?>">
                         <label for="htm_reason_bug" class="htm-reason-label">
                             <span class="htm-reason-radio"></span>
                             <span class="htm-reason-icon">
@@ -468,17 +468,17 @@ class HTmega_Plugin_Deactivation_Feedback {
                                 </svg>
                             </span>
                             <span class="htm-reason-text">
-                                <span><?php esc_html_e('I encountered an error or bug', 'htmega-addons') ?></span>
+                                <span><?php esc_html_e('I encountered an error or bug', 'ht-mega-for-elementor') ?></span>
                             </span>
                         </label>
                     </div>
                     <div id="htmega-found_bug-reason-text" class="htm-additional-input htmega-deactivation-reason-input">
-                        <textarea name="found_bug_reason" placeholder="<?php esc_attr_e('Please describe the error/bug. This will help us fix it...', 'htmega-addons') ?>"></textarea>
+                        <textarea name="found_bug_reason" placeholder="<?php esc_attr_e('Please describe the error/bug. This will help us fix it...', 'ht-mega-for-elementor') ?>"></textarea>
                     </div>
 
                     <!-- Reason 6: Other -->
                     <div class="htm-reason-item">
-                        <input type="radio" name="reason" id="htm_reason_other" data-id="other" value="<?php esc_attr_e('Other', 'htmega-addons') ?>">
+                        <input type="radio" name="reason" id="htm_reason_other" data-id="other" value="<?php esc_attr_e('Other', 'ht-mega-for-elementor') ?>">
                         <label for="htm_reason_other" class="htm-reason-label">
                             <span class="htm-reason-radio"></span>
                             <span class="htm-reason-icon">
@@ -487,20 +487,20 @@ class HTmega_Plugin_Deactivation_Feedback {
                                 </svg>
                             </span>
                             <span class="htm-reason-text">
-                                <span><?php esc_html_e('Other', 'htmega-addons') ?></span>
+                                <span><?php esc_html_e('Other', 'ht-mega-for-elementor') ?></span>
                             </span>
                         </label>
                     </div>
                     <div id="htmega-other-reason-text" class="htm-additional-input htmega-deactivation-reason-input">
-                        <textarea name="other_reason" placeholder="<?php esc_attr_e('Please share the reason...', 'htmega-addons') ?>"></textarea>
+                        <textarea name="other_reason" placeholder="<?php esc_attr_e('Please share the reason...', 'ht-mega-for-elementor') ?>"></textarea>
                     </div>
                 </div>
 
                 <!-- Footer -->
                 <div class="htm-deactivate-footer">
-                    <a href="#" class="htm-btn htm-btn-skip htmega-skip-feedback"><?php esc_html_e('Skip & Deactivate', 'htmega-addons') ?></a>
+                    <a href="#" class="htm-btn htm-btn-skip htmega-skip-feedback"><?php esc_html_e('Skip & Deactivate', 'ht-mega-for-elementor') ?></a>
                     <button type="submit" class="htm-btn htm-btn-submit">
-                        <span><?php esc_html_e('Submit & Deactivate', 'htmega-addons') ?></span>
+                        <span><?php esc_html_e('Submit & Deactivate', 'ht-mega-for-elementor') ?></span>
                     </button>
                 </div>
             </form>
@@ -562,7 +562,7 @@ class HTmega_Plugin_Deactivation_Feedback {
             const $buttonText = $submitButton.find('span');
             const originalText = $buttonText.text();
 
-            $buttonText.text('<?php esc_html_e('Submitting...', 'htmega-addons') ?>');
+            $buttonText.text('<?php esc_html_e('Submitting...', 'ht-mega-for-elementor') ?>');
             $submitButton.prop('disabled', true);
 
             const reason = $('input[name="reason"]:checked').val() || 'No reason selected';

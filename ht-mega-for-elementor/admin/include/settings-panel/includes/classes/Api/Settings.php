@@ -1,6 +1,8 @@
 <?php
 namespace HTMegaOpt\Api;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 use WP_REST_Controller;
 use HTMegaOpt\SanitizeTrail\Sanitize_Trait;
 
@@ -208,6 +210,12 @@ class Settings extends WP_REST_Controller {
             $claude_model = isset($data_to_save['htmega_claude_model']) ? $data_to_save['htmega_claude_model'] : '';
             $google_api_key = isset($data_to_save['htmega_google_api_key']) ? $data_to_save['htmega_google_api_key'] : '';
             $google_model = isset($data_to_save['htmega_google_model']) ? $data_to_save['htmega_google_model'] : '';
+            $deepseek_api_key = isset($data_to_save['htmega_deepseek_api_key']) ? $data_to_save['htmega_deepseek_api_key'] : '';
+            $deepseek_model = isset($data_to_save['htmega_deepseek_model']) ? $data_to_save['htmega_deepseek_model'] : '';
+            $kimi_api_key = isset($data_to_save['htmega_kimi_api_key']) ? $data_to_save['htmega_kimi_api_key'] : '';
+            $kimi_model = isset($data_to_save['htmega_kimi_model']) ? $data_to_save['htmega_kimi_model'] : '';
+            $zai_api_key = isset($data_to_save['htmega_zai_api_key']) ? $data_to_save['htmega_zai_api_key'] : '';
+            $zai_model = isset($data_to_save['htmega_zai_model']) ? $data_to_save['htmega_zai_model'] : '';
 
             if($ai_enable == 'on' && $ai_engine == 'openai'){
                 $test_connection = $this->test_connection($ai_engine, $openai_api_key, $openai_model);
@@ -238,6 +246,33 @@ class Settings extends WP_REST_Controller {
                 if($test_connection !== true) {
                     return new \WP_REST_Response([
                         'message' => is_string($test_connection) ? $test_connection : 'Invalid Google API key or connection failed',
+                        'status' => 'error'
+                    ], 401);
+                }
+            }
+            if($ai_enable == 'on' && $ai_engine == 'deepseek'){
+                $test_connection = $this->test_connection($ai_engine, $deepseek_api_key, $deepseek_model);
+                if($test_connection !== true) {
+                    return new \WP_REST_Response([
+                        'message' => is_string($test_connection) ? $test_connection : 'Invalid DeepSeek API key or connection failed',
+                        'status' => 'error'
+                    ], 401);
+                }
+            }
+            if($ai_enable == 'on' && $ai_engine == 'kimi'){
+                $test_connection = $this->test_connection($ai_engine, $kimi_api_key, $kimi_model);
+                if($test_connection !== true) {
+                    return new \WP_REST_Response([
+                        'message' => is_string($test_connection) ? $test_connection : 'Invalid Kimi API key or connection failed',
+                        'status' => 'error'
+                    ], 401);
+                }
+            }
+            if($ai_enable == 'on' && $ai_engine == 'zai'){
+                $test_connection = $this->test_connection($ai_engine, $zai_api_key, $zai_model);
+                if($test_connection !== true) {
+                    return new \WP_REST_Response([
+                        'message' => is_string($test_connection) ? $test_connection : 'Invalid Z.ai API key or connection failed',
                         'status' => 'error'
                     ], 401);
                 }
@@ -280,6 +315,12 @@ class Settings extends WP_REST_Controller {
                     return $ai_instance->validate_claude_key($api_key, $model);
                 case 'google':
                     return $ai_instance->validate_google_key($api_key, $model);
+                case 'deepseek':
+                    return $ai_instance->validate_deepseek_key($api_key, $model);
+                case 'kimi':
+                    return $ai_instance->validate_kimi_key($api_key, $model);
+                case 'zai':
+                    return $ai_instance->validate_zai_key($api_key, $model);
                 default:
                     return 'Invalid AI engine specified';
             }

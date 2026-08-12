@@ -1,5 +1,8 @@
 <?php
 namespace HTMegaOpt\Admin;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * HTMega Onboarding Class
  */
@@ -50,9 +53,14 @@ class Onboarding {
         // Initialize steps
         $this->steps = $this->get_steps();
         // Set current step
-        if (isset($_GET['step']) && array_key_exists($_GET['step'], $this->steps)) {
-            $this->current_step = sanitize_text_field($_GET['step']);
+        // phpcs:disable WordPress.Security.NonceVerification.Recommended -- read-only: only selects which onboarding step label is tracked internally for display; no data is written by this code path.
+        if (isset($_GET['step'])) {
+            $requested_step = sanitize_text_field( wp_unslash( $_GET['step'] ) );
+            if (array_key_exists($requested_step, $this->steps)) {
+                $this->current_step = $requested_step;
+            }
         }
+        // phpcs:enable WordPress.Security.NonceVerification.Recommended
     }
 
     /**
@@ -60,12 +68,12 @@ class Onboarding {
      */
     private function get_steps() {
         return array(
-            'welcome'   => esc_html__('Welcome', 'htmega-addons'),
-            'elements'  => esc_html__('Elements', 'htmega-addons'),
-            'modules'   => esc_html__('Modules', 'htmega-addons'),
-            'gopro'      => esc_html__('Go Pro', 'htmega-addons'),
-            'templates' => esc_html__('Templates', 'htmega-addons'),
-            'finalize' => esc_html__('Finalize', 'htmega-addons'),
+            'welcome'   => esc_html__('Welcome', 'ht-mega-for-elementor'),
+            'elements'  => esc_html__('Elements', 'ht-mega-for-elementor'),
+            'modules'   => esc_html__('Modules', 'ht-mega-for-elementor'),
+            'gopro'      => esc_html__('Go Pro', 'ht-mega-for-elementor'),
+            'templates' => esc_html__('Templates', 'ht-mega-for-elementor'),
+            'finalize' => esc_html__('Finalize', 'ht-mega-for-elementor'),
         );
     }
 
@@ -150,16 +158,16 @@ class Onboarding {
      */
     public function handle_step_ajax() {
         // Disable error output
-        @error_reporting(0);
-        @ini_set('display_errors', 0);
+        @error_reporting(0); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.prevent_path_disclosure_error_reporting -- disables (not enables) error display for this AJAX handler only, to stop a stray notice/warning from an unrelated plugin/theme corrupting the JSON response body.
+        @ini_set('display_errors', 0); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged -- same reasoning as above; scoped to this request only, restores nothing globally.
 
         // Clean any existing output
         while (ob_get_level()) {
             ob_end_clean();
         }
         try {
-            // Verify nonce
-            if (!isset($_POST['security']) || !wp_verify_nonce($_POST['security'], 'htmegaopt_verifynonce')) {
+            // Verify nonce (this IS the nonce check itself; value is only passed to wp_verify_nonce(), never stored/output, so unslash + sanitize is sufficient here).
+            if (!isset($_POST['security']) || !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['security'] ) ), 'htmegaopt_verifynonce')) {
                 throw new Exception('Invalid security token');
             }
 
@@ -169,7 +177,7 @@ class Onboarding {
             }
 
             // Get and validate step
-            $step = isset($_POST['step']) ? sanitize_text_field($_POST['step']) : 'welcome';
+            $step = isset($_POST['step']) ? sanitize_text_field( wp_unslash( $_POST['step'] ) ) : 'welcome';
             if (!in_array($step, array('welcome', 'elements','modules', 'gopro', 'templates', 'finalize', 'congrats','skip'))) {
                 throw new Exception('Invalid step');
             }

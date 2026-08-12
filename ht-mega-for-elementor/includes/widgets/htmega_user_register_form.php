@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'User Register Form', 'htmega-addons' );
+        return __( 'User Register Form', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -40,23 +40,23 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'user_register_form_content',
             [
-                'label' => __( 'Register Form', 'htmega-addons' ),
+                'label' => __( 'Register Form', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'register_form_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
-                        '6'   => __( 'Style Six', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6'   => __( 'Style Six', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );        
@@ -64,7 +64,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'htmega_register_heading',
                 [
-                    'label' => __( 'Register Heading', 'htmega-addons' ),
+                    'label' => __( 'Register Heading', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -73,10 +73,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_register_heading',
                 [
-                    'label' => __( 'Show Heading And Content', 'htmega-addons' ),
+                    'label' => __( 'Show Heading And Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -85,11 +85,11 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_heading_title',
                 [
-                    'label' => __( 'Register Heading', 'htmega-addons' ),
+                    'label' => __( 'Register Heading', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => true,
-                    'default' => __( 'Hello!', 'htmega-addons' ),
-                    'placeholder' => __( 'Hello!', 'htmega-addons' ),
+                    'default' => __( 'Hello!', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Hello!', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_register_heading'=>'yes',
                     ],
@@ -99,10 +99,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_heading_content',
                 [
-                    'label' => __( 'Register Content', 'htmega-addons' ),
+                    'label' => __( 'Register Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'default' => __( "Don’t Have account? You can create an account by using this form. ","htmega-addons" ),
-                    'placeholder' => __( "Don’t Have account? You can create an account by using this form. ","htmega-addons" ),
+                    'default' => __( "Don’t Have account? You can create an account by using this form. ","ht-mega-for-elementor" ),
+                    'placeholder' => __( "Don’t Have account? You can create an account by using this form. ","ht-mega-for-elementor" ),
                     'condition'=>[
                         'show_register_heading'=>'yes',
                     ],
@@ -112,11 +112,11 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_heading_url',
                 [
-                    'label' => __( 'Register Heading Login', 'htmega-addons' ),
+                    'label' => __( 'Register Heading Login', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'default' => 'no',
-                    'label_off' => __( 'No', 'htmega-addons' ),
-                    'label_on' => __( 'Yes', 'htmega-addons' ),
+                    'label_off' => __( 'No', 'ht-mega-for-elementor' ),
+                    'label_on' => __( 'Yes', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_register_heading'=>'yes',
                     ],
@@ -126,10 +126,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_heading_url_control',
                 [
-                    'label' => __( 'URL Content', 'htmega-addons' ),
+                    'label' => __( 'URL Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Sign in', 'htmega-addons' ),
-                    'placeholder' => __( 'Sign in', 'htmega-addons' ),
+                    'default' => __( 'Sign in', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Sign in', 'ht-mega-for-elementor' ),
                     'condition'     => [
                         'register_heading_url' => 'yes',
                     ],
@@ -139,7 +139,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'htmega_register_form',
                 [
-                    'label' => __( 'Register Form', 'htmega-addons' ),
+                    'label' => __( 'Register Form', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -148,10 +148,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_firstname',
                 [
-                    'label' => __( 'Show First Name', 'htmega-addons' ),
+                    'label' => __( 'Show First Name', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -160,10 +160,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_lastname',
                 [
-                    'label' => __( 'Show Last Name', 'htmega-addons' ),
+                    'label' => __( 'Show Last Name', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -172,10 +172,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_nickname',
                 [
-                    'label' => __( 'Nick Name', 'htmega-addons' ),
+                    'label' => __( 'Nick Name', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -184,10 +184,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_website',
                 [
-                    'label' => __( 'Website', 'htmega-addons' ),
+                    'label' => __( 'Website', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -196,10 +196,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_bio',
                 [
-                    'label' => __( 'Biographical Info', 'htmega-addons' ),
+                    'label' => __( 'Biographical Info', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -208,7 +208,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_terms',
                 [
-                    'label' => esc_html__( 'Terms and conditions', 'htmega-addons' ),
+                    'label' => esc_html__( 'Terms and conditions', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'default'=>'no',
                 ]
@@ -217,10 +217,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'terms_label',
                 [
-                    'label' => esc_html__( 'Terms and conditions Label', 'htmega-addons' ),
+                    'label' => esc_html__( 'Terms and conditions Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => esc_html__( 'Creating an account means you’re okay with our Terms of Service, Privacy Policy', 'htmega-addons' ),
-                    'placeholder' => esc_html__( 'Terms and conditions', 'htmega-addons' ),
+                    'default' => esc_html__( 'Creating an account means you’re okay with our Terms of Service, Privacy Policy', 'ht-mega-for-elementor' ),
+                    'placeholder' => esc_html__( 'Terms and conditions', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_terms'=>'yes',
                     ],
@@ -231,7 +231,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'select_terms_page',
                 [
-                    'label' => __( 'Terms & Condition Page', 'htmega-addons' ),
+                    'label' => __( 'Terms & Condition Page', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '0',
                     'options' => htmega_get_page_list(),
@@ -244,10 +244,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'terms_conditions_label_color_settings',
                 [
-                    'label' => __( 'Color Settings', 'htmega-addons' ),
+                    'label' => __( 'Color Settings', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::POPOVER_TOGGLE,
-                    'label_off' => __( 'None', 'htmega-addons' ),
-                    'label_on' => __( 'Custom', 'htmega-addons' ),
+                    'label_off' => __( 'None', 'ht-mega-for-elementor' ),
+                    'label_on' => __( 'Custom', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'condition'=>[
                         'show_terms'=>'yes',
@@ -260,7 +260,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'terms_conditions_label_text_color',
                 [
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-register-wrapper label.htmega-form-label'   => 'color: {{VALUE}};',
@@ -274,7 +274,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'terms_conditions_label_link_color',
                 [
-                    'label'     => __( 'Link Color', 'htmega-addons' ),
+                    'label'     => __( 'Link Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-register-wrapper label.htmega-form-label a.terms-conditions'   => 'color: {{VALUE}};',
@@ -288,7 +288,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'terms_conditions_label_link_hover_color',
                 [
-                    'label'     => __( 'Link Hover Color', 'htmega-addons' ),
+                    'label'     => __( 'Link Hover Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-register-wrapper label.htmega-form-label a.terms-conditions:hover'   => 'color: {{VALUE}};',
@@ -315,7 +315,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'terms_conditions_label_padding',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -330,19 +330,19 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'show_terms_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -359,10 +359,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_label',
                 [
-                    'label' => __( 'Show label', 'htmega-addons' ),
+                    'label' => __( 'Show label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'separator' => 'before',
@@ -375,10 +375,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_custom_label',
                 [
-                    'label' => __( 'Custom label', 'htmega-addons' ),
+                    'label' => __( 'Custom label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'separator' => 'before',
@@ -391,10 +391,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'username_label',
                 [
-                    'label' => __( 'Username Label', 'htmega-addons' ),
+                    'label' => __( 'Username Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Username', 'htmega-addons' ),
-                    'placeholder' => __( 'Username', 'htmega-addons' ),
+                    'default' => __( 'Username', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Username', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_label'=>'yes',
                         'show_custom_label'=>'yes',
@@ -405,10 +405,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'password_label',
                 [
-                    'label' => __( 'Password Label', 'htmega-addons' ),
+                    'label' => __( 'Password Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Password', 'htmega-addons' ),
-                    'placeholder' => __( 'Password', 'htmega-addons' ),
+                    'default' => __( 'Password', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Password', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_label'=>'yes',
                         'show_custom_label'=>'yes',
@@ -419,10 +419,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'email_label',
                 [
-                    'label' => __( 'Mail Label', 'htmega-addons' ),
+                    'label' => __( 'Mail Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Mail', 'htmega-addons' ),
-                    'placeholder' => __( 'Mail', 'htmega-addons' ),
+                    'default' => __( 'Mail', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Mail', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_label'=>'yes',
                         'show_custom_label'=>'yes',
@@ -433,10 +433,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'firstname_label',
                 [
-                    'label' => __( 'First Name Label', 'htmega-addons' ),
+                    'label' => __( 'First Name Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'First Name', 'htmega-addons' ),
-                    'placeholder' => __( 'First Name', 'htmega-addons' ),
+                    'default' => __( 'First Name', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'First Name', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_label'=>'yes',
                         'show_custom_label'=>'yes',
@@ -448,10 +448,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'lastname_label',
                 [
-                    'label' => __( 'Last Name Label', 'htmega-addons' ),
+                    'label' => __( 'Last Name Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Last Name', 'htmega-addons' ),
-                    'placeholder' => __( 'Last Name', 'htmega-addons' ),
+                    'default' => __( 'Last Name', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Last Name', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_label'=>'yes',
                         'show_custom_label'=>'yes',
@@ -463,10 +463,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'nickname_label',
                 [
-                    'label' => __( 'Nick Name Label', 'htmega-addons' ),
+                    'label' => __( 'Nick Name Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Nick Name', 'htmega-addons' ),
-                    'placeholder' => __( 'Nick Name', 'htmega-addons' ),
+                    'default' => __( 'Nick Name', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Nick Name', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_label'=>'yes',
                         'show_custom_label'=>'yes',
@@ -478,10 +478,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'website_label',
                 [
-                    'label' => __( 'Website Label', 'htmega-addons' ),
+                    'label' => __( 'Website Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Website', 'htmega-addons' ),
-                    'placeholder' => __( 'Website', 'htmega-addons' ),
+                    'default' => __( 'Website', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Website', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_label'=>'yes',
                         'show_custom_label'=>'yes',
@@ -493,10 +493,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'bio_label',
                 [
-                    'label' => __( 'Biographical Info Label', 'htmega-addons' ),
+                    'label' => __( 'Biographical Info Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Biographical', 'htmega-addons' ),
-                    'placeholder' => __( 'Biographical', 'htmega-addons' ),
+                    'default' => __( 'Biographical', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Biographical', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_label'=>'yes',
                         'show_custom_label'=>'yes',
@@ -508,10 +508,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'show_custom_placeholder',
                 [
-                    'label' => __( 'Custom Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Custom Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'separator' => 'before',
@@ -521,10 +521,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'username_placeholder_label',
                 [
-                    'label' => __( 'Username Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Username Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Username', 'htmega-addons' ),
-                    'placeholder' => __( 'Username', 'htmega-addons' ),
+                    'default' => __( 'Username', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Username', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_custom_placeholder'=>'yes',
                     ],
@@ -534,10 +534,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'password_placeholder_label',
                 [
-                    'label' => __( 'Password Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Password Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Password', 'htmega-addons' ),
-                    'placeholder' => __( 'Password', 'htmega-addons' ),
+                    'default' => __( 'Password', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Password', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_custom_placeholder'=>'yes',
                     ],
@@ -547,10 +547,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'email_placeholder_label',
                 [
-                    'label' => __( 'Mail Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Mail Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Mail', 'htmega-addons' ),
-                    'placeholder' => __( 'Mail', 'htmega-addons' ),
+                    'default' => __( 'Mail', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Mail', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_custom_placeholder'=>'yes',
                     ],
@@ -560,10 +560,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'firstname_placeholder_label',
                 [
-                    'label' => __( 'First Name Placeholder', 'htmega-addons' ),
+                    'label' => __( 'First Name Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'First Name', 'htmega-addons' ),
-                    'placeholder' => __( 'First Name', 'htmega-addons' ),
+                    'default' => __( 'First Name', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'First Name', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_custom_placeholder'=>'yes',
                         'show_firstname'=>'yes',
@@ -574,10 +574,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'lastname_placeholder_label',
                 [
-                    'label' => __( 'Last Name Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Last Name Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Last Name', 'htmega-addons' ),
-                    'placeholder' => __( 'Last Name', 'htmega-addons' ),
+                    'default' => __( 'Last Name', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Last Name', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_custom_placeholder'=>'yes',
                         'show_lastname'=>'yes',
@@ -588,10 +588,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'nickname_placeholder_label',
                 [
-                    'label' => __( 'Nick Name Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Nick Name Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Nick Name', 'htmega-addons' ),
-                    'placeholder' => __( 'Nick Name', 'htmega-addons' ),
+                    'default' => __( 'Nick Name', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Nick Name', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_custom_placeholder'=>'yes',
                         'show_nickname'=>'yes',
@@ -602,10 +602,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'website_placeholder_label',
                 [
-                    'label' => __( 'Website Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Website Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Website', 'htmega-addons' ),
-                    'placeholder' => __( 'Website', 'htmega-addons' ),
+                    'default' => __( 'Website', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Website', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_custom_placeholder'=>'yes',
                         'show_website'=>'yes',
@@ -616,10 +616,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'bio_placeholder_label',
                 [
-                    'label' => __( 'Biographical Placeholder', 'htmega-addons' ),
+                    'label' => __( 'Biographical Placeholder', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Bio', 'htmega-addons' ),
-                    'placeholder' => __( 'Bio', 'htmega-addons' ),
+                    'default' => __( 'Bio', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Bio', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'show_custom_placeholder'=>'yes',
                         'show_bio'=>'yes',
@@ -630,10 +630,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'submit_button_label',
                 [
-                    'label' => __( 'Submit Button label', 'htmega-addons' ),
+                    'label' => __( 'Submit Button label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'REGISTER', 'htmega-addons' ),
-                    'placeholder' => __( 'REGISTER', 'htmega-addons' ),
+                    'default' => __( 'REGISTER', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'REGISTER', 'ht-mega-for-elementor' ),
                     'separator' =>'before',
                 ]
             );
@@ -641,11 +641,11 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'redirect_page',
                 [
-                    'label' => __( 'Redirect page after register', 'htmega-addons' ),
+                    'label' => __( 'Redirect page after register', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'default' => 'no',
-                    'label_off' => __( 'No', 'htmega-addons' ),
-                    'label_on' => __( 'Yes', 'htmega-addons' ),
+                    'label_off' => __( 'No', 'ht-mega-for-elementor' ),
+                    'label_on' => __( 'Yes', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -666,21 +666,21 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'login_option_content',
                 [
-                    'label' => __( 'Or Login Text', 'htmega-addons' ),
+                    'label' => __( 'Or Login Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'default' => 'no',
-                    'label_off' => __( 'No', 'htmega-addons' ),
-                    'label_on' => __( 'Yes', 'htmega-addons' ),
+                    'label_off' => __( 'No', 'ht-mega-for-elementor' ),
+                    'label_on' => __( 'Yes', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'or_login_content_text',
                 [
-                    'label' => __( 'Or Login Content', 'htmega-addons' ),
+                    'label' => __( 'Or Login Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'or you can', 'htmega-addons' ),
-                    'placeholder' => __( 'or you can', 'htmega-addons' ),
+                    'default' => __( 'or you can', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'or you can', 'ht-mega-for-elementor' ),
                     'separator' =>'before',
                     'condition'     => [
                         'login_option_content' => 'yes',
@@ -691,11 +691,11 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'login_option_button',
                 [
-                    'label' => __( 'Login Button', 'htmega-addons' ),
+                    'label' => __( 'Login Button', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'default' => 'no',
-                    'label_off' => __( 'No', 'htmega-addons' ),
-                    'label_on' => __( 'Yes', 'htmega-addons' ),
+                    'label_off' => __( 'No', 'ht-mega-for-elementor' ),
+                    'label_on' => __( 'Yes', 'ht-mega-for-elementor' ),
                     'condition'     => [
                         'register_form_style!' => '3',
                     ],
@@ -705,11 +705,11 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'custom_login',
                 [
-                    'label'                    => __( 'Custom Login URL ', 'htmega-addons' ).' <i class="eicon-pro-icon"></i>',
+                    'label'                    => __( 'Custom Login URL ', 'ht-mega-for-elementor' ).' <i class="eicon-pro-icon"></i>',
                     'type'                     => Controls_Manager::SWITCHER,
                     'default'                  => 'no',
-                    'label_off'                => __( 'No', 'htmega-addons' ),
-                    'label_on'                 => __( 'Yes', 'htmega-addons' ),
+                    'label_off'                => __( 'No', 'ht-mega-for-elementor' ),
+                    'label_on'                 => __( 'Yes', 'ht-mega-for-elementor' ),
                     'return'                   => 'yes',
                     'condition'                => [
                         'login_option_button' => 'yes',
@@ -720,23 +720,23 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_buttons_align',
                 [
-                    'label' => __( 'Buttons Alignment', 'htmega-addons' ),
+                    'label' => __( 'Buttons Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -754,7 +754,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'validation_messages_section',
                 [
-                'label' => __( 'Errors and Success Messages ', 'htmega-addons' ).'<i class="eicon-pro-icon"></i>',
+                'label' => __( 'Errors and Success Messages ', 'ht-mega-for-elementor' ).'<i class="eicon-pro-icon"></i>',
             ]
         );
         $this->add_control(
@@ -762,7 +762,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             [
                 'type' => Controls_Manager::RAW_HTML,
                 'raw' => sprintf(/* translators: 1: Opening strong and anchor tags for Pro Version link, 2: Closing anchor and strong tags */
-                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'htmega-addons'),
+                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'ht-mega-for-elementor'),
                     '<strong><a href="https://wphtmega.com/pricing/" target="_blank">',
                     '</a></strong>'),
                 'content_classes' => 'htmega-addons-notice',
@@ -774,7 +774,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_style_section',
             [
-                'label' => __( 'Form Wrapper', 'htmega-addons' ),
+                'label' => __( 'Form Wrapper', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -783,7 +783,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_register_area_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-register-wrapper',
                 ]
@@ -792,7 +792,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_register_area_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-register-wrapper' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -804,7 +804,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'htmega_register_area_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-register-wrapper',
                 ]
             );
@@ -812,7 +812,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -825,7 +825,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -841,7 +841,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_heading_style',
             [
-                'label' => __( 'Register Heading', 'htmega-addons' ),
+                'label' => __( 'Register Heading', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_register_heading'=>'yes',
@@ -852,23 +852,23 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'register_heading_align',
             [
-                'label' => __( 'Alignment', 'htmega-addons' ),
+                'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'htmega-addons' ),
+                        'title' => __( 'Left', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'htmega-addons' ),
+                        'title' => __( 'Center', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'htmega-addons' ),
+                        'title' => __( 'Right', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-right',
                     ],
                     'justify' => [
-                        'title' => __( 'Justified', 'htmega-addons' ),
+                        'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-justify',
                     ],
                 ],
@@ -883,7 +883,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'register_form_text_color_padding',
             [
-                'label' => __( 'Padding', 'htmega-addons' ),
+                'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -895,7 +895,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_heading_style_heading',
             [
-                'label' => __( 'Heading Title Style', 'htmega-addons' ),
+                'label' => __( 'Heading Title Style', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition'=>[
@@ -918,7 +918,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_heading_color',
             [
-                'label'     => __( 'Header Color', 'htmega-addons' ),
+                'label'     => __( 'Header Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .user-register-header h2'   => 'color: {{VALUE}};',
@@ -932,7 +932,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'register_form_text_color_margin',
             [
-                'label' => __( 'Margin', 'htmega-addons' ),
+                'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -947,7 +947,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_heading_style_content',
             [
-                'label' => __( 'Header Content', 'htmega-addons' ),
+                'label' => __( 'Header Content', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition'=>[
@@ -970,7 +970,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_content_color',
             [
-                'label'     => __( 'Content Color', 'htmega-addons' ),
+                'label'     => __( 'Content Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .user-register-header p'   => 'color: {{VALUE}};',
@@ -984,7 +984,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'register_form_content_color_margin',
             [
-                'label' => __( 'Margin', 'htmega-addons' ),
+                'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -999,7 +999,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_content_link_color',
             [
-                'label'     => __( 'Link Color', 'htmega-addons' ),
+                'label'     => __( 'Link Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .user-register-header p a'   => 'color: {{VALUE}};',
@@ -1013,7 +1013,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_content_link_hover_color',
             [
-                'label'     => __( 'Link Hover Color', 'htmega-addons' ),
+                'label'     => __( 'Link Hover Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .user-register-header p a:hover'   => 'color: {{VALUE}};',
@@ -1029,7 +1029,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_style_input',
             [
-                'label' => __( 'Input', 'htmega-addons' ),
+                'label' => __( 'Input', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1037,7 +1037,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'input_form_area_padding',
                 [
-                    'label' => __( 'Input Area Padding', 'htmega-addons' ),
+                    'label' => __( 'Input Area Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1061,7 +1061,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_input_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1077,7 +1077,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_input_margin_three',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1093,7 +1093,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_input_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1105,7 +1105,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_input_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -1136,7 +1136,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_input_height_not_three',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -1167,7 +1167,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'input_color_border_heading',
                 [
-                    'label' => __( 'Colors and Border', 'htmega-addons' ),
+                    'label' => __( 'Colors and Border', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1179,13 +1179,13 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'input_normal',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'register_form_input_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input'   => 'color: {{VALUE}};',
@@ -1196,7 +1196,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_control(
                         'register_form_input_placeholder_color',
                         [
-                            'label'     => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label'     => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input[type*="text"]::-webkit-input-placeholder'  => 'color: {{VALUE}};',
@@ -1215,7 +1215,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'register_input_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper input',
                         ]
@@ -1224,7 +1224,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'register_input_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper input',
                             'separator' =>'before',
                         ]
@@ -1233,7 +1233,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_input_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1246,13 +1246,13 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'input_focus',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'register_form_input_text_color_focus',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input:focus'   => 'color: {{VALUE}};',
@@ -1263,7 +1263,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'register_input_background_focus',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper input:focus',
                         ]
@@ -1272,7 +1272,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'register_input_border_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper input:focus',
                             'separator' =>'before',
                         ]
@@ -1281,7 +1281,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_input_border_radius_focus',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1296,7 +1296,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_style_textarea',
             [
-                'label' => __( 'Textarea', 'htmega-addons' ),
+                'label' => __( 'Textarea', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'show_bio' =>'yes',
@@ -1315,7 +1315,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_textarea_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1328,7 +1328,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_textarea_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1340,7 +1340,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_textarea_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -1368,7 +1368,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'textarea_color_border_heading',
                 [
-                    'label' => __( 'Colors and Border', 'htmega-addons' ),
+                    'label' => __( 'Colors and Border', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1380,13 +1380,13 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'textarea_normal',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'register_form_textarea_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper textarea'   => 'color: {{VALUE}};',
@@ -1397,7 +1397,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_control(
                         'register_form_textarea_placeholder_color',
                         [
-                            'label'     => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label'     => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper textarea::-webkit-input-placeholder'  => 'color: {{VALUE}};',
@@ -1411,7 +1411,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'register_textarea_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper textarea',
                         ]
@@ -1420,7 +1420,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'register_textarea_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper textarea',
                             'separator' =>'before',
                         ]
@@ -1429,7 +1429,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_textarea_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper textarea' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1442,13 +1442,13 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'textarea_focus',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'textarea_text_color_focus',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper textarea:focus'   => 'color: {{VALUE}};',
@@ -1460,7 +1460,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'register_textarea_background_focus',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper textarea:focus',
                         ]
@@ -1469,7 +1469,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'register_textarea_border_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper textarea:focus',
                             'separator' =>'before',
                         ]
@@ -1478,7 +1478,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'textarea_border_radius_focus',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper textarea:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1493,7 +1493,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_input_box_style',
             [
-                'label' => __( 'Input Icon', 'htmega-addons' ),
+                'label' => __( 'Input Icon', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'register_form_style'=>'3',
@@ -1504,7 +1504,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_input_box_height',
             [
-                'label' => __( 'Height', 'htmega-addons' ),
+                'label' => __( 'Height', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1532,7 +1532,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_input_box_width',
             [
-                'label' => __( 'Width', 'htmega-addons' ),
+                'label' => __( 'Width', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1560,7 +1560,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'register_form_input_box_icon_size',
             [
-                'label' => __( 'Icon Size', 'htmega-addons' ),
+                'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1587,7 +1587,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'input_box_icon_color',
             [
-                'label'     => __( 'Text Color', 'htmega-addons' ),
+                'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-register-style-3 form .input_box i'   => 'color: {{VALUE}};',
@@ -1599,7 +1599,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'input_box_icon_background',
-                'label' => __( 'Background', 'htmega-addons' ),
+                'label' => __( 'Background', 'ht-mega-for-elementor' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htmega-register-style-3 form .input_box i',
             ]
@@ -1607,7 +1607,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'register_form_input_box_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-register-style-3 form .input_box i' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1618,7 +1618,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'register_form_input_box_margin',
             [
-                'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-register-style-3 form .input_box i' => 'margin: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1629,7 +1629,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'register_form_input_box_padding',
             [
-                'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-register-style-3 form .input_box i' => 'padding: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1642,7 +1642,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_style_label',
             [
-                'label' => __( 'Label', 'htmega-addons' ),
+                'label' => __( 'Label', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_label'=>'yes',
@@ -1653,7 +1653,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_form_label_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-register-wrapper label:not(.htmega-form-label)'   => 'color: {{VALUE}};',
@@ -1673,7 +1673,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'register_form_label_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-register-wrapper label:not(.htmega-form-label)',
                 ]
@@ -1682,7 +1682,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_label_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1695,7 +1695,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_label_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1708,7 +1708,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'register_form_label_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-register-wrapper label:not(.htmega-form-label)',
                     'separator' =>'before',
                 ]
@@ -1717,7 +1717,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_label_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-register-wrapper label:not(.htmega-form-label)' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1728,23 +1728,23 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_label_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1762,7 +1762,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_style_submit_button',
             [
-                'label' => __( 'Submit Button', 'htmega-addons' ),
+                'label' => __( 'Submit Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1774,14 +1774,14 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'register_form_style_submit_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'register_form_submitbutton_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input[type="submit"]'   => 'color: {{VALUE}};',
@@ -1801,7 +1801,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'register_form_submitbutton_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper input[type="submit"]',
                         ]
@@ -1810,7 +1810,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_submitbutton_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1823,7 +1823,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_submitbutton_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1835,7 +1835,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_submitbutton_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1863,7 +1863,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_submitbutton_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1890,7 +1890,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'register_form_submitbutton_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper input[type="submit"]',
                             'separator' =>'before',
                         ]
@@ -1899,7 +1899,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_submitbutton_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input[type="submit"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1913,14 +1913,14 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'register_form_style_submit_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'register_form_submitbutton_hover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input[type="submit"]:hover'   => 'color: {{VALUE}};',
@@ -1932,7 +1932,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'register_form_submitbutton_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper input[type="submit"]:hover',
                         ]
@@ -1942,7 +1942,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'register_form_submitbutton_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper input[type="submit"]:hover',
                             'separator' =>'before',
                         ]
@@ -1951,7 +1951,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_submitbutton_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper input[type="submit"]:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1969,7 +1969,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_style_before_login_text',
             [
-                'label' => __( 'Before Login Text', 'htmega-addons' ),
+                'label' => __( 'Before Login Text', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'register_form_style' =>'3',
@@ -1980,7 +1980,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_form_style_before_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-register-style-3 .separator span'   => 'color: {{VALUE}};',
@@ -1991,7 +1991,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_control(
                 'register_form_style_before_border_color',
                 [
-                    'label' => __( 'Border Color', 'htmega-addons' ),
+                    'label' => __( 'Border Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-register-style-3 .separator span::before , {{WRAPPER}} .htmega-register-style-3 .separator span::after' => 'background-color: {{VALUE}}',
@@ -2002,7 +2002,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_style_before_border_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -2029,7 +2029,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             $this->add_responsive_control(
                 'register_form_style_before_border_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -2059,7 +2059,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'register_form_style_login_button',
             [
-                'label' => __( 'Login Button', 'htmega-addons' ),
+                'label' => __( 'Login Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'register_form_style' =>'3',
@@ -2074,14 +2074,14 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'register_form_style_login_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'register_form_loginbutton_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-style-3 .login a'   => 'color: {{VALUE}};',
@@ -2101,7 +2101,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'register_form_loginbutton_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-style-3 .login a',
                         ]
@@ -2110,7 +2110,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_loginbutton_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -2123,7 +2123,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_loginbutton_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -2135,7 +2135,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_loginbutton_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -2163,7 +2163,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_loginbutton_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -2191,7 +2191,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'register_form_loginbutton_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-style-3 .login a',
                             'separator' =>'before',
                         ]
@@ -2200,7 +2200,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_loginbutton_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-style-3 .login a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -2214,14 +2214,14 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'register_form_style_login_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'register_form_loginbutton_hover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-style-3 .login a:hover'   => 'color: {{VALUE}};',
@@ -2233,7 +2233,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'register_form_loginbutton_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-style-3 .login a:hover',
                         ]
@@ -2243,7 +2243,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'register_form_loginbutton_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-style-3 .login a:hover',
                             'separator' =>'before',
                         ]
@@ -2252,7 +2252,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'register_form_loginbutton_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-style-3 .login a:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -2271,7 +2271,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'before_login_text_style',
             [
-                'label' => __( 'Before Login Text', 'htmega-addons' ),
+                'label' => __( 'Before Login Text', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'or_login_content_text!' => '',
@@ -2284,7 +2284,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_control(
             'before_login_text_color',
             [
-                'label'     => __( 'Text Color', 'htmega-addons' ),
+                'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-register-wrapper .separator span'   => 'color: {{VALUE}};',
@@ -2303,7 +2303,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'before_login_text_margin',
             [
-                'label' => __( 'Margin', 'htmega-addons' ),
+                'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -2316,7 +2316,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_responsive_control(
             'before_login_text_padding',
             [
-                'label' => __( 'Padding', 'htmega-addons' ),
+                'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -2333,7 +2333,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'login_style_submit_button',
             [
-                'label' => __( 'Login Button', 'htmega-addons' ),
+                'label' => __( 'Login Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'register_form_style!'=>'3',
@@ -2349,14 +2349,14 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'login_style_submit_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'login_button_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper:not(.htmega-register-style-3) .htmega-register-form form a'   => 'color: {{VALUE}};',
@@ -2368,7 +2368,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'login_button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper:not(.htmega-register-style-3) .htmega-register-form form a',
                         ]
@@ -2386,7 +2386,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'login_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper:not(.htmega-register-style-3) .htmega-register-form form a',
                             'separator' =>'before',
                         ]
@@ -2395,7 +2395,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'login_button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -2408,7 +2408,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'login_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -2420,7 +2420,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'login_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper:not(.htmega-register-style-3) .htmega-register-form form a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -2431,7 +2431,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'login_button_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -2461,14 +2461,14 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'login_button_submit_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'login_button_hover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper:not(.htmega-register-style-3) .htmega-register-form form a:hover'   => 'color: {{VALUE}};',
@@ -2480,7 +2480,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'login_button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper:not(.htmega-register-style-3) .htmega-register-form form a:hover',
                         ]
@@ -2489,7 +2489,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'login_hover_button_opacity',
                         [
-                            'label' => __( 'Opacity', 'htmega-addons' ),
+                            'label' => __( 'Opacity', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -2511,7 +2511,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'login_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-register-wrapper:not(.htmega-register-style-3) .htmega-register-form form a:hover',
                             'separator' =>'before',
                         ]
@@ -2520,7 +2520,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'login_button_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-register-wrapper:not(.htmega-register-style-3) .htmega-register-form form a:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -2538,7 +2538,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->start_controls_section(
             'validation_message_style',
             [
-                'label' => __( 'Errors & Success ', 'htmega-addons' ).' <i class="eicon-pro-icon"></i>',
+                'label' => __( 'Errors & Success ', 'ht-mega-for-elementor' ).' <i class="eicon-pro-icon"></i>',
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -2547,7 +2547,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             [
                 'type' => Controls_Manager::RAW_HTML,
                 'raw' => sprintf(/* translators: 1: Opening strong and anchor tags for Pro Version link, 2: Closing anchor and strong tags */
-                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'htmega-addons'),
+                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'ht-mega-for-elementor'),
                     '<strong><a href="https://wphtmega.com/pricing/" target="_blank">',
                     '</a></strong>'),
                 'content_classes' => 'htmega-addons-notice',
@@ -2572,7 +2572,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->add_render_attribute( 'register_area_attr', 'class', 'htmega-register-wrapper' );
         $this->add_render_attribute( 'register_area_attr', 'class', 'htmega-register-style-' . esc_attr( $settings['register_form_style'] ) );
 
-        $terms_label = ( !empty( $settings['terms_label'] ) ? esc_html( $settings['terms_label'] ) : esc_html__('Terms and conditions','htmega-addons') );
+        $terms_label = ( !empty( $settings['terms_label'] ) ? esc_html( $settings['terms_label'] ) : esc_html__('Terms and conditions','ht-mega-for-elementor') );
         $terms_page = ( !empty( $settings['select_terms_page'] ) ? esc_attr( $settings['select_terms_page'] ) : '0');
 
         if($settings['select_terms_page'] == '0'){
@@ -2589,7 +2589,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                 //     $current_user = wp_get_current_user();
                 //     echo '<div class="htmega-user-login">' .
                 //         sprintf(/* translators: %1$s is replaced with the user's display name, %2$s is replaced with the logout URL */
-                //             esc_html__( 'You are Logged in as %1$s (<a href="%2$s">Logout</a>)', 'htmega-addons' ), esc_html( $current_user->display_name ), wp_logout_url( $current_url ) ) .
+                //             esc_html__( 'You are Logged in as %1$s (<a href="%2$s">Logout</a>)', 'ht-mega-for-elementor' ), esc_html( $current_user->display_name ), wp_logout_url( $current_url ) ) .
                 //         '</div>';
                 //     return;
                 // }
@@ -2600,9 +2600,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     echo '<div class="htmega-user-login">' .
                         sprintf(
                             /* translators: 1: user's display name, 2: logout URL */
-                            esc_html__( 'You are logged in as %1$s (%2$s)', 'htmega-addons' ),
+                            esc_html__( 'You are logged in as %1$s (%2$s)', 'ht-mega-for-elementor' ),
                             esc_html( $current_user->display_name ),
-                            '<a href="' . esc_url( $logout_url ) . '">' . esc_html__( 'Logout', 'htmega-addons' ) . '</a>'
+                            '<a href="' . esc_url( $logout_url ) . '">' . esc_html__( 'Logout', 'ht-mega-for-elementor' ) . '</a>'
                         ) .
                     '</div>';
                     return;
@@ -2623,8 +2623,8 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_name',
                         'id'    => 'reg_name'. esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_name'] ) ? esc_attr( $_REQUEST['reg_name'] ) : null,
-                        'placeholder' => isset( $settings['username_placeholder_label'] ) ? esc_attr( $settings['username_placeholder_label'] ) : __('Username', 'htmega-addons'),
+                        'value' => isset( $_REQUEST['reg_name'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_name'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display (pre-fills the field after a failed submission), not form processing; the actual registration write happens via htmega_ajax_register() in includes/helper-function.php, which does verify a nonce.
+                        'placeholder' => isset( $settings['username_placeholder_label'] ) ? esc_attr( $settings['username_placeholder_label'] ) : __('Username', 'ht-mega-for-elementor'),
                     ]
                 );
 
@@ -2633,8 +2633,8 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_password',
                         'id'    => 'reg_password' . esc_attr( $id ),
                         'type'  => 'password',
-                        'value' => isset( $_REQUEST['reg_password'] ) ? esc_attr( $_REQUEST['reg_password'] ) : null,
-                        'placeholder' => isset( $settings['password_placeholder_label'] ) ? esc_attr( $settings['password_placeholder_label'] ) : __('Password', 'htmega-addons'),
+                        'value' => isset( $_REQUEST['reg_password'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_password'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'placeholder' => isset( $settings['password_placeholder_label'] ) ? esc_attr( $settings['password_placeholder_label'] ) : __('Password', 'ht-mega-for-elementor'),
                     ]
                 );
 
@@ -2643,8 +2643,8 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_email',
                         'id'    => 'reg_email' . esc_attr( $id ),
                         'type'  => 'email',
-                        'value' => isset( $_REQUEST['reg_email'] ) ? esc_attr( $_REQUEST['reg_email'] ) : null,
-                        'placeholder' => isset( $settings['email_placeholder_label'] ) ? esc_attr( $settings['email_placeholder_label'] ) : __('Email', 'htmega-addons'),
+                        'value' => isset( $_REQUEST['reg_email'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_email'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'placeholder' => isset( $settings['email_placeholder_label'] ) ? esc_attr( $settings['email_placeholder_label'] ) : __('Email', 'ht-mega-for-elementor'),
                     ]
                 );
 
@@ -2653,8 +2653,8 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_fname',
                         'id'    => 'reg_fname' . esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_fname'] ) ? esc_attr( $_REQUEST['reg_fname'] ) : null,
-                        'placeholder' => isset( $settings['firstname_placeholder_label'] ) ? esc_attr( $settings['firstname_placeholder_label'] ) : __('First Name', 'htmega-addons'),
+                        'value' => isset( $_REQUEST['reg_fname'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_fname'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'placeholder' => isset( $settings['firstname_placeholder_label'] ) ? esc_attr( $settings['firstname_placeholder_label'] ) : __('First Name', 'ht-mega-for-elementor'),
                     ]
                 );
 
@@ -2663,8 +2663,8 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_lname',
                         'id'    => 'reg_lname' . esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_lname'] ) ? esc_attr( $_REQUEST['reg_lname'] ) : null,
-                        'placeholder' => isset( $settings['lastname_placeholder_label'] ) ? esc_attr( $settings['lastname_placeholder_label'] ) : __('Last Name', 'htmega-addons'),
+                        'value' => isset( $_REQUEST['reg_lname'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_lname'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'placeholder' => isset( $settings['lastname_placeholder_label'] ) ? esc_attr( $settings['lastname_placeholder_label'] ) : __('Last Name', 'ht-mega-for-elementor'),
                     ]
                 );
 
@@ -2673,8 +2673,8 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_nickname',
                         'id'    => 'reg_nickname' . esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_nickname'] ) ? esc_attr( $_REQUEST['reg_nickname'] ) : null,
-                        'placeholder' => isset( $settings['nickname_placeholder_label'] ) ? esc_attr( $settings['nickname_placeholder_label'] ) : __('Nick Name', 'htmega-addons'),
+                        'value' => isset( $_REQUEST['reg_nickname'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_nickname'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'placeholder' => isset( $settings['nickname_placeholder_label'] ) ? esc_attr( $settings['nickname_placeholder_label'] ) : __('Nick Name', 'ht-mega-for-elementor'),
                     ]
                 );
 
@@ -2683,8 +2683,8 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_website',
                         'id'    => 'reg_website' . esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_website'] ) ? esc_attr( $_REQUEST['reg_website'] ) : null,
-                        'placeholder' => isset( $settings['website_placeholder_label'] ) ? esc_attr( $settings['website_placeholder_label'] ) : __('Website', 'htmega-addons'),
+                        'value' => isset( $_REQUEST['reg_website'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_website'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'placeholder' => isset( $settings['website_placeholder_label'] ) ? esc_attr( $settings['website_placeholder_label'] ) : __('Website', 'ht-mega-for-elementor'),
                     ]
                 );
 
@@ -2692,7 +2692,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     'bio_textarea_attr', [
                         'name'  => 'reg_bio',
                         'id'    => 'reg_bio' . esc_attr( $id ),
-                        'placeholder' => isset( $settings['bio_placeholder_label'] ) ? esc_attr( $settings['bio_placeholder_label'] ) : __('Biographical Info', 'htmega-addons'),
+                        'placeholder' => isset( $settings['bio_placeholder_label'] ) ? esc_attr( $settings['bio_placeholder_label'] ) : __('Biographical Info', 'ht-mega-for-elementor'),
                     ]
                 );
 
@@ -2701,18 +2701,18 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_submit' . esc_attr( $id ),
                         'id'    => 'reg_submit' . esc_attr( $id ),
                         'type'  => 'submit',
-                        'value' => isset( $settings['submit_button_label'] ) ? esc_attr( $settings['submit_button_label'] ) : __('REGISTER', 'htmega-addons'),
+                        'value' => isset( $settings['submit_button_label'] ) ? esc_attr( $settings['submit_button_label'] ) : __('REGISTER', 'ht-mega-for-elementor'),
                     ]
                 );
             ?>
 
             <div id="htmega_message_<?php echo esc_attr( $id ); ?>" class="htmega_message">&nbsp;</div>
-            <div <?php echo $this->get_render_attribute_string( 'register_area_attr' ); ?>>
+            <div <?php echo $this->get_render_attribute_string( 'register_area_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                 <div class="htmega-register-form">
                     <?php if($settings['show_register_heading'] ): ?>
                     <div class="user-register-header">
                         <?php if($settings['register_heading_title'] ):
-                            echo '<h2>'. htmega_kses_title($settings['register_heading_title'] ) .'</h2>';
+                            echo '<h2>'. htmega_kses_title($settings['register_heading_title'] ) .'</h2>';  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                         endif; ?>
                         <?php if($settings['register_heading_content'] ):                            
                             echo '<p>' .
@@ -2730,27 +2730,27 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 <div class="htb-col-lg-6">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_name' . esc_attr( $id ), (isset( $settings['username_label'] )) ? htmega_kses_title( $settings['username_label'] ) : esc_html__( 'Username', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_name' . esc_attr( $id ), (isset( $settings['username_label'] )) ? htmega_kses_title( $settings['username_label'] ) : esc_html__( 'Username', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
                                 <div class="htb-col-lg-6">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_password' . esc_attr( $id ), (isset( $settings['password_label'] )) ? htmega_kses_title( $settings['password_label'] ) : esc_html__( 'Password', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_password' . esc_attr( $id ), (isset( $settings['password_label'] )) ? htmega_kses_title( $settings['password_label'] ) : esc_html__( 'Password', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_email' . esc_attr( $id ), isset( $settings['email_label'] ) ?  htmega_kses_title( $settings['email_label'] ): esc_html__( 'Email', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_email' . esc_attr( $id ), isset( $settings['email_label'] ) ?  htmega_kses_title( $settings['email_label'] ): esc_html__( 'Email', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
@@ -2759,44 +2759,44 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     if( $settings['show_firstname'] == 'yes' ){
                                         echo '<div class="htb-col-lg-12">';
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_fname' . esc_attr( $id ), (isset( $settings['firstname_label'] )) ? htmega_kses_title( $settings['firstname_label'] ) : esc_html__( 'First Name', 'htmega-addons'));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_fname' . esc_attr( $id ), (isset( $settings['firstname_label'] )) ? htmega_kses_title( $settings['firstname_label'] ) : esc_html__( 'First Name', 'ht-mega-for-elementor'));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         echo '</div>';
                                     }
                                     if( $settings['show_lastname'] == 'yes' ){
                                         echo '<div class="htb-col-lg-12">';
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_lname' . esc_attr( $id ), ( isset( $settings['lastname_label'] )) ? htmega_kses_title( $settings['lastname_label'] ) : esc_html__( 'Last Name', 'htmega-addons'));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_lname' . esc_attr( $id ), ( isset( $settings['lastname_label'] )) ? htmega_kses_title( $settings['lastname_label'] ) : esc_html__( 'Last Name', 'ht-mega-for-elementor'));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         echo '</div>';
                                     }
 
                                     if( $settings['show_nickname'] == 'yes' ){
                                         echo '<div class="htb-col-lg-12">';
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_nickname' . esc_attr( $id ), ( isset( $settings['nickname_label'] )) ? htmega_kses_title( $settings['nickname_label'] ) : esc_html__( 'Nick Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_nickname' . esc_attr( $id ), ( isset( $settings['nickname_label'] )) ? htmega_kses_title( $settings['nickname_label'] ) : esc_html__( 'Nick Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         echo '</div>';
                                     }
 
                                     if( $settings['show_website'] == 'yes' ){
                                         echo '<div class="htb-col-lg-12">';
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_website' . esc_attr( $id ), (isset( $settings['website_label'] )) ? htmega_kses_title( $settings['website_label'] ) : esc_html__( 'Website', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_website' . esc_attr( $id ), (isset( $settings['website_label'] )) ? htmega_kses_title( $settings['website_label'] ) : esc_html__( 'Website', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         echo '</div>';
                                     }
 
                                     if( $settings['show_bio'] == 'yes' ){
                                         echo '<div class="htb-col-lg-12">';
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), ( isset( $settings['bio_label'] )) ? htmega_kses_title( $settings['bio_label'] ) : esc_html__( 'Biographical Info', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), ( isset( $settings['bio_label'] )) ? htmega_kses_title( $settings['bio_label'] ) : esc_html__( 'Biographical Info', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( $_REQUEST['reg_bio'] ) : NULL ));
+                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                         echo '</div>';
 
                                     }
@@ -2805,14 +2805,14 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                         <div class="htb-col-lg-12 termscondition">
                                             <input name="termscondition" type="checkbox" id="terms-<?php echo esc_attr( $id );?>">
                                             <?php 
-                                                echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ) , $terms_label , $page_id , $page_title  );
+                                                echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ) , $terms_label , esc_url( $page_id ) , esc_html( $page_title )  ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $terms_label is esc_html()'d at assignment (line 2575); $page_id/$page_title now wrapped in esc_url()/esc_html().
                                             ?>
                                         </div>
                                     <?php }
 
                                 ?>
                                 <div class="htb-col-lg-12 htmega-submit-button">
-                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); ?> />
+                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> />
                                 </div>
 
                                 <?php if($settings['login_option_content'] ) : ?>
@@ -2827,7 +2827,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 
                                 <?php if( $settings['login_option_button'] == 'yes' ){ ?>
                                     <div class="htb-col-lg-12 htmega-submit-button">
-                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'Login','htmega-addons' );?></a>
+                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'Login','ht-mega-for-elementor' );?></a>
                                     </div>
                                 <?php } ?>
 
@@ -2839,9 +2839,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <?php
                                         if( $settings['show_firstname'] == 'yes' ){
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label>%1$s</label>',isset( $settings['firstname_label'] ) ? htmega_kses_title( $settings['firstname_label'] ): esc_html__( 'First Name', 'htmega-addons' ));
+                                                echo sprintf('<label>%1$s</label>',isset( $settings['firstname_label'] ) ? htmega_kses_title( $settings['firstname_label'] ): esc_html__( 'First Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         }
                                     ?>
                                 </div>
@@ -2850,9 +2850,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <?php
                                         if( $settings['show_lastname'] == 'yes' ){
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label>%1$s</label>',isset( $settings['lastname_label'] ) ? htmega_kses_title( $settings['lastname_label'] ) : esc_html__( 'Last Name', 'htmega-addons' ));
+                                                echo sprintf('<label>%1$s</label>',isset( $settings['lastname_label'] ) ? htmega_kses_title( $settings['lastname_label'] ) : esc_html__( 'Last Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         }
                                     ?>
                                 </div>
@@ -2860,27 +2860,27 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label>%1$s</label>', ( isset( $settings['email_label'] )) ? htmega_kses_title( $settings['email_label'] ) : esc_html__( 'Email', 'htmega-addons' ));
+                                            echo sprintf('<label>%1$s</label>', ( isset( $settings['email_label'] )) ? htmega_kses_title( $settings['email_label'] ) : esc_html__( 'Email', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){
-                                            echo sprintf('<label>%1$s</label>', (isset( $settings['username_label'] )) ? htmega_kses_title( $settings['username_label'] ) : esc_html__( 'Username', 'htmega-addons' ));
+                                            echo sprintf('<label>%1$s</label>', (isset( $settings['username_label'] )) ? htmega_kses_title( $settings['username_label'] ) : esc_html__( 'Username', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label>%1$s</label>', ( isset( $settings['password_label'] )) ? htmega_kses_title( $settings['password_label'] ) : esc_html__( 'Password', 'htmega-addons' ));
+                                            echo sprintf('<label>%1$s</label>', ( isset( $settings['password_label'] )) ? htmega_kses_title( $settings['password_label'] ) : esc_html__( 'Password', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
@@ -2889,27 +2889,27 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     if( $settings['show_nickname'] == 'yes' ){
                                         echo '<div class="htb-col-lg-12">';
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label>%1$s</label>', ( isset( $settings['nickname_label'] )) ? htmega_kses_title( $settings['nickname_label'] ) : esc_html__( 'Nick Name', 'htmega-addons' ));
+                                                echo sprintf('<label>%1$s</label>', ( isset( $settings['nickname_label'] )) ? htmega_kses_title( $settings['nickname_label'] ) : esc_html__( 'Nick Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         echo '</div>';
                                     }
 
                                     if( $settings['show_website'] == 'yes' ){
                                         echo '<div class="htb-col-lg-12">';
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label>%1$s</label>', (isset( $settings['website_label'] )) ? htmega_kses_title( $settings['website_label'] ) : esc_html__( 'Website', 'htmega-addons' ));
+                                                echo sprintf('<label>%1$s</label>', (isset( $settings['website_label'] )) ? htmega_kses_title( $settings['website_label'] ) : esc_html__( 'Website', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         echo '</div>';
                                     }
 
                                     if( $settings['show_bio'] == 'yes' ){
                                         echo '<div class="htb-col-lg-12">';
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label>%1$s</label>', ( isset( $settings['bio_label'] )) ? htmega_kses_title( $settings['bio_label'] ) : esc_html__('Biographical Info', 'htmega-addons' ));
+                                                echo sprintf('<label>%1$s</label>', ( isset( $settings['bio_label'] )) ? htmega_kses_title( $settings['bio_label'] ) : esc_html__('Biographical Info', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( $_REQUEST['reg_bio'] ) : NULL ));
+                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                         echo '</div>';
 
                                     }
@@ -2918,14 +2918,14 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                         <div class="htb-col-lg-12 termscondition">
                                             <input name="termscondition" type="checkbox" id="terms-<?php echo esc_attr( $id );?>">
                                             <?php 
-                                                echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , $page_id , $page_title  );
+                                                echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , esc_url( $page_id ) , esc_html( $page_title )  ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $terms_label is esc_html()'d at assignment (line 2575); $page_id/$page_title now wrapped in esc_url()/esc_html().
                                             ?>
                                         </div>
                                     <?php }
 
                                 ?>
                                 <div class="htb-col-lg-12">
-                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); ?> />
+                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> />
                                 </div>
 
                                 <?php if($settings['login_option_content'] ) : ?>
@@ -2940,7 +2940,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 
                                 <?php if( $settings['login_option_button'] == 'yes' ){ ?>
                                     <div class="htb-col-lg-12">
-                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'Login','htmega-addons' );?></a>
+                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'Login','ht-mega-for-elementor' );?></a>
                                     </div>
                                 <?php } ?>
                                 
@@ -2954,7 +2954,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <div class="input_box">
                                             <?php
-                                                echo '<i class="fa fa-user-circle" aria-hidden="true"></i> <input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />';
+                                                echo '<i class="fa fa-user-circle" aria-hidden="true"></i> <input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                             ?>
                                         </div>
                                     </div>
@@ -2963,7 +2963,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <div class="input_box">
                                             <?php
-                                                echo '<i class="fa fa-user-circle" aria-hidden="true"></i> <input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />';
+                                                echo '<i class="fa fa-user-circle" aria-hidden="true"></i> <input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                             ?>
                                         </div>
                                     </div>
@@ -2972,7 +2972,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <div class="input_box">
                                             <?php
-                                                echo '<i class="fa fa-user-circle" aria-hidden="true"></i> <input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />';
+                                                echo '<i class="fa fa-user-circle" aria-hidden="true"></i> <input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                             ?>
                                         </div>
                                     </div>
@@ -2981,7 +2981,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 <div class="htb-col-lg-12">
                                     <div class="input_box">
                                         <?php
-                                            echo '<i class="fa fa-user"></i><input '.$this->get_render_attribute_string( 'username_input_attr' ).' />';
+                                            echo '<i class="fa fa-user"></i><input '.$this->get_render_attribute_string( 'username_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 </div>
@@ -2990,7 +2990,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="input_box">
                                         <?php
                                             echo '<i class="fa fa-lock" aria-hidden="true"></i>
-                                            <input '.$this->get_render_attribute_string( 'password_input_attr' ).' />';
+                                            <input '.$this->get_render_attribute_string( 'password_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 </div>
@@ -2998,7 +2998,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 <div class="htb-col-lg-12">
                                     <div class="input_box">
                                         <?php
-                                            echo '<i class="fa fa-envelope"></i><input '.$this->get_render_attribute_string( 'email_input_attr' ).' />';
+                                            echo '<i class="fa fa-envelope"></i><input '.$this->get_render_attribute_string( 'email_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 </div>
@@ -3007,7 +3007,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <div class="input_box">
                                             <?php
-                                                echo '<i class="fa fa-address-book" aria-hidden="true"></i> <input '.$this->get_render_attribute_string( 'website_input_attr' ).' />';
+                                                echo '<i class="fa fa-address-book" aria-hidden="true"></i> <input '.$this->get_render_attribute_string( 'website_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                             ?>
                                         </div>
                                     </div>
@@ -3017,7 +3017,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <div class="input_box">
                                             <?php                                            
-                                                echo sprintf( '<textarea %1$s>%2$s</textarea>' ,$this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( $_REQUEST['reg_bio'] ) : NULL ) );
+                                                echo sprintf( '<textarea %1$s>%2$s</textarea>' ,$this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                             ?>
                                         </div>
                                     </div>
@@ -3027,13 +3027,13 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12 termscondition">
                                         <input name="termscondition" type="checkbox" id="terms-<?php echo esc_attr( $id );?>">
                                         <?php 
-                                            echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , $page_id , $page_title  );
+                                            echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , esc_url( $page_id ) , esc_html( $page_title )  ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $terms_label is esc_html()'d at assignment (line 2575); $page_id/$page_title now wrapped in esc_url()/esc_html().
                                         ?>
                                     </div>
                                 <?php } ?>
 
                                 <div class="htb-col-lg-12">
-                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); ?> />
+                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> />
                                 </div>
 
                                 <?php if($settings['login_option_content'] ) : ?>
@@ -3048,7 +3048,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
 
                                 <div class="htb-col-lg-12">
                                     <div class="login">
-                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'LOGIN','htmega-addons' );?></a>
+                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'LOGIN','ht-mega-for-elementor' );?></a>
                                     </div>
                                 </div>
 
@@ -3060,9 +3060,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_fname' . esc_attr( $id ), isset( $settings['firstname_label'] ) ? htmega_kses_title( $settings['firstname_label'] ) :  esc_html__( 'First Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_fname' . esc_attr( $id ), isset( $settings['firstname_label'] ) ? htmega_kses_title( $settings['firstname_label'] ) :  esc_html__( 'First Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3070,9 +3070,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_lname' . esc_attr( $id ), isset( $settings['lastname_label'] ) ? htmega_kses_title( $settings['lastname_label'] ) :  esc_html__( 'First Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_lname' . esc_attr( $id ), isset( $settings['lastname_label'] ) ? htmega_kses_title( $settings['lastname_label'] ) :  esc_html__( 'First Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3080,9 +3080,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_nickname' . esc_attr( $id ), isset( $settings['nickname_label'] ) ? htmega_kses_title( $settings['nickname_label'] ) :  esc_html__( 'Nick Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_nickname' . esc_attr( $id ), isset( $settings['nickname_label'] ) ? htmega_kses_title( $settings['nickname_label'] ) :  esc_html__( 'Nick Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3090,34 +3090,34 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_name' . esc_attr( $id ), isset( $settings['username_label'] ) ? htmega_kses_title( $settings['username_label'] ) :  esc_html__( 'Username', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_name' . esc_attr( $id ), isset( $settings['username_label'] ) ? htmega_kses_title( $settings['username_label'] ) :  esc_html__( 'Username', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_password' . esc_attr( $id ), isset( $settings['password_label'] ) ? htmega_kses_title( $settings['password_label'] ):  esc_html__( 'Password', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_password' . esc_attr( $id ), isset( $settings['password_label'] ) ? htmega_kses_title( $settings['password_label'] ):  esc_html__( 'Password', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_email' . esc_attr( $id ), isset( $settings['email_label'] ) ? htmega_kses_title( $settings['email_label'] ) :  esc_html__( 'Email', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_email' . esc_attr( $id ), isset( $settings['email_label'] ) ? htmega_kses_title( $settings['email_label'] ) :  esc_html__( 'Email', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
                                 <?php if( $settings['show_website'] == 'yes' ){ ?>
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_website' . esc_attr( $id ), isset( $settings['website_label'] ) ? htmega_kses_title( $settings['website_label'] ) :  esc_html__( 'Nick Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_website' . esc_attr( $id ), isset( $settings['website_label'] ) ? htmega_kses_title( $settings['website_label'] ) :  esc_html__( 'Nick Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3125,10 +3125,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){ 
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__( 'Nick Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__( 'Nick Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
                                             
-                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( $_REQUEST['reg_bio'] ) : NULL ) );
+                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3137,13 +3137,13 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12 termscondition">
                                         <input name="termscondition" type="checkbox" id="terms-<?php echo esc_attr( $id );?>">
                                         <?php 
-                                            echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , $page_id , $page_title  );
+                                            echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , esc_url( $page_id ) , esc_html( $page_title )  ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $terms_label is esc_html()'d at assignment (line 2575); $page_id/$page_title now wrapped in esc_url()/esc_html().
                                         ?>
                                     </div>
                                 <?php } ?>                               
 
                                 <div class="htb-col-lg-12">
-                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); ?> />
+                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> />
                                 </div>
 
                                 <?php if($settings['login_option_content'] ) : ?>
@@ -3158,7 +3158,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 
                                 <?php if( $settings['login_option_button'] == 'yes' ){ ?>
                                     <div class="htb-col-lg-12">
-                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'Login','htmega-addons' );?></a>
+                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'Login','ht-mega-for-elementor' );?></a>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -3170,9 +3170,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_fname' . esc_attr( $id ), isset( $settings['firstname_label'] ) ? htmega_kses_title( $settings['firstname_label'] ) :  esc_html__( 'First Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_fname' . esc_attr( $id ), isset( $settings['firstname_label'] ) ? htmega_kses_title( $settings['firstname_label'] ) :  esc_html__( 'First Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3181,9 +3181,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_lname' . esc_attr( $id ), isset( $settings['lastname_label'] ) ? htmega_kses_title( $settings['lastname_label'] ) :  esc_html__( 'Last Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_lname' . esc_attr( $id ), isset( $settings['lastname_label'] ) ? htmega_kses_title( $settings['lastname_label'] ) :  esc_html__( 'Last Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3192,9 +3192,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_nickname' . esc_attr( $id ), isset( $settings['nickname_label'] ) ? htmega_kses_title( $settings['nickname_label'] ) :  esc_html__( 'Nick Name', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_nickname' . esc_attr( $id ), isset( $settings['nickname_label'] ) ? htmega_kses_title( $settings['nickname_label'] ) :  esc_html__( 'Nick Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3202,27 +3202,27 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_name' . esc_attr( $id ), isset( $settings['username_label'] ) ? htmega_kses_title( $settings['username_label'] ) :  esc_html__( 'Username', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_name' . esc_attr( $id ), isset( $settings['username_label'] ) ? htmega_kses_title( $settings['username_label'] ) :  esc_html__( 'Username', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_password' . esc_attr( $id ), isset( $settings['password_label'] ) ? htmega_kses_title( $settings['password_label'] ) :  esc_html__( 'Password', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_password' . esc_attr( $id ), isset( $settings['password_label'] ) ? htmega_kses_title( $settings['password_label'] ) :  esc_html__( 'Password', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
                                 <div class="htb-col-lg-12">
                                     <?php
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_email' . esc_attr( $id ), isset( $settings['email_label'] ) ? htmega_kses_title( $settings['email_label'] ) :  esc_html__( 'Email', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_email' . esc_attr( $id ), isset( $settings['email_label'] ) ? htmega_kses_title( $settings['email_label'] ) :  esc_html__( 'Email', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     ?>
                                 </div>
 
@@ -3230,9 +3230,9 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_website' . esc_attr( $id ), isset( $settings['website_label'] ) ? htmega_kses_title( $settings['website_label'] ) :  esc_html__( 'Website', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_website' . esc_attr( $id ), isset( $settings['website_label'] ) ? htmega_kses_title( $settings['website_label'] ) :  esc_html__( 'Website', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />';
+                                            echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3241,10 +3241,10 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <?php
                                             if( $settings['show_label'] == 'yes' ){
-                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__( 'Biographical Info', 'htmega-addons' ));
+                                                echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__( 'Biographical Info', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
                                             
-                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( $_REQUEST['reg_bio'] ) : NULL ) );
+                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3253,13 +3253,13 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12 termscondition">
                                         <input name="termscondition" type="checkbox" id="terms-<?php echo esc_attr( $id );?>">
                                         <?php 
-                                            echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , $page_id , $page_title  );
+                                            echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , esc_url( $page_id ) , esc_html( $page_title )  ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $terms_label is esc_html()'d at assignment (line 2575); $page_id/$page_title now wrapped in esc_url()/esc_html().
                                         ?>
                                     </div>
                                 <?php } ?>  
 
                                 <div class="htb-col-lg-12">
-                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); ?> />
+                                    <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> />
                                 </div>
 
                                 <?php if($settings['login_option_content'] ) : ?>
@@ -3274,7 +3274,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 
                                 <?php if( $settings['login_option_button'] == 'yes' ){ ?>
                                     <div class="htb-col-lg-12">
-                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'Login','htmega-addons' );?></a>
+                                        <a href="<?php echo esc_url( wp_login_url()); ?>"><?php echo esc_html__( 'Login','ht-mega-for-elementor' );?></a>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -3284,64 +3284,64 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 <?php
                                     // Default Field
                                     if( $settings['show_label'] == 'yes' ){
-                                        echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_name' . esc_attr( $id ), isset( $settings['username_label'] ) ? htmega_kses_title( $settings['username_label'] ) :  esc_html__( 'Username', 'htmega-addons' ));
+                                        echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_name' . esc_attr( $id ), isset( $settings['username_label'] ) ? htmega_kses_title( $settings['username_label'] ) :  esc_html__( 'Username', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                     }
-                                    echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />';
+                                    echo '<input '.$this->get_render_attribute_string( 'username_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
 
                                     if( $settings['show_label'] == 'yes' ){ 
-                                        echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_password' . esc_attr( $id ), isset( $settings['password_label'] ) ? htmega_kses_title( $settings['password_label'] ) :  esc_html__( 'Password', 'htmega-addons' ));
+                                        echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_password' . esc_attr( $id ), isset( $settings['password_label'] ) ? htmega_kses_title( $settings['password_label'] ) :  esc_html__( 'Password', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                     }
-                                    echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />';
+                                    echo '<input '.$this->get_render_attribute_string( 'password_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
 
                                     if( $settings['show_label'] == 'yes' ){ 
-                                        echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_email' . esc_attr( $id ), isset( $settings['email_label'] ) ? htmega_kses_title( $settings['email_label'] ) :  esc_html__( 'Email', 'htmega-addons' ));
+                                        echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_email' . esc_attr( $id ), isset( $settings['email_label'] ) ? htmega_kses_title( $settings['email_label'] ) :  esc_html__( 'Email', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                     }
-                                    echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />';
+                                    echo '<input '.$this->get_render_attribute_string( 'email_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
 
                                     // Additionnal Field
                                     if( $settings['show_firstname'] == 'yes' ){
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_fname' . esc_attr( $id ), isset( $settings['firstname_label'] ) ? htmega_kses_title( $settings['firstname_label'] ) :  esc_html__('First Name', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_fname' . esc_attr( $id ), isset( $settings['firstname_label'] ) ? htmega_kses_title( $settings['firstname_label'] ) :  esc_html__('First Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'fname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     }
                                     if( $settings['show_lastname'] == 'yes' ){
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_lname' . esc_attr( $id ), isset( $settings['lastname_label'] ) ? htmega_kses_title( $settings['lastname_label'] ) :  esc_html__( 'Last Name', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_lname' . esc_attr( $id ), isset( $settings['lastname_label'] ) ? htmega_kses_title( $settings['lastname_label'] ) :  esc_html__( 'Last Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'lname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     }
                                     if( $settings['show_nickname'] == 'yes' ){
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_nickname' . esc_attr( $id ), isset( $settings['nickname_label'] ) ? htmega_kses_title( $settings['nickname_label'] ) :  esc_html__( 'Nick Name', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_nickname' . esc_attr( $id ), isset( $settings['nickname_label'] ) ? htmega_kses_title( $settings['nickname_label'] ) :  esc_html__( 'Nick Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'nickname_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     }
                                     if( $settings['show_website'] == 'yes' ){
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_website' . esc_attr( $id ), isset( $settings['website_label'] ) ? htmega_kses_title( $settings['website_label'] ) :  esc_html__( 'Website', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_website' . esc_attr( $id ), isset( $settings['website_label'] ) ? htmega_kses_title( $settings['website_label'] ) :  esc_html__( 'Website', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
-                                        echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />';
+                                        echo '<input '.$this->get_render_attribute_string( 'website_input_attr' ).' />'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                                     }
                                     if( $settings['show_bio'] == 'yes' ){
                                         if( $settings['show_label'] == 'yes' ){ 
-                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__('Biographical Info', 'htmega-addons' ));
+                                            echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__('Biographical Info', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
                                         
-                                        echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( $_REQUEST['reg_bio'] ) : NULL ));
+                                        echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                     }
 
                                     if( $settings['show_terms'] == 'yes' ){ ?>
                                         <div class="termscondition">
                                             <input name="termscondition" type="checkbox" id="terms-<?php echo esc_attr( $id );?>">
                                             <?php 
-                                                echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , $page_id , $page_title  );
+                                                echo sprintf('<label for="%1$s" class="htmega-form-label">%2$s <a class="terms-conditions" href="%3$s">%4$s</a>  </label>' ,'terms-' . esc_attr( $id ), $terms_label , esc_url( $page_id ) , esc_html( $page_title )  ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $terms_label is esc_html()'d at assignment (line 2575); $page_id/$page_title now wrapped in esc_url()/esc_html().
                                             ?>
 
                                         </div>
                                     <?php }
                                 ?>
-                                <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); ?> />
+                                <input <?php echo $this->get_render_attribute_string( 'submit_input_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> />
 
                                 <?php if($settings['login_option_content'] ) : ?>
                                     <div class="htb-col-lg-12">
@@ -3354,7 +3354,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                 <?php endif; ?>
                                 
                                 <?php if( $settings['login_option_button'] == 'yes' ){ ?>
-                                    <a href="<?php echo esc_url( wp_login_url() ); ?>"><?php echo esc_html__( 'Login','htmega-addons' );?></a>
+                                    <a href="<?php echo esc_url( wp_login_url() ); ?>"><?php echo esc_html__( 'Login','ht-mega-for-elementor' );?></a>
                                 <?php } ?>
                             </div>
                         <?php endif;?>
@@ -3375,7 +3375,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                     "use strict";
 
                     var ajaxurl = '<?php echo esc_js( admin_url('admin-ajax.php') ); ?>';
-                    var loadingmessage = '<?php echo esc_html__('Please Wait...','htmega-addons'); ?>';
+                    var loadingmessage = '<?php echo esc_html__('Please Wait...','ht-mega-for-elementor'); ?>';
                     var form_id = 'form#htmega_register_form_<?php echo esc_attr( $id ); ?>';
                     var button_id = '#reg_submit<?php echo esc_attr( $id ); ?>';
                     var nonce = '<?php echo esc_js( wp_create_nonce( 'htmega_register_nonce' ) ); ?>';
@@ -3431,7 +3431,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
             [
                 'type' => Controls_Manager::RAW_HTML,
                 'raw' => sprintf(/* translators: 1: Opening strong and anchor tags for Pro Version link, 2: Closing anchor and strong tags */
-                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'htmega-addons'),
+                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'ht-mega-for-elementor'),
                     '<strong><a href="https://wphtmega.com/pricing/" target="_blank">',
                     '</a></strong>'),
                 'content_classes' => 'htmega-addons-notice',

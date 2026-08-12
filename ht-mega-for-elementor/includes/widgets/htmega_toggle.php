@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Toggle', 'htmega-addons' );
+        return __( 'Toggle', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -34,24 +34,24 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
         $this->start_controls_section(
             'toggle_content',
             [
-                'label' => __( 'Toggle', 'htmega-addons' ),
+                'label' => __( 'Toggle', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'toggle_button_normal_title',
                 [
-                    'label' => __( 'Normal Title', 'htmega-addons' ),
+                    'label' => __( 'Normal Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Show All', 'htmega-addons' ),
-                    'placeholder' => __( 'Show All', 'htmega-addons' ),
+                    'default' => __( 'Show All', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Show All', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'toggle_button_normal_icon',
                 [
-                    'label' => __( 'Normal Icon', 'htmega-addons' ),
+                    'label' => __( 'Normal Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                 ]
             );
@@ -59,17 +59,17 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
             $this->add_control(
                 'toggle_button_open_title',
                 [
-                    'label' => __( 'Opened Title', 'htmega-addons' ),
+                    'label' => __( 'Opened Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Close', 'htmega-addons' ),
-                    'placeholder' => __( 'Close', 'htmega-addons' ),
+                    'default' => __( 'Close', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Close', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'toggle_button_open_icon',
                 [
-                    'label' => __( 'Opened Icon', 'htmega-addons' ),
+                    'label' => __( 'Opened Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                 ]
             );
@@ -77,12 +77,12 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
             $this->add_control(
                 'content_source',
                 [
-                    'label'   => esc_html__( 'Select Content Source', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Content Source', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'    => esc_html__( 'Custom', 'htmega-addons' ),
-                        "elementor" => esc_html__( 'Elementor Template', 'htmega-addons' ),
+                        'custom'    => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
+                        "elementor" => esc_html__( 'Elementor Template', 'ht-mega-for-elementor' ),
                     ],
                     'separator' =>'before',
                 ]
@@ -91,7 +91,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
             $this->add_control(
                 'template_id',
                 [
-                    'label'       => __( 'Content', 'htmega-addons' ),
+                    'label'       => __( 'Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_elementor_template(),
@@ -104,13 +104,13 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
             $this->add_control(
                 'custom_content',
                 [
-                    'label' => __( 'Content', 'htmega-addons' ),
+                    'label' => __( 'Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::WYSIWYG,
-                    'title' => __( 'Custom Content', 'htmega-addons' ),
+                    'title' => __( 'Custom Content', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'content_source' =>'custom',
                     ],
-                    'default'=>__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','htmega-addons' ),
+                    'default'=>__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','ht-mega-for-elementor' ),
                 ]
             );
 
@@ -120,14 +120,14 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
         $this->start_controls_section(
             'toggle_style_section',
             [
-                'label' => __( 'Content Style', 'htmega-addons' ),
+                'label' => __( 'Content Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'custom_content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#444444',
                     'selectors' => [
@@ -154,7 +154,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
             $this->add_responsive_control(
                 'content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -166,7 +166,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
             $this->add_responsive_control(
                 'content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -182,7 +182,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
         $this->start_controls_section(
             'toggle_button_style',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -190,23 +190,23 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
             $this->add_responsive_control(
                 'toggle_button_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -223,14 +223,14 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'toggle_button_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#3b3b3b',
                             'selectors' => [
@@ -250,7 +250,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                     $this->add_control(
                         'icon_font_size',
                         [
-                            'label' => __( 'Icon Font Size', 'htmega-addons' ),
+                            'label' => __( 'Icon Font Size', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -282,7 +282,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                     $this->add_responsive_control(
                         'toggle_button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -295,7 +295,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                     $this->add_responsive_control(
                         'toggle_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -309,7 +309,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'toggle_button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-toggle-button a',
                         ]
@@ -319,7 +319,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'toggle_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-toggle-button a',
                         ]
                     );
@@ -327,7 +327,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                     $this->add_responsive_control(
                         'toggle_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-toggle-button a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -341,13 +341,13 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'toggle_button_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#3b3b3b',
                             'selectors' => [
@@ -361,7 +361,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'toggle_button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-toggle-button a:hover',
                         ]
@@ -371,7 +371,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'toggle_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-toggle-button a:hover',
                         ]
                     );
@@ -400,6 +400,7 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
         }
        
         ?>
+            <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core and returns pre-escaped attribute output. ?>
             <div <?php echo $this->get_render_attribute_string( 'htmega_toggle_attr' ); ?> >
                 
                 <div class="htmega-toggle-content-<?php echo esc_attr( $id );?>" style="display: none;">
@@ -416,7 +417,9 @@ class HTMega_Elementor_Widget_Toggle extends Widget_Base {
 
                 <div class="htmega-toggle-button">
                     <?php
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses() and HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(); both already escaped, see includes/helper-function.php and includes/class.htmega-icon-manager.php
                         echo sprintf( '<a href="#" class="togglebutton-%2$s normal_btn">%1$s</a>', htmega_kses_title( $button_normal_txt ).HTMega_Icon_manager::render_icon( $settings['toggle_button_normal_icon'], [ 'aria-hidden' => 'true' ] ), esc_attr( $id ) );
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses() and HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(); both already escaped, see includes/helper-function.php and includes/class.htmega-icon-manager.php
                         echo sprintf( '<a href="#" class="togglebutton-%2$s opened_btn">%1$s</a>', htmega_kses_title( $button_open_txt ).HTMega_Icon_manager::render_icon( $settings['toggle_button_open_icon'], [ 'aria-hidden' => 'true' ] ), esc_attr( $id ) );
                     ?>
                 </div>

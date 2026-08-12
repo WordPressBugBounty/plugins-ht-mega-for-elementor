@@ -9,7 +9,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         return 'htmega-videoplayer-addons';
     }
     public function get_title() {
-        return esc_html__( 'Video Player', 'htmega-addons' );
+        return esc_html__( 'Video Player', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -45,26 +45,26 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->start_controls_section(
             'videoplayer_content',
             [
-                'label' => esc_html__( 'Video Player', 'htmega-addons' ),
+                'label' => esc_html__( 'Video Player', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'videocontainer',
                 [
-                    'label' => esc_html__( 'Video Container', 'htmega-addons' ),
+                    'label' => esc_html__( 'Video Container', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'self',
                     'options' => [
-                        'self'         => esc_html__( 'Self', 'htmega-addons' ),
-                        'popup'         => esc_html__( 'Pop Up', 'htmega-addons' ),
+                        'self'         => esc_html__( 'Self', 'ht-mega-for-elementor' ),
+                        'popup'         => esc_html__( 'Pop Up', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
             $this->add_control(
                 'video_url',
                 [
-                    'label'     => esc_html__( 'Video Url', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Video Url', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::TEXT,
                     'default'   => esc_url( 'https://www.youtube.com/watch?v=z_9Z9VWhaEQ' ),
                     'placeholder' => esc_url( 'https://www.youtube.com/watch?v=z_9Z9VWhaEQ' ),
@@ -74,9 +74,9 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'buttontext',
                 [
-                    'label'     => esc_html__( 'Button Text', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Button Text', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::TEXT,
-                    'default'   => esc_html__( 'Pop Up Button', 'htmega-addons' ),
+                    'default'   => esc_html__( 'Pop Up Button', 'ht-mega-for-elementor' ),
                     'condition' =>[
                         'videocontainer' =>'popup',
                     ],
@@ -85,12 +85,12 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'buttonicon_type',
                 [
-                    'label' => esc_html__( 'Play Button Icon', 'htmega-addons' ),
+                    'label' => esc_html__( 'Play Button Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'icon',
                     'options' => [
-                        'icon' => esc_html__( 'Icon', 'htmega-addons' ),
-                        'image' => esc_html__( 'Image', 'htmega-addons' ),
+                        'icon' => esc_html__( 'Icon', 'ht-mega-for-elementor' ),
+                        'image' => esc_html__( 'Image', 'ht-mega-for-elementor' ),
                     ],
                     'condition' =>[
                         'videocontainer' =>'popup',
@@ -101,7 +101,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'buttonicon_image',
                 [
-                    'label' => esc_html__( 'Icon Image', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -115,7 +115,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'buttonicon',
                 [
-                    'label' => esc_html__( 'Button Icon', 'htmega-addons' ),
+                    'label' => esc_html__( 'Button Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'condition' => [
                         'buttonicon_type' => 'icon',
@@ -126,15 +126,15 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'icon_position',
                 [
-                    'label' => __('Icon Position', 'htmega-addons'),
+                    'label' => __('Icon Position', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'row' => [
-                            'title' => __('Before', 'htmega-addons'),
+                            'title' => __('Before', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-h-align-left',
                         ],
                         'row-reverse' => [
-                            'title' => __('After', 'htmega-addons'),
+                            'title' => __('After', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-h-align-right',
                         ],
                     ],
@@ -151,10 +151,10 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'controleranimation',
                 [
-                    'label' => esc_html__( 'Button Infinity Animation', 'htmega-addons' ),
+                    'label' => esc_html__( 'Button Infinity Animation', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'yes' => esc_html__( 'Yes', 'htmega-addons' ),
-                    'no' => esc_html__( 'No', 'htmega-addons' ),
+                    'yes' => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+                    'no' => esc_html__( 'No', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'condition' =>[
@@ -165,10 +165,10 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'disable_animation',
                 [
-                    'label' => esc_html__( 'Disable Hover Animation', 'htmega-addons' ),
+                    'label' => esc_html__( 'Disable Hover Animation', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'yes' => esc_html__( 'Yes', 'htmega-addons' ),
-                    'no' => esc_html__( 'No', 'htmega-addons' ),
+                    'yes' => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+                    'no' => esc_html__( 'No', 'ht-mega-for-elementor' ),
                     'return_value' => '1',
                     'default' => '1.2',
                     'selectors' => [
@@ -182,7 +182,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'video_image',
                 [
-                    'label' => esc_html__( 'Video Image', 'htmega-addons' ),
+                    'label' => esc_html__( 'Video Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -199,7 +199,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->start_controls_section(
             'videoplayer_options',
             [
-                'label' => esc_html__( 'Video Options', 'htmega-addons' ),
+                'label' => esc_html__( 'Video Options', 'ht-mega-for-elementor' ),
                 'condition' =>[
                     'videocontainer' =>'self',
                 ],
@@ -208,10 +208,10 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'autoplay',
                 [
-                    'label' => esc_html__( 'Auto Play', 'htmega-addons' ),
+                    'label' => esc_html__( 'Auto Play', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => esc_html__( 'Yes', 'htmega-addons' ),
-                    'label_off' => esc_html__( 'No', 'htmega-addons' ),
+                    'label_on' => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+                    'label_off' => esc_html__( 'No', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -220,10 +220,10 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'soundmute',
                 [
-                    'label' => esc_html__( 'Sound Mute', 'htmega-addons' ),
+                    'label' => esc_html__( 'Sound Mute', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => esc_html__( 'Yes', 'htmega-addons' ),
-                    'label_off' => esc_html__( 'No', 'htmega-addons' ),
+                    'label_on' => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+                    'label_off' => esc_html__( 'No', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -232,10 +232,10 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'repeatvideo',
                 [
-                    'label' => esc_html__( 'Repeat Video', 'htmega-addons' ),
+                    'label' => esc_html__( 'Repeat Video', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => esc_html__( 'Yes', 'htmega-addons' ),
-                    'label_off' => esc_html__( 'No', 'htmega-addons' ),
+                    'label_on' => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+                    'label_off' => esc_html__( 'No', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -244,10 +244,10 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'controlerbutton',
                 [
-                    'label' => esc_html__( 'Show Controller Button', 'htmega-addons' ),
+                    'label' => esc_html__( 'Show Controller Button', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => esc_html__( 'Yes', 'htmega-addons' ),
-                    'label_off' => esc_html__( 'No', 'htmega-addons' ),
+                    'label_on' => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+                    'label_off' => esc_html__( 'No', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -256,10 +256,10 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'videosourselogo',
                 [
-                    'label' => esc_html__( 'Show video source Logo', 'htmega-addons' ),
+                    'label' => esc_html__( 'Show video source Logo', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => esc_html__( 'Yes', 'htmega-addons' ),
-                    'label_off' => esc_html__( 'No', 'htmega-addons' ),
+                    'label_on' => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+                    'label_off' => esc_html__( 'No', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -267,7 +267,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'videostarttime',
                 [
-                    'label' => esc_html__( 'Video Start Time', 'htmega-addons' ),
+                    'label' => esc_html__( 'Video Start Time', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 5,
                 ]
@@ -279,7 +279,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->start_controls_section(
             'htmega_video_style_section',
             [
-                'label' => esc_html__( 'Video Box Style', 'htmega-addons' ),
+                'label' => esc_html__( 'Video Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -288,7 +288,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'htmega_video_background',
-                'label' => esc_html__( 'Background', 'htmega-addons' ),
+                'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htmega-player-container',
             ]
@@ -296,7 +296,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->add_responsive_control(
             'htmega_video_padding',
             [
-                'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -309,7 +309,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'htmega_video_border',
-                'label' => esc_html__( 'Border', 'htmega-addons' ),
+                'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htmega-player-container',
                 'separator' => 'before',
             ]
@@ -317,7 +317,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->add_responsive_control(
             'htmega_video_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -330,7 +330,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'htmega_videoshadow',
-                'label' => esc_html__( 'Box Shadow', 'htmega-addons' ),
+                'label' => esc_html__( 'Box Shadow', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htmega-player-container',
             ]
         );
@@ -338,19 +338,19 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_responsive_control(
                 'video_style_align',
                 [
-                    'label' => esc_html__( 'Alignment', 'htmega-addons' ),
+                    'label' => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => esc_html__( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => esc_html__( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -371,7 +371,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->start_controls_section(
             'video_button_style',
             [
-                'label' => esc_html__( 'Button', 'htmega-addons' ),
+                'label' => esc_html__( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'videocontainer' =>'popup',
@@ -381,7 +381,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_responsive_control(
                 'video_button_height',
                 [
-                    'label' => esc_html__( 'Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => '',
                     'selectors' => [
@@ -393,7 +393,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_responsive_control(
                 'video_button_width',
                 [
-                    'label' => esc_html__( 'Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => '',
                     'selectors' => [
@@ -404,7 +404,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_responsive_control(
                 'video_button_fontsize',
                 [
-                    'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -437,7 +437,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'button_typography',
-                    'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-player-container .magnify-video-active',
                     'condition' => [
                         'buttontext!' => '',
@@ -448,7 +448,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_responsive_control(
                 'video_button_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -462,7 +462,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_responsive_control(
                 'video_button_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -476,7 +476,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->add_control(
                 'color_border_heading',
                 [
-                    'label' => esc_html__( 'Colors and Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Colors and Border', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -485,14 +485,14 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
                 $this->start_controls_tab(
                     'video_button_style_normal_tab',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                 $this->add_control(
                     'video_button_color',
                     [
-                        'label' => esc_html__( 'Color', 'htmega-addons' ),
+                        'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '#18012c',
                         'selectors' => [
@@ -506,7 +506,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'video_button_background',
-                        'label' => esc_html__( 'Background', 'htmega-addons' ),
+                        'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .htmega-player-container .magnify-video-active',
                     ]
@@ -516,14 +516,14 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'video_button_border',
-                        'label' => esc_html__( 'Border', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-player-container .magnify-video-active',
                     ]
                 );
                 $this->add_responsive_control(
                     'video_button_border_radius',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-player-container .magnify-video-active' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -537,21 +537,21 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
             $this->start_controls_tab(
                 'video_button_style_hover_tab',
                 [
-                    'label' => esc_html__( 'Hover', 'htmega-addons' ),
+                    'label' => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
                 ]
             );
                 $this->add_group_control(
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'video_button_hover_border',
-                        'label' => esc_html__( 'Border', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-player-container .magnify-video-active:hover',
                     ]
                 );
                 $this->add_responsive_control(
                     'video_button_border_hover_radius',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-player-container .magnify-video-active:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -561,7 +561,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
                 $this->add_control(
                     'video_button_hover_color',
                     [
-                        'label' => esc_html__( 'Color', 'htmega-addons' ),
+                        'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '#ffffff',
                         'selectors' => [
@@ -574,7 +574,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'video_button_hover_background',
-                        'label' => esc_html__( 'Background', 'htmega-addons' ),
+                        'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .htmega-player-container .magnify-video-active:hover',
                     ]
@@ -586,7 +586,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->start_controls_section(
             'video_button_animate_style',
             [
-                'label' => esc_html__( 'Button Animation', 'htmega-addons' ),
+                'label' => esc_html__( 'Button Animation', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'videocontainer' =>'popup',
@@ -597,7 +597,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->add_control(
             'video_button_animation_color',
             [
-                'label' => esc_html__( 'Border Color', 'htmega-addons' ),
+                'label' => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -608,7 +608,7 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
         $this->add_responsive_control(
             'video_animate_circle_range',
             [
-                'label' => esc_html__( 'Circle Range', 'htmega-addons' ),
+                'label' => esc_html__( 'Circle Range', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -675,12 +675,14 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
                     <div class="htmega-video-player" data-property="<?php echo esc_attr( wp_json_encode( $player_options_settings ) ); ?> "></div>
                 <?php else:
                     if( 'icon' == $buttonicon_type && $settings['buttonicon']['value'] != '' ){
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- href esc_url()'d, icon delegates to Elementor core Icons_Manager::render_icon(), text via htmega_kses_title() (wp_kses()), $animation_markup is a fixed static HTML string (no dynamic/user data), see htmega_get_html_allowed_tags() in includes/helper-function.php.
                         echo sprintf('<a class="magnify-video-active" href="%1$s">%2$s %3$s %4$s</a>',esc_url( $settings['video_url'] ),HTMega_Icon_manager::render_icon( $settings['buttonicon'], [ 'aria-hidden' => 'true' ] ), htmega_kses_title($settings['buttontext'] ), $animation_markup );
                     } elseif ('image' == $buttonicon_type && $buttonicon_image != '' ){
-                        
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- href esc_url()'d, $buttonicon_image esc_url()'d above, text via htmega_kses_title() (wp_kses()), $animation_markup is a fixed static HTML string (no dynamic/user data).
                         echo sprintf( '<a class="magnify-video-active" href="%1$s"><img src="%2$s" alt="htmega-addons"> %3$s %4$s </a>', esc_url( $settings['video_url'] ), $buttonicon_image, htmega_kses_title( $settings['buttontext'] ), $animation_markup );
 
                     } else {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- href esc_url()'d, text via htmega_kses_title() (wp_kses()), $animation_markup is a fixed static HTML string (no dynamic/user data).
                         echo sprintf('<a class="magnify-video-active" href="%1$s">%2$s %3$s</a>', esc_url( $settings['video_url'] ), htmega_kses_title( $settings['buttontext'] ), $animation_markup );
                     }
                 ?>

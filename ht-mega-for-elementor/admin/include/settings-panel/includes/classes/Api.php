@@ -1,6 +1,8 @@
 <?php
 namespace HTMegaOpt;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 use WP_REST_Controller;
 
 /**

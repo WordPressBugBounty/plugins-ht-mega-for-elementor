@@ -41,7 +41,7 @@ class HTMega_Post_Dupicator{
         if ( current_user_can( 'edit_post',$post->ID )  && ! post_password_required( $post ) && ( in_array( $post->post_type, $enable ) || in_array('all', $enable) ) ) {
             $actionurl = admin_url( 'admin.php?action=htmega_duplicate_post_as_draft&post=' . $post->ID );
             $url = wp_nonce_url( $actionurl, 'htmega_duplicate_nonce' );
-            $actions['htmegaduplicate'] = '<a href="' . $url . '" title="' . esc_attr__( 'HT Mega Duplicator', 'htmega-addons' ) . '" rel="permalink">' . esc_html__( 'HT Duplicate', 'htmega-addons' ) . '</a>';
+            $actions['htmegaduplicate'] = '<a href="' . $url . '" title="' . esc_attr__( 'HT Mega Duplicator', 'ht-mega-for-elementor' ) . '" rel="permalink">' . esc_html__( 'HT Duplicate', 'ht-mega-for-elementor' ) . '</a>';
 
         }
         return $actions;
@@ -62,8 +62,8 @@ class HTMega_Post_Dupicator{
         /*
          * Nonce verification
          */
-        if( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'htmega_duplicate_nonce' ) ) {
-            return; 
+        if( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'htmega_duplicate_nonce' ) ) {
+            return;
         }
 
         /*
@@ -80,21 +80,21 @@ class HTMega_Post_Dupicator{
         * Check if the current user can edit this post
         */
         if ( !current_user_can( 'edit_post', $post_id ) ) {
-            wp_die( esc_html__( 'You do not have permission to duplicate this post!','htmega-addons' ) );
+            wp_die( esc_html__( 'You do not have permission to duplicate this post!','ht-mega-for-elementor' ) );
         }
 
         /*
         * Check if the post is password protected and if the current user can edit password-protected posts
         */
         if ( post_password_required( $post )  && ! current_user_can( 'edit_post_passwords' ) ) {
-            wp_die( esc_html__( 'You do not have permission to duplicate this password-protected post!', 'htmega-addons' ) );
+            wp_die( esc_html__( 'You do not have permission to duplicate this password-protected post!', 'ht-mega-for-elementor' ) );
         }
 
         /*
         * Check if the post is private
         */
         if ($post->post_status === 'private') {
-            wp_die(esc_html__('You do not have permission to duplicate this private post!', 'htmega-addons'));
+            wp_die(esc_html__('You do not have permission to duplicate this private post!', 'ht-mega-for-elementor'));
         }
 
         /*
@@ -148,7 +148,7 @@ class HTMega_Post_Dupicator{
                 /*
                  * duplicate all post meta just in two SQL queries
                  */
-                $post_meta_infos = $wpdb->get_results(
+                $post_meta_infos = $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- intentional bulk raw-row copy (including any duplicate meta_key rows) for one-shot post duplication in the admin; get_post_meta() would collapse/reshape multi-value meta keys and change duplication behavior. Not a hot/repeated path, so caching adds no value here.
                     $wpdb->prepare("SELECT meta_key, meta_value FROM $wpdb->postmeta WHERE post_id=%d",$post_id)
                 );
                 if ( is_array( $post_meta_infos ) && count( $post_meta_infos ) !=0) {
@@ -167,14 +167,14 @@ class HTMega_Post_Dupicator{
 
                     }
                     $sql_query.= implode(",", $sql_query_val). ';';
-                    $wpdb->query( $wpdb->prepare( $sql_query, $sql_query_sel ) ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+                    $wpdb->query( $wpdb->prepare( $sql_query, $sql_query_sel ) ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- $sql_query is a placeholder template (%d, %s, %s per row, no interpolated data), actual values are passed separately via $sql_query_sel and substituted safely by $wpdb->prepare() before the query runs. This is a one-shot bulk INSERT for post duplication, not a cacheable read.
                 }
             }
             $redirect_to = admin_url( 'post.php?action=edit&post=' . $new_post_id );
             wp_safe_redirect( $redirect_to );
 
         }else {
-            wp_die( esc_html__( 'Post creation failed, could not find original post: ','htmega-addons' ) . esc_attr( $post_id ) );
+            wp_die( esc_html__( 'Post creation failed, could not find original post: ','ht-mega-for-elementor' ) . esc_attr( $post_id ) );
         }
 
 

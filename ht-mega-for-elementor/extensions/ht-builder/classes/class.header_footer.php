@@ -91,7 +91,7 @@ class HTMegaBuilder_Header_Footer{
         $header->start_controls_section(
             'htmega_section_header_footer',
             [
-                'label' => __( 'HT Header & Footer', 'htmega-addons' ),
+                'label' => __( 'HT Header & Footer', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_SETTINGS,
             ]
         );
@@ -99,7 +99,7 @@ class HTMegaBuilder_Header_Footer{
             $header->add_control(
                 'htmegaheader_template',
                 [
-                    'label' => __( 'Header Template', 'htmega-addons' ),
+                    'label' => __( 'Header Template', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '0',
                     'options' => htmega_elementor_template(),
@@ -110,7 +110,7 @@ class HTMegaBuilder_Header_Footer{
             $header->add_control(
                 'htmegafooter_template',
                 [
-                    'label' => __( 'Footer Template', 'htmega-addons' ),
+                    'label' => __( 'Footer Template', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '0',
                     'options' => htmega_elementor_template(),

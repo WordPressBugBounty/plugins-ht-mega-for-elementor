@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Contact form 7', 'htmega-addons' );
+        return __( 'Contact form 7', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -40,7 +40,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Contact Form 7', 'htmega-addons' ),
+                'label' => __( 'Contact Form 7', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -48,7 +48,8 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: "Contact Form 7" plugin name, rendered as a link to install/activate it */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Contact%2520Form%25207&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">Contact Form 7</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -72,23 +73,23 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'htmega_contact_form_seven',
             [
-                'label' => __( 'Contact Form', 'htmega-addons' ),
+                'label' => __( 'Contact Form', 'ht-mega-for-elementor' ),
             ]
         );
         
             $this->add_control(
                 'htmega_form_layout_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
-                        '6'   => __( 'Style Six', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6'   => __( 'Style Six', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -96,7 +97,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_control(
                 'htmega_contact_form_id',
                 [
-                    'label' => __( 'Contact Form', 'htmega-addons' ),
+                    'label' => __( 'Contact Form', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'options' => htmega_contact_form_seven(),
                 ]
@@ -108,14 +109,14 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'htmega_form_section_style',
             [
-                'label' => __( 'Form Wrapper Style', 'htmega-addons' ),
+                'label' => __( 'Form Wrapper Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
             'ct_form_max_width',
             [
-                'label' => __( 'Max Width', 'htmega-addons' ),
+                'label' => __( 'Max Width', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -141,19 +142,19 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->add_responsive_control(
             'htmega_form_section_align',
             [
-                'label' => __( 'Alignment', 'htmega-addons' ),
+                'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'htmega-addons' ),
+                        'title' => __( 'Left', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'htmega-addons' ),
+                        'title' => __( 'Center', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'htmega-addons' ),
+                        'title' => __( 'Right', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -168,7 +169,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_form_section_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-form-wrapper',
                 ]
@@ -176,7 +177,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_form_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -189,7 +190,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_form_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -205,7 +206,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'htmega_contactform_input_style',
             [
-                'label'     => __( 'Input', 'htmega-addons' ),
+                'label'     => __( 'Input', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -216,14 +217,14 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 $this->start_controls_tab(
                     'style_input_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'htmega_input_box_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -250,7 +251,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_input_box_background',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"]'   => 'background-color: {{VALUE}};',
@@ -275,7 +276,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_input_box_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"]'   => 'color: {{VALUE}};',
@@ -292,7 +293,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_input_box_placeholder_color',
                         [
-                            'label'     => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label'     => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"]::-webkit-input-placeholder'  => 'color: {{VALUE}};',
@@ -321,7 +322,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_input_box_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"], {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="email"], {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="url"], {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="number"], {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="tel"], {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="date"], {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap .wpcf7-select',
                         ]
                     );
@@ -329,7 +330,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_box_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -347,7 +348,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_box_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -366,7 +367,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_box_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -385,7 +386,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_input_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}}.wpcf7-form .wpcf7-form-control-wrap select',
                         ]
                     );
@@ -393,7 +394,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'input_select_field_appearance',
                         [
-                            'label' => esc_html__( 'Customize Select Field', 'htmega-addons' ),
+                            'label' => esc_html__( 'Customize Select Field', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SWITCHER,
                             'return_value' => 'yes',
                             'default' => 'no',
@@ -403,7 +404,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'select_appearance_position',
                         [
-                            'label' => esc_html__( 'Icon Position', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Position', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%','custom' ],
                             'range' => [
@@ -432,7 +433,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'select_appearance_size',
                         [
-                            'label' => esc_html__( 'Icon Size', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -461,7 +462,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'select_appearance_background', 
                         [
-                             'label'      => esc_html__( 'Icon Image', 'htmega-addons' ),
+                             'label'      => esc_html__( 'Icon Image', 'ht-mega-for-elementor' ),
                             'type'        => Controls_Manager::MEDIA,
                             'default'     => [
                                 'url'     => HTMEGA_ADDONS_PL_URL .'assets/images/icons/select-arrow-icon.svg'
@@ -475,7 +476,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'select_appearance_options_color',
                         [
-                            'label'     => esc_html__( 'Options Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Options Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-select option' => 'color: {{VALUE}};',
@@ -492,13 +493,13 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->start_controls_tab(
                         'style_input_foucs_tab',
                         [
-                            'label' => __( 'Focus', 'htmega-addons' ),
+                            'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                         ]
                     );
                     $this->add_control(
                         'htmega_input_box_background_focus',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"]:focus'   => 'background-color: {{VALUE}};',
@@ -515,7 +516,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_input_box_text_color_focus',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"]:focus'   => 'color: {{VALUE}};',
@@ -531,7 +532,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'radio_checkbox_color_accent',
                         [
-                            'label'     => __( 'Radio & Checkbox Color', 'htmega-addons' ),
+                            'label'     => __( 'Radio & Checkbox Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type="checkbox"]:checked,{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type="checkbox"]:hover:checked,{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type="checkbox"]:focus:checked,{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type="radio"]:checked,{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type="radio"]:hover:checked,{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type="radio"]:focus:checked'   => 'accent-color: {{VALUE}} !important;',
@@ -542,7 +543,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_input_box_border_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"]:focus, {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="email"]:focus, {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="url"]:focus, {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="number"]:focus, {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="tel"]:focus, {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="date"]:focus, {{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap .wpcf7-select:focus',
                         ]
                     );
@@ -550,7 +551,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_box_border_radius_focus',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input[type*="text"]:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -568,7 +569,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_input_box_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}}.wpcf7-form .wpcf7-form-control-wrap select:focus',
                         ]
                     );
@@ -580,7 +581,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'htmega_contactform_textarea_style',
             [
-                'label'     => __( 'Textarea', 'htmega-addons' ),
+                'label'     => __( 'Textarea', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -591,14 +592,14 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 $this->start_controls_tab(
                     'style_textarea_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'htmega_textarea_box_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -618,7 +619,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_textarea_box_background',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea'   => 'background-color: {{VALUE}};',
@@ -637,7 +638,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_textarea_box_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea'   => 'color: {{VALUE}};',
@@ -648,7 +649,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_textarea_box_placeholder_color',
                         [
-                            'label'     => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label'     => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea::-webkit-input-placeholder'  => 'color: {{VALUE}};',
@@ -662,7 +663,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_textarea_box_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea',
                         ]
                     );
@@ -670,7 +671,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_textarea_box_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -682,7 +683,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_textarea_box_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -695,7 +696,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_textarea_box_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -708,7 +709,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_textarea_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea',
                         ]
                     );
@@ -717,14 +718,14 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->start_controls_tab(
                         'style_textarea_focus_tab',
                         [
-                            'label' => __( 'Focus', 'htmega-addons' ),
+                            'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                         ]
                     );
 
                         $this->add_control(
                             'htmega_textarea_box_background_focus',
                             [
-                                'label'     => __( 'Background Color', 'htmega-addons' ),
+                                'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                                 'type'      => Controls_Manager::COLOR,
                                 'selectors' => [
                                     '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea:focus'   => 'background-color: {{VALUE}};',
@@ -735,7 +736,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         $this->add_control(
                             'htmega_textarea_box_text_color_focus',
                             [
-                                'label'     => __( 'Text Color', 'htmega-addons' ),
+                                'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                                 'type'      => Controls_Manager::COLOR,
                                 'selectors' => [
                                     '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea:focus'   => 'color: {{VALUE}};',
@@ -747,7 +748,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                             Group_Control_Border::get_type(),
                             [
                                 'name' => 'htmega_textarea_box_border_focus',
-                                'label' => __( 'Border', 'htmega-addons' ),
+                                'label' => __( 'Border', 'ht-mega-for-elementor' ),
                                 'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea:focus',
                             ]
                         );
@@ -755,7 +756,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         $this->add_responsive_control(
                             'htmega_textarea_box_border_radius_focus',
                             [
-                                'label' => __( 'Border Radius', 'htmega-addons' ),
+                                'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                                 'type' => Controls_Manager::DIMENSIONS,
                                 'selectors' => [
                                     '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -767,7 +768,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                             Group_Control_Box_Shadow::get_type(),
                             [
                                 'name' => 'htmega_textarea_box_shadow_focus',
-                                'label' => __( 'Box Shadow', 'htmega-addons' ),
+                                'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                                 'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-form-control-wrap textarea:focus',
                             ]
                         );
@@ -779,7 +780,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'htmega_contactform_label_style',
             [
-                'label'     => __( 'Labels', 'htmega-addons' ),
+                'label'     => __( 'Labels', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -787,7 +788,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_control(
                 'htmega_label_background',
                 [
-                    'label'     => __( 'Background Color', 'htmega-addons' ),
+                    'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-form-wrapper form.wpcf7-form label'   => 'background-color: {{VALUE}};',
@@ -798,7 +799,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_control(
                 'htmega_label_text_color',
                 [
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-form-wrapper form.wpcf7-form label,
@@ -819,7 +820,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_label_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-form-wrapper form.wpcf7-form label',
                 ]
             );
@@ -827,7 +828,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_label_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-form-wrapper form.wpcf7-form label' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -839,7 +840,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_label_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -852,7 +853,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_label_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -864,7 +865,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_label_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -893,7 +894,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'htmega_contactform_inputsubmit_style',
             [
-                'label'     => __( 'Button', 'htmega-addons' ),
+                'label'     => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -903,14 +904,14 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 $this->start_controls_tab(
                     'htmega_submit_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'htmega_input_submit_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -928,7 +929,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -961,7 +962,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_input_submit_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-submit'  => 'color: {{VALUE}};',
@@ -972,7 +973,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_input_submit_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-submit'  => 'background-color: {{VALUE}};',
@@ -983,7 +984,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -996,7 +997,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1010,7 +1011,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_input_submit_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-submit',
                         ]
                     );
@@ -1018,7 +1019,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-submit' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1031,7 +1032,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_input_submit_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-submit',
                         ]
                     );
@@ -1042,14 +1043,14 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 $this->start_controls_tab(
                     'htmega_submit_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'htmega_input_submithover_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-submit:hover'  => 'color: {{VALUE}};',
@@ -1060,7 +1061,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                     $this->add_control(
                         'htmega_input_submithover_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpcf7-form .wpcf7-submit:hover'  => 'background-color: {{VALUE}};',
@@ -1072,7 +1073,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_input_submithover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpcf7-form .wpcf7-submit:hover',
                         ]
                     );
@@ -1086,7 +1087,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'htmega_loading_spinner_style',
             [
-                'label'     => __( 'Loading Spinner', 'htmega-addons' ),
+                'label'     => __( 'Loading Spinner', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1094,7 +1095,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_control(
                 'htmega_hide_spinenr',
                 [
-                    'label' => esc_html__( 'Hide Spinner', 'htmega-pro' ),
+                    'label' => esc_html__( 'Hide Spinner', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'none',
                     'selectors' => [
@@ -1105,7 +1106,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_control(
                 'htmega_spinner_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .wpcf7-spinner'  => 'background-color: {{VALUE}};',
@@ -1118,7 +1119,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_responsive_control(
                 'spinner_x_postion',
                 [
-                    'label' => __( 'Position X', 'htmega-pro' ),
+                    'label' => __( 'Position X', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px'],
                     'range' => [
@@ -1143,7 +1144,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_responsive_control(
                 'spinner_y_postion',
                 [
-                    'label' => __( 'Position Y', 'htmega-pro' ),
+                    'label' => __( 'Position Y', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -1170,7 +1171,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $this->start_controls_section(
             'htmega_input_error_style',
             [
-                'label'     => __( 'Errors and Feedback Style', 'htmega-addons' ),
+                'label'     => __( 'Errors and Feedback Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1178,7 +1179,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_control(
                 'htmega_error_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .wpcf7-not-valid-tip'  => 'color: {{VALUE}};',
@@ -1196,7 +1197,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_error_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .wpcf7-not-valid',
                 ]
             );
@@ -1204,7 +1205,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_control(
                 'htmega_error_submit_feedback_style',
                 [
-                    'label' => __( 'Feedback Style', 'htmega-addons' ),
+                    'label' => __( 'Feedback Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1212,7 +1213,7 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
             $this->add_control(
                 'htmega_feedback_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .wpcf7-response-output,{{WRAPPER}} .wpcf7-mail-sent-ng,{{WRAPPER}} .wpcf7-mail-sent-ok'  => 'color: {{VALUE}};',
@@ -1230,14 +1231,14 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_feedback_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .wpcf7-response-output,{{WRAPPER}} .wpcf7-mail-sent-ng,{{WRAPPER}} .wpcf7-mail-sent-ok',
                 ]
             );
             $this->add_responsive_control(
                 'htmega_feedback_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1255,18 +1256,18 @@ class HTMega_Elementor_Widget_Contact_Form_Seven extends Widget_Base {
         $section_id =  'sid' . $this-> get_id();
 
         if ( ! is_plugin_active('contact-form-7/wp-contact-form-7.php') ) {
-            htmega_plugin_missing_alert( __('Contact Form 7', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Contact Form 7', 'ht-mega-for-elementor') );
             return;
         }
         $this->add_render_attribute( 'htmega_form_area_attr', 'class', 'htmega-form-wrapper ' . esc_attr( $section_id ) );
         $this->add_render_attribute( 'htmega_form_area_attr', 'class', 'htmega-form-style-'. esc_attr( $settings['htmega_form_layout_style'] ) );
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_form_area_attr' ); ?> >
+            <div <?php echo $this->get_render_attribute_string( 'htmega_form_area_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                 <?php
                     if( !empty($settings['htmega_contact_form_id']) ){
                         echo do_shortcode( '[contact-form-7  id="'. esc_attr( $settings['htmega_contact_form_id'] ) .'"]' ); 
                     }else{
-                        echo '<div class="form_no_select">' .esc_html__('Please Select contact form.','htmega-addons'). '</div>';
+                        echo '<div class="form_no_select">' .esc_html__('Please Select contact form.','ht-mega-for-elementor'). '</div>';
                     }
                     
                     if ( $settings['input_select_field_appearance'] == 'yes' ) {

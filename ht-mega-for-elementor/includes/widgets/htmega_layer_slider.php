@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Layer_Slider extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'LayerSlider', 'htmega-addons' );
+        return __( 'LayerSlider', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -47,14 +47,14 @@ class HTMega_Elementor_Widget_Layer_Slider extends Widget_Base {
         $this->start_controls_section(
             'layer_slider_content',
             [
-                'label' => __( 'LayerSlider', 'htmega-addons' ),
+                'label' => __( 'LayerSlider', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'slider_name',
                 [
-                    'label'     => esc_html__( 'Select Slider', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Select Slider', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SELECT,
                     'options'   => $this->htmega_get_layer_slider_list(),
                 ]
@@ -63,7 +63,7 @@ class HTMega_Elementor_Widget_Layer_Slider extends Widget_Base {
             $this->add_control(
                 'first_slide',
                 [
-                    'label'       => esc_html__( 'First Slide Number', 'htmega-addons' ),
+                    'label'       => esc_html__( 'First Slide Number', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::NUMBER,
                     'default'     => 1,
                 ]

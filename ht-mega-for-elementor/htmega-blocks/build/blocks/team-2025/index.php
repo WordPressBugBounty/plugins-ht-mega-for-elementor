@@ -45,29 +45,42 @@ $block_id = isset( $attributes['blockUniqId'] ) ? sanitize_html_class( $attribut
 $sc   = '.htmega-block-' . $block_id;
 $_css = [];
 
-$_border = function( $type, $width, $color ) {
+$_num = function( $value, $unit = 'px' ) {
+	if ( ! is_numeric( $value ) ) return '';
+	$allowed = [ 'px', 'em', 'rem', '%', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'pt' ];
+	$unit    = in_array( $unit, $allowed, true ) ? $unit : 'px';
+	return ( $value + 0 ) . $unit;
+};
+$_border = function( $type, $width, $color ) use ( $_num ) {
 	if ( ! $type || $type === 'none' ) return [];
 	$r = [ 'border-style: ' . esc_attr( $type ) ];
 	if ( $width && is_array( $width ) ) {
 		$u = $width['unit'] ?? 'px';
 		if ( isset( $width['link'] ) && $width['link'] === 'yes' && isset( $width['top'] ) ) {
-			$r[] = 'border-width: ' . $width['top'] . $u;
+			$val = $_num( $width['top'], $u );
+			if ( $val !== '' ) $r[] = 'border-width: ' . $val;
 		} else {
 			foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-				if ( ! empty( $width[ $_s ] ) ) $r[] = "border-{$_s}-width: {$width[$_s]}{$u}";
+				if ( ! empty( $width[ $_s ] ) ) {
+					$val = $_num( $width[ $_s ], $u );
+					if ( $val !== '' ) $r[] = "border-{$_s}-width: {$val}";
+				}
 			}
 		}
 	}
 	if ( $color ) $r[] = 'border-color: ' . esc_attr( $color );
 	return $r;
 };
-$_radius = function( $rv ) {
+$_radius = function( $rv ) use ( $_num ) {
 	if ( ! $rv || ! is_array( $rv ) ) return [];
 	$u   = $rv['unit'] ?? 'px';
 	$map = [ 'top' => 'top-left', 'right' => 'top-right', 'bottom' => 'bottom-right', 'left' => 'bottom-left' ];
 	$r   = [];
 	foreach ( $map as $_s => $corner ) {
-		if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) $r[] = "border-{$corner}-radius: {$rv[$_s]}{$u}";
+		if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) {
+			$val = $_num( $rv[ $_s ], $u );
+			if ( $val !== '' ) $r[] = "border-{$corner}-radius: {$val}";
+		}
 	}
 	return $r;
 };
@@ -80,24 +93,30 @@ $_shadow = function( $s ) {
 	$sp = is_numeric( $s['spread']     ?? null ) ? floatval( $s['spread'] )     : 0;
 	return 'box-shadow: ' . $i . $h . 'px ' . $v . 'px ' . $b . 'px ' . $sp . 'px ' . esc_attr( $s['color'] );
 };
-$_typo = function( $t ) {
+$_typo = function( $t ) use ( $_num ) {
 	if ( ! $t || ! is_array( $t ) ) return [];
 	$r = [];
-	if ( ! empty( $t['family'] )        ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
-	if ( ! empty( $t['size'] )          ) $r[] = 'font-size: '       . $t['size']       . ( $t['sizeUnit']      ?? 'px' );
-	if ( ! empty( $t['weight'] )        ) $r[] = 'font-weight: '     . esc_attr( $t['weight'] );
-	if ( ! empty( $t['lineHeight'] )    ) $r[] = 'line-height: '     . $t['lineHeight'];
-	if ( ! empty( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: '  . $t['letterSpacing'] . 'px';
-	if ( ! empty( $t['transform'] )     ) $r[] = 'text-transform: '  . esc_attr( $t['transform'] );
+	if ( ! empty( $t['family'] ) ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
+	if ( ! empty( $t['size'] ) ) {
+		$val = $_num( $t['size'], $t['sizeUnit'] ?? 'px' );
+		if ( $val !== '' ) $r[] = 'font-size: ' . $val;
+	}
+	if ( ! empty( $t['weight'] ) ) $r[] = 'font-weight: ' . esc_attr( $t['weight'] );
+	if ( isset( $t['lineHeight'] ) && is_numeric( $t['lineHeight'] ) ) $r[] = 'line-height: ' . ( $t['lineHeight'] + 0 );
+	if ( isset( $t['letterSpacing'] ) && is_numeric( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: ' . ( $t['letterSpacing'] + 0 ) . 'px';
+	if ( ! empty( $t['transform'] ) ) $r[] = 'text-transform: ' . esc_attr( $t['transform'] );
 	return $r;
 };
-$_dim = function( $dim, $prop ) {
+$_dim = function( $dim, $prop ) use ( $_num ) {
 	if ( ! $dim || ! is_array( $dim ) ) return [];
 	$d = isset( $dim['desktop'] ) ? $dim['desktop'] : $dim;
 	$u = $d['unit'] ?? $dim['unit'] ?? 'px';
 	$r = [];
 	foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-		if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) $r[] = "{$prop}-{$_s}: {$d[$_s]}{$u}";
+		if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) {
+			$val = $_num( $d[ $_s ], $u );
+			if ( $val !== '' ) $r[] = "{$prop}-{$_s}: {$val}";
+		}
 	}
 	return $r;
 };
@@ -217,7 +236,7 @@ $render_member_card = function( $member, $index ) use ( $layout, $icon_linkedin,
 	// Initials fallback
 	$initials = '';
 	if ( $name ) {
-		$parts = explode( ' ', strip_tags( $name ) );
+		$parts = explode( ' ', wp_strip_all_tags( $name ) );
 		foreach ( $parts as $part ) {
 			$initials .= mb_substr( $part, 0, 1 );
 		}
@@ -283,19 +302,19 @@ $render_member_card = function( $member, $index ) use ( $layout, $icon_linkedin,
 			<div class="htm25-team__card-social" aria-label="<?php echo esc_attr( $name ) . ' social links'; ?>">
 				<?php if ( $li_url ) : ?>
 				<a href="<?php echo esc_url( $li_url ); ?>" target="_blank" rel="noopener noreferrer"
-				   class="htm25-team__card-social-link" aria-label="<?php echo esc_attr( strip_tags( $name ) ) . ' on LinkedIn'; ?>">
+				   class="htm25-team__card-social-link" aria-label="<?php echo esc_attr( wp_strip_all_tags( $name ) ) . ' on LinkedIn'; ?>">
 					<?php echo $icon_linkedin; // phpcs:ignore ?>
 				</a>
 				<?php endif; ?>
 				<?php if ( $tw_url ) : ?>
 				<a href="<?php echo esc_url( $tw_url ); ?>" target="_blank" rel="noopener noreferrer"
-				   class="htm25-team__card-social-link" aria-label="<?php echo esc_attr( strip_tags( $name ) ) . ' on X'; ?>">
+				   class="htm25-team__card-social-link" aria-label="<?php echo esc_attr( wp_strip_all_tags( $name ) ) . ' on X'; ?>">
 					<?php echo $icon_twitter; // phpcs:ignore ?>
 				</a>
 				<?php endif; ?>
 				<?php if ( $gh_url ) : ?>
 				<a href="<?php echo esc_url( $gh_url ); ?>" target="_blank" rel="noopener noreferrer"
-				   class="htm25-team__card-social-link" aria-label="<?php echo esc_attr( strip_tags( $name ) ) . ' on GitHub'; ?>">
+				   class="htm25-team__card-social-link" aria-label="<?php echo esc_attr( wp_strip_all_tags( $name ) ) . ' on GitHub'; ?>">
 					<?php echo $icon_github; // phpcs:ignore ?>
 				</a>
 				<?php endif; ?>

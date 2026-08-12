@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Special Day Offer', 'htmega-addons' );
+        return __( 'Special Day Offer', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -36,22 +36,22 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         $this->start_controls_section(
             'add_banner_content',
             [
-                'label' => __( 'Banner', 'htmega-addons' ),
+                'label' => __( 'Banner', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'banner_content_pos',
                 [
-                    'label' => __( 'Content Position', 'htmega-addons' ),
+                    'label' => __( 'Content Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'center',
                     'options' => [
-                        'top'   => __( 'Top', 'htmega-addons' ),
-                        'center' => __( 'Center', 'htmega-addons' ),
-                        'bottom' => __( 'Bottom', 'htmega-addons' ),
-                        'left'   => __( 'Left', 'htmega-addons' ),
-                        'right'  => __( 'Right', 'htmega-addons' ),
+                        'top'   => __( 'Top', 'ht-mega-for-elementor' ),
+                        'center' => __( 'Center', 'ht-mega-for-elementor' ),
+                        'bottom' => __( 'Bottom', 'ht-mega-for-elementor' ),
+                        'left'   => __( 'Left', 'ht-mega-for-elementor' ),
+                        'right'  => __( 'Right', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -59,7 +59,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_image',
                 [
-                    'label' => __( 'Image', 'htmega-addons' ),
+                    'label' => __( 'Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -82,9 +82,9 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_title',
                 [
-                    'label' => __( 'Title', 'htmega-addons' ),
+                    'label' => __( 'Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Banner Title', 'htmega-addons' ),
+                    'placeholder' => __( 'Banner Title', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -94,9 +94,9 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_sub_title',
                 [
-                    'label' => __( 'Sub Title', 'htmega-addons' ),
+                    'label' => __( 'Sub Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Banner Sub Title', 'htmega-addons' ),
+                    'placeholder' => __( 'Banner Sub Title', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -106,9 +106,9 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_description',
                 [
-                    'label' => __( 'Description', 'htmega-addons' ),
+                    'label' => __( 'Description', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Banner Description', 'htmega-addons' ),
+                    'placeholder' => __( 'Banner Description', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -118,9 +118,9 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_offer',
                 [
-                    'label' => __( 'Offer Amount', 'htmega-addons' ),
+                    'label' => __( 'Offer Amount', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( '50%', 'htmega-addons' ),
+                    'placeholder' => __( '50%', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -130,9 +130,9 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_offer_tag_line',
                 [
-                    'label' => __( 'Offer Tag Line', 'htmega-addons' ),
+                    'label' => __( 'Offer Tag Line', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Off', 'htmega-addons' ),
+                    'placeholder' => __( 'Off', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -142,9 +142,9 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_link',
                 [
-                    'label' => __( 'Banner Link', 'htmega-addons' ),
+                    'label' => __( 'Banner Link', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                    'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                     'show_external' => true,
                     'default' => [
                         'url' => '#',
@@ -160,9 +160,9 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_button_txt',
                 [
-                    'label' => __( 'Button Text', 'htmega-addons' ),
+                    'label' => __( 'Button Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Button Text', 'htmega-addons' ),
+                    'placeholder' => __( 'Button Text', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -172,7 +172,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_badge_toggle',
                 [
-                    'label' => __( 'Banner Badge', 'htmega-addons' ),
+                    'label' => __( 'Banner Badge', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::POPOVER_TOGGLE,
                 ]
             );
@@ -182,7 +182,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 $this->add_control(
                     'banner_badge_image',
                     [
-                        'label' => __( 'Badge Image', 'htmega-addons' ),
+                        'label' => __( 'Badge Image', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::MEDIA,
                         'dynamic' => [
                             'active' => true,
@@ -193,7 +193,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 $this->add_responsive_control(
                     'badge_width',
                     [
-                        'label' => __( 'Width', 'htmega-addons' ),
+                        'label' => __( 'Width', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'range' => [
@@ -218,7 +218,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 $this->add_responsive_control(
                     'badge_x_position',
                     [
-                        'label' => __( 'Horizontal Postion', 'htmega-addons' ),
+                        'label' => __( 'Horizontal Postion', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'default' => [
@@ -247,7 +247,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 $this->add_responsive_control(
                     'badge_y_position',
                     [
-                        'label' => __( 'Vertical Postion', 'htmega-addons' ),
+                        'label' => __( 'Vertical Postion', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'default' => [
@@ -281,7 +281,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         $this->start_controls_section(
             'add_banner_style_section',
             [
-                'label' => __( 'Content Box Style', 'htmega-addons' ),
+                'label' => __( 'Content Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -289,23 +289,23 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'add_banner_section_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -318,7 +318,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'add_banner_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -330,7 +330,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'add_banner_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -341,7 +341,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_hover_bg_heading',
                 [
-                    'label' => __( 'Banner Hover Color', 'htmega-addons' ),
+                    'label' => __( 'Banner Hover Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                 ]
@@ -350,7 +350,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'banner_hover_color_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-banner .banner-thumb a::before,{{WRAPPER}} .htmega-banner:hover .banner-thumb a::after',
                     'separator' =>'before',
@@ -363,7 +363,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         $this->start_controls_section(
             'banner_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'banner_title!'=>'',
@@ -374,7 +374,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#1f1e26',
                     'selectors' => [
@@ -387,7 +387,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'banner_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-banner .banner-content h2',
                 ]
             );
@@ -395,7 +395,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -407,7 +407,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -422,7 +422,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         $this->start_controls_section(
             'banner_sub_title_style_section',
             [
-                'label' => __( 'Sub Title', 'htmega-addons' ),
+                'label' => __( 'Sub Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'banner_sub_title!'=>'',
@@ -433,7 +433,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_sub_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#1f1e26',
                     'selectors' => [
@@ -446,7 +446,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'banner_sub_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-banner .banner-content h6',
                 ]
             );
@@ -454,7 +454,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_sub_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -466,7 +466,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_sub_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -481,7 +481,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         $this->start_controls_section(
             'banner_description_style_section',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'banner_description!'=>'',
@@ -492,7 +492,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_description_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#1f1e26',
                     'selectors' => [
@@ -505,7 +505,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'banner_description_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-banner .banner-content p',
                 ]
             );
@@ -513,7 +513,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -525,7 +525,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_description_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -540,7 +540,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         $this->start_controls_section(
             'banner_offer_style_section',
             [
-                'label' => __( 'Offer Amount', 'htmega-addons' ),
+                'label' => __( 'Offer Amount', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'banner_offer!'=>'',
@@ -551,7 +551,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_offer_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#1f1e26',
                     'selectors' => [
@@ -564,7 +564,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'banner_offer_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-banner .banner-content h5',
                 ]
             );
@@ -572,7 +572,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_offer_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -584,7 +584,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_offer_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -599,7 +599,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         $this->start_controls_section(
             'banner_offer_tag_style_section',
             [
-                'label' => __( 'Offer Tag Line', 'htmega-addons' ),
+                'label' => __( 'Offer Tag Line', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'banner_offer!'=>'',
@@ -610,7 +610,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_control(
                 'banner_offer_tag_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#1f1e26',
                     'selectors' => [
@@ -623,7 +623,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'banner_offer_tag_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-banner .banner-content h5 span',
                 ]
             );
@@ -631,7 +631,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_offer_tag_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -643,7 +643,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
             $this->add_responsive_control(
                 'banner_offer_tag_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -658,7 +658,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         $this->start_controls_section(
             'banner_button_style_section',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'banner_button_txt!'=>'',
@@ -671,13 +671,13 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'button_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#383838',
                             'selectors' => [
@@ -690,7 +690,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'button_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-banner .banner-content a',
                         ]
                     );
@@ -699,7 +699,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-banner .banner-content a',
                         ]
                     );
@@ -707,7 +707,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                     $this->add_responsive_control(
                         'button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-banner .banner-content a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -719,7 +719,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-banner .banner-content a',
                             'separator' => 'before',
@@ -729,7 +729,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                     $this->add_responsive_control(
                         'button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -742,7 +742,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                     $this->add_responsive_control(
                         'button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -758,14 +758,14 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'button_hover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#383838',
                             'selectors' => [
@@ -778,7 +778,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-banner .banner-content a:hover',
                         ]
                     );
@@ -786,7 +786,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                     $this->add_responsive_control(
                         'button_hover_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-banner .banner-content a:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -798,7 +798,7 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-banner .banner-content a:hover',
                             'separator' => 'before',
@@ -833,10 +833,13 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
         }
        
         ?>
+            <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
             <div <?php echo $this->get_render_attribute_string( 'htmega_banner' ); ?>>
                 <div class="banner-thumb">
+                    <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
                     <a <?php echo $this->get_render_attribute_string( 'url' ); ?>>
                         <?php
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Group_Control_Image_Size::get_attachment_image_html() is Elementor core, already escaped.
                             echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'banner_image_size', 'banner_image' );
                         ?>
                     </a>
@@ -849,19 +852,23 @@ class HTMega_Elementor_Widget_Special_day_Banner extends Widget_Base {
                 <div class="banner-content">
                     <?php
                         if( !empty( $settings['banner_title'] ) ){
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                             echo '<h2>'.htmega_kses_title( $settings['banner_title'] ).'</h2>';
                         }
                         if( !empty( $settings['banner_sub_title'] ) ){
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                             echo '<h6>'.htmega_kses_title( $settings['banner_sub_title'] ).'</h6>';
                         }
                         if( !empty( $settings['banner_offer'] ) ){
                             echo '<h5>'. esc_html( $settings['banner_offer'] ) . '<span>'.esc_html( $settings['banner_offer_tag_line'] ).'</span></h5>';
                         }
                         if( !empty( $settings['banner_description'] ) ){
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php.
                             echo '<p>'.htmega_kses_desc( $settings['banner_description'] ).'</p>';
                         }
 
                         if( !empty( $settings['banner_button_txt'] ) ){
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped; htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php.
                             echo '<a '.$this->get_render_attribute_string( 'url' ).'>'.htmega_kses_desc( $settings['banner_button_txt'] ).'</a>';
                         }
                     ?>

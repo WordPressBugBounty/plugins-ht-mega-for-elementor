@@ -21,7 +21,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Post Meta Info', 'htmega-addons' );
+        return __( 'Post Meta Info', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -44,23 +44,23 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_meta_info_section',
             [
-                'label' => __( 'Meta Data', 'htmega-addons' ),
+                'label' => __( 'Meta Data', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'layout',
                 [
-                    'label' => esc_html__( 'Layout', 'htmega-addons' ),
+                    'label' => esc_html__( 'Layout', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'default' => 'default',
                     'options' => [
                         'default' => [
-                            'title' => esc_html__( 'Default', 'htmega-addons' ),
+                            'title' => esc_html__( 'Default', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-editor-list-ul',
                         ],
                         'inline' => [
-                            'title' => esc_html__( 'Inline', 'htmega-addons' ),
+                            'title' => esc_html__( 'Inline', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-ellipsis-h',
                         ]
                     ],
@@ -72,16 +72,16 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'metaname',
                 [
-                    'label' => __( 'Meta Name', 'htmega-addons' ),
+                    'label' => __( 'Meta Name', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'date',
                     'options' => [
-                        'author' => __( 'Author', 'htmega-addons' ),
-                        'date' => __( 'Date', 'htmega-addons' ),
-                        'time' => __( 'Time', 'htmega-addons' ),
-                        'comments' => __( 'Comments', 'htmega-addons' ),
-                        'terms' => __( 'Terms', 'htmega-addons' ),
-                        'custom' => __( 'Custom', 'htmega-addons' ),
+                        'author' => __( 'Author', 'ht-mega-for-elementor' ),
+                        'date' => __( 'Date', 'ht-mega-for-elementor' ),
+                        'time' => __( 'Time', 'ht-mega-for-elementor' ),
+                        'comments' => __( 'Comments', 'ht-mega-for-elementor' ),
+                        'terms' => __( 'Terms', 'ht-mega-for-elementor' ),
+                        'custom' => __( 'Custom', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -89,17 +89,17 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'date_format',
                 [
-                    'label' => __( 'Date Format', 'htmega-addons' ),
+                    'label' => __( 'Date Format', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'label_block' => false,
                     'default' => 'default',
                     'options' => [
                         'default' => 'Default',
-                        '0' => _x( 'March 6, 2018 (F j, Y)', 'Date Format', 'htmega-addons' ),
+                        '0' => _x( 'March 6, 2018 (F j, Y)', 'Date Format', 'ht-mega-for-elementor' ),
                         '1' => '2018-03-06 (Y-m-d)',
                         '2' => '03/06/2018 (m/d/Y)',
                         '3' => '06/03/2018 (d/m/Y)',
-                        'custom' => __( 'Custom', 'htmega-addons' ),
+                        'custom' => __( 'Custom', 'ht-mega-for-elementor' ),
                     ],
                     'condition' => [
                         'metaname' => 'date',
@@ -110,7 +110,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'custom_date_format',
                 [
-                    'label' => __( 'Custom Date Format', 'htmega-addons' ),
+                    'label' => __( 'Custom Date Format', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'default' => 'F j, Y',
                     'label_block' => false,
@@ -119,7 +119,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                         'date_format' => 'custom',
                     ],
                     'description' => sprintf( /* translators: %s: List of date format letters */
-                        __( 'Use the letters: %s', 'htmega-addons' ),
+                        __( 'Use the letters: %s', 'ht-mega-for-elementor' ),
                         'l D d j S F m M n Y y'
                     ),
                 ]
@@ -128,7 +128,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'time_format',
                 [
-                    'label' => __( 'Time Format', 'htmega-addons' ),
+                    'label' => __( 'Time Format', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'label_block' => false,
                     'default' => 'default',
@@ -137,7 +137,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                         '0' => '3:31 pm (g:i a)',
                         '1' => '3:31 PM (g:i A)',
                         '2' => '15:31 (H:i)',
-                        'custom' => __( 'Custom', 'htmega-addons' ),
+                        'custom' => __( 'Custom', 'ht-mega-for-elementor' ),
                     ],
                     'condition' => [
                         'metaname' => 'time',
@@ -148,7 +148,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'custom_time_format',
                 [
-                    'label' => __( 'Custom Time Format', 'htmega-addons' ),
+                    'label' => __( 'Custom Time Format', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'default' => 'g:i a',
                     'placeholder' => 'g:i a',
@@ -158,7 +158,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                         'time_format' => 'custom',
                     ],
                     'description' => sprintf( /* translators: %s: List of time format letters */
-                        __( 'Use the letters: %s', 'htmega-addons' ),
+                        __( 'Use the letters: %s', 'ht-mega-for-elementor' ),
                         'g G H i a A'
                     ),
                 ]
@@ -167,7 +167,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'taxonomy',
                 [
-                    'label' => __( 'Taxonomy', 'htmega-addons' ),
+                    'label' => __( 'Taxonomy', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT2,
                     'label_block' => true,
                     'default' => [],
@@ -181,7 +181,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'show_avatar',
                 [
-                    'label' => __( 'Avatar', 'htmega-addons' ),
+                    'label' => __( 'Avatar', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'condition' => [
                         'metaname' => 'author',
@@ -192,7 +192,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_responsive_control(
                 'avatar_size',
                 [
-                    'label' => __( 'Size', 'htmega-addons' ),
+                    'label' => __( 'Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}} .elementor-icon-list-icon' => 'width: {{SIZE}}{{UNIT}}',
@@ -206,7 +206,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'comments_custom_strings',
                 [
-                    'label' => __( 'Custom Format', 'htmega-addons' ),
+                    'label' => __( 'Custom Format', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'default' => false,
                     'condition' => [
@@ -218,10 +218,10 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'string_no_comments',
                 [
-                    'label' => __( 'No Comments', 'htmega-addons' ),
+                    'label' => __( 'No Comments', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => false,
-                    'placeholder' => __( 'No Comments', 'htmega-addons' ),
+                    'placeholder' => __( 'No Comments', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'comments_custom_strings' => 'yes',
                         'metaname' => 'comments',
@@ -232,10 +232,10 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'string_one_comment',
                 [
-                    'label' => __( 'One Comment', 'htmega-addons' ),
+                    'label' => __( 'One Comment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => false,
-                    'placeholder' => __( 'One Comment', 'htmega-addons' ),
+                    'placeholder' => __( 'One Comment', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'comments_custom_strings' => 'yes',
                         'metaname' => 'comments',
@@ -246,10 +246,10 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'string_comments',
                 [
-                    'label' => __( 'Comments', 'htmega-addons' ),
+                    'label' => __( 'Comments', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => false,
-                    'placeholder' => __( '%s Comments', 'htmega-addons' ),// phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+                    'placeholder' => __( '%s Comments', 'ht-mega-for-elementor' ),// phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
                     'condition' => [
                         'comments_custom_strings' => 'yes',
                         'metaname' => 'comments',
@@ -260,7 +260,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'custom_text',
                 [
-                    'label' => __( 'Custom', 'htmega-addons' ),
+                    'label' => __( 'Custom', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => true,
                     'condition' => [
@@ -272,7 +272,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'link',
                 [
-                    'label' => __( 'Link', 'htmega-addons' ),
+                    'label' => __( 'Link', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'default' => 'yes',
                     'condition' => [
@@ -284,7 +284,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'custom_url',
                 [
-                    'label' => __( 'Custom URL', 'htmega-addons' ),
+                    'label' => __( 'Custom URL', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::URL,
                     'dynamic' => [
                         'active' => true,
@@ -298,12 +298,12 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'show_icon',
                 [
-                    'label' => __( 'Icon', 'htmega-addons' ),
+                    'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'options' => [
-                        'none' => __( 'None', 'htmega-addons' ),
-                        'default' => __( 'Default', 'htmega-addons' ),
-                        'custom' => __( 'Custom', 'htmega-addons' ),
+                        'none' => __( 'None', 'ht-mega-for-elementor' ),
+                        'default' => __( 'Default', 'ht-mega-for-elementor' ),
+                        'custom' => __( 'Custom', 'ht-mega-for-elementor' ),
                     ],
                     'default' => 'default',
                     'condition' => [
@@ -314,7 +314,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $repeater->add_control(
                 'icon',
                 [
-                    'label'         => __( 'Choose Icon', 'htmega-addons' ),
+                    'label'         => __( 'Choose Icon', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::ICONS,
                     'condition' => [
                         'show_icon' => 'custom',
@@ -358,7 +358,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
         $this->start_controls_section(
             'meta_info_item_style_section',
             array(
-                'label' => __( 'Item', 'htmega-addons' ),
+                'label' => __( 'Item', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -366,7 +366,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $this->add_control(
                 'meta_info_item_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} ul.htmeta-info li' => 'color: {{VALUE}};',
@@ -378,7 +378,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'meta_info_item_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}} ul.htmeta-info li',
                 )
             );
@@ -389,7 +389,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
         $this->start_controls_section(
             'meta_info_item_link_style_section',
             array(
-                'label' => __( 'Item Link', 'htmega-addons' ),
+                'label' => __( 'Item Link', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -399,14 +399,14 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'meta_info_item_link_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'meta_info_item_link_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} ul.htmeta-info li a' => 'color: {{VALUE}};',
@@ -418,7 +418,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         array(
                             'name'      => 'meta_info_item_link_typography',
-                            'label'     => __( 'Typography', 'htmega-addons' ),
+                            'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector'  => '{{WRAPPER}} ul.htmeta-info li a',
                         )
                     );
@@ -430,13 +430,13 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'meta_info_item_link_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'meta_info_item_link_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} ul.htmeta-info li a:hover' => 'color: {{VALUE}};',
@@ -454,7 +454,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
         $this->start_controls_section(
             'meta_info_icon_style_section',
             array(
-                'label' => __( 'Icon', 'htmega-addons' ),
+                'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -462,7 +462,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $this->add_control(
                 'meta_info_icon_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} ul.htmeta-info li a i' => 'color: {{VALUE}};',
@@ -475,7 +475,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $this->add_control(
                 'meta_info_icon_size',
                 [
-                    'label' => __( 'Font Size', 'htmega-addons' ),
+                    'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -504,7 +504,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             $this->add_control(
                 'meta_info_icon_hover_color',
                 [
-                    'label'     => __( 'Hover Color', 'htmega-addons' ),
+                    'label'     => __( 'Hover Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} ul.htmeta-info li a:hover i' => 'color: {{VALUE}};',
@@ -523,7 +523,7 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
             'show_in_nav_menus' => true,
         ], 'objects' );
         $options = [
-            '0' => __( 'Choose', 'htmega-addons' ),
+            '0' => __( 'Choose', 'ht-mega-for-elementor' ),
         ];
         foreach ( $taxonomies as $taxonomy ) {
             $options[ $taxonomy->name ] = $taxonomy->label;
@@ -590,9 +590,9 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
         elseif( $repeater_item['metaname'] == 'comments' ){
             if ( comments_open() ) {
                 $default_strings = [
-                    'string_no_comments' => __( 'No Comments', 'htmega-addons' ),
-                    'string_one_comment' => __( 'One Comment', 'htmega-addons' ),
-                    'string_comments' => __( '%s Comments', 'htmega-addons' ),// phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+                    'string_no_comments' => __( 'No Comments', 'ht-mega-for-elementor' ),
+                    'string_one_comment' => __( 'One Comment', 'ht-mega-for-elementor' ),
+                    'string_comments' => __( '%s Comments', 'ht-mega-for-elementor' ),// phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
                 ];
 
                 if ( 'yes' === $repeater_item['comments_custom_strings'] ) {
@@ -615,7 +615,10 @@ class Bl_Post_Meta_Info_ELement extends Widget_Base {
                     $item_data['text'] = $default_strings['string_no_comments'];
                 } else {
                     
-                    $item_data['text'] = sprintf( _n( $default_strings['string_one_comment'], $default_strings['string_comments'], $num_comments, 'htmega-addons' ), $num_comments ); // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralPlural, WordPress.WP.I18n.NonSingularStringLiteralSingle
+                    // These strings are user-configured widget settings, not plugin UI text,
+                    // so they don't go through a gettext function — just plain %s interpolation.
+                    $comment_text_template = ( 1 === $num_comments ) ? $default_strings['string_one_comment'] : $default_strings['string_comments'];
+                    $item_data['text'] = sprintf( $comment_text_template, $num_comments );
                 }
 
                 if ( 'yes' === $repeater_item['link'] ) {

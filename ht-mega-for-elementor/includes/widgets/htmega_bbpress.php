@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Bbpress extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Bbpress', 'htmega-addons' );
+        return __( 'Bbpress', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -42,29 +42,29 @@ class HTMega_Elementor_Widget_Bbpress extends Widget_Base {
         $this->start_controls_section(
             'bbpress_content',
             [
-                'label' => __( 'Bbpress', 'htmega-addons' ),
+                'label' => __( 'Bbpress', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'bbpress_layout',
                 [
-                    'label'   => __( 'Layout', 'htmega-addons' ),
+                    'label'   => __( 'Layout', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'forum-index',
                     'options' => [
-                        'forum-index'  => __('Forum Index', 'htmega-addons'),
-                        'forum-form'   => __('Forum Form', 'htmega-addons'),
-                        'single-forum' => __('Single Forum', 'htmega-addons'),
-                        'topic-index'  => __('Topic Index', 'htmega-addons'),
-                        'topic-form'   => __('Topic Form', 'htmega-addons'),
-                        'single-topic' => __('Single Topic', 'htmega-addons'),
-                        'reply-form'   => __('Reply Form', 'htmega-addons'),
-                        'single-reply' => __('Single Reply', 'htmega-addons'),
-                        'topic-tags'   => __('Topic Tags', 'htmega-addons'),
-                        'single-tag'   => __('Single Tag', 'htmega-addons'),
-                        'single-view'  => __('Single View', 'htmega-addons'),
-                        'stats'        => __('Stats', 'htmega-addons'),
+                        'forum-index'  => __('Forum Index', 'ht-mega-for-elementor'),
+                        'forum-form'   => __('Forum Form', 'ht-mega-for-elementor'),
+                        'single-forum' => __('Single Forum', 'ht-mega-for-elementor'),
+                        'topic-index'  => __('Topic Index', 'ht-mega-for-elementor'),
+                        'topic-form'   => __('Topic Form', 'ht-mega-for-elementor'),
+                        'single-topic' => __('Single Topic', 'ht-mega-for-elementor'),
+                        'reply-form'   => __('Reply Form', 'ht-mega-for-elementor'),
+                        'single-reply' => __('Single Reply', 'ht-mega-for-elementor'),
+                        'topic-tags'   => __('Topic Tags', 'ht-mega-for-elementor'),
+                        'single-tag'   => __('Single Tag', 'ht-mega-for-elementor'),
+                        'single-view'  => __('Single View', 'ht-mega-for-elementor'),
+                        'stats'        => __('Stats', 'ht-mega-for-elementor'),
                     ],
                 ]
             );
@@ -72,7 +72,7 @@ class HTMega_Elementor_Widget_Bbpress extends Widget_Base {
             $this->add_control(
                 'bbpress_id',
                 [
-                    'label'       => __( 'ID', 'htmega-addons' ),
+                    'label'       => __( 'ID', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
                     'condition'   => [
                         'bbpress_layout' => array( 'single-forum', 'single-topic', 'single-reply', 'single-tag', 'single-view' )
@@ -87,7 +87,7 @@ class HTMega_Elementor_Widget_Bbpress extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'bbPress', 'htmega-addons' ),
+                'label' => __( 'bbPress', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -95,7 +95,8 @@ class HTMega_Elementor_Widget_Bbpress extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: Linked plugin name (bbPress), repeated twice in the sentence */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=bbpress&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">bbPress</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -116,7 +117,7 @@ class HTMega_Elementor_Widget_Bbpress extends Widget_Base {
     protected function render( $instance = [] ) {
         
         if ( ! is_plugin_active('bbpress/bbpress.php') ) {
-            htmega_plugin_missing_alert( __('bbPress', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('bbPress', 'ht-mega-for-elementor') );
             return;
         }
         $settings   = $this->get_settings_for_display();

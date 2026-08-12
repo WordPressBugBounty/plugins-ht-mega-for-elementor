@@ -30,7 +30,7 @@ final class HTMega_Performance_Upgrade_Notice {
 	public static function register_ajax_script( $hook_suffix ): void {
 		unset( $hook_suffix );
 		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
-		if ( ! $screen || false === strpos( (string) $screen->id, 'htmega-addons' ) ) {
+		if ( ! $screen || false === strpos( (string) $screen->id, 'ht-mega-for-elementor' ) ) {
 			return;
 		}
 
@@ -58,7 +58,7 @@ final class HTMega_Performance_Upgrade_Notice {
 			return;
 		}
 		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
-		if ( ! $screen || false === strpos( (string) $screen->id, 'htmega-addons' ) ) {
+		if ( ! $screen || false === strpos( (string) $screen->id, 'ht-mega-for-elementor' ) ) {
 			return;
 		}
 
@@ -73,11 +73,11 @@ final class HTMega_Performance_Upgrade_Notice {
 		?>
 	<div class="notice notice-info is-dismissible htmega-perf-upgrade-notice" data-dismiss-hook="htmega_perf">
 		<p>
-			<strong><?php esc_html_e( 'HT Mega:', 'htmega-addons' ); ?></strong>
-			<?php esc_html_e( 'This version ships a faster asset loader. Compatibility mode keeps legacy global styles on every page.', 'htmega-addons' ); ?>
-			<?php esc_html_e( 'If your site looks correct in fast mode, you can load HT Mega CSS/JS only on pages that need them.', 'htmega-addons' ); ?>
+			<strong><?php esc_html_e( 'HT Mega:', 'ht-mega-for-elementor' ); ?></strong>
+			<?php esc_html_e( 'This version ships a faster asset loader. Compatibility mode keeps legacy global styles on every page.', 'ht-mega-for-elementor' ); ?>
+			<?php esc_html_e( 'If your site looks correct in fast mode, you can load HT Mega CSS/JS only on pages that need them.', 'ht-mega-for-elementor' ); ?>
 			<button type="button" class="button button-primary htmega-perf-enable-fast">
-				<?php esc_html_e( 'Enable fast mode', 'htmega-addons' ); ?>
+				<?php esc_html_e( 'Enable fast mode', 'ht-mega-for-elementor' ); ?>
 			</button>
 		</p>
 	</div>
@@ -90,7 +90,7 @@ final class HTMega_Performance_Upgrade_Notice {
 	public static function ajax_fast_mode(): void {
 		check_ajax_referer( 'htmega_perf_notice_nonce', 'nonce' );
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+			wp_send_json_error( array( 'message' => __( 'Forbidden.', 'ht-mega-for-elementor' ) ), 403 );
 		}
 
 		update_option( 'htmega_force_global_assets', false, false );
@@ -111,7 +111,7 @@ final class HTMega_Performance_Upgrade_Notice {
 	public static function ajax_dismiss_notice(): void {
 		check_ajax_referer( 'htmega_perf_notice_nonce', 'nonce' );
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+			wp_send_json_error( array( 'message' => __( 'Forbidden.', 'ht-mega-for-elementor' ) ), 403 );
 		}
 
 		update_option( 'htmega_upgrade_notice_dismissed', true, false );

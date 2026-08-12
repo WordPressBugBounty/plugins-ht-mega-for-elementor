@@ -37,17 +37,17 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                 <ul class="htmega-menu-popup-tab-menu">
                     <# if( data.depth === 0 ){ #>
                     <li class="htmega-menu-popup-tab-list-item">
-                        <a href="javascript:void();" data-target="htmega-menu-popup-tab-settings"><?php esc_html_e('Settings','htmega-addons'); ?></a>
+                        <a href="javascript:void();" data-target="htmega-menu-popup-tab-settings"><?php esc_html_e('Settings','ht-mega-for-elementor'); ?></a>
                     </li>
                     <li class="htmega-menu-popup-tab-list-item">
-                        <a class="active" href="javascript:void();" data-target="htmega-menu-popup-tab-content"><?php esc_html_e( 'Content', 'htmega-addons' ); ?></a>
+                        <a class="active" href="javascript:void();" data-target="htmega-menu-popup-tab-content"><?php esc_html_e( 'Content', 'ht-mega-for-elementor' ); ?></a>
                     </li>
                     <# } #>
                     <li class="htmega-menu-popup-tab-list-item">
-                        <a href="javascript:void();" data-target="htmega-menu-popup-tab-icon"><?php esc_html_e('Icon','htmega-addons');?></a>
+                        <a href="javascript:void();" data-target="htmega-menu-popup-tab-icon"><?php esc_html_e('Icon','ht-mega-for-elementor');?></a>
                     </li>
                     <li class="htmega-menu-popup-tab-list-item">
-                        <a class="{{ active }}" href="javascript:void();" data-target="htmega-menu-popup-tab-badges"><?php esc_html_e('Badges','htmega-addons');?></a>
+                        <a class="{{ active }}" href="javascript:void();" data-target="htmega-menu-popup-tab-badges"><?php esc_html_e('Badges','ht-mega-for-elementor');?></a>
                     </li>
                 </ul>
                 <!-- Tab Menu Area End -->
@@ -60,12 +60,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                     <div class="htmega-menu-popup-tab-pane" data-id="htmega-menu-popup-tab-settings">
                         <ul>
                             <li>
-                                <label for="menu-item-menuwidth-{{ data.id }}"><?php esc_html_e('Menu Width (px)','htmega-addons'); ?></label>
+                                <label for="menu-item-menuwidth-{{ data.id }}"><?php esc_html_e('Menu Width (px)','ht-mega-for-elementor'); ?></label>
                                 <input type="text" id="menu-item-menuwidth-{{ data.id }}" name="menu-item-menuwidth-{{ data.id }}" class="widefat" value="{{ data.content['menu-item-menuwidth-'+data.id] }}" placeholder="500">
                             </li>
 
                             <li>
-                                <label for="menu-item-menuposition-{{ data.id }}"><?php esc_html_e('Sub Menu Position (px)','htmega-addons'); ?></label>
+                                <label for="menu-item-menuposition-{{ data.id }}"><?php esc_html_e('Sub Menu Position (px)','ht-mega-for-elementor'); ?></label>
                                 <input type="text" id="menu-item-menuposition-{{ data.id }}" name="menu-item-menuposition-{{ data.id }}" class="widefat" value="{{ data.content['menu-item-menuposition-'+data.id] }}" placeholder="-250">
                             </li>
                         </ul>
@@ -75,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                     <div class="htmega-menu-popup-tab-pane active" data-id="htmega-menu-popup-tab-content">
                         <ul>
                             <li>
-                                <label for="menu-item-template-{{ data.id }}"><?php esc_html_e('Menu Template','htmega-addons');?></label>
+                                <label for="menu-item-template-{{ data.id }}"><?php esc_html_e('Menu Template','ht-mega-for-elementor');?></label>
                                 <select id="menu-item-template-{{ data.id }}" class="widefat" name="menu-item-template-{{ data.id }}">
                                     <# 
                                         _.each( data.templatelist, function( tilte, key ) {
@@ -103,16 +103,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                         <ul>
                             <li class="htmegamenu-pro">
                                 <label for="menu-item-ficon-{{ data.id }}">
-                                    <?php esc_html_e('Icon','htmega-addons'); ?>
-                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','htmega-addons'); ?></span>
+                                    <?php esc_html_e('Icon','ht-mega-for-elementor'); ?>
+                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','ht-mega-for-elementor'); ?></span>
                                 </label>
                                 <input type="text" id="menu-item-ficon-{{ data.id }}" name="menu-item-ficon-{{ data.id }}" class="widefat htmega-menu-icon" value="{{ icon_values }}">
                             </li>
 
                             <li class="htmegamenu-pro">
                                 <label for="menu-item-ficoncolor-{{ data.id }}">
-                                    <?php esc_html_e('Color','htmega-addons'); ?>
-                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','htmega-addons'); ?></span>
+                                    <?php esc_html_e('Color','ht-mega-for-elementor'); ?>
+                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','ht-mega-for-elementor'); ?></span>
                             </label>
                                 <input type="text" id="menu-item-ficoncolor-{{ data.id }}" name="menu-item-ficoncolor-{{ data.id }}" class="widefat htmega-color-picker-field" value="#{{ data.content['menu-item-ficoncolor-'+data.id] }}">
                             </li>
@@ -125,23 +125,23 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                         <ul>
                             <li class="htmegamenu-pro">
                                 <label for="menu-item-menutag-{{ data.id }}">
-                                    <?php esc_html_e('Menu Badge','htmega-addons'); ?>
-                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','htmega-addons'); ?></span>
+                                    <?php esc_html_e('Menu Badge','ht-mega-for-elementor'); ?>
+                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','ht-mega-for-elementor'); ?></span>
                                 </label>
                                 <input type="text" id="menu-item-menutag-{{ data.id }}" name="menu-item-menutag-{{ data.id }}" class="widefat" value="{{ data.content['menu-item-menutag-'+data.id] }}">
                             </li>
                             <li class="htmegamenu-pro">
                                 <label for="menu-item-menutagcolor-{{ data.id }}">
-                                    <?php esc_html_e('Color','htmega-addons'); ?>
-                                    <span class="htmenu-pro-badge"><?php esc_html_e('(Pro)','htmega-addons'); ?></span>
+                                    <?php esc_html_e('Color','ht-mega-for-elementor'); ?>
+                                    <span class="htmenu-pro-badge"><?php esc_html_e('(Pro)','ht-mega-for-elementor'); ?></span>
                                 </label>
                                 <input type="text" id="menu-item-menutagcolor-{{ data.id }}" name="menu-item-menutagcolor-{{ data.id }}" class="widefat htmega-color-picker-field" value="#{{ data.content['menu-item-menutagcolor-'+data.id] }}">
                             </li>
 
                             <li class="htmegamenu-pro">
                                 <label for="menu-item-badge-color-type-{{ data.id }}">
-                                    <?php esc_html_e('Background','htmega-addons');?>
-                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','htmega-addons'); ?></span>
+                                    <?php esc_html_e('Background','ht-mega-for-elementor');?>
+                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','ht-mega-for-elementor'); ?></span>
                                 </label>
                                 <select id="menu-item-badge-color-type-{{ data.id }}" class="widefat htmenu-bg-type" name="menu-item-badge-color-type-{{ data.id }}">
                                     <# 
@@ -176,13 +176,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
                             <li class="htmenu-default-field htmegamenu-pro" style="{{ filed_style }}">
                                 <label for="menu-item-menutagbgcolor-{{ data.id }}">
-                                    <?php esc_html_e('Background Color','htmega-addons'); ?>
-                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','htmega-addons'); ?></span>
+                                    <?php esc_html_e('Background Color','ht-mega-for-elementor'); ?>
+                                    <span class="htmenu-pro-badge"><?php esc_html_e('( Pro )','ht-mega-for-elementor'); ?></span>
                                 </label>
                                 <input type="text" id="menu-item-menutagbgcolor-{{ data.id }}" name="menu-item-menutagbgcolor-{{ data.id }}" class="widefat htmega-color-picker-field" value="#{{ data.content['menu-item-menutagbgcolor-'+data.id] }}">
                             </li>
                             <li class="htmenu-gradient-field" style="{{ filed_style_two }}">
-                                <label for="menu-item-badge-bg-two-{{ data.id }}"><?php esc_html_e('Background Second Color','htmega-addons'); ?></label>
+                                <label for="menu-item-badge-bg-two-{{ data.id }}"><?php esc_html_e('Background Second Color','ht-mega-for-elementor'); ?></label>
                                 <input type="text" id="menu-item-badge-bg-two-{{ data.id }}" name="menu-item-badge-bg-two-{{ data.id }}" class="widefat htmega-color-picker-field" value="#{{ data.content['menu-item-badge-bg-two-'+data.id] }}">
                             </li>
 
@@ -191,7 +191,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                     <!-- Badges tab Field Area End -->
 
                     <div class="htmega-menu-save-btn-area">
-                        <button data-id="{{ data.id }}" class="htmega-menu-submit-btn button button-primary disabled" type="submit" disabled="disabled"><?php esc_html_e( 'All Data Saved', 'htmega-addons' ); ?></button>
+                        <button data-id="{{ data.id }}" class="htmega-menu-submit-btn button button-primary disabled" type="submit" disabled="disabled"><?php esc_html_e( 'All Data Saved', 'ht-mega-for-elementor' ); ?></button>
                     </div>
 
                 </div>

@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Data Table', 'htmega-addons' );
+        return __( 'Data Table', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -41,21 +41,21 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'datatable_layout',
             [
-                'label' => __( 'Table Data', 'htmega-addons' ),
+                'label' => __( 'Table Data', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'source_type',
                 [
-                    'label' => __( 'Source', 'htmega-addons' ),
+                    'label' => __( 'Source', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'      => __( 'Custom', 'htmega-addons' ),
-                        'csv'      => __( 'CSV File(Pro)', 'htmega-addons' ),
-                        'google'      => __( 'Google Sheet (Pro)', 'htmega-addons' ),
-                        'table_press' => __( 'TablePress (Pro)', 'htmega-addons' ),
-                        'database'    => __( 'Database (Pro)', 'htmega-addons' ),
+                        'custom'      => __( 'Custom', 'ht-mega-for-elementor' ),
+                        'csv'      => __( 'CSV File(Pro)', 'ht-mega-for-elementor' ),
+                        'google'      => __( 'Google Sheet (Pro)', 'ht-mega-for-elementor' ),
+                        'table_press' => __( 'TablePress (Pro)', 'ht-mega-for-elementor' ),
+                        'database'    => __( 'Database (Pro)', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -67,7 +67,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'datatable_header',
             [
-                'label' => __( 'Table Header', 'htmega-addons' ),
+                'label' => __( 'Table Header', 'ht-mega-for-elementor' ),
             ]
         );
 
@@ -76,16 +76,16 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater->add_control(
                 'column_name',
                 [
-                    'label'   => __( 'Column Name', 'htmega-addons' ),
+                    'label'   => __( 'Column Name', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __( 'No', 'htmega-addons' ),
+                    'default' => __( 'No', 'ht-mega-for-elementor' ),
                 ]
             );
 
            $repeater->add_control(
                 'column_heading',
                 [
-                    'label' => esc_html__( 'Column styles', 'htmega-addons' ),
+                    'label' => esc_html__( 'Column styles', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -94,19 +94,19 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater->add_responsive_control(
                 'column_heading_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -120,7 +120,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'column_heading_background_color',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-table-style {{CURRENT_ITEM}}',
                 ]
@@ -130,7 +130,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Border::get_type(),
                     [
                     'name' => 'column_background_border',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style {{CURRENT_ITEM}}',
                 ]
             );
@@ -138,7 +138,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
            $repeater->add_responsive_control(
                 'column_background_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selector' => '{{WRAPPER}} .htmega-table-style {{CURRENT_ITEM}}',
                 ]
@@ -148,7 +148,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'column_background_border_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style {{CURRENT_ITEM}}',
                 ]
             );
@@ -161,19 +161,19 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                     'prevent_empty' => false,
                     'default' => [
                         [
-                            'column_name' => __( 'No', 'htmega-addons' ),
+                            'column_name' => __( 'No', 'ht-mega-for-elementor' ),
                         ],
 
                         [
-                            'column_name' => __( 'Name', 'htmega-addons' ),
+                            'column_name' => __( 'Name', 'ht-mega-for-elementor' ),
                         ],
 
                         [
-                            'column_name' => __( 'Designation', 'htmega-addons' ),
+                            'column_name' => __( 'Designation', 'ht-mega-for-elementor' ),
                         ],
 
                         [
-                            'column_name' => __( 'Email', 'htmega-addons' ),
+                            'column_name' => __( 'Email', 'ht-mega-for-elementor' ),
                         ]
 
                     ],
@@ -187,7 +187,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'datatable_content',
             [
-                'label' => __( 'Table Content', 'htmega-addons' ),
+                'label' => __( 'Table Content', 'ht-mega-for-elementor' ),
             ]
         );
 
@@ -196,12 +196,12 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'field_type',
                 [
-                    'label' => __( 'Field Type', 'htmega-addons' ),
+                    'label' => __( 'Field Type', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'row',
                     'options' => [
-                        'row'   => __( 'Row', 'htmega-addons' ),
-                        'col'   => __( 'Column', 'htmega-addons' ),
+                        'row'   => __( 'Row', 'ht-mega-for-elementor' ),
+                        'col'   => __( 'Column', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -209,14 +209,14 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'cell_data_type',
                 [
-                    'label' => __( 'Data Type', 'htmega-addons' ),
+                    'label' => __( 'Data Type', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'text',
                     'options' => [
-                        'text'   => __( 'Text', 'htmega-addons' ),
-                        'icon'   => __( 'Icon', 'htmega-addons' ),
-                        'image'   => __( 'Image', 'htmega-addons' ),
-                        'template'   => __( 'Elementor Template (Pro)', 'htmega-addons' ),
+                        'text'   => __( 'Text', 'ht-mega-for-elementor' ),
+                        'icon'   => __( 'Icon', 'ht-mega-for-elementor' ),
+                        'image'   => __( 'Image', 'ht-mega-for-elementor' ),
+                        'template'   => __( 'Elementor Template (Pro)', 'ht-mega-for-elementor' ),
                     ],
                     'condition'=>[
                         'field_type'=>'col',
@@ -227,9 +227,9 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'cell_text',
                 [
-                    'label'   => __( 'Cell Content', 'htmega-addons' ),
+                    'label'   => __( 'Cell Content', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __( 'Louis Hudson', 'htmega-addons' ),
+                    'default' => __( 'Louis Hudson', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'cell_data_type'=>'text',
                         'field_type'=>'col',
@@ -240,7 +240,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'cell_icon',
                 [
-                    'label'   => esc_html__( 'Cell Icon', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Cell Icon', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::ICONS,
                     'condition'=>[
                         'cell_data_type'=>'icon',
@@ -252,7 +252,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_responsive_control(
                 'cell_icon_size',
                 [
-                    'label' => esc_html__( 'Icon SIze', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon SIze', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px'],
                     'range' => [
@@ -281,7 +281,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'cell_icon_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style {{CURRENT_ITEM}} i' => 'color: {{VALUE}};',
@@ -297,7 +297,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'cell_image',
                 [
-                    'label' => esc_html__( 'Cell Image', 'htmega-addons' ),
+                    'label' => esc_html__( 'Cell Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'condition'=>[
                         'cell_data_type'=>'image',
@@ -309,7 +309,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_responsive_control(
                 'cell_image_width',
                 [
-                    'label' => esc_html__( 'Image Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Image Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px'],
                     'range' => [
@@ -332,7 +332,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_responsive_control(
                 'cell_image_height',
                 [
-                    'label' => esc_html__( 'Image Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Image Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px'],
                     'range' => [
@@ -356,7 +356,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'row_colspan',
                 [
-                    'label' => __( 'Colspan', 'htmega-addons' ),
+                    'label' => __( 'Colspan', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'step' => 1,
@@ -370,7 +370,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'cell_heading',
                 [
-                    'label' => esc_html__( 'Cell Styles', 'htmega-addons' ),
+                    'label' => esc_html__( 'Cell Styles', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition'=>[
@@ -381,7 +381,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_control(
                 'cell_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style {{CURRENT_ITEM}}' => 'color: {{VALUE}};',
@@ -396,7 +396,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'cell_background_color',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-table-style {{CURRENT_ITEM}}',
                     'condition'=>[
@@ -409,7 +409,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Border::get_type(),
                     [
                     'name' => 'cell_background_border',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style {{CURRENT_ITEM}}',
                     'condition'=>[
                         'field_type'=>'col',
@@ -419,19 +419,19 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $repeater_one->add_responsive_control(
                 'column_cell_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -451,32 +451,32 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                     'fields'  => $repeater_one->get_controls(),
                     'default' => [
                         [
-                            'field_type' => __( 'row', 'htmega-addons' ),
+                            'field_type' => __( 'row', 'ht-mega-for-elementor' ),
                         ],
 
                         [
-                            'field_type' => __( 'col', 'htmega-addons' ),
-                            'cell_text' => __( '1', 'htmega-addons' ),
-                            'row_colspan' => __( '1', 'htmega-addons' ),
+                            'field_type' => __( 'col', 'ht-mega-for-elementor' ),
+                            'cell_text' => __( '1', 'ht-mega-for-elementor' ),
+                            'row_colspan' => __( '1', 'ht-mega-for-elementor' ),
                         ],
 
                         [
-                            'field_type' => __( 'col', 'htmega-addons' ),
-                            'cell_text' => __( 'Louis Hudson', 'htmega-addons' ),
-                            'row_colspan' => __( '1', 'htmega-addons' ),
+                            'field_type' => __( 'col', 'ht-mega-for-elementor' ),
+                            'cell_text' => __( 'Louis Hudson', 'ht-mega-for-elementor' ),
+                            'row_colspan' => __( '1', 'ht-mega-for-elementor' ),
                         ],
 
                         [
-                            'field_type' => __( 'col', 'htmega-addons' ),
-                            'cell_text' => __( 'Developer', 'htmega-addons' ),
-                            'row_colspan' => __( '1', 'htmega-addons' ),
+                            'field_type' => __( 'col', 'ht-mega-for-elementor' ),
+                            'cell_text' => __( 'Developer', 'ht-mega-for-elementor' ),
+                            'row_colspan' => __( '1', 'ht-mega-for-elementor' ),
                         ],
 
 
                         [
-                            'field_type' => __( 'col', 'htmega-addons' ),
-                            'cell_text' => __( 'jondoy@gmail.com', 'htmega-addons' ),
-                            'row_colspan' => __( '1', 'htmega-addons' ),
+                            'field_type' => __( 'col', 'ht-mega-for-elementor' ),
+                            'cell_text' => __( 'jondoy@gmail.com', 'ht-mega-for-elementor' ),
+                            'row_colspan' => __( '1', 'ht-mega-for-elementor' ),
                         ]
 
                     ],
@@ -489,29 +489,29 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'datatable_sorting_options',
             [
-                'label' => __( 'Display Options', 'htmega-addons' ),
+                'label' => __( 'Display Options', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'datatable_style',
                 [
-                    'label' => __( 'Layout', 'htmega-addons' ),
+                    'label' => __( 'Layout', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Layout One', 'htmega-addons' ),
-                        '2'   => __( 'Layout Two', 'htmega-addons' ),
-                        '3'   => __( 'Layout Three', 'htmega-addons' ),
+                        '1'   => __( 'Layout One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Layout Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Layout Three', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
             $this->add_control(
                 'show_datatable_sorting',
                 [
-                    'label'        => __( 'Show Sorting Options', 'htmega-addons' ),
+                    'label'        => __( 'Show Sorting Options', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
-                    'label_on'     => __( 'Show', 'htmega-addons' ),
-                    'label_off'    => __( 'Hide', 'htmega-addons' ),
+                    'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default'      => 'no',
                 ]
@@ -519,10 +519,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'show_datatable_paging',
                 [
-                    'label' => __( 'Pagination', 'htmega-addons' ),
+                    'label' => __( 'Pagination', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'condition' => [
@@ -533,7 +533,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'default_row_number',
                 [
-                    'label' => __( 'Default option for number of Rows', 'htmega-addons' ),
+                    'label' => __( 'Default option for number of Rows', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'step' => 1,
@@ -547,10 +547,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'custom_display_row',
                 [
-                    'label' => __( 'Custom options for number of Rows?', 'htmega-addons' ),
+                    'label' => __( 'Custom options for number of Rows?', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'condition' =>[
@@ -562,10 +562,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'display_options',
                 [
-                    'label'   => __( 'Options for number of Rows', 'htmega-addons' ),
+                    'label'   => __( 'Options for number of Rows', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXTAREA,
-                    'default' => __( '10,25,50,100', 'htmega-addons' ),
-                    'description'=> esc_html__( 'Enter the number separate by comma(10,25,50,100)','htmega-addons'),
+                    'default' => __( '10,25,50,100', 'ht-mega-for-elementor' ),
+                    'description'=> esc_html__( 'Enter the number separate by comma(10,25,50,100)','ht-mega-for-elementor'),
                     'condition'=> [
                         'custom_display_row'=>'yes',
                         'show_datatable_paging'=>'yes',
@@ -577,10 +577,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'show_all_button',
                 [
-                    'label' => __( 'Add all option', 'htmega-addons' ),
+                    'label' => __( 'Add all option', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'condition' =>[
@@ -594,7 +594,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 'show_all_text',
                 [
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __( 'All', 'htmega-addons' ),
+                    'default' => __( 'All', 'ht-mega-for-elementor' ),
                     'label_block'=>true,
                     'condition'=>[
                         'show_all_button'=>'yes',
@@ -608,10 +608,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'show_datatable_searching',
                 [
-                    'label' => __( 'Searching', 'htmega-addons' ),
+                    'label' => __( 'Searching', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'separator' =>'before',
@@ -624,10 +624,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'show_datatable_ordering',
                 [
-                    'label' => __( 'Ordering', 'htmega-addons' ),
+                    'label' => __( 'Ordering', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'condition'=>[
@@ -639,10 +639,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'show_datatable_info',
                 [
-                    'label' => __( 'Footer Info', 'htmega-addons' ),
+                    'label' => __( 'Footer Info', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'condition'=>[
@@ -653,10 +653,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'export_data',
                 [
-                    'label'        => __( 'Data Export Button (Pro)', 'htmega-addons' ),
+                    'label'        => __( 'Data Export Button (Pro)', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
-                    'label_on'     => __( 'Show', 'htmega-addons' ),
-                    'label_off'    => __( 'Hide', 'htmega-addons' ),
+                    'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default'      => 'no',
                 ]
@@ -668,84 +668,84 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'datatable_custom_labels',
             [
-                'label' => __( 'Custom Labels', 'htmega-addons' ),
+                'label' => __( 'Custom Labels', 'ht-mega-for-elementor' ),
             ]
         );
         $this->add_control(
             'search_labelp',
             [
-                'label'        => __( 'Search', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                'label'        => __( 'Search', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                 'type'    => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __( 'Search:', 'htmega-addons' ),
+                'default' => __( 'Search:', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-disable-control',
             ]
         );
         $this->add_control(
             'menu_lenght_labelp',
             [
-                'label'        => __( 'Menu Lenght Text', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                'label'        => __( 'Menu Lenght Text', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                 'type'    => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __( 'Show _MENU_ entries', 'htmega-addons' ),
+                'default' => __( 'Show _MENU_ entries', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-disable-control',
             ]
         );
         $this->add_control(
             'paginate_next_labelp',
             [
-                'label'        => __( 'Paginate Next', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                'label'        => __( 'Paginate Next', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                 'type'    => Controls_Manager::TEXT,
-                'default' => __( 'Next', 'htmega-addons' ),
+                'default' => __( 'Next', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-disable-control',
             ]
         );
         $this->add_control(
             'paginate_prev_labelp',
             [
-                'label'        => __( 'Paginate Prev', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                'label'        => __( 'Paginate Prev', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                 'type'    => Controls_Manager::TEXT,
-                'default' => __( 'Previous', 'htmega-addons' ),
+                'default' => __( 'Previous', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-disable-control',
             ]
         );
         $this->add_control(
             'paginate_info_labelp',
             [
-                'label'        => __( 'Paginate Info', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                'label'        => __( 'Paginate Info', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                 'type'    => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __( 'Showing _START_ to _END_ of _TOTAL_ entries', 'htmega-addons' ),
+                'default' => __( 'Showing _START_ to _END_ of _TOTAL_ entries', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-disable-control',
             ]
         );
         $this->add_control(
             'empty_info_labelp',
             [
-                'label'        => __( 'Empty Info', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                'label'        => __( 'Empty Info', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                 'type'    => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __( 'Showing 0 to 0 of 0 entries', 'htmega-addons' ),
+                'default' => __( 'Showing 0 to 0 of 0 entries', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-disable-control',
             ]
         );
         $this->add_control(
             'filtered_info_labelp',
             [
-                'label'        => __( 'Filtered Info', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                'label'        => __( 'Filtered Info', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                 'type'    => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __( '(filtered from _MAX_ total entries)', 'htmega-addons' ),
+                'default' => __( '(filtered from _MAX_ total entries)', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-disable-control',
             ]
         );
         $this->add_control(
             'no_match_info_labelp',
             [
-                'label'        => __( 'Data Not Found', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+                'label'        => __( 'Data Not Found', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
                 'type'    => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => __( 'No matching records found', 'htmega-addons' ),
+                'default' => __( 'No matching records found', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-disable-control',
             ]
         );
@@ -754,7 +754,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'htmega_Upgrade_pro_section',
             [
-                'label' => __( 'Upgrade to HT Mega Pro', 'htmega-addons' ),
+                'label' => __( 'Upgrade to HT Mega Pro', 'ht-mega-for-elementor' ),
                 'classes' => 'htmega-purchase-pro-section-control',
             ]
         );
@@ -763,7 +763,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             [
                 'type' => Controls_Manager::RAW_HTML,
                 'raw' => sprintf( /* translators: 1: Opening strong and anchor tags for Pro Version link, 2: Closing anchor and strong tags */
-                    __('%1$s UPGRADE NOW %2$s', 'htmega-addons'),
+                    __('%1$s UPGRADE NOW %2$s', 'ht-mega-for-elementor'),
                     '<strong><a href="https://wphtmega.com/pricing/" target="_blank">',
                     '</a></strong>'),
                 'content_classes' => 'htmega-addons-notice',
@@ -774,7 +774,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'htmega_table_style_section',
             [
-                'label' => __( 'Table', 'htmega-addons' ),
+                'label' => __( 'Table', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -783,7 +783,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'datatable_bg_color',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper',
                 ]
@@ -793,7 +793,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -805,7 +805,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -818,7 +818,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Border::get_type(),
                     [
                         'name' => 'datatable_border',
-                        'label' => esc_html__( 'Border', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-table-style',
                     ]
             );
@@ -826,7 +826,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -837,7 +837,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'datatable_border_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style',
                 ]
             );
@@ -848,7 +848,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'htmega_table_header_style_section',
             [
-                'label' => __( 'Table Header', 'htmega-addons' ),
+                'label' => __( 'Table Header', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -856,7 +856,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'datatable_header_text_color',
                 [
-                    'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '',
                     'selectors' => [
@@ -869,7 +869,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'datatable_header_bg_color',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-table-style thead tr th',
                 ]
@@ -879,7 +879,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'datatable_header_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style thead tr th',
                 ]
             );
@@ -887,7 +887,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_header_padding',
                 [
-                    'label' => esc_html__( 'Table Header Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Table Header Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -900,7 +900,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Border::get_type(),
                     [
                         'name' => 'datatable_header_border',
-                        'label' => esc_html__( 'Border', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-table-style thead tr th',
                     ]
             );
@@ -908,7 +908,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_header_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style thead tr th' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -919,23 +919,23 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_header_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -953,7 +953,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'htmega_table_body_style_section',
             [
-                'label' => __( 'Table Body', 'htmega-addons' ),
+                'label' => __( 'Table Body', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -961,7 +961,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'datatable_body_bg_color',
                 [
-                    'label' => esc_html__( 'Background Color ( Event )', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background Color ( Event )', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '',
                     'selectors' => [
@@ -973,7 +973,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'datatable_body_odd_bg_color',
                 [
-                    'label' => esc_html__( 'Background Color ( Odd )', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background Color ( Odd )', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '',
                     'selectors' => [
@@ -985,14 +985,14 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Border::get_type(),
                     [
                         'name' => 'datatable_body_all_border',
-                        'label' => esc_html__( 'Table Body Border', 'htmega-addons' ),
+                        'label' => esc_html__( 'Table Body Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} table.dataTable.no-footer',
                     ]
             );
             $this->add_control(
                 'datatable_body_text_color',
                 [
-                    'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '',
                     'selectors' => [
@@ -1006,7 +1006,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'datatable_body_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style tbody tr td',
                 ]
             );
@@ -1014,7 +1014,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_body_padding',
                 [
-                    'label' => esc_html__( 'Table Cell Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Table Cell Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -1027,7 +1027,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Border::get_type(),
                     [
                         'name' => 'datatable_body_border',
-                        'label' => esc_html__( 'Border', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-table-style tbody tr td',
                     ]
             );
@@ -1035,7 +1035,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_body_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style tbody tr td' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1046,23 +1046,23 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'datatable_body_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1079,7 +1079,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
          $this->start_controls_section(
             'entries_style_section',
                 [
-                    'label' => __( 'Entries Style', 'htmega-addons' ),
+                    'label' => __( 'Entries Style', 'ht-mega-for-elementor' ),
                     'tab' => Controls_Manager::TAB_STYLE,
                     'condition'=>[
                         'show_datatable_paging'=>'yes',
@@ -1089,7 +1089,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'datatable_sorting_text_color_header',
                 [
-                    'label' => esc_html__( 'Label Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Label Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style .dataTables_length label' => 'color: {{VALUE}};',
@@ -1105,7 +1105,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'datatable_sorting_typography_header',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_length label',
                     'condition'=>[
                         'show_datatable_paging'=>'yes',
@@ -1117,7 +1117,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Border::get_type(),
                     [
                     'name' => 'datatable_sorting_border_header',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_length, {{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input, {{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_paginate',
                     'condition'=>[
                         'show_datatable_paging'=>'yes',
@@ -1127,7 +1127,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'entries_border_box_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_length' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1137,7 +1137,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'header_bottom_space',
                 [
-                    'label' => esc_html__( 'Bottom Space', 'htmega-addons' ),
+                    'label' => esc_html__( 'Bottom Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 300,
@@ -1151,7 +1151,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'htmega_table_sorting_length_pagination_header',
                 [
-                    'label' => esc_html__( 'Input Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Input Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition'=>[
@@ -1164,7 +1164,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'typography_header_slect_entries',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_length label select',
                     'condition'=>[
                         'show_datatable_paging'=>'yes',
@@ -1176,14 +1176,14 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->start_controls_tab(
                 'entries_style_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
 
                 $this->add_control(
                     'datatable_sorting_length_text_color_header',
                     [
-                        'label' => esc_html__( 'Color', 'htmega-addons' ),
+                        'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '',
                         'selectors' => [
@@ -1199,7 +1199,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'datatable_sorting_length_typography_background_color_header',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => __( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_length label select',
                         'condition'=>[
@@ -1212,7 +1212,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                     Group_Control_Border::get_type(),
                         [
                         'name' => 'datatable_sorting_length_border_header',
-                        'label' => esc_html__( 'Border', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_length label select',
                         'condition'=>[
                             'show_datatable_paging'=>'yes',
@@ -1225,13 +1225,13 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->start_controls_tab(
                 'entries_style_hover_tab',
                 [
-                    'label' => __( 'Focus', 'htmega-addons' ),
+                    'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                 ]
             );
                 $this->add_control(
                     'entries_hover_color',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-table-style .dataTables_length label select:hover,{{WRAPPER}} .htmega-table-style .dataTables_length label select:focus' => 'color: {{VALUE}}',
@@ -1243,9 +1243,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'entries_hover_background',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => __( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_length label select:hover,{{WRAPPER}} .htmega-table-style .dataTables_length label select:focus',
+                        // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image) appear in the Elementor Style panel, not a WP_Query exclude arg.
                         'exclude' =>['image'],
                     ]
                 );
@@ -1254,7 +1255,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'entries_hover_border',
-                        'label' => __( 'Border', 'htmega-addons' ),
+                        'label' => __( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_length label select:hover,{{WRAPPER}} .htmega-table-style .dataTables_length label select:focus',
                     ]
                 );
@@ -1267,7 +1268,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'info_style_section',
                 [
-                    'label' => __( 'Info Style', 'htmega-addons' ),
+                    'label' => __( 'Info Style', 'ht-mega-for-elementor' ),
                     'tab' => Controls_Manager::TAB_STYLE,
                     'condition'=>[
                         'show_datatable_info'=>'yes',
@@ -1277,7 +1278,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'datatable_sorting_text_color_footer',
                 [
-                    'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style .dataTables_info' => 'color: {{VALUE}};',
@@ -1292,7 +1293,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'datatable_sorting_typography_footer',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_info',
                     'condition'=>[
                         'show_datatable_info'=>'yes',
@@ -1302,7 +1303,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'info_top_space',
                 [
-                    'label' => esc_html__( 'Top Space', 'htmega-addons' ),
+                    'label' => esc_html__( 'Top Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 300,
@@ -1318,7 +1319,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         $this->start_controls_section(
             'search_box_style_section',
                 [
-                    'label' => __( 'Search Box', 'htmega-addons' ),
+                    'label' => __( 'Search Box', 'ht-mega-for-elementor' ),
                     'tab' => Controls_Manager::TAB_STYLE,
                     'condition'=>[
                         'show_datatable_searching'=>'yes',
@@ -1328,7 +1329,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'search_box_space_bottom',
                 [
-                    'label' => esc_html__( 'Bottom Space', 'htmega-addons' ),
+                    'label' => esc_html__( 'Bottom Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 300,
@@ -1342,7 +1343,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_control(
                 'search_box_label',
                 [
-                    'label' => __( 'Label Color', 'htmega-addons' ),
+                    'label' => __( 'Label Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style .dataTables_filter label' => 'color: {{VALUE}};',
@@ -1353,14 +1354,14 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'search_box_typography_label',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_filter label',
                 ]
             );
             $this->add_control(
                 'search_box_input_heading',
                 [
-                    'label' => esc_html__( 'Input Box', 'htmega-addons' ),
+                    'label' => esc_html__( 'Input Box', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
 
@@ -1370,7 +1371,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'search_box_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input',
                 ]
             );
@@ -1378,7 +1379,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             $this->add_responsive_control(
                 'search_box_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1392,14 +1393,14 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 $this->start_controls_tab(
                     'search_box_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'search_box_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input' => 'color: {{VALUE}};',
@@ -1412,9 +1413,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'search_box_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input',
+                            // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image) appear in the Elementor Style panel, not a WP_Query exclude arg.
                             'exclude' =>['image'],
                         ]
                     );
@@ -1423,7 +1425,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'search_box_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input',
                         ]
                     );
@@ -1431,7 +1433,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                     $this->add_responsive_control(
                         'search_box_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1445,13 +1447,13 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 $this->start_controls_tab(
                     'search_box_style_hover_tab',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'search_box_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input:hover,{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input:focus' => 'color: {{VALUE}}',
@@ -1463,9 +1465,10 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'search_box_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input:hover,{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input:focus',
+                            // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image) appear in the Elementor Style panel, not a WP_Query exclude arg.
                             'exclude' =>['image'],
                         ]
                     );
@@ -1474,7 +1477,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'search_box_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input:hover,{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input:focus',
                         ]
                     );
@@ -1482,7 +1485,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                     $this->add_responsive_control(
                         'search_box_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input:hover,{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_filter input:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1499,7 +1502,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
          $this->start_controls_section(
             'htmega_table_sorting_style_section',
             [
-                'label' => __( 'Pagination Style', 'htmega-addons' ),
+                'label' => __( 'Pagination Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_datatable_paging'=>'yes',
@@ -1512,14 +1515,14 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'datatable_pagination_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_paginate a.paginate_button',
                 ]
             );
             $this->add_responsive_control(
                 'paginat_top_space',
                 [
-                    'label' => esc_html__( 'Top Space', 'htmega-addons' ),
+                    'label' => esc_html__( 'Top Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 300,
@@ -1534,14 +1537,14 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Border::get_type(),
                     [
                     'name' => 'paginat_active_border_box',
-                    'label' => esc_html__( 'Pagination Box Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Pagination Box Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_paginate',
                 ]
             );
             $this->add_responsive_control(
                 'paginat_active_border_box_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_paginate' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1552,7 +1555,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'pagination_box_bg',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic','gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_wrapper .dataTables_paginate',
                 ]
@@ -1562,14 +1565,14 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 $this->start_controls_tab(
                     'paginat_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'datatable_pagination_text_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -1582,7 +1585,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'datatable_pagination_background_color',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_paginate span a.paginate_button,
                             {{WRAPPER}} .htmega-table-style .dataTables_paginate a.paginate_button',
@@ -1593,7 +1596,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         Group_Control_Border::get_type(),
                             [
                             'name' => 'datatable_pagination_border_header',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_paginate span a.paginate_button,{{WRAPPER}} .htmega-table-style .dataTables_paginate a.paginate_button',
                         ]
                     );
@@ -1602,13 +1605,13 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                 $this->start_controls_tab(
                     'paginat_style_hover_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'datatable_pagination_text_active_color',
                         [
-                            'label' => esc_html__( 'Text Active Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Active Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -1621,7 +1624,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'paginat_active_bg',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_paginate span a.paginate_button.current,
                             {{WRAPPER}} .htmega-table-style .dataTables_paginate a.paginate_button:not(.disabled):hover',
@@ -1632,7 +1635,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         Group_Control_Border::get_type(),
                             [
                             'name' => 'paginat_active_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-table-style .dataTables_paginate span a.paginate_button.current,
                             {{WRAPPER}} .htmega-table-style .dataTables_paginate a.paginate_button:not(.disabled):hover',
                         ]
@@ -1699,7 +1702,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
         }
 
         ?>
-        <div <?php echo $this->get_render_attribute_string( 'datatable_attr' ); ?>>
+        <div <?php echo $this->get_render_attribute_string( 'datatable_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string. ?>>
             <table class="htb-table <?php if( $settings['show_datatable_sorting'] == 'yes' ){ echo 'htmega-datatable-'.esc_attr( $id ); } ?>">
                 <?php if( $settings['header_column_list'] ): ?>
                     <thead>
@@ -1758,7 +1761,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
                         ordering:  <?php echo esc_js(( $settings['show_datatable_ordering'] == 'yes' ) ? 'true' : 'false'); ?>,
                         info: <?php echo esc_js(( $settings['show_datatable_info'] == 'yes' ) ? 'true' : 'false'); ?>,
                         pageLength: <?php echo esc_js($default_row_number ); ?>,
-                        lengthMenu: [ [<?php echo esc_js( $display_options ).$show_all_num;?>], [<?php echo esc_js( $display_options ).$show_all_text;?>] ], // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        lengthMenu: [ [<?php echo esc_js( $display_options ) . $show_all_num; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $show_all_num is a static string (', -1' or ''), no user data. ?>], [<?php echo esc_js( $display_options ) . $show_all_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $show_all_text is pre-built above with esc_html() already applied to the user value. ?>] ],
                     });
                  });
             </script>
@@ -1770,7 +1773,7 @@ class HTMega_Elementor_Widget_Data_Table extends Widget_Base {
             [
                 'type' => Controls_Manager::RAW_HTML,
                 'raw' => sprintf(/* translators: 1: Opening strong and anchor tags for Pro Version link, 2: Closing anchor and strong tags */
-                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'htmega-addons'),
+                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'ht-mega-for-elementor'),
                     '<strong><a href="https://wphtmega.com/pricing/" target="_blank">',
                     '</a></strong>'),
                 'content_classes' => 'htmega-addons-notice',

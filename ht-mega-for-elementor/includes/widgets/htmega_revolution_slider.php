@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Revolution_Slider extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Revolution Slider', 'htmega-addons' );
+        return __( 'Revolution Slider', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -32,7 +32,7 @@ class HTMega_Elementor_Widget_Revolution_Slider extends Widget_Base {
         if( class_exists( 'RevSlider' ) ){
             $slider = new \RevSlider();
             $revolution_sliders = $slider->getArrSliders();
-            $slider_options     = ['0' => esc_html__( 'Select Slider', 'htmega-addons' ) ];
+            $slider_options     = ['0' => esc_html__( 'Select Slider', 'ht-mega-for-elementor' ) ];
             if ( ! empty( $revolution_sliders ) && ! is_wp_error( $revolution_sliders ) ) {
                 foreach ( $revolution_sliders as $revolution_slider ) {
                    $alias = $revolution_slider->getAlias();
@@ -41,7 +41,7 @@ class HTMega_Elementor_Widget_Revolution_Slider extends Widget_Base {
                 }
             }
         } else {
-            $slider_options = ['0' => esc_html__( 'No Slider Found.', 'htmega-addons' ) ];
+            $slider_options = ['0' => esc_html__( 'No Slider Found.', 'ht-mega-for-elementor' ) ];
         }
         return $slider_options;
     }
@@ -57,14 +57,14 @@ class HTMega_Elementor_Widget_Revolution_Slider extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Revolution Slider', 'htmega-addons' ),
+                'label' => __( 'Revolution Slider', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'htmega_plugin_parent_missing_notice',
                 [
                     'type' => Controls_Manager::RAW_HTML,
-                    'raw' => esc_html__( 'It appears that Revolution Slider is not currently installed on your site. Please install or activate Revolution Slider, and remember to refresh the page after installation or activation.', 'htmega-addons' ),
+                    'raw' => esc_html__( 'It appears that Revolution Slider is not currently installed on your site. Please install or activate Revolution Slider, and remember to refresh the page after installation or activation.', 'ht-mega-for-elementor' ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
                 ]
             );
@@ -77,14 +77,14 @@ class HTMega_Elementor_Widget_Revolution_Slider extends Widget_Base {
         $this->start_controls_section(
             'revolution_slider_content',
             [
-                'label' => __( 'Revolution Slider', 'htmega-addons' ),
+                'label' => __( 'Revolution Slider', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'slider_alias',
                 [
-                    'label'   => esc_html__( 'Select Slider', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Slider', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => '0',
                     'options' => $this->htmega_rev_slider_options(),
@@ -97,7 +97,7 @@ class HTMega_Elementor_Widget_Revolution_Slider extends Widget_Base {
 
     protected function render( $instance = [] ) {
         if ( ! is_plugin_active('revslider/revslider.php') ) {
-            htmega_plugin_missing_alert( __('Revolution Slider', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Revolution Slider', 'ht-mega-for-elementor') );
             return;
         }
         $settings   = $this->get_settings_for_display();

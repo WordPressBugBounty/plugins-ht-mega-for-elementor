@@ -86,9 +86,9 @@
 						'<%s class="htmega-section-heading-title">
 							%s
 						</%s>',
-                        htmegaBlocks_sanitize_tag($settings['titleTag']),
+                        htmegaBlocks_sanitize_tag($settings['titleTag']), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmegaBlocks_sanitize_tag() whitelists against a fixed tag array, see htmega-blocks/includes/helper-functions.php.
                         wp_kses_post($title),
-                        htmegaBlocks_sanitize_tag($settings['titleTag'])
+                        htmegaBlocks_sanitize_tag($settings['titleTag']) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmegaBlocks_sanitize_tag() whitelists against a fixed tag array, see htmega-blocks/includes/helper-functions.php.
 					);
 					if($settings['titleSeparator'] && ($settings['titleSeparatorPosition'] == 'after' || empty($settings['titleSeparatorPosition']))) {
 						echo $titleSeparator; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

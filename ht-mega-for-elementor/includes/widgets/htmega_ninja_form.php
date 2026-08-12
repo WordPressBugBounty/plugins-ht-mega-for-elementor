@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Ninja Form', 'htmega-addons' );
+        return __( 'Ninja Form', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -40,7 +40,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Ninja Form', 'htmega-addons' ),
+                'label' => __( 'Ninja Form', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -48,7 +48,8 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: Opening and closing anchor tag wrapping the plugin name "Ninja Form", used twice in the string */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Ninja%2520Form&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">Ninja Form</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -60,7 +61,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 'parent_plugin_install',
                 [
                     'type' => Controls_Manager::RAW_HTML,
-                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Ninja%2520Form&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate Ninja Form', 'htmega-addons' ) . '</a>',
+                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Ninja%2520Form&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate Ninja Form', 'ht-mega-for-elementor' ) . '</a>',
                 ]
             );
             
@@ -72,13 +73,13 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         if ( class_exists( 'Ninja_Forms' ) ) {
             $ninja_forms  = Ninja_Forms()->form()->get_forms();
             if ( ! empty( $ninja_forms ) && ! is_wp_error( $ninja_forms ) ) {
-                $form_options = ['0' => esc_html__( 'Select Form', 'htmega-addons' )];
+                $form_options = ['0' => esc_html__( 'Select Form', 'ht-mega-for-elementor' )];
                 foreach ( $ninja_forms as $form ) {   
                     $form_options[ $form->get_id() ] = $form->get_setting( 'title' );
                 }
             }
         } else {
-            $form_options = ['0' => esc_html__( 'Form Not Found.', 'htmega-addons' ) ];
+            $form_options = ['0' => esc_html__( 'Form Not Found.', 'ht-mega-for-elementor' ) ];
         }
         return $form_options;
     }
@@ -88,14 +89,14 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'ninjaform_content',
             [
-                'label' => __( 'Ninja Form', 'htmega-addons' ),
+                'label' => __( 'Ninja Form', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'ninja_form',
                 [
-                    'label'   => esc_html__( 'Select Form', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Form', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => $this->htmega_ninja_forms_list(),
                 ]
@@ -106,14 +107,14 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'ninjaform_opation_content',
             [
-                'label' => __( 'Options', 'htmega-addons' ),
+                'label' => __( 'Options', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'show_form_title',
                 [
-                    'label'                 => __( 'Title Hide', 'htmega-addons' ),
+                    'label'                 => __( 'Title Hide', 'ht-mega-for-elementor' ),
                     'type'                  => Controls_Manager::SWITCHER,
                     'selectors' => [
                         '{{WRAPPER}} span.nf-form-title' => 'display: none;',
@@ -124,7 +125,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'show_form_description',
                 [
-                    'label'                 => __( 'Description Hide', 'htmega-addons' ),
+                    'label'                 => __( 'Description Hide', 'ht-mega-for-elementor' ),
                     'type'                  => Controls_Manager::SWITCHER,
                     'selectors' => [
                         '{{WRAPPER}} .nf-before-form-content' => 'display: none;',
@@ -138,7 +139,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'ninjaform_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_form_title!'=>'yes',
@@ -149,7 +150,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'ninjaform_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#212529',
                     'selectors' => [
@@ -169,7 +170,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -182,7 +183,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -195,7 +196,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'ninjaform_title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} span.nf-form-title',
                 ]
             );
@@ -203,7 +204,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_title_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} span.nf-form-title' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -213,19 +214,19 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaformninjaform_title_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -240,7 +241,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'ninjaform_description_style_section',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_form_description!'=>'yes',
@@ -251,7 +252,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'ninjaform_description_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#212529',
                     'selectors' => [
@@ -271,7 +272,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_description_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -284,7 +285,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -297,7 +298,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'ninjaform_description_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .nf-before-form-content',
                 ]
             );
@@ -305,7 +306,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_description_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .nf-before-form-content' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -315,19 +316,19 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_description_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -342,26 +343,26 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'ninjaform_label_style',
             [
-                'label'     => __( 'Labels', 'htmega-addons' ),
+                'label'     => __( 'Labels', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'htmega_label_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -373,7 +374,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'ninjaform_label_background',
                 [
-                    'label'     => __( 'Background', 'htmega-addons' ),
+                    'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .nf-field-label label,{{WRAPPER}} .nf-field-element label'   => 'background-color: {{VALUE}};',
@@ -385,7 +386,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'ninjaform_label_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .nf-field-label label,{{WRAPPER}} .nf-field-element label'   => 'color: {{VALUE}};',
@@ -395,7 +396,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'ninjaform_label_required_color',
                 [
-                    'label'     => __( 'Required Symbol Color', 'htmega-addons' ),
+                    'label'     => __( 'Required Symbol Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .ninja-forms-req-symbol'   => 'color: {{VALUE}};',
@@ -415,7 +416,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'ninjaform_label_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .nf-field-label label,{{WRAPPER}} .nf-field-element label',
                 ]
             );
@@ -423,7 +424,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_label_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .nf-field-label label,{{WRAPPER}} .nf-field-element label' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -435,7 +436,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_label_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -448,7 +449,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_label_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -461,7 +462,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_form_description_heading',
                 [
-                    'label' => __( 'Description Style', 'htmega-addons' ),
+                    'label' => __( 'Description Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -469,7 +470,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_form_description_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .nf-field-description'   => 'color: {{VALUE}};',
@@ -487,7 +488,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_form_input_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -502,7 +503,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'ninjaform_input_style_section',
             [
-                'label' => __( 'Input', 'htmega-addons' ),
+                'label' => __( 'Input', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -513,13 +514,13 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->start_controls_tab(
                 'style_input_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_control(
                 'ninjaform_input_background_color',
                 [
-                    'label' => __( 'Background Color', 'htmega-addons' ),
+                    'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#ffffff',
                     'selectors'         => [
@@ -531,7 +532,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'ninjaform_input_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#212529',
                     'selectors'         => [
@@ -542,7 +543,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_input_placeholder_color',
                 [
-                    'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                    'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors'         => [
                         '{{WRAPPER}} .nf-form-layout .nf-field input::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -562,7 +563,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_input_height',
                 [
-                    'label'             => __( 'Height', 'htmega-addons' ),
+                    'label'             => __( 'Height', 'ht-mega-for-elementor' ),
                     'type'              => Controls_Manager::SLIDER,
                     'range'             => [
                         'px' => [
@@ -581,7 +582,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_input_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -595,7 +596,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_input_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -609,7 +610,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'ninjaform_input_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .nf-form-layout .nf-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .nf-form-layout .nf-field select',
                 ]
             );
@@ -617,7 +618,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_responsive_control(
                 'ninjaform_input_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .nf-form-layout .nf-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file])' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -629,26 +630,26 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'htmega_input_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .nf-form-layout .nf-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),{{WRAPPER}} .nf-form-layout .nf-field select',
                 ]
             );
             $this->add_responsive_control(
                 'htmega_input_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -663,13 +664,13 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->start_controls_tab(
                 'style_input_foucs_tab',
                 [
-                    'label' => __( 'Focus', 'htmega-addons' ),
+                    'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                 ]
             );
                     $this->add_control(
                         'ninjaform_input_background_color_focus',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .nf-form-layout .nf-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .nf-form-layout .nf-field select:focus' => 'background-color: {{VALUE}}',
@@ -680,7 +681,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_control(
                         'ninjaform_input_color_focus',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .nf-form-layout .nf-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .nf-form-layout .nf-field select:focus' => 'color: {{VALUE}}',
@@ -691,7 +692,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'ninjaform_input_border_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .nf-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .nf-form-layout .nf-field select:focus',
                         ]
                     );
@@ -699,7 +700,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_input_border_radius_focus',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .nf-form-layout .nf-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -711,7 +712,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_input_box_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .nf-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),{{WRAPPER}} .nf-form-layout .nf-field select:focus',
                         ]
                     );
@@ -723,7 +724,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'ninjaform_textarea_style_section',
             [
-                'label' => __( 'Textarea', 'htmega-addons' ),
+                'label' => __( 'Textarea', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -734,14 +735,14 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'style_textarea_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                         
                     $this->add_control(
                         'ninjaform_textarea_background_color',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors'         => [
@@ -753,7 +754,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_control(
                         'ninjaform_textarea_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#212529',
                             'selectors'         => [
@@ -764,7 +765,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_control(
                         'htmega_textarea_placeholder_color',
                         [
-                            'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .nf-form-layout .nf-field textarea::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -784,7 +785,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_textarea_height',
                         [
-                            'label'             => __( 'Height', 'htmega-addons' ),
+                            'label'             => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'              => Controls_Manager::SLIDER,
                             'range'             => [
                                 'px' => [
@@ -803,7 +804,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_textarea_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -816,7 +817,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_textarea_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -829,7 +830,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'ninjaform_textarea_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .nf-field textarea',
                         ]
                     );
@@ -837,7 +838,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_textarea_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .nf-form-layout .nf-field textarea' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -847,19 +848,19 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_textarea_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ]
                             ],
@@ -872,7 +873,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_textarea_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .nf-field textarea',
                         ]
                     );
@@ -881,14 +882,14 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'style_textarea_focus_tab',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'ninjaform_textarea_background_color_focus',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .nf-form-layout .nf-field textarea:focus' => 'background-color: {{VALUE}}',
@@ -899,7 +900,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_control(
                         'ninjaform_textarea_color_focus',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .nf-form-layout .nf-field textarea:focus' => 'color: {{VALUE}}',
@@ -910,7 +911,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'ninjaform_textarea_border_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .nf-field textarea:focus',
                         ]
                     );
@@ -918,7 +919,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_textarea_border_radius_focus',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .nf-form-layout .nf-field textarea:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -929,7 +930,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_textarea_box_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .nf-field textarea:focus',
                         ]
                     );
@@ -942,7 +943,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'ninjaform_inputsubmit_style',
             [
-                'label'     => __( 'Button', 'htmega-addons' ),
+                'label'     => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -952,14 +953,14 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'ninjaform_submit_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'ninjaform_input_submit_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -983,7 +984,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_control(
                         'ninjaform_input_submit_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .nf-form-layout .submit-container input[type="button"]'  => 'color: {{VALUE}};',
@@ -994,7 +995,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_control(
                         'ninjaform_input_submit_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .nf-form-layout .submit-container input[type="button"]'  => 'background-color: {{VALUE}};',
@@ -1005,7 +1006,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_input_submit_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1018,7 +1019,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_input_submit_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1032,7 +1033,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'ninjaform_input_submit_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .submit-container input[type="button"]',
                         ]
                     );
@@ -1040,7 +1041,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_responsive_control(
                         'ninjaform_input_submit_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .nf-form-layout .submit-container input[type="button"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1052,26 +1053,26 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'ninjaform_input_submit_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .submit-container input[type="button"]',
                         ]
                     );
                     $this->add_responsive_control(
                         'htmega_button_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ]
                             ],
@@ -1086,14 +1087,14 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'ninjaform_submit_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'ninjaform_input_submithover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .nf-form-layout .submit-container input[type="button"]:hover'  => 'color: {{VALUE}};',
@@ -1104,7 +1105,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                     $this->add_control(
                         'ninjaform_input_submithover_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .nf-form-layout .submit-container input[type="button"]:hover'  => 'background-color: {{VALUE}};',
@@ -1116,7 +1117,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'ninjaform_input_submithover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .nf-form-layout .submit-container input[type="button"]:hover',
                         ]
                     );
@@ -1130,7 +1131,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
         $this->start_controls_section(
             'htmega_input_error_style',
             [
-                'label'     => __( 'Errors and Success Style', 'htmega-addons' ),
+                'label'     => __( 'Errors and Success Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1138,7 +1139,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_error_text_color',
                 [
-                    'label'     => __( 'Error Color', 'htmega-addons' ),
+                    'label'     => __( 'Error Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .nf-error .nf-error-msg, {{WRAPPER}} .nf-error,{{WRAPPER}} .nf-error-msg'  => 'color: {{VALUE}};',
@@ -1155,7 +1156,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_error_border_color',
                 [
-                    'label'     => __( 'Border Color', 'htmega-addons' ),
+                    'label'     => __( 'Border Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .nf-error .ninja-forms-field'  => 'border-color: {{VALUE}}!important;',
@@ -1166,7 +1167,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_value_pass_style',
                 [
-                    'label' => __( 'Validation Pass Style', 'htmega-addons' ),
+                    'label' => __( 'Validation Pass Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1174,7 +1175,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_validation_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .nf-pass .ninja-forms-field'  => 'border-color: {{VALUE}}!important;',
@@ -1186,7 +1187,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_error_submit_feedback_style',
                 [
-                    'label' => __( 'Success Style', 'htmega-addons' ),
+                    'label' => __( 'Success Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1194,7 +1195,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
             $this->add_control(
                 'htmega_feedback_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .nf-response-msg'  => 'color: {{VALUE}};',
@@ -1213,7 +1214,7 @@ class HTMega_Elementor_Widget_Ninja_Form extends Widget_Base {
 
     protected function render( $instance = [] ) {
         if ( ! is_plugin_active('ninja-forms/ninja-forms.php') ) {
-            htmega_plugin_missing_alert( __('Ninja Form', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Ninja Form', 'ht-mega-for-elementor') );
             return;
         }
         $settings   = $this->get_settings_for_display();

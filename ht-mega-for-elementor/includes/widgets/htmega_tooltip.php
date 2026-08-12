@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Tooltip', 'htmega-addons' );
+        return __( 'Tooltip', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -36,26 +36,26 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
         $this->start_controls_section(
             'tooltip_button_content',
             [
-                'label' => __( 'Tooltip', 'htmega-addons' ),
+                'label' => __( 'Tooltip', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_responsive_control(
                 'tooltip_type',
                 [
-                    'label' => esc_html__( 'Button Type', 'htmega-addons' ),
+                    'label' => esc_html__( 'Button Type', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'label_block' => true,
                     'options' => [
                         'icon' => [
-                            'title' => esc_html__( 'Icon', 'htmega-addons' ),
+                            'title' => esc_html__( 'Icon', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-info-circle',
                         ],
                         'text' => [
-                            'title' => esc_html__( 'Text', 'htmega-addons' ),
+                            'title' => esc_html__( 'Text', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-font',
                         ],
                         'image' => [
-                            'title' => esc_html__( 'Image', 'htmega-addons' ),
+                            'title' => esc_html__( 'Image', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-image-bold',
                         ],
                     ],
@@ -66,10 +66,10 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_control(
                 'tooltip_button_txt',
                 [
-                    'label' => esc_html__( 'Text', 'htmega-addons' ),
+                    'label' => esc_html__( 'Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => true,
-                    'default' => esc_html__( 'Tooltip', 'htmega-addons' ),
+                    'default' => esc_html__( 'Tooltip', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'tooltip_type' => [ 'text' ]
                     ],
@@ -80,7 +80,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_control(
                 'tooltip_button_icon',
                 [
-                    'label' => esc_html__( 'Icon', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-home',
@@ -95,7 +95,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_control(
                 'tooltip_button_img',
                 [
-                    'label' => __('Image','htmega-addons'),
+                    'label' => __('Image','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::MEDIA,
                     'dynamic' => [
                         'active' => true,
@@ -121,10 +121,10 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_control(
                 'show_link',
                 [
-                    'label' => __( 'Show Link', 'htmega-addons' ),
+                    'label' => __( 'Show Link', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -133,9 +133,9 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_control(
                 'button_link',
                 [
-                    'label' => __( 'Link', 'htmega-addons' ),
+                    'label' => __( 'Link', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                    'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                     'show_external' => true,
                     'default' => [
                         'url' => '',
@@ -153,16 +153,16 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
         $this->start_controls_section(
             'tooltip_options',
             [
-                'label' => __( 'Tooltip Options', 'htmega-addons' ),
+                'label' => __( 'Tooltip Options', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'tooltip_text',
                 [
-                    'label' => esc_html__( 'Tooltip Text', 'htmega-addons' ),
+                    'label' => esc_html__( 'Tooltip Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
                     'label_block' => true,
-                    'default' => esc_html__( 'Tooltip content', 'htmega-addons' ),
+                    'default' => esc_html__( 'Tooltip content', 'ht-mega-for-elementor' ),
                     'dynamic' => [ 'active' => true ]
                 ]
             );
@@ -170,15 +170,15 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_control(
               'tooltip_dir',
                 [
-                    'label'         => esc_html__( 'Direction', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Direction', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SELECT,
                     'default'       => 'right',
                     'label_block'   => false,
                     'options'       => [
-                        'left'      => esc_html__( 'Left', 'htmega-addons' ),
-                        'right'     => esc_html__( 'Right', 'htmega-addons' ),
-                        'top'       => esc_html__( 'Top', 'htmega-addons' ),
-                        'bottom'    => esc_html__( 'Bottom', 'htmega-addons' ),
+                        'left'      => esc_html__( 'Left', 'ht-mega-for-elementor' ),
+                        'right'     => esc_html__( 'Right', 'ht-mega-for-elementor' ),
+                        'top'       => esc_html__( 'Top', 'ht-mega-for-elementor' ),
+                        'bottom'    => esc_html__( 'Bottom', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -186,7 +186,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_control(
                 'tooltip_space',
                 [
-                    'label' => __( 'Space With Button', 'htmega-addons' ),
+                    'label' => __( 'Space With Button', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -223,7 +223,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
         $this->start_controls_section(
             'tooltip_style_section',
             [
-                'label' => __( 'Button Box Style', 'htmega-addons' ),
+                'label' => __( 'Button Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -231,23 +231,23 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_responsive_control(
                 'tooltip_style_section_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -262,7 +262,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_responsive_control(
                 'tooltip_style_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -275,7 +275,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
             $this->add_responsive_control(
                 'tooltip_style_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -291,7 +291,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
         $this->start_controls_section(
             'tooltip_button_section',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -301,13 +301,13 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'button_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -333,7 +333,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                     $this->add_control(
                         'button_icon_fontsize',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -366,7 +366,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-tooltip span',
                         ]
@@ -376,7 +376,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-tooltip span',
                         ]
                     );
@@ -384,7 +384,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                     $this->add_responsive_control(
                         'button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-tooltip span' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -395,7 +395,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                     $this->add_responsive_control(
                         'button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -408,7 +408,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                     $this->add_responsive_control(
                         'button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -424,13 +424,13 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'button_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -444,7 +444,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-tooltip span:hover',
                         ]
@@ -454,7 +454,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-tooltip span:hover',
                         ]
                     );
@@ -469,7 +469,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
         $this->start_controls_section(
             'hover_tooltip_style_section',
             [
-                'label' => __( 'Tooltip', 'htmega-addons' ),
+                'label' => __( 'Tooltip', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -479,13 +479,13 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                 $this->start_controls_tab(
                     'hover_tooltip_content_tab',
                     [
-                        'label' => __( 'Content', 'htmega-addons' ),
+                        'label' => __( 'Content', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'hover_tooltip_content_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -505,7 +505,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                     $this->add_responsive_control(
                         'hover_tooltip_content_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -519,7 +519,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'hover_tooltip_content_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htb-tooltip-inner',
                         ]
@@ -528,7 +528,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                     $this->add_responsive_control(
                         'hover_tooltip_content_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htb-tooltip-inner' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px !important;',
@@ -542,13 +542,13 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                 $this->start_controls_tab(
                     'hover_tooltip_arrow_tab',
                     [
-                        'label' => __( 'Arrow', 'htmega-addons' ),
+                        'label' => __( 'Arrow', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'hover_tooltip_arrow_color',
                         [
-                            'label' => __( 'Arrow Color', 'htmega-addons' ),
+                            'label' => __( 'Arrow Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#404040',
                             'selectors' => [
@@ -579,6 +579,15 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
         $this->add_render_attribute( 'htmega_tooltip_attr', 'class', 'htmega-tooltip htmega-tooltip-container-'.esc_attr( $id ) );
 
         ?>
+            <?php
+            // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- All dynamic output in this block is already safe:
+            // $this->get_render_attribute_string() is Elementor core (self-escaping); htmega_kses_title()/htmega_kses_desc() sanitize
+            // via wp_kses() (see includes/helper-function.php); HTMega_Icon_manager::render_icon() delegates to Elementor core
+            // Icons_Manager::render_icon() (self-escaping, see includes/class.htmega-icon-manager.php); Group_Control_Image_Size::
+            // get_attachment_image_html() is Elementor core (self-escaping); $button_txt only ever holds one of those pre-sanitized
+            // HTML fragments (or is wrapped in an <a> tag built from esc_url()/get_render_attribute_string()), so re-escaping it with
+            // esc_html() would double-encode the markup and break icon/image rendering.
+            ?>
             <div <?php echo $this->get_render_attribute_string( 'htmega_tooltip_attr' ); ?>>
                 <?php
 
@@ -611,6 +620,7 @@ class HTMega_Elementor_Widget_Tooltip extends Widget_Base {
                     echo sprintf('<span data-toggle="tooltip" data-container=".htmega-tooltip-container-%4$s" data-placement="%1$s" title="%2$s">%3$s</span>', esc_attr( $settings['tooltip_dir'] ), htmega_kses_desc( htmlspecialchars( $settings['tooltip_text'] ) ), $button_txt, esc_attr( $id ) );
                 ?>
             </div>
+            <?php // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 
         <?php
 

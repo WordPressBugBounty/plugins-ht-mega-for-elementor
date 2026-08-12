@@ -12,7 +12,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Single Post', 'htmega-addons' );
+        return __( 'Single Post', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -34,20 +34,20 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         $this->start_controls_section(
             'single_post_content',
             [
-                'label' => __( 'Single Post', 'htmega-addons' ),
+                'label' => __( 'Single Post', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'post_style',
                 [
-                    'label' => esc_html__( 'Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1' => esc_html__( 'Style One', 'htmega-addons' ),
-                        '2' => esc_html__( 'Style Two', 'htmega-addons' ),
-                        '3' => esc_html__( 'Style Three', 'htmega-addons' ),
-                        '4' => esc_html__( 'Style Four', 'htmega-addons' ),
+                        '1' => esc_html__( 'Style One', 'ht-mega-for-elementor' ),
+                        '2' => esc_html__( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3' => esc_html__( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4' => esc_html__( 'Style Four', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -55,12 +55,12 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'post_content_position',
                 [
-                    'label' => esc_html__( 'Content Position', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'bottom',
                     'options' => [
-                        'top' => esc_html__( 'Top', 'htmega-addons' ),
-                        'bottom' => esc_html__( 'Bottom', 'htmega-addons' ),
+                        'top' => esc_html__( 'Top', 'ht-mega-for-elementor' ),
+                        'bottom' => esc_html__( 'Bottom', 'ht-mega-for-elementor' ),
                     ],
                     'condition'=>[
                         'post_style' => '1',
@@ -74,14 +74,14 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         $this->start_controls_section(
             'single_post_additional',
             [
-                'label' => __( 'Additional Option', 'htmega-addons' ),
+                'label' => __( 'Additional Option', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'show_title',
                 [
-                    'label' => esc_html__( 'Title', 'htmega-addons' ),
+                    'label' => esc_html__( 'Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -91,7 +91,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'single_post_title_length',
                 [
-                    'label' => __( 'Title Length', 'htmega-addons' ),
+                    'label' => __( 'Title Length', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'step' => 1,
                     'default' => 5,
@@ -105,7 +105,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'show_category',
                 [
-                    'label' => esc_html__( 'Category', 'htmega-addons' ),
+                    'label' => esc_html__( 'Category', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -115,7 +115,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'show_author',
                 [
-                    'label' => esc_html__( 'Author', 'htmega-addons' ),
+                    'label' => esc_html__( 'Author', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -125,7 +125,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'show_date',
                 [
-                    'label' => esc_html__( 'Date', 'htmega-addons' ),
+                    'label' => esc_html__( 'Date', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -138,7 +138,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         $this->start_controls_section(
             'single_post_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_title'=>'yes',
@@ -148,7 +148,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-post .content h2 a' => 'color: {{VALUE}}',
@@ -158,7 +158,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'title_color_hover',
                 [
-                    'label' => __( 'Hover Color', 'htmega-addons' ),
+                    'label' => __( 'Hover Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-post .content h2 a:hover' => 'color: {{VALUE}}',
@@ -170,7 +170,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-post .content h2',
                 ]
             );
@@ -178,7 +178,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -190,7 +190,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -202,23 +202,23 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'title_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -234,7 +234,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         $this->start_controls_section(
             'single_post_category_style_section',
             [
-                'label' => __( 'Category', 'htmega-addons' ),
+                'label' => __( 'Category', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_category'=>'yes',
@@ -244,7 +244,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'category_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#ffffff',
                     'selectors' => [
@@ -257,7 +257,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'category_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-post .post-category a',
                 ]
             );
@@ -265,7 +265,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'category_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -277,7 +277,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'category_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -290,7 +290,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'category_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-single-post .post-category a',
                 ]
@@ -298,19 +298,19 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'category_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -326,7 +326,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         $this->start_controls_section(
             'single_post_date_style_section',
             [
-                'label' => __( 'Meta', 'htmega-addons' ),
+                'label' => __( 'Meta', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_date'=>'yes',
@@ -340,13 +340,13 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->start_controls_tab(
                 'style_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_control(
                 'date_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-post ul.meta li a,
@@ -357,7 +357,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'date_icon_color',
                 [
-                    'label' => __( 'Icon Color', 'htmega-addons' ),
+                    'label' => __( 'Icon Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-post ul.meta li a i,
@@ -370,7 +370,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'date_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-post ul.meta li a,
                     {{WRAPPER}} .htmega-single-post ul.meta li',
                 ]
@@ -379,7 +379,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'date_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -392,7 +392,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'date_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -405,23 +405,23 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'date_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'space-between' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -438,13 +438,13 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->start_controls_tab(
                 'filter_menu_hover_tab',
                 [
-                    'label' => __( 'Hover', 'htmega-addons' ),
+                    'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_control(
                 'meta_hover_color_',
                 [
-                    'label' => __( 'Meta Hover Color', 'htmega-addons' ),
+                    'label' => __( 'Meta Hover Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-post ul.meta li a:hover' => 'color: {{VALUE}}',
@@ -459,7 +459,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         $this->start_controls_section(
             'single_post_content_box_style_section',
             [
-                'label' => __( 'Content Box', 'htmega-addons' ),
+                'label' => __( 'Content Box', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -468,7 +468,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'box_bg_color',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-single-post .content',
                 ]
@@ -476,7 +476,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'box_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -488,7 +488,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_responsive_control(
                 'box_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -539,7 +539,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                 if( $single_post->have_posts() ):
                     while( $single_post->have_posts() ): $single_post->the_post();
             ?>
-                <div <?php echo $this->get_render_attribute_string( 'htmega_single_post_attr' ); ?>>
+                <div <?php echo $this->get_render_attribute_string( 'htmega_single_post_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, self-escaping ?>>
                     <div class="thumb">
                         <a href="<?php the_permalink();?>">
                             <?php
@@ -593,9 +593,9 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                     </div>
                 </div>
 
-            <?php endwhile; wp_reset_postdata(); wp_reset_query(); 
+            <?php endwhile; wp_reset_postdata(); 
                 else:
-                    echo esc_html__( 'No selected post', 'htmega-addons' );
+                    echo esc_html__( 'No selected post', 'ht-mega-for-elementor' );
                 endif;
             if( 'top' == $post_content_position ){
                  $htmega_print_css = ".{$sectionid}.htmega-single-post-style-1 .content {
@@ -626,7 +626,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         $this->add_control(
             'select_post_type',
             [
-                'label' => esc_html__( 'Select Post Type', 'htmega-addons' ),
+                'label' => esc_html__( 'Select Post Type', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'bottom',
                 'options' => htmega_get_post_types(),
@@ -640,7 +640,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
             $this->add_control(
                 'post_name',
                     [
-                        'label' => esc_html__( 'Post Name', 'htmega-addons' ),
+                        'label' => esc_html__( 'Post Name', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -656,7 +656,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
                 $this->add_control(
                     "{$post_key}_post_name",
                     [
-                        'label' => esc_html__( 'Post Name', 'htmega-addons' ),
+                        'label' => esc_html__( 'Post Name', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'options' => htmega_post_name($post_key, -1),

@@ -74,7 +74,8 @@ class HTMega_Template_Library{
                     wp_send_json_success([
                         'templates' => $cached,
                         'message' => sprintf(
-                            __('You can refresh templates once every 24 hours. Next refresh available in %d hours.', 'htmega-addons'),
+                            /* translators: %d: Number of hours until the next manual refresh is allowed. */
+                            __('You can refresh templates once every 24 hours. Next refresh available in %d hours.', 'ht-mega-for-elementor'),
                             $hours_remaining
                         ),
                         'cached' => true
@@ -93,7 +94,8 @@ class HTMega_Template_Library{
                     wp_send_json_success([
                         'templates' => $cached,
                         'message' => sprintf(
-                            __('Template server is temporarily unavailable. Showing cached data. Server will be checked again in %d minutes.', 'htmega-addons'),
+                            /* translators: %d: Number of minutes until the template server will be checked again. */
+                            __('Template server is temporarily unavailable. Showing cached data. Server will be checked again in %d minutes.', 'ht-mega-for-elementor'),
                             $retry_after
                         ),
                         'cached' => true
@@ -102,7 +104,7 @@ class HTMega_Template_Library{
                 }
 
                 wp_send_json_error([
-                    'message' => __('Template server is temporarily unavailable. Please try again later.', 'htmega-addons'),
+                    'message' => __('Template server is temporarily unavailable. Please try again later.', 'ht-mega-for-elementor'),
                     'retry_after' => $retry_after
                 ]);
                 return;
@@ -138,7 +140,7 @@ class HTMega_Template_Library{
                 wp_send_json_success($cached);
             } else {
                 wp_send_json_error([
-                    'message' => __('Unable to load templates at this time. Please try again later.', 'htmega-addons')
+                    'message' => __('Unable to load templates at this time. Please try again later.', 'ht-mega-for-elementor')
                 ]);
                 return;
             }
@@ -175,8 +177,8 @@ class HTMega_Template_Library{
     function admin_menu() {
         add_submenu_page(
             'htmega-addons', 
-            esc_html__( 'Templates Library', 'htmega-addons' ),
-            esc_html__( 'Templates Library', 'htmega-addons' ), 
+            esc_html__( 'Templates Library', 'ht-mega-for-elementor' ),
+            esc_html__( 'Templates Library', 'ht-mega-for-elementor' ), 
             'manage_options', 
             'htmega-addons#/templates', 
             [ $this, 'library_render_html' ] 
@@ -201,9 +203,9 @@ class HTMega_Template_Library{
                       <img src="<?php echo esc_url( HTMEGA_ADDONS_PL_URL.'admin/assets/images/warning-icon.png' ); ?>">
                   </div>
                   <h2>
-                    <?php echo esc_html__( 'No data found','htmega-addons' ); ?>
+                    <?php echo esc_html__( 'No data found','ht-mega-for-elementor' ); ?>
                   </h2>
-                  <p><?php echo esc_html__( 'Please wait a few moments, this may be the causes of server issues.','htmega-addons' ); ?></p>
+                  <p><?php echo esc_html__( 'Please wait a few moments, this may be the causes of server issues.','ht-mega-for-elementor' ); ?></p>
                 </div> 
             <?php
         }
@@ -557,16 +559,16 @@ class HTMega_Template_Library{
         check_ajax_referer('htmega_actication_verifynonce', 'plgactivenonce');
 
         if ( ! current_user_can( 'edit_posts' ) ) {
-            wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( 'Forbidden.', 'ht-mega-for-elementor' ) ), 403 );
             return;
         }
 
         if ( isset( $_REQUEST ) ) {
 
-            $template_id        = sanitize_text_field( $_REQUEST['httemplateid'] );
-            $template_parentid  = sanitize_text_field( $_REQUEST['htparentid'] );
-            $template_title     = sanitize_text_field( $_REQUEST['httitle'] );
-            $page_title         = sanitize_text_field( $_REQUEST['pagetitle'] );
+            $template_id        = isset( $_REQUEST['httemplateid'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['httemplateid'] ) ) : '';
+            $template_parentid  = isset( $_REQUEST['htparentid'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['htparentid'] ) ) : '';
+            $template_title     = isset( $_REQUEST['httitle'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['httitle'] ) ) : '';
+            $page_title         = isset( $_REQUEST['pagetitle'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['pagetitle'] ) ) : '';
 
             $templateurl    = sprintf( self::get_api_templateapi(), $template_id );
             $response_data  = $this->templates_get_content_remote_request( $templateurl );
@@ -608,7 +610,7 @@ class HTMega_Template_Library{
             echo wp_json_encode(
                 array( 
                     'id'      => $new_post_id,
-                    'edittxt' => !empty( $page_title ) ? esc_html__( 'Edit Page', 'htmega-addons' ) : esc_html__( 'Edit Template', 'htmega-addons' )
+                    'edittxt' => !empty( $page_title ) ? esc_html__( 'Edit Page', 'ht-mega-for-elementor' ) : esc_html__( 'Edit Template', 'ht-mega-for-elementor' )
                 )
             );
         }
@@ -651,8 +653,8 @@ class HTMega_Template_Library{
         );
 
         if ( isset( $_POST ) ) {
-            $freeplugins = !empty($_POST['freeplugins']) ? explode( ',', sanitize_text_field($_POST['freeplugins']) ) : array();
-            $proplugins = !empty($_POST['proplugins']) ? explode( ',', sanitize_text_field($_POST['proplugins']) ) : array();
+            $freeplugins = !empty($_POST['freeplugins']) ? explode( ',', sanitize_text_field( wp_unslash( $_POST['freeplugins'] ) ) ) : array();
+            $proplugins = !empty($_POST['proplugins']) ? explode( ',', sanitize_text_field( wp_unslash( $_POST['proplugins'] ) ) ) : array();
             
             if(!empty($freeplugins)){
                 $response['data']['free'] = $this->required_plugins( $freeplugins, 'free' );
@@ -688,15 +690,15 @@ class HTMega_Template_Library{
                 // Installed but Inactive.
                 if ( file_exists( WP_PLUGIN_DIR . '/' . $data['location'] ) && is_plugin_inactive( $data['location'] ) ) {
                     $data['status'] = 'inactive';
-                    $data['button_text'] = __( 'Activate', 'htmega-addons' );
+                    $data['button_text'] = __( 'Activate', 'ht-mega-for-elementor' );
                 // Not Installed.
                 } elseif ( ! file_exists( WP_PLUGIN_DIR . '/' . $data['location'] ) ) {
                     $data['status'] = 'not-installed';
-                    $data['button_text'] = __( 'Install Now', 'htmega-addons' );
+                    $data['button_text'] = __( 'Install Now', 'ht-mega-for-elementor' );
                 // Active.
                 } else {
                     $data['status'] = 'active';
-                    $data['button_text'] = __( 'Activated', 'htmega-addons' );
+                    $data['button_text'] = __( 'Activated', 'ht-mega-for-elementor' );
                 }
                 
                 $data['type'] = $type;
@@ -716,19 +718,22 @@ class HTMega_Template_Library{
             wp_send_json_error(
                 array(
                     'success' => false,
-                    'message' => esc_html__( 'You do not have permission to install plugins', 'htmega-addons' ),
+                    'message' => esc_html__( 'You do not have permission to install plugins', 'ht-mega-for-elementor' ),
                 )
             );
             return;
         }
 
-        $plugin_data = isset( $_POST['plugindata'] ) ? json_decode( stripslashes( $_POST['plugindata'] ), true ) : array();
+        // JSON-encoded payload: wp_unslash() before json_decode() is the correct sanitization
+        // pattern here (matches usage elsewhere in this codebase) — sanitize_text_field() would
+        // corrupt the JSON string.
+        $plugin_data = isset( $_POST['plugindata'] ) ? json_decode( wp_unslash( $_POST['plugindata'] ), true ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- JSON payload, see comment above; decoded and structurally used below.
 
         if ( empty( $plugin_data['location'] ) ) {
             wp_send_json_error(
                 array(
                     'success' => false,
-                    'message' => esc_html__( 'Plugin location not provided', 'htmega-addons' ),
+                    'message' => esc_html__( 'Plugin location not provided', 'ht-mega-for-elementor' ),
                 )
             );
             return;
@@ -741,7 +746,7 @@ class HTMega_Template_Library{
             wp_send_json_error(
                 array(
                     'success' => false,
-                    'message' => esc_html__( 'Plugin file not found', 'htmega-addons' ),
+                    'message' => esc_html__( 'Plugin file not found', 'ht-mega-for-elementor' ),
                 )
             );
             return;
@@ -762,7 +767,7 @@ class HTMega_Template_Library{
         wp_send_json_success(
             array(
                 'success' => true,
-                'message' => esc_html__( 'Plugin Successfully Activated', 'htmega-addons' ),
+                'message' => esc_html__( 'Plugin Successfully Activated', 'ht-mega-for-elementor' ),
             )
         );
     }
@@ -787,18 +792,18 @@ class HTMega_Template_Library{
                 if ( file_exists( get_theme_root(). '/' . $data['slug'] . '/functions.php' ) && ( $theme->stylesheet != $data['slug'] ) ) {
 
                     $button_classes = 'button themeactivate-now button-primary';
-                    $button_text    = __( 'Activate', 'htmega-addons' );
+                    $button_text    = __( 'Activate', 'ht-mega-for-elementor' );
 
                 // Not Installed.
                 } elseif ( ! file_exists( get_theme_root(). '/' . $data['slug'] . '/functions.php' ) ) {
 
                     $button_classes = 'button themeinstall-now';
-                    $button_text    = __( 'Install Now', 'htmega-addons' );
+                    $button_text    = __( 'Install Now', 'ht-mega-for-elementor' );
 
                 // Active.
                 } else {
                     $button_classes = 'button disabled';
-                    $button_text    = __( 'Activated', 'htmega-addons' );
+                    $button_text    = __( 'Activated', 'ht-mega-for-elementor' );
                 }
 
                 ?>
@@ -806,7 +811,7 @@ class HTMega_Template_Library{
                         <h3><?php echo esc_html($data['name']); ?></h3>
                         <?php
                             if ( !empty( $data['prolink'] ) ) {
-                                echo '<a class="button" href="'.esc_url( $data['prolink'] ).'" target="_blank">'.esc_html__( 'Buy Now', 'htmega-addons' ).'</a>';
+                                echo '<a class="button" href="'.esc_url( $data['prolink'] ).'" target="_blank">'.esc_html__( 'Buy Now', 'ht-mega-for-elementor' ).'</a>';
                             }else{
                         ?>
                             <button class="<?php echo esc_attr($button_classes); ?>" data-themeopt='<?php echo wp_json_encode( $data ); ?>'><?php echo esc_html($button_text); ?></button>
@@ -826,23 +831,24 @@ class HTMega_Template_Library{
     function ajax_theme_activation() {
         check_ajax_referer('htmega_actication_verifynonce', 'plgactivenonce');
 
-        if ( ! current_user_can( 'install_themes' ) || ! isset( $_POST['themeslug'] ) || ! $_POST['themeslug'] ) {
+        $theme_slug = isset( $_POST['themeslug'] ) ? sanitize_key( wp_unslash( $_POST['themeslug'] ) ) : '';
+
+        if ( ! current_user_can( 'install_themes' ) || empty( $theme_slug ) ) {
             wp_send_json_error(
                 array(
                     'success' => false,
-                    'message' => esc_html__( 'Sorry, you are not allowed to install themes on this site.', 'htmega-addons' ),
+                    'message' => esc_html__( 'Sorry, you are not allowed to install themes on this site.', 'ht-mega-for-elementor' ),
                 )
             );
             return;
         }
 
-        $theme_slug = ( isset( $_POST['themeslug'] ) ) ? esc_attr( $_POST['themeslug'] ) : '';
         switch_theme( $theme_slug );
 
         wp_send_json_success(
             array(
                 'success' => true,
-                'message' => __( 'Theme Activated', 'htmega-addons' ),
+                'message' => __( 'Theme Activated', 'ht-mega-for-elementor' ),
             )
         );
     }

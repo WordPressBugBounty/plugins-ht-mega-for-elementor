@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
     }
     
     public function get_title() {
-        return esc_html__( 'Post carousel', 'htmega-addons' );
+        return esc_html__( 'Post carousel', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -47,22 +47,22 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_carousel_content',
             [
-                'label' => esc_html__( 'Post carousel', 'htmega-addons' ),
+                'label' => esc_html__( 'Post carousel', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'post_carousel_style',
                 [
-                    'label' => esc_html__( 'Layout', 'htmega-addons' ),
+                    'label' => esc_html__( 'Layout', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => esc_html__( 'Layout One', 'htmega-addons' ),
-                        '2'   => esc_html__( 'Layout Two', 'htmega-addons' ),
-                        '3'   => esc_html__( 'Layout Three', 'htmega-addons' ),
-                        '4'   => esc_html__( 'Layout Four', 'htmega-addons' ),
-                        '5'   => esc_html__( 'Layout Five', 'htmega-addons' ),
+                        '1'   => esc_html__( 'Layout One', 'ht-mega-for-elementor' ),
+                        '2'   => esc_html__( 'Layout Two', 'ht-mega-for-elementor' ),
+                        '3'   => esc_html__( 'Layout Three', 'ht-mega-for-elementor' ),
+                        '4'   => esc_html__( 'Layout Four', 'ht-mega-for-elementor' ),
+                        '5'   => esc_html__( 'Layout Five', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -70,10 +70,10 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slider_on',
                 [
-                    'label'         => esc_html__( 'Carousel', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Carousel', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
-                    'label_on'      => esc_html__( 'On', 'htmega-addons' ),
-                    'label_off'     => esc_html__( 'Off', 'htmega-addons' ),
+                    'label_on'      => esc_html__( 'On', 'ht-mega-for-elementor' ),
+                    'label_off'     => esc_html__( 'Off', 'ht-mega-for-elementor' ),
                     'return_value'  => 'yes',
                     'default'       => 'yes',
                 ]
@@ -85,7 +85,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_content_option',
             [
-                'label' => esc_html__( 'Post Option', 'htmega-addons' ),
+                'label' => esc_html__( 'Post Option', 'ht-mega-for-elementor' ),
             ]
         );
             
@@ -96,7 +96,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'show_category',
                 [
-                    'label' => esc_html__( 'Category', 'htmega-addons' ),
+                    'label' => esc_html__( 'Category', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -106,7 +106,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'show_date',
                 [
-                    'label' => esc_html__( 'Date', 'htmega-addons' ),
+                    'label' => esc_html__( 'Date', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -116,7 +116,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
              $this->add_control(
                 'show_title',
                 [
-                    'label' => esc_html__( 'Title', 'htmega-addons' ),
+                    'label' => esc_html__( 'Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -126,7 +126,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'title_length',
                 [
-                    'label' => esc_html__( 'Title Length', 'htmega-addons' ),
+                    'label' => esc_html__( 'Title Length', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'step' => 1,
                     'default' => 5,
@@ -138,7 +138,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'show_content',
                 [
-                    'label' => esc_html__( 'Show Content', 'htmega-addons' ),
+                    'label' => esc_html__( 'Show Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -147,12 +147,12 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'content_type',
                 [
-                    'label' => esc_html__( 'Content Source', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Source', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'content',
                     'options' => [
-                        'content'          => esc_html__('Content','htmega-addons'),
-                        'excerpt'            => esc_html__('Excerpt','htmega-addons'),
+                        'content'          => esc_html__('Content','ht-mega-for-elementor'),
+                        'excerpt'            => esc_html__('Excerpt','ht-mega-for-elementor'),
                     ],
                     'condition'=>[
                         'show_content'=>'yes',
@@ -162,7 +162,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'content_length',
                 [
-                    'label' => esc_html__( 'Content Length', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Length', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'step' => 1,
                     'default' => 20,
@@ -175,7 +175,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'show_read_more_btn',
                 [
-                    'label' => esc_html__( 'Read More', 'htmega-addons' ),
+                    'label' => esc_html__( 'Read More', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -185,10 +185,10 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'read_more_txt',
                 [
-                    'label' => esc_html__( 'Read More button text', 'htmega-addons' ),
+                    'label' => esc_html__( 'Read More button text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => esc_html__( 'Read More', 'htmega-addons' ),
-                    'placeholder' => esc_html__( 'Read More', 'htmega-addons' ),
+                    'default' => esc_html__( 'Read More', 'ht-mega-for-elementor' ),
+                    'placeholder' => esc_html__( 'Read More', 'ht-mega-for-elementor' ),
                     'label_block'=>true,
                     'condition'=>[
                         'show_read_more_btn'=>'yes',
@@ -199,7 +199,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'show_author',
                 [
-                    'label' => esc_html__( 'Author', 'htmega-addons' ),
+                    'label' => esc_html__( 'Author', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -208,7 +208,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'hide_empty_thumbnail_post',
                 [
-                    'label'         => esc_html__( 'Hide Empty Thumbnail', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Hide Empty Thumbnail', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -217,7 +217,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'hide_current_post',
                 [
-                    'label'         => esc_html__( 'Hide Current Post', 'htmega-addons' ),
+                    'label'         => esc_html__( 'Hide Current Post', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -229,7 +229,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'slider_option',
             [
-                'label' => esc_html__( 'Carousel Option', 'htmega-addons' ),
+                'label' => esc_html__( 'Carousel Option', 'ht-mega-for-elementor' ),
                 'condition' => [
                     'slider_on' => 'yes',
                 ]
@@ -239,7 +239,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slitems',
                 [
-                    'label' => esc_html__( 'Slider Items', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Items', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 20,
@@ -254,7 +254,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'sli_gutter',
                 [
-                    'label' => esc_html__( 'Column Space', 'htmega-addons' ),
+                    'label' => esc_html__( 'Column Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 200,
@@ -272,7 +272,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'equal_height_column',
                 [
-                    'label' => esc_html__( 'Equal Height Column', 'htmega-addons' ),
+                    'label' => esc_html__( 'Equal Height Column', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -285,7 +285,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slarrows',
                 [
-                    'label' => esc_html__( 'Slider Arrow', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Arrow', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -298,7 +298,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slprevicon',
                 [
-                    'label' => esc_html__( 'Previous icon', 'htmega-addons' ),
+                    'label' => esc_html__( 'Previous icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-left',
@@ -314,7 +314,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slnexticon',
                 [
-                    'label' => esc_html__( 'Next icon', 'htmega-addons' ),
+                    'label' => esc_html__( 'Next icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => 'fas fa-angle-right',
                     'default' => [
@@ -331,7 +331,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'sldots',
                 [
-                    'label' => esc_html__( 'Slider dots', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider dots', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -345,11 +345,11 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 'slpause_on_hover',
                 [
                     'type' => Controls_Manager::SWITCHER,
-                    'label_off' => __('No', 'htmega-addons'),
-                    'label_on' => __('Yes', 'htmega-addons'),
+                    'label_off' => __('No', 'ht-mega-for-elementor'),
+                    'label_on' => __('Yes', 'ht-mega-for-elementor'),
                     'return_value' => 'yes',
                     'default' => 'yes',
-                    'label' => __('Pause on Hover?', 'htmega-addons'),
+                    'label' => __('Pause on Hover?', 'ht-mega-for-elementor'),
                     'condition' => [
                         'slider_on' => 'yes',
                     ]
@@ -359,7 +359,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slcentermode',
                 [
-                    'label' => esc_html__( 'Center Mode', 'htmega-addons' ),
+                    'label' => esc_html__( 'Center Mode', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -372,7 +372,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slcenterpadding',
                 [
-                    'label' => esc_html__( 'Center padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Center padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 500,
@@ -388,7 +388,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slautolay',
                 [
-                    'label' => esc_html__( 'Slider auto play', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider auto play', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -402,7 +402,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slautoplay_speed',
                 [
-                    'label' => __('Autoplay speed', 'htmega-addons'),
+                    'label' => __('Autoplay speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 3000,
                     'condition' => [
@@ -413,7 +413,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slanimation_speed',
                 [
-                    'label' => __('Autoplay animation speed', 'htmega-addons'),
+                    'label' => __('Autoplay animation speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 300,
                     'condition' => [
@@ -424,7 +424,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slloop',
                 [
-                    'label' => esc_html__( 'Slide Loop', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slide Loop', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -436,7 +436,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slscroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 10,
@@ -451,7 +451,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'heading_tablet',
                 [
-                    'label' => esc_html__( 'Tablet', 'htmega-addons' ),
+                    'label' => esc_html__( 'Tablet', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition' => [
@@ -463,7 +463,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'sltablet_display_columns',
                 [
-                    'label' => __('Slider Items', 'htmega-addons'),
+                    'label' => __('Slider Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 8,
@@ -478,7 +478,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'sltablet_scroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 8,
@@ -493,8 +493,8 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'sltablet_width',
                 [
-                    'label' => __('Tablet Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to tablet.', 'htmega-addons'),
+                    'label' => __('Tablet Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to tablet.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 750,
                     'condition' => [
@@ -506,7 +506,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'heading_mobile',
                 [
-                    'label' => esc_html__( 'Mobile Phone', 'htmega-addons' ),
+                    'label' => esc_html__( 'Mobile Phone', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition' => [
@@ -518,7 +518,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slmobile_display_columns',
                 [
-                    'label' => __('Slider Items', 'htmega-addons'),
+                    'label' => __('Slider Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -533,7 +533,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slmobile_scroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -548,8 +548,8 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'slmobile_width',
                 [
-                    'label' => __('Mobile Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to mobile.', 'htmega-addons'),
+                    'label' => __('Mobile Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to mobile.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 480,
                     'condition' => [
@@ -563,7 +563,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_carousel_image_style',
             [
-                'label' => esc_html__( 'Carousel Item Style', 'htmega-addons' ),
+                'label' => esc_html__( 'Carousel Item Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -577,7 +577,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'slider_height',
                 [
-                    'label' => esc_html__( 'Item Min Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Item Min Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'description' =>'Custom  Item height(px)',
                     'size_units' => ['px'],
@@ -599,7 +599,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'item_radius',
                 [
-                    'label' => esc_html__( 'Card Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Card Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'default' => [
@@ -614,7 +614,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'item_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -628,7 +628,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'item_border',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-post-slide',
                 ]
             );
@@ -636,7 +636,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'item_background_color',
                 [
-                    'label' => esc_html__( 'Backgournd Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Backgournd Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'',
                     'selectors' => [
@@ -647,7 +647,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'post_carousel_image_overlay_heading',
                 [
-                    'label' => esc_html__( 'Image Overlay', 'htmega-addons' ),
+                    'label' => esc_html__( 'Image Overlay', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -656,7 +656,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'post_slider_image_overlay',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-single-post-slide .thumb a:after',
                     'separator' => 'after',
@@ -665,7 +665,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'image_overlay_heading_hover',
                 [
-                    'label' => esc_html__( 'Image Hover Overlay', 'htmega-addons' ),
+                    'label' => esc_html__( 'Image Hover Overlay', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition'=>[
@@ -677,7 +677,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'post_slider_image_overlay_hover',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-single-post-slide .thumb a:before',
                     'separator' => 'after',
@@ -689,7 +689,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'items_radius',
                 [
-                    'label' => esc_html__( 'Image Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Image Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -702,7 +702,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'content_box_heading',
                 [
-                    'label' => esc_html__( 'Content Box Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Box Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -711,7 +711,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'content_box_background',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-1 .content .post-inner, {{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-2 .content .post-inner,{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-4 .content,{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-5 .content .post-inner',
                     'separator' => 'before',
@@ -724,7 +724,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'content_box_hover_heading',
                 [
-                    'label' => esc_html__( 'Content Box Hover BG', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Box Hover BG', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition'=>[
@@ -736,7 +736,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'content_box_background_hover',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-1:hover .content .post-inner',
                     'condition'=>[
@@ -747,7 +747,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'content_box_margin', 
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -763,7 +763,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'content_box_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -777,7 +777,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'content_box_border',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-1 .content .post-inner,{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-5 .content .post-inner',
                     'separator' => 'before',
                     'condition'=>[
@@ -788,7 +788,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'content_box_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -804,19 +804,19 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'post_slider_content_box_align',
                 [
-                    'label' => esc_html__( 'Alignment', 'htmega-addons' ),
+                    'label' => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => esc_html__( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => esc_html__( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -830,7 +830,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'content_boxshadow',
-                    'label' => esc_html__( 'Box Shadow', 'htmega-addons' ),
+                    'label' => esc_html__( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-2 .content .post-inner,{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-4 .content,{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-5 .content .post-inner',
                     'condition'=>[
                         'post_carousel_style!' =>['1','3'], 
@@ -844,7 +844,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_slider_content_border',
             [
-                'label' => esc_html__( 'Content Box Bottom Border', 'htmega-addons' ),
+                'label' => esc_html__( 'Content Box Bottom Border', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'post_carousel_style' => '2',
@@ -854,12 +854,12 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'border_type',
             [
-                'label' => esc_html__( 'Border Type', 'htmega-addons' ),
+                'label' => esc_html__( 'Border Type', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'htmega-solid',
                 'options' => [
-                    'htmega-solid'          => esc_html__('Solid Color','htmega-addons'),
-                    'htmega-gradient'       => esc_html__('Gradient Color','htmega-addons'),
+                    'htmega-solid'          => esc_html__('Solid Color','ht-mega-for-elementor'),
+                    'htmega-gradient'       => esc_html__('Gradient Color','ht-mega-for-elementor'),
                 ],
                 
             ]
@@ -868,7 +868,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'post_slider_content_border_color',
                 [
-                    'label' => esc_html__( 'Border Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#b5b5b5',
                     'selectors' => [
@@ -883,7 +883,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'post_slider_content_hover_border_color',
                 [
-                    'label' => esc_html__( 'Hover Border Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Hover Border Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#0056ff',
                     'selectors' => [
@@ -897,7 +897,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'border_gradient_bg_title',
                 [
-                    'label' => esc_html__( 'Border Gradient Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Gradient Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
@@ -909,7 +909,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'border_gradient_bg',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-2 .content .post-inner:after',
                     'condition' => [
@@ -920,7 +920,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'border_gradient_bg_title_hover',
                 [
-                    'label' => esc_html__( 'Border Hover Gradient Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Hover Gradient Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
@@ -932,7 +932,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'border_gradient_bg_hover',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-2:hover .content .post-inner:after',
                     'condition' => [
@@ -947,7 +947,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_slider_title_style_section',
             [
-                'label' => esc_html__( 'Title', 'htmega-addons' ),
+                'label' => esc_html__( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_title'=>'yes',
@@ -957,7 +957,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'title_color',
                 [
-                    'label' => esc_html__( 'Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#18012c',
                     'selectors' => [
@@ -968,7 +968,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'title_color_hover',
                 [
-                    'label' => esc_html__( 'Hover Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Hover Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-post-slide .content .post-inner h2 a:hover' => 'color: {{VALUE}}',
@@ -980,7 +980,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'title_typography',
-                    'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-post-slide .content .post-inner h2',
                 ]
             );
@@ -988,7 +988,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'title_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1000,7 +1000,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'title_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1012,23 +1012,23 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'title_align',
                 [
-                    'label' => esc_html__( 'Alignment', 'htmega-addons' ),
+                    'label' => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => esc_html__( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => esc_html__( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => esc_html__( 'Justified', 'htmega-addons' ),
+                            'title' => esc_html__( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1044,7 +1044,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_slider_content_style_section',
             [
-                'label' => esc_html__( 'Content', 'htmega-addons' ),
+                'label' => esc_html__( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_content'=>'yes',
@@ -1054,7 +1054,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'content_color',
                 [
-                    'label' => esc_html__( 'Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#18012c',
                     'selectors' => [
@@ -1067,7 +1067,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'content_typography',
-                    'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-post-slide .content .post-inner p',
                 ]
             );
@@ -1075,7 +1075,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'content_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1087,7 +1087,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'content_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1099,23 +1099,23 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'content_align',
                 [
-                    'label' => esc_html__( 'Alignment', 'htmega-addons' ),
+                    'label' => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => esc_html__( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => esc_html__( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => esc_html__( 'Justified', 'htmega-addons' ),
+                            'title' => esc_html__( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1131,7 +1131,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_thumbnail_opacity_section',
             [
-                'label' => esc_html__( 'Thumbnail', 'htmega-addons' ),
+                'label' => esc_html__( 'Thumbnail', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'post_carousel_style'=>'3',
@@ -1142,7 +1142,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'post_thumbnail_opacity_color',
             [
-                'label' => esc_html__( 'Opacity Color', 'htmega-addons' ),
+                'label' => esc_html__( 'Opacity Color', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-postslider-layout-3 .thumb:before' => 'content: ""; background: {{VALUE}}; width: 100%; height: 100%; position: absolute; z-index:1;',
@@ -1153,7 +1153,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'post_thumbnail_opacity_opacity',
             [
-                'label'   => esc_html__( 'Opacity (%)', 'htmega-addons' ),
+                'label'   => esc_html__( 'Opacity (%)', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 0.8,
@@ -1177,7 +1177,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_slider_category_style_section',
             [
-                'label' => esc_html__( 'Category', 'htmega-addons' ),
+                'label' => esc_html__( 'Category', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_category'=>'yes',
@@ -1190,14 +1190,14 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->start_controls_tab(
                     'category_style_normal_tab',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'category_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#ffffff',
                             'selectors' => [
@@ -1210,7 +1210,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'category_typography',
-                            'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-single-post-slide .content ul.post-category li a',
                         ]
                     );
@@ -1218,7 +1218,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'category_margin',
                         [
-                            'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1230,7 +1230,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'category_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1243,7 +1243,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'category_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-single-post-slide .content ul.post-category li a',
                         ]
@@ -1252,14 +1252,14 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'category_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-single-post-slide .content ul.post-category li a',
                         ]
                     );
                     $this->add_responsive_control(
                         'category_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-single-post-slide .content ul.post-category li a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1272,13 +1272,13 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->start_controls_tab(
                     'category_style_hover_tab',
                     [
-                        'label' => esc_html__( 'Hover', 'htmega-addons' ),
+                        'label' => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'category_hover_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#ffffff',
                             'selectors' => [
@@ -1291,7 +1291,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'category_hover_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-single-post-slide .content ul.post-category li a:hover',
                         ]
@@ -1300,14 +1300,14 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'category_border_hover',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-single-post-slide .content ul.post-category li a:hover',
                         ]
                     );
                     $this->add_responsive_control(
                         'category_border_radius_hover',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-single-post-slide .content ul.post-category li a:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1324,14 +1324,14 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_meta_style_section',
             [
-                'label' => esc_html__( 'Meta', 'htmega-addons' ),
+                'label' => esc_html__( 'Meta', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'meta_color',
                 [
-                    'label' => esc_html__( 'Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default'=>'#18012c',
                     'selectors' => [
@@ -1343,7 +1343,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'meta_color_icon',
                 [
-                    'label' => esc_html__( 'Icon Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Icon Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide ul.meta li i' => 'color: {{VALUE}}',
@@ -1354,7 +1354,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'meta_color_hover',
                 [
-                    'label' => esc_html__( 'Meta Hover Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Meta Hover Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide .content .post-inner ul.meta li a:hover' => 'color: {{VALUE}}',
@@ -1364,7 +1364,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_control(
                 'meta_separator_color',
                 [
-                    'label' => esc_html__( 'Separator Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Separator Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .post-carousel-wrapper .htmega-postslider-layout-5 .content .post-inner ul.meta li::before' => 'color: {{VALUE}}',
@@ -1378,7 +1378,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'meta_typography',
-                    'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide ul.meta li',
                 ]
             );
@@ -1386,7 +1386,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'meta_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1398,7 +1398,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'meta_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1410,19 +1410,19 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $this->add_responsive_control(
                 'meta_align',
                 [
-                    'label' => esc_html__( 'Alignment', 'htmega-addons' ),
+                    'label' => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'start' => [
-                            'title' => esc_html__( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'end' => [
-                            'title' => esc_html__( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -1438,7 +1438,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_slider_readmore_style_section',
             [
-                'label' => esc_html__( 'Read More', 'htmega-addons' ),
+                'label' => esc_html__( 'Read More', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_read_more_btn'=>'yes',
@@ -1451,14 +1451,14 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->start_controls_tab(
                     'readmore_style_normal_tab',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'readmore_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#464545',
                             'selectors' => [
@@ -1471,7 +1471,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'readmore_typography',
-                            'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide .post-btn a.readmore-btn',
                         ]
                     );
@@ -1479,7 +1479,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'readmore_margin',
                         [
-                            'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1491,7 +1491,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'readmore_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1504,7 +1504,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'readmore_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide .post-btn a.readmore-btn',
                         ]
@@ -1514,7 +1514,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'readmore_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide .post-btn a.readmore-btn',
                         ]
                     );
@@ -1522,7 +1522,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'readmore_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide .post-btn a.readmore-btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1532,19 +1532,19 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'read_more_alignment',
                         [
-                            'label' => esc_html__( 'Alignment', 'htmega-addons' ),
+                            'label' => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'start' => [
-                                    'title' => esc_html__( 'Left', 'htmega-addons' ),
+                                    'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => esc_html__( 'Center', 'htmega-addons' ),
+                                    'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'end' => [
-                                    'title' => esc_html__( 'Right', 'htmega-addons' ),
+                                    'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ],
                             ],
@@ -1558,13 +1558,13 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->start_controls_tab(
                     'readmore_style_hover_tab',
                     [
-                        'label' => esc_html__( 'Hover', 'htmega-addons' ),
+                        'label' => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'readmore_hover_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default'=>'#ffffff',
                             'selectors' => [
@@ -1577,7 +1577,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'readmore_hover_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide .post-btn a.readmore-btn:hover',
                         ]
@@ -1587,7 +1587,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'readmore_hover_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide .post-btn a.readmore-btn:hover',
                         ]
                     );
@@ -1595,7 +1595,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'readmore_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .post-carousel-wrapper .htmega-single-post-slide .post-btn a.readmore-btn:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1613,7 +1613,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'slider_arrow_style',
             [
-                'label'     => esc_html__( 'Arrow', 'htmega-addons' ),
+                'label'     => esc_html__( 'Arrow', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'slider_on' => 'yes',
@@ -1628,14 +1628,14 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->start_controls_tab(
                     'slider_arrow_style_normal_tab',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'slider_arrow_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#00282a',
                             'selectors' => [
@@ -1648,7 +1648,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_fontsize',
                         [
-                            'label' => esc_html__( 'Font Size', 'htmega-addons' ),
+                            'label' => esc_html__( 'Font Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1677,7 +1677,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'slider_arrow_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-carousel-activation button.slick-arrow',
                         ]
@@ -1687,7 +1687,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'slider_arrow_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-carousel-activation button.slick-arrow',
                         ]
                     );
@@ -1695,7 +1695,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-carousel-activation button.slick-arrow' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1706,7 +1706,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_height',
                         [
-                            'label' => esc_html__( 'Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1733,7 +1733,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_width',
                         [
-                            'label' => esc_html__( 'Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1760,7 +1760,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1772,13 +1772,13 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_control(
                         'slider_arrow_postion_option',
                         [
-                            'label' => esc_html__( 'Arrow Position', 'htmega-addons' ),
+                            'label' => esc_html__( 'Arrow Position', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SELECT,
                             'options' => [
-                                'htmega-top-right-arrow'   => esc_html__( 'Top Right', 'htmega-addons' ),
-                                'htmega-bottom-right-arrow'   => esc_html__( 'Bottom Right', 'htmega-addons' ),
-                                'htmega-verticle-center-arrow'   => esc_html__( 'Vertical Center', 'htmega-addons' ),
-                                'htmega-bottom-center-arrow'   => esc_html__( 'Bottom Center', 'htmega-addons' ),
+                                'htmega-top-right-arrow'   => esc_html__( 'Top Right', 'ht-mega-for-elementor' ),
+                                'htmega-bottom-right-arrow'   => esc_html__( 'Bottom Right', 'ht-mega-for-elementor' ),
+                                'htmega-verticle-center-arrow'   => esc_html__( 'Vertical Center', 'ht-mega-for-elementor' ),
+                                'htmega-bottom-center-arrow'   => esc_html__( 'Bottom Center', 'ht-mega-for-elementor' ),
                             ],
                             'default' =>'htmega-verticle-center-arrow'
 
@@ -1787,7 +1787,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_horizontal_postion',
                         [
-                            'label' => esc_html__( 'Horizontal Position', 'htmega-addons' ),
+                            'label' => esc_html__( 'Horizontal Position', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1816,7 +1816,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_horizontal_postion_prev',
                         [
-                            'label' => esc_html__( 'Horizontal Position Prev', 'htmega-addons' ),
+                            'label' => esc_html__( 'Horizontal Position Prev', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1846,7 +1846,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_horizontal_postion_right',
                         [
-                            'label' => esc_html__( 'Horizontal Position Next', 'htmega-addons' ),
+                            'label' => esc_html__( 'Horizontal Position Next', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1877,7 +1877,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_verticle_postion',
                         [
-                            'label' => esc_html__( 'Vertical Position', 'htmega-addons' ),
+                            'label' => esc_html__( 'Vertical Position', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1905,14 +1905,14 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->start_controls_tab(
                     'slider_arrow_style_hover_tab',
                     [
-                        'label' => esc_html__( 'Hover', 'htmega-addons' ),
+                        'label' => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'slider_arrow_hover_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#00282a',
                             'selectors' => [
@@ -1926,7 +1926,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'slider_arrow_hover_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-carousel-activation button.slick-arrow:hover',
                         ]
@@ -1936,7 +1936,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'slider_arrow_hover_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-carousel-activation button.slick-arrow:hover',
                         ]
                     );
@@ -1944,7 +1944,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-carousel-activation button.slick-arrow:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1962,7 +1962,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'post_slider_pagination_style_section',
             [
-                'label' => esc_html__( 'Pagination', 'htmega-addons' ),
+                'label' => esc_html__( 'Pagination', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'slider_on' => 'yes',
@@ -1977,14 +1977,14 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->start_controls_tab(
                     'pagination_style_normal_tab',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_responsive_control(
                         'slider_pagination_height',
                         [
-                            'label' => esc_html__( 'Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -2011,7 +2011,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_pagination_width',
                         [
-                            'label' => esc_html__( 'Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -2039,7 +2039,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'pagination_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-carousel-activation .slick-dots li button',
                         ]
@@ -2048,7 +2048,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'pagination_margin',
                         [
-                            'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -2061,7 +2061,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'pagination_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-carousel-activation .slick-dots li button',
                         ]
                     );
@@ -2069,7 +2069,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'pagination_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-carousel-activation .slick-dots li button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -2082,7 +2082,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->start_controls_tab(
                     'pagination_style_active_tab',
                     [
-                        'label' => esc_html__( 'Active', 'htmega-addons' ),
+                        'label' => esc_html__( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
@@ -2090,7 +2090,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'pagination_hover_background',
-                            'label' => esc_html__( 'Background', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-carousel-activation .slick-dots li:hover button, {{WRAPPER}} .htmega-carousel-activation .slick-dots li.slick-active button',
                         ]
@@ -2100,7 +2100,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'pagination_hover_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-carousel-activation .slick-dots li:hover button, {{WRAPPER}} .htmega-carousel-activation .slick-dots li.slick-active button',
                         ]
                     );
@@ -2108,7 +2108,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                     $this->add_responsive_control(
                         'pagination_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-carousel-activation .slick-dots li.slick-active button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -2210,7 +2210,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 }
 
                 $field_name = is_numeric( $post_categorys[0] ) ? 'term_id' : 'slug';
-                $args['tax_query'] = array(
+                $args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- intentional: implements the widget's category filter controls (`carousel_categories` / `carousel_prod_categories` / `{post_type}_post_category`) letting the site builder restrict the carousel to chosen terms.
                     array(
                         'taxonomy' => $category_name[0],
                         'terms' => $post_categorys,
@@ -2264,7 +2264,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
             $exclude_merge[] = get_the_ID();
         }
         if ( ! empty( $exclude_merge ) ) {
-            $args['post__not_in'] = array_values( array_unique( $exclude_merge ) );
+            $args['post__not_in'] = array_values( array_unique( $exclude_merge ) ); // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in -- intentional: implements the widget's "Exclude Posts" control (`$settings['exclude_posts']`) and "Hide Current Post" toggle (`$settings['hide_current_post']`).
         }
 
         // Order check
@@ -2273,7 +2273,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         }
         // empty thumbnail post
         if ( 'yes' === $settings['hide_empty_thumbnail_post'] ) {
-            $args['meta_query'] = [
+            $args['meta_query'] = [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- intentional: implements the widget's "Hide post without featured image" toggle (`$settings['hide_empty_thumbnail_post']`), filtering to posts that have a `_thumbnail_id` meta value.
                 [
                     'key' => '_thumbnail_id',
                     'compare' => 'EXISTS'
@@ -2285,8 +2285,8 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
 
         $s_display_none = ( 'yes' == $settings['slider_on'] ) ? ' style="display:none;"':'';
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_post_carousel' ); ?>>
-                <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_attr' ).$s_display_none; ?>>
+            <div <?php echo $this->get_render_attribute_string( 'htmega_post_carousel' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
+                <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_attr' ).$s_display_none;  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(); $s_display_none is constrained to a hardcoded literal from a boolean ternary, not user input. ?>>
 
                     <?php
                 if( $carousel_post->have_posts() ):
@@ -2294,7 +2294,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                             ?>
 
                         <?php if( $settings['post_carousel_style'] == 2 ): ?>
-                            <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_item_attr' ); ?> >
+                            <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_item_attr' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                                 <div class="thumb">
                                     <a href="<?php the_permalink();?>"><?php $this->htmega_render_loop_thumbnail( $htmega_post_image );?></a>
                                 </div>
@@ -2302,7 +2302,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                             </div>
 
                         <?php elseif( $settings['post_carousel_style'] == 4 ): ?>
-                            <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_item_attr' ); ?> >
+                            <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_item_attr' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                                 <div class="post-carousel-flex">
                                     <div class="thumb">
                                         <a href="<?php the_permalink();?>"><?php $this->htmega_render_loop_thumbnail( $htmega_post_image );?></a>
@@ -2312,7 +2312,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                             </div>
 
                         <?php elseif( $settings['post_carousel_style'] == 5 ): ?>
-                            <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_item_attr' ); ?> >
+                            <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_item_attr' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                                 <div class="thumb">
                                     <a href="<?php the_permalink();?>"><?php $this->htmega_render_loop_thumbnail( $htmega_post_image );?></a>
                                 </div>
@@ -2320,7 +2320,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                             </div>
 
                         <?php else:?>
-                            <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_item_attr' ); ?> >
+                            <div <?php echo $this->get_render_attribute_string( 'htmega_post_slider_item_attr' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                                 <div class="thumb">
                                     <a href="<?php the_permalink();?>"><?php $this->htmega_render_loop_thumbnail( $htmega_post_image  ); ?></a>
                                 </div>
@@ -2329,10 +2329,10 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                         <?php endif;?>
 
                         <?php 
-                    endwhile; wp_reset_postdata(); wp_reset_query(); 
+                    endwhile; wp_reset_postdata(); 
 
                 else:
-                    echo "<div class='htmega-error-notice'>".esc_html__('There are no posts in this query','htmega-addons')."</div>";
+                    echo "<div class='htmega-error-notice'>".esc_html__('There are no posts in this query','ht-mega-for-elementor')."</div>";
                 endif; ?>
 
                 </div>
@@ -2451,7 +2451,10 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
 
                     <?php if( $settings['show_read_more_btn'] == 'yes' ): ?>
                         <div class="post-btn">
-                            <a class="readmore-btn" href="<?php the_permalink();?>"><?php echo htmega_kses_desc( $settings['read_more_txt'] );?></a>
+                            <a class="readmore-btn" href="<?php the_permalink();?>"><?php
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
+                                echo htmega_kses_desc( $settings['read_more_txt'] );
+                            ?></a>
                         </div>
                     <?php endif; ?>
 
@@ -2474,7 +2477,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'carousel_post_type',
             [
-                'label' => esc_html__( 'Post Type', 'htmega-addons' ),
+                'label' => esc_html__( 'Post Type', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
                 'options' => htmega_get_post_types(),
@@ -2486,21 +2489,21 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'include_by',
             [
-                'label' => esc_html__( 'Include By', 'htmega-addons' ),
+                'label' => esc_html__( 'Include By', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
                 'multiple' => true,
                 'default' =>'in_category',
                 'options' => [
-                    'in_author'      => esc_html__( 'Author', 'htmega-addons' ),
-                    'in_category'      => esc_html__( 'Category', 'htmega-addons' ),
+                    'in_author'      => esc_html__( 'Author', 'ht-mega-for-elementor' ),
+                    'in_category'      => esc_html__( 'Category', 'ht-mega-for-elementor' ),
                 ],
             ]
         );
         $this->add_control(
             'post_author',
             [
-                'label' => esc_html__( 'Authors', 'htmega-addons' ),
+                'label' => esc_html__( 'Authors', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
                 'multiple' => true,
@@ -2517,7 +2520,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->add_control(
                     'carousel_categories',
                     [
-                        'label' => esc_html__( 'Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -2532,7 +2535,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->add_control(
                     'carousel_prod_categories',
                     [
-                        'label' => esc_html__( 'Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -2548,7 +2551,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
                 $this->add_control(
                     "{$post_key}_post_category",
                     [
-                        'label' => esc_html__( 'Select Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Select Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -2565,17 +2568,17 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             "exclude_posts",
             [
-                'label' => esc_html__( 'Exclude Posts', 'htmega-addons' ),
+                'label' => esc_html__( 'Exclude Posts', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'placeholder' => esc_html__( 'Example: 10,11,105', 'htmega-addons' ),
-                'description' => esc_html__( "To Exclude Post, Enter  the post id separated by ','", 'htmega-addons' ),
+                'placeholder' => esc_html__( 'Example: 10,11,105', 'ht-mega-for-elementor' ),
+                'description' => esc_html__( "To Exclude Post, Enter  the post id separated by ','", 'ht-mega-for-elementor' ),
             ]
         );
         $this->add_control(
             'post_limit',
             [
-                'label' => __('Limit', 'htmega-addons'),
+                'label' => __('Limit', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 5,
                 'separator'=>'before',
@@ -2585,23 +2588,23 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'orderby',
             [
-                'label' => esc_html__( 'Order By', 'htmega-addons' ),
+                'label' => esc_html__( 'Order By', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'date',
                 'options' => [
-                    'ID'            => esc_html__('ID','htmega-addons'),
-                    'date'          => esc_html__('Date','htmega-addons'),
-                    'name'          => esc_html__('Name','htmega-addons'),
-                    'title'         => esc_html__('Title','htmega-addons'),
-                    'comment_count' => esc_html__('Comment count','htmega-addons'),
-                    'rand'          => esc_html__('Random','htmega-addons'),
+                    'ID'            => esc_html__('ID','ht-mega-for-elementor'),
+                    'date'          => esc_html__('Date','ht-mega-for-elementor'),
+                    'name'          => esc_html__('Name','ht-mega-for-elementor'),
+                    'title'         => esc_html__('Title','ht-mega-for-elementor'),
+                    'comment_count' => esc_html__('Comment count','ht-mega-for-elementor'),
+                    'rand'          => esc_html__('Random','ht-mega-for-elementor'),
                 ],
             ]
         );
         $this->add_control(
             'custom_order_by_date',
             [
-                'label' => esc_html__( 'Custom Date', 'htmega-addons' ),
+                'label' => esc_html__( 'Custom Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'no',
@@ -2613,7 +2616,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'order_by_date_before',
             [
-                'label' => esc_html__( 'Before Date', 'htmega-addons' ),
+                'label' => esc_html__( 'Before Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DATE_TIME,
                 'condition' =>[
                     'orderby'=>'date',
@@ -2624,7 +2627,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'order_by_date_after',
             [
-                'label' => esc_html__( 'After Date', 'htmega-addons' ),
+                'label' => esc_html__( 'After Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DATE_TIME,
                 'condition' =>[
                     'orderby'=>'date',
@@ -2635,12 +2638,12 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $this->add_control(
             'postorder',
             [
-                'label' => esc_html__( 'Order', 'htmega-addons' ),
+                'label' => esc_html__( 'Order', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'DESC',
                 'options' => [
-                    'DESC'  => esc_html__('Descending','htmega-addons'),
-                    'ASC'   => esc_html__('Ascending','htmega-addons'),
+                    'DESC'  => esc_html__('Descending','ht-mega-for-elementor'),
+                    'ASC'   => esc_html__('Ascending','ht-mega-for-elementor'),
                 ],
 
             ]

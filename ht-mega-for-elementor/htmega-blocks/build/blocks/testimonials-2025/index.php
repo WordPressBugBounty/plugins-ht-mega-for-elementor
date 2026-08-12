@@ -52,29 +52,42 @@ $block_id = isset( $settings['blockUniqId'] ) ? sanitize_html_class( $settings['
 $sc   = '.htmega-block-' . $block_id;
 $_css = [];
 
-$_border = function( $type, $width, $color ) {
+$_num = function( $value, $unit = 'px' ) {
+	if ( ! is_numeric( $value ) ) return '';
+	$allowed = [ 'px', 'em', 'rem', '%', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'pt' ];
+	$unit    = in_array( $unit, $allowed, true ) ? $unit : 'px';
+	return ( $value + 0 ) . $unit;
+};
+$_border = function( $type, $width, $color ) use ( $_num ) {
 	if ( ! $type || $type === 'none' ) return [];
 	$r = [ 'border-style: ' . esc_attr( $type ) ];
 	if ( $width && is_array( $width ) ) {
 		$u = $width['unit'] ?? 'px';
 		if ( isset( $width['link'] ) && $width['link'] === 'yes' && isset( $width['top'] ) ) {
-			$r[] = 'border-width: ' . $width['top'] . $u;
+			$val = $_num( $width['top'], $u );
+			if ( $val !== '' ) $r[] = 'border-width: ' . $val;
 		} else {
 			foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-				if ( ! empty( $width[ $_s ] ) ) $r[] = "border-{$_s}-width: {$width[$_s]}{$u}";
+				if ( ! empty( $width[ $_s ] ) ) {
+					$val = $_num( $width[ $_s ], $u );
+					if ( $val !== '' ) $r[] = "border-{$_s}-width: {$val}";
+				}
 			}
 		}
 	}
 	if ( $color ) $r[] = 'border-color: ' . esc_attr( $color );
 	return $r;
 };
-$_radius = function( $rv ) {
+$_radius = function( $rv ) use ( $_num ) {
 	if ( ! $rv || ! is_array( $rv ) ) return [];
 	$u   = $rv['unit'] ?? 'px';
 	$map = [ 'top' => 'top-left', 'right' => 'top-right', 'bottom' => 'bottom-right', 'left' => 'bottom-left' ];
 	$r   = [];
 	foreach ( $map as $_s => $corner ) {
-		if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) $r[] = "border-{$corner}-radius: {$rv[$_s]}{$u}";
+		if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) {
+			$val = $_num( $rv[ $_s ], $u );
+			if ( $val !== '' ) $r[] = "border-{$corner}-radius: {$val}";
+		}
 	}
 	return $r;
 };
@@ -87,24 +100,30 @@ $_shadow = function( $s ) {
 	$sp = is_numeric( $s['spread']     ?? null ) ? floatval( $s['spread'] )     : 0;
 	return 'box-shadow: ' . $i . $h . 'px ' . $v . 'px ' . $b . 'px ' . $sp . 'px ' . esc_attr( $s['color'] );
 };
-$_typo = function( $t ) {
+$_typo = function( $t ) use ( $_num ) {
 	if ( ! $t || ! is_array( $t ) ) return [];
 	$r = [];
-	if ( ! empty( $t['family'] )        ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
-	if ( ! empty( $t['size'] )          ) $r[] = 'font-size: '       . $t['size']       . ( $t['sizeUnit']      ?? 'px' );
-	if ( ! empty( $t['weight'] )        ) $r[] = 'font-weight: '     . esc_attr( $t['weight'] );
-	if ( ! empty( $t['lineHeight'] )    ) $r[] = 'line-height: '     . $t['lineHeight'];
-	if ( ! empty( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: '  . $t['letterSpacing'] . 'px';
-	if ( ! empty( $t['transform'] )     ) $r[] = 'text-transform: '  . esc_attr( $t['transform'] );
+	if ( ! empty( $t['family'] ) ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
+	if ( ! empty( $t['size'] ) ) {
+		$val = $_num( $t['size'], $t['sizeUnit'] ?? 'px' );
+		if ( $val !== '' ) $r[] = 'font-size: ' . $val;
+	}
+	if ( ! empty( $t['weight'] ) ) $r[] = 'font-weight: ' . esc_attr( $t['weight'] );
+	if ( isset( $t['lineHeight'] ) && is_numeric( $t['lineHeight'] ) ) $r[] = 'line-height: ' . ( $t['lineHeight'] + 0 );
+	if ( isset( $t['letterSpacing'] ) && is_numeric( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: ' . ( $t['letterSpacing'] + 0 ) . 'px';
+	if ( ! empty( $t['transform'] ) ) $r[] = 'text-transform: ' . esc_attr( $t['transform'] );
 	return $r;
 };
-$_dim = function( $dim, $prop ) {
+$_dim = function( $dim, $prop ) use ( $_num ) {
 	if ( ! $dim || ! is_array( $dim ) ) return [];
 	$d = isset( $dim['desktop'] ) ? $dim['desktop'] : $dim;
 	$u = $d['unit'] ?? $dim['unit'] ?? 'px';
 	$r = [];
 	foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-		if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) $r[] = "{$prop}-{$_s}: {$d[$_s]}{$u}";
+		if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) {
+			$val = $_num( $d[ $_s ], $u );
+			if ( $val !== '' ) $r[] = "{$prop}-{$_s}: {$val}";
+		}
 	}
 	return $r;
 };
@@ -224,7 +243,7 @@ $render_testimonial_card = function( array $item ) {
 			</div>
 
 			<?php if ( $rating > 0 && $rating <= 5 ) : ?>
-			<div class="htm25-testimonials__card-rating" aria-label="<?php printf( esc_attr__( 'Rated %d out of 5 stars', 'htmega-addons' ), $rating ); ?>">
+			<div class="htm25-testimonials__card-rating" aria-label="<?php /* translators: %d: star rating out of 5 */ printf( esc_attr__( 'Rated %d out of 5 stars', 'ht-mega-for-elementor' ), (int) $rating ); ?>">
 				<?php for ( $i = 1; $i <= 5; $i++ ) : ?>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" class="htm25-testimonials__star htm25-testimonials__star--<?php echo $i <= $rating ? 'filled' : 'empty'; ?>" aria-hidden="true" focusable="false">
 					<path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.83-4.401Z" clip-rule="evenodd"/>
@@ -278,8 +297,8 @@ $render_testimonial_card = function( array $item ) {
 <?php if ( $_css_out ) : ?><style><?php echo $_css_out; // phpcs:ignore WordPress.Security.EscapeOutput ?></style><?php endif; ?>
 <div class="htmega-block-<?php echo esc_attr( $block_id ); ?>">
 <section
-	class="htm25-testimonials htm25-style--<?php echo $style; ?> htm25-testimonials--<?php echo $layout; ?>"
-	aria-label="<?php esc_attr_e( 'Testimonials section', 'htmega-addons' ); ?>"
+	class="htm25-testimonials htm25-style--<?php echo esc_attr( $style ); ?> htm25-testimonials--<?php echo esc_attr( $layout ); ?>"
+	aria-label="<?php esc_attr_e( 'Testimonials section', 'ht-mega-for-elementor' ); ?>"
 >
 	<?php if ( $style === 'aurora' || $style === 'glass' ) : ?>
 	<div class="htm25-testimonials__bg-blobs" aria-hidden="true">
@@ -304,7 +323,8 @@ $render_testimonial_card = function( array $item ) {
 			<?php endif; ?>
 
 			<?php if ( $headline ) : ?>
-			<<?php echo $headline_tag; ?> class="htm25-testimonials__headline"><?php echo $headline; ?></<?php echo $headline_tag; ?>>
+			<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $headline_tag is whitelisted to h1/h2/h3 above (line 38); $headline is esc_html()'d at assignment (line 28) then combined with fixed, hardcoded <span> markup (line 33). ?>
+			<<?php echo esc_html( $headline_tag ); ?> class="htm25-testimonials__headline"><?php echo $headline; ?></<?php echo esc_html( $headline_tag ); ?>>
 			<?php endif; ?>
 
 			<?php if ( $description ) : ?>
@@ -315,10 +335,24 @@ $render_testimonial_card = function( array $item ) {
 		<?php endif; ?>
 
 		<?php if ( $items ) : ?>
-		<div class="htm25-testimonials__grid htm25-testimonials__grid--cols-<?php echo $cols; ?>" role="list">
-			<?php foreach ( $items as $item ) :
-				$render_testimonial_card( (array) $item );
-			endforeach; ?>
+		<div class="htm25-testimonials__grid htm25-testimonials__grid--cols-<?php echo (int) $cols; ?>" role="list">
+			<?php if ( 'masonry' === $layout ) :
+				$masonry_cols = array_fill( 0, $cols, [] );
+				foreach ( $items as $i => $item ) {
+					$masonry_cols[ $i % $cols ][] = $item;
+				}
+				foreach ( $masonry_cols as $col_items ) : ?>
+			<div class="htm25-testimonials__masonry-col">
+				<?php foreach ( $col_items as $item ) :
+					$render_testimonial_card( (array) $item );
+				endforeach; ?>
+			</div>
+				<?php endforeach;
+			else :
+				foreach ( $items as $item ) :
+					$render_testimonial_card( (array) $item );
+				endforeach;
+			endif; ?>
 		</div>
 		<?php endif; ?>
 

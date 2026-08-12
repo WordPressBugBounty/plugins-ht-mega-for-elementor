@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Slider Thumbnail Gallery', 'htmega-addons' );
+        return __( 'Slider Thumbnail Gallery', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -48,20 +48,20 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->start_controls_section(
             'thumbnails_gallery_content',
             [
-                'label' => __( 'Slider Thumbnail', 'htmega-addons' ),
+                'label' => __( 'Slider Thumbnail', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'sliderthumbnails_style',
                 [
-                    'label' => __( 'Thumbnail Position', 'htmega-addons' ),
+                    'label' => __( 'Thumbnail Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Right', 'htmega-addons' ),
-                        '2'   => __( 'Bottom', 'htmega-addons' ),
-                        '3'   => __( 'Left', 'htmega-addons' ),
-                        '4'   => __( 'Top', 'htmega-addons' ),
+                        '1'   => __( 'Right', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Bottom', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Left', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Top', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -71,18 +71,18 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $repeater->add_control(
                 'slider_title',
                 [
-                    'label'   => __( 'Title', 'htmega-addons' ),
+                    'label'   => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                     'dynamic' => [
                         'active' => true,
                     ],
-                    'default' => __('Location Name Here.','htmega-addons'),
+                    'default' => __('Location Name Here.','ht-mega-for-elementor'),
                 ]
             );
             $repeater->add_control(
                 'slider_sub_title',
                 [
-                    'label'   => __( 'Sub Title', 'htmega-addons' ),
+                    'label'   => __( 'Sub Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                     'dynamic' => [
                         'active' => true,
@@ -93,7 +93,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $repeater->add_control(
                 'slider_image',
                 [
-                    'label' => __( 'Image', 'htmega-addons' ),
+                    'label' => __( 'Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'dynamic' => [
                         'active' => true,
@@ -113,7 +113,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $repeater->add_control(
                 'more_options',
                 [
-                    'label' => __( 'Thumbnails Image Size', 'htmega-addons' ),
+                    'label' => __( 'Thumbnails Image Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -136,22 +136,22 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     'default' => [
 
                         [
-                            'slider_title'           => esc_html__( 'Mountain Hills, USA', 'htmega-addons' ),
-                            'slider_sub_title'       => esc_html__( 'Photo by David Swindler', 'htmega-addons' ),
+                            'slider_title'           => esc_html__( 'Mountain Hills, USA', 'ht-mega-for-elementor' ),
+                            'slider_sub_title'       => esc_html__( 'Photo by David Swindler', 'ht-mega-for-elementor' ),
                             'slider_image'           => [
                                 'url' => esc_url( HTMEGA_ADDONS_PL_URL . 'assets/widgets/thumbnail-slider/images/image1.jpg' ),
                             ],
                         ],
                         [
-                            'slider_title'           => esc_html__( 'Mountain river, USA', 'htmega-addons' ),
-                            'slider_sub_title'           => esc_html__( 'Photo by David Swindler', 'htmega-addons' ),
+                            'slider_title'           => esc_html__( 'Mountain river, USA', 'ht-mega-for-elementor' ),
+                            'slider_sub_title'           => esc_html__( 'Photo by David Swindler', 'ht-mega-for-elementor' ),
                             'slider_image'           => [
                                 'url' => esc_url( HTMEGA_ADDONS_PL_URL . 'assets/widgets/thumbnail-slider/images/image2.jpg' ),
                             ]
                         ],
                         [
-                            'slider_title'           =>esc_html__( 'Mountain Hills, USA', 'htmega-addons' ),
-                            'slider_sub_title'           => esc_html__( 'Photo by David Swindler', 'htmega-addons' ),
+                            'slider_title'           =>esc_html__( 'Mountain Hills, USA', 'ht-mega-for-elementor' ),
+                            'slider_sub_title'           => esc_html__( 'Photo by David Swindler', 'ht-mega-for-elementor' ),
                             'slider_image'           => [
                                 'url' => esc_url( HTMEGA_ADDONS_PL_URL . 'assets/widgets/thumbnail-slider/images/image3.jpg' ),
                             ]
@@ -168,14 +168,14 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->start_controls_section(
             'slider_option',
             [
-                'label' => esc_html__( 'Slider Option', 'htmega-addons' ),
+                'label' => esc_html__( 'Slider Option', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'slitems',
                 [
-                    'label' => esc_html__( 'Slider Items', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Items', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 20,
@@ -188,7 +188,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slarrows',
                 [
-                    'label' => esc_html__( 'Slider Arrow', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Arrow', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -199,7 +199,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slprevicon',
                 [
-                    'label' => __( 'Previous icon', 'htmega-addons' ),
+                    'label' => __( 'Previous icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-left',
@@ -214,7 +214,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnexticon',
                 [
-                    'label' => __( 'Next icon', 'htmega-addons' ),
+                    'label' => __( 'Next icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-right',
@@ -229,7 +229,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'sldots',
                 [
-                    'label' => esc_html__( 'Slider dots', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider dots', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -241,11 +241,11 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 'slpause_on_hover',
                 [
                     'type' => Controls_Manager::SWITCHER,
-                    'label_off' => __('No', 'htmega-addons'),
-                    'label_on' => __('Yes', 'htmega-addons'),
+                    'label_off' => __('No', 'ht-mega-for-elementor'),
+                    'label_on' => __('Yes', 'ht-mega-for-elementor'),
                     'return_value' => 'yes',
                     'default' => 'yes',
-                    'label' => __('Pause on Hover?', 'htmega-addons'),
+                    'label' => __('Pause on Hover?', 'ht-mega-for-elementor'),
                    
                 ]
             );
@@ -253,7 +253,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slcentermode',
                 [
-                    'label' => esc_html__( 'Center Mode', 'htmega-addons' ),
+                    'label' => esc_html__( 'Center Mode', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -264,7 +264,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slcenterpadding',
                 [
-                    'label' => esc_html__( 'Center padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Center padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 500,
@@ -279,7 +279,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slautolay',
                 [
-                    'label' => esc_html__( 'Slider auto play', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider auto play', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -291,7 +291,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slautoplay_speed',
                 [
-                    'label' => __('Autoplay speed', 'htmega-addons'),
+                    'label' => __('Autoplay speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 3000,
                     
@@ -302,7 +302,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slanimation_speed',
                 [
-                    'label' => __('Autoplay animation speed', 'htmega-addons'),
+                    'label' => __('Autoplay animation speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 300,
                     
@@ -312,7 +312,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slscroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 10,
@@ -325,7 +325,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'heading_tablet',
                 [
-                    'label' => __( 'Tablet', 'htmega-addons' ),
+                    'label' => __( 'Tablet', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     
@@ -335,7 +335,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'sltablet_display_columns',
                 [
-                    'label' => __('Slider Items', 'htmega-addons'),
+                    'label' => __('Slider Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 8,
@@ -348,7 +348,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'sltablet_scroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 8,
@@ -361,8 +361,8 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'sltablet_width',
                 [
-                    'label' => __('Tablet Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to tablet.', 'htmega-addons'),
+                    'label' => __('Tablet Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to tablet.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 750,
                    
@@ -372,7 +372,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'heading_mobile',
                 [
-                    'label' => __( 'Mobile Phone', 'htmega-addons' ),
+                    'label' => __( 'Mobile Phone', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     
@@ -382,7 +382,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slmobile_display_columns',
                 [
-                    'label' => __('Slider Items', 'htmega-addons'),
+                    'label' => __('Slider Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -395,7 +395,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slmobile_scroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -408,8 +408,8 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slmobile_width',
                 [
-                    'label' => __('Mobile Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to mobile.', 'htmega-addons'),
+                    'label' => __('Mobile Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to mobile.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 480,
                     
@@ -422,14 +422,14 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->start_controls_section(
             'slider_nav_option',
             [
-                'label' => esc_html__( 'Thumbnails Gallery Option', 'htmega-addons' ),
+                'label' => esc_html__( 'Thumbnails Gallery Option', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'slnavitems',
                 [
-                    'label' => esc_html__( 'Thumbnails Items', 'htmega-addons' ),
+                    'label' => esc_html__( 'Thumbnails Items', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 20,
@@ -442,7 +442,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavarrows',
                 [
-                    'label' => esc_html__( 'Thumbnails Arrow', 'htmega-addons' ),
+                    'label' => esc_html__( 'Thumbnails Arrow', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -453,7 +453,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavprevicon',
                 [
-                    'label' => __( 'Thumbnails Previous icon', 'htmega-addons' ),
+                    'label' => __( 'Thumbnails Previous icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-left',
@@ -468,7 +468,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavnexticon',
                 [
-                    'label' => __( 'Thumbnails Next icon', 'htmega-addons' ),
+                    'label' => __( 'Thumbnails Next icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-right',
@@ -483,7 +483,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavdots',
                 [
-                    'label' => esc_html__( 'Thumbnails dots', 'htmega-addons' ),
+                    'label' => esc_html__( 'Thumbnails dots', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -494,7 +494,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavvertical',
                 [
-                    'label' => esc_html__( 'Vertical Slide', 'htmega-addons' ),
+                    'label' => esc_html__( 'Vertical Slide', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -506,11 +506,11 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 'slnavpause_on_hover',
                 [
                     'type' => Controls_Manager::SWITCHER,
-                    'label_off' => __('No', 'htmega-addons'),
-                    'label_on' => __('Yes', 'htmega-addons'),
+                    'label_off' => __('No', 'ht-mega-for-elementor'),
+                    'label_on' => __('Yes', 'ht-mega-for-elementor'),
                     'return_value' => 'yes',
                     'default' => 'yes',
-                    'label' => __('Pause on Hover?', 'htmega-addons'),
+                    'label' => __('Pause on Hover?', 'ht-mega-for-elementor'),
                    
                 ]
             );
@@ -518,7 +518,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavcentermode',
                 [
-                    'label' => esc_html__( 'Thumbnails Center Mode', 'htmega-addons' ),
+                    'label' => esc_html__( 'Thumbnails Center Mode', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -529,7 +529,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavcenterpadding',
                 [
-                    'label' => esc_html__( 'Thumbnails Center padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Thumbnails Center padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 500,
@@ -544,7 +544,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavautolay',
                 [
-                    'label' => esc_html__( 'Thumbnails auto play', 'htmega-addons' ),
+                    'label' => esc_html__( 'Thumbnails auto play', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -556,7 +556,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavautoplay_speed',
                 [
-                    'label' => __('Thumbnails Autoplay speed', 'htmega-addons'),
+                    'label' => __('Thumbnails Autoplay speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 3000,
                     
@@ -567,7 +567,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavanimation_speed',
                 [
-                    'label' => __('Thumbnails Autoplay animation speed', 'htmega-addons'),
+                    'label' => __('Thumbnails Autoplay animation speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 300,
                     
@@ -577,7 +577,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavscroll_columns',
                 [
-                    'label' => __('Thumbnails Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Thumbnails Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 10,
@@ -590,7 +590,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'heading_nav_tablet',
                 [
-                    'label' => __( 'Thumbnails Tablet', 'htmega-addons' ),
+                    'label' => __( 'Thumbnails Tablet', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     
@@ -600,7 +600,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavtablet_display_columns',
                 [
-                    'label' => __('Thumbnails Items', 'htmega-addons'),
+                    'label' => __('Thumbnails Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 20,
@@ -613,7 +613,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavtablet_scroll_columns',
                 [
-                    'label' => __('Thumbnails item to scroll', 'htmega-addons'),
+                    'label' => __('Thumbnails item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 20,
@@ -626,8 +626,8 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavtablet_width',
                 [
-                    'label' => __('Thumbnails Tablet Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to tablet.', 'htmega-addons'),
+                    'label' => __('Thumbnails Tablet Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to tablet.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 750,
                    
@@ -637,7 +637,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'heading_nav_mobile',
                 [
-                    'label' => __( 'Thumbnails Mobile Phone', 'htmega-addons' ),
+                    'label' => __( 'Thumbnails Mobile Phone', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     
@@ -646,7 +646,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'hide_on_mobile',
                 [
-                    'label' => esc_html__( 'Hide on Mobile', 'htmega-addons' ),
+                    'label' => esc_html__( 'Hide on Mobile', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -655,7 +655,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavmobile_display_columns',
                 [
-                    'label' => __('Thumbnails Items', 'htmega-addons'),
+                    'label' => __('Thumbnails Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -671,7 +671,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavmobile_scroll_columns',
                 [
-                    'label' => __('Thumbnails item to scroll', 'htmega-addons'),
+                    'label' => __('Thumbnails item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -687,8 +687,8 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slnavmobile_width',
                 [
-                    'label' => __('Thumbnails Mobile Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to mobile.', 'htmega-addons'),
+                    'label' => __('Thumbnails Mobile Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to mobile.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 480,
                     
@@ -701,14 +701,14 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->start_controls_section(
             'slider_title_style',
             [
-                'label'     => __( 'Content Box Style', 'htmega-addons' ),
+                'label'     => __( 'Content Box Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'box_bg_style',
             [
-                'label' => __( 'Slide BG Image Style', 'htmega-addons' ),
+                'label' => __( 'Slide BG Image Style', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -716,7 +716,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'wrapper_border_style',
-                'label' => __( 'Border', 'htmega-addons' ),
+                'label' => __( 'Border', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .ht-thumb-gallery ul.htmega-thumbgallery-for li img',
             ]
         );
@@ -724,7 +724,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->add_responsive_control(
             'wrapper_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .ht-thumb-gallery ul.htmega-thumbgallery-for li img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -735,7 +735,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->add_control(
             'title_style',
             [
-                'label' => __( 'Title Style', 'htmega-addons' ),
+                'label' => __( 'Title Style', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -743,7 +743,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slider_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#ffffff',
                     'selectors' => [
@@ -763,7 +763,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_responsive_control(
                 'slider_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -775,7 +775,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_responsive_control(
                 'slider_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -788,7 +788,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'sub_title_style',
                 [
-                    'label' => __( 'Sub Title Style', 'htmega-addons' ),
+                    'label' => __( 'Sub Title Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -796,7 +796,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'slider_sub_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#ffffff',
                     'selectors' => [
@@ -815,7 +815,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'box_style',
                 [
-                    'label' => __( 'Content Box', 'htmega-addons' ),
+                    'label' => __( 'Content Box', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -823,7 +823,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_responsive_control(
                 'content_box_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -835,7 +835,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_responsive_control(
                 'content_box_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -848,7 +848,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'slider_title_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-thumbgallery-for .content',
                 ]
@@ -860,7 +860,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->start_controls_section(
             'slider_thumbnails_arrow_style',
             [
-                'label'     => __( 'Arrow', 'htmega-addons' ),
+                'label'     => __( 'Arrow', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'slarrows'  => 'yes',
@@ -874,14 +874,14 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 $this->start_controls_tab(
                     'thumbnails_arrow_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'thumbnails_arrow_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -894,7 +894,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_arrow_fontsize',
                         [
-                            'label' => __( 'Font Size', 'htmega-addons' ),
+                            'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -923,7 +923,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'thumbnails_arrow_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-for button.slick-arrow,{{WRAPPER}} .htmega-thumbgallery-nav button.slick-arrow',
                         ]
@@ -933,7 +933,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'thumbnails_arrow_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-for .slick-arrow,{{WRAPPER}} .htmega-thumbgallery-nav button.slick-arrow',
                         ]
                     );
@@ -941,7 +941,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_arrow_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-thumbgallery-for .slick-arrow,{{WRAPPER}} .htmega-thumbgallery-nav button.slick-arrow' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -952,7 +952,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_arrow_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -979,7 +979,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_arrow_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1005,7 +1005,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_horizontal_postion',
                         [
-                            'label' => __( 'Horizontal Position', 'htmega-addons' ),
+                            'label' => __( 'Horizontal Position', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1031,7 +1031,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_arrow_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1047,14 +1047,14 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 $this->start_controls_tab(
                     'thumbnails_arrow_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'thumbnails_arrow_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -1068,7 +1068,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'thumbnails_arrow_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-for .slick-arrow:hover,{{WRAPPER}} .htmega-thumbgallery-nav button.slick-arrow:hover',
                         ]
@@ -1078,7 +1078,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'thumbnails_arrow_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-for .slick-arrow:hover,{{WRAPPER}} .htmega-thumbgallery-nav button.slick-arrow:hover',
                         ]
                     );
@@ -1086,7 +1086,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_arrow_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-thumbgallery-for .slick-arrow:hover,{{WRAPPER}} .htmega-thumbgallery-nav button.slick-arrow:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1105,7 +1105,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->start_controls_section(
             'thumbnails_dots_style',
             [
-                'label'     => __( 'Pagination', 'htmega-addons' ),
+                'label'     => __( 'Pagination', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'conditions' => [
                     'relation' => 'or',
@@ -1132,7 +1132,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 $this->start_controls_tab(
                     'thumbnails_dots_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -1140,7 +1140,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'thumbnails_dots_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-for .slick-dots li button,{{WRAPPER}} .htmega-thumbgallery-nav .slick-dots li button',
                         ]
@@ -1150,7 +1150,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'thumbnails_dots_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-for .slick-dots li button,{{WRAPPER}} .htmega-thumbgallery-nav .slick-dots li button',
                         ]
                     );
@@ -1158,7 +1158,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_dots_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-thumbgallery-for .slick-dots li button,{{WRAPPER}} .htmega-thumbgallery-nav .slick-dots li button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1169,7 +1169,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_control(
                         'thumbnails_dots_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1196,7 +1196,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_control(
                         'thumbnails_dots_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1226,7 +1226,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 $this->start_controls_tab(
                     'thumbnails_dots_style_hover_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -1234,7 +1234,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'thumbnails_dots_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-for .slick-dots li.slick-active button,{{WRAPPER}} .htmega-thumbgallery-nav .slick-dots li.slick-active button',
                         ]
@@ -1244,7 +1244,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'thumbnails_dots_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-for .slick-dots li.slick-active button,{{WRAPPER}} .htmega-thumbgallery-nav .slick-dots li.slick-active button',
                         ]
                     );
@@ -1252,7 +1252,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_dots_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-thumbgallery-for .slick-dots li.slick-active button,{{WRAPPER}} .htmega-thumbgallery-nav .slick-dots li.slick-active button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1270,7 +1270,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         $this->start_controls_section(
             'thumbnails_thumbnail_style',
             [
-                'label'     => __( 'Thumbnail Style', 'htmega-addons' ),
+                'label'     => __( 'Thumbnail Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1278,7 +1278,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_responsive_control(
                 'thumbnails_slider_iner_space',
                 [
-                    'label' => __( 'Slider & Thumb Inner space', 'htmega-addons' ),
+                    'label' => __( 'Slider & Thumb Inner space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -1310,7 +1310,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_responsive_control(
                 'thumbnails_space',
                 [
-                    'label' => __( 'Item space', 'htmega-addons' ),
+                    'label' => __( 'Item space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -1343,7 +1343,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
             $this->add_control(
                 'thumbnails_color_border_heading',
                 [
-                    'label' => __( 'Colors and Border', 'htmega-addons' ),
+                    'label' => __( 'Colors and Border', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1354,14 +1354,14 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 $this->start_controls_tab(
                     'thumbnails_thumbnail_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_group_control(
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'thumbnails_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-nav .small-thumb img',
                         ]
                     );
@@ -1369,7 +1369,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-thumbgallery-nav .small-thumb img,{{WRAPPER}} .htmega-thumbgallery-nav .small-thumb' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1383,7 +1383,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                 $this->start_controls_tab(
                     'thumbnails_style_hover_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -1391,7 +1391,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'thumbnails_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-nav .small-thumb:after',
                         ]
@@ -1401,7 +1401,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'thumbnails_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-thumbgallery-nav .slick-slide.slick-current.slick-active.slick-center .small-thumb img,{{WRAPPER}} .htmega-thumbgallery-nav .slick-slide.slick-current .small-thumb img',
                         ]
                     );
@@ -1409,7 +1409,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     $this->add_responsive_control(
                         'thumbnails_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-thumbgallery-nav .slick-slide.slick-current.slick-active.slick-center .small-thumb img,{{WRAPPER}} .htmega-thumbgallery-nav .slick-slide.slick-current.slick-active.slick-center .small-thumb,{{WRAPPER}} .htmega-thumbgallery-nav .slick-slide.slick-current .small-thumb img,{{WRAPPER}} .htmega-thumbgallery-nav .slick-slide.slick-current .small-thumb' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1499,16 +1499,16 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
 
        
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_thumbnail_sliderarea_attr' ); ?> >
+            <div <?php echo $this->get_render_attribute_string( 'htmega_thumbnail_sliderarea_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                 <div class="htb-row row--5 htb-align-items-center mt--40">
 
                     <?php if( $settings['sliderthumbnails_style'] == 3 ): ?>
                         <div class="htb-col-lg-2 htb-col-md-2 htb-col-sm-2 htmega-nav-col">
-                            <div <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_navslider_attr' ); ?> style="display:none">
+                            <div <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_navslider_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> style="display:none">
                                 <?php foreach ( $settings['slider_list'] as $slideritem ) :?>
                                     <div class="small-thumb">
                                         <?php
-                                            echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_thumbnails_imagesize', 'slider_image' );
+                                            echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_thumbnails_imagesize', 'slider_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                                         ?>
                                     </div>
                                 <?php endforeach;?>
@@ -1516,11 +1516,11 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         </div>
                         <div class="htb-col-lg-10 htb-col-md-10 htb-col-sm-10">
                             <div class="ht-thumb-gallery">
-                                <ul <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_slider_attr' ); ?>  style="display:none;">
+                                <ul <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_slider_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>  style="display:none;">
                                     <?php foreach ( $settings['slider_list'] as $slideritem ) :?>
                                         <li>
                                             <?php
-                                                echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_imagesize', 'slider_image' );
+                                                echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_imagesize', 'slider_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
 
                                                 if( !empty( $slideritem['slider_title'] ) || !empty( $slideritem['slider_sub_title'] ) ){
                                                     echo '<div class="content right-bottom">';
@@ -1542,11 +1542,11 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
 
                     <?php elseif( $settings['sliderthumbnails_style'] == 4 ): ?>
                         <div class="htb-col-lg-12 htmega-nav-col">
-                            <div <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_navslider_attr' ); ?> style="display:none">
+                            <div <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_navslider_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> style="display:none">
                                 <?php foreach ( $settings['slider_list'] as $slideritem ) :?>
                                     <div class="small-thumb">
                                         <?php
-                                            echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_thumbnails_imagesize', 'slider_image' );
+                                            echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_thumbnails_imagesize', 'slider_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                                         ?>
                                     </div>
                                 <?php endforeach; ?>
@@ -1554,11 +1554,11 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         </div>
                         <div class="htb-col-lg-12">
                             <div class="ht-thumb-gallery">
-                                <ul <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_slider_attr' ); ?> style="display:none">
+                                <ul <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_slider_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> style="display:none">
                                     <?php foreach ( $settings['slider_list'] as $slideritem ) :?>
                                         <li>
                                             <?php
-                                                echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_imagesize', 'slider_image' );
+                                                echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_imagesize', 'slider_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                                                 if( !empty( $slideritem['slider_title'] ) || !empty( $slideritem['slider_sub_title'] ) ){
                                                     echo '<div class="content">';
                                                     if( !empty( $slideritem['slider_title'] ) ){
@@ -1580,11 +1580,11 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                     <?php else:?>
                         <div class="<?php if( $settings['sliderthumbnails_style'] == 2 ){ echo esc_attr( 'htb-col-lg-12' );}else{ echo esc_attr( 'htb-col-lg-10 htb-col-md-10 htb-col-sm-10' ); } ?>">
                             <div class="ht-thumb-gallery">
-                                <ul <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_slider_attr' ); ?> style="display:none;" >
+                                <ul <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_slider_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> style="display:none;" >
                                     <?php foreach ( $settings['slider_list'] as $slideritem ) : ?>
                                         <li>
                                             <?php
-                                                echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_imagesize', 'slider_image' );
+                                                echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_imagesize', 'slider_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
 
                                                  if( !empty( $slideritem['slider_title'] ) || !empty( $slideritem['slider_sub_title'] ) ){
                                                     echo '<div class="content">';
@@ -1607,11 +1607,11 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
                         </div>
 
                         <div class="<?php if( $settings['sliderthumbnails_style'] == 2 ){ echo esc_attr( 'htb-col-lg-12 htmega-nav-col' ); }else{ echo esc_attr( 'htb-col-lg-2 htb-col-md-2 htb-col-sm-2 htmega-nav-col' ); } ?>">
-                            <div <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_navslider_attr' ); ?> style="display:none;">
+                            <div <?php echo $this->get_render_attribute_string( 'htmega_thumbnails_navslider_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> style="display:none;">
                                 <?php foreach ( $settings['slider_list'] as $slideritem ) :?>
                                     <div class="small-thumb">
                                         <?php
-                                            echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_thumbnails_imagesize', 'slider_image' );
+                                            echo Group_Control_Image_Size::get_attachment_image_html( $slideritem, 'slider_thumbnails_imagesize', 'slider_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                                         ?>
                                     </div>
                                 <?php endforeach;?>

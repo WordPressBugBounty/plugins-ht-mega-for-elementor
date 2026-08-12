@@ -1,6 +1,8 @@
 <?php
 namespace HTMegaOpt;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Scripts and Styles Class
  */
@@ -58,9 +60,11 @@ class Assets {
      * Enqueue admin scripts
      */
     function htmega_enqueue_scripts($hook) {
-        // Get the current page from $_GET
-        $page = isset($_GET['page']) ? $_GET['page'] : '';
-        
+        // Get the current page from $_GET — read-only check of which admin
+        // screen is loading, used only to decide whether to enqueue assets;
+        // no data is written, so nonce verification is not applicable here.
+        $page = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
         // Only load on HTMega settings pages
         if ('htmega-addons' != $page) {
             return;

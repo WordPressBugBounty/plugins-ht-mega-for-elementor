@@ -22,7 +22,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Contact 2026', 'htmega-addons' );
+		return esc_html__( 'Contact 2026', 'ht-mega-for-elementor' );
 	}
 
 	public function get_icon() {
@@ -45,7 +45,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_design_style',
 			[
-				'label' => esc_html__( 'Design Style', 'htmega-addons' ),
+				'label' => esc_html__( 'Design Style', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -53,15 +53,15 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'design_style',
 			[
-				'label'   => esc_html__( 'Style Preset', 'htmega-addons' ),
+				'label'   => esc_html__( 'Style Preset', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'bento',
 				'options' => [
-					'bento'  => esc_html__( 'Bento Grid',    'htmega-addons' ),
-					'glass'  => esc_html__( 'Glassmorphism', 'htmega-addons' ),
-					'dark'   => esc_html__( 'Dark Minimal',  'htmega-addons' ),
-					'aurora' => esc_html__( 'Aurora',        'htmega-addons' ),
-					'neo'    => esc_html__( 'Neo-Brutalist', 'htmega-addons' ),
+					'bento'  => esc_html__( 'Bento Grid',    'ht-mega-for-elementor' ),
+					'glass'  => esc_html__( 'Glassmorphism', 'ht-mega-for-elementor' ),
+					'dark'   => esc_html__( 'Dark Minimal',  'ht-mega-for-elementor' ),
+					'aurora' => esc_html__( 'Aurora',        'ht-mega-for-elementor' ),
+					'neo'    => esc_html__( 'Neo-Brutalist', 'ht-mega-for-elementor' ),
 				],
 			]
 		);
@@ -69,13 +69,13 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'layout',
 			[
-				'label'   => esc_html__( 'Layout', 'htmega-addons' ),
+				'label'   => esc_html__( 'Layout', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'split',
 				'options' => [
-					'split'     => esc_html__( 'Split (Form + Info)', 'htmega-addons' ),
-					'centered'  => esc_html__( 'Centered (Form only)', 'htmega-addons' ),
-					'info-only' => esc_html__( 'Info Cards (no form)', 'htmega-addons' ),
+					'split'     => esc_html__( 'Split (Form + Info)', 'ht-mega-for-elementor' ),
+					'centered'  => esc_html__( 'Centered (Form only)', 'ht-mega-for-elementor' ),
+					'info-only' => esc_html__( 'Info Cards (no form)', 'ht-mega-for-elementor' ),
 				],
 			]
 		);
@@ -86,7 +86,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_header',
 			[
-				'label' => esc_html__( 'Section Header', 'htmega-addons' ),
+				'label' => esc_html__( 'Section Header', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -94,7 +94,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'show_section_label',
 			[
-				'label'        => esc_html__( 'Show Section Label', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show Section Label', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -104,9 +104,9 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'section_label_text',
 			[
-				'label'     => esc_html__( 'Label Text', 'htmega-addons' ),
+				'label'     => esc_html__( 'Label Text', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Get In Touch', 'htmega-addons' ),
+				'default'   => esc_html__( 'Get In Touch', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_section_label' => 'yes' ],
 			]
 		);
@@ -114,25 +114,25 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'headline',
 			[
-				'label'   => esc_html__( 'Headline', 'htmega-addons' ),
+				'label'   => esc_html__( 'Headline', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( "We'd Love to Hear From You", 'htmega-addons' ),
+				'default' => esc_html__( "We'd Love to Hear From You", 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'headline_highlight',
 			[
-				'label'   => esc_html__( 'Headline Highlight', 'htmega-addons' ),
+				'label'   => esc_html__( 'Headline Highlight', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Love', 'htmega-addons' ),
+				'default' => esc_html__( 'Love', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'headline_tag',
 			[
-				'label'   => esc_html__( 'Headline Tag', 'htmega-addons' ),
+				'label'   => esc_html__( 'Headline Tag', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'h2',
 				'options' => [
@@ -147,10 +147,10 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'description',
 			[
-				'label'   => esc_html__( 'Description', 'htmega-addons' ),
+				'label'   => esc_html__( 'Description', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'rows'    => 3,
-				'default' => esc_html__( 'Have a question, project idea, or just want to say hello? Fill out the form and our team will be back in touch within 24 hours.', 'htmega-addons' ),
+				'default' => esc_html__( 'Have a question, project idea, or just want to say hello? Fill out the form and our team will be back in touch within 24 hours.', 'ht-mega-for-elementor' ),
 			]
 		);
 
@@ -160,7 +160,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_form',
 			[
-				'label'     => esc_html__( 'Contact Form', 'htmega-addons' ),
+				'label'     => esc_html__( 'Contact Form', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_CONTENT,
 				'condition' => [ 'layout' => [ 'split', 'centered' ] ],
 			]
@@ -169,18 +169,18 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'form_title',
 			[
-				'label'   => esc_html__( 'Form Title', 'htmega-addons' ),
+				'label'   => esc_html__( 'Form Title', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Send us a message', 'htmega-addons' ),
+				'default' => esc_html__( 'Send us a message', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'form_subtitle',
 			[
-				'label'   => esc_html__( 'Form Subtitle', 'htmega-addons' ),
+				'label'   => esc_html__( 'Form Subtitle', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( "Fill in the form and we'll get back to you shortly.", 'htmega-addons' ),
+				'default' => esc_html__( "Fill in the form and we'll get back to you shortly.", 'ht-mega-for-elementor' ),
 			]
 		);
 
@@ -191,7 +191,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			$this->add_control(
 				'form_plugin',
 				[
-					'label'   => esc_html__( 'Form Plugin', 'htmega-addons' ),
+					'label'   => esc_html__( 'Form Plugin', 'ht-mega-for-elementor' ),
 					'type'    => Controls_Manager::SELECT,
 					'default' => array_key_first( $plugin_options ),
 					'options' => $plugin_options,
@@ -207,7 +207,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 				$this->add_control(
 					'form_id_' . $plugin_key,
 					[
-						'label'     => esc_html__( 'Select Form', 'htmega-addons' ),
+						'label'     => esc_html__( 'Select Form', 'ht-mega-for-elementor' ),
 						'type'      => Controls_Manager::SELECT,
 						'default'   => $default_id,
 						'options'   => $forms,
@@ -219,10 +219,10 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			$this->add_control(
 				'form_css_class',
 				[
-					'label'       => esc_html__( 'Custom CSS Class', 'htmega-addons' ),
+					'label'       => esc_html__( 'Custom CSS Class', 'ht-mega-for-elementor' ),
 					'type'        => Controls_Manager::TEXT,
 					'placeholder' => 'my-form-style',
-					'description' => esc_html__( 'Optional extra class on the form wrapper div.', 'htmega-addons' ),
+					'description' => esc_html__( 'Optional extra class on the form wrapper div.', 'ht-mega-for-elementor' ),
 				]
 			);
 
@@ -233,14 +233,14 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			$htcf_installed   = file_exists( WP_PLUGIN_DIR . '/' . $htcf_plugin_file );
 
 			if ( $htcf_installed ) {
-				$card_title   = esc_html__( 'HT Contact Form is installed but not active', 'htmega-addons' );
-				$card_body    = esc_html__( 'Activate it to start embedding forms here — 38+ fields and 21+ integrations, completely free.', 'htmega-addons' );
-				$button_label = esc_html__( 'Activate Now →', 'htmega-addons' );
+				$card_title   = esc_html__( 'HT Contact Form is installed but not active', 'ht-mega-for-elementor' );
+				$card_body    = esc_html__( 'Activate it to start embedding forms here — 38+ fields and 21+ integrations, completely free.', 'ht-mega-for-elementor' );
+				$button_label = esc_html__( 'Activate Now →', 'ht-mega-for-elementor' );
 				$data_action  = 'activate';
 			} else {
-				$card_title   = esc_html__( 'No form plugin installed', 'htmega-addons' );
-				$card_body    = esc_html__( 'Install HT Contact Form — free drag & drop builder with 38+ fields and 21+ integrations. No coding required.', 'htmega-addons' );
-				$button_label = esc_html__( 'Install Free →', 'htmega-addons' );
+				$card_title   = esc_html__( 'No form plugin installed', 'ht-mega-for-elementor' );
+				$card_body    = esc_html__( 'Install HT Contact Form — free drag & drop builder with 38+ fields and 21+ integrations. No coding required.', 'ht-mega-for-elementor' );
+				$button_label = esc_html__( 'Install Free →', 'ht-mega-for-elementor' );
 				$data_action  = 'install';
 			}
 
@@ -273,7 +273,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_info',
 			[
-				'label'     => esc_html__( 'Contact Info', 'htmega-addons' ),
+				'label'     => esc_html__( 'Contact Info', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_CONTENT,
 				'condition' => [ 'layout' => [ 'split', 'info-only' ] ],
 			]
@@ -284,16 +284,16 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$repeater->add_control(
 			'info_icon_type',
 			[
-				'label'   => esc_html__( 'Icon Type', 'htmega-addons' ),
+				'label'   => esc_html__( 'Icon Type', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'email',
 				'options' => [
-					'address' => esc_html__( 'Address',  'htmega-addons' ),
-					'phone'   => esc_html__( 'Phone',    'htmega-addons' ),
-					'email'   => esc_html__( 'Email',    'htmega-addons' ),
-					'hours'   => esc_html__( 'Hours',    'htmega-addons' ),
-					'website' => esc_html__( 'Website',  'htmega-addons' ),
-					'custom'  => esc_html__( 'Custom Icon', 'htmega-addons' ),
+					'address' => esc_html__( 'Address',  'ht-mega-for-elementor' ),
+					'phone'   => esc_html__( 'Phone',    'ht-mega-for-elementor' ),
+					'email'   => esc_html__( 'Email',    'ht-mega-for-elementor' ),
+					'hours'   => esc_html__( 'Hours',    'ht-mega-for-elementor' ),
+					'website' => esc_html__( 'Website',  'ht-mega-for-elementor' ),
+					'custom'  => esc_html__( 'Custom Icon', 'ht-mega-for-elementor' ),
 				],
 			]
 		);
@@ -301,7 +301,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$repeater->add_control(
 			'info_custom_icon',
 			[
-				'label'     => esc_html__( 'Custom Icon', 'htmega-addons' ),
+				'label'     => esc_html__( 'Custom Icon', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::ICONS,
 				'condition' => [ 'info_icon_type' => 'custom' ],
 			]
@@ -310,26 +310,26 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$repeater->add_control(
 			'info_label',
 			[
-				'label'   => esc_html__( 'Label', 'htmega-addons' ),
+				'label'   => esc_html__( 'Label', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Email', 'htmega-addons' ),
+				'default' => esc_html__( 'Email', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'info_value',
 			[
-				'label'   => esc_html__( 'Value', 'htmega-addons' ),
+				'label'   => esc_html__( 'Value', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'rows'    => 2,
-				'default' => esc_html__( 'hello@example.com', 'htmega-addons' ),
+				'default' => esc_html__( 'hello@example.com', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'info_link',
 			[
-				'label'       => esc_html__( 'Link URL (optional)', 'htmega-addons' ),
+				'label'       => esc_html__( 'Link URL (optional)', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'mailto:hello@example.com',
 				'default'     => [ 'url' => '' ],
@@ -339,7 +339,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'contact_info_items',
 			[
-				'label'       => esc_html__( 'Info Items', 'htmega-addons' ),
+				'label'       => esc_html__( 'Info Items', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'title_field' => '{{{ info_label }}}',
@@ -376,7 +376,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_map',
 			[
-				'label' => esc_html__( 'Map', 'htmega-addons' ),
+				'label' => esc_html__( 'Map', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -384,7 +384,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'show_map',
 			[
-				'label'        => esc_html__( 'Show Map', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show Map', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -394,10 +394,10 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'map_embed_url',
 			[
-				'label'       => esc_html__( 'Map Embed URL', 'htmega-addons' ),
+				'label'       => esc_html__( 'Map Embed URL', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'https://www.google.com/maps/embed?pb=...',
-				'description' => esc_html__( 'Paste the src URL from a Google Maps or OpenStreetMap embed code.', 'htmega-addons' ),
+				'description' => esc_html__( 'Paste the src URL from a Google Maps or OpenStreetMap embed code.', 'ht-mega-for-elementor' ),
 				'default'     => [ 'url' => 'https://www.openstreetmap.org/export/embed.html?bbox=-122.4313%2C37.7681%2C-122.3897%2C37.7899&layer=mapnik' ],
 				'condition'   => [ 'show_map' => 'yes' ],
 			]
@@ -409,7 +409,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_hours',
 			[
-				'label'     => esc_html__( 'Working Hours', 'htmega-addons' ),
+				'label'     => esc_html__( 'Working Hours', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_CONTENT,
 				'condition' => [ 'layout' => [ 'split', 'info-only' ] ],
 			]
@@ -418,7 +418,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'show_hours',
 			[
-				'label'        => esc_html__( 'Show Working Hours', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show Working Hours', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -428,9 +428,9 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'hours_title',
 			[
-				'label'     => esc_html__( 'Title', 'htmega-addons' ),
+				'label'     => esc_html__( 'Title', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Working Hours', 'htmega-addons' ),
+				'default'   => esc_html__( 'Working Hours', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_hours' => 'yes' ],
 			]
 		);
@@ -439,24 +439,24 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$hours_rep->add_control(
 			'hours_day',
 			[
-				'label'   => esc_html__( 'Day(s)', 'htmega-addons' ),
+				'label'   => esc_html__( 'Day(s)', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Mon – Fri', 'htmega-addons' ),
+				'default' => esc_html__( 'Mon – Fri', 'ht-mega-for-elementor' ),
 			]
 		);
 		$hours_rep->add_control(
 			'hours_time',
 			[
-				'label'   => esc_html__( 'Time', 'htmega-addons' ),
+				'label'   => esc_html__( 'Time', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( '9:00 – 18:00', 'htmega-addons' ),
+				'default' => esc_html__( '9:00 – 18:00', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'hours_items',
 			[
-				'label'       => esc_html__( 'Hours Rows', 'htmega-addons' ),
+				'label'       => esc_html__( 'Hours Rows', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $hours_rep->get_controls(),
 				'title_field' => '{{{ hours_day }}}',
@@ -472,7 +472,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'hours_open_badge',
 			[
-				'label'        => esc_html__( 'Show "Open now" Badge', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show "Open now" Badge', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -483,9 +483,9 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'hours_badge_text',
 			[
-				'label'     => esc_html__( 'Badge Text', 'htmega-addons' ),
+				'label'     => esc_html__( 'Badge Text', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Open now', 'htmega-addons' ),
+				'default'   => esc_html__( 'Open now', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_hours' => 'yes', 'hours_open_badge' => 'yes' ],
 			]
 		);
@@ -496,7 +496,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_social',
 			[
-				'label'     => esc_html__( 'Social Links', 'htmega-addons' ),
+				'label'     => esc_html__( 'Social Links', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_CONTENT,
 				'condition' => [ 'layout' => [ 'split', 'info-only' ] ],
 			]
@@ -505,7 +505,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'show_social',
 			[
-				'label'        => esc_html__( 'Show Social Links', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show Social Links', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -515,9 +515,9 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_title',
 			[
-				'label'     => esc_html__( 'Title', 'htmega-addons' ),
+				'label'     => esc_html__( 'Title', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Follow Us', 'htmega-addons' ),
+				'default'   => esc_html__( 'Follow Us', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_social' => 'yes' ],
 			]
 		);
@@ -526,23 +526,23 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$social_rep->add_control(
 			'social_network',
 			[
-				'label'   => esc_html__( 'Network', 'htmega-addons' ),
+				'label'   => esc_html__( 'Network', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'facebook',
 				'options' => [
-					'facebook'  => esc_html__( 'Facebook',  'htmega-addons' ),
-					'twitter'   => esc_html__( 'X / Twitter', 'htmega-addons' ),
-					'linkedin'  => esc_html__( 'LinkedIn',  'htmega-addons' ),
-					'instagram' => esc_html__( 'Instagram', 'htmega-addons' ),
-					'youtube'   => esc_html__( 'YouTube',   'htmega-addons' ),
-					'github'    => esc_html__( 'GitHub',    'htmega-addons' ),
+					'facebook'  => esc_html__( 'Facebook',  'ht-mega-for-elementor' ),
+					'twitter'   => esc_html__( 'X / Twitter', 'ht-mega-for-elementor' ),
+					'linkedin'  => esc_html__( 'LinkedIn',  'ht-mega-for-elementor' ),
+					'instagram' => esc_html__( 'Instagram', 'ht-mega-for-elementor' ),
+					'youtube'   => esc_html__( 'YouTube',   'ht-mega-for-elementor' ),
+					'github'    => esc_html__( 'GitHub',    'ht-mega-for-elementor' ),
 				],
 			]
 		);
 		$social_rep->add_control(
 			'social_url',
 			[
-				'label'       => esc_html__( 'URL', 'htmega-addons' ),
+				'label'       => esc_html__( 'URL', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'https://',
 				'default'     => [ 'url' => '#' ],
@@ -552,7 +552,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_items',
 			[
-				'label'       => esc_html__( 'Social Items', 'htmega-addons' ),
+				'label'       => esc_html__( 'Social Items', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $social_rep->get_controls(),
 				'title_field' => '{{{ social_network }}}',
@@ -572,7 +572,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_trust',
 			[
-				'label'     => esc_html__( 'Trust Block', 'htmega-addons' ),
+				'label'     => esc_html__( 'Trust Block', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_CONTENT,
 				'condition' => [ 'layout' => [ 'split', 'info-only' ] ],
 			]
@@ -581,7 +581,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'show_trust',
 			[
-				'label'        => esc_html__( 'Show Trust Block', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show Trust Block', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -591,9 +591,9 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_label',
 			[
-				'label'     => esc_html__( 'Label', 'htmega-addons' ),
+				'label'     => esc_html__( 'Label', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Why teams choose us', 'htmega-addons' ),
+				'default'   => esc_html__( 'Why teams choose us', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_trust' => 'yes' ],
 			]
 		);
@@ -601,9 +601,9 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_number',
 			[
-				'label'     => esc_html__( 'Highlight Stat', 'htmega-addons' ),
+				'label'     => esc_html__( 'Highlight Stat', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( '< 1 hr', 'htmega-addons' ),
+				'default'   => esc_html__( '< 1 hr', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_trust' => 'yes' ],
 			]
 		);
@@ -611,9 +611,9 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_subtext',
 			[
-				'label'     => esc_html__( 'Stat Description', 'htmega-addons' ),
+				'label'     => esc_html__( 'Stat Description', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Average first response time', 'htmega-addons' ),
+				'default'   => esc_html__( 'Average first response time', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_trust' => 'yes' ],
 			]
 		);
@@ -621,7 +621,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_show_stars',
 			[
-				'label'        => esc_html__( 'Show Star Rating', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show Star Rating', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -632,9 +632,9 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_footer',
 			[
-				'label'     => esc_html__( 'Footer Text', 'htmega-addons' ),
+				'label'     => esc_html__( 'Footer Text', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Rated 4.9/5 by 2,400+ customers', 'htmega-addons' ),
+				'default'   => esc_html__( 'Rated 4.9/5 by 2,400+ customers', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_trust' => 'yes' ],
 			]
 		);
@@ -647,7 +647,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_section',
 			[
-				'label' => esc_html__( 'Section', 'htmega-addons' ),
+				'label' => esc_html__( 'Section', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -656,7 +656,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'section_bg',
-				'label'    => esc_html__( 'Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-contact',
 			]
@@ -665,7 +665,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'section_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%', 'rem' ],
 				'selectors'  => [
@@ -680,7 +680,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_tiles',
 			[
-				'label' => esc_html__( 'Card / Tile', 'htmega-addons' ),
+				'label' => esc_html__( 'Card / Tile', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -689,7 +689,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'tile_bg',
-				'label'    => esc_html__( 'Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-contact__tile',
 			]
@@ -706,7 +706,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'tile_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -726,7 +726,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'tile_label_heading',
 			[
-				'label'     => esc_html__( 'Tile Label', 'htmega-addons' ),
+				'label'     => esc_html__( 'Tile Label', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -743,7 +743,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'tile_label_color',
 			[
-				'label'     => esc_html__( 'Label Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Label Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__tile-label' => 'color: {{VALUE}};',
@@ -757,7 +757,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_label',
 			[
-				'label'     => esc_html__( 'Section Label', 'htmega-addons' ),
+				'label'     => esc_html__( 'Section Label', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [ 'show_section_label' => 'yes' ],
 			]
@@ -774,7 +774,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'label_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__section-label' => 'color: {{VALUE}};',
@@ -785,7 +785,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'label_bg_color',
 			[
-				'label'     => esc_html__( 'Background', 'htmega-addons' ),
+				'label'     => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__section-label' => 'background-color: {{VALUE}};',
@@ -796,7 +796,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'label_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -808,7 +808,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'label_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -823,7 +823,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_headline',
 			[
-				'label' => esc_html__( 'Headline', 'htmega-addons' ),
+				'label' => esc_html__( 'Headline', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -839,7 +839,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'headline_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__headline' => 'color: {{VALUE}};',
@@ -850,7 +850,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'headline_accent_color',
 			[
-				'label'     => esc_html__( 'Highlight Color (solid)', 'htmega-addons' ),
+				'label'     => esc_html__( 'Highlight Color (solid)', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
@@ -863,12 +863,12 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'           => 'headline_accent_gradient',
-				'label'          => esc_html__( 'Highlight Gradient', 'htmega-addons' ),
+				'label'          => esc_html__( 'Highlight Gradient', 'ht-mega-for-elementor' ),
 				'types'          => [ 'gradient' ],
 				'selector'       => '{{WRAPPER}} .htm25-contact__headline-accent',
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Gradient Color', 'htmega-addons' ),
+						'label' => esc_html__( 'Gradient Color', 'ht-mega-for-elementor' ),
 					],
 				],
 			]
@@ -880,7 +880,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_description',
 			[
-				'label' => esc_html__( 'Description', 'htmega-addons' ),
+				'label' => esc_html__( 'Description', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -896,7 +896,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'description_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__description' => 'color: {{VALUE}};',
@@ -910,7 +910,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_form_tile',
 			[
-				'label'     => esc_html__( 'Form Tile', 'htmega-addons' ),
+				'label'     => esc_html__( 'Form Tile', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [ 'layout' => [ 'split', 'centered' ] ],
 			]
@@ -920,7 +920,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'form_tile_bg',
-				'label'    => esc_html__( 'Tile Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Tile Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-contact__tile--form',
 			]
@@ -929,7 +929,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'form_tile_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -941,7 +941,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'form_heading_heading',
 			[
-				'label'     => esc_html__( 'Form Title', 'htmega-addons' ),
+				'label'     => esc_html__( 'Form Title', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -958,7 +958,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'form_heading_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__form-heading' => 'color: {{VALUE}};',
@@ -969,7 +969,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'form_subheading_heading',
 			[
-				'label'     => esc_html__( 'Form Subtitle', 'htmega-addons' ),
+				'label'     => esc_html__( 'Form Subtitle', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -986,7 +986,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'form_subheading_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__form-subheading' => 'color: {{VALUE}};',
@@ -1000,7 +1000,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_form_fields',
 			[
-				'label'     => esc_html__( 'Form Fields', 'htmega-addons' ),
+				'label'     => esc_html__( 'Form Fields', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [ 'layout' => [ 'split', 'centered' ] ],
 			]
@@ -1009,7 +1009,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'field_bg_color',
 			[
-				'label'     => esc_html__( 'Field Background', 'htmega-addons' ),
+				'label'     => esc_html__( 'Field Background', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact' => '--c-field-bg: {{VALUE}};',
@@ -1020,7 +1020,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'field_text_color',
 			[
-				'label'     => esc_html__( 'Field Text', 'htmega-addons' ),
+				'label'     => esc_html__( 'Field Text', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact' => '--c-field-text: {{VALUE}};',
@@ -1031,7 +1031,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'field_border_color',
 			[
-				'label'     => esc_html__( 'Border Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact' => '--c-field-border: {{VALUE}};',
@@ -1042,7 +1042,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'field_border_width',
 			[
-				'label'      => esc_html__( 'Border Width', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Width', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [ 'px' => [ 'min' => 0, 'max' => 5 ] ],
@@ -1055,7 +1055,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'field_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -1067,7 +1067,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'field_label_color',
 			[
-				'label'     => esc_html__( 'Label Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Label Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
@@ -1079,7 +1079,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'field_placeholder_color',
 			[
-				'label'     => esc_html__( 'Placeholder Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Placeholder Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact' => '--c-field-placeholder: {{VALUE}};',
@@ -1090,7 +1090,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'field_focus_border_color',
 			[
-				'label'     => esc_html__( 'Focus Border', 'htmega-addons' ),
+				'label'     => esc_html__( 'Focus Border', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
@@ -1103,7 +1103,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'      => 'field_typography',
-				'label'     => esc_html__( 'Field Typography', 'htmega-addons' ),
+				'label'     => esc_html__( 'Field Typography', 'ht-mega-for-elementor' ),
 				'separator' => 'before',
 				'selector'  => '{{WRAPPER}} .htm25-contact .htm25-contact__form-col input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]), {{WRAPPER}} .htm25-contact .htm25-contact__form-col select, {{WRAPPER}} .htm25-contact .htm25-contact__form-col textarea',
 			]
@@ -1115,7 +1115,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_submit_btn',
 			[
-				'label'     => esc_html__( 'Submit Button', 'htmega-addons' ),
+				'label'     => esc_html__( 'Submit Button', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [ 'layout' => [ 'split', 'centered' ] ],
 			]
@@ -1132,7 +1132,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'btn_bg',
-				'label'    => esc_html__( 'Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => $btn_selector,
 			]
@@ -1141,7 +1141,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'btn_text_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact' => '--c-btn-text: {{VALUE}};',
@@ -1152,7 +1152,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -1164,7 +1164,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -1184,7 +1184,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'btn_hover_heading',
 			[
-				'label'     => esc_html__( 'Hover State', 'htmega-addons' ),
+				'label'     => esc_html__( 'Hover State', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1193,7 +1193,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'btn_hover_bg_color',
 			[
-				'label'     => esc_html__( 'Hover Background', 'htmega-addons' ),
+				'label'     => esc_html__( 'Hover Background', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact' => '--c-btn-hover-bg: {{VALUE}};',
@@ -1204,7 +1204,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'btn_hover_text_color',
 			[
-				'label'     => esc_html__( 'Hover Text', 'htmega-addons' ),
+				'label'     => esc_html__( 'Hover Text', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact .htm25-contact__form-col input[type="submit"]:hover,
@@ -1223,7 +1223,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_info_tile',
 			[
-				'label'     => esc_html__( 'Contact Info', 'htmega-addons' ),
+				'label'     => esc_html__( 'Contact Info', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [ 'layout' => [ 'split', 'info-only' ] ],
 			]
@@ -1232,7 +1232,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'info_icon_heading',
 			[
-				'label' => esc_html__( 'Icon', 'htmega-addons' ),
+				'label' => esc_html__( 'Icon', 'ht-mega-for-elementor' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -1240,7 +1240,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'info_icon_bg_color',
 			[
-				'label'     => esc_html__( 'Icon Background', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Background', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__info-icon' => 'background-color: {{VALUE}};',
@@ -1251,7 +1251,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'info_icon_color',
 			[
-				'label'     => esc_html__( 'Icon Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__info-icon'          => 'color: {{VALUE}};',
@@ -1264,7 +1264,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'info_icon_size',
 			[
-				'label'      => esc_html__( 'Icon Size', 'htmega-addons' ),
+				'label'      => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [ 'px' => [ 'min' => 10, 'max' => 48 ] ],
@@ -1277,7 +1277,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'info_label_heading',
 			[
-				'label'     => esc_html__( 'Info Label', 'htmega-addons' ),
+				'label'     => esc_html__( 'Info Label', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1294,7 +1294,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'info_label_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__info-label' => 'color: {{VALUE}};',
@@ -1305,7 +1305,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'info_value_heading',
 			[
-				'label'     => esc_html__( 'Info Value', 'htmega-addons' ),
+				'label'     => esc_html__( 'Info Value', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1322,7 +1322,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'info_value_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__info-value' => 'color: {{VALUE}};',
@@ -1336,7 +1336,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_hours',
 			[
-				'label'     => esc_html__( 'Working Hours', 'htmega-addons' ),
+				'label'     => esc_html__( 'Working Hours', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_hours' => 'yes',
@@ -1349,7 +1349,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'hours_row_typography',
-				'label'    => esc_html__( 'Row Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Row Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-contact__hours-row',
 			]
 		);
@@ -1357,7 +1357,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'hours_row_color',
 			[
-				'label'     => esc_html__( 'Row Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Row Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__hours-row'                  => 'color: {{VALUE}};',
@@ -1369,7 +1369,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'hours_badge_style_heading',
 			[
-				'label'     => esc_html__( '"Open now" Badge', 'htmega-addons' ),
+				'label'     => esc_html__( '"Open now" Badge', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1386,7 +1386,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'hours_badge_color',
 			[
-				'label'     => esc_html__( 'Badge Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Badge Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__badge-open' => 'color: {{VALUE}};',
@@ -1397,7 +1397,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'hours_badge_bg_color',
 			[
-				'label'     => esc_html__( 'Badge Background', 'htmega-addons' ),
+				'label'     => esc_html__( 'Badge Background', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__badge-open' => 'background-color: {{VALUE}};',
@@ -1411,7 +1411,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_social',
 			[
-				'label'     => esc_html__( 'Social Links', 'htmega-addons' ),
+				'label'     => esc_html__( 'Social Links', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_social' => 'yes',
@@ -1423,7 +1423,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'social_icon_size',
 			[
-				'label'      => esc_html__( 'Icon Size', 'htmega-addons' ),
+				'label'      => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [ 'px' => [ 'min' => 12, 'max' => 40 ] ],
@@ -1436,7 +1436,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'social_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
@@ -1448,7 +1448,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_normal_heading',
 			[
-				'label'     => esc_html__( 'Normal', 'htmega-addons' ),
+				'label'     => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1457,7 +1457,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_color',
 			[
-				'label'     => esc_html__( 'Icon Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__social-link' => 'color: {{VALUE}};',
@@ -1468,7 +1468,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_bg_color',
 			[
-				'label'     => esc_html__( 'Background', 'htmega-addons' ),
+				'label'     => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__social-link' => 'background-color: {{VALUE}};',
@@ -1479,7 +1479,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_border_color',
 			[
-				'label'     => esc_html__( 'Border Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__social-link' => 'border-color: {{VALUE}};',
@@ -1490,7 +1490,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_hover_heading',
 			[
-				'label'     => esc_html__( 'Hover', 'htmega-addons' ),
+				'label'     => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1499,7 +1499,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_hover_color',
 			[
-				'label'     => esc_html__( 'Icon Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Icon Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__social-link:hover' => 'color: {{VALUE}};',
@@ -1510,7 +1510,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_hover_bg_color',
 			[
-				'label'     => esc_html__( 'Background', 'htmega-addons' ),
+				'label'     => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__social-link:hover' => 'background-color: {{VALUE}};',
@@ -1521,7 +1521,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'social_hover_border_color',
 			[
-				'label'     => esc_html__( 'Border Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__social-link:hover' => 'border-color: {{VALUE}};',
@@ -1535,7 +1535,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_trust',
 			[
-				'label'     => esc_html__( 'Trust Block', 'htmega-addons' ),
+				'label'     => esc_html__( 'Trust Block', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'show_trust' => 'yes',
@@ -1548,7 +1548,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'trust_tile_bg',
-				'label'    => esc_html__( 'Tile Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Tile Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-contact__tile--trust',
 			]
@@ -1557,7 +1557,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_num_heading',
 			[
-				'label'     => esc_html__( 'Stat Number', 'htmega-addons' ),
+				'label'     => esc_html__( 'Stat Number', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1574,7 +1574,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_num_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__trust-num' => 'color: {{VALUE}};',
@@ -1585,7 +1585,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_sub_heading',
 			[
-				'label'     => esc_html__( 'Stat Description', 'htmega-addons' ),
+				'label'     => esc_html__( 'Stat Description', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1602,7 +1602,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_sub_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__trust-sub' => 'color: {{VALUE}};',
@@ -1613,7 +1613,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_stars_color',
 			[
-				'label'     => esc_html__( 'Stars Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Stars Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
@@ -1625,7 +1625,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_footer_heading',
 			[
-				'label'     => esc_html__( 'Footer Text', 'htmega-addons' ),
+				'label'     => esc_html__( 'Footer Text', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1642,7 +1642,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_control(
 			'trust_footer_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-contact__trust-foot' => 'color: {{VALUE}};',
@@ -1656,7 +1656,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_map',
 			[
-				'label'     => esc_html__( 'Map', 'htmega-addons' ),
+				'label'     => esc_html__( 'Map', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [ 'show_map' => 'yes' ],
 			]
@@ -1665,7 +1665,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'map_height',
 			[
-				'label'      => esc_html__( 'Map Height', 'htmega-addons' ),
+				'label'      => esc_html__( 'Map Height', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'vh' ],
 				'range'      => [ 'px' => [ 'min' => 100, 'max' => 800 ] ],
@@ -1678,7 +1678,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'map_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
@@ -1826,7 +1826,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 
 						<?php if ( $has_aside ) : ?>
 						<!-- ── Info / Hours / Social / Map / Trust ── -->
-						<aside class="htm25-contact__info-col" aria-label="<?php esc_attr_e( 'Contact information', 'htmega-addons' ); ?>">
+						<aside class="htm25-contact__info-col" aria-label="<?php esc_attr_e( 'Contact information', 'ht-mega-for-elementor' ); ?>">
 
 							<?php if ( ! empty( $info_items ) ) : ?>
 							<div class="htm25-contact__tile htm25-contact__tile--info">
@@ -1919,7 +1919,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 								        loading="lazy"
 								        allowfullscreen
 								        referrerpolicy="no-referrer-when-downgrade"
-								        title="<?php esc_attr_e( 'Location map', 'htmega-addons' ); ?>"></iframe>
+								        title="<?php esc_attr_e( 'Location map', 'ht-mega-for-elementor' ); ?>"></iframe>
 							</div>
 							<?php endif; ?>
 
@@ -1935,7 +1935,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 								<div class="htm25-contact__trust-sub"><?php echo esc_html( $trust_subtext ); ?></div>
 								<?php endif; ?>
 								<?php if ( $trust_stars ) : ?>
-								<div class="htm25-contact__trust-stars" aria-label="<?php esc_attr_e( '5 out of 5 stars', 'htmega-addons' ); ?>">★★★★★</div>
+								<div class="htm25-contact__trust-stars" aria-label="<?php esc_attr_e( '5 out of 5 stars', 'ht-mega-for-elementor' ); ?>">★★★★★</div>
 								<?php endif; ?>
 								<?php if ( $trust_footer ) : ?>
 								<div class="htm25-contact__trust-foot"><?php echo esc_html( $trust_footer ); ?></div>
@@ -1955,7 +1955,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 						        loading="lazy"
 						        allowfullscreen
 						        referrerpolicy="no-referrer-when-downgrade"
-						        title="<?php esc_attr_e( 'Location map', 'htmega-addons' ); ?>"></iframe>
+						        title="<?php esc_attr_e( 'Location map', 'ht-mega-for-elementor' ); ?>"></iframe>
 					</div>
 					<?php endif; ?>
 
@@ -1988,27 +1988,27 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 
 		// HT Contact Form — our plugin, pinned first.
 		if ( defined( 'HTCONTACTFORM_VERSION' ) || class_exists( 'HTContactForm\Plugin' ) || function_exists( 'htcontactform' ) ) {
-			$options['htcf'] = esc_html__( '★ HT Contact Form (Recommended)', 'htmega-addons' );
+			$options['htcf'] = esc_html__( '★ HT Contact Form (Recommended)', 'ht-mega-for-elementor' );
 		}
 
 		if ( defined( 'WPCF7_VERSION' ) ) {
-			$options['cf7'] = esc_html__( 'Contact Form 7', 'htmega-addons' );
+			$options['cf7'] = esc_html__( 'Contact Form 7', 'ht-mega-for-elementor' );
 		}
 
 		if ( function_exists( 'wpforms' ) ) {
-			$options['wpforms'] = esc_html__( 'WPForms', 'htmega-addons' );
+			$options['wpforms'] = esc_html__( 'WPForms', 'ht-mega-for-elementor' );
 		}
 
 		if ( defined( 'FLUENTFORM' ) ) {
-			$options['fluentform'] = esc_html__( 'Fluent Forms', 'htmega-addons' );
+			$options['fluentform'] = esc_html__( 'Fluent Forms', 'ht-mega-for-elementor' );
 		}
 
 		if ( class_exists( 'GFAPI' ) ) {
-			$options['gravityforms'] = esc_html__( 'Gravity Forms', 'htmega-addons' );
+			$options['gravityforms'] = esc_html__( 'Gravity Forms', 'ht-mega-for-elementor' );
 		}
 
 		if ( function_exists( 'Ninja_Forms' ) ) {
-			$options['ninjaforms'] = esc_html__( 'Ninja Forms', 'htmega-addons' );
+			$options['ninjaforms'] = esc_html__( 'Ninja Forms', 'ht-mega-for-elementor' );
 		}
 
 		return $options;
@@ -2020,7 +2020,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 	 */
 	private function get_form_lists_per_plugin(): array {
 		$lists = [];
-		$empty = [ '' => esc_html__( '— Select a form —', 'htmega-addons' ) ];
+		$empty = [ '' => esc_html__( '— Select a form —', 'ht-mega-for-elementor' ) ];
 
 		// HT Contact Form
 		if ( defined( 'HTCONTACTFORM_VERSION' ) || class_exists( 'HTContactForm\Plugin' ) || function_exists( 'htcontactform' ) ) {
@@ -2118,7 +2118,7 @@ class HTMega_Elementor_Widget_Contact_2025 extends Widget_Base {
 		if ( ! $plugin || ! $form_id ) {
 			if ( isset( \Elementor\Plugin::$instance->editor ) && \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 				return '<div class="htm25-contact__form-placeholder" style="padding:24px;text-align:center;border:2px dashed #ccc;border-radius:6px;color:#888;">'
-				       . esc_html__( 'Select a form plugin and form in the Content tab.', 'htmega-addons' )
+				       . esc_html__( 'Select a form plugin and form in the Content tab.', 'ht-mega-for-elementor' )
 				       . '</div>';
 			}
 			return '';

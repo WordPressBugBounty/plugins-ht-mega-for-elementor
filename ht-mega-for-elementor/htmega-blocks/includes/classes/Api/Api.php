@@ -50,8 +50,9 @@ class Api {
                     'orderBy'  => [], 
                     'order'    => [],
                     'filterBy' => [],
-                    'offset'   => [], 
-                    'include'  => [], 
+                    'offset'   => [],
+                    'include'  => [],
+                    // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- intentional: declares the REST 'exclude' param accepted by the Products block, which htmegaBlocks_Product_Query() maps to WP_Query's post__not_in, letting the block builder exclude specific product IDs.
                     'exclude'  => [],
                     'wpnonce'  => []
                 ],
@@ -151,8 +152,8 @@ class Api {
      * Get category data
      */
     public function get_category_data( $request ){
-        
-        if ( !isset( $_REQUEST['wpnonce'] ) || !wp_verify_nonce( $_REQUEST['wpnonce'], 'htmega-block-nonce') ){
+
+        if ( ! $this->verify_blocks_api_nonce() ) {
             return rest_ensure_response([]);
         }
 
@@ -165,8 +166,8 @@ class Api {
      * Get Image sizes data
      */
     public function get_image_sizes( $request ){
-        
-        if ( !isset( $_REQUEST['wpnonce'] ) || !wp_verify_nonce( $_REQUEST['wpnonce'], 'htmega-block-nonce') ){
+
+        if ( ! $this->verify_blocks_api_nonce() ) {
             return rest_ensure_response([]);
         }
 
@@ -180,7 +181,7 @@ class Api {
      */
     public function get_post_data( $request ){
 
-        if ( !isset( $_REQUEST['wpnonce'] ) || !wp_verify_nonce( $_REQUEST['wpnonce'], 'htmega-block-nonce') ){
+        if ( ! $this->verify_blocks_api_nonce() ) {
             return rest_ensure_response([]);
         }
 
@@ -221,7 +222,7 @@ class Api {
                 $cart_btn_class .= $product->supports( 'ajax_add_to_cart' ) && $product->is_purchasable() && $product->is_in_stock() ? ' ajax_add_to_cart' : '';
                 $item['addtocart']      = [
                     'link'      => $product->add_to_cart_url(),
-                    'text'      => __('Add To Cart','htmega-addons'),
+                    'text'      => __('Add To Cart','ht-mega-for-elementor'),
                     'class'     => $cart_btn_class,
                 ];
                 $item['wishlist']       = [
@@ -300,7 +301,7 @@ class Api {
     public function get_last_product_data( $request ){
 
         if ( ! $this->verify_blocks_api_nonce() ) {
-            return new \WP_Error( 'invalid_nonce', __( 'Invalid nonce.', 'htmega-addons' ), array( 'status' => 403 ) );
+            return new \WP_Error( 'invalid_nonce', __( 'Invalid nonce.', 'ht-mega-for-elementor' ), array( 'status' => 403 ) );
         }
 
         // Load WooCommerce frontend files

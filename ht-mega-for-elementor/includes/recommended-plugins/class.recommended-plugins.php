@@ -1,6 +1,8 @@
 <?php
 namespace Hasthemes\HTMega_Builder;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Recommended Plugins handlers class
  * @version 1.0.2
@@ -69,7 +71,7 @@ class HTRP_Recommended_Plugins {
         // Initialize properties
         $this->text_domain       =  !empty( $args['text_domain'] ) ? $args['text_domain'] : 'htrp';
         $this->parent_menu_slug  =  !empty( $args['parent_menu_slug'] ) ? $args['parent_menu_slug'] : 'plugins.php';
-        $this->menu_label        =  !empty( $args['menu_label'] ) ? $args['menu_label'] : esc_html__( 'Recommendations', 'htmega-addons' );
+        $this->menu_label        =  !empty( $args['menu_label'] ) ? $args['menu_label'] : esc_html__( 'Recommendations', 'ht-mega-for-elementor' );
         $this->menu_capability   =  !empty( $args['menu_capability'] ) ? $args['menu_capability'] : 'manage_options';
         $this->menu_page_slug    =  !empty( $args['menu_page_slug'] ) ? $args['menu_page_slug'] : $this->text_domain . '_extensions';
         $this->priority          =  !empty( $args['priority'] ) ? $args['priority'] : 100;
@@ -121,11 +123,11 @@ class HTRP_Recommended_Plugins {
         $localize_vars['ajaxurl'] = admin_url('admin-ajax.php');
         $localize_vars['text_domain'] = sanitize_title_with_dashes( $this->text_domain );
         $localize_vars['buttontxt'] = array(
-            'buynow'     => esc_html__( 'Buy Now', 'htmega-addons' ),
-            'preview'    => esc_html__( 'Preview', 'htmega-addons' ),
-            'installing' => esc_html__( 'Installing..', 'htmega-addons' ),
-            'activating' => esc_html__( 'Activating..', 'htmega-addons' ),
-            'active'     => esc_html__( 'Activated', 'htmega-addons' ),
+            'buynow'     => esc_html__( 'Buy Now', 'ht-mega-for-elementor' ),
+            'preview'    => esc_html__( 'Preview', 'ht-mega-for-elementor' ),
+            'installing' => esc_html__( 'Installing..', 'ht-mega-for-elementor' ),
+            'activating' => esc_html__( 'Activating..', 'ht-mega-for-elementor' ),
+            'active'     => esc_html__( 'Activated', 'ht-mega-for-elementor' ),
         );
         $localize_vars['nonce'] = $this->nonce;
         wp_localize_script( 'htrp-plugin-install-manager', 'htrp_params', $localize_vars );
@@ -147,15 +149,16 @@ class HTRP_Recommended_Plugins {
     public function render_html(){
         if ( ! function_exists('plugins_api') ){ include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' ); }
 
-        $htplugins_plugin_list = $this->get_plugins();
-        $palscode_plugin_list  = $this->get_plugins( 'moveaddons' );
+        $htplugins_plugin_list  = $this->get_plugins();
+        $devitems_plugin_list   = $this->get_plugins( 'devitemsllc' );
+        $aslamhasib_plugin_list = $this->get_plugins( 'aslamhasib' );
         $prepare_plugin = array();
         if( $htplugins_plugin_list ){
-            $plugin_list = array_merge( $htplugins_plugin_list, $palscode_plugin_list );
+            $plugin_list = array_merge( $htplugins_plugin_list, $aslamhasib_plugin_list, $devitems_plugin_list );
             $prepare_plugin = array();
             foreach ( $plugin_list as $plugin_key => $plugin ) {
                 $prepare_plugin[$plugin['slug']] = $plugin;
-            } 
+            }
         }
 
 
@@ -229,10 +232,10 @@ class HTRP_Recommended_Plugins {
                                     $plugins_type = 'pro';
                                     $image_url     = $this->plugin_icon( $plugins_type, $plugin['slug'] );
                                     $description    = isset( $plugin['description'] ) ? $plugin['description'] : '';
-                                    $author_name    = esc_html__( 'HasTheme', 'htmega-addons' );
+                                    $author_name    = esc_html__( 'HasTheme', 'ht-mega-for-elementor' );
                                     $author_link    = isset( $plugin['author_link'] ) ? $plugin['author_link'] : '';
                                     $details_link   = isset( $plugin['link'] ) ? $plugin['link'] : '';
-                                    $button_text    = esc_html__('Buy Now', 'htmega-addons' );
+                                    $button_text    = esc_html__('Buy Now', 'ht-mega-for-elementor' );
                                     $button_classes = 'button button-primary';
                                     $target         = '_blank';
                                     $modal_class    = '';
@@ -244,18 +247,18 @@ class HTRP_Recommended_Plugins {
                                     if ( file_exists( WP_PLUGIN_DIR . '/' . $data['location'] ) && is_plugin_inactive( $data['location'] ) ) {
 
                                         $button_classes = 'button activate-now button-primary';
-                                        $button_text    = esc_html__( 'Activate', 'htmega-addons' );
+                                        $button_text    = esc_html__( 'Activate', 'ht-mega-for-elementor' );
 
                                     // Not Installed.
                                     } elseif ( ! file_exists( WP_PLUGIN_DIR . '/' . $data['location'] ) ) {
 
                                         $button_classes = 'button install-now';
-                                        $button_text    = esc_html__( 'Install Now', 'htmega-addons' );
+                                        $button_text    = esc_html__( 'Install Now', 'ht-mega-for-elementor' );
 
                                     // Active.
                                     } else {
                                         $button_classes = 'button disabled';
-                                        $button_text    = esc_html__( 'Activated', 'htmega-addons' );
+                                        $button_text    = esc_html__( 'Activated', 'ht-mega-for-elementor' );
                                     }
 
                                     ?>
@@ -272,7 +275,7 @@ class HTRP_Recommended_Plugins {
                                             <div class="desc column-description" style="margin-right: 0;">
                                                 <p><?php echo esc_html( wp_trim_words( $description, 23, '....') ); ?></p>
                                                 <p class="authors">
-                                                    <cite><?php echo esc_html__( 'By ', 'htmega-addons' ); ?>
+                                                    <cite><?php echo esc_html__( 'By ', 'ht-mega-for-elementor' ); ?>
                                                         <?php if( $plugins_type == 'free' ): ?>
                                                             <?php echo $author_name; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                                                         <?php else: ?>
@@ -286,7 +289,7 @@ class HTRP_Recommended_Plugins {
                                             <div class="column-updated">
                                                 <?php
                                                     if (! file_exists( WP_PLUGIN_DIR . '/' . $data['location'] ) && $plugins_type == 'pro' ) {
-                                                        echo '<a class="button button-primary" href="'.esc_url( $details_link ).'" target="'.esc_attr( $target ).'">'.esc_html__( 'Buy Now', 'htmega-addons' ).'</a>';
+                                                        echo '<a class="button button-primary" href="'.esc_url( $details_link ).'" target="'.esc_attr( $target ).'">'.esc_html__( 'Buy Now', 'ht-mega-for-elementor' ).'</a>';
                                                     }else{
                                                 ?>
                                                     <button class="<?php echo esc_attr( $button_classes ); ?>" data-pluginopt='<?php echo esc_attr(  wp_json_encode( $data ) ); ?>'><?php echo esc_html( $button_text ); ?></button>
@@ -294,12 +297,12 @@ class HTRP_Recommended_Plugins {
                                                 <?php } ?>
                                             </div>
                                             <div class="column-downloaded">
-                                                <a href="<?php echo esc_url( $details_link ) ?>" target="<?php echo esc_attr( $target ) ?>" <?php echo $modal_class; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html__('More Details', 'htmega-addons') ?></a>
+                                                <a href="<?php echo esc_url( $details_link ) ?>" target="<?php echo esc_attr( $target ) ?>" <?php echo $modal_class; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html__('More Details', 'ht-mega-for-elementor') ?></a>
                                                 <span class="downloaded-count">
                                                     <?php
                                                         if( $plugins_type == 'free' ){
                                                             /* translators: %s: Number of installations. */
-                                                            printf( esc_html__( '%s Active Installations', 'htmega-addons' ), $this->active_install_count( $prepare_plugin[$data['slug']]['active_installs'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                                            printf( esc_html__( '%s Active Installations', 'ht-mega-for-elementor' ), $this->active_install_count( $prepare_plugin[$data['slug']]['active_installs'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                                         }
                                                     ?>
                                                 </span>
@@ -373,11 +376,11 @@ class HTRP_Recommended_Plugins {
             $active_installs_millions = floor( $active_installs / 1000000 );
             $active_installs_text     = sprintf(
                 /* translators: %s: Number of millions. */
-                _nx( '%s+ Million', '%s+ Million', $active_installs_millions, 'htmega-addons' ),
+                _nx( '%s+ Million', '%s+ Million', $active_installs_millions, 'active installs count', 'ht-mega-for-elementor' ),
                 number_format_i18n( $active_installs_millions )
             );
         } elseif ( 0 === $active_installs ) {
-            $active_installs_text = _x( 'Less Than 10', 'htmega-addons' );
+            $active_installs_text = _x( 'Less Than 10', 'active installs count', 'ht-mega-for-elementor' );
         } else {
             $active_installs_text = number_format_i18n( $active_installs ) . '+';
         }
@@ -393,16 +396,18 @@ class HTRP_Recommended_Plugins {
 
         check_ajax_referer('htrp_nonce', 'nonce');
 
-        if ( ! current_user_can( 'install_plugins' ) || ! isset( $_POST['location'] ) || ! $_POST['location'] ) {
+        $location = isset( $_POST['location'] ) ? sanitize_text_field( wp_unslash( $_POST['location'] ) ) : '';
+
+        if ( ! current_user_can( 'install_plugins' ) || ! $location ) {
             wp_send_json_error(
                 array(
                     'success' => false,
-                    'message' => esc_html__( 'Plugin Not Found', 'htmega-addons' ),
+                    'message' => esc_html__( 'Plugin Not Found', 'ht-mega-for-elementor' ),
                 )
             );
         }
 
-        $plugin_location = ( isset( $_POST['location'] ) ) ? esc_attr( $_POST['location'] ) : '';
+        $plugin_location = $location;
         $activate    = activate_plugin( $plugin_location, '', false, true );
 
         if ( is_wp_error( $activate ) ) {
@@ -417,7 +422,7 @@ class HTRP_Recommended_Plugins {
         wp_send_json_success(
             array(
                 'success' => true,
-                'message' => esc_html__( 'Plugin Successfully Activated', 'htmega-addons' ),
+                'message' => esc_html__( 'Plugin Successfully Activated', 'ht-mega-for-elementor' ),
             )
         );
 

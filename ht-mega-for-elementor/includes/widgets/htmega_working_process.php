@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Working Process', 'htmega-addons' );
+        return __( 'Working Process', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -36,22 +36,22 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
         $this->start_controls_section(
             'process_content',
             [
-                'label' => __( 'Working Process', 'htmega-addons' ),
+                'label' => __( 'Working Process', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'process_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1' => __( 'Style One', 'htmega-addons' ),
-                        '2' => __( 'Style Two', 'htmega-addons' ),
-                        '3' => __( 'Style Three', 'htmega-addons' ),
-                        '4' => __( 'Style Four', 'htmega-addons' ),
-                        '5' => __( 'Style Five', 'htmega-addons' ),
+                        '1' => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2' => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3' => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4' => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5' => __( 'Style Five', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -59,15 +59,15 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'process_column',
                 [
-                    'label' => __( 'Column', 'htmega-addons' ),
+                    'label' => __( 'Column', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '4',
                     'options' => [
-                        '1' => __( 'Column One', 'htmega-addons' ),
-                        '2' => __( 'Column Two', 'htmega-addons' ),
-                        '3' => __( 'Column Three', 'htmega-addons' ),
-                        '4' => __( 'Column Four', 'htmega-addons' ),
-                        '5' => __( 'Column Five', 'htmega-addons' ),
+                        '1' => __( 'Column One', 'ht-mega-for-elementor' ),
+                        '2' => __( 'Column Two', 'ht-mega-for-elementor' ),
+                        '3' => __( 'Column Three', 'ht-mega-for-elementor' ),
+                        '4' => __( 'Column Four', 'ht-mega-for-elementor' ),
+                        '5' => __( 'Column Five', 'ht-mega-for-elementor' ),
                     ],
                     'condition' =>[
                         'process_style'=> array(  '1','2' ),
@@ -80,16 +80,16 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $repeater->add_control(
                 'process_title',
                 [
-                    'label'   => esc_html__( 'Title', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => esc_html__( 'Process #1', 'htmega-addons' ),
+                    'default' => esc_html__( 'Process #1', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $repeater->add_control(
                 'process_number',
                 [
-                    'label'   => esc_html__( 'Process Number', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Process Number', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                 ]
             );
@@ -97,24 +97,24 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $repeater->add_control(
                 'process_description',
                 [
-                    'label'   => esc_html__( 'Description', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Description', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXTAREA,
-                    'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate.', 'htmega-addons' ),
+                    'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate.', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $repeater->add_control(
                 'process_icon_type',
                 [
-                    'label' => esc_html__('Icon Type','htmega-addons'),
+                    'label' => esc_html__('Icon Type','ht-mega-for-elementor'),
                     'type' =>Controls_Manager::CHOOSE,
                     'options' =>[
                         'img' =>[
-                            'title' =>__('Image','htmega-addons'),
+                            'title' =>__('Image','ht-mega-for-elementor'),
                             'icon' =>'eicon-image-bold',
                         ],
                         'icon' =>[
-                            'title' =>__('Icon','htmega-addons'),
+                            'title' =>__('Icon','ht-mega-for-elementor'),
                             'icon' =>'eicon-info-circle',
                         ]
                     ],
@@ -125,7 +125,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $repeater->add_control(
                 'process_image',
                 [
-                    'label' => __('Image','htmega-addons'),
+                    'label' => __('Image','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::MEDIA,
                     'dynamic' => [
                         'active' => true,
@@ -151,7 +151,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $repeater->add_control(
                 'process_icon',
                 [
-                    'label' =>__('Icon','htmega-addons'),
+                    'label' =>__('Icon','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fa fa-pencil-alt',
@@ -170,16 +170,16 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                     'fields'  => $repeater->get_controls(),
                     'default' => [
                         [
-                            'process_title' => esc_html__( 'Process #1', 'htmega-addons' ),
-                            'process_description' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore','htmega-addons' ),
+                            'process_title' => esc_html__( 'Process #1', 'ht-mega-for-elementor' ),
+                            'process_description' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore','ht-mega-for-elementor' ),
                         ],
                         [
-                            'process_title' => esc_html__( 'Process #2', 'htmega-addons' ),
-                            'process_description' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore.','htmega-addons' ),
+                            'process_title' => esc_html__( 'Process #2', 'ht-mega-for-elementor' ),
+                            'process_description' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore.','ht-mega-for-elementor' ),
                         ],
                         [
-                            'process_title' => esc_html__( 'Process #3', 'htmega-addons' ),
-                            'process_description' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore.','htmega-addons' ),
+                            'process_title' => esc_html__( 'Process #3', 'ht-mega-for-elementor' ),
+                            'process_description' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incid idunt ut labore.','ht-mega-for-elementor' ),
                         ],
                     ],
                     'title_field' => '{{{ process_title }}}',
@@ -192,7 +192,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
         $this->start_controls_section(
             'process_style_section',
             [
-                'label' => __( 'Box Style', 'htmega-addons' ),
+                'label' => __( 'Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -201,7 +201,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'working_area_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-process-area',
                 ]
@@ -210,7 +210,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'working_area_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -223,7 +223,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'working_area_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -236,7 +236,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'vertical_line_color',
                 [
-                    'label' => __( 'Vertical Line Color', 'htmega-addons' ),
+                    'label' => __( 'Vertical Line Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#e51515',
                     'selectors' => [
@@ -250,7 +250,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'vertical_border_width',
                 [
-                    'label' => __( 'Border Width', 'htmega-addons' ),
+                    'label' => __( 'Border Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -271,7 +271,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'vertical_border_hieght',
                 [
-                    'label' => __( 'Arrow Border Height', 'htmega-addons' ),
+                    'label' => __( 'Arrow Border Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -292,7 +292,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'arrow_left_color',
                 [
-                    'label' => __( 'Arrow Left Color', 'htmega-addons' ),
+                    'label' => __( 'Arrow Left Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#e51515',
                     'selectors' => [
@@ -307,7 +307,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'arrow_right_color',
                 [
-                    'label' => __( 'Arrow Right Color', 'htmega-addons' ),
+                    'label' => __( 'Arrow Right Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#e51515',
                     'selectors' => [
@@ -321,7 +321,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'arrow_hover_color',
                 [
-                    'label' => __( 'Arrow Hover Color', 'htmega-addons' ),
+                    'label' => __( 'Arrow Hover Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-process-style-3 .htmega-single-process.process-reverse:hover .icon::before' => 'border-left-color: {{VALUE}};border-right-color: transparent',
@@ -341,7 +341,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
         $this->start_controls_section(
             'process_item_style_section',
             [
-                'label' => __( 'Item style', 'htmega-addons' ),
+                'label' => __( 'Item style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -352,13 +352,13 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->start_controls_tab(
                 'iteam_style_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_responsive_control(
                 'item_width',
                 [
-                    'label' => __( 'Item Width', 'htmega-addons' ),
+                    'label' => __( 'Item Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => '%',
                     'range' => [
@@ -379,7 +379,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'working_item_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-single-process',
                     'separator'=> 'before',
@@ -393,7 +393,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'working_item_4_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-single-process-area',
                     'separator'=> 'before',
@@ -406,7 +406,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'working_item_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -419,7 +419,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'working_item_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -433,7 +433,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'working_item_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-process',
                 ]
             );
@@ -441,7 +441,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'working_item_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-process,{{WRAPPER}} .htmega-process-style-4 .htmega-single-process-area:before' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -452,7 +452,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'item_seperator_style',
                 [
-                    'label' => __( 'Items Seperator Style', 'htmega-addons' ),
+                    'label' => __( 'Items Seperator Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition'=>[
@@ -464,7 +464,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'number_shape_background',
-                    'label' => __( 'Item Number Shape', 'htmega-addons' ),
+                    'label' => __( 'Item Number Shape', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-number::before,{{WRAPPER}} .htmega-process-style-5 .htmega-single-process-area:after',
                     'condition'=>[
@@ -475,7 +475,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'seperator_height',
                 [
-                    'label' => __( 'Seperator Height', 'htmega-addons' ),
+                    'label' => __( 'Seperator Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -500,7 +500,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'seperator_width',
                 [
-                    'label' => __( 'Seperator Width', 'htmega-addons' ),
+                    'label' => __( 'Seperator Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -525,7 +525,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'seperator_position',
                 [
-                    'label' => __( 'Position', 'htmega-addons' ),
+                    'label' => __( 'Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -556,7 +556,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->start_controls_tab(
                 'iteam_style_hover_tab',
                 [
-                    'label' => __( 'Hover', 'htmega-addons' ),
+                    'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'process_style' =>array( '4','5'),
                     ]
@@ -565,7 +565,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 $this->add_responsive_control(
                 'item_width_hover',
                 [
-                    'label' => __( 'Item Width', 'htmega-addons' ),
+                    'label' => __( 'Item Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' =>'%',
                     'range' => [
@@ -588,7 +588,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'working_item_background_hover',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-process-style-5  .htmega-single-process2:before,{{WRAPPER}} .htmega-process-style-4 .htmega-single-process-area:before',
                     'separator'=> 'before',
@@ -600,7 +600,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'hover_all_content_color',
                 [
-                    'label' => __( 'All Content Color', 'htmega-addons' ),
+                    'label' => __( 'All Content Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-process-area:hover .htmega-content h4, {{WRAPPER}} .htmega-single-process-area:hover .htmega-content p,{{WRAPPER}} .htmega-single-process-area:hover .htmega-number span,{{WRAPPER}} .htmega-single-process-area:hover .htmega-single-process .icon i,{{WRAPPER}} .htmega-process-style-4 .htmega-single-process-area:hover .htmega-single-process .htmega-content h4' => 'color: {{VALUE}}',
@@ -621,7 +621,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
         $this->start_controls_section(
             'process_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -629,7 +629,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#555555',
                     'selectors' => [
@@ -640,7 +640,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'title_color_hover',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-process-area .htmega-single-process:hover .htmega-content h4' => 'color: {{VALUE}}',
@@ -655,7 +655,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-content h4',
                     'separator' =>'before',
                 ]
@@ -664,7 +664,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -677,7 +677,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -691,7 +691,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-content h4',
                 ]
             );
@@ -699,7 +699,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'title_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-process-area .htmega-content h4' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -713,7 +713,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
         $this->start_controls_section(
             'process_content_style_section',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -721,7 +721,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#494849',
                     'selectors' => [
@@ -734,7 +734,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'content_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-content p,{{WRAPPER}} .htmega-process-style-5 .htmega-single-process-area:hover .htmega-single-process .htmega-content p',
                     'separator' =>'before',
                 ]
@@ -743,7 +743,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -756,7 +756,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -770,7 +770,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'content_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-content p',
                 ]
             );
@@ -778,7 +778,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'content_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-process-area .htmega-content p' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -792,7 +792,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
         $this->start_controls_section(
             'process_number_style_section',
             [
-                'label' => __( 'Number', 'htmega-addons' ),
+                'label' => __( 'Number', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -803,7 +803,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'number_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-number span',
                 ]
@@ -813,7 +813,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'number_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-number span',
                 ]
             );
@@ -821,7 +821,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'number_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#5a5a5a',
                     'selectors' => [
@@ -834,7 +834,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'number_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-number span',
                     'separator' =>'before',
                 ]
@@ -843,7 +843,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'number_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -856,7 +856,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'number_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -870,7 +870,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'number_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-number span',
                 ]
             );
@@ -878,7 +878,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'number_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-process-area .htmega-number span' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -888,7 +888,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'number_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -905,7 +905,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'number_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -925,7 +925,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
         $this->start_controls_section(
             'process_icon_style_section',
             [
-                'label' => __( 'Icon', 'htmega-addons' ),
+                'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -936,13 +936,13 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->start_controls_tab(
                 'icon_style_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_control(
                 'icon_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#555555',
                     'selectors' => [
@@ -956,7 +956,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'icon_font_size',
                 [
-                    'label' => __( 'Font Size', 'htmega-addons' ),
+                    'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -985,7 +985,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'icon_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-single-process .icon,{{WRAPPER}} .htmega-process-style-4 .htmega-single-process .icon img',
                 ]
             );
@@ -993,7 +993,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_responsive_control(
                 'icon_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-process-area .htmega-single-process .icon,{{WRAPPER}} .htmega-process-style-4 .htmega-single-process .icon img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1005,7 +1005,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'icon_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-single-process .icon',
                 ]
@@ -1013,7 +1013,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'icon_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1033,7 +1033,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->add_control(
                 'icon_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1054,7 +1054,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'icon_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-process-area .htmega-single-process .icon',
                 ]
             );
@@ -1065,13 +1065,13 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             $this->start_controls_tab(
                 'icon_style_hover_tab',
                 [
-                    'label' => __( 'Hover', 'htmega-addons' ),
+                    'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                 ]
             );
                 $this->add_control(
                     'icon_color_hover',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-process-area .htmega-single-process:hover .icon' => 'color: {{VALUE}}',
@@ -1084,7 +1084,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'icon_background_hover',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => __( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .htmega-process-area .htmega-single-process:hover .icon',
                     ]
@@ -1093,7 +1093,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'icon_border_hover',
-                        'label' => __( 'Border', 'htmega-addons' ),
+                        'label' => __( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-process-area .htmega-single-process:hover .icon',
                     ]
                 );
@@ -1104,14 +1104,14 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
         $this->start_controls_section(
             'process_image_style_section',
             [
-                'label' => __( 'Image', 'htmega-addons' ),
+                'label' => __( 'Image', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'process_image_width',
             [
-                'label' => __( 'Width', 'htmega-addons' ),
+                'label' => __( 'Width', 'ht-mega-for-elementor' ),
                 'type'  => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1133,14 +1133,14 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'process_image_border',
-                'label' => __( 'Border', 'htmega-addons' ),
+                'label' => __( 'Border', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htmega-single-process .icon img',
             ]
         );
         $this->add_responsive_control(
             'process_image_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -1152,7 +1152,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'process_image_box_shadow',
-                'label' => __( 'Box Shadow', 'htmega-addons' ),
+                'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htmega-single-process .icon img',
             ]
         );
@@ -1176,6 +1176,7 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
 
         $active_process_class = '';
         ?>
+        <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
         <div <?php echo $this->get_render_attribute_string( 'htmega_process_attr' ); ?>>
 
             <?php 
@@ -1195,14 +1196,16 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                     <div class="htmega-single-process <?php echo esc_attr( $active_process_class ); if( $i%2 == 0 ){ echo esc_attr( 'process-reverse' ); }?>">
                         <?php
                             if( $item['process_icon_type'] == 'img' && !empty( $item['process_image']['url'] ) ) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Group_Control_Image_Size::get_attachment_image_html() is Elementor core, already escaped.
                                 echo '<div class="icon">'.Group_Control_Image_Size::get_attachment_image_html( $item, 'process_imagesize', 'process_image' ).'</div>';
                             }else{
                                 if( $item['process_icon_type'] == 'icon' && !empty( $item['process_icon']['value'] ) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() wraps Elementor core Icons_Manager::render_icon(), already escaped.
                                     echo '<div class="icon">'.HTMega_Icon_manager::render_icon( $item['process_icon'], [ 'aria-hidden' => 'true' ] ).'</div>';
                                 }
                             }
                         ?>
-                        <?php 
+                        <?php
                             if( !empty( $item['process_number'] ) ){
                                 echo '<div class="htmega-number"><span>'.esc_html( $item['process_number'] ).'</span></div>';
                             }
@@ -1210,22 +1213,25 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                         <div class="htmega-content">
                             <?php
                                 if( !empty( $item['process_title'] ) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                     echo '<h4>'.htmega_kses_title( $item['process_title'] ).'</h4>';
                                 }
                             ?>
                         </div>
-                    </div>  
+                    </div>
                     <div class="htmega-single-process htmega-single-process2 <?php echo esc_attr( $active_process_class ); if( $i%2 == 0 ){ echo esc_attr( 'process-reverse' ); } ?>">
                         <?php
                             if( $item['process_icon_type'] == 'img' && !empty( $item['process_image']['url'] ) ) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Group_Control_Image_Size::get_attachment_image_html() is Elementor core, already escaped.
                                 echo '<div class="icon">'.Group_Control_Image_Size::get_attachment_image_html( $item, 'process_imagesize', 'process_image' ).'</div>';
                             }else{
                                 if( $item['process_icon_type'] == 'icon' && !empty( $item['process_icon']['value'] ) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() wraps Elementor core Icons_Manager::render_icon(), already escaped.
                                     echo '<div class="icon">'.HTMega_Icon_manager::render_icon( $item['process_icon'], [ 'aria-hidden' => 'true' ] ).'</div>';
                                 }
                             }
                         ?>
-                        <?php 
+                        <?php
                             if( !empty( $item['process_number'] ) ){
                                 echo '<div class="htmega-number"><span>'.esc_html( $item['process_number'] ).'</span></div>';
                             }
@@ -1233,27 +1239,31 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                         <div class="htmega-content">
                             <?php
                                 if( !empty( $item['process_title'] ) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                     echo '<h4>'.htmega_kses_title( $item['process_title'] ).'</h4>';
                                 }
                                 if( !empty( $item['process_description'] ) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php.
                                     echo '<p>'.htmega_kses_desc( $item['process_description'] ).'</p>';
                                 }
                             ?>
                         </div>
-                    </div>                      
+                    </div>
                     <?php }else{ ?>
 
                         <div class="htmega-single-process <?php echo esc_attr( $active_process_class ); if( $i%2 == 0 ){ echo esc_attr( 'process-reverse' ); }?>">
                         <?php
                             if( $item['process_icon_type'] == 'img' && !empty( $item['process_image']['url'] ) ) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Group_Control_Image_Size::get_attachment_image_html() is Elementor core, already escaped.
                                 echo '<div class="icon">'.Group_Control_Image_Size::get_attachment_image_html( $item, 'process_imagesize', 'process_image' ).'</div>';
                             }else{
                                 if( $item['process_icon_type'] == 'icon' && !empty( $item['process_icon']['value'] ) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() wraps Elementor core Icons_Manager::render_icon(), already escaped.
                                     echo '<div class="icon">'.HTMega_Icon_manager::render_icon( $item['process_icon'], [ 'aria-hidden' => 'true' ] ).'</div>';
                                 }
                             }
                         ?>
-                        <?php 
+                        <?php
                             if( !empty( $item['process_number'] ) ){
                                 echo '<div class="htmega-number"><span>'.esc_html( $item['process_number'] ).'</span></div>';
                             }
@@ -1261,14 +1271,16 @@ class HTMega_Elementor_Widget_Working_Process extends Widget_Base {
                         <div class="htmega-content">
                             <?php
                                 if( !empty( $item['process_title'] ) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                     echo '<h4>'.htmega_kses_title( $item['process_title'] ).'</h4>';
                                 }
                                 if( !empty( $item['process_description'] ) ){
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php.
                                     echo '<p>'.htmega_kses_desc( $item['process_description'] ).'</p>';
                                 }
                             ?>
                         </div>
-                    </div>  
+                    </div>
                     <?php } ?>
 
                 </div>

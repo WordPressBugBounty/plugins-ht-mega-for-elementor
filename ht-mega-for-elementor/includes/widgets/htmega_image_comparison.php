@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Image Comparison', 'htmega-addons' );
+        return __( 'Image Comparison', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -48,14 +48,14 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'image_comparison_content',
             [
-                'label' => __( 'Image Comparison', 'htmega-addons' ),
+                'label' => __( 'Image Comparison', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'before_image',
                 [
-                    'label' => __( 'Before Image', 'htmega-addons' ),
+                    'label' => __( 'Before Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -78,7 +78,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_control(
                 'after_image',
                 [
-                    'label' => __( 'After Image', 'htmega-addons' ),
+                    'label' => __( 'After Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -104,7 +104,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'image_comparsion_style_section',
             [
-                'label' => __( 'Box Style', 'htmega-addons' ),
+                'label' => __( 'Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -113,7 +113,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'image_comparsion_box_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-imagecomparison .beer-slider',
                 ]
@@ -122,7 +122,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_responsive_control(
                 'image_comparsion_box_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -136,7 +136,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'image_comparsion_box_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-imagecomparison .beer-slider',
                 ]
             );
@@ -144,7 +144,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_responsive_control(
                 'image_comparsion_box_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-imagecomparison .beer-slider' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -158,32 +158,32 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'image_comparison_addition',
             [
-                'label' => __( 'Additional Setting', 'htmega-addons' ),
+                'label' => __( 'Additional Setting', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'before_title',
                 [
-                    'label' => __( 'Before Title', 'htmega-addons' ),
+                    'label' => __( 'Before Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder'=>__('Before','htmega-addons'),
+                    'placeholder'=>__('Before','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'after_title',
                 [
-                    'label' => __( 'After Title', 'htmega-addons' ),
+                    'label' => __( 'After Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder'=>__('After','htmega-addons'),
+                    'placeholder'=>__('After','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'start_amount',
                 [
-                    'label' => __( 'Before Start Amount', 'htmega-addons' ),
+                    'label' => __( 'Before Start Amount', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 25,
                 ]
@@ -192,13 +192,13 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_control(
                 'imagecomparison_laben_pos',
                 [
-                    'label' => __( 'Level Position', 'htmega-addons' ),
+                    'label' => __( 'Level Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'top',
                     'options' => [
-                        'top'      => __( 'Top', 'htmega-addons' ),
-                        'center'   => __( 'Center', 'htmega-addons' ),
-                        'bottom'   => __( 'Bottom', 'htmega-addons' ),
+                        'top'      => __( 'Top', 'ht-mega-for-elementor' ),
+                        'center'   => __( 'Center', 'ht-mega-for-elementor' ),
+                        'bottom'   => __( 'Bottom', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -206,7 +206,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_control(
                 'imagecomparison_laben_postionig',
                 [
-                    'label' => __( 'Positioning Lebel', 'htmega-addons' ),
+                    'label' => __( 'Positioning Lebel', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -239,7 +239,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'before_label_style_section',
             [
-                'label' => __( 'Before Title', 'htmega-addons' ),
+                'label' => __( 'Before Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'before_title!'=>'',
@@ -250,7 +250,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_control(
                 'before_title_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'#212529',
                     'selectors' => [
@@ -264,7 +264,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'before_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .beer-slider[data-beer-label]::after',
                     'separator' => 'before',
                 ]
@@ -274,7 +274,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'before_title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .beer-slider[data-beer-label]::after',
                 ]
             );
@@ -282,7 +282,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_responsive_control(
                 'before_title_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .beer-slider[data-beer-label]::after' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -295,7 +295,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'before_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .beer-slider[data-beer-label]::after',
                 ]
@@ -304,7 +304,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_responsive_control(
                 'before_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -320,7 +320,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'after_label_style_section',
             [
-                'label' => __( 'After Title', 'htmega-addons' ),
+                'label' => __( 'After Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'after_title!'=>'',
@@ -331,7 +331,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_control(
                 'after_title_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'#212529',
                     'selectors' => [
@@ -345,7 +345,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'after_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .beer-reveal[data-beer-label]::after',
                     'separator' => 'before',
                 ]
@@ -355,7 +355,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'after_title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .beer-reveal[data-beer-label]::after',
                 ]
             );
@@ -363,7 +363,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_responsive_control(
                 'after_title_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .beer-reveal[data-beer-label]::after' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -376,7 +376,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'after_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .beer-reveal[data-beer-label]::after',
                 ]
@@ -385,7 +385,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_responsive_control(
                 'after_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -401,7 +401,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'reveal_style_section',
             [
-                'label' => __( 'Reveal', 'htmega-addons' ),
+                'label' => __( 'Reveal', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -410,7 +410,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'reveal_border',
-                'label' => __( 'Border', 'htmega-addons' ),
+                'label' => __( 'Border', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htmega-imagecomparison .beer-reveal',
             ]
         );
@@ -422,7 +422,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'handler_style_section',
             [
-                'label' => __( 'Handler', 'htmega-addons' ),
+                'label' => __( 'Handler', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -430,7 +430,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_control(
                 'handler_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'#000000',
                     'selectors' => [
@@ -444,7 +444,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'handler_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .beer-handle',
                 ]
             );
@@ -452,7 +452,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_responsive_control(
                 'handler_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .beer-handle' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -465,7 +465,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'handler_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .beer-handle',
                 ]
@@ -474,7 +474,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_control(
                 'handler_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -497,7 +497,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
             $this->add_control(
                 'handler_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -523,7 +523,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'image_before_style_section',
             [
-                'label' => __( 'Image Before', 'htmega-addons' ),
+                'label' => __( 'Image Before', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -531,7 +531,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'image_before_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .beer-slider::before',
                 ]
@@ -543,7 +543,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         $this->start_controls_section(
             'image_after_style_section',
             [
-                'label' => __( 'Image After', 'htmega-addons' ),
+                'label' => __( 'Image After', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -551,7 +551,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'image_after_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .beer-reveal::before',
                 ]
@@ -561,7 +561,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'image_after_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .beer-reveal',
                 ]
             );
@@ -589,9 +589,9 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
         }
        
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_image_comparison' ); ?> >
+            <div <?php echo $this->get_render_attribute_string( 'htmega_image_comparison' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
 
-                <div <?php echo $this->get_render_attribute_string( 'image_comparison_before_attr' ); ?> >
+                <div <?php echo $this->get_render_attribute_string( 'image_comparison_before_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                     <?php
                         $image1 = wp_get_attachment_image_url( $settings['before_image']['id'], $settings['before_image_size_size'] );
                         if ( ! $image1 ) {
@@ -600,7 +600,7 @@ class HTMega_Elementor_Widget_Image_Comparison extends Widget_Base {
                         ?>
                         <img src="<?php echo esc_url( $image1 ); ?>" class="no-lazy-htmega" alt="<?php echo isset($settings['before_image']['alt'] ) ? esc_attr( $settings['before_image']['alt']) : ""; ?>">
                         
-                    <div <?php echo $this->get_render_attribute_string( 'image_comparison_after_attr' ); ?> >
+                    <div <?php echo $this->get_render_attribute_string( 'image_comparison_after_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                         <?php
 
                         $image2 = wp_get_attachment_image_url( $settings['after_image']['id'], $settings['after_image_size_size']);

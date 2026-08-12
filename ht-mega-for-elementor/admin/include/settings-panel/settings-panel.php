@@ -88,7 +88,7 @@ final class HTMegaOpt_Base{
      * @param  string|bool $value
      * @return type
      */
-    private function define( $name, $value ) {
+    private function define( $name, $value ) { // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.VariableConstantNameFound -- $name is a private helper's parameter; every call site passes an already-prefixed literal (e.g. 'HTMEGAOPT_URL'), PHPCS can't trace that through the function boundary.
         if ( ! defined( $name ) ) {
             define( $name, $value );
         }

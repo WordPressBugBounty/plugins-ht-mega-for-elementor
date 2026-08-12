@@ -88,18 +88,18 @@ class HTMega_Theme_Builder {
      */
     public function register_post_type() {
         $labels = [
-            'name' => __('HT Mega Templates', 'htmega-addons'),
-            'singular_name' => __('Template', 'htmega-addons'),
-            'add_new' => __('Add New', 'htmega-addons'),
-            'add_new_item' => __('Add New Template', 'htmega-addons'),
-            'edit_item' => __('Edit Template', 'htmega-addons'),
-            'new_item' => __('New Template', 'htmega-addons'),
-            'all_items' => __('All Templates', 'htmega-addons'),
-            'view_item' => __('View Template', 'htmega-addons'),
-            'search_items' => __('Search Templates', 'htmega-addons'),
-            'not_found' => __('No templates found', 'htmega-addons'),
-            'not_found_in_trash' => __('No templates found in trash', 'htmega-addons'),
-            'menu_name' => __('Templates', 'htmega-addons'),
+            'name' => __('HT Mega Templates', 'ht-mega-for-elementor'),
+            'singular_name' => __('Template', 'ht-mega-for-elementor'),
+            'add_new' => __('Add New', 'ht-mega-for-elementor'),
+            'add_new_item' => __('Add New Template', 'ht-mega-for-elementor'),
+            'edit_item' => __('Edit Template', 'ht-mega-for-elementor'),
+            'new_item' => __('New Template', 'ht-mega-for-elementor'),
+            'all_items' => __('All Templates', 'ht-mega-for-elementor'),
+            'view_item' => __('View Template', 'ht-mega-for-elementor'),
+            'search_items' => __('Search Templates', 'ht-mega-for-elementor'),
+            'not_found' => __('No templates found', 'ht-mega-for-elementor'),
+            'not_found_in_trash' => __('No templates found in trash', 'ht-mega-for-elementor'),
+            'menu_name' => __('Templates', 'ht-mega-for-elementor'),
         ];
 
         $args = [
@@ -124,13 +124,13 @@ class HTMega_Theme_Builder {
      */
     public function initialize_template_types() {
         $this->template_types = [
-            'header_page' => __('Header', 'htmega-addons'),
-            'footer_page' => __('Footer', 'htmega-addons'),
-            'single_blog_page' => __('Single', 'htmega-addons'),
-            'archive_blog_page' => __('Blog', 'htmega-addons'),
-            'search_page' => __('Search', 'htmega-addons'),
-            'error_page' => __('404', 'htmega-addons'),
-            'coming_soon_page' => __('Coming Soon', 'htmega-addons')
+            'header_page' => __('Header', 'ht-mega-for-elementor'),
+            'footer_page' => __('Footer', 'ht-mega-for-elementor'),
+            'single_blog_page' => __('Single', 'ht-mega-for-elementor'),
+            'archive_blog_page' => __('Blog', 'ht-mega-for-elementor'),
+            'search_page' => __('Search', 'ht-mega-for-elementor'),
+            'error_page' => __('404', 'ht-mega-for-elementor'),
+            'coming_soon_page' => __('Coming Soon', 'ht-mega-for-elementor')
         ];
     }
 
@@ -140,8 +140,8 @@ class HTMega_Theme_Builder {
     public function add_submenu() {
         add_submenu_page(
             'htmega-addons',
-            __('Theme Builder', 'htmega-addons'),
-            __('Theme Builder', 'htmega-addons'),
+            __('Theme Builder', 'ht-mega-for-elementor'),
+            __('Theme Builder', 'ht-mega-for-elementor'),
             'manage_options',
             'edit.php?post_type=' . self::CPT
         );
@@ -167,10 +167,12 @@ class HTMega_Theme_Builder {
             return;
         }
 
+        // phpcs:disable WordPress.Security.NonceVerification.Recommended -- read-only: only narrows the admin list-table query (pre_get_posts) to filter which existing templates are displayed; no data is written. Page itself requires edit_posts capability for this CPT.
         if (!empty($_GET['template_type'])) {
             $query->set('meta_key', '_htmega_template_type');
-            $query->set('meta_value', sanitize_text_field($_GET['template_type']));
+            $query->set('meta_value', sanitize_text_field(wp_unslash($_GET['template_type'])));
         }
+        // phpcs:enable WordPress.Security.NonceVerification.Recommended
     }
 
     /**
@@ -192,8 +194,8 @@ class HTMega_Theme_Builder {
         $date_column = $columns['date'];
         unset($columns['date']);
 
-        $columns['setdefault'] 	= esc_html__('Default', 'htmega-addons');
-        $columns['type'] = __('Type', 'htmega-addons');
+        $columns['setdefault'] 	= esc_html__('Default', 'ht-mega-for-elementor');
+        $columns['type'] = __('Type', 'ht-mega-for-elementor');
         $columns['date'] = $date_column;
 
         return $columns;
@@ -221,7 +223,7 @@ class HTMega_Theme_Builder {
            $value = $this->get_default_template_id($type);
             
             $checked = checked($value, $post_id, false);
-            echo '<label class="htmega-default-tmp-status-switch" id="htmega-default-tmp-status-'.esc_attr( $type ).'-'.esc_attr( $post_id ).'"><input class="htmega-status-'.esc_attr( $type ).'" id="htmega-default-tmp-status-'.esc_attr( $type ).'-'.esc_attr( $post_id ).'" type="checkbox" value="'.esc_attr( $post_id ).'" '.$checked.'/><span><span>'.esc_html__('NO','htmega').'</span><span>'.esc_html__('YES','htmega').'</span></span><a>&nbsp;</a></label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo '<label class="htmega-default-tmp-status-switch" id="htmega-default-tmp-status-'.esc_attr( $type ).'-'.esc_attr( $post_id ).'"><input class="htmega-status-'.esc_attr( $type ).'" id="htmega-default-tmp-status-'.esc_attr( $type ).'-'.esc_attr( $post_id ).'" type="checkbox" value="'.esc_attr( $post_id ).'" '.$checked.'/><span><span>'.esc_html__('NO','ht-mega-for-elementor').'</span><span>'.esc_html__('YES','ht-mega-for-elementor').'</span></span><a>&nbsp;</a></label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
     }
 
@@ -245,25 +247,26 @@ class HTMega_Theme_Builder {
      * Admin print tabs
      */
     public function admin_print_tabs($views) {
-        $current_type = isset($_GET['template_type']) ? $_GET['template_type'] : '';
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only: value is only used to decide which nav-tab is marked active and to compare against known template-type keys; no data is written. Page itself requires edit_posts capability for this CPT.
+        $current_type = isset($_GET['template_type']) ? sanitize_text_field(wp_unslash($_GET['template_type'])) : '';
         ?>
         <div id="htmega-template-tabs-wrapper" class="nav-tab-wrapper">
             <div class="htmega-menu-area">
-                <a class="nav-tab <?php echo !$current_type ? 'nav-tab-active' : ''; ?>" 
-                    href="<?php echo admin_url(self::TAB_BASE); ?>">
-                        <?php _e('All', 'htmega-addons'); ?>
+                <a class="nav-tab <?php echo !$current_type ? 'nav-tab-active' : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- constrained to hardcoded literal 'nav-tab-active' or '' ?>"
+                    href="<?php echo esc_url( admin_url(self::TAB_BASE) ); ?>">
+                        <?php esc_html_e('All', 'ht-mega-for-elementor'); ?>
                     </a>
                     <?php foreach ($this->template_types as $type => $label) : 
                     $active = ($current_type === $type) ? 'nav-tab-active' : '';
                     $url = admin_url(self::TAB_BASE . '&template_type=' . $type);
                     $is_pro = in_array($type, $this->pro_template_types);
                     ?>
-                    <a class="nav-tab <?php echo $active; ?> <?php echo $is_pro ? 'htmega-pro-tab' : ''; ?>" 
+                    <a class="nav-tab <?php echo $active; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- constrained to hardcoded literal 'nav-tab-active' or '' ?> <?php echo $is_pro ? 'htmega-pro-tab' : ''; ?>"
                        href="<?php echo $is_pro ? '#' : esc_url($url); ?>"
                        <?php echo $is_pro ? 'data-template-type="' . esc_attr($type) . '"' : ''; ?>>
                         <?php echo esc_html($label); ?>
                         <?php if ($is_pro) : ?>
-                            <span class="htmega-pro-badge"><?php _e('Pro', 'htmega-addons'); ?></span>
+                            <span class="htmega-pro-badge"><?php esc_html_e('Pro', 'ht-mega-for-elementor'); ?></span>
                         <?php endif; ?>
                     </a>
                 <?php endforeach; ?>
@@ -272,7 +275,7 @@ class HTMega_Theme_Builder {
             <div class="htmega-template-importer">
                 <button class="button button-primary" id="htmega-import-template-trigger">
                     <span class="dashicons dashicons-download"></span>
-                    <span class="htmega-template-importer-btn-text"><?php esc_html_e('Import Previously Assigned Templates', 'htmega-addons'); ?></span>
+                    <span class="htmega-template-importer-btn-text"><?php esc_html_e('Import Previously Assigned Templates', 'ht-mega-for-elementor'); ?></span>
                 </button>
             </div>
         </div>
@@ -288,15 +291,21 @@ class HTMega_Theme_Builder {
             return;
         }
 
-        if (empty($_GET['template_type']) || !isset($this->template_types[$_GET['template_type']])) {
-            wp_die(__('Template type not found.', 'htmega-addons'));
+        // Genuine state change (creates a new template post) reachable via a plain GET admin_action hook.
+        // No part of this plugin currently links to this action, so this nonce check adds CSRF protection
+        // with no impact on any existing flow; any caller must now append a valid `_wpnonce` (see wp_nonce_url()).
+        check_admin_referer( 'htmega_new_template_action' );
+
+        $template_type = isset( $_GET['template_type'] ) ? sanitize_text_field( wp_unslash( $_GET['template_type'] ) ) : '';
+
+        if ( '' === $template_type || ! isset( $this->template_types[ $template_type ] ) ) {
+            wp_die( esc_html__( 'Template type not found.', 'ht-mega-for-elementor' ) );
         }
 
-        $template_type = sanitize_text_field($_GET['template_type']);
-        $template_title = isset($_GET['template_title']) ? sanitize_text_field($_GET['template_title']) : '';
+        $template_title = isset($_GET['template_title']) ? sanitize_text_field( wp_unslash( $_GET['template_title'] ) ) : '';
 
         if (empty($template_title)) {
-            $template_title = ucwords($template_type) . ' ' . __('Template', 'htmega-addons');
+            $template_title = ucwords($template_type) . ' ' . __('Template', 'ht-mega-for-elementor');
         }
 
         $template_data = [
@@ -322,7 +331,7 @@ class HTMega_Theme_Builder {
                 admin_url('post.php')
             );
 
-            wp_redirect($edit_url);
+            wp_safe_redirect($edit_url);
             exit;
         }
     }
@@ -342,8 +351,8 @@ class HTMega_Theme_Builder {
                     '<a href="%s" class="submitdelete" aria-label="%s">%s</a>',
                     get_delete_post_link($post->ID),
                     /* translators: %s: post title */
-                    esc_attr(sprintf(__('Move &#8220;%s&#8221; to the Trash'), $post->post_title)),
-                    _x('Trash', 'verb')
+                    esc_attr(sprintf(__('Move &#8220;%s&#8221; to the Trash', 'ht-mega-for-elementor'), $post->post_title)),
+                    _x('Trash', 'verb', 'ht-mega-for-elementor')
                 );
             }
         }
@@ -355,7 +364,7 @@ class HTMega_Theme_Builder {
      * Register bulk actions
      */
     public function register_bulk_actions($bulk_actions) {
-        $bulk_actions['trash'] = __('Move to Trash', 'htmega-addons');
+        $bulk_actions['trash'] = __('Move to Trash', 'ht-mega-for-elementor');
         return $bulk_actions;
     }
     
@@ -398,22 +407,22 @@ class HTMega_Theme_Builder {
         check_ajax_referer('htmega_template_builder_nonce', 'nonce');
 
         if (!current_user_can('manage_options')) {
-            wp_send_json_error(__('Permission denied', 'htmega-addons'));
+            wp_send_json_error(__('Permission denied', 'ht-mega-for-elementor'));
             return;
         }
 
-        $template_type = isset($_POST['template_type']) ? sanitize_text_field($_POST['template_type']) : '';
-        $template_name = isset($_POST['template_name']) ? sanitize_text_field($_POST['template_name']) : '';
-        $set_as_default = isset($_POST['set_as_default']) ? filter_var($_POST['set_as_default'], FILTER_VALIDATE_BOOLEAN) : false;
+        $template_type = isset($_POST['template_type']) ? sanitize_text_field( wp_unslash( $_POST['template_type'] ) ) : '';
+        $template_name = isset($_POST['template_name']) ? sanitize_text_field( wp_unslash( $_POST['template_name'] ) ) : '';
+        $set_as_default = isset($_POST['set_as_default']) ? filter_var( wp_unslash( $_POST['set_as_default'] ), FILTER_VALIDATE_BOOLEAN ) : false;
         $selected_template = isset($_POST['selected_template']) ? sanitize_text_field(wp_unslash($_POST['selected_template'])) : '';
 
         if (!$template_type || !isset($this->template_types[$template_type])) {
-            wp_send_json_error(__('Invalid template type', 'htmega-addons'));
+            wp_send_json_error(__('Invalid template type', 'ht-mega-for-elementor'));
             return;
         }
 
         if (!$template_name) {
-            wp_send_json_error(__('Template name is required', 'htmega-addons'));
+            wp_send_json_error(__('Template name is required', 'ht-mega-for-elementor'));
             return;
         }
 
@@ -501,20 +510,20 @@ class HTMega_Theme_Builder {
     public function manage_template_status() {
         // Verify nonce
         if (!check_ajax_referer('htmega_template_builder_nonce', 'nonce', false)) {
-            wp_send_json_error(__('Invalid nonce', 'htmega-addons'));
+            wp_send_json_error(__('Invalid nonce', 'ht-mega-for-elementor'));
             return;
         }
 
         if (!current_user_can('manage_options')) {
-            wp_send_json_error(__('You do not have permission to perform this action', 'htmega-addons'));
+            wp_send_json_error(__('You do not have permission to perform this action', 'ht-mega-for-elementor'));
             return;
         }
 
-        $template_id = sanitize_text_field($_POST['template_id']);
-        $type = sanitize_text_field($_POST['type']);
+        $template_id = isset( $_POST['template_id'] ) ? sanitize_text_field( wp_unslash( $_POST['template_id'] ) ) : '';
+        $type         = isset( $_POST['type'] ) ? sanitize_text_field( wp_unslash( $_POST['type'] ) ) : '';
 
         if (!isset($this->template_types[$type])) {
-            wp_send_json_error(__('Invalid template type', 'htmega-addons'));
+            wp_send_json_error(__('Invalid template type', 'ht-mega-for-elementor'));
             return;
         }
 
@@ -525,13 +534,13 @@ class HTMega_Theme_Builder {
             htmega_update_module_option('htmega_themebuilder_module_settings','themebuilder', 'themebuilder_enable', 'on');  
             htmega_update_module_option('htmega_themebuilder_module_settings','themebuilder', $type, $template_id);          
             wp_send_json_success(array(
-                'message' => __('Default template updated', 'htmega-addons')
+                'message' => __('Default template updated', 'ht-mega-for-elementor')
             ));
         } else {
             htmega_update_module_option('htmega_themebuilder_module_settings','themebuilder', 'themebuilder_enable', 'on');  
             htmega_update_module_option('htmega_themebuilder_module_settings','themebuilder',$type, '0');
             wp_send_json_success(array(
-                'message' => __('Default template removed', 'htmega-addons'),
+                'message' => __('Default template removed', 'ht-mega-for-elementor'),
                 'templates' => array()
             ));
         }
@@ -545,14 +554,14 @@ class HTMega_Theme_Builder {
             
             if ( !current_user_can('manage_options') ) {
                 wp_send_json_error(array(
-                    'message' => __('You are unauthorized to import templates!', 'htmega-addons')
+                    'message' => __('You are unauthorized to import templates!', 'ht-mega-for-elementor')
                 ));
                 return;
             }
             
             if ( !check_ajax_referer('htmega_template_builder_nonce', 'nonce', false) ) {
                 wp_send_json_error(array(
-                    'message' => __('Nonce verification failed!', 'htmega-addons')
+                    'message' => __('Nonce verification failed!', 'ht-mega-for-elementor')
                 ));
                 return;
             }
@@ -572,7 +581,7 @@ class HTMega_Theme_Builder {
                             'post_type' => ['elementor_library', self::CPT],
                             'post_status' => 'any'
                         ]);
-                        wp_reset_query();
+                        wp_reset_postdata();
 
                         if ($template_query->have_posts()) {
                             $template = $template_query->posts[0];
@@ -601,13 +610,13 @@ class HTMega_Theme_Builder {
             }
 
             wp_send_json_success([
-                'message' => __('Templates have been imported successfully', 'htmega-addons'),
+                'message' => __('Templates have been imported successfully', 'ht-mega-for-elementor'),
                 'templates' => $imported_templates
             ]);
 
         } else {
             wp_send_json_error([
-                'message' => __('Something went wrong!', 'htmega-addons')
+                'message' => __('Something went wrong!', 'ht-mega-for-elementor')
             ]);
             return;
         }
@@ -619,20 +628,20 @@ class HTMega_Theme_Builder {
     public function ajax_trash_templates() {
         // Verify nonce
         if (!check_ajax_referer('htmega_template_builder_nonce', 'nonce', false)) {
-            wp_send_json_error(__('Invalid nonce', 'htmega-addons'));
+            wp_send_json_error(__('Invalid nonce', 'ht-mega-for-elementor'));
             return;
         }
 
         // Check administrator capability
         if (!current_user_can('manage_options')) {
-            wp_send_json_error(__('Permission denied', 'htmega-addons'));
+            wp_send_json_error(__('Permission denied', 'ht-mega-for-elementor'));
             return;
         }
 
         // Get template IDs
         $template_ids = isset($_POST['template_ids']) ? array_map('intval', $_POST['template_ids']) : [];
         if (empty($template_ids)) {
-            wp_send_json_error(__('No templates selected', 'htmega-addons'));
+            wp_send_json_error(__('No templates selected', 'ht-mega-for-elementor'));
             return;
         }
 
@@ -659,12 +668,13 @@ class HTMega_Theme_Builder {
         if ($trashed > 0) {
             wp_send_json_success([
                 'message' => sprintf(
-                    _n('%s template moved to trash.', '%s templates moved to trash.', $trashed, 'htmega-addons'),
+                    /* translators: %s: number of templates moved to trash */
+                    _n('%s template moved to trash.', '%s templates moved to trash.', $trashed, 'ht-mega-for-elementor'),
                     number_format_i18n($trashed)
                 )
             ]);
         } else {
-            wp_send_json_error(__('Failed to move templates to trash', 'htmega-addons'));
+            wp_send_json_error(__('Failed to move templates to trash', 'ht-mega-for-elementor'));
             return;
         }
     }
@@ -681,12 +691,12 @@ class HTMega_Theme_Builder {
                     <span class="htmega-modal-icon">!</span>
                 </div>
                 <div class="htmega-modal-body">
-                    <h3><?php esc_html_e('Are you sure?', 'htmega-addons'); ?></h3>
-                    <p><?php esc_html_e('It will import those templates that were created from the "Templates" menu of Elementor and assigned to corresponding pages.', 'htmega-addons'); ?></p>
+                    <h3><?php esc_html_e('Are you sure?', 'ht-mega-for-elementor'); ?></h3>
+                    <p><?php esc_html_e('It will import those templates that were created from the "Templates" menu of Elementor and assigned to corresponding pages.', 'ht-mega-for-elementor'); ?></p>
                 </div>
                 <div class="htmega-modal-footer">
-                    <button class="button button-primary htmega-modal-confirm"><?php esc_html_e('Yes', 'htmega-addons'); ?></button>
-                    <button class="button htmega-modal-cancel"><?php esc_html_e('Cancel', 'htmega-addons'); ?></button>
+                    <button class="button button-primary htmega-modal-confirm"><?php esc_html_e('Yes', 'ht-mega-for-elementor'); ?></button>
+                    <button class="button htmega-modal-cancel"><?php esc_html_e('Cancel', 'ht-mega-for-elementor'); ?></button>
                 </div>
             </div>
         </div>
@@ -716,12 +726,12 @@ class HTMega_Theme_Builder {
             'templateTypes' => $this->template_types,
             'templatesInfo' => isset( $templates_info['templates'] ) ? $templates_info['templates'] : [],
             'i18n' => [
-                'addNewTemplate' => __('Add New Template', 'htmega-addons'),
-                'selectTemplateType' => __('Select Template Type', 'htmega-addons'),
-                'enterName' => __('Enter Template Name', 'htmega-addons'),
-                'createTemplate' => __('Create Template', 'htmega-addons'),
-                'confirmDelete' => __('Are you sure you want to delete this template?', 'htmega-addons'),
-                'noTemplatesSelected' => __('No templates selected.', 'htmega-addons')
+                'addNewTemplate' => __('Add New Template', 'ht-mega-for-elementor'),
+                'selectTemplateType' => __('Select Template Type', 'ht-mega-for-elementor'),
+                'enterName' => __('Enter Template Name', 'ht-mega-for-elementor'),
+                'createTemplate' => __('Create Template', 'ht-mega-for-elementor'),
+                'confirmDelete' => __('Are you sure you want to delete this template?', 'ht-mega-for-elementor'),
+                'noTemplatesSelected' => __('No templates selected.', 'ht-mega-for-elementor')
             ]
         ]);
 

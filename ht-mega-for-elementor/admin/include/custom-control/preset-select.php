@@ -2,6 +2,8 @@
 
 namespace HtMega\Preset;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 class Preset_Select extends \Elementor\Base_Data_Control {
 
     public function get_type() {

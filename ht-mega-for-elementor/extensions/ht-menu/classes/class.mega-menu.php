@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class HTMegaMenu_Elementor {
 
@@ -67,7 +69,7 @@ class HTMegaMenu_Elementor {
         $elements_manager->add_category(
             'htmegamenu-addons',
             [
-                'title' => esc_html__( 'HTMega Menu', 'htmega-addons' ),
+                'title' => esc_html__( 'HTMega Menu', 'ht-mega-for-elementor' ),
                 'icon' => 'fa fa-snowflake-o',
             ]
         );
@@ -86,7 +88,7 @@ class HTMegaMenu_Elementor {
         if ( 'nav-menus.php' == $pagenow ) {
             add_meta_box(
                 'HT_Mega_Menu_meta_box',
-                esc_html__('Mega Menu Settings', 'htmega-addons'),
+                esc_html__('Mega Menu Settings', 'ht-mega-for-elementor'),
                 array( $this, 'metabox_contents' ),
                 'nav-menus',
                 'side',
@@ -115,11 +117,11 @@ class HTMegaMenu_Elementor {
             <?php wp_nonce_field( basename( __FILE__ ), 'htmegamenu_menu_metabox_noce' ); ?>
             <input type="hidden" value="<?php echo esc_attr( $nav_menu_selected_id ); ?>" id="htmegamenu-metabox-input-menu-id" />
             <p>
-                <label><strong><?php esc_html_e( "Enable megamenu?", 'htmega-addons' ); ?></strong></label>
+                <label><strong><?php esc_html_e( "Enable megamenu?", 'ht-mega-for-elementor' ); ?></strong></label>
                 <input type="checkbox" class="alignright pull-right-input" id="htmegamenu-menu-metabox-input-is-enabled" <?php echo isset($options['enable_menu']) && $options['enable_menu'] == 'on' ? 'checked="true"' : '' ?>>
             </p>
             <p>
-                <?php echo get_submit_button( esc_html__('Save', 'htmega-addons' ), 'htmegamenu-menu-settings-save button-primary alignright','', false); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                <?php echo get_submit_button( esc_html__('Save', 'ht-mega-for-elementor' ), 'htmegamenu-menu-settings-save button-primary alignright','', false); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                 <span class='spinner'></span>
             </p>
 
@@ -137,16 +139,20 @@ class HTMegaMenu_Elementor {
 
         if ( 'save_menu_settings' === $action || 'save_menu_options' === $action ) {
             if ( ! current_user_can( 'edit_theme_options' ) ) {
-                wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+                wp_send_json_error( array( 'message' => __( 'Forbidden.', 'ht-mega-for-elementor' ) ), 403 );
                 return;
             }
         } elseif ( ! current_user_can( 'edit_posts' ) ) {
-            wp_send_json_error( array( 'message' => __( 'Forbidden.', 'htmega-addons' ) ), 403 );
+            wp_send_json_error( array( 'message' => __( 'Forbidden.', 'ht-mega-for-elementor' ) ), 403 );
             return;
         }
 
         if( $action === 'save_menu_settings' ){
-            $form_raw = ! empty( $_POST['settings'] ) ? wp_unslash( $_POST['settings'] ) : '';
+            // $form_raw is a serialized (parse_str-format) form string, not the
+            // final value — it is decoded by parse_str() below and every
+            // resulting value is then run through recursive_sanitize()
+            // before use, so the raw string itself does not need a sanitizer.
+            $form_raw = ! empty( $_POST['settings'] ) ? wp_unslash( $_POST['settings'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
             $data     = array();
 
             if ( ! empty( $form_raw ) ) {
@@ -161,7 +167,7 @@ class HTMegaMenu_Elementor {
             update_post_meta( $menu_item_id, 'htmega_menu_settings', $data );
 
             wp_send_json_success([
-                'message' => esc_html__( 'Successfully data saved','htmega-addons' )
+                'message' => esc_html__( 'Successfully data saved','ht-mega-for-elementor' )
             ]);
 
         }
@@ -173,14 +179,17 @@ class HTMegaMenu_Elementor {
                 return;
             }
 
-            $settings = isset( $_POST['settings'] ) ? $this->recursive_sanitize( wp_unslash( $_POST['settings'] ) ) : array();
+            // recursive_sanitize() (below) walks the decoded structure and
+            // sanitizes every scalar value it contains, so this is already
+            // sanitized before use.
+            $settings = isset( $_POST['settings'] ) ? $this->recursive_sanitize( wp_unslash( $_POST['settings'] ) ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
             $menu_id = isset( $_POST['menu_id'] ) ? absint( $_POST['menu_id'] ) : 0;
             update_option( 'ht_menu_options_' . $menu_id, $settings );
             wp_die();
         }
 
         else{
-            $menu_item_id = absint( $_REQUEST['menu_item_id'] );
+            $menu_item_id = isset( $_REQUEST['menu_item_id'] ) ? absint( $_REQUEST['menu_item_id'] ) : 0;
 
             $menu_data = !empty( get_post_meta( $menu_item_id, 'htmega_menu_settings', true ) ) ? get_post_meta( $menu_item_id, 'htmega_menu_settings', true ) : '';
 
@@ -224,11 +233,11 @@ class HTMegaMenu_Elementor {
         }
 
         // CSS File
-        wp_enqueue_style( 'font-awesome-5-all', ELEMENTOR_ASSETS_URL . '/lib/font-awesome/css/all.min.css' );
+        wp_enqueue_style( 'font-awesome-5-all', ELEMENTOR_ASSETS_URL . '/lib/font-awesome/css/all.min.css', array(), defined( 'ELEMENTOR_VERSION' ) ? ELEMENTOR_VERSION : HTMEGA_VERSION );
         wp_enqueue_style(  'htmega-menu',  HTMEGA_ADDONS_PL_URL . 'assets/extensions/ht-menu/css/mega-menu-style.css', array(), HTMEGA_VERSION );
 
         // JS File
-        wp_enqueue_script( 'htmegamenu-main', HTMEGA_ADDONS_PL_URL . 'assets/extensions/ht-menu/js/htmegamenu-main.js', array('jquery') );
+        wp_enqueue_script( 'htmegamenu-main', HTMEGA_ADDONS_PL_URL . 'assets/extensions/ht-menu/js/htmegamenu-main.js', array('jquery'), HTMEGA_VERSION, true );
 
     }
 
@@ -237,16 +246,16 @@ class HTMegaMenu_Elementor {
         if( 'nav-menus.php' === $hook ){
 
             wp_enqueue_script('fonticonpicker.js', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/js/jquery.fonticonpicker.min.js',
-                array('jquery'));
+                array('jquery'), HTMEGA_VERSION, true);
 
             wp_enqueue_script( 'htmegamenu-admin', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/js/admin_updated_scripts.js', array( 'jquery', 'jquery-ui-dialog', 'wp-util', 'wp-color-picker' ), HTMEGA_VERSION, TRUE );
 
             wp_enqueue_style( 'wp-color-picker' );
-            wp_enqueue_style( 'fonticonpicker', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/css/jquery.fonticonpicker.min.css' );
-            
-            wp_enqueue_style( 'fonticonpicker-bootstrap', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/css/jquery.fonticonpicker.bootstrap.min.css');
+            wp_enqueue_style( 'fonticonpicker', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/css/jquery.fonticonpicker.min.css', array(), HTMEGA_VERSION );
+
+            wp_enqueue_style( 'fonticonpicker-bootstrap', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/css/jquery.fonticonpicker.bootstrap.min.css', array(), HTMEGA_VERSION );
             wp_enqueue_style ('wp-jquery-ui-dialog');
-            wp_enqueue_style( 'htmegamenu-admin', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/css/admin.css' );
+            wp_enqueue_style( 'htmegamenu-admin', HTMEGA_ADDONS_PL_URL . 'admin/assets/extensions/ht-menu/css/admin.css', array(), HTMEGA_VERSION );
 
             wp_localize_script(
                 'htmegamenu-admin', 
@@ -255,9 +264,9 @@ class HTMegaMenu_Elementor {
                     'nonce'    => wp_create_nonce( 'htmega_menu_nonce' ),
                     'iconlist' => $this->htmega_menu_get_icon_sets(),
                     'button'   => [
-                        'text'       => esc_html__( 'Save', 'htmega-addons' ),
-                        'lodingtext' => esc_html__( 'Saving…', 'htmega-addons' ),
-                        'successtext'=> esc_html__( 'All Data Saved', 'htmega-addons' ),
+                        'text'       => esc_html__( 'Save', 'ht-mega-for-elementor' ),
+                        'lodingtext' => esc_html__( 'Saving…', 'ht-mega-for-elementor' ),
+                        'successtext'=> esc_html__( 'All Data Saved', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -279,7 +288,7 @@ class HTMegaMenu_Elementor {
                     <span><i class="dashicons dashicons-warning"></i></span>
                     <p>
                         <?php
-                            echo esc_html__('Purchase our','htmega-addons').' <strong><a href="'.esc_url( 'https://wphtmega.com/pricing/' ).'" target="_blank" rel="nofollow">'.esc_html__( 'premium version', 'htmega-addons' ).'</a></strong> '.esc_html__('to unlock these pro options!','htmega-addons');
+                            echo esc_html__('Purchase our','ht-mega-for-elementor').' <strong><a href="'.esc_url( 'https://wphtmega.com/pricing/' ).'" target="_blank" rel="nofollow">'.esc_html__( 'premium version', 'ht-mega-for-elementor' ).'</a></strong> '.esc_html__('to unlock these pro options!','ht-mega-for-elementor');
                         ?>
                     </p>
                 </div>

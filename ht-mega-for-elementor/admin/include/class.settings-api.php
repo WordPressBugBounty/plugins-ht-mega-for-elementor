@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * weDevs Settings API wrapper class
  * @version 1.3 (27-Sep-2016)
@@ -412,7 +414,7 @@ class HTMega_Settings_API {
         $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
         $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
         $id    = $args['section']  . '[' . $args['id'] . ']';
-        $label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose File','htmega-addons' );
+        $label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose File','ht-mega-for-elementor' );
 
         $html  = sprintf( '<input type="text" class="%1$s-text wpsa-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
         $html  .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
@@ -490,6 +492,10 @@ class HTMega_Settings_API {
                 $options[ $option_slug ] = call_user_func( $sanitize_callback, $option_value );
                 continue;
             }
+
+            // No explicit callback registered for this field — fall back to a
+            // type-aware sanitizer so nothing passes through unsanitized.
+            $options[ $option_slug ] = $this->sanitize_by_field_type( $option_slug, $option_value );
         }
 
         return $options;
@@ -520,6 +526,91 @@ class HTMega_Settings_API {
         }
 
         return false;
+    }
+
+    /**
+     * Get the registered field 'type' for a given option slug, used by the
+     * fallback sanitizer when no explicit sanitize_callback is registered.
+     *
+     * @param string $slug option slug
+     *
+     * @return string
+     */
+    function get_field_type( $slug = '' ) {
+        if ( empty( $slug ) ) {
+            return 'text';
+        }
+
+        foreach( $this->settings_fields as $section => $options ) {
+            foreach ( $options as $option ) {
+                if ( $option['name'] != $slug ) {
+                    continue;
+                }
+
+                return isset( $option['type'] ) ? $option['type'] : 'text';
+            }
+        }
+
+        return 'text';
+    }
+
+    /**
+     * Type-aware fallback sanitizer for fields without an explicit
+     * sanitize_callback. Walks arrays recursively and only sanitizes
+     * string leaves, leaving ints/floats/bools/null untouched so nested
+     * option structures (e.g. module settings) aren't corrupted.
+     *
+     * @param string $slug  option slug
+     * @param mixed  $value raw value
+     *
+     * @return mixed
+     */
+    function sanitize_by_field_type( $slug, $value ) {
+        switch ( $this->get_field_type( $slug ) ) {
+            case 'html':
+            case 'wysiwyg':
+                $callback = 'wp_kses_post';
+                break;
+
+            case 'url':
+            case 'file':
+                $callback = 'esc_url_raw';
+                break;
+
+            case 'textarea':
+                $callback = 'sanitize_textarea_field';
+                break;
+
+            default:
+                $callback = 'sanitize_text_field';
+        }
+
+        return $this->sanitize_value_recursive( $value, $callback );
+    }
+
+    /**
+     * Recursively apply a sanitizing callback to every string leaf of a
+     * value, preserving array structure and non-string scalars as-is.
+     *
+     * @param mixed    $value    raw value
+     * @param callable $callback sanitizer to apply to string leaves
+     *
+     * @return mixed
+     */
+    function sanitize_value_recursive( $value, $callback ) {
+        if ( is_array( $value ) ) {
+            $sanitized = array();
+            foreach ( $value as $key => $item ) {
+                $sanitized[ $key ] = $this->sanitize_value_recursive( $item, $callback );
+            }
+            return $sanitized;
+        }
+
+        if ( is_string( $value ) ) {
+            return call_user_func( $callback, $value );
+        }
+
+        return $value;
     }
 
     /**

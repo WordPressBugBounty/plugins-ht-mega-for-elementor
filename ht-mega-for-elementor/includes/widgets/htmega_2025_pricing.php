@@ -21,7 +21,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
     // ── Identity ──────────────────────────────────────────────
 
     public function get_name()        { return 'htmega-2026-pricing'; }
-    public function get_title()       { return __( 'Pricing Table 2026', 'htmega-addons' ); }
+    public function get_title()       { return __( 'Pricing Table 2026', 'ht-mega-for-elementor' ); }
     public function get_icon()        { return 'htmega-icon eicon-price-table'; }
     public function get_categories()  { return [ 'htmega-2026' ]; }
     public function get_keywords()    { return [ 'pricing', 'price', 'table', 'plans', 'htmega', '2026' ]; }
@@ -36,41 +36,41 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── Design Style ── */
         $this->start_controls_section( 'section_design_style', [
-            'label' => __( 'Design Style', 'htmega-addons' ),
+            'label' => __( 'Design Style', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
             $this->add_control( 'design_style', [
-                'label'   => __( 'Style Preset', 'htmega-addons' ),
+                'label'   => __( 'Style Preset', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'bento',
                 'options' => [
-                    'bento'  => __( 'Bento Grid',    'htmega-addons' ),
-                    'glass'  => __( 'Glassmorphism', 'htmega-addons' ),
-                    'dark'   => __( 'Dark Minimal',  'htmega-addons' ),
-                    'aurora' => __( 'Aurora',        'htmega-addons' ),
-                    'neo'    => __( 'Neo-Brutalist',  'htmega-addons' ),
+                    'bento'  => __( 'Bento Grid',    'ht-mega-for-elementor' ),
+                    'glass'  => __( 'Glassmorphism', 'ht-mega-for-elementor' ),
+                    'dark'   => __( 'Dark Minimal',  'ht-mega-for-elementor' ),
+                    'aurora' => __( 'Aurora',        'ht-mega-for-elementor' ),
+                    'neo'    => __( 'Neo-Brutalist',  'ht-mega-for-elementor' ),
                 ],
             ] );
 
             $this->add_control( 'layout', [
-                'label'   => __( 'Layout', 'htmega-addons' ),
+                'label'   => __( 'Layout', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'cards',
                 'options' => [
-                    'cards'    => __( 'Side-by-Side Cards', 'htmega-addons' ),
-                    'centered' => __( 'Centered',           'htmega-addons' ),
+                    'cards'    => __( 'Side-by-Side Cards', 'ht-mega-for-elementor' ),
+                    'centered' => __( 'Centered',           'ht-mega-for-elementor' ),
                 ],
             ] );
 
             $this->add_control( 'plan_columns', [
-                'label'   => __( 'Columns', 'htmega-addons' ),
+                'label'   => __( 'Columns', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => '3',
                 'options' => [
-                    '2' => __( '2 Plans', 'htmega-addons' ),
-                    '3' => __( '3 Plans', 'htmega-addons' ),
-                    '4' => __( '4 Plans', 'htmega-addons' ),
+                    '2' => __( '2 Plans', 'ht-mega-for-elementor' ),
+                    '3' => __( '3 Plans', 'ht-mega-for-elementor' ),
+                    '4' => __( '4 Plans', 'ht-mega-for-elementor' ),
                 ],
             ] );
 
@@ -78,51 +78,51 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── Section Header ── */
         $this->start_controls_section( 'section_header', [
-            'label' => __( 'Section Header', 'htmega-addons' ),
+            'label' => __( 'Section Header', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
             $this->add_control( 'show_section_label', [
-                'label'        => __( 'Show Section Label', 'htmega-addons' ),
+                'label'        => __( 'Show Section Label', 'ht-mega-for-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Show', 'htmega-addons' ),
-                'label_off'    => __( 'Hide', 'htmega-addons' ),
+                'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
                 'default'      => 'yes',
             ] );
 
             $this->add_control( 'section_label_text', [
-                'label'     => __( 'Section Label', 'htmega-addons' ),
+                'label'     => __( 'Section Label', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => __( 'Pricing', 'htmega-addons' ),
+                'default'   => __( 'Pricing', 'ht-mega-for-elementor' ),
                 'condition' => [ 'show_section_label' => 'yes' ],
             ] );
 
             $this->add_control( 'headline', [
-                'label'   => __( 'Headline', 'htmega-addons' ),
+                'label'   => __( 'Headline', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXTAREA,
-                'default' => __( "Simple pricing for\nevery team size.", 'htmega-addons' ),
+                'default' => __( "Simple pricing for\nevery team size.", 'ht-mega-for-elementor' ),
                 'rows'    => 3,
             ] );
 
             $this->add_control( 'headline_highlight', [
-                'label'       => __( 'Highlighted Word(s)', 'htmega-addons' ),
+                'label'       => __( 'Highlighted Word(s)', 'ht-mega-for-elementor' ),
                 'type'        => Controls_Manager::TEXT,
-                'default'     => __( 'every team size', 'htmega-addons' ),
-                'description' => __( 'These words will be styled with the accent color/gradient.', 'htmega-addons' ),
+                'default'     => __( 'every team size', 'ht-mega-for-elementor' ),
+                'description' => __( 'These words will be styled with the accent color/gradient.', 'ht-mega-for-elementor' ),
             ] );
 
             $this->add_control( 'headline_tag', [
-                'label'   => __( 'HTML Tag', 'htmega-addons' ),
+                'label'   => __( 'HTML Tag', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'h2',
                 'options' => [ 'h1' => 'H1', 'h2' => 'H2', 'h3' => 'H3' ],
             ] );
 
             $this->add_control( 'description', [
-                'label'   => __( 'Description', 'htmega-addons' ),
+                'label'   => __( 'Description', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXTAREA,
-                'default' => __( 'No hidden fees. No lock-in. Upgrade or downgrade at any time.', 'htmega-addons' ),
+                'default' => __( 'No hidden fees. No lock-in. Upgrade or downgrade at any time.', 'ht-mega-for-elementor' ),
                 'rows'    => 3,
             ] );
 
@@ -130,38 +130,38 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── Billing Toggle ── */
         $this->start_controls_section( 'section_billing_toggle', [
-            'label' => __( 'Billing Toggle', 'htmega-addons' ),
+            'label' => __( 'Billing Toggle', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
             $this->add_control( 'show_billing_toggle', [
-                'label'        => __( 'Show Monthly / Annual Toggle', 'htmega-addons' ),
+                'label'        => __( 'Show Monthly / Annual Toggle', 'ht-mega-for-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Show', 'htmega-addons' ),
-                'label_off'    => __( 'Hide', 'htmega-addons' ),
+                'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
                 'default'      => 'yes',
             ] );
 
             $this->add_control( 'billing_monthly_label', [
-                'label'     => __( 'Monthly Label', 'htmega-addons' ),
+                'label'     => __( 'Monthly Label', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => __( 'Monthly', 'htmega-addons' ),
+                'default'   => __( 'Monthly', 'ht-mega-for-elementor' ),
                 'condition' => [ 'show_billing_toggle' => 'yes' ],
             ] );
 
             $this->add_control( 'billing_annual_label', [
-                'label'     => __( 'Annual Label', 'htmega-addons' ),
+                'label'     => __( 'Annual Label', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => __( 'Annual', 'htmega-addons' ),
+                'default'   => __( 'Annual', 'ht-mega-for-elementor' ),
                 'condition' => [ 'show_billing_toggle' => 'yes' ],
             ] );
 
             $this->add_control( 'billing_save_badge', [
-                'label'       => __( 'Savings Badge Text', 'htmega-addons' ),
+                'label'       => __( 'Savings Badge Text', 'ht-mega-for-elementor' ),
                 'type'        => Controls_Manager::TEXT,
-                'default'     => __( 'Save 20%', 'htmega-addons' ),
-                'description' => __( 'Shown next to the Annual label. Leave empty to hide.', 'htmega-addons' ),
+                'default'     => __( 'Save 20%', 'ht-mega-for-elementor' ),
+                'description' => __( 'Shown next to the Annual label. Leave empty to hide.', 'ht-mega-for-elementor' ),
                 'condition'   => [ 'show_billing_toggle' => 'yes' ],
             ] );
 
@@ -169,144 +169,144 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── Plan Items ── */
         $this->start_controls_section( 'section_plans', [
-            'label' => __( 'Pricing Plans', 'htmega-addons' ),
+            'label' => __( 'Pricing Plans', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
             $repeater = new Repeater();
 
             $repeater->add_control( 'plan_name', [
-                'label'   => __( 'Plan Name', 'htmega-addons' ),
+                'label'   => __( 'Plan Name', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXT,
-                'default' => __( 'Pro', 'htmega-addons' ),
+                'default' => __( 'Pro', 'ht-mega-for-elementor' ),
             ] );
 
             $repeater->add_control( 'is_featured', [
-                'label'        => __( 'Featured / Popular Plan', 'htmega-addons' ),
+                'label'        => __( 'Featured / Popular Plan', 'ht-mega-for-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'htmega-addons' ),
-                'label_off'    => __( 'No', 'htmega-addons' ),
+                'label_on'     => __( 'Yes', 'ht-mega-for-elementor' ),
+                'label_off'    => __( 'No', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
                 'default'      => 'no',
             ] );
 
             $repeater->add_control( 'featured_badge', [
-                'label'     => __( 'Badge Text', 'htmega-addons' ),
+                'label'     => __( 'Badge Text', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => __( 'Most Popular', 'htmega-addons' ),
+                'default'   => __( 'Most Popular', 'ht-mega-for-elementor' ),
                 'condition' => [ 'is_featured' => 'yes' ],
             ] );
 
             $repeater->add_control( 'plan_icon', [
-                'label'   => __( 'Plan Icon', 'htmega-addons' ),
+                'label'   => __( 'Plan Icon', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::ICONS,
                 'default' => [ 'value' => '', 'library' => 'fa-solid' ],
             ] );
 
             $repeater->add_control( 'currency', [
-                'label'   => __( 'Currency Symbol', 'htmega-addons' ),
+                'label'   => __( 'Currency Symbol', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXT,
                 'default' => '$',
                 'classes' => 'elementor-control-direction-ltr',
             ] );
 
             $repeater->add_control( 'price_monthly', [
-                'label'   => __( 'Monthly Price', 'htmega-addons' ),
+                'label'   => __( 'Monthly Price', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXT,
                 'default' => '29',
             ] );
 
             $repeater->add_control( 'price_annual', [
-                'label'   => __( 'Annual Price (per month)', 'htmega-addons' ),
+                'label'   => __( 'Annual Price (per month)', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXT,
                 'default' => '23',
             ] );
 
             $repeater->add_control( 'period', [
-                'label'   => __( 'Period Label', 'htmega-addons' ),
+                'label'   => __( 'Period Label', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXT,
-                'default' => __( '/month', 'htmega-addons' ),
+                'default' => __( '/month', 'ht-mega-for-elementor' ),
             ] );
 
             $repeater->add_control( 'tagline', [
-                'label'   => __( 'Tagline', 'htmega-addons' ),
+                'label'   => __( 'Tagline', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXTAREA,
-                'default' => __( 'For growing teams that need more power.', 'htmega-addons' ),
+                'default' => __( 'For growing teams that need more power.', 'ht-mega-for-elementor' ),
                 'rows'    => 2,
             ] );
 
             $repeater->add_control( 'features', [
-                'label'       => __( 'Features (one per line)', 'htmega-addons' ),
+                'label'       => __( 'Features (one per line)', 'ht-mega-for-elementor' ),
                 'type'        => Controls_Manager::TEXTAREA,
                 'default'     => "Unlimited projects\n50 GB storage\nPriority email support\nAdvanced analytics\nAPI access",
                 'rows'        => 6,
-                'description' => __( 'Each line becomes a feature row with a check icon.', 'htmega-addons' ),
+                'description' => __( 'Each line becomes a feature row with a check icon.', 'ht-mega-for-elementor' ),
             ] );
 
             $repeater->add_control( 'cta_text', [
-                'label'   => __( 'Button Text', 'htmega-addons' ),
+                'label'   => __( 'Button Text', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXT,
-                'default' => __( 'Get Started', 'htmega-addons' ),
+                'default' => __( 'Get Started', 'ht-mega-for-elementor' ),
             ] );
 
             $repeater->add_control( 'cta_url', [
-                'label'   => __( 'Button URL', 'htmega-addons' ),
+                'label'   => __( 'Button URL', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::URL,
                 'default' => [ 'url' => '#' ],
             ] );
 
             $repeater->add_control( 'cta_variant', [
-                'label'   => __( 'Button Style', 'htmega-addons' ),
+                'label'   => __( 'Button Style', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'outline',
                 'options' => [
-                    'primary' => __( 'Primary (filled)', 'htmega-addons' ),
-                    'outline' => __( 'Outline',          'htmega-addons' ),
+                    'primary' => __( 'Primary (filled)', 'ht-mega-for-elementor' ),
+                    'outline' => __( 'Outline',          'ht-mega-for-elementor' ),
                 ],
             ] );
 
             $this->add_control( 'plan_items', [
-                'label'       => __( 'Plans', 'htmega-addons' ),
+                'label'       => __( 'Plans', 'ht-mega-for-elementor' ),
                 'type'        => Controls_Manager::REPEATER,
                 'fields'      => $repeater->get_controls(),
                 'default'     => [
                     [
-                        'plan_name'     => __( 'Starter', 'htmega-addons' ),
+                        'plan_name'     => __( 'Starter', 'ht-mega-for-elementor' ),
                         'is_featured'   => 'no',
-                        'featured_badge'=> __( 'Most Popular', 'htmega-addons' ),
+                        'featured_badge'=> __( 'Most Popular', 'ht-mega-for-elementor' ),
                         'currency'      => '$',
                         'price_monthly' => '9',
                         'price_annual'  => '7',
-                        'period'        => __( '/month', 'htmega-addons' ),
-                        'tagline'       => __( 'Perfect for freelancers and solo creators.', 'htmega-addons' ),
+                        'period'        => __( '/month', 'ht-mega-for-elementor' ),
+                        'tagline'       => __( 'Perfect for freelancers and solo creators.', 'ht-mega-for-elementor' ),
                         'features'      => "3 Projects\n5 GB Storage\nEmail Support\nBasic Analytics",
-                        'cta_text'      => __( 'Start Free Trial', 'htmega-addons' ),
+                        'cta_text'      => __( 'Start Free Trial', 'ht-mega-for-elementor' ),
                         'cta_variant'   => 'outline',
                     ],
                     [
-                        'plan_name'     => __( 'Pro', 'htmega-addons' ),
+                        'plan_name'     => __( 'Pro', 'ht-mega-for-elementor' ),
                         'is_featured'   => 'yes',
-                        'featured_badge'=> __( 'Most Popular', 'htmega-addons' ),
+                        'featured_badge'=> __( 'Most Popular', 'ht-mega-for-elementor' ),
                         'currency'      => '$',
                         'price_monthly' => '29',
                         'price_annual'  => '23',
-                        'period'        => __( '/month', 'htmega-addons' ),
-                        'tagline'       => __( 'For growing teams that need more power.', 'htmega-addons' ),
+                        'period'        => __( '/month', 'ht-mega-for-elementor' ),
+                        'tagline'       => __( 'For growing teams that need more power.', 'ht-mega-for-elementor' ),
                         'features'      => "Unlimited Projects\n50 GB Storage\nPriority Support\nAdvanced Analytics\nAPI Access",
-                        'cta_text'      => __( 'Get Started', 'htmega-addons' ),
+                        'cta_text'      => __( 'Get Started', 'ht-mega-for-elementor' ),
                         'cta_variant'   => 'primary',
                     ],
                     [
-                        'plan_name'     => __( 'Enterprise', 'htmega-addons' ),
+                        'plan_name'     => __( 'Enterprise', 'ht-mega-for-elementor' ),
                         'is_featured'   => 'no',
-                        'featured_badge'=> __( 'Most Popular', 'htmega-addons' ),
+                        'featured_badge'=> __( 'Most Popular', 'ht-mega-for-elementor' ),
                         'currency'      => '$',
                         'price_monthly' => '79',
                         'price_annual'  => '63',
-                        'period'        => __( '/month', 'htmega-addons' ),
-                        'tagline'       => __( 'Custom solutions for large organisations.', 'htmega-addons' ),
+                        'period'        => __( '/month', 'ht-mega-for-elementor' ),
+                        'tagline'       => __( 'Custom solutions for large organisations.', 'ht-mega-for-elementor' ),
                         'features'      => "Unlimited Everything\n500 GB Storage\nDedicated Support\nCustom Integrations\nSSO & SAML\nSLA Guarantee",
-                        'cta_text'      => __( 'Contact Sales', 'htmega-addons' ),
+                        'cta_text'      => __( 'Contact Sales', 'ht-mega-for-elementor' ),
                         'cta_variant'   => 'outline',
                     ],
                 ],
@@ -321,12 +321,12 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 1. Section (wrapper) ── */
         $this->start_controls_section( 'style_section', [
-            'label' => __( 'Section', 'htmega-addons' ),
+            'label' => __( 'Section', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
             $this->add_responsive_control( 'section_padding', [
-                'label'      => __( 'Padding', 'htmega-addons' ),
+                'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -338,7 +338,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'section_bg',
-                    'label'    => __( 'Background', 'htmega-addons' ),
+                    'label'    => __( 'Background', 'ht-mega-for-elementor' ),
                     'types'    => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htm25-pricing',
                 ]
@@ -348,7 +348,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 2. Section Label ── */
         $this->start_controls_section( 'style_section_label', [
-            'label'     => __( 'Section Label', 'htmega-addons' ),
+            'label'     => __( 'Section Label', 'ht-mega-for-elementor' ),
             'tab'       => Controls_Manager::TAB_STYLE,
             'condition' => [ 'show_section_label' => 'yes' ],
         ] );
@@ -362,7 +362,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'section_label_color', [
-                'label'     => __( 'Text Color', 'htmega-addons' ),
+                'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__section-label' => 'color: {{VALUE}};',
@@ -370,7 +370,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'section_label_bg_color', [
-                'label'     => __( 'Background Color', 'htmega-addons' ),
+                'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__section-label' => 'background-color: {{VALUE}};',
@@ -378,7 +378,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_responsive_control( 'section_label_border_radius', [
-                'label'      => __( 'Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -387,7 +387,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_responsive_control( 'section_label_padding', [
-                'label'      => __( 'Padding', 'htmega-addons' ),
+                'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -399,7 +399,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 3. Headline ── */
         $this->start_controls_section( 'style_headline', [
-            'label' => __( 'Headline', 'htmega-addons' ),
+            'label' => __( 'Headline', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -412,7 +412,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'headline_color', [
-                'label'     => __( 'Color', 'htmega-addons' ),
+                'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__headline' => 'color: {{VALUE}};',
@@ -420,7 +420,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_responsive_control( 'headline_margin', [
-                'label'      => __( 'Margin', 'htmega-addons' ),
+                'label'      => __( 'Margin', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -429,13 +429,13 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'headline_accent_heading', [
-                'label'     => __( 'Headline Accent', 'htmega-addons' ),
+                'label'     => __( 'Headline Accent', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
 
             $this->add_control( 'headline_accent_color', [
-                'label'     => __( 'Accent Color', 'htmega-addons' ),
+                'label'     => __( 'Accent Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__headline-accent' => 'background-color: {{VALUE}}; background-image: none;',
@@ -446,12 +446,12 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'           => 'headline_accent_gradient',
-                    'label'          => __( 'Accent Gradient', 'htmega-addons' ),
+                    'label'          => __( 'Accent Gradient', 'ht-mega-for-elementor' ),
                     'types'          => [ 'gradient' ],
                     'selector'       => '{{WRAPPER}} .htm25-pricing__headline-accent',
                     'fields_options' => [
                         'background' => [
-                            'label' => __( 'Gradient Color', 'htmega-addons' ),
+                            'label' => __( 'Gradient Color', 'ht-mega-for-elementor' ),
                         ],
                     ],
                 ]
@@ -461,7 +461,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 4. Description ── */
         $this->start_controls_section( 'style_description', [
-            'label' => __( 'Description', 'htmega-addons' ),
+            'label' => __( 'Description', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -474,7 +474,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'description_color', [
-                'label'     => __( 'Color', 'htmega-addons' ),
+                'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__description' => 'color: {{VALUE}};',
@@ -485,7 +485,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 5. Pricing Card ── */
         $this->start_controls_section( 'style_card', [
-            'label' => __( 'Pricing Card', 'htmega-addons' ),
+            'label' => __( 'Pricing Card', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -493,14 +493,14 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'card_bg',
-                    'label'    => __( 'Background', 'htmega-addons' ),
+                    'label'    => __( 'Background', 'ht-mega-for-elementor' ),
                     'types'    => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htm25-pricing__card',
                 ]
             );
 
             $this->add_responsive_control( 'card_padding', [
-                'label'      => __( 'Card Header Padding', 'htmega-addons' ),
+                'label'      => __( 'Card Header Padding', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -509,7 +509,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_responsive_control( 'card_border_radius', [
-                'label'      => __( 'Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -534,7 +534,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'card_featured_heading', [
-                'label'     => __( 'Featured Card', 'htmega-addons' ),
+                'label'     => __( 'Featured Card', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
@@ -543,7 +543,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'card_featured_bg',
-                    'label'    => __( 'Background', 'htmega-addons' ),
+                    'label'    => __( 'Background', 'ht-mega-for-elementor' ),
                     'types'    => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htm25-pricing__card--featured',
                 ]
@@ -569,7 +569,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 6. Price ── */
         $this->start_controls_section( 'style_price', [
-            'label' => __( 'Price', 'htmega-addons' ),
+            'label' => __( 'Price', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -577,13 +577,13 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name'     => 'price_amount_typography',
-                    'label'    => __( 'Price Amount Typography', 'htmega-addons' ),
+                    'label'    => __( 'Price Amount Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htm25-pricing__card-amount--monthly, {{WRAPPER}} .htm25-pricing__card-amount--annual',
                 ]
             );
 
             $this->add_control( 'price_amount_color', [
-                'label'     => __( 'Price Amount Color', 'htmega-addons' ),
+                'label'     => __( 'Price Amount Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-amount--monthly' => 'color: {{VALUE}};',
@@ -592,7 +592,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'price_currency_color', [
-                'label'     => __( 'Currency Symbol Color', 'htmega-addons' ),
+                'label'     => __( 'Currency Symbol Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-currency' => 'color: {{VALUE}};',
@@ -600,7 +600,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'price_period_heading', [
-                'label'     => __( 'Period / Billing Label', 'htmega-addons' ),
+                'label'     => __( 'Period / Billing Label', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
@@ -614,7 +614,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'price_period_color', [
-                'label'     => __( 'Period Color', 'htmega-addons' ),
+                'label'     => __( 'Period Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-period' => 'color: {{VALUE}};',
@@ -625,7 +625,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 7. Plan Name ── */
         $this->start_controls_section( 'style_plan_name', [
-            'label' => __( 'Plan Name', 'htmega-addons' ),
+            'label' => __( 'Plan Name', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -638,7 +638,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'plan_name_color', [
-                'label'     => __( 'Color', 'htmega-addons' ),
+                'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-name' => 'color: {{VALUE}};',
@@ -649,7 +649,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 8. Features List ── */
         $this->start_controls_section( 'style_features', [
-            'label' => __( 'Features List', 'htmega-addons' ),
+            'label' => __( 'Features List', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -662,7 +662,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'feature_item_color', [
-                'label'     => __( 'Feature Text Color', 'htmega-addons' ),
+                'label'     => __( 'Feature Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-feature' => 'color: {{VALUE}};',
@@ -670,13 +670,13 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'feature_check_heading', [
-                'label'     => __( 'Check Icon', 'htmega-addons' ),
+                'label'     => __( 'Check Icon', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
 
             $this->add_control( 'feature_check_color', [
-                'label'     => __( 'Check Icon Color', 'htmega-addons' ),
+                'label'     => __( 'Check Icon Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-feature-check'      => 'color: {{VALUE}};',
@@ -686,7 +686,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'feature_check_bg_color', [
-                'label'     => __( 'Check Icon Background Color', 'htmega-addons' ),
+                'label'     => __( 'Check Icon Background Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-feature-check' => 'background-color: {{VALUE}};',
@@ -694,13 +694,13 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'plan_icon_heading', [
-                'label'     => __( 'Plan Icon', 'htmega-addons' ),
+                'label'     => __( 'Plan Icon', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
 
             $this->add_control( 'plan_icon_color', [
-                'label'     => __( 'Plan Icon Color', 'htmega-addons' ),
+                'label'     => __( 'Plan Icon Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-icon i'        => 'color: {{VALUE}};',
@@ -710,7 +710,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'plan_icon_bg_color', [
-                'label'     => __( 'Plan Icon Background Color', 'htmega-addons' ),
+                'label'     => __( 'Plan Icon Background Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-icon-wrap' => 'background-color: {{VALUE}};',
@@ -718,7 +718,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_responsive_control( 'plan_icon_size', [
-                'label'      => __( 'Plan Icon Size', 'htmega-addons' ),
+                'label'      => __( 'Plan Icon Size', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em' ],
                 'range'      => [ 'px' => [ 'min' => 10, 'max' => 80 ] ],
@@ -732,7 +732,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 9. CTA Button ── */
         $this->start_controls_section( 'style_cta', [
-            'label' => __( 'CTA Button', 'htmega-addons' ),
+            'label' => __( 'CTA Button', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -748,14 +748,14 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'cta_bg',
-                    'label'    => __( 'Background', 'htmega-addons' ),
+                    'label'    => __( 'Background', 'ht-mega-for-elementor' ),
                     'types'    => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htm25-pricing__card-cta.htm25-btn--primary',
                 ]
             );
 
             $this->add_control( 'cta_text_color', [
-                'label'     => __( 'Text Color', 'htmega-addons' ),
+                'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-cta' => 'color: {{VALUE}};',
@@ -771,7 +771,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_responsive_control( 'cta_border_radius', [
-                'label'      => __( 'Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -780,7 +780,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'cta_hover_heading', [
-                'label'     => __( 'Hover', 'htmega-addons' ),
+                'label'     => __( 'Hover', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
@@ -789,14 +789,14 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'cta_hover_bg',
-                    'label'    => __( 'Hover Background', 'htmega-addons' ),
+                    'label'    => __( 'Hover Background', 'ht-mega-for-elementor' ),
                     'types'    => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htm25-pricing__card-cta:hover',
                 ]
             );
 
             $this->add_control( 'cta_hover_text_color', [
-                'label'     => __( 'Hover Text Color', 'htmega-addons' ),
+                'label'     => __( 'Hover Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-cta:hover' => 'color: {{VALUE}};',
@@ -815,7 +815,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 10. Popular Badge ── */
         $this->start_controls_section( 'style_popular_badge', [
-            'label' => __( 'Popular Badge', 'htmega-addons' ),
+            'label' => __( 'Popular Badge', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -828,7 +828,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'popular_badge_color', [
-                'label'     => __( 'Text Color', 'htmega-addons' ),
+                'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-badge' => 'color: {{VALUE}};',
@@ -839,14 +839,14 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name'     => 'popular_badge_bg',
-                    'label'    => __( 'Background', 'htmega-addons' ),
+                    'label'    => __( 'Background', 'ht-mega-for-elementor' ),
                     'types'    => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htm25-pricing__card-badge',
                 ]
             );
 
             $this->add_responsive_control( 'popular_badge_border_radius', [
-                'label'      => __( 'Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -858,13 +858,13 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 11. Billing Toggle ── */
         $this->start_controls_section( 'style_billing_toggle', [
-            'label'     => __( 'Billing Toggle', 'htmega-addons' ),
+            'label'     => __( 'Billing Toggle', 'ht-mega-for-elementor' ),
             'tab'       => Controls_Manager::TAB_STYLE,
             'condition' => [ 'show_billing_toggle' => 'yes' ],
         ] );
 
             $this->add_control( 'toggle_track_color', [
-                'label'     => __( 'Track Color (inactive)', 'htmega-addons' ),
+                'label'     => __( 'Track Color (inactive)', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__toggle-track' => 'background: {{VALUE}};',
@@ -872,7 +872,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'toggle_track_active_color', [
-                'label'     => __( 'Track Color (active)', 'htmega-addons' ),
+                'label'     => __( 'Track Color (active)', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__toggle-cb:checked + .htm25-pricing__toggle-track' => 'background: {{VALUE}}; border-color: {{VALUE}};',
@@ -880,7 +880,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'toggle_thumb_color', [
-                'label'     => __( 'Thumb Color', 'htmega-addons' ),
+                'label'     => __( 'Thumb Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__toggle-thumb' => 'background: {{VALUE}};',
@@ -888,7 +888,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'save_badge_color', [
-                'label'     => __( 'Save Badge Text Color', 'htmega-addons' ),
+                'label'     => __( 'Save Badge Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__save-badge' => 'color: {{VALUE}};',
@@ -896,7 +896,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'save_badge_bg', [
-                'label'     => __( 'Save Badge Background', 'htmega-addons' ),
+                'label'     => __( 'Save Badge Background', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__save-badge' => 'background-color: {{VALUE}};',
@@ -907,7 +907,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
         /* ── 12. Plan Tagline ── */
         $this->start_controls_section( 'style_tagline', [
-            'label' => __( 'Plan Tagline', 'htmega-addons' ),
+            'label' => __( 'Plan Tagline', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
@@ -920,7 +920,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             );
 
             $this->add_control( 'tagline_color', [
-                'label'     => __( 'Color', 'htmega-addons' ),
+                'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-pricing__card-tagline' => 'color: {{VALUE}};',
@@ -990,8 +990,8 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
         ?>
         <section
             id="htm25-pricing-<?php echo esc_attr( $uid ); ?>"
-            class="htm25-pricing htm25-style--<?php echo $style; ?> htm25-pricing--<?php echo $layout; ?>"
-            aria-label="<?php esc_attr_e( 'Pricing section', 'htmega-addons' ); ?>"
+            class="htm25-pricing htm25-style--<?php echo esc_attr( $style ); ?> htm25-pricing--<?php echo esc_attr( $layout ); ?>"
+            aria-label="<?php esc_attr_e( 'Pricing section', 'ht-mega-for-elementor' ); ?>"
         >
             <?php if ( $style === 'aurora' || $style === 'glass' ) : ?>
             <div class="htm25-pricing__bg-blobs" aria-hidden="true">
@@ -1013,7 +1013,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                     <?php endif; ?>
 
                     <?php if ( $headline ) : ?>
-                    <<?php echo $headline_tag; ?> class="htm25-pricing__headline"><?php echo $headline; ?></<?php echo $headline_tag; ?>>
+                    <<?php echo esc_html( $headline_tag ); ?> class="htm25-pricing__headline"><?php echo wp_kses_post( $headline ); ?></<?php echo esc_html( $headline_tag ); ?>>
                     <?php endif; ?>
 
                     <?php if ( $description ) : ?>
@@ -1026,7 +1026,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 <?php endif; ?>
 
                 <?php if ( $show_toggle ) : ?>
-                <div class="htm25-pricing__toggle-wrap" role="group" aria-label="<?php esc_attr_e( 'Billing period', 'htmega-addons' ); ?>">
+                <div class="htm25-pricing__toggle-wrap" role="group" aria-label="<?php esc_attr_e( 'Billing period', 'ht-mega-for-elementor' ); ?>">
                     <span class="htm25-pricing__toggle-label htm25-pricing__toggle-label--monthly" id="<?php echo esc_attr( $toggle_id ); ?>-monthly">
                         <?php echo esc_html( $label_monthly ); ?>
                     </span>
@@ -1056,7 +1056,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
 
                 <?php if ( $plan_items ) : ?>
                 <div
-                    class="htm25-pricing__cards htm25-pricing__cards--cols-<?php echo $cols; ?>"
+                    class="htm25-pricing__cards htm25-pricing__cards--cols-<?php echo esc_attr( $cols ); ?>"
                     role="list"
                 >
                     <?php foreach ( $plan_items as $item ) :
@@ -1149,7 +1149,7 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
             <?php if ( $features ) : ?>
             <hr class="htm25-pricing__card-divider" aria-hidden="true">
 
-            <ul class="htm25-pricing__card-features" role="list" aria-label="<?php esc_attr_e( 'Plan features', 'htmega-addons' ); ?>">
+            <ul class="htm25-pricing__card-features" role="list" aria-label="<?php esc_attr_e( 'Plan features', 'ht-mega-for-elementor' ); ?>">
                 <?php foreach ( $features as $feature ) : ?>
                 <li class="htm25-pricing__card-feature">
                     <span class="htm25-pricing__card-feature-check" aria-hidden="true">
@@ -1166,7 +1166,8 @@ class HTMega_Elementor_Widget_Pricing_2025 extends Widget_Base {
                 <a
                     href="<?php echo esc_url( $cta_url ); ?>"
                     class="htm25-btn htm25-btn--<?php echo esc_attr( $cta_variant ); ?> htm25-pricing__card-cta"
-                    <?php echo $cta_target; // phpcs:ignore — already sanitized ?>
+                    <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $cta_target is a hardcoded ' target="_blank" rel="noopener noreferrer"' string or empty, not user-controlled text. ?>
+                    <?php echo $cta_target; ?>
                 >
                     <?php echo esc_html( $cta_text ); ?>
                 </a>

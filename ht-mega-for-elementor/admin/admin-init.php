@@ -8,7 +8,6 @@ class HTMega_Admin_Setting{
         $this->remove_all_notices();
         add_action( 'admin_enqueue_scripts', [ $this, 'htmega_enqueue_admin_scripts' ] );
         $this->HTMega_Admin_Settings_page();
-        add_filter( 'plugins_api_result', [ $this, 'htmega_filter_htcf_search_results' ], 10, 3 );
 
         // HT Mega Pro version check and menu remove action
         if( htmega_is_pro_active() && ( version_compare( HTMEGA_VERSION_PRO, '1.4.3' ) <= 0 ) ){
@@ -83,8 +82,8 @@ class HTMega_Admin_Setting{
     public function upgrade_to_pro_menu(){
         add_submenu_page(
             'htmega-addons', 
-            esc_html__('Upgrade to Pro', 'htmega-addons'),
-            esc_html__('Upgrade to Pro', 'htmega-addons'), 
+            esc_html__('Upgrade to Pro', 'ht-mega-for-elementor'),
+            esc_html__('Upgrade to Pro', 'ht-mega-for-elementor'), 
             'manage_options', 
             'https://wphtmega.com/pricing/?utm_source=admin&utm_medium=mainmenu&utm_campaign=free'
         );
@@ -160,7 +159,7 @@ class HTMega_Admin_Setting{
     public function dashboard_widget() {
 		wp_add_dashboard_widget( 
             'hasthemes-dashboard-stories', 
-            esc_html__( 'HasThemes Stories', 'htmega-addons' ), 
+            esc_html__( 'HasThemes Stories', 'ht-mega-for-elementor' ), 
             [ $this, 'dashboard_hasthemes_widget' ] 
         );
 
@@ -220,33 +219,6 @@ class HTMega_Admin_Setting{
                 remove_all_actions('all_admin_notices');
             }
         }, 1000);
-    }
-
-    /**
-     * When a user searches "ht-contactform" in the plugin installer,
-     * strip every result except the exact HT Contact Form plugin so
-     * the Install button is immediately visible without distractions.
-     *
-     * @param object|WP_Error $res    API response.
-     * @param string          $action API action.
-     * @param object          $args   Request arguments.
-     * @return object|WP_Error
-     */
-    public function htmega_filter_htcf_search_results( $res, $action, $args ) {
-        if ( $action !== 'query_plugins' || empty( $args->search ) ) {
-            return $res;
-        }
-
-        if ( 'ht-contactform' === $args->search && ! empty( $res->plugins ) ) {
-            $res->plugins = array_values(
-                array_filter( $res->plugins, function ( $plugin ) {
-                    return isset( $plugin['slug'] ) && $plugin['slug'] === 'ht-contactform';
-                } )
-            );
-            $res->info['results'] = count( $res->plugins );
-        }
-
-        return $res;
     }
 
 }

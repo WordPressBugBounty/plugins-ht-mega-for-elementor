@@ -17,7 +17,7 @@ class Bl_Post_Title_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Post Title', 'htmega-addons' );
+        return __( 'Post Title', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -42,13 +42,13 @@ class Bl_Post_Title_ELement extends Widget_Base {
         $this->start_controls_section(
             'blog_title_content',
             [
-                'label' => __( 'Post Title', 'htmega-addons' ),
+                'label' => __( 'Post Title', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'blog_title_html_tag',
                 [
-                    'label'   => __( 'Title HTML Tag', 'htmega-addons' ),
+                    'label'   => __( 'Title HTML Tag', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => htmega_html_tag_lists(),
                     'default' => 'h1',
@@ -61,7 +61,7 @@ class Bl_Post_Title_ELement extends Widget_Base {
         $this->start_controls_section(
             'blog_title_style_section',
             array(
-                'label' => __( 'Post Title', 'htmega-addons' ),
+                'label' => __( 'Post Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -69,7 +69,7 @@ class Bl_Post_Title_ELement extends Widget_Base {
             $this->add_control(
                 'blog_title_color',
                 [
-                    'label'     => __( 'Title Color', 'htmega-addons' ),
+                    'label'     => __( 'Title Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .entry-title' => 'color: {{VALUE}};',
@@ -81,7 +81,7 @@ class Bl_Post_Title_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'blog_title_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}} .entry-title',
                 )
             );
@@ -89,7 +89,7 @@ class Bl_Post_Title_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'blog_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -102,23 +102,23 @@ class Bl_Post_Title_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'blog_title_align',
                 [
-                    'label'        => __( 'Alignment', 'htmega-addons' ),
+                    'label'        => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::CHOOSE,
                     'options'      => [
                         'left'   => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right'  => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -137,7 +137,7 @@ class Bl_Post_Title_ELement extends Widget_Base {
         $title_tag = htmega_validate_html_tag( $settings['blog_title_html_tag'] );
 
         if( Elementor::instance()->editor->is_edit_mode() ){
-            echo sprintf( '<%1$s class="entry-title">' . esc_html__('Blog Title', 'htmega-addons' ). '</%1$s>', esc_attr( $title_tag ) );
+            echo sprintf( '<%1$s class="entry-title">' . esc_html__('Blog Title', 'ht-mega-for-elementor' ). '</%1$s>', esc_attr( $title_tag ) );
         }else{
             echo sprintf( the_title( '<%1$s class="entry-title">', '</%1$s>', false ), esc_attr( $title_tag ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }

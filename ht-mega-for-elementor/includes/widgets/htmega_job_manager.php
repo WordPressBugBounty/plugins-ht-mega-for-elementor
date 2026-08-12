@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Job Manager', 'htmega-addons' );
+        return __( 'Job Manager', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -40,7 +40,7 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Job Manager', 'htmega-addons' ),
+                'label' => __( 'Job Manager', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -48,7 +48,8 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: "Job Manager" plugin name, rendered as a link to install/activate it */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Job%2520Manager&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">Job Manager</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -71,22 +72,22 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
         $this->start_controls_section(
             'jobmanager_content',
             [
-                'label' => __( 'Job Manager', 'htmega-addons' ),
+                'label' => __( 'Job Manager', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'job_layout',
                 [
-                    'label'   => __( 'Layout', 'htmega-addons' ),
+                    'label'   => __( 'Layout', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'list',
                     'options' => [
-                        'list'          => __( 'Job List', 'htmega-addons' ),
-                        'summary'       => __( 'Job Summary', 'htmega-addons' ),
-                        'applyjob'      => __( 'Job Apply To', 'htmega-addons' ),
-                        'jobform'       => __( 'Job Post Form', 'htmega-addons' ),
-                        'jobdashboard'  => __( 'Job Dashboard', 'htmega-addons' ),
+                        'list'          => __( 'Job List', 'ht-mega-for-elementor' ),
+                        'summary'       => __( 'Job Summary', 'ht-mega-for-elementor' ),
+                        'applyjob'      => __( 'Job Apply To', 'ht-mega-for-elementor' ),
+                        'jobform'       => __( 'Job Post Form', 'ht-mega-for-elementor' ),
+                        'jobdashboard'  => __( 'Job Dashboard', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -94,7 +95,7 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
             $this->add_control(
                 'item_number',
                 [
-                    'label' => __( 'Number of listings to show', 'htmega-addons' ),
+                    'label' => __( 'Number of listings to show', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 5,
                     'label_block'=>true,
@@ -107,12 +108,12 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
             $this->add_control(
                 'order',
                 [
-                    'label'   => __( 'Order', 'htmega-addons' ),
+                    'label'   => __( 'Order', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'desc',
                     'options' => [
-                        'asc'  => __( 'Ascending', 'htmega-addons' ),
-                        'desc' => __( 'Descending', 'htmega-addons' ),
+                        'asc'  => __( 'Ascending', 'ht-mega-for-elementor' ),
+                        'desc' => __( 'Descending', 'ht-mega-for-elementor' ),
                     ],
                     'condition'=>[
                         'job_layout'=>'list',
@@ -123,14 +124,14 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
             $this->add_control(
                 'order_by',
                 [
-                    'label'   => __( 'Order By', 'htmega-addons' ),
+                    'label'   => __( 'Order By', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'date',
                     'options' => [
-                        'date'          => __( 'Date', 'htmega-addons' ),
-                        'title'         => __( 'Title', 'htmega-addons' ),
-                        'author'        => __( 'Author', 'htmega-addons' ),
-                        'rand_featured' => __( 'Random', 'htmega-addons' ),
+                        'date'          => __( 'Date', 'ht-mega-for-elementor' ),
+                        'title'         => __( 'Title', 'ht-mega-for-elementor' ),
+                        'author'        => __( 'Author', 'ht-mega-for-elementor' ),
+                        'rand_featured' => __( 'Random', 'ht-mega-for-elementor' ),
                     ],
                     'condition'=>[
                         'job_layout'=>'list',
@@ -141,7 +142,7 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
             $this->add_control(
                 'featured_jobs',
                 [
-                    'label'        => __( 'Feature Jobs only', 'htmega-addons' ),
+                    'label'        => __( 'Feature Jobs only', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'condition'=>[
@@ -153,13 +154,13 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
             $this->add_control(
                 'pagination_type',
                 [
-                    'label'   => __( 'Pagination Type', 'htmega-addons' ),
+                    'label'   => __( 'Pagination Type', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'loadmore',
                     'options' => [
-                        'none'          => __( 'None', 'htmega-addons' ),
-                        'number'        => __( 'Number', 'htmega-addons' ),
-                        'loadmore'      => __( 'Load More', 'htmega-addons' ),
+                        'none'          => __( 'None', 'ht-mega-for-elementor' ),
+                        'number'        => __( 'Number', 'ht-mega-for-elementor' ),
+                        'loadmore'      => __( 'Load More', 'ht-mega-for-elementor' ),
                     ],
                     'condition'=>[
                         'job_layout'=>'list',
@@ -170,7 +171,7 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
             $this->add_control(
                 'show_filters',
                 [
-                    'label'        => __( 'Filters', 'htmega-addons' ),
+                    'label'        => __( 'Filters', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -183,12 +184,12 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
             $this->add_control(
                 'content_align',
                 [
-                    'label'   => __( 'Content Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Content Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'left',
                     'options' => [
-                        'left'  => __( 'Left', 'htmega-addons' ),
-                        'right' => __( 'Right', 'htmega-addons' ),
+                        'left'  => __( 'Left', 'ht-mega-for-elementor' ),
+                        'right' => __( 'Right', 'ht-mega-for-elementor' ),
                     ],
                     'condition'=>[
                         'job_layout'=>'summary',
@@ -199,7 +200,7 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
             $this->add_control(
                 'content_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -221,14 +222,14 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
 
             if( class_exists('WP_Job_Manager') ){
                 $job_list = get_posts( ['numberposts' => -1, 'post_type' => 'job_listing',] );
-                $job_list_options = ['0' => esc_html__( 'Select Job', 'htmega-addons' ) ];
+                $job_list_options = ['0' => esc_html__( 'Select Job', 'ht-mega-for-elementor' ) ];
                 foreach ( $job_list as $list ) :
                     $job_list_options[ $list->ID ] = $list->post_title;
                 endforeach;
                 $this->add_control(
                     'job_id',
                     [
-                        'label' => __( 'Select Job', 'htmega-addons' ),
+                        'label' => __( 'Select Job', 'ht-mega-for-elementor' ),
                         'type'        => Controls_Manager::SELECT2,
                         'options'     => $job_list_options,
                         'default'     => ['0'],
@@ -246,7 +247,7 @@ class HTMega_Elementor_Widget_Job_Manager extends Widget_Base {
     protected function render( $instance = [] ) {
 
         if ( ! is_plugin_active('wp-job-manager/wp-job-manager.php') ) {
-            htmega_plugin_missing_alert( __('Job Manager', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Job Manager', 'ht-mega-for-elementor') );
             return;
         }
 

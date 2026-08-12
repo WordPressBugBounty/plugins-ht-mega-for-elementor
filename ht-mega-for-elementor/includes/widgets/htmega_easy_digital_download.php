@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Easy Digital Downloads', 'htmega-addons' );
+        return __( 'Easy Digital Downloads', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -40,7 +40,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Easy Digital Download', 'htmega-addons' ),
+                'label' => __( 'Easy Digital Download', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -48,7 +48,8 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: Plugin name (Easy Digital Download) with an install/activate link, repeated twice in the sentence */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Easy%2520Digital%2520Download&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">Easy Digital Download</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -71,14 +72,14 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'easydigitaldownload_content',
             [
-                'label' => __( 'Easy Digital Downloads', 'htmega-addons' ),
+                'label' => __( 'Easy Digital Downloads', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_responsive_control(
                 'columns',
                 [
-                    'label'   => __( 'Columns', 'htmega-addons' ),
+                    'label'   => __( 'Columns', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => [
                         '1' => '1',
@@ -98,7 +99,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'number',
                 [
-                    'label'   => __( 'Number of Item', 'htmega-addons' ),
+                    'label'   => __( 'Number of Item', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::NUMBER,
                     'default' => '4',
                 ]
@@ -107,7 +108,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'easydigitaldownload_thumbnail_show',
                 [
-                    'label'        => __( 'Show Thumbnail', 'htmega-addons' ),
+                    'label'        => __( 'Show Thumbnail', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default'      => 'yes',
@@ -117,7 +118,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'easydigitaldownload_excerpt_show',
                 [
-                    'label'        => __( 'Show Content', 'htmega-addons' ),
+                    'label'        => __( 'Show Content', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default'      => 'yes',
@@ -127,7 +128,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'easydigitaldownload_price_show',
                 [
-                    'label'        => __( 'Show Price', 'htmega-addons' ),
+                    'label'        => __( 'Show Price', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default'      => 'yes',
@@ -137,7 +138,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'easydigitaldownload_buy_button',
                 [
-                    'label'        => __( 'Show Buy Button', 'htmega-addons' ),
+                    'label'        => __( 'Show Buy Button', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default'      => 'yes',
@@ -147,7 +148,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'easydigitaldownload_pagination_show',
                 [
-                    'label'        => __( 'Show Pagination', 'htmega-addons' ),
+                    'label'        => __( 'Show Pagination', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default'      => 'yes',
@@ -160,7 +161,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'section_options',
             [
-                'label' => __( 'Options', 'htmega-addons' ),
+                'label' => __( 'Options', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -168,12 +169,12 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'source',
                 [
-                    'label'   => _x( 'Source', 'Posts Query Control', 'htmega-addons' ),
+                    'label'   => _x( 'Source', 'Posts Query Control', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => [
-                        ''          => __( 'Show All', 'htmega-addons' ),
-                        'by_id'     => __( 'Manual Selection', 'htmega-addons' ),
-                        'by_parent' => __( 'By Parent', 'htmega-addons' ),
+                        ''          => __( 'Show All', 'ht-mega-for-elementor' ),
+                        'by_id'     => __( 'Manual Selection', 'ht-mega-for-elementor' ),
+                        'by_parent' => __( 'By Parent', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -187,7 +188,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'categories',
                 [
-                    'label'       => __( 'Categories', 'htmega-addons' ),
+                    'label'       => __( 'Categories', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT2,
                     'options'     => $options,
                     'default'     => [],
@@ -199,11 +200,11 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 ]
             );
 
-            $parent_options = array( '0' => __( 'Only Top Level', 'htmega-addons' ) ) + $options;
+            $parent_options = array( '0' => __( 'Only Top Level', 'ht-mega-for-elementor' ) ) + $options;
             $this->add_control(
                 'parent',
                 [
-                    'label'     => __( 'Parent', 'htmega-addons' ),
+                    'label'     => __( 'Parent', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SELECT,
                     'default'   => '0',
                     'options'   => $parent_options,
@@ -216,7 +217,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'hide_empty',
                 [
-                    'label'        => __( 'Hide Empty', 'htmega-addons' ),
+                    'label'        => __( 'Hide Empty', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                 ]
@@ -225,14 +226,14 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'orderby',
                 [
-                    'label'   => __( 'Order by', 'htmega-addons' ),
+                    'label'   => __( 'Order by', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'name',
                     'options' => [
-                        'name'        => __( 'Name', 'htmega-addons' ),
-                        'slug'        => __( 'Slug', 'htmega-addons' ),
-                        'description' => __( 'Description', 'htmega-addons' ),
-                        'count'       => __( 'Count', 'htmega-addons' ),
+                        'name'        => __( 'Name', 'ht-mega-for-elementor' ),
+                        'slug'        => __( 'Slug', 'ht-mega-for-elementor' ),
+                        'description' => __( 'Description', 'ht-mega-for-elementor' ),
+                        'count'       => __( 'Count', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -240,12 +241,12 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'order',
                 [
-                    'label'   => __( 'Order', 'htmega-addons' ),
+                    'label'   => __( 'Order', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'desc',
                     'options' => [
-                        'asc'  => __( 'ASC', 'htmega-addons' ),
-                        'desc' => __( 'DESC', 'htmega-addons' ),
+                        'asc'  => __( 'ASC', 'ht-mega-for-elementor' ),
+                        'desc' => __( 'DESC', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -256,7 +257,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'single_item_style_section',
             [
-                'label' => __( 'Single Item', 'htmega-addons' ),
+                'label' => __( 'Single Item', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -264,7 +265,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_responsive_control(
                 'single_item_gap',
                 [
-                    'label'   => esc_html__( 'Item Gap', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Item Gap', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 15,
@@ -295,7 +296,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'single_item_background',
-                    'label' => __( 'Item Background', 'htmega-addons' ),
+                    'label' => __( 'Item Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner',
                 ]
@@ -304,7 +305,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_responsive_control(
                 'single_item_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -318,7 +319,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name'      => 'single_item_border',
-                    'label'     => esc_html__( 'Border', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner',
                     'separator' => 'before',
                 ]
@@ -327,7 +328,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_responsive_control(
                 'single_item_border_radius',
                 [
-                    'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -340,6 +341,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name'    => 'single_item_box_shadow',
+                    // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Box_Shadow's 'exclude' param removing the box_shadow_position sub-control from the Elementor Style panel, not a WP_Query exclude arg.
                     'exclude' => [
                         'box_shadow_position',
                     ],
@@ -350,19 +352,19 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'single_item_alignment',
                 [
-                    'label'   => esc_html__( 'Alignment', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => esc_html__( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => esc_html__( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],
@@ -378,7 +380,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'single_item_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -388,14 +390,14 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 $this->start_controls_tab(
                     'title_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'title_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   => '',
                             'selectors' => [
@@ -408,7 +410,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name'     => 'title_typography',
-                            'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner .edd_download_title a',
                         ]
                     );
@@ -416,7 +418,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                     $this->add_responsive_control(
                         'title_margin',
                         [
-                            'label'      => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label'      => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -431,14 +433,14 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 $this->start_controls_tab(
                     'title_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'title_hover_color',
                         [
-                            'label'     => esc_html__( 'Hover Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Hover Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner .edd_download_title a:hover' => 'color: {{VALUE}};',
@@ -456,7 +458,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'single_item_description_style_section',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'easydigitaldownload_excerpt_show'=>'yes',
@@ -467,7 +469,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'single_item_description_color',
                 [
-                    'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '',
                     'selectors' => [
@@ -480,7 +482,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_responsive_control(
                 'single_item_description_margin',
                 [
-                    'label'      => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label'      => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -493,7 +495,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name'     => 'single_item_description_typography',
-                    'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner .edd_download_excerpt',
                 ]
             );
@@ -504,7 +506,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'single_item_price_style_section',
             [
-                'label' => __( 'Price', 'htmega-addons' ),
+                'label' => __( 'Price', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'easydigitaldownload_price_show'=>'yes',
@@ -515,7 +517,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'single_item_price_color',
                 [
-                    'label'     => esc_html__( 'Price Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Price Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '',
                     'selectors' => [
@@ -530,7 +532,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name'     => 'single_item_price_typography',
-                    'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner span.edd_price, 
                      {{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner .edd_price_options span',
                 ]
@@ -539,7 +541,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_responsive_control(
                 'single_item_price_margin',
                 [
-                    'label'      => esc_html__( 'Price Margin', 'htmega-addons' ),
+                    'label'      => esc_html__( 'Price Margin', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -556,7 +558,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'single_item_button_style_section',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'easydigitaldownload_buy_button'=>'yes',
@@ -569,14 +571,14 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 $this->start_controls_tab(
                     'single_item_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'button_text_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   => '',
                             'selectors' => [
@@ -589,7 +591,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner .edd_purchase_submit_wrapper > .button',
                         ]
@@ -600,7 +602,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name'        => 'button_border',
-                            'label'       => esc_html__( 'Border', 'htmega-addons' ),
+                            'label'       => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default'     => '1px',
                             'selector'    => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner .edd_purchase_submit_wrapper > .button',
@@ -611,7 +613,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                     $this->add_control(
                         'button_border_radius',
                         [
-                            'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -623,7 +625,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                     $this->add_control(
                         'button_padding',
                         [
-                            'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors'  => [
@@ -634,7 +636,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                     $this->add_responsive_control(
                         'button_margin',
                         [
-                            'label'      => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label'      => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -648,14 +650,14 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 $this->start_controls_tab(
                     'single_item_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'button_text_hover_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   => '',
                             'selectors' => [
@@ -668,7 +670,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner .edd_purchase_submit_wrapper > .button:hover',
                         ]
@@ -679,7 +681,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name'        => 'button_hover_border',
-                            'label'       => esc_html__( 'Border', 'htmega-addons' ),
+                            'label'       => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default'     => '1px',
                             'selector'    => '{{WRAPPER}} .edd_downloads_list .edd_download .edd_download_inner .edd_purchase_submit_wrapper > .button:hover',
@@ -689,7 +691,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                     $this->add_control(
                         'button_hover_border_radius',
                         [
-                            'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -707,7 +709,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $this->start_controls_section(
             'pagination_style_section',
             [
-                'label' => __( 'Pagination', 'htmega-addons' ),
+                'label' => __( 'Pagination', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'easydigitaldownload_pagination_show' => 'yes',
@@ -718,19 +720,19 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'pagination_alignment',
                 [
-                    'label'   => esc_html__( 'Alignment', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => esc_html__( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => esc_html__( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],
@@ -743,7 +745,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'pagination_color',
                 [
-                    'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '',
                     'selectors' => [
@@ -755,7 +757,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
             $this->add_control(
                 'pagination_color_active_color',
                 [
-                    'label'     => esc_html__( 'Active Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Active Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '',
                     'selectors' => [
@@ -767,14 +769,14 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name'     => 'pagination_typography',
-                    'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .page-numbers',
                 ]
             );
             $this->add_responsive_control(
                 'pagination__margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -790,7 +792,7 @@ class HTMega_Elementor_Widget_Easy_Digital_Download extends Widget_Base {
         $settings   = $this->get_settings_for_display();
 
         if ( ! is_plugin_active('easy-digital-downloads/easy-digital-downloads.php') ) {
-            htmega_plugin_missing_alert( __('Easy Digital Download', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Easy Digital Download', 'ht-mega-for-elementor') );
             return;
         }
         $edd_attributes = [

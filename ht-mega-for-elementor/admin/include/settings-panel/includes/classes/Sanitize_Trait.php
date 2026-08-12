@@ -1,6 +1,8 @@
 <?php
 namespace HTMegaOpt\SanitizeTrail;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Settings Fields Sanitize handler trait
  */

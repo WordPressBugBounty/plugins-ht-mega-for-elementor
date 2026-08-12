@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Google Map', 'htmega-addons' );
+        return __( 'Google Map', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -41,14 +41,14 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
         $this->start_controls_section(
             'google_map_content',
             [
-                'label' => __( 'Google Map', 'htmega-addons' ),
+                'label' => __( 'Google Map', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'zoom_control',
                 [
-                    'label' => __( 'Zoom Control', 'htmega-addons' ),
+                    'label' => __( 'Zoom Control', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -58,7 +58,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'htmega_map_default_zoom',
                 [
-                    'label' => __( 'Default Zoom', 'htmega-addons' ),
+                    'label' => __( 'Default Zoom', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 5,
@@ -78,7 +78,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_google_map_height',
                 [
-                    'label' => __( 'Map Height', 'htmega-addons' ),
+                    'label' => __( 'Map Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -98,10 +98,10 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'htmega_center_address',
                 [
-                    'label' => __( 'Center Address', 'htmega-addons' ),
+                    'label' => __( 'Center Address', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Enter your center address.', 'htmega-addons' ),
-                    'default' => __( 'Bangladesh', 'htmega-addons' ),
+                    'placeholder' => __( 'Enter your center address.', 'ht-mega-for-elementor' ),
+                    'default' => __( 'Bangladesh', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -109,10 +109,10 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'htmega_style_address',
                 [
-                    'label' => __( 'Map Style', 'htmega-addons' ),
+                    'label' => __( 'Map Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Enter Map Style Json Code.', 'htmega-addons' ),
-                    'description'   => __( 'Go to <a href="https://snazzymaps.com/" target=_blank>Snazzy Maps</a> and Choose/Customize your Map Style. Click on your demo and copy JavaScript Style Array', 'htmega-addons' )
+                    'placeholder' => __( 'Enter Map Style Json Code.', 'ht-mega-for-elementor' ),
+                    'description'   => __( 'Go to <a href="https://snazzymaps.com/" target=_blank>Snazzy Maps</a> and Choose/Customize your Map Style. Click on your demo and copy JavaScript Style Array', 'ht-mega-for-elementor' )
                 ]
             );
 
@@ -121,7 +121,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
         $this->start_controls_section(
             'google_map_marker',
             [
-                'label' => __( 'Map Marker', 'htmega-addons' ),
+                'label' => __( 'Map Marker', 'ht-mega-for-elementor' ),
             ]
         );
 
@@ -131,7 +131,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $repeater->add_control(
                 'marker_lat', 
                 [
-                    'label'       => __( 'Latitude', 'htmega-addons' ),
+                    'label'       => __( 'Latitude', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
                     'default'     => '31.42866311735861',
                 ]
@@ -139,7 +139,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $repeater->add_control(
                 'marker_lng', 
                 [
-                    'label'       => __( 'Longitude', 'htmega-addons' ),
+                    'label'       => __( 'Longitude', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
                     'default'     => '-98.61328125',
                 ]
@@ -148,7 +148,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $repeater->add_control(
                 'marker_info_box',
                 [
-                    'label' => __( 'Marker Info Box ', 'htmega-addons' ),
+                    'label' => __( 'Marker Info Box ', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -159,17 +159,17 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $repeater->add_control(
                 'marker_title', 
                 [
-                'label'     => esc_html__( 'Title', 'htmega-addons' ),
+                'label'     => esc_html__( 'Title', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXTAREA,
-                'default'   => __('Another Place','htmega-addons'),
+                'default'   => __('Another Place','ht-mega-for-elementor'),
                 ]
             );
             
             $repeater->add_control(
                 'custom_marker', 
                 [
-                'label'       => esc_html__( 'Custom marker', 'htmega-addons' ),
-                'description' => esc_html__('Use max 32x32 px size.', 'htmega-addons'),
+                'label'       => esc_html__( 'Custom marker', 'ht-mega-for-elementor' ),
+                'description' => esc_html__('Use max 32x32 px size.', 'ht-mega-for-elementor'),
                 'type'        => Controls_Manager::MEDIA,
                 ]
             );
@@ -177,7 +177,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
              $repeater->add_control(
                 'htmega_marker_address_heading',
                 [
-                    'label' => esc_html__( 'Info Address Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Info Address Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -187,7 +187,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'htmega_marker_address_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .gm-style-iw .htmega-baloon-text{{CURRENT_ITEM}}',
                     'condition' => [
                         'marker_info_box' => 'yes',
@@ -199,7 +199,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
              $repeater->add_control(
                 'htmega_marker_address_color',
                 [
-                    'label'     => esc_html__( 'Font Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Font Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gm-style-iw .htmega-baloon-text{{CURRENT_ITEM}}' => 'color: {{VALUE}}',
@@ -211,7 +211,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
              $repeater->add_control(
                 'htmega_marker_address_heading_span',
                 [
-                    'label' => esc_html__( 'Info Address Span Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Info Address Span Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -221,7 +221,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'htmega_marker_address_span_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .gm-style-iw .htmega-baloon-text{{CURRENT_ITEM}} span',
                     'separator' => 'before',
                 ]
@@ -230,7 +230,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
              $repeater->add_control(
                 'htmega_marker_address_Span_color',
                 [
-                    'label'     => esc_html__( 'Font Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Font Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .gm-style-iw .htmega-baloon-text{{CURRENT_ITEM}} span' => 'color: {{VALUE}}',
@@ -242,16 +242,16 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
             'htmega_map_marker_list',
             [
-                'label'     => __( 'Marker', 'htmega-addons' ),
+                'label'     => __( 'Marker', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::REPEATER,
                 'fields'    => $repeater->get_controls(),
                 'default' => [
                     [
-                            'marker_info_box' => __('no','htmega-addons'),
-                            'marker_title' => __('This is <span>Dhaka</span>','htmega-addons'),
-                            'marker_lat'   => __('23.8103','htmega-addons'),
-                            'marker_lng'   => __('90.4125','htmega-addons'),
-                            'custom_marker'=> __('90.4125','htmega-addons'),
+                            'marker_info_box' => __('no','ht-mega-for-elementor'),
+                            'marker_title' => __('This is <span>Dhaka</span>','ht-mega-for-elementor'),
+                            'marker_lat'   => __('23.8103','ht-mega-for-elementor'),
+                            'marker_lng'   => __('90.4125','ht-mega-for-elementor'),
+                            'custom_marker'=> __('90.4125','ht-mega-for-elementor'),
                     ],
                 ],
                 'title_field' => '{{{ marker_title }}}',
@@ -263,14 +263,14 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
         $this->start_controls_section(
             'google_map_fixed_address',
             [
-                'label' => __( 'Map Fixed Address', 'htmega-addons' ),
+                'label' => __( 'Map Fixed Address', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'google_map_fixed_address_control',
                 [
-                    'label'   => __( 'Fixed Maps Address:', 'htmega-addons' ),
+                    'label'   => __( 'Fixed Maps Address:', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                 ]
@@ -279,9 +279,9 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'htmega_fixed_address',
                 [
-                    'label' => __( 'Fixed Address', 'htmega-addons' ),
+                    'label' => __( 'Fixed Address', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Enter your fixed address.', 'htmega-addons' ),
+                    'placeholder' => __( 'Enter your fixed address.', 'ht-mega-for-elementor' ),
                     'default' => '<span>ADDRESS</span><br>Iris Watson <br>P.O. Box 283 8562 Fusce Rd.<br>Frederick Nebraska 20620<br>(372) 587-2335',
                     'separator' => 'before',
                     'condition' => [
@@ -295,7 +295,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
         $this->start_controls_section(
             'google_map_info_address',
             [
-                'label' => __( 'Maps Info Address', 'htmega-addons' ),
+                'label' => __( 'Maps Info Address', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -304,7 +304,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_info_address_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .gm-style-iw',
                 ]
@@ -314,7 +314,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_info_address_area_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .gm-style-iw',
                     'separator' => 'before',
                 ]
@@ -323,7 +323,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_info_address_area_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .gm-style-iw' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -334,7 +334,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_info_address_area_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -347,7 +347,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_info_address_area_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -359,7 +359,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'htmega_info_address_heading',
                 [
-                    'label' => esc_html__( 'Info Pointer', 'htmega-addons' ),
+                    'label' => esc_html__( 'Info Pointer', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -368,7 +368,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_info_address_background_pointer_width',
                 [
-                    'label'   => __( 'Pointer Width', 'htmega-addons' ),
+                    'label'   => __( 'Pointer Width', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -389,7 +389,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_info_address_background_pointer',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'gradient' ],
                     'selector' => '{{WRAPPER}} .gm-style .gm-style-iw-t::after',
                 ]
@@ -398,7 +398,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'htmega_info_address_close_button',
                 [
-                    'label' => __( 'Info Button Close', 'htmega-addons' ),
+                    'label' => __( 'Info Button Close', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -411,7 +411,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
         $this->start_controls_section(
             'google_map_fixed_address_style',
             [
-                'label' => __( 'Maps Fixed Address', 'htmega-addons' ),
+                'label' => __( 'Maps Fixed Address', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'google_map_fixed_address_control' => 'yes',
@@ -423,7 +423,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'htmega_fixed_address_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-google-map-address-yes p',
                     'separator' => 'before',
                 ]
@@ -432,7 +432,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'htmega_fixed_address_color',
                 [
-                    'label'     => esc_html__( 'Font Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Font Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-google-map-address-yes' => 'color: {{VALUE}}',
@@ -445,7 +445,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_fixed_address_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-google-map-address-yes',
                 ]
@@ -455,7 +455,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_fixed_address_area_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-google-map-address-yes',
                     'separator' => 'before',
                 ]
@@ -464,7 +464,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_fixed_address_area_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-google-map-address-yes' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -475,7 +475,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_fixed_address_area_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -488,7 +488,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_fixed_address_area_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -500,7 +500,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'fixed_address_heading_span',
                 [
-                    'label' => esc_html__( 'Fixed Address Span Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Fixed Address Span Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -510,7 +510,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'htmega_fixed_address_span_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-google-map-address-yes p span',
                     'separator' => 'before',
                 ]
@@ -519,7 +519,7 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
             $this->add_control(
                 'htmega_fixed_address_Span_color',
                 [
-                    'label'     => esc_html__( 'Font Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Font Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-google-map-address-yes p span' => 'color: {{VALUE}}',
@@ -562,11 +562,11 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
         $this->add_render_attribute( 'googlemaps_attr', 'data-mapstyle', esc_attr( $settings['htmega_style_address'] ) );
 
         ?>
-            <div <?php echo $this->get_render_attribute_string('googlemaps_inilasije'); ?> >    
-                <div <?php echo $this->get_render_attribute_string('googlemaps_address_attr'); ?> >
-                    <p><?php echo htmega_kses_desc( $settings['htmega_fixed_address'] ) ?></p>
+            <div <?php echo $this->get_render_attribute_string('googlemaps_inilasije'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >
+                <div <?php echo $this->get_render_attribute_string('googlemaps_address_attr'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >
+                    <p><?php echo htmega_kses_desc( $settings['htmega_fixed_address'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php ?></p>
                 </div>
-                <div <?php echo $this->get_render_attribute_string('googlemaps_attr'); ?> >&nbsp;</div>
+                <div <?php echo $this->get_render_attribute_string('googlemaps_attr'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >&nbsp;</div>
             </div>
 
             <?php if($settings['htmega_info_address_close_button'] == 'yes'): ?>

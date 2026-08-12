@@ -95,7 +95,7 @@ $htm25_about_media_column = function( string $img_html, bool $show_float, string
                     <path d="M23 19C23 19.5304 22.7893 20.0391 22.4142 20.4142C22.0391 20.7893 21.5304 21 21 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8C1 7.46957 1.21071 6.96086 1.58579 6.58579C1.96086 6.21071 2.46957 6 3 6H7L9 3H15L17 6H21C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8V19Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <circle cx="12" cy="13" r="4" stroke="currentColor" stroke-width="1.5"/>
                 </svg>
-                <span><?php esc_html_e( 'Add an image', 'htmega-addons' ); ?></span>
+                <span><?php esc_html_e( 'Add an image', 'ht-mega-for-elementor' ); ?></span>
             </div>
         <?php endif; ?>
         <?php if ( $show_float && ( $float_num || $float_lbl ) ) : ?>
@@ -113,29 +113,42 @@ $htm25_about_media_column = function( string $img_html, bool $show_float, string
 $sc   = '.htmega-block-' . $block_id;
 $_css = [];
 
-$_border = function( $type, $width, $color ) {
+$_num = function( $value, $unit = 'px' ) {
+    if ( ! is_numeric( $value ) ) return '';
+    $allowed = [ 'px', 'em', 'rem', '%', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'pt' ];
+    $unit    = in_array( $unit, $allowed, true ) ? $unit : 'px';
+    return ( $value + 0 ) . $unit;
+};
+$_border = function( $type, $width, $color ) use ( $_num ) {
     if ( ! $type || $type === 'none' ) return [];
     $r = [ 'border-style: ' . esc_attr( $type ) ];
     if ( $width && is_array( $width ) ) {
         $u = $width['unit'] ?? 'px';
         if ( isset( $width['link'] ) && $width['link'] === 'yes' && isset( $width['top'] ) ) {
-            $r[] = 'border-width: ' . $width['top'] . $u;
+            $val = $_num( $width['top'], $u );
+            if ( $val !== '' ) $r[] = 'border-width: ' . $val;
         } else {
             foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-                if ( ! empty( $width[ $_s ] ) ) $r[] = "border-{$_s}-width: {$width[$_s]}{$u}";
+                if ( ! empty( $width[ $_s ] ) ) {
+                    $val = $_num( $width[ $_s ], $u );
+                    if ( $val !== '' ) $r[] = "border-{$_s}-width: {$val}";
+                }
             }
         }
     }
     if ( $color ) $r[] = 'border-color: ' . esc_attr( $color );
     return $r;
 };
-$_radius = function( $rv ) {
+$_radius = function( $rv ) use ( $_num ) {
     if ( ! $rv || ! is_array( $rv ) ) return [];
     $u   = $rv['unit'] ?? 'px';
     $map = [ 'top' => 'top-left', 'right' => 'top-right', 'bottom' => 'bottom-right', 'left' => 'bottom-left' ];
     $r   = [];
     foreach ( $map as $_s => $corner ) {
-        if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) $r[] = "border-{$corner}-radius: {$rv[$_s]}{$u}";
+        if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) {
+            $val = $_num( $rv[ $_s ], $u );
+            if ( $val !== '' ) $r[] = "border-{$corner}-radius: {$val}";
+        }
     }
     return $r;
 };
@@ -148,24 +161,30 @@ $_shadow = function( $s ) {
     $sp = is_numeric( $s['spread']     ?? null ) ? floatval( $s['spread'] )     : 0;
     return 'box-shadow: ' . $i . $h . 'px ' . $v . 'px ' . $b . 'px ' . $sp . 'px ' . esc_attr( $s['color'] );
 };
-$_typo = function( $t ) {
+$_typo = function( $t ) use ( $_num ) {
     if ( ! $t || ! is_array( $t ) ) return [];
     $r = [];
-    if ( ! empty( $t['family'] )        ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
-    if ( ! empty( $t['size'] )          ) $r[] = 'font-size: '       . $t['size']       . ( $t['sizeUnit']      ?? 'px' );
-    if ( ! empty( $t['weight'] )        ) $r[] = 'font-weight: '     . esc_attr( $t['weight'] );
-    if ( ! empty( $t['lineHeight'] )    ) $r[] = 'line-height: '     . $t['lineHeight'];
-    if ( ! empty( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: '  . $t['letterSpacing'] . 'px';
-    if ( ! empty( $t['transform'] )     ) $r[] = 'text-transform: '  . esc_attr( $t['transform'] );
+    if ( ! empty( $t['family'] ) ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
+    if ( ! empty( $t['size'] ) ) {
+        $val = $_num( $t['size'], $t['sizeUnit'] ?? 'px' );
+        if ( $val !== '' ) $r[] = 'font-size: ' . $val;
+    }
+    if ( ! empty( $t['weight'] ) ) $r[] = 'font-weight: ' . esc_attr( $t['weight'] );
+    if ( isset( $t['lineHeight'] ) && is_numeric( $t['lineHeight'] ) ) $r[] = 'line-height: ' . ( $t['lineHeight'] + 0 );
+    if ( isset( $t['letterSpacing'] ) && is_numeric( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: ' . ( $t['letterSpacing'] + 0 ) . 'px';
+    if ( ! empty( $t['transform'] ) ) $r[] = 'text-transform: ' . esc_attr( $t['transform'] );
     return $r;
 };
-$_dim = function( $dim, $prop ) {
+$_dim = function( $dim, $prop ) use ( $_num ) {
     if ( ! $dim || ! is_array( $dim ) ) return [];
     $d = isset( $dim['desktop'] ) ? $dim['desktop'] : $dim;
     $u = $d['unit'] ?? $dim['unit'] ?? 'px';
     $r = [];
     foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-        if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) $r[] = "{$prop}-{$_s}: {$d[$_s]}{$u}";
+        if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) {
+            $val = $_num( $d[ $_s ], $u );
+            if ( $val !== '' ) $r[] = "{$prop}-{$_s}: {$val}";
+        }
     }
     return $r;
 };
@@ -256,8 +275,8 @@ $_css_out = implode( "\n", $_css );
 <div class="htmega-block-<?php echo esc_attr( $block_id ); ?>">
 <section
     id="<?php echo esc_attr( $block_id ); ?>"
-    class="htm25-about htm25-style--<?php echo $style; ?> htm25-about--<?php echo $layout; ?>"
-    aria-label="<?php esc_attr_e( 'About section', 'htmega-addons' ); ?>"
+    class="htm25-about htm25-style--<?php echo $style; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitize_html_class()'d above */ ?> htm25-about--<?php echo $layout; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitize_html_class()'d above */ ?>"
+    aria-label="<?php esc_attr_e( 'About section', 'ht-mega-for-elementor' ); ?>"
 >
 
     <?php if ( $style === 'aurora' || $style === 'glass' ) : ?>
@@ -285,7 +304,7 @@ $_css_out = implode( "\n", $_css );
             </p>
             <?php endif; ?>
 
-            <<?php echo $headline_tag; ?> class="htm25-about__headline"><?php echo $headline; // nl2br + esc_html + safe accent span ?></<?php echo $headline_tag; ?>>
+            <<?php echo $headline_tag; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- whitelisted to h1/h2/h3 above */ ?> class="htm25-about__headline"><?php echo $headline; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- esc_html()'d above, accent span wraps esc_html()'d text only */ ?></<?php echo $headline_tag; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- whitelisted to h1/h2/h3 above */ ?>>
 
             <?php if ( $description ) : ?>
             <p class="htm25-about__description">
@@ -295,9 +314,9 @@ $_css_out = implode( "\n", $_css );
 
             <?php if ( $feature_items ) : ?>
             <ul
-                class="htm25-about__features htm25-about__features--cols-<?php echo $cols; ?>"
+                class="htm25-about__features htm25-about__features--cols-<?php echo $cols; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- (int) cast and whitelisted to [1,2,3] above */ ?>"
                 role="list"
-                aria-label="<?php esc_attr_e( 'Feature list', 'htmega-addons' ); ?>"
+                aria-label="<?php esc_attr_e( 'Feature list', 'ht-mega-for-elementor' ); ?>"
             >
                 <?php foreach ( $feature_items as $item ) : ?>
                 <?php
@@ -329,7 +348,7 @@ $_css_out = implode( "\n", $_css );
                 <a
                     href="<?php echo esc_url( $cta_url ); ?>"
                     class="htm25-btn htm25-btn--primary htm25-about__cta"
-                    <?php echo $cta_target; // phpcs:ignore — already sanitized ?>
+                    <?php echo $cta_target; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- constrained to hardcoded literal ' target="_blank" rel="noopener noreferrer"' or '' ?>
                 >
                     <?php echo esc_html( $cta_text ); ?>
                     <?php if ( $cta_icon ) : ?>

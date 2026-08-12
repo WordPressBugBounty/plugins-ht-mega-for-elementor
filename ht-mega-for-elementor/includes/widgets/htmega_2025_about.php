@@ -21,7 +21,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
     // ── Identity ──────────────────────────────────────────────
 
     public function get_name()        { return 'htmega-2026-about'; }
-    public function get_title()       { return __( 'About / Feature 2026', 'htmega-addons' ); }
+    public function get_title()       { return __( 'About / Feature 2026', 'ht-mega-for-elementor' ); }
     public function get_icon()        { return 'htmega-icon eicon-info-box'; }
     public function get_categories()  { return [ 'htmega-2026' ]; }
     public function get_keywords()    { return [ 'about', 'why choose us','about us', 'feature', 'htmega', '2026', 'section', 'services', 'bento' ]; }
@@ -36,43 +36,43 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Design Style ── */
         $this->start_controls_section( 'section_design_style', [
-            'label' => __( 'Design Style', 'htmega-addons' ),
+            'label' => __( 'Design Style', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
             $this->add_control( 'design_style', [
-                'label'   => __( 'Style Preset', 'htmega-addons' ),
+                'label'   => __( 'Style Preset', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'bento',
                 'options' => [
-                    'bento'  => __( 'Bento Grid',    'htmega-addons' ),
-                    'glass'  => __( 'Glassmorphism', 'htmega-addons' ),
-                    'dark'   => __( 'Dark Minimal',  'htmega-addons' ),
-                    'aurora' => __( 'Aurora',        'htmega-addons' ),
-                    'neo'    => __( 'Neo-Brutalist',  'htmega-addons' ),
+                    'bento'  => __( 'Bento Grid',    'ht-mega-for-elementor' ),
+                    'glass'  => __( 'Glassmorphism', 'ht-mega-for-elementor' ),
+                    'dark'   => __( 'Dark Minimal',  'ht-mega-for-elementor' ),
+                    'aurora' => __( 'Aurora',        'ht-mega-for-elementor' ),
+                    'neo'    => __( 'Neo-Brutalist',  'ht-mega-for-elementor' ),
                 ],
             ] );
 
             $this->add_control( 'layout', [
-                'label'   => __( 'Layout', 'htmega-addons' ),
+                'label'   => __( 'Layout', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'split-left',
                 'options' => [
-                    'split-left'   => __( 'Split — Text Left',  'htmega-addons' ),
-                    'split-right'  => __( 'Split — Text Right', 'htmega-addons' ),
-                    'centered'     => __( 'Centered / Stacked', 'htmega-addons' ),
-                    'feature-grid' => __( 'Feature Grid',       'htmega-addons' ),
+                    'split-left'   => __( 'Split — Text Left',  'ht-mega-for-elementor' ),
+                    'split-right'  => __( 'Split — Text Right', 'ht-mega-for-elementor' ),
+                    'centered'     => __( 'Centered / Stacked', 'ht-mega-for-elementor' ),
+                    'feature-grid' => __( 'Feature Grid',       'ht-mega-for-elementor' ),
                 ],
             ] );
 
             $this->add_control( 'feature_columns', [
-                'label'     => __( 'Feature Columns', 'htmega-addons' ),
+                'label'     => __( 'Feature Columns', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => '2',
                 'options'   => [
-                    '1' => __( '1 Column',  'htmega-addons' ),
-                    '2' => __( '2 Columns', 'htmega-addons' ),
-                    '3' => __( '3 Columns', 'htmega-addons' ),
+                    '1' => __( '1 Column',  'ht-mega-for-elementor' ),
+                    '2' => __( '2 Columns', 'ht-mega-for-elementor' ),
+                    '3' => __( '3 Columns', 'ht-mega-for-elementor' ),
                 ],
                 'condition' => [ 'layout' => 'feature-grid' ],
             ] );
@@ -81,42 +81,42 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Section Header ── */
         $this->start_controls_section( 'section_header', [
-            'label' => __( 'Section Header', 'htmega-addons' ),
+            'label' => __( 'Section Header', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
             $this->add_control( 'show_section_label', [
-                'label'        => __( 'Show Section Label', 'htmega-addons' ),
+                'label'        => __( 'Show Section Label', 'ht-mega-for-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Show', 'htmega-addons' ),
-                'label_off'    => __( 'Hide', 'htmega-addons' ),
+                'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
                 'default'      => 'yes',
             ] );
 
             $this->add_control( 'section_label_text', [
-                'label'     => __( 'Section Label', 'htmega-addons' ),
+                'label'     => __( 'Section Label', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => __( 'Why Choose Us', 'htmega-addons' ),
+                'default'   => __( 'Why Choose Us', 'ht-mega-for-elementor' ),
                 'condition' => [ 'show_section_label' => 'yes' ],
             ] );
 
             $this->add_control( 'headline', [
-                'label'   => __( 'Headline', 'htmega-addons' ),
+                'label'   => __( 'Headline', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXTAREA,
-                'default' => __( "Everything you need to\nbuild something great.", 'htmega-addons' ),
+                'default' => __( "Everything you need to\nbuild something great.", 'ht-mega-for-elementor' ),
                 'rows'    => 3,
             ] );
 
             $this->add_control( 'headline_highlight', [
-                'label'       => __( 'Highlighted Word(s)', 'htmega-addons' ),
+                'label'       => __( 'Highlighted Word(s)', 'ht-mega-for-elementor' ),
                 'type'        => Controls_Manager::TEXT,
-                'default'     => __( 'something great', 'htmega-addons' ),
-                'description' => __( 'These words will be styled with the accent color/gradient.', 'htmega-addons' ),
+                'default'     => __( 'something great', 'ht-mega-for-elementor' ),
+                'description' => __( 'These words will be styled with the accent color/gradient.', 'ht-mega-for-elementor' ),
             ] );
 
             $this->add_control( 'headline_tag', [
-                'label'   => __( 'HTML Tag', 'htmega-addons' ),
+                'label'   => __( 'HTML Tag', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'h2',
                 'options' => [
@@ -127,9 +127,9 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'description', [
-                'label'   => __( 'Description', 'htmega-addons' ),
+                'label'   => __( 'Description', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXTAREA,
-                'default' => __( 'A focused toolkit designed around real developer and designer workflows. Minimal setup, maximum output.', 'htmega-addons' ),
+                'default' => __( 'A focused toolkit designed around real developer and designer workflows. Minimal setup, maximum output.', 'ht-mega-for-elementor' ),
                 'rows'    => 4,
             ] );
 
@@ -137,14 +137,14 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Feature Items ── */
         $this->start_controls_section( 'section_features', [
-            'label' => __( 'Feature Items', 'htmega-addons' ),
+            'label' => __( 'Feature Items', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
             $repeater = new Repeater();
 
             $repeater->add_control( 'feature_icon', [
-                'label'   => __( 'Icon', 'htmega-addons' ),
+                'label'   => __( 'Icon', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::ICONS,
                 'default' => [
                     'value'   => 'fas fa-star',
@@ -153,42 +153,42 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $repeater->add_control( 'feature_title', [
-                'label'   => __( 'Title', 'htmega-addons' ),
+                'label'   => __( 'Title', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXT,
-                'default' => __( 'Feature Name', 'htmega-addons' ),
+                'default' => __( 'Feature Name', 'ht-mega-for-elementor' ),
             ] );
 
             $repeater->add_control( 'feature_description', [
-                'label'   => __( 'Description', 'htmega-addons' ),
+                'label'   => __( 'Description', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::TEXTAREA,
-                'default' => __( 'Short explanation of what this feature does and why it matters.', 'htmega-addons' ),
+                'default' => __( 'Short explanation of what this feature does and why it matters.', 'ht-mega-for-elementor' ),
                 'rows'    => 3,
             ] );
 
             $this->add_control( 'feature_items', [
-                'label'       => __( 'Features', 'htmega-addons' ),
+                'label'       => __( 'Features', 'ht-mega-for-elementor' ),
                 'type'        => Controls_Manager::REPEATER,
                 'fields'      => $repeater->get_controls(),
                 'default'     => [
                     [
                         'feature_icon'        => [ 'value' => 'fas fa-bolt',   'library' => 'fa-solid' ],
-                        'feature_title'       => __( 'Lightning Fast', 'htmega-addons' ),
-                        'feature_description' => __( 'Optimised for Core Web Vitals from day one — zero layout shift, sub-second LCP.', 'htmega-addons' ),
+                        'feature_title'       => __( 'Lightning Fast', 'ht-mega-for-elementor' ),
+                        'feature_description' => __( 'Optimised for Core Web Vitals from day one — zero layout shift, sub-second LCP.', 'ht-mega-for-elementor' ),
                     ],
                     [
                         'feature_icon'        => [ 'value' => 'fas fa-shield-alt', 'library' => 'fa-solid' ],
-                        'feature_title'       => __( 'Secure by Default', 'htmega-addons' ),
-                        'feature_description' => __( 'Every output is sanitised and escaped. CSRF tokens on all forms, nonces everywhere.', 'htmega-addons' ),
+                        'feature_title'       => __( 'Secure by Default', 'ht-mega-for-elementor' ),
+                        'feature_description' => __( 'Every output is sanitised and escaped. CSRF tokens on all forms, nonces everywhere.', 'ht-mega-for-elementor' ),
                     ],
                     [
                         'feature_icon'        => [ 'value' => 'fas fa-palette', 'library' => 'fa-solid' ],
-                        'feature_title'       => __( 'Design Token System', 'htmega-addons' ),
-                        'feature_description' => __( 'Full CSS custom-property token layer — change a brand colour in one place, it updates everywhere.', 'htmega-addons' ),
+                        'feature_title'       => __( 'Design Token System', 'ht-mega-for-elementor' ),
+                        'feature_description' => __( 'Full CSS custom-property token layer — change a brand colour in one place, it updates everywhere.', 'ht-mega-for-elementor' ),
                     ],
                     [
                         'feature_icon'        => [ 'value' => 'fas fa-universal-access', 'library' => 'fa-solid' ],
-                        'feature_title'       => __( 'Accessible First', 'htmega-addons' ),
-                        'feature_description' => __( 'WCAG 2.1 AA compliant. Proper landmarks, focus rings, and ARIA attributes out of the box.', 'htmega-addons' ),
+                        'feature_title'       => __( 'Accessible First', 'ht-mega-for-elementor' ),
+                        'feature_description' => __( 'WCAG 2.1 AA compliant. Proper landmarks, focus rings, and ARIA attributes out of the box.', 'ht-mega-for-elementor' ),
                     ],
                 ],
                 'title_field' => '{{{ feature_title }}}',
@@ -198,7 +198,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Media ── */
         $this->start_controls_section( 'section_media', [
-            'label'     => __( 'Media', 'htmega-addons' ),
+            'label'     => __( 'Media', 'ht-mega-for-elementor' ),
             'tab'       => Controls_Manager::TAB_CONTENT,
             'condition' => [
                 'layout!' => [ 'centered', 'feature-grid' ],
@@ -206,43 +206,43 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
         ] );
 
             $this->add_control( 'about_image', [
-                'label'   => __( 'Image', 'htmega-addons' ),
+                'label'   => __( 'Image', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::MEDIA,
                 'default' => [ 'url' => '' ],
             ] );
 
             $this->add_control( 'about_image_size', [
-                'label'   => __( 'Image Size', 'htmega-addons' ),
+                'label'   => __( 'Image Size', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'large',
                 'options' => [
-                    'thumbnail' => __( 'Thumbnail', 'htmega-addons' ),
-                    'medium'    => __( 'Medium',    'htmega-addons' ),
-                    'large'     => __( 'Large',     'htmega-addons' ),
-                    'full'      => __( 'Full',      'htmega-addons' ),
+                    'thumbnail' => __( 'Thumbnail', 'ht-mega-for-elementor' ),
+                    'medium'    => __( 'Medium',    'ht-mega-for-elementor' ),
+                    'large'     => __( 'Large',     'ht-mega-for-elementor' ),
+                    'full'      => __( 'Full',      'ht-mega-for-elementor' ),
                 ],
             ] );
 
             $this->add_control( 'show_floating_badge', [
-                'label'        => __( 'Show Floating Badge', 'htmega-addons' ),
+                'label'        => __( 'Show Floating Badge', 'ht-mega-for-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Show', 'htmega-addons' ),
-                'label_off'    => __( 'Hide', 'htmega-addons' ),
+                'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
                 'default'      => 'yes',
             ] );
 
             $this->add_control( 'floating_stat_number', [
-                'label'     => __( 'Badge Number', 'htmega-addons' ),
+                'label'     => __( 'Badge Number', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXT,
                 'default'   => '10K+',
                 'condition' => [ 'show_floating_badge' => 'yes' ],
             ] );
 
             $this->add_control( 'floating_stat_label', [
-                'label'     => __( 'Badge Label', 'htmega-addons' ),
+                'label'     => __( 'Badge Label', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => __( 'Projects Built', 'htmega-addons' ),
+                'default'   => __( 'Projects Built', 'ht-mega-for-elementor' ),
                 'condition' => [ 'show_floating_badge' => 'yes' ],
             ] );
 
@@ -250,28 +250,28 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── CTA Button ── */
         $this->start_controls_section( 'section_cta', [
-            'label' => __( 'CTA Button', 'htmega-addons' ),
+            'label' => __( 'CTA Button', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
             $this->add_control( 'show_cta', [
-                'label'        => __( 'Show CTA Button', 'htmega-addons' ),
+                'label'        => __( 'Show CTA Button', 'ht-mega-for-elementor' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Show', 'htmega-addons' ),
-                'label_off'    => __( 'Hide', 'htmega-addons' ),
+                'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
                 'default'      => 'yes',
             ] );
 
             $this->add_control( 'cta_text', [
-                'label'     => __( 'Button Text', 'htmega-addons' ),
+                'label'     => __( 'Button Text', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::TEXT,
-                'default'   => __( 'Explore Features', 'htmega-addons' ),
+                'default'   => __( 'Explore Features', 'ht-mega-for-elementor' ),
                 'condition' => [ 'show_cta' => 'yes' ],
             ] );
 
             $this->add_control( 'cta_url', [
-                'label'       => __( 'Button URL', 'htmega-addons' ),
+                'label'       => __( 'Button URL', 'ht-mega-for-elementor' ),
                 'type'        => Controls_Manager::URL,
                 'placeholder' => 'https://',
                 'default'     => [ 'url' => '#' ],
@@ -279,7 +279,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'cta_icon', [
-                'label'     => __( 'Button Icon', 'htmega-addons' ),
+                'label'     => __( 'Button Icon', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::ICONS,
                 'default'   => [
                     'value'   => 'fas fa-arrow-right',
@@ -296,12 +296,12 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Section Padding ── */
         $this->start_controls_section( 'style_section', [
-            'label' => __( 'Section', 'htmega-addons' ),
+            'label' => __( 'Section', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
             $this->add_responsive_control( 'section_padding', [
-                'label'      => __( 'Padding', 'htmega-addons' ),
+                'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', 'rem', '%' ],
                 'selectors'  => [
@@ -311,7 +311,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             $this->add_group_control( Group_Control_Background::get_type(), [
                 'name'     => 'section_bg',
-                'label'    => __( 'Background', 'htmega-addons' ),
+                'label'    => __( 'Background', 'ht-mega-for-elementor' ),
                 'types'    => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htm25-about',
             ] );
@@ -320,13 +320,13 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Typography ── */
         $this->start_controls_section( 'style_typography', [
-            'label' => __( 'Typography', 'htmega-addons' ),
+            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
             /* — Section Label — */
             $this->add_control( 'label_heading', [
-                'label'     => __( 'Section Label', 'htmega-addons' ),
+                'label'     => __( 'Section Label', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'condition' => [ 'show_section_label' => 'yes' ],
             ] );
@@ -338,7 +338,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'heading_label_color', [
-                'label'     => __( 'Text Color', 'htmega-addons' ),
+                'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'condition' => [ 'show_section_label' => 'yes' ],
                 'selectors' => [
@@ -347,7 +347,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'section_label_bg', [
-                'label'     => __( 'Background Color', 'htmega-addons' ),
+                'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'condition' => [ 'show_section_label' => 'yes' ],
                 'selectors' => [
@@ -356,7 +356,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'section_label_radius', [
-                'label'      => __( 'Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'condition'  => [ 'show_section_label' => 'yes' ],
@@ -366,7 +366,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'section_label_padding', [
-                'label'      => __( 'Padding', 'htmega-addons' ),
+                'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'condition'  => [ 'show_section_label' => 'yes' ],
@@ -377,7 +377,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             /* — Headline — */
             $this->add_control( 'headline_heading', [
-                'label'     => __( 'Headline', 'htmega-addons' ),
+                'label'     => __( 'Headline', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
@@ -388,7 +388,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'headline_color', [
-                'label'     => __( 'Color', 'htmega-addons' ),
+                'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__headline' => 'color: {{VALUE}};',
@@ -396,7 +396,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_responsive_control( 'headline_margin', [
-                'label'      => __( 'Margin', 'htmega-addons' ),
+                'label'      => __( 'Margin', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', 'rem' ],
                 'selectors'  => [
@@ -406,13 +406,13 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             /* — Headline Accent / Highlight — */
             $this->add_control( 'accent_heading', [
-                'label'     => __( 'Headline Accent', 'htmega-addons' ),
+                'label'     => __( 'Headline Accent', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
 
             $this->add_control( 'headline_accent_color', [
-                'label'     => __( 'Accent Color', 'htmega-addons' ),
+                'label'     => __( 'Accent Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__headline-accent' => 'background-color: {{VALUE}}; background-image: none;',
@@ -421,19 +421,19 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             $this->add_group_control( Group_Control_Background::get_type(), [
                 'name'           => 'headline_highlight_gradient',
-                'label'          => __( 'Accent Gradient', 'htmega-addons' ),
+                'label'          => __( 'Accent Gradient', 'ht-mega-for-elementor' ),
                 'types'          => [ 'gradient' ],
                 'selector'       => '{{WRAPPER}} .htm25-about__headline-accent',
                 'fields_options' => [
                     'background' => [
-                        'label' => __( 'Gradient Color', 'htmega-addons' ),
+                        'label' => __( 'Gradient Color', 'ht-mega-for-elementor' ),
                     ],
                 ],
             ] );
 
             /* — Description — */
             $this->add_control( 'description_heading', [
-                'label'     => __( 'Description', 'htmega-addons' ),
+                'label'     => __( 'Description', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
@@ -444,7 +444,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'description_color', [
-                'label'     => __( 'Color', 'htmega-addons' ),
+                'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__description' => 'color: {{VALUE}};',
@@ -455,20 +455,20 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Feature Cards ── */
         $this->start_controls_section( 'style_features', [
-            'label' => __( 'Feature Items', 'htmega-addons' ),
+            'label' => __( 'Feature Items', 'ht-mega-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
             /* — Card — */
             $this->add_group_control( Group_Control_Background::get_type(), [
                 'name'     => 'feature_card_bg',
-                'label'    => __( 'Card Background', 'htmega-addons' ),
+                'label'    => __( 'Card Background', 'ht-mega-for-elementor' ),
                 'types'    => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htm25-about__feature',
             ] );
 
             $this->add_responsive_control( 'feature_card_padding', [
-                'label'      => __( 'Card Padding', 'htmega-addons' ),
+                'label'      => __( 'Card Padding', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', 'rem' ],
                 'selectors'  => [
@@ -477,7 +477,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'feature_card_radius', [
-                'label'      => __( 'Card Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Card Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -497,13 +497,13 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             /* — Icon — */
             $this->add_control( 'feature_icon_heading', [
-                'label'     => __( 'Icon', 'htmega-addons' ),
+                'label'     => __( 'Icon', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
 
             $this->add_control( 'feature_icon_color', [
-                'label'     => __( 'Icon Color', 'htmega-addons' ),
+                'label'     => __( 'Icon Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about .htm25-about__feature-icon i'        => 'color: {{VALUE}};',
@@ -513,7 +513,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_responsive_control( 'feature_icon_size', [
-                'label'      => __( 'Icon Size', 'htmega-addons' ),
+                'label'      => __( 'Icon Size', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em' ],
                 'range'      => [ 'px' => [ 'min' => 8, 'max' => 80 ], 'em' => [ 'min' => 0.5, 'max' => 4 ] ],
@@ -524,7 +524,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'feature_icon_bg_color', [
-                'label'     => __( 'Icon BG Color', 'htmega-addons' ),
+                'label'     => __( 'Icon BG Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__feature-icon-wrap' => 'background-color: {{VALUE}};',
@@ -532,7 +532,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'feature_icon_bg_radius', [
-                'label'      => __( 'Icon BG Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Icon BG Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -542,7 +542,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             /* — Title — */
             $this->add_control( 'feature_title_heading', [
-                'label'     => __( 'Title', 'htmega-addons' ),
+                'label'     => __( 'Title', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
@@ -553,7 +553,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'feature_title_color', [
-                'label'     => __( 'Title Color', 'htmega-addons' ),
+                'label'     => __( 'Title Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__feature-title' => 'color: {{VALUE}};',
@@ -562,7 +562,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             /* — Description — */
             $this->add_control( 'feature_desc_heading', [
-                'label'     => __( 'Description', 'htmega-addons' ),
+                'label'     => __( 'Description', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
@@ -573,7 +573,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'feature_desc_color', [
-                'label'     => __( 'Description Color', 'htmega-addons' ),
+                'label'     => __( 'Description Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__feature-description' => 'color: {{VALUE}};',
@@ -584,7 +584,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── CTA Button Style ── */
         $this->start_controls_section( 'style_cta', [
-            'label'     => __( 'CTA Button', 'htmega-addons' ),
+            'label'     => __( 'CTA Button', 'ht-mega-for-elementor' ),
             'tab'       => Controls_Manager::TAB_STYLE,
             'condition' => [ 'show_cta' => 'yes' ],
         ] );
@@ -596,13 +596,13 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             $this->add_group_control( Group_Control_Background::get_type(), [
                 'name'     => 'cta_bg',
-                'label'    => __( 'Background', 'htmega-addons' ),
+                'label'    => __( 'Background', 'ht-mega-for-elementor' ),
                 'types'    => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htm25-about__cta',
             ] );
 
             $this->add_control( 'cta_color', [
-                'label'     => __( 'Text Color', 'htmega-addons' ),
+                'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__cta' => 'color: {{VALUE}};',
@@ -615,7 +615,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_responsive_control( 'cta_border_radius', [
-                'label'      => __( 'Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -624,20 +624,20 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'cta_hover_heading', [
-                'label'     => __( 'Hover', 'htmega-addons' ),
+                'label'     => __( 'Hover', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ] );
 
             $this->add_group_control( Group_Control_Background::get_type(), [
                 'name'     => 'cta_bg_hover',
-                'label'    => __( 'Hover Background', 'htmega-addons' ),
+                'label'    => __( 'Hover Background', 'ht-mega-for-elementor' ),
                 'types'    => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htm25-about__cta:hover',
             ] );
 
             $this->add_control( 'cta_color_hover', [
-                'label'     => __( 'Hover Text Color', 'htmega-addons' ),
+                'label'     => __( 'Hover Text Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__cta:hover' => 'color: {{VALUE}};',
@@ -646,7 +646,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             $this->add_group_control( Group_Control_Border::get_type(), [
                 'name'     => 'cta_border_hover',
-                'label'    => __( 'Hover Border', 'htmega-addons' ),
+                'label'    => __( 'Hover Border', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htm25-about__cta:hover',
             ] );
 
@@ -654,13 +654,13 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Image / Media ── */
         $this->start_controls_section( 'style_media', [
-            'label'     => __( 'Image / Media', 'htmega-addons' ),
+            'label'     => __( 'Image / Media', 'ht-mega-for-elementor' ),
             'tab'       => Controls_Manager::TAB_STYLE,
             'condition' => [ 'layout!' => [ 'centered', 'feature-grid' ] ],
         ] );
 
             $this->add_control( 'about_image_radius', [
-                'label'      => __( 'Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -677,7 +677,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         /* ── Floating Badge ── */
         $this->start_controls_section( 'style_floating_badge', [
-            'label'     => __( 'Floating Badge', 'htmega-addons' ),
+            'label'     => __( 'Floating Badge', 'ht-mega-for-elementor' ),
             'tab'       => Controls_Manager::TAB_STYLE,
             'condition' => [
                 'show_floating_badge' => 'yes',
@@ -686,7 +686,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
         ] );
 
             $this->add_control( 'badge_bg', [
-                'label'     => __( 'Background', 'htmega-addons' ),
+                'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__float-badge' => 'background-color: {{VALUE}};',
@@ -695,12 +695,12 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             $this->add_group_control( Group_Control_Typography::get_type(), [
                 'name'     => 'badge_number_typography',
-                'label'    => __( 'Number Typography', 'htmega-addons' ),
+                'label'    => __( 'Number Typography', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htm25-about__float-number',
             ] );
 
             $this->add_control( 'badge_number_color', [
-                'label'     => __( 'Number Color', 'htmega-addons' ),
+                'label'     => __( 'Number Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__float-number' => 'color: {{VALUE}};',
@@ -709,12 +709,12 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
             $this->add_group_control( Group_Control_Typography::get_type(), [
                 'name'     => 'badge_label_typography',
-                'label'    => __( 'Label Typography', 'htmega-addons' ),
+                'label'    => __( 'Label Typography', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htm25-about__float-label',
             ] );
 
             $this->add_control( 'badge_label_color', [
-                'label'     => __( 'Label Color', 'htmega-addons' ),
+                'label'     => __( 'Label Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htm25-about__float-label' => 'color: {{VALUE}};',
@@ -722,7 +722,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
             ] );
 
             $this->add_control( 'badge_radius', [
-                'label'      => __( 'Border Radius', 'htmega-addons' ),
+                'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
@@ -810,8 +810,8 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
         ?>
         <section
-            class="htm25-about htm25-style--<?php echo $style; ?> htm25-about--<?php echo $layout; ?>"
-            aria-label="<?php esc_attr_e( 'About section', 'htmega-addons' ); ?>"
+            class="htm25-about htm25-style--<?php echo esc_attr( $style ); ?> htm25-about--<?php echo esc_attr( $layout ); ?>"
+            aria-label="<?php esc_attr_e( 'About section', 'ht-mega-for-elementor' ); ?>"
         >
             <?php if ( $style === 'aurora' || $style === 'glass' ) : ?>
             <div class="htm25-about__bg-blobs" aria-hidden="true">
@@ -835,7 +835,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
                     </p>
                     <?php endif; ?>
 
-                    <<?php echo $headline_tag; ?> class="htm25-about__headline"><?php echo $headline; // nl2br + esc_html + safe accent span ?></<?php echo $headline_tag; ?>>
+                    <<?php echo esc_html( $headline_tag ); ?> class="htm25-about__headline"><?php echo $headline; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $headline is esc_html()'d above (and any accent span is built from esc_html() pieces + hardcoded markup) ?></<?php echo esc_html( $headline_tag ); ?>>
 
                     <?php if ( $description ) : ?>
                     <p class="htm25-about__description">
@@ -845,9 +845,9 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
 
                     <?php if ( $feature_items ) : ?>
                     <ul
-                        class="htm25-about__features htm25-about__features--cols-<?php echo $cols; ?>"
+                        class="htm25-about__features htm25-about__features--cols-<?php echo absint( $cols ); ?>"
                         role="list"
-                        aria-label="<?php esc_attr_e( 'Feature list', 'htmega-addons' ); ?>"
+                        aria-label="<?php esc_attr_e( 'Feature list', 'ht-mega-for-elementor' ); ?>"
                     >
                         <?php foreach ( $feature_items as $item ) : ?>
                         <li class="htm25-about__feature htm25-card">
@@ -862,7 +862,7 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
                         <a
                             href="<?php echo esc_url( $cta_url ); ?>"
                             class="htm25-btn htm25-btn--primary htm25-about__cta"
-                            <?php echo $cta_target; // phpcs:ignore — already sanitized ?>
+                            <?php echo $cta_target; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $cta_target is a hardcoded literal (' target="_blank" rel="noopener noreferrer"' or ''), no user input ?>
                         >
                             <?php echo esc_html( $cta_text ); ?>
                             <?php if ( ! empty( $settings['cta_icon']['value'] ) ) : ?>
@@ -917,14 +917,14 @@ class HTMega_Elementor_Widget_About_2025 extends Widget_Base {
         ?>
         <div class="htm25-about__media">
             <?php if ( $image_html ) : ?>
-            <?php echo $image_html; // phpcs:ignore WordPress.Security.EscapeOutput — already escaped ?>
+            <?php echo $image_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $image_html is built via wp_get_attachment_image() (core, safe) or a hardcoded <img> string with esc_url()/esc_attr() applied, see assignment above ?>
             <?php else : ?>
             <div class="htm25-about__img-placeholder" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                     <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
                     <circle cx="12" cy="13" r="4"/>
                 </svg>
-                <span><?php esc_html_e( 'Add an image', 'htmega-addons' ); ?></span>
+                <span><?php esc_html_e( 'Add an image', 'ht-mega-for-elementor' ); ?></span>
             </div>
             <?php endif; ?>
             <?php if ( $show_float && ( $float_number || $float_label ) ) : ?>

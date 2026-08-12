@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
     }
     
     public function get_title() {
-        return __( '404 Content', 'htmega-addons' );
+        return __( '404 Content', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -34,21 +34,21 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $this->start_controls_section(
             'error_content_section',
             [
-                'label' => __( '404 Content', 'htmega-addons' ),
+                'label' => __( '404 Content', 'ht-mega-for-elementor' ),
             ]
         );
           
             $this->add_control(
                 'error_layout_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -56,7 +56,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_control(
                 'error_image',
                 [
-                    'label' => __('Image','htmega-addons'),
+                    'label' => __('Image','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -79,9 +79,9 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_control(
                 'error_title',
                 [
-                    'label' => __( 'Title', 'htmega-addons' ),
+                    'label' => __( 'Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Type your title here.', 'htmega-addons' ),
+                    'placeholder' => __( 'Type your title here.', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'error_layout_style!' => array('4'),
                     ]
@@ -91,9 +91,9 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_control(
                 'error_sub_title',
                 [
-                    'label' => __( 'Sub Title', 'htmega-addons' ),
+                    'label' => __( 'Sub Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Type your Sub title here.', 'htmega-addons' ),
+                    'placeholder' => __( 'Type your Sub title here.', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'error_layout_style' => array('2'),
                     ]
@@ -103,9 +103,9 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_control(
                 'error_description',
                 [
-                    'label' => __( 'Description', 'htmega-addons' ),
+                    'label' => __( 'Description', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Type your Description here.', 'htmega-addons' ),
+                    'placeholder' => __( 'Type your Description here.', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'error_layout_style' => array('2','3','4'),
                     ]
@@ -117,7 +117,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $this->start_controls_section(
             'error_page_button_section',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
             ]
         );
             
@@ -127,23 +127,23 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 $this->start_controls_tab(
                     'back_button_tab',
                     [
-                        'label' => __( 'Back Button', 'htmega-addons' ),
+                        'label' => __( 'Back Button', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'error_back_button_text',
                         [
-                            'label' => __( 'Button Text', 'htmega-addons' ),
+                            'label' => __( 'Button Text', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::TEXT,
-                            'default' => __( 'Back To Home', 'htmega-addons' ),
-                            'placeholder' => __( 'Back To Home', 'htmega-addons' ),
+                            'default' => __( 'Back To Home', 'ht-mega-for-elementor' ),
+                            'placeholder' => __( 'Back To Home', 'ht-mega-for-elementor' ),
                         ]
                     );
 
                     $this->add_control(
                         'error_back_button_icon',
                         [
-                            'label' => __( 'Button Icons', 'htmega-addons' ),
+                            'label' => __( 'Button Icons', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::ICONS,
                             'default' => [
                                 'value' => 'fas fa-star',
@@ -155,12 +155,12 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_control(
                         'back_button_link',
                         [
-                            'label' => __( 'Button Link', 'htmega-addons' ),
+                            'label' => __( 'Button Link', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::URL,
                             'dynamic' => [
                                 'active' => true,
                             ],
-                            'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                            'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                             'show_external' => true,
                             'default' => [
                                 'url' => '#',
@@ -176,22 +176,22 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 $this->start_controls_tab(
                     'contact_button_tab',
                     [
-                        'label' => __( 'Contact Button', 'htmega-addons' ),
+                        'label' => __( 'Contact Button', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'error_contact_button_text',
                         [
-                            'label' => __( 'Button Text', 'htmega-addons' ),
+                            'label' => __( 'Button Text', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::TEXT,
-                            'placeholder' => __( 'Back To Home', 'htmega-addons' ),
+                            'placeholder' => __( 'Back To Home', 'ht-mega-for-elementor' ),
                         ]
                     );
 
                     $this->add_control(
                         'error_contact_button_icon',
                         [
-                            'label' => __( 'Button Icons', 'htmega-addons' ),
+                            'label' => __( 'Button Icons', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::ICONS,
                             'default' => [
                                 'value' => 'fas fa-star',
@@ -203,12 +203,12 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_control(
                         'contact_button_link',
                         [
-                            'label' => __( 'Button Link', 'htmega-addons' ),
+                            'label' => __( 'Button Link', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::URL,
                             'dynamic' => [
                                 'active' => true,
                             ],
-                            'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                            'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                             'show_external' => true,
                             'default' => [
                                 'url' => '#',
@@ -229,30 +229,30 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $this->start_controls_section(
             'error_page_style_section',
             [
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => __( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'error_page_content_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -267,7 +267,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -280,7 +280,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -296,7 +296,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $this->start_controls_section(
             'error_page_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'error_title!'=>'',
@@ -306,7 +306,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_control(
                 'error_page_title_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-not-found .content h1' => 'color: {{VALUE}};',
@@ -318,7 +318,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'error_page_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-not-found .content h1',
                 ]
             );
@@ -327,7 +327,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'error_page_title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-not-found .content h1',
                 ]
             );
@@ -335,7 +335,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_title_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-not-found .content h1' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -346,7 +346,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -359,7 +359,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -375,7 +375,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $this->start_controls_section(
             'error_page_subtitle_style_section',
             [
-                'label' => __( 'Sub Title', 'htmega-addons' ),
+                'label' => __( 'Sub Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'error_sub_title!'=>'',
@@ -385,7 +385,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_control(
                 'error_page_subtitle_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-not-found .content h2' => 'color: {{VALUE}};',
@@ -397,7 +397,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'error_page_subtitle_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-not-found .content h2',
                 ]
             );
@@ -406,7 +406,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'error_page_subtitle_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-not-found .content h2',
                 ]
             );
@@ -414,7 +414,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_subtitle_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-not-found .content h2' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -425,7 +425,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_subtitle_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -438,7 +438,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_subtitle_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -454,7 +454,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $this->start_controls_section(
             'error_page_description_style_section',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'error_description!'=>'',
@@ -464,7 +464,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_control(
                 'error_page_description_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-not-found .content p' => 'color: {{VALUE}};',
@@ -476,7 +476,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'error_page_description_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-not-found .content p',
                 ]
             );
@@ -485,7 +485,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'error_page_description_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-not-found .content p',
                 ]
             );
@@ -493,7 +493,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_description_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-not-found .content p' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -504,7 +504,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_description_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -517,7 +517,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
             $this->add_responsive_control(
                 'error_page_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -533,7 +533,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $this->start_controls_section(
             'error_page_backbutton_style_section',
             [
-                'label' => __( 'Back Button', 'htmega-addons' ),
+                'label' => __( 'Back Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -543,13 +543,13 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 $this->start_controls_tab(
                     'back_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'back_button_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn' => 'color: {{VALUE}};',
@@ -562,7 +562,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'back_button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn',
                             'separator' => 'before',
@@ -573,7 +573,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'back_button_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn',
                         ]
                     );
@@ -581,7 +581,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_responsive_control(
                         'back_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -594,7 +594,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_responsive_control(
                         'back_button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -608,7 +608,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'back_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn',
                         ]
                     );
@@ -616,7 +616,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_responsive_control(
                         'back_button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -629,14 +629,14 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 $this->start_controls_tab(
                     'back_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'back_button_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn:hover' => 'color: {{VALUE}};',
@@ -649,7 +649,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'back_button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn:hover',
                             'separator' => 'before',
@@ -660,7 +660,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'back_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn:hover',
                         ]
                     );
@@ -668,7 +668,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_responsive_control(
                         'back_button_hover_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -686,7 +686,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $this->start_controls_section(
             'error_page_contactbutton_style_section',
             [
-                'label' => __( 'Contact Button', 'htmega-addons' ),
+                'label' => __( 'Contact Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -696,13 +696,13 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 $this->start_controls_tab(
                     'contact_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'contact_button_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact' => 'color: {{VALUE}};',
@@ -714,7 +714,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'contact_button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact',
                             'separator' => 'before',
@@ -725,7 +725,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'contact_button_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact',
                         ]
                     );
@@ -733,7 +733,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_responsive_control(
                         'contact_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -746,7 +746,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_responsive_control(
                         'contact_button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -760,7 +760,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'contact_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact',
                         ]
                     );
@@ -768,7 +768,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_responsive_control(
                         'contact_button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -781,14 +781,14 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 $this->start_controls_tab(
                     'contact_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'contact_button_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact:hover' => 'color: {{VALUE}};',
@@ -800,7 +800,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'contact_button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact:hover',
                             'separator' => 'before',
@@ -811,7 +811,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'contact_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact:hover',
                         ]
                     );
@@ -819,7 +819,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                     $this->add_responsive_control(
                         'contact_button_hover_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-not-found .content a.page-back-btn.error_contact:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -859,29 +859,29 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
         $contact_button = $settings['error_contact_button_text'];
        
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_error_attr' ); ?>>
+            <div <?php echo $this->get_render_attribute_string( 'htmega_error_attr' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                 <?php if($settings['error_layout_style'] == 2 ): ?>
                     <div class="htb-row align-items-center">
                         <div class="htb-col-lg-6">
                             <div class="thumd text-center">
-                                <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'error_image_size', 'error_image' ); ?>
+                                <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'error_image_size', 'error_image' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                             </div>
                         </div>
                         <div class="htb-col-lg-6">
                             <div class="content">
                                 <?php
                                     if( !empty( $settings['error_sub_title'] ) ){
-                                        echo '<h2>'.htmega_kses_title( $settings['error_sub_title'] ).'</h2>';
+                                        echo '<h2>'.htmega_kses_title( $settings['error_sub_title'] ).'</h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                     }
                                     if( !empty( $settings['error_title'] ) ){
-                                        echo '<h1>'.htmega_kses_title( $settings['error_title'] ).'</h1>';
+                                        echo '<h1>'.htmega_kses_title( $settings['error_title'] ).'</h1>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                     }
                                     if( !empty( $settings['error_description'] ) ){
-                                        echo '<p>'.htmega_kses_desc( $settings['error_description'] ).'</p>';
+                                        echo '<p>'.htmega_kses_desc( $settings['error_description'] ).'</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                     }
                                     if( !empty( $back_button ) || !empty( $settings['error_back_button_icon']['value'] ) ){
                                         ?>
-                                        <a <?php echo $this->get_render_attribute_string( 'backurl' ); ?>>
+                                        <a <?php echo $this->get_render_attribute_string( 'backurl' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                                             <?php
                                                 Icons_Manager::render_icon( $settings['error_back_button_icon'], [ 'aria-hidden' => 'true' ] );
                                                 echo wp_kses_post( $back_button );
@@ -891,7 +891,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                                     }
                                     if( !empty( $contact_button ) || !empty( $settings['error_contact_button_icon']['value'] ) ){
                                         ?>
-                                            <a <?php echo $this->get_render_attribute_string( 'contacturl' ); ?> >
+                                            <a <?php echo $this->get_render_attribute_string( 'contacturl' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                                                 <?php
                                                     Icons_Manager::render_icon( $settings['error_contact_button_icon'], [ 'aria-hidden' => 'true' ] );
                                                     echo wp_kses_post( $contact_button );
@@ -907,16 +907,16 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 <?php elseif($settings['error_layout_style'] == 3 ): ?>
                     <div class="content">
                         <?php
-                            echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'error_image_size', 'error_image' );
+                            echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'error_image_size', 'error_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                             if( !empty( $settings['error_title'] ) ){
-                                echo '<h2>'.htmega_kses_title( $settings['error_title'] ).'</h2>';
+                                echo '<h2>'.htmega_kses_title( $settings['error_title'] ).'</h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             }
                             if( !empty( $settings['error_description'] ) ){
-                                echo '<p>'.htmega_kses_desc( $settings['error_description'] ).'</p>';
+                                echo '<p>'.htmega_kses_desc( $settings['error_description'] ).'</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                             }
                             if( !empty( $back_button ) || !empty( $settings['error_back_button_icon']['value'] ) ){
                                 ?>
-                                <a <?php echo $this->get_render_attribute_string( 'backurl' ); ?>>
+                                <a <?php echo $this->get_render_attribute_string( 'backurl' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                                     <?php
                                         Icons_Manager::render_icon( $settings['error_back_button_icon'], [ 'aria-hidden' => 'true' ] );
                                         echo wp_kses_post( $back_button );
@@ -926,7 +926,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                             }
                             if( !empty( $contact_button ) || !empty( $settings['error_contact_button_icon']['value'] ) ){
                                 ?>
-                                    <a <?php echo $this->get_render_attribute_string( 'contacturl' ); ?> >
+                                    <a <?php echo $this->get_render_attribute_string( 'contacturl' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                                         <?php
                                             Icons_Manager::render_icon( $settings['error_contact_button_icon'], [ 'aria-hidden' => 'true' ] );
                                             echo wp_kses_post( $contact_button );
@@ -945,14 +945,14 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                                 <div class="content">
                                     <?php
                                         if( !empty( $settings['error_description'] ) ){
-                                            echo '<h2>'.htmega_kses_title( $settings['error_description'] ).'</h2>';
+                                            echo '<h2>'.htmega_kses_title( $settings['error_description'] ).'</h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                         }
                                     ?>
                                     <div class="not-found-btn-group">
                                         <?php
                                             if( !empty( $back_button ) || !empty( $settings['error_back_button_icon']['value'] ) ){
                                                 ?>
-                                                <a <?php echo $this->get_render_attribute_string( 'backurl' ); ?>>
+                                                <a <?php echo $this->get_render_attribute_string( 'backurl' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                                                     <?php
                                                         Icons_Manager::render_icon( $settings['error_back_button_icon'], [ 'aria-hidden' => 'true' ] );
                                                         echo wp_kses_post( $back_button );
@@ -962,7 +962,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                                             }
                                             if( !empty( $contact_button ) || !empty( $settings['error_contact_button_icon']['value'] ) ){
                                                 ?>
-                                                    <a <?php echo $this->get_render_attribute_string( 'contacturl' ); ?> >
+                                                    <a <?php echo $this->get_render_attribute_string( 'contacturl' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                                                         <?php
                                                             Icons_Manager::render_icon( $settings['error_contact_button_icon'], [ 'aria-hidden' => 'true' ] );
                                                             echo wp_kses_post( $contact_button );
@@ -977,7 +977,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                         </div>
                         <div class="htb-col-lg-6">
                             <div class="thumd text-center">
-                                <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'error_image_size', 'error_image' ); ?>
+                                <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'error_image_size', 'error_image' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image(). ?>
                             </div>
                         </div>
                     </div>
@@ -985,13 +985,13 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                 <?php else: ?>
                     <div class="content">
                         <?php
-                            echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'error_image_size', 'error_image' );
+                            echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'error_image_size', 'error_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                             if( !empty( $settings['error_title'] ) ){
-                                echo '<h1>'.htmega_kses_title( $settings['error_title'] ).'</h1>';
+                                echo '<h1>'.htmega_kses_title( $settings['error_title'] ).'</h1>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             }
                             if( !empty( $back_button ) || !empty( $settings['error_back_button_icon']['value'] ) ){
                                 ?>
-                                <a <?php echo $this->get_render_attribute_string( 'backurl' ); ?>>
+                                <a <?php echo $this->get_render_attribute_string( 'backurl' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
                                     <?php
                                         Icons_Manager::render_icon( $settings['error_back_button_icon'], [ 'aria-hidden' => 'true' ] );
                                         echo wp_kses_post($back_button);
@@ -1001,7 +1001,7 @@ class HTMega_Elementor_Widget_ErrorContent extends Widget_Base {
                             }
                             if( !empty( $contact_button ) || !empty( $settings['error_contact_button_icon']['value'] ) ){
                                 ?>
-                                    <a <?php echo $this->get_render_attribute_string( 'contacturl' ); ?> >
+                                    <a <?php echo $this->get_render_attribute_string( 'contacturl' );  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                                         <?php
                                             Icons_Manager::render_icon( $settings['error_contact_button_icon'], [ 'aria-hidden' => 'true' ] );
                                             echo wp_kses_post($contact_button);

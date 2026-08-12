@@ -11,6 +11,8 @@
  *
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 if( class_exists('Hasthemes\HTMega_Builder\HTRP_Recommended_Plugins') ){
     $recommendations = new Hasthemes\HTMega_Builder\HTRP_Recommended_Plugins(
         array( 
@@ -26,61 +28,56 @@ if( class_exists('Hasthemes\HTMega_Builder\HTRP_Recommended_Plugins') ){
 
     add_action('init', function() use ($recommendations) {
         $recommendations->add_new_tab(array(
-            'title' => __( 'Recommended Plugins', 'htmega-addons' ),
+            'title' => __( 'Recommended Plugins', 'ht-mega-for-elementor' ),
             'active' => true,
             'plugins' => array(
                 array(
                     'slug'      => 'woolentor-addons',
                     'location'  => 'woolentor_addons_elementor.php',
-                    'name'      => __( 'ShopLentor – WooCommerce Builder for Elementor & Gutenberg +10 Modules – All in One Solution (formerly WooLentor)', 'htmega-addons' )
+                    'name'      => __( 'ShopLentor – WooCommerce Builder for Elementor & Gutenberg +10 Modules – All in One Solution (formerly WooLentor)', 'ht-mega-for-elementor' )
+                ),
+                array(
+                    'slug'      => 'support-genix-lite',
+                    'location'  => 'support-genix-lite.php',
+                    'name'      => __( 'Support Genix – Helpdesk, AI Chatbot, Knowledge Base & Customer Support Ticketing System', 'ht-mega-for-elementor' )
                 ),
                 array(
                     'slug'      => 'hashbar-wp-notification-bar',
                     'location'  => 'init.php',
-                    'name'      => __( 'Notification Bar for WordPress', 'htmega-addons' )
+                    'name'      => __( 'Notification Bar for WordPress', 'ht-mega-for-elementor' )
                 ),
                 array(
-                    'slug'      => 'insert-headers-and-footers-script',
-                    'location'  => 'init.php',
-                    'name'      => __( 'Insert Headers and Footers Code', 'htmega-addons' )
-                )
+                    'slug'      => 'wp-plugin-manager',
+                    'location'  => 'plugin-main.php',
+                    'name'      => __( 'WP Plugin Manager', 'ht-mega-for-elementor' )
+                ),
+                array(
+                    'slug'      => 'cookieray',
+                    'location'  => 'cookieray.php',
+                    'name'      => __( 'CookieRay – Cookie Banner for Cookie Consent (GDPR/CCPA Compliant)', 'ht-mega-for-elementor' )
+                ),
+                array(
+                    'slug'      => 'pixelavo',
+                    'location'  => 'pixelavo.php',
+                    'name'      => __( 'Pixelavo – Server Side Tracking & Pixel + AI Ads Tools', 'ht-mega-for-elementor' )
+                ),
             )
         ));
 
         $recommendations->add_new_tab(array(
-            'title' => esc_html__( 'WooCommerce', 'htmega-addons' ),
+            'title' => esc_html__( 'WooCommerce', 'ht-mega-for-elementor' ),
 
             'plugins' => array(
 
                 array(
                     'slug'      => 'woolentor-addons',
                     'location'  => 'woolentor_addons_elementor.php',
-                    'name'      => __( 'WooLentor – WooCommerce Elementor Addons + Builder', 'htmega-addons' )
-                ),
-                array(
-                    'slug'      => 'wishsuite',
-                    'location'  => 'wishsuite.php',
-                    'name'      => __( 'WishSuite', 'htmega-addons' )
-                ),
-                array(
-                    'slug'      => 'ever-compare',
-                    'location'  => 'ever-compare.php',
-                    'name'      => __( 'EverCompare', 'htmega-addons' )
-                ),
-                array(
-                    'slug'      => 'quickswish',
-                    'location'  => 'quickswish.php',
-                    'name'      => __( 'QuickSwish', 'htmega-addons' )
-                ),
-                array(
-                    'slug'      => 'just-tables',
-                    'location'  => 'just-tables.php',
-                    'name'      => __( 'JustTables', 'htmega-addons' )
+                    'name'      => __( 'WooLentor – WooCommerce Elementor Addons + Builder', 'ht-mega-for-elementor' )
                 ),
                 array(
                     'slug'      => 'whols',
                     'location'  => 'whols.php',
-                    'name'      => __( 'Whols', 'htmega-addons' )
+                    'name'      => __( 'Whols', 'ht-mega-for-elementor' )
                 ),
 
             )
@@ -88,37 +85,52 @@ if( class_exists('Hasthemes\HTMega_Builder\HTRP_Recommended_Plugins') ){
         ));
 
         $recommendations->add_new_tab(array(
-            'title' => esc_html__( 'Other Plugins', 'htmega-addons' ),
+            'title' => esc_html__( 'Other Plugins', 'ht-mega-for-elementor' ),
             'plugins' => array(
                 array(
                     'slug'      => 'wp-plugin-manager',
                     'location'  => 'plugin-main.php',
-                    'name'      => __( 'WP Plugin Manager', 'htmega-addons' )
+                    'name'      => __( 'WP Plugin Manager', 'ht-mega-for-elementor' )
                 ),
                 array(
                     'slug'      => 'ht-easy-google-analytics',
                     'location'  => 'ht-easy-google-analytics.php',
-                    'name'      => __( 'HT Easy GA4 ( Google Analytics 4 )', 'htmega-addons' )
+                    'name'      => __( 'HT Easy GA4 ( Google Analytics 4 )', 'ht-mega-for-elementor' )
                 ),
                 array(
                     'slug'      => 'ht-contactform',
                     'location'  => 'contact-form-widget-elementor.php',
-                    'name'      => __( 'HT Contact Form 7', 'htmega-addons' )
+                    'name'      => __( 'HT Contact Form 7', 'ht-mega-for-elementor' )
                 ),
                 array(
                     'slug'      => 'ht-wpform',
                     'location'  => 'wpform-widget-elementor.php',
-                    'name'      => __( 'HT WPForms', 'htmega-addons' )
+                    'name'      => __( 'HT WPForms', 'ht-mega-for-elementor' )
                 ),
                 array(
-                    'slug'      => 'docus',
-                    'location'  => 'docus.php',
-                    'name'      => __( 'Docus', 'htmega-addons' )
+                    'slug'      => 'cookieray',
+                    'location'  => 'cookieray.php',
+                    'name'      => __( 'CookieRay – Cookie Banner for Cookie Consent (GDPR/CCPA Compliant)', 'ht-mega-for-elementor' )
                 ),
                 array(
-                    'slug'      => 'data-captia',
-                    'location'  => 'data-captia.php',
-                    'name'      => __( 'DataCaptia', 'htmega-addons' )
+                    'slug'      => 'recurio',
+                    'location'  => 'recurio.php',
+                    'name'      => __( 'Recurio – Ultimate Subscription for WooCommerce', 'ht-mega-for-elementor' )
+                ),
+                array(
+                    'slug'      => 'insert-headers-and-footers-script',
+                    'location'  => 'init.php',
+                    'name'      => __( 'Insert Headers and Footers Code', 'ht-mega-for-elementor' )
+                ),
+                array(
+                    'slug'      => 'extensions-for-cf7',
+                    'location'  => 'extensions-for-cf7.php',
+                    'name'      => __( 'Extensions For CF7 (Contact form 7 Database, Conditional Fields and Redirection)', 'ht-mega-for-elementor' )
+                ),
+                array(
+                    'slug'      => 'courseglade-lms',
+                    'location'  => 'courseglade-lms.php',
+                    'name'      => __( 'ECourseGlade LMS – Online Course & eLearning Platform', 'ht-mega-for-elementor' )
                 )
 
             )

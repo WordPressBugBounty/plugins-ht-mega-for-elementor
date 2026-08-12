@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'WC : Categories', 'htmega-addons' );
+        return __( 'WC : Categories', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -32,14 +32,14 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
         $this->start_controls_section(
             'categories_content',
             [
-                'label' => __( 'Categories', 'htmega-addons' ),
+                'label' => __( 'Categories', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'category_columns',
                 [
-                    'label'   => __( 'Columns', 'htmega-addons' ),
+                    'label'   => __( 'Columns', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => [
                         '1' => '1',
@@ -56,7 +56,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
             $this->add_control(
                 'show_number_of_item',
                 [
-                    'label'   => __( 'Number of Category', 'htmega-addons' ),
+                    'label'   => __( 'Number of Category', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::NUMBER,
                     'default' => '4',
                 ]
@@ -68,19 +68,19 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
         $this->start_controls_section(
             'categories_options',
             [
-                'label' => __( 'Options', 'htmega-addons' ),
+                'label' => __( 'Options', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'select_category_type',
                 [
-                    'label'   => __( 'Select Category Type', 'htmega-addons' ),
+                    'label'   => __( 'Select Category Type', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => [
-                        ''          => __( 'Show All', 'htmega-addons' ),
-                        'by_id'     => __( 'Manual Selection', 'htmega-addons' ),
-                        'by_parent' => __( 'By Parent', 'htmega-addons' ),
+                        ''          => __( 'Show All', 'ht-mega-for-elementor' ),
+                        'by_id'     => __( 'Manual Selection', 'ht-mega-for-elementor' ),
+                        'by_parent' => __( 'By Parent', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -94,7 +94,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
             $this->add_control(
                 'categories_ids',
                 [
-                    'label'       => __( 'Categories', 'htmega-addons' ),
+                    'label'       => __( 'Categories', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT2,
                     'options'     => $options,
                     'default'     => [],
@@ -106,11 +106,11 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                 ]
             );
 
-            $parent_options = [ '0' => __( 'Only Top Level', 'htmega-addons' ) ] + $options;
+            $parent_options = [ '0' => __( 'Only Top Level', 'ht-mega-for-elementor' ) ] + $options;
             $this->add_control(
                 'parent',
                 [
-                    'label'     => __( 'Parent', 'htmega-addons' ),
+                    'label'     => __( 'Parent', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SELECT,
                     'default'   => '0',
                     'options'   => $parent_options,
@@ -123,14 +123,14 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
             $this->add_control(
                 'orderby',
                 [
-                    'label'   => __( 'Order by', 'htmega-addons' ),
+                    'label'   => __( 'Order by', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'name',
                     'options' => [
-                        'name'        => __( 'Name', 'htmega-addons' ),
-                        'slug'        => __( 'Slug', 'htmega-addons' ),
-                        'description' => __( 'Description', 'htmega-addons' ),
-                        'count'       => __( 'Count', 'htmega-addons' ),
+                        'name'        => __( 'Name', 'ht-mega-for-elementor' ),
+                        'slug'        => __( 'Slug', 'ht-mega-for-elementor' ),
+                        'description' => __( 'Description', 'ht-mega-for-elementor' ),
+                        'count'       => __( 'Count', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -138,12 +138,12 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
             $this->add_control(
                 'order',
                 [
-                    'label'   => __( 'Order', 'htmega-addons' ),
+                    'label'   => __( 'Order', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'desc',
                     'options' => [
-                        'asc'  => __( 'Ascending', 'htmega-addons' ),
-                        'desc' => __( 'Descending', 'htmega-addons' ),
+                        'asc'  => __( 'Ascending', 'ht-mega-for-elementor' ),
+                        'desc' => __( 'Descending', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -151,7 +151,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
             $this->add_control(
                 'hide_empty',
                 [
-                    'label'        => __( 'Hide Empty', 'htmega-addons' ),
+                    'label'        => __( 'Hide Empty', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                 ]
@@ -163,7 +163,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
         $this->start_controls_section(
             'category_area_style_section',
             [
-                'label' => __( 'Category Area', 'htmega-addons' ),
+                'label' => __( 'Category Area', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -173,7 +173,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                 $this->start_controls_tab(
                     'category_area_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
@@ -182,7 +182,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'category_area_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .woocommerce .product-category a',
                         ]
@@ -192,7 +192,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'category_area_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .product-category a',
                         ]
                     );
@@ -200,7 +200,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_area_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .product-category a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -211,7 +211,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_area_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -225,7 +225,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'category_area_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .product-category a',
                         ]
                     );
@@ -236,7 +236,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                 $this->start_controls_tab(
                     'category_area_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -244,7 +244,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'category_area_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .woocommerce .product-category a:hover',
                         ]
@@ -254,7 +254,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'category_area_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .product-category a:hover',
                         ]
                     );
@@ -262,7 +262,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_area_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .product-category a:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -280,7 +280,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
         $this->start_controls_section(
             'category_title_style',
             [
-                'label' => esc_html__( 'Title', 'htmega-addons' ),
+                'label' => esc_html__( 'Title', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -290,7 +290,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                 $this->start_controls_tab(
                     'category_title_tab_normal',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -298,7 +298,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name'     => 'category_title_typography',
-                            'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .product-category .woocommerce-loop-category__title, {{WRAPPER}} .woocommerce .product-category .woocommerce-loop-category__title mark',
                         ]
                     );
@@ -306,7 +306,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_control(
                         'category_title_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .product-category .woocommerce-loop-category__title' => 'color: {{VALUE}};',
@@ -319,7 +319,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'category_title_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .woocommerce ul.products li.product .ast-shop-product-out-of-stock, .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce-page ul.products li.product .ast-shop-product-out-of-stock, .woocommerce-page ul.products li.product .woocommerce-loop-category__title',
                         ]
@@ -329,7 +329,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_title_margin',
                         [
-                            'label'      => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label'      => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -341,7 +341,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_title_padding',
                         [
-                            'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -354,7 +354,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'category_title_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .product-category .woocommerce-loop-category__title',
                         ]
                     );
@@ -362,7 +362,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_title_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .product-category .woocommerce-loop-category__title' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -373,20 +373,20 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_title_align',
                         [
-                            'label'   => esc_html__( 'Alignment', 'htmega-addons' ),
+                            'label'   => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::CHOOSE,
                             'default' => 'center',
                             'options' => [
                                 'left'    => [
-                                    'title' => esc_html__( 'Left', 'htmega-addons' ),
+                                    'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => esc_html__( 'Center', 'htmega-addons' ),
+                                    'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => esc_html__( 'Right', 'htmega-addons' ),
+                                    'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-right',
                                 ],
                             ],
@@ -401,14 +401,14 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                 $this->start_controls_tab(
                     'category_title_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'category_title_hover_color',
                         [
-                            'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .product-category a:hover .woocommerce-loop-category__title' => 'color: {{VALUE}};',
@@ -421,7 +421,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'category_title_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .woocommerce .product-category a:hover .woocommerce-loop-category__title, {{WRAPPER}} .woocommerce .product-category a:hover .woocommerce-loop-category__title mark',
                         ]
@@ -431,7 +431,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'category_title_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .product-category .woocommerce-loop-category__title:hover',
                         ]
                     );
@@ -440,7 +440,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'menu_normal_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .linemenu-nav ul.htmega-mainmenu li a',
                         ]
                     );
@@ -456,7 +456,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
         $this->start_controls_section(
             'category_image_style',
             [
-                'label' => esc_html__( 'Image', 'htmega-addons' ),
+                'label' => esc_html__( 'Image', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -466,14 +466,14 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                 $this->start_controls_tab(
                     'category_image_tab_normal',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_responsive_control(
                         'category_image_margin',
                         [
-                            'label'      => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label'      => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -486,7 +486,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'category_image_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .product-category a img',
                         ]
                     );
@@ -494,7 +494,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_image_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .product-category a img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -507,14 +507,14 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                 $this->start_controls_tab(
                     'category_image_tab_hover',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_group_control(
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'category_image_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .product-category a:hover img',
                         ]
                     );
@@ -522,7 +522,7 @@ class HTMega_Elementor_Widget_WC_Categories extends Widget_Base {
                     $this->add_responsive_control(
                         'category_image_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .product-category a:hover img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',

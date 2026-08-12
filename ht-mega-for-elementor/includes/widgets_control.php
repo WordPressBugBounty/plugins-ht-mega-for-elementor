@@ -44,7 +44,7 @@ class HTMega_Widgets_Control{
         $elements_manager->add_category(
             'htmega-addons',
             [
-                'title' => __( 'HTMega Addons', 'htmega-addons' ),
+                'title' => __( 'HTMega Addons', 'ht-mega-for-elementor' ),
                 'icon'  => 'fa fa-snowflake',
             ]
         );
@@ -52,7 +52,7 @@ class HTMega_Widgets_Control{
         $elements_manager->add_category(
             'htmega-2026',
             [
-                'title' => __( 'HT Mega 2026', 'htmega-addons' ),
+                'title' => __( 'HT Mega 2026', 'ht-mega-for-elementor' ),
                 'icon'  => 'eicon-apps',
             ]
         );

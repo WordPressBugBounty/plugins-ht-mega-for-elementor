@@ -95,10 +95,6 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/jquery.mb.YTPlayer.min.css',
                     'version' => HTMEGA_VERSION
                 ],
-                'swiper' => [
-                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/swiper.min.css',
-                    'version' => '8.4.5'
-                ],
                 'compare-image' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/css/compare-image.css',
                     'version' => HTMEGA_VERSION,
@@ -181,6 +177,11 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/purify.min.js',
                     'version' => HTMEGA_VERSION,
                     'deps'    => [ 'jquery' ]
+                ],
+                'htmega-calendly' => [
+                    'src'     => 'https://assets.calendly.com/assets/external/widget.js',
+                    'version' => null,
+                    'deps'    => []
                 ],
                 'htmega-widgets-scripts' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/htmega-widgets-active.js',
@@ -266,11 +267,6 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'isotope' => [
                     'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/isotope.pkgd.min.js',
                     'version' => HTMEGA_VERSION,
-                    'deps'    => [ 'jquery' ]
-                ],
-                'swiper' => [
-                    'src'     => HTMEGA_ADDONS_PL_URL . 'assets/js/swiper.min.js',
-                    'version' => '8.4.5',
                     'deps'    => [ 'jquery' ]
                 ],
                 'justified-gallery' => [
@@ -419,12 +415,11 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             if( is_plugin_active('elementor-pro/elementor-pro.php') ){
                 $localize_data_frontend['elementorpro'] = true;
             }else{
-                wp_deregister_script( 'swiper' );
                 $localize_data_frontend['elementorpro'] = false;
             }
             // string for carousel next/ preve area button
-            $localize_data_frontend['buttion_area_text_next'] = __( 'Next', 'htmega-addons');
-            $localize_data_frontend['buttion_area_text_prev'] = __( 'Previous', 'htmega-addons');
+            $localize_data_frontend['buttion_area_text_next'] = __( 'Next', 'ht-mega-for-elementor');
+            $localize_data_frontend['buttion_area_text_prev'] = __( 'Previous', 'ht-mega-for-elementor');
             
             // Register Scripts
             foreach ( $scripts as $handle => $script ) {
@@ -462,135 +457,68 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                 'prolink'          => isset( HTMega_Addons_Elementor::$template_info['pro_link'] ) ? HTMega_Addons_Elementor::$template_info['pro_link'] : '#',
                 'htmegaProActive' => htmega_is_pro_active() ? 'true':'false',
 
-                'prolabel'         => esc_html__( 'Pro', 'htmega-addons' ),
+                'prolabel'         => esc_html__( 'Pro', 'ht-mega-for-elementor' ),
                 'loadingimg'       => HTMEGA_ADDONS_PL_URL . 'admin/assets/images/loading.gif',
                 'message'          =>[
-                    'packagedesc'=> esc_html__( 'in this package', 'htmega-addons' ),
-                    'allload'    => esc_html__( 'All Items have been Loaded', 'htmega-addons' ),
-                    'notfound'   => esc_html__( 'No templates found', 'htmega-addons' ),
-                    'noMatchingTemplates' => esc_html__( 'No templates were found matching your criteria', 'htmega-addons' ),
-                    'faildToLoad'   => esc_html__( 'Failed to load templates', 'htmega-addons' ),
-                    'importedSuccess'   => esc_html__( 'Template Imported Successfully!', 'htmega-addons' ),
-                    'readyToUse'   => esc_html__( 'Your template has been imported and is ready to use', 'htmega-addons' ),
-                    'importingTemplate' => esc_html__( 'Importing template...', 'htmega-addons' ),
-                    'requiredPlugins' => esc_html__( 'Required Plugins:', 'htmega-addons' ),
-                    'pageNameAlert' => esc_html__( 'Please enter a page name', 'htmega-addons' ),
+                    'packagedesc'=> esc_html__( 'in this package', 'ht-mega-for-elementor' ),
+                    'allload'    => esc_html__( 'All Items have been Loaded', 'ht-mega-for-elementor' ),
+                    'notfound'   => esc_html__( 'No templates found', 'ht-mega-for-elementor' ),
+                    'noMatchingTemplates' => esc_html__( 'No templates were found matching your criteria', 'ht-mega-for-elementor' ),
+                    'faildToLoad'   => esc_html__( 'Failed to load templates', 'ht-mega-for-elementor' ),
+                    'importedSuccess'   => esc_html__( 'Template Imported Successfully!', 'ht-mega-for-elementor' ),
+                    'readyToUse'   => esc_html__( 'Your template has been imported and is ready to use', 'ht-mega-for-elementor' ),
+                    'importingTemplate' => esc_html__( 'Importing template...', 'ht-mega-for-elementor' ),
+                    'requiredPlugins' => esc_html__( 'Required Plugins:', 'ht-mega-for-elementor' ),
+                    'pageNameAlert' => esc_html__( 'Please enter a page name', 'ht-mega-for-elementor' ),
                 ],
                 'buttontxt'      =>[
-                    'tmplibrary' => esc_html__( 'Import to Library', 'htmega-addons' ),
-                    'tmppage'    => esc_html__( 'Import to Page', 'htmega-addons' ),
-                    'import'     => esc_html__( 'Import', 'htmega-addons' ),
-                    'buynow'     => esc_html__( 'Buy Now', 'htmega-addons' ),
-                    'preview'    => esc_html__( 'Preview', 'htmega-addons' ),
-                    'installing' => esc_html__( 'Installing..', 'htmega-addons' ),
-                    'activating' => esc_html__( 'Activating..', 'htmega-addons' ),
-                    'active'     => esc_html__( 'Active', 'htmega-addons' ),
-                    'activated'  => esc_html__( 'Activated', 'htmega-addons' ),
-                    'activate'   => esc_html__( 'Activate', 'htmega-addons' ),
-                    'install'    => esc_html__( 'Install', 'htmega-addons' ),
-                    'proLabel'     => esc_html__( 'Pro', 'htmega-addons' ),
-                    'editTemplate'     => esc_html__( 'Edit Template', 'htmega-addons' ),
-                    'close'     => esc_html__( 'Close', 'htmega-addons' ),
-                    'allTypes'  => esc_html__( 'All Types', 'htmega-addons' ),
-                    'upgradeToPro'  => esc_html__( 'Upgrade To PRO', 'htmega-addons' ),
-                    'previewAll'  => esc_html__( 'All Pages', 'htmega-addons' ),
-                    'backToHomepages'  => esc_html__( 'Back to Homepages', 'htmega-addons' ),
-                    'allPages'  => esc_html__( 'All Pages', 'htmega-addons' ),
+                    'tmplibrary' => esc_html__( 'Import to Library', 'ht-mega-for-elementor' ),
+                    'tmppage'    => esc_html__( 'Import to Page', 'ht-mega-for-elementor' ),
+                    'import'     => esc_html__( 'Import', 'ht-mega-for-elementor' ),
+                    'buynow'     => esc_html__( 'Buy Now', 'ht-mega-for-elementor' ),
+                    'preview'    => esc_html__( 'Preview', 'ht-mega-for-elementor' ),
+                    'installing' => esc_html__( 'Installing..', 'ht-mega-for-elementor' ),
+                    'activating' => esc_html__( 'Activating..', 'ht-mega-for-elementor' ),
+                    'active'     => esc_html__( 'Active', 'ht-mega-for-elementor' ),
+                    'activated'  => esc_html__( 'Activated', 'ht-mega-for-elementor' ),
+                    'activate'   => esc_html__( 'Activate', 'ht-mega-for-elementor' ),
+                    'install'    => esc_html__( 'Install', 'ht-mega-for-elementor' ),
+                    'proLabel'     => esc_html__( 'Pro', 'ht-mega-for-elementor' ),
+                    'editTemplate'     => esc_html__( 'Edit Template', 'ht-mega-for-elementor' ),
+                    'close'     => esc_html__( 'Close', 'ht-mega-for-elementor' ),
+                    'allTypes'  => esc_html__( 'All Types', 'ht-mega-for-elementor' ),
+                    'upgradeToPro'  => esc_html__( 'Upgrade To PRO', 'ht-mega-for-elementor' ),
+                    'previewAll'  => esc_html__( 'All Pages', 'ht-mega-for-elementor' ),
+                    'backToHomepages'  => esc_html__( 'Back to Homepages', 'ht-mega-for-elementor' ),
+                    'allPages'  => esc_html__( 'All Pages', 'ht-mega-for-elementor' ),
                 ],
                 'user'           => [
                     'email' => $current_user->user_email,
                 ],
                 'plgactivenonce'   => wp_create_nonce( 'htmega_actication_verifynonce' ),
                 'labels' =>[
-                    'createNewPage' => esc_html__( 'Create a new page from this template', 'htmega-addons' ),
-                    'importToLibrary' => esc_html__( 'Import template to your Library', 'htmega-addons' ),
-                    'enterPageName' => esc_html__( 'Enter a Page Name', 'htmega-addons' ),
-                    'or' => esc_html__( 'OR', 'htmega-addons' ),
-                    'searchTemplate' => esc_html__( 'Search templates...', 'htmega-addons' ),
-                    'templates' => esc_html__( 'Templates', 'htmega-addons' ),
-                    'all' => esc_html__( 'All', 'htmega-addons' ),
+                    'createNewPage' => esc_html__( 'Create a new page from this template', 'ht-mega-for-elementor' ),
+                    'importToLibrary' => esc_html__( 'Import template to your Library', 'ht-mega-for-elementor' ),
+                    'enterPageName' => esc_html__( 'Enter a Page Name', 'ht-mega-for-elementor' ),
+                    'or' => esc_html__( 'OR', 'ht-mega-for-elementor' ),
+                    'searchTemplate' => esc_html__( 'Search templates...', 'ht-mega-for-elementor' ),
+                    'templates' => esc_html__( 'Templates', 'ht-mega-for-elementor' ),
+                    'all' => esc_html__( 'All', 'ht-mega-for-elementor' ),
                 ]
             ];
 
             wp_localize_script( 'htmega-templates', 'HTTM', $localize_data );
             wp_localize_script( 'htmegaopt-admin', 'HTTM', $localize_data );
 
-            // Reading progress bar global functionality
-            if( htmega_is_pro_active() ) {
+            // Reading Progress Bar / Scroll To Top sitewide auto-enable is a pro-only
+            // convenience feature — relocated to htmega-pro (see
+            // extensions/reading-progress-bar/class.reading-progress-bar-pro.php and
+            // extensions/scroll-to-top/class.scroll-to-top-pro.php) so no pro-gated
+            // code ships in the free plugin. Per-page enable already works free via
+            // extensions/reading-progress-bar/class.reading-progress-bar.php and
+            // extensions/scroll-to-top/class.scroll-to-top.php, unaffected by this.
 
-                $htmega_rpbar_module_settings = htmega_get_option( 'htmega_rpbar', 'htmega_rpbar_module_settings' );
-                $htmega_rpbar_module_settings = json_decode( $htmega_rpbar_module_settings,true );
-
-                if( $htmega_rpbar_module_settings && ('on' == $htmega_rpbar_module_settings['rpbar_enable']  && ( isset( $htmega_rpbar_module_settings['rpbar_global'] ) && 'on' == $htmega_rpbar_module_settings['rpbar_global'] ) ) ) {
-
-                    $rpbar_select_to_show_pages = isset( $htmega_rpbar_module_settings['rpbar_select_to_show_pages'] ) ? $htmega_rpbar_module_settings['rpbar_select_to_show_pages'] : 'all';
-
-                    if( 'all' == $rpbar_select_to_show_pages && ( is_single() || is_page() ) ) {  
-
-                        wp_enqueue_script( 'htmega-rpbar-script');
-                        wp_enqueue_style( 'htmega-rpbar-css');
-
-                    } else if( 'pages' == $rpbar_select_to_show_pages && is_page() ) {
-
-                        wp_enqueue_script( 'htmega-rpbar-script');
-                        wp_enqueue_style( 'htmega-rpbar-css');
-                        
-                    } else if( 'posts' == $rpbar_select_to_show_pages && is_single() ) {
-                        
-                        wp_enqueue_script( 'htmega-rpbar-script');
-                        wp_enqueue_style( 'htmega-rpbar-css');
-                    }
-
-                    $rpbar_localize_data = [
-                        'bg_color'       => isset( $htmega_rpbar_module_settings['rpbar_background_color']) ? $htmega_rpbar_module_settings['rpbar_background_color'] : 'transparent',
-                        'fill_color'     => isset( $htmega_rpbar_module_settings['rpbar_fill_color']) ? $htmega_rpbar_module_settings['rpbar_fill_color'] : '#fill_color',
-                        'loading_height' => isset( $htmega_rpbar_module_settings['rpbar_loading_height']) ? $htmega_rpbar_module_settings['rpbar_loading_height'] : 5,
-                        'position'       => isset( $htmega_rpbar_module_settings['rpbar_position']) ? $htmega_rpbar_module_settings['rpbar_position'] : 'top',
-                    ];
-    
-                    wp_localize_script( 'htmega-rpbar-script', 'rpbar', $rpbar_localize_data );
-                }
-            }
-
-            // Scroll To Top global functionality
-            if( htmega_is_pro_active() ) {
-
-                $htmega_stt_module_settings = htmega_get_option( 'htmega_stt', 'htmega_stt_module_settings' );
-                $htmega_stt_module_settings = json_decode( $htmega_stt_module_settings,true );
-
-                if( $htmega_stt_module_settings && ('on' == $htmega_stt_module_settings['stt_enable']  && ( isset( $htmega_stt_module_settings['stt_global'] ) && 'on' == $htmega_stt_module_settings['stt_global'] ) ) ) {
-
-                    $stt_select_to_show_pages = isset( $htmega_stt_module_settings['stt_select_to_show_pages'] ) ? $htmega_stt_module_settings['stt_select_to_show_pages'] : 'all';
-
-                    if( 'all' == $stt_select_to_show_pages && ( is_single() || is_page() ) ) {  
-
-                        wp_enqueue_script( 'htmega-stt-script');
-                        wp_enqueue_style( 'htmega-stt-css');
-
-                    } else if( 'pages' == $stt_select_to_show_pages && is_page() ) {
-
-                        wp_enqueue_script( 'htmega-stt-script');
-                        wp_enqueue_style( 'htmega-stt-css');
-                        
-                    } else if( 'posts' == $stt_select_to_show_pages && is_single() ) {
-                        
-                        wp_enqueue_script( 'htmega-stt-script');
-                        wp_enqueue_style( 'htmega-stt-css');
-                    }
-
-                    $stt_localize_data = [
-                        'stt_bg_color'       => isset( $htmega_stt_module_settings['stt_bg_color']) ? $htmega_stt_module_settings['stt_bg_color'] : '#000000',
-                        'stt_color'          => isset( $htmega_stt_module_settings['stt_color']) ? $htmega_stt_module_settings['stt_color'] : '#ffffff',
-                        'stt_bg_color_hover' => isset( $htmega_stt_module_settings['stt_bg_color_hover']) ? $htmega_stt_module_settings['stt_bg_color_hover'] : '#000000',
-                        'stt_color_hover'    => isset( $htmega_stt_module_settings['stt_color_hover']) ? $htmega_stt_module_settings['stt_color_hover'] : '#ffffff',
-                        'position'           => isset( $htmega_stt_module_settings['stt_position']) ? $htmega_stt_module_settings['stt_position'] : 'right',
-                        'stt_bottom_space'   => isset( $htmega_stt_module_settings['stt_bottom_space']) ? $htmega_stt_module_settings['stt_bottom_space'] : 30,
-                    ];
-    
-                    wp_localize_script( 'htmega-stt-script', 'stt', $stt_localize_data );
-                }
-            }
-            // localize  woocommerce  add to card button action 
+            // localize  woocommerce  add to card button action
             if ( is_plugin_active('woocommerce/woocommerce.php') && htmega_get_option( 'wcaddtocart', 'htmega_thirdparty_element_tabs', 'on' ) === 'on' && 'yes' === get_option('woocommerce_enable_ajax_add_to_cart') ) {
                 $localize_data_woocommerce = [];
                 $localize_data_woocommerce['woocommerce_ajax_nonce'] = wp_create_nonce( "htmega-woocommerce-ajax-request" );
@@ -636,7 +564,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
             check_ajax_referer( 'htmega_contact_plugin_action', 'nonce' );
 
             if ( ! current_user_can( 'activate_plugins' ) ) {
-                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'htmega-addons' ) ] );
+                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'ht-mega-for-elementor' ) ] );
             }
 
             $plugin_file = 'ht-contactform/contact-form-widget-elementor.php';
@@ -775,206 +703,206 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
         $promotional_widgets = array(
             array(
 				'key'       => 'htmega-info-box-addons',
-				'title'      => __( 'Info Box', 'htmega-addons' ),
+				'title'      => __( 'Info Box', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-info',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-info-box-widget/'),
 			),
             array(
 				'key'       => 'htmega-advanced-slider-addons',
-				'title'      => __( 'Advanced Slider', 'htmega-addons' ),
+				'title'      => __( 'Advanced Slider', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-post-slider',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-advanced-slider-widget/'),
 			),
             array(
 				'key'       => 'htmega-background-switcher',
-				'title'      => __( 'Background Switcher', 'htmega-addons' ),
+				'title'      => __( 'Background Switcher', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-exchange',
 				'action_url' => esc_url('https://wphtmega.com/elementor-background-switcher-widget/'),
 			),
             array(
 				'key'        => 'htmega-breadcrumbs',
-				'title'      => __( 'Breadcrumbs', 'htmega-addons' ),
+				'title'      => __( 'Breadcrumbs', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-exchange',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-breadcrumbs-widget/'),
 			),
             array(
 				'key'        => 'htmega-category-list-addons',
-				'title'      => __( 'Category List', 'htmega-addons' ),
+				'title'      => __( 'Category List', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-bullet-list',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-category-list-widget/'),
 			),
             array(
 				'key'       => 'htmega-chart-addons',
-				'title'      => __( 'Chart', 'htmega-addons' ),
+				'title'      => __( 'Chart', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon htmega-chart-img',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-chart-widget/'),
 			),
             array(
 				'key'       => 'htmega-dynamic-gallery-addons',
-				'title'      => __( 'Dynamic Gallery', 'htmega-addons' ),
+				'title'      => __( 'Dynamic Gallery', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-gallery-justified',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-dynamic-gallery-widget/'),
 			),
             array(
 				'key'       => 'htmega-event-box-addons',
-				'title'      => __( 'Event Box', 'htmega-addons' ),
+				'title'      => __( 'Event Box', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-table-of-contents',
 				'action_url' => esc_url('https://wphtmega.com/elementor-event-box-widget/'),
 			),
             array(
 				'key'       => 'htmega-event-calendar-addons',
-				'title'      => __( 'Event Calendar', 'htmega-addons' ),
+				'title'      => __( 'Event Calendar', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-calendar',
 				'action_url' => esc_url('https://wphtmega.com/elementor-event-calendar-widget/'),
 			),
             array(
 				'key'       => 'htmega-facebook-review-addons',
-				'title'      => __( 'Facebook Review', 'htmega-addons' ),
+				'title'      => __( 'Facebook Review', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-facebook',
 				'action_url' => esc_url('https://wphtmega.com/elementor-facebook-review-widget/'),
 			),
             array(
 				'key'       => 'htmega-feature-list-addons',
-				'title'      => __( 'Feature List', 'htmega-addons' ),
+				'title'      => __( 'Feature List', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-post-list',
 				'action_url' => esc_url('https://wphtmega.com/elementor-feature-list-widget/'),
 			),
             array(
 				'key'       => 'htmega-filterable-gallery-addons',
-				'title'      => __( 'Filterable Gallery', 'htmega-addons' ),
+				'title'      => __( 'Filterable Gallery', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-gallery-justified',
 				'action_url' => esc_url('https://wphtmega.com/elementor-filterable-gallery-widget/'),
 			),
             array(
 				'key'       => 'htmega-flip-switcher-pricing-table-addons',
-				'title'      => __( 'Flip Switcher Pricing Table', 'htmega-addons' ),
+				'title'      => __( 'Flip Switcher Pricing Table', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-dual-button',
 				'action_url' => esc_url('https://wphtmega.com/elementor-pricing-table-flip-box-widget/'),
 			),
             array(
 				'key'       => 'htmega-icon-box-addons',
-				'title'      => __( 'Icon Box', 'htmega-addons' ),
+				'title'      => __( 'Icon Box', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-icon-box',
 				'action_url' => esc_url('https://wphtmega.com/elementor-icon-box-widget/'),
 			),
             array(
 				'key'       => 'htmega-image-roted-addons',
-				'title'      => __( 'Image Rotate', 'htmega-addons' ),
+				'title'      => __( 'Image Rotate', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-image-before-after',
 				'action_url' => esc_url('https://wphtmega.com/'),
 			),
             array(
 				'key'       => 'htmega-interactive-promo-addons',
-				'title'      => __( 'Interactive Promo', 'htmega-addons' ),
+				'title'      => __( 'Interactive Promo', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-call-to-action',
 				'action_url' => esc_url('https://wphtmega.com/elementor-interactive-promo-widget/'),
 			),
             array(
 				'key'       => 'htmega-lottie-addons',
-				'title'      => __( 'Lottie', 'htmega-addons' ),
+				'title'      => __( 'Lottie', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-lottie',
 				'action_url' => esc_url('https://wphtmega.com/elementor-lottie-widget/'),
 			),
             array(
 				'key'       => 'htmega-page-list-addons',
-				'title'      => __( 'Page List', 'htmega-addons' ),
+				'title'      => __( 'Page List', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-bullet-list',
 				'action_url' => esc_url('https://wphtmega.com/elementor-page-list-widget/'),
 			),
             array(
 				'key'       => 'htmega-post-masonry-addons',
-				'title'      => __( 'Post Masonry', 'htmega-addons' ),
+				'title'      => __( 'Post Masonry', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-posts-masonry',
 				'action_url' => esc_url('https://wphtmega.com/elementor-post-masonry-widget/'),
 			),
             array(
 				'key'       => 'htmega-post-timeline-addons',
-				'title'      => __( 'Post Timeline', 'htmega-addons' ),
+				'title'      => __( 'Post Timeline', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-time-line',
 				'action_url' => esc_url('https://wphtmega.com/elementor-post-timeline-widget/'),
 			),
             array(
 				'key'       => 'htmega-pricing-menu-addons',
-				'title'      => __( 'Pricing Menu', 'htmega-addons' ),
+				'title'      => __( 'Pricing Menu', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-info-box',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-price-menu-widget/'),
 			),
             array(
 				'key'       => 'htmega-pricing-table-flip-box',
-				'title'      => __( 'Pricing Table Flip Box', 'htmega-addons' ),
+				'title'      => __( 'Pricing Table Flip Box', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-flip-box',
 				'action_url' => esc_url('https://wphtmega.com/elementor-pricing-table-flip-box-widget/'),
 			),
             array(
 				'key'       => 'htmega-social-network-icons-addons',
-				'title'      => __( 'Social Network Icons', 'htmega-addons' ),
+				'title'      => __( 'Social Network Icons', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-social-icons',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-social-network-widget/'),
 			),
             array(
 				'key'       => 'htmega-source-code-addons',
-				'title'      => __( 'Source Code', 'htmega-addons' ),
+				'title'      => __( 'Source Code', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-code',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-source-code-widget/'),
 			),
             array(
 				'key'       => 'htmega-sticky-section-addons',
-				'title'      => __( 'Sticky Section', 'htmega-addons' ),
+				'title'      => __( 'Sticky Section', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-filter',
 				'action_url' => esc_url('https://wphtmega.com/'),
 			),
             array(
 				'key'       => 'htmega-taxonomy-terms-addons',
-				'title'      => __( 'Taxonomy Terms', 'htmega-addons' ),
+				'title'      => __( 'Taxonomy Terms', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-radio',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-taxonomy-terms-widget/'),
 			),
             array(
 				'key'       => 'htmega-team-carousel-addons',
-				'title'      => __( 'Team Carousel', 'htmega-addons' ),
+				'title'      => __( 'Team Carousel', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-person',
 				'action_url' => esc_url('https://wphtmega.com/elementor-team-carousel-widget/'),
 			),
             array(
 				'key'       => 'htmega-threesixty-rotation-addons',
-				'title'      => __( '360 Rotation', 'htmega-addons' ),
+				'title'      => __( '360 Rotation', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon htmega-threesixty-rotation-img',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-360-rotation-widget/'),
 			),
             array(
 				'key'       => 'htmega-whatsapp-chat-addons',
-				'title'      => __( 'WhatsApp Chat', 'htmega-addons' ),
+				'title'      => __( 'WhatsApp Chat', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-commenting-o',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-whatsapp-chat-widget/'),
 			),
             array(
 				'key'       => 'htmega-flip-carousel-addons',
-				'title'      => __( 'Flip Carousel', 'htmega-addons' ),
+				'title'      => __( 'Flip Carousel', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-media-carousel',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-flip-carousel-widget/'),
 			),
 
             array(
 				'key'       => 'htmega-interactive-circle-infographic-addons',
-				'title'      => __( 'Interactive Circle Infographic', 'htmega-addons' ),
+				'title'      => __( 'Interactive Circle Infographic', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-integration',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-interactive-circle-infographic-widget/'),
 			),
             array(
 				'key'       => 'htmega-copy-coupon-code-addons',
-				'title'      => __( 'Copy Coupon Code', 'htmega-addons' ),
+				'title'      => __( 'Copy Coupon Code', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-copy',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-copy-coupon-code-widget/'),
 			),
             array(
 				'key'       => 'htmega-video-gallery-addons',
-				'title'      => __( 'Video Gallery', 'htmega-addons' ),
+				'title'      => __( 'Video Gallery', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-media-carousel',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-video-gallery-widget/'),
 			),
             array(
 				'key'       => 'htmega-video-playlist-addons',
-				'title'      => __( 'Video Playlist', 'htmega-addons' ),
+				'title'      => __( 'Video Playlist', 'ht-mega-for-elementor' ),
 				'icon'       => 'htmega-icon eicon-video-playlist',
 				'action_url' => esc_url('https://wphtmega.com/widget/elementor-video-playlist-widget/'),
 			),

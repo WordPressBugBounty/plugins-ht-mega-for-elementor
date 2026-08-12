@@ -14,9 +14,9 @@
                 $templates = \Elementor\Plugin::instance()->templates_manager->get_source( 'local' )->get_items();
             }
             if ( empty( $templates ) ) {
-                $template_lists = [ '0' => __( 'Do not Saved Templates.', 'htmega-addons' ) ];
+                $template_lists = [ '0' => __( 'Do not Saved Templates.', 'ht-mega-for-elementor' ) ];
             } else {
-                $template_lists = [ '0' => __( 'Select Template', 'htmega-addons' ) ];
+                $template_lists = [ '0' => __( 'Select Template', 'ht-mega-for-elementor' ) ];
                 foreach ( $templates as $template ) {
                     $template_lists[ $template['template_id'] ] = $template['title'] . ' (' . $template['type'] . ')';
                 }

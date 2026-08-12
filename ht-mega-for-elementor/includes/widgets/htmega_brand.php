@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Brands', 'htmega-addons' );
+        return __( 'Brands', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -36,24 +36,24 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
         $this->start_controls_section(
             'brand_content',
             [
-                'label' => __( 'Brands', 'htmega-addons' ),
+                'label' => __( 'Brands', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'htmega_brand_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
-                        '6'   => __( 'Style Six', 'htmega-addons' ),
-                        '7'   => __( 'Style Seven', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6'   => __( 'Style Six', 'ht-mega-for-elementor' ),
+                        '7'   => __( 'Style Seven', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -63,7 +63,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $repeater->add_control(
                 'htmega_brand_title',
                 [
-                    'label'   => __( 'Title', 'htmega-addons' ),
+                    'label'   => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                     'default' => 'Brand Logo',
                 ]
@@ -72,7 +72,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $repeater->add_control(
                 'htmega_brand_logo',
                 [
-                    'label' => __( 'Partner Logo', 'htmega-addons' ),
+                    'label' => __( 'Partner Logo', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -92,9 +92,9 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $repeater->add_control(
                 'htmega_brand_link',
                 [
-                    'label'   => __( 'Partner Link', 'htmega-addons' ),
+                    'label'   => __( 'Partner Link', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __( '#', 'htmega-addons' ),
+                    'default' => __( '#', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -107,7 +107,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
 
                         [
                             'htmega_brand_title'      => 'Brand Logo',
-                            'htmega_brand_link'       => __( '#', 'htmega-addons' ),
+                            'htmega_brand_link'       => __( '#', 'ht-mega-for-elementor' ),
                         ],
                     ],
                     'title_field' => '{{{ htmega_brand_title }}}',
@@ -121,7 +121,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
         $this->start_controls_section(
             'htmega_brand_style_section',
             [
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => __( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -129,7 +129,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_brand_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -142,7 +142,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_brand_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -158,7 +158,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
         $this->start_controls_section(
             'htmega_brand_logo_style',
             [
-                'label' => __( 'Brand Logo', 'htmega-addons' ),
+                'label' => __( 'Brand Logo', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -171,7 +171,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $this->start_controls_tab(
                 'brand_style_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -179,7 +179,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'htmega_brand_logo_background',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => __( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .single-partner',
                         'condition' =>[
@@ -192,7 +192,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'htmega_brand_logo_box_shadow',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .single-partner',
                         'condition' =>[
                             'htmega_brand_style' => array( '1','5','7' ),
@@ -204,7 +204,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'htmega_brand_logo_background_2',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => __( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} ul.brand-list li',
                         'condition' =>[
@@ -217,7 +217,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'htmega_brand_logo_box_shadow_2',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} ul.brand-list li',
                         'condition' =>[
                             'htmega_brand_style' => array( '2','3','4','6' ),
@@ -232,7 +232,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $this->start_controls_tab(
                 'brand_style_hover_tab',
                 [
-                    'label' => __( 'Hover', 'htmega-addons' ),
+                    'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -240,7 +240,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'htmega_brand_logo_background_hover',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => __( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .single-partner:hover',
                         'condition' =>[
@@ -253,7 +253,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'htmega_brand_logo_box_shadow_hover',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .single-partner:hover',
                         'condition' =>[
                             'htmega_brand_style' => array( '1','5','7' ),
@@ -265,7 +265,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'htmega_brand_logo_background_2_hover',
-                        'label' => __( 'Background', 'htmega-addons' ),
+                        'label' => __( 'Background', 'ht-mega-for-elementor' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} ul.brand-list li:hover',
                         'condition' =>[
@@ -278,7 +278,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'htmega_brand_logo_box_shadow_2_hover',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} ul.brand-list li:hover',
                         'condition' =>[
                             'htmega_brand_style' => array( '2','3','4','6' ),
@@ -289,7 +289,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                 $this->add_control(
                     'htmega_brand_logo_duration',
                     [
-                        'label' => __( 'Transition Duration', 'htmega-addons' ),
+                        'label' => __( 'Transition Duration', 'ht-mega-for-elementor' ),
                         'type'  => Controls_Manager::SLIDER,
                         'range' => [
                             'px' => [
@@ -315,7 +315,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_brand_logo_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -329,7 +329,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_brand_logo_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -344,7 +344,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_brand_logo_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .single-partner',
                     'condition' =>[
                         'htmega_brand_style' => array( '1','5','7' ),
@@ -356,7 +356,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_brand_logo_border_2',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} ul.brand-list li',
                     'condition' =>[
                         'htmega_brand_style' => array( '2','3','4','6' ),
@@ -367,7 +367,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_brand_logo_borderradius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .single-partner' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -388,7 +388,7 @@ class HTMega_Elementor_Widget_Brand extends Widget_Base {
         $this->add_render_attribute( 'brands_area_attr', 'class', 'htmega-brands-style-' . esc_attr( $settings['htmega_brand_style'] ) );
 
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'brands_area_attr' ); ?> >
+            <div <?php echo $this->get_render_attribute_string( 'brands_area_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core get_render_attribute_string() already escapes attributes. ?> >
 
                 <?php if( $settings['htmega_brand_style'] == 2 || $settings['htmega_brand_style'] == 3 || $settings['htmega_brand_style'] == 4 || $settings['htmega_brand_style'] == 6 ): ?>
                     <ul class="brand-list">

@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Audio Player', 'htmega-addons' );
+        return __( 'Audio Player', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -45,19 +45,19 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
         $this->start_controls_section(
             'audio_player_content_source',
             [
-                'label' => __( 'Audio Player', 'htmega-addons' ),
+                'label' => __( 'Audio Player', 'ht-mega-for-elementor' ),
             ]
         );
 
 		$this->add_control(
 			'audio_player_source',
 			[
-				'label' => esc_html__('Source', 'htmega-addons'),
+				'label' => esc_html__('Source', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'selfhosted',
 				'options' => [
-					'selfhosted' => esc_html__('Self Hosted', 'htmega-addons'),
-					'remote' => esc_html__('External', 'htmega-addons'),
+					'selfhosted' => esc_html__('Self Hosted', 'ht-mega-for-elementor'),
+					'remote' => esc_html__('External', 'ht-mega-for-elementor'),
 				],
 			]
 		);
@@ -65,9 +65,9 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_selfhosted_url',
 			[
-				'label' => esc_html__('Upload Media', 'htmega-addons'),
+				'label' => esc_html__('Upload Media', 'ht-mega-for-elementor'),
 				'type'  => Controls_Manager::MEDIA,
-				'description' => esc_html__('Support MP3 audio format', 'htmega-addons'),
+				'description' => esc_html__('Support MP3 audio format', 'ht-mega-for-elementor'),
 				'media_type' => ['audio'],
 				'condition' => [
 					'audio_player_source' => 'selfhosted',
@@ -78,10 +78,10 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_remote_url',
 			[
-				'label' => esc_html__('Remote URL', 'htmega-addons'),
+				'label' => esc_html__('Remote URL', 'ht-mega-for-elementor'),
 				'label_block' => true,
-				'placeholder' => esc_html__('Enter remote audio URL', 'htmega-addons'),
-				'description' => esc_html__('Input a valid audio url', 'htmega-addons'),
+				'placeholder' => esc_html__('Enter remote audio URL', 'ht-mega-for-elementor'),
+				'description' => esc_html__('Input a valid audio url', 'ht-mega-for-elementor'),
 				'type'  => Controls_Manager::TEXT,
 				'condition' => [
 					'audio_player_source' => 'remote',
@@ -92,7 +92,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_control(
                 'audio_poster_image',
                 [
-                    'label' => __( 'Poster Image', 'htmega-addons' ),
+                    'label' => __( 'Poster Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                 ]
             );
@@ -112,44 +112,44 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_control(
                 'audio_title',
                 [
-                    'label' => __( 'Title', 'htmega-addons' ),
+                    'label' => __( 'Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block'=> true,
-                    'placeholder' => __( 'Audio Title', 'htmega-addons' ),
+                    'placeholder' => __( 'Audio Title', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'audio_description',
                 [
-                    'label' => __( 'Description', 'htmega-addons' ),
+                    'label' => __( 'Description', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Audio Description', 'htmega-addons' ),
+                    'placeholder' => __( 'Audio Description', 'ht-mega-for-elementor' ),
                 ]
             );
             
 			$this->add_control(
 				'audio_player_image_positionp',
 				[
-					'label' => esc_html__('Image Position On', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+					'label' => esc_html__('Image Position On', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
 					'type' => Controls_Manager::CHOOSE,
 					'default' => 'column',
 					'options' => [
 						'column' => [
-                            'title' => __('Top', 'htmega-addons'),
+                            'title' => __('Top', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-v-align-top',
                         ],
                         'row' => [
-                            'title' => __('Left', 'htmega-addons'),
+                            'title' => __('Left', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-h-align-left',
                         ],
 
                         'row-reverse' => [
-                            'title' => __('Right', 'htmega-addons'),
+                            'title' => __('Right', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-h-align-right',
                         ],
 						'column-reverse' => [
-                            'title' => __('Right', 'htmega-addons'),
+                            'title' => __('Right', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-v-align-bottom',
                         ],
                     ],
@@ -180,7 +180,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			$this->add_responsive_control(
 				'audio_player_image_position_gap',
 				[
-					'label' => esc_html__('Inner Space', 'htmega-addons'),
+					'label' => esc_html__('Inner Space', 'ht-mega-for-elementor'),
 					'type' => Controls_Manager::SLIDER,
 					'size_units' => ['px', 'em', 'rem'],
 					'range' => [
@@ -220,25 +220,25 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			$this->add_control(
 				'audio_player_positionp',
 				[
-					'label' => esc_html__('Player Position On', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+					'label' => esc_html__('Player Position On', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
 					'type' => Controls_Manager::CHOOSE,
 					'default' => 'column',
 					'options' => [
 						'column-reverse' => [
-                            'title' => __('Top', 'htmega-addons'),
+                            'title' => __('Top', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-v-align-top',
                         ],
                         'row-reverse' => [
-                            'title' => __('Left', 'htmega-addons'),
+                            'title' => __('Left', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-h-align-left',
                         ],
 
                         'row' => [
-                            'title' => __('Right', 'htmega-addons'),
+                            'title' => __('Right', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-h-align-right',
                         ],
 						'column' => [
-                            'title' => __('Bottom', 'htmega-addons'),
+                            'title' => __('Bottom', 'ht-mega-for-elementor'),
                             'icon' => 'eicon-v-align-bottom',
                         ],
                     ],
@@ -260,7 +260,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			$this->add_responsive_control(
 				'audio_player_gap',
 				[
-					'label' => esc_html__('Inner Space', 'htmega-addons'),
+					'label' => esc_html__('Inner Space', 'ht-mega-for-elementor'),
 					'type' => Controls_Manager::SLIDER,
 					'size_units' => ['px', 'em', 'rem'],
 					'range' => [
@@ -291,17 +291,17 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
         $this->start_controls_section(
             'audio_additional_settings',
             [
-                'label' => __( 'Additional Settings', 'htmega-addons' ),
+                'label' => __( 'Additional Settings', 'ht-mega-for-elementor' ),
             ]
         );
 		$this->add_control(
 			'audio_player_autoplay',
 			[
-				'label' => esc_html__('Autoplay', 'htmega-addons'),
+				'label' => esc_html__('Autoplay', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 			]
 		);
@@ -309,11 +309,11 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_loop',
 			[
-				'label' => esc_html__('Loop', 'htmega-addons'),
+				'label' => esc_html__('Loop', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 			]
 		);
@@ -321,11 +321,11 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_muted',
 			[
-				'label' => esc_html__('Muted', 'htmega-addons'),
+				'label' => esc_html__('Muted', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 			]
 		);
@@ -333,18 +333,18 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_playpause',
 			[
-				'label' => esc_html__('Play/Pause', 'htmega-addons'),
+				'label' => esc_html__('Play/Pause', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 			]
 		);
 		$this->add_control(
 			'audio_player_display_optin_heading',
 			[
-				'label' => __( 'Display Options', 'htmega-addons' ),
+				'label' => __( 'Display Options', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -352,11 +352,11 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress',
 			[
-				'label' => esc_html__('Progress Bar', 'htmega-addons'),
+				'label' => esc_html__('Progress Bar', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 			]
 		);
@@ -364,11 +364,11 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_current',
 			[
-				'label' => esc_html__('Current Time', 'htmega-addons'),
+				'label' => esc_html__('Current Time', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 			]
 		);
@@ -376,11 +376,11 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_duration',
 			[
-				'label' => esc_html__('Total Duration', 'htmega-addons'),
+				'label' => esc_html__('Total Duration', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 			]
 		);
@@ -388,22 +388,22 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume',
 			[
-				'label' => esc_html__('Volume Bar', 'htmega-addons'),
+				'label' => esc_html__('Volume Bar', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 			]
 		);
 
 		$this->add_control(
 			'audio_player_hide_volume_touch_devices',
 			[
-				'label' => esc_html__('Hide Volume On Touch Devices', 'htmega-addons'),
+				'label' => esc_html__('Hide Volume On Touch Devices', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 				'condition' => [
 					'audio_player_volume' => ['yes']
@@ -414,12 +414,12 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_slider_layout',
 			[
-				'label' => esc_html__('Volume Slider Layout', 'htmega-addons'),
+				'label' => esc_html__('Volume Slider Layout', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'horizontal',
 				'options' => [
-					'horizontal' => esc_html__('Horizontal', 'htmega-addons'),
-					'vertical' => esc_html__('Vertical (pro)', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+					'horizontal' => esc_html__('Horizontal', 'ht-mega-for-elementor'),
+					'vertical' => esc_html__('Vertical (pro)', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
 				],
 				'condition' => [
 					'audio_player_volume' => ['yes']
@@ -430,8 +430,8 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_start_volume',
 			[
-				'label' => esc_html__('Start Volume', 'htmega-addons'),
-				'description' => esc_html__('Initial volume when the player starts.', 'htmega-addons'),
+				'label' => esc_html__('Start Volume', 'ht-mega-for-elementor'),
+				'description' => esc_html__('Initial volume when the player starts.', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range'      => [
@@ -451,8 +451,8 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_restrict_time',
 			[
-				'label' => esc_html__('Start Time (seconds)', 'htmega-addons'),
-				'description' => esc_html__('Specify the starting time for the audio playback.', 'htmega-addons'),
+				'label' => esc_html__('Start Time (seconds)', 'ht-mega-for-elementor'),
+				'description' => esc_html__('Specify the starting time for the audio playback.', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::NUMBER,
 			]
 		);
@@ -462,17 +462,17 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_section(
 			'playericon_settings',
 			[
-				'label' => __( 'Player Icons', 'htmega-addons' ),
+				'label' => __( 'Player Icons', 'ht-mega-for-elementor' ),
 			]
 		);
 		$this->add_control(
 			'player_custtom_icon_enable',
 			[
-				'label' => esc_html__('Custom Icons', 'htmega-addons'),
+				'label' => esc_html__('Custom Icons', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
-				'label_on' => esc_html__('Yes', 'htmega-addons'),
-				'label_off' => esc_html__('No', 'htmega-addons'),
+				'label_on' => esc_html__('Yes', 'ht-mega-for-elementor'),
+				'label_off' => esc_html__('No', 'ht-mega-for-elementor'),
 				'return_value' => 'yes',
 			]
 		);
@@ -480,7 +480,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_play_iconp',
 			[
-				'label' => esc_html__('Play Icon', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+				'label' => esc_html__('Play Icon', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
 				'type' => Controls_Manager::ICONS,
 				'label_block' => false,
 				'skin' => 'inline',
@@ -495,7 +495,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_pause_iconp',
 			[
-				'label' => esc_html__('Pause Icon', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+				'label' => esc_html__('Pause Icon', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
 				'type' => Controls_Manager::ICONS,
 				'label_block' => false,
 				'skin' => 'inline',
@@ -510,7 +510,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_replay_iconp',
 			[
-				'label' => esc_html__('Replay Icon', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+				'label' => esc_html__('Replay Icon', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
 				'type' => Controls_Manager::ICONS,
 				'label_block' => false,
 				'skin' => 'inline',
@@ -525,7 +525,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_unmute_iconp',
 			[
-				'label' => esc_html__('Unmute Icon', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+				'label' => esc_html__('Unmute Icon', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
 				'type' => Controls_Manager::ICONS,
 				'label_block' => false,
 				'skin' => 'inline',
@@ -540,7 +540,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_mute_iconp',
 			[
-				'label' => esc_html__('Mute Icon', 'htmega-addons') . ' <i class="eicon-pro-icon"></i>',
+				'label' => esc_html__('Mute Icon', 'ht-mega-for-elementor') . ' <i class="eicon-pro-icon"></i>',
 				'type' => Controls_Manager::ICONS,
 				'label_block' => false,
 				'skin' => 'inline',
@@ -558,7 +558,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
         $this->start_controls_section(
             'audio_player_style_section',
             [
-                'label' => __( 'Audio Box', 'htmega-addons' ),
+                'label' => __( 'Audio Box', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -566,19 +566,19 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_responsive_control(
                 'audio_player_section_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'start' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'end' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -591,7 +591,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_responsive_control(
                 'audio_player_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -603,7 +603,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_responsive_control(
                 'audio_player_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -615,7 +615,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'audio_player_section_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-audio-player-wrapper',
                     'separator' =>'after',
@@ -626,14 +626,14 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'audio_player_section_border',
-                    'label' => esc_html__('Border', 'htmega-addons'),
+                    'label' => esc_html__('Border', 'ht-mega-for-elementor'),
                     'selector' => '{{WRAPPER}} .htmega-audio-player-wrapper',
                 ]
             );
             $this->add_responsive_control(
                 'audio_player_section_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-audio-player-wrapper' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -644,7 +644,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'audio_player_section_box_shadow',
-                    'label' => esc_html__('Box Shadow', 'htmega-addons'),
+                    'label' => esc_html__('Box Shadow', 'ht-mega-for-elementor'),
                     'selector' => '{{WRAPPER}} .htmega-audio-player-wrapper',
                 ]
             );
@@ -653,14 +653,14 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
         $this->start_controls_section(
             'audio_player_box_section',
             [
-                'label' => __( 'Audio Player', 'htmega-addons' ),
+                'label' => __( 'Audio Player', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 		$this->add_responsive_control(
 			'audio_player_box_width',
 				[
-					'label' => __( 'Width', 'htmega-addons' ),
+					'label' => __( 'Width', 'ht-mega-for-elementor' ),
 					'type' => Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%' ],
 					'range' => [
@@ -686,7 +686,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			$this->add_responsive_control(
 				'audio_player_box_height',
 					[
-						'label' => __( 'Height', 'htmega-addons' ),
+						'label' => __( 'Height', 'ht-mega-for-elementor' ),
 						'type' => Controls_Manager::SLIDER,
 						'size_units' => [ 'px'],
 						'range' => [
@@ -708,7 +708,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_responsive_control(
                 'audio_player_box_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -720,7 +720,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'audio_player_box_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-audio-player.mejs-container .mejs-controls',
                     'separator' =>'before',
@@ -730,14 +730,14 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'audio_player_border',
-                    'label' => esc_html__('Border', 'htmega-addons'),
+                    'label' => esc_html__('Border', 'ht-mega-for-elementor'),
                     'selector' => '{{WRAPPER}} .htmega-audio-player.mejs-container .mejs-controls',
                 ]
             );
             $this->add_responsive_control(
                 'audio_player_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-audio-player.mejs-container .mejs-controls' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -748,26 +748,26 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'audio_player_box_shadow',
-                    'label' => esc_html__('Box Shadow', 'htmega-addons'),
+                    'label' => esc_html__('Box Shadow', 'ht-mega-for-elementor'),
                     'selector' => '{{WRAPPER}} .htmega-audio-player.mejs-container .mejs-controls',
                 ]
             );
 			$this->add_responsive_control(
                 'audio_player_box_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -782,7 +782,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
         $this->start_controls_section(
             'audio_info_section',
             [
-                'label' => __( 'Audio Info', 'htmega-addons' ),
+                'label' => __( 'Audio Info', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
 				'conditions' => [
 					'relation' => 'or',
@@ -796,19 +796,19 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_info_alignment',
 			[
-				'label' => __( 'Alignment', 'htmega-addons' ),
+				'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'htmega-addons' ),
+						'title' => __( 'Left', 'ht-mega-for-elementor' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'htmega-addons' ),
+						'title' => __( 'Center', 'ht-mega-for-elementor' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'htmega-addons' ),
+						'title' => __( 'Right', 'ht-mega-for-elementor' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -820,7 +820,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_control(
                 'audio_title_color',
                 [
-                    'label' => __( 'Title Color', 'htmega-addons' ),
+                    'label' => __( 'Title Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#1f1e26',
                     'selectors' => [
@@ -836,7 +836,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'audio_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-audio-title',
 					'condition'=>[
 						'audio_title!'=>'',
@@ -847,7 +847,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_responsive_control(
                 'audio_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -861,7 +861,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			$this->add_control(
                 'audio_info_description_heading',
                 [
-                    'label' => __( 'Description', 'htmega-addons' ),
+                    'label' => __( 'Description', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
 					'condition'=>[
@@ -873,7 +873,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			$this->add_control(
                 'audio_description_color',
                 [
-                    'label' => __( ' Description Color', 'htmega-addons' ),
+                    'label' => __( ' Description Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#1f1e26',
                     'selectors' => [
@@ -889,7 +889,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'audio_description_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-audio-description',
 					'condition'=>[
 						'audio_description!'=>'',
@@ -900,7 +900,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_responsive_control(
                 'audio_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -916,7 +916,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
         $this->start_controls_section(
             'audio_image_style',
             [
-                'label' => __( 'Image', 'htmega-addons' ),
+                'label' => __( 'Image', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
 				'condition'=>[
 					'audio_poster_image[url]!'=>'',
@@ -927,7 +927,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_control(
                 'audio_image_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -944,7 +944,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_control(
                 'audio_image_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -961,7 +961,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_responsive_control(
                 'audio_image_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -974,8 +974,9 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'audio_image_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
+					// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image) appear in the Elementor Style panel, not a WP_Query exclude arg.
 					'exclude'=> ['image'],
                     'selector' => '{{WRAPPER}} .htmega-audio-thumb',
                 ]
@@ -985,7 +986,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'audio_image_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-audio-thumb',
 					'separator' =>'before',
                 ]
@@ -994,7 +995,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             $this->add_responsive_control(
                 'audio_image_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-audio-thumb' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1005,26 +1006,26 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'audio_image_boxshadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-audio-thumb',
                 ]
             );
             $this->add_responsive_control(
                 'audio_image_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -1039,7 +1040,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_section(
 			'audio_player_playpause_style_section',
 			[
-				'label' => esc_html__('Play/Pause Button', 'htmega-addons'),
+				'label' => esc_html__('Play/Pause Button', 'ht-mega-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'audio_player_playpause' => ['yes']
@@ -1050,7 +1051,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_playpause_box-h_w',
 			[
-				'label' => esc_html__('Icon Box Heith/Width', 'htmega-addons'),
+				'label' => esc_html__('Icon Box Heith/Width', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em', 'rem'],
 				'range' => [
@@ -1072,14 +1073,14 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_tab(
 			'audio_player_playpause_normal_style_tab',
 			[
-				'label' => esc_html__('Normal', 'htmega-addons'),
+				'label' => esc_html__('Normal', 'ht-mega-for-elementor'),
 			]
 		);
 // pro feartures
 		$this->add_control(
 			'audio_player_playpause_color',
 			[
-				'label' => esc_html__('Color', 'htmega-addons'),
+				'label' => esc_html__('Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'default'	=> '#ffffff',
 				'selectors' => [
@@ -1094,7 +1095,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_playpause_bg_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-playpause-button' => 'background: {{VALUE}}',
@@ -1106,7 +1107,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'audio_player_playpause_box_shadow',
-				'label' => esc_html__('Box Shadow', 'htmega-addons'),
+				'label' => esc_html__('Box Shadow', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-playpause-button',
 			]
 		);
@@ -1115,7 +1116,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'audio_player_playpause_border',
-				'label' => esc_html__('Border', 'htmega-addons'),
+				'label' => esc_html__('Border', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-playpause-button',
 			]
 		);
@@ -1125,7 +1126,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_tab(
 			'audio_player_playpause_hover_style_tab',
 			[
-				'label' => esc_html__('Hover', 'htmega-addons'),
+				'label' => esc_html__('Hover', 'ht-mega-for-elementor'),
 			]
 		);
 // pro feature
@@ -1133,7 +1134,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_playpause_bg_hover_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-playpause-button:hover' => 'background: {{VALUE}}',
@@ -1145,7 +1146,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'audio_player_playpause_hover_box_shadow',
-				'label' => esc_html__('Box Shadow', 'htmega-addons'),
+				'label' => esc_html__('Box Shadow', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-playpause-button:hover',
 			]
 		);
@@ -1154,7 +1155,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'audio_player_playpause_hover_border',
-				'label' => esc_html__('Border', 'htmega-addons'),
+				'label' => esc_html__('Border', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-playpause-button:hover',
 			]
 		);
@@ -1165,7 +1166,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_playpause_border_radius',
 			[
-				'label' => esc_html__('Border Radius (px)', 'htmega-addons'),
+				'label' => esc_html__('Border Radius (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1178,7 +1179,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_playpause_margin',
 			[
-				'label' => esc_html__('Margin (px)', 'htmega-addons'),
+				'label' => esc_html__('Margin (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1193,7 +1194,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_section(
 			'audio_player_progress_bar_style_section',
 			[
-				'label' => esc_html__('Progress Bar', 'htmega-addons'),
+				'label' => esc_html__('Progress Bar', 'ht-mega-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'audio_player_progress' => ['yes']
@@ -1204,7 +1205,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_progress_bar_height',
 			[
-				'label' => esc_html__('Height', 'htmega-addons'),
+				'label' => esc_html__('Height', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -1222,7 +1223,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress_bar_bg_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-time-total' => 'background: {{VALUE}}',
@@ -1234,7 +1235,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'audio_player_progress_bar_border',
-				'label' => esc_html__('Border', 'htmega-addons'),
+				'label' => esc_html__('Border', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-time-total',
 			]
 		);
@@ -1242,7 +1243,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress_bar_border_radius',
 			[
-				'label' => esc_html__('Border Radius (px)', 'htmega-addons'),
+				'label' => esc_html__('Border Radius (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1256,7 +1257,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress_bar_loaded_heading',
 			[
-				'label' => esc_html__('Loaded Progress Bar', 'htmega-addons'),
+				'label' => esc_html__('Loaded Progress Bar', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1265,7 +1266,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress_bar_loaded_bg_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-time-total .mejs-time-loaded' => 'background: {{VALUE}}',
@@ -1276,7 +1277,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress_bar_current_heading',
 			[
-				'label' => esc_html__('Current Progress Bar', 'htmega-addons'),
+				'label' => esc_html__('Current Progress Bar', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1285,7 +1286,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress_bar_current_bg_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-time-total .mejs-time-current' => 'background: {{VALUE}}',
@@ -1296,7 +1297,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress_bar_time_hover_heading',
 			[
-				'label' => esc_html__('Time Hover', 'htmega-addons'),
+				'label' => esc_html__('Time Hover', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1305,7 +1306,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_progress_bar_time_hover_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#FFFFFF00',
 				'selectors' => [
@@ -1320,7 +1321,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_section(
 			'audio_player_time_style_section',
 			[
-				'label' => esc_html__('Time', 'htmega-addons'),
+				'label' => esc_html__('Time', 'ht-mega-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'conditions' => [
 					'relation' => 'or',
@@ -1343,7 +1344,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'audio_player_time_typography',
-				'label' => __( 'Typography', 'htmega-addons' ),
+				'label' => __( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-time span',
 			]
 		);
@@ -1352,7 +1353,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_currenttime_heading',
 			[
-				'label' => esc_html__('Current Time', 'htmega-addons'),
+				'label' => esc_html__('Current Time', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'condition' => [
 					'audio_player_current' => ['yes']
@@ -1364,7 +1365,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_currenttime_color',
 			[
-				'label' => esc_html__('Color', 'htmega-addons'),
+				'label' => esc_html__('Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-time.mejs-currenttime-container' => 'color: {{VALUE}}',
@@ -1378,7 +1379,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_currenttime_margin',
 			[
-				'label' => esc_html__('Margin (px)', 'htmega-addons'),
+				'label' => esc_html__('Margin (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1393,7 +1394,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_durationtime_heading',
 			[
-				'label' => esc_html__('Duration Time', 'htmega-addons'),
+				'label' => esc_html__('Duration Time', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1405,7 +1406,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_durationtime_color',
 			[
-				'label' => esc_html__('Color', 'htmega-addons'),
+				'label' => esc_html__('Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-time.mejs-duration-container' => 'color: {{VALUE}}',
@@ -1419,7 +1420,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_durationtime_margin',
 			[
-				'label' => esc_html__('Margin (px)', 'htmega-addons'),
+				'label' => esc_html__('Margin (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1437,7 +1438,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_section(
 			'audio_player_volume_style_section',
 			[
-				'label' => esc_html__('Volume', 'htmega-addons'),
+				'label' => esc_html__('Volume', 'ht-mega-for-elementor'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'audio_player_volume' => ['yes']
@@ -1448,7 +1449,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_button_heading',
 			[
-				'label' => esc_html__('Volume Button', 'htmega-addons'),
+				'label' => esc_html__('Volume Button', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -1456,7 +1457,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_volume_size',
 			[
-				'label' => esc_html__('Icon Box  Height/Width', 'htmega-addons'),
+				'label' => esc_html__('Icon Box  Height/Width', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em', 'rem'],
 				'range' => [
@@ -1475,7 +1476,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_volume_font_size',
 			[
-				'label' => esc_html__('Icon Font Size', 'htmega-addons'),
+				'label' => esc_html__('Icon Font Size', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', 'em', 'rem'],
 				'range' => [
@@ -1504,14 +1505,14 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_tab(
 			'audio_player_volume_btn_normal_style_tab',
 			[
-				'label' => esc_html__('Normal', 'htmega-addons'),
+				'label' => esc_html__('Normal', 'ht-mega-for-elementor'),
 			]
 		);
 
 		$this->add_control(
 			'audio_player_volume_btn_bg_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-volume-button' => 'background: {{VALUE}}',
@@ -1523,7 +1524,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'audio_player_volume_btn_box_shadow',
-				'label' => esc_html__('Box Shadow', 'htmega-addons'),
+				'label' => esc_html__('Box Shadow', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-volume-button',
 			]
 		);
@@ -1532,7 +1533,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'audio_player_volume_btn_border',
-				'label' => esc_html__('Border', 'htmega-addons'),
+				'label' => esc_html__('Border', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-volume-button',
 			]
 		);
@@ -1542,14 +1543,14 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->start_controls_tab(
 			'audio_player_volume_btn_hover_style_tab',
 			[
-				'label' => esc_html__('Hover', 'htmega-addons'),
+				'label' => esc_html__('Hover', 'ht-mega-for-elementor'),
 			]
 		);
 
 		$this->add_control(
 			'audio_player_volume_btn_hover_color',
 			[
-				'label' => esc_html__('Color', 'htmega-addons'),
+				'label' => esc_html__('Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'default'	=> '#ffffff',
 				'selectors' => [
@@ -1561,7 +1562,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_btn_bg_hover_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-volume-button:hover' => 'background: {{VALUE}}',
@@ -1573,7 +1574,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'audio_player_volume_btn_hover_box_shadow',
-				'label' => esc_html__('Box Shadow', 'htmega-addons'),
+				'label' => esc_html__('Box Shadow', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-volume-button:hover',
 			]
 		);
@@ -1582,7 +1583,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'audio_player_volume_btn_hover_border',
-				'label' => esc_html__('Border', 'htmega-addons'),
+				'label' => esc_html__('Border', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-volume-button:hover',
 			]
 		);
@@ -1593,7 +1594,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_btn_border_radius',
 			[
-				'label' => esc_html__('Border Radius (px)', 'htmega-addons'),
+				'label' => esc_html__('Border Radius (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-volume-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
@@ -1605,7 +1606,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_volume_btn_margin',
 			[
-				'label' => esc_html__('Margin (px)', 'htmega-addons'),
+				'label' => esc_html__('Margin (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1618,7 +1619,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_slider_heading',
 			[
-				'label' => esc_html__('Volume Slider', 'htmega-addons'),
+				'label' => esc_html__('Volume Slider', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1630,7 +1631,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_slider_bg_color',
 			[
-				'label' => esc_html__('Background Color', 'htmega-addons'),
+				'label' => esc_html__('Background Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'condition' => [
 					'audio_player_volume_slider_layout' => ['vertical']
@@ -1645,7 +1646,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_bar_heading',
 			[
-				'label' => esc_html__('Volume Bar', 'htmega-addons'),
+				'label' => esc_html__('Volume Bar', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1654,7 +1655,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_volume_bar_width',
 			[
-				'label' => esc_html__('Width', 'htmega-addons'),
+				'label' => esc_html__('Width', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -1675,7 +1676,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_volume_bar_height',
 			[
-				'label' => esc_html__('Height', 'htmega-addons'),
+				'label' => esc_html__('Height', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -1696,7 +1697,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_bar_color',
 			[
-				'label' => esc_html__('Color', 'htmega-addons'),
+				'label' => esc_html__('Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player :is(.mejs-horizontal-volume-total, .mejs-volume-total)' => 'background: {{VALUE}}',
@@ -1708,7 +1709,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'audio_player_volume_bar_border',
-				'label' => esc_html__('Border', 'htmega-addons'),
+				'label' => esc_html__('Border', 'ht-mega-for-elementor'),
 				'selector' => '{{WRAPPER}} .htmega-audio-player .mejs-horizontal-volume-total',
 				'condition' => [
 					'audio_player_volume_slider_layout' => ['horizontal']
@@ -1719,7 +1720,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_bar_border_radius',
 			[
-				'label' => esc_html__('Border Radius (px)', 'htmega-addons'),
+				'label' => esc_html__('Border Radius (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1734,7 +1735,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_responsive_control(
 			'audio_player_current_volume_bar_margin',
 			[
-				'label' => esc_html__('Margin (px)', 'htmega-addons'),
+				'label' => esc_html__('Margin (px)', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px'],
 				'selectors' => [
@@ -1749,7 +1750,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_current_volume_bar_heading',
 			[
-				'label' => esc_html__('Current Volume Bar', 'htmega-addons'),
+				'label' => esc_html__('Current Volume Bar', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -1758,7 +1759,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_current_volume_bar_color',
 			[
-				'label' => esc_html__('Color', 'htmega-addons'),
+				'label' => esc_html__('Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player :is(.mejs-horizontal-volume-current, .mejs-volume-current)' => 'background: {{VALUE}}',
@@ -1770,7 +1771,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_handle_heading',
 			[
-				'label' => esc_html__('Volume Handle', 'htmega-addons'),
+				'label' => esc_html__('Volume Handle', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => [
@@ -1782,7 +1783,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 		$this->add_control(
 			'audio_player_volume_handle_color',
 			[
-				'label' => esc_html__('Color', 'htmega-addons'),
+				'label' => esc_html__('Color', 'ht-mega-for-elementor'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htmega-audio-player .mejs-volume-handle' => 'background: {{VALUE}}',
@@ -1872,10 +1873,10 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
                 <div class="htmega-audio-content">
                     <?php
                     if ( !empty( $settings['audio_title'] ) ) {
-                        echo '<div class="htmega-audio-title">' . htmega_kses_title( $settings['audio_title'] ) . '</div>';
+                        echo '<div class="htmega-audio-title">' . htmega_kses_title( $settings['audio_title'] ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                     }
                     if ( !empty( $settings['audio_description'] ) ) {
-                        echo '<div class="htmega-audio-description">' . htmega_kses_desc( $settings['audio_description'] ) . '</div>';
+                        echo '<div class="htmega-audio-description">' . htmega_kses_desc( $settings['audio_description'] ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php.
                     }
                     ?>
                 </div>
@@ -1883,7 +1884,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
             </div> 
 			<?php } ?>
             <audio <?php $this->print_render_attribute_string('player_settings'); ?> class="htmega-audio-player">
-                <?php echo esc_html__('Your browser does not support the audio tag.', 'htmega-addons'); ?>
+                <?php echo esc_html__('Your browser does not support the audio tag.', 'ht-mega-for-elementor'); ?>
             </audio>
         </div>
         <?php

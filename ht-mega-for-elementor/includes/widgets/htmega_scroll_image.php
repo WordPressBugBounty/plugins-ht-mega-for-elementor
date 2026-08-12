@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Scroll Image', 'htmega-addons' );
+        return __( 'Scroll Image', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -37,14 +37,14 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->start_controls_section(
             'button_content',
             [
-                'label' => __( 'Scroll Image', 'htmega-addons' ),
+                'label' => __( 'Scroll Image', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'scroll_image',
                 [
-                    'label' => __( 'Choose Image', 'htmega-addons' ),
+                    'label' => __( 'Choose Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'dynamic' => [
                         'active' => true, 
@@ -68,7 +68,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'scroll_inner_image_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .ht-scroll-image .thumb',
                 ]
             );
@@ -76,12 +76,12 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'link_type',
                 [
-                    'label'       => __( 'Link', 'htmega-addons' ),
+                    'label'       => __( 'Link', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'options'     => [
-                        'none' => __('None', 'htmega-addons'),
-                        'url'  => __( 'URL', 'htmega-addons' ),
-                        'lightbox' => __( 'Lightbox', 'htmega-addons' ),
+                        'none' => __('None', 'ht-mega-for-elementor'),
+                        'url'  => __( 'URL', 'ht-mega-for-elementor' ),
+                        'lightbox' => __( 'Lightbox', 'ht-mega-for-elementor' ),
                     ],
                     'default'     => 'url',
                     'label_block' => true,
@@ -91,10 +91,10 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'scroll_image_link',
                 [
-                    'label' => __( 'Custom Link', 'htmega-addons' ),
+                    'label' => __( 'Custom Link', 'ht-mega-for-elementor' ),
                     'show_label' => false,
                     'type' => Controls_Manager::URL,
-                    'placeholder' => __( 'https://example.com/', 'htmega-addons' ),
+                    'placeholder' => __( 'https://example.com/', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -106,10 +106,10 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'lightbox_required',
                 [
-                    'label' => __( 'Lightbox Note', 'htmega-addons'),
+                    'label' => __( 'Lightbox Note', 'ht-mega-for-elementor'),
                     'show_label' => false,
                     'type' => \Elementor\Controls_Manager::RAW_HTML,
-                    'raw' => __( "Ensure Elementor's Lightbox option is turned on.", 'htmega-addons' ),
+                    'raw' => __( "Ensure Elementor's Lightbox option is turned on.", 'ht-mega-for-elementor' ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                     'condition' => [
                         'link_type' => 'lightbox',
@@ -119,7 +119,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_image_height',
                 [
-                    'label' => __( 'Container Height', 'htmega-addons' ),
+                    'label' => __( 'Container Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -148,7 +148,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
 			$this->add_control(
 				'image_height_width_notice',
 				[
-					'raw'             => __( "Ensure that the container's dimensions (height and width) are smaller than the image's actual dimensions (height and width) otherwise, scrolling will not function properly", 'htmega-addons' ),
+					'raw'             => __( "Ensure that the container's dimensions (height and width) are smaller than the image's actual dimensions (height and width) otherwise, scrolling will not function properly", 'ht-mega-for-elementor' ),
 					'type'            => Controls_Manager::RAW_HTML,
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
 				]
@@ -156,7 +156,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'htmega_enable_mask_image',
                 array(
-                    'label'     => esc_html__( 'Mask Image', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Mask Image', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SWITCHER,
                 )
             );
@@ -164,16 +164,16 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'htmega_mask_shape',
                 [
-                    'label'       => __( 'Shape', 'htmega-addons' ),
+                    'label'       => __( 'Shape', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'options'     => [
-                        'circle' => esc_html__( 'Circle', 'htmega-addons' ),
-                        'flower' => esc_html__( 'Flower', 'htmega-addons' ),
-                        'sketch' => esc_html__( 'Sketch', 'htmega-addons' ),
-                        'triangle' => esc_html__( 'Triangle', 'htmega-addons' ),
-                        'blob' => esc_html__( 'Blob', 'htmega-addons' ),
-                        'hexagon' => esc_html__( 'Hexagon', 'htmega-addons' ),
-                        'custom' => esc_html__( 'Custom (Pro)', 'htmega-addons' ),
+                        'circle' => esc_html__( 'Circle', 'ht-mega-for-elementor' ),
+                        'flower' => esc_html__( 'Flower', 'ht-mega-for-elementor' ),
+                        'sketch' => esc_html__( 'Sketch', 'ht-mega-for-elementor' ),
+                        'triangle' => esc_html__( 'Triangle', 'ht-mega-for-elementor' ),
+                        'blob' => esc_html__( 'Blob', 'ht-mega-for-elementor' ),
+                        'hexagon' => esc_html__( 'Hexagon', 'ht-mega-for-elementor' ),
+                        'custom' => esc_html__( 'Custom (Pro)', 'ht-mega-for-elementor' ),
                     ],
                     'default'     => 'circle',
                     'label_block' => true,
@@ -187,12 +187,12 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'mask_size',
                 array(
-                    'label'     => __( 'Mask Size', 'htmega-addons' ),
+                    'label'     => __( 'Mask Size', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SELECT,
                     'options'   => array(
-                        'contain' => __( 'Contain', 'htmega-addons' ),
-                        'cover'   => __( 'Cover', 'htmega-addons' ),
-                        'custom'   => __( 'Custom (Pro)', 'htmega-addons' ),
+                        'contain' => __( 'Contain', 'ht-mega-for-elementor' ),
+                        'cover'   => __( 'Cover', 'ht-mega-for-elementor' ),
+                        'custom'   => __( 'Custom (Pro)', 'ht-mega-for-elementor' ),
                     ),
                     'default'   => 'contain',
                     'selectors' => array(
@@ -209,18 +209,18 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'mask_position_cover',
                 array(
-                    'label'     => __( 'Mask Position', 'htmega-addons' ),
+                    'label'     => __( 'Mask Position', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SELECT,
                     'options'   => array(
-                        'center center' => __( 'Center Center', 'htmega-addons' ),
-                        'center left'   => __( 'Center Left', 'htmega-addons' ),
-                        'center right'  => __( 'Center Right', 'htmega-addons' ),
-                        'top center'    => __( 'Top Center', 'htmega-addons' ),
-                        'top left'      => __( 'Top Left', 'htmega-addons' ),
-                        'top right'     => __( 'Top Right', 'htmega-addons' ),
-                        'bottom center' => __( 'Bottom Center', 'htmega-addons' ),
-                        'bottom left'   => __( 'Bottom Left', 'htmega-addons' ),
-                        'bottom right'  => __( 'Bottom Right', 'htmega-addons' ),
+                        'center center' => __( 'Center Center', 'ht-mega-for-elementor' ),
+                        'center left'   => __( 'Center Left', 'ht-mega-for-elementor' ),
+                        'center right'  => __( 'Center Right', 'ht-mega-for-elementor' ),
+                        'top center'    => __( 'Top Center', 'ht-mega-for-elementor' ),
+                        'top left'      => __( 'Top Left', 'ht-mega-for-elementor' ),
+                        'top right'     => __( 'Top Right', 'ht-mega-for-elementor' ),
+                        'bottom center' => __( 'Bottom Center', 'ht-mega-for-elementor' ),
+                        'bottom left'   => __( 'Bottom Left', 'ht-mega-for-elementor' ),
+                        'bottom right'  => __( 'Bottom Right', 'ht-mega-for-elementor' ),
                     ),
                     'default'   => 'center center',
                     'selectors' => array(
@@ -236,12 +236,12 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'mask_position_contain',
                 array(
-                    'label'     => __( 'Mask Position', 'htmega-addons' ),
+                    'label'     => __( 'Mask Position', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SELECT,
                     'options'   => array(
-                        'center center' => __( 'Center Center', 'htmega-addons' ),
-                        'top center'    => __( 'Top Center', 'htmega-addons' ),
-                        'bottom center' => __( 'Bottom Center', 'htmega-addons' ),
+                        'center center' => __( 'Center Center', 'ht-mega-for-elementor' ),
+                        'top center'    => __( 'Top Center', 'ht-mega-for-elementor' ),
+                        'bottom center' => __( 'Bottom Center', 'ht-mega-for-elementor' ),
                     ),
                     'default'   => 'center center',
                     'selectors' => array(
@@ -256,7 +256,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'htmega_enable_overlay',
                     array(
-                        'label'     => esc_html__( 'Overlay', 'htmega-addons' ),
+                        'label'     => esc_html__( 'Overlay', 'ht-mega-for-elementor' ),
                         'type'      => Controls_Manager::SWITCHER,
                     )
             );
@@ -265,16 +265,16 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->start_controls_section(
             'scrolling_settings',
             [
-                'label' => __( 'Settings', 'htmega-addons' ),
+                'label' => __( 'Settings', 'ht-mega-for-elementor' ),
             ]
         );
         $this->add_control(
             'show_badge',
             [
-                'label' => __( 'Show Badge', 'htmega-addons' ),
+                'label' => __( 'Show Badge', 'ht-mega-for-elementor' ),
                 'type'  => Controls_Manager::SWITCHER,
-                'label_on' => __( 'Show', 'htmega-addons' ),
-                'label_off' => __( 'Hide', 'htmega-addons' ),
+                'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -283,11 +283,11 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->add_control(
             'badge_text',
             [
-                'label' => __( 'Badge Text', 'htmega-addons' ),
+                'label' => __( 'Badge Text', 'ht-mega-for-elementor' ),
                 'show_label' => false,
                 'label_block' => true,
                 'type' => Controls_Manager::TEXT,
-                'placeholder' => __( 'Badge Text', 'htmega-addons' ),
+                'placeholder' => __( 'Badge Text', 'ht-mega-for-elementor' ),
                 'dynamic' => [
                     'active' => true,
                 ],
@@ -299,15 +299,15 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->add_control(
             'badge_position',
             [
-                'label' => __( 'Position', 'htmega-addons'),
+                'label' => __( 'Position', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'htmega-addons'),
+                        'title' => __( 'Left', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'htmega-addons'),
+                        'title' => __( 'Right', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
@@ -329,11 +329,11 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->add_control(
 			'trigger_type',
             [
-                'label'         => __( 'Trigger On', 'htmega-addons' ),
+                'label'         => __( 'Trigger On', 'ht-mega-for-elementor' ),
                 'type'          => Controls_Manager::SELECT,
                 'options'       => [
-                    'hover'   => __( 'Hover', 'htmega-addons' ),
-                    'scroll'  => __( 'Scroll (Pro)', 'htmega-addons' ),
+                    'hover'   => __( 'Hover', 'ht-mega-for-elementor' ),
+                    'scroll'  => __( 'Scroll (Pro)', 'ht-mega-for-elementor' ),
                 ],
                 'default'       => 'hover',
 				'separator' => 'before',
@@ -345,15 +345,15 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->add_control(
 			'scroll_type_p',
 			[
-				'label' => __( 'Scroll Type', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+				'label' => __( 'Scroll Type', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'vertical' => [
-						'title' => __( 'Vertical', 'htmega-addons' ),
+						'title' => __( 'Vertical', 'ht-mega-for-elementor' ),
 						'icon' => 'eicon-navigation-vertical',
 					],
 					'horizontal' => [
-						'title' => __( 'Horizontal', 'htmega-addons' ),
+						'title' => __( 'Horizontal', 'ht-mega-for-elementor' ),
 						'icon' => 'eicon-navigation-horizontal',
 					],
 				],
@@ -366,15 +366,15 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
 		$this->add_control(
 			'vtr_direction',
 			[
-				'label' => __( 'Direction', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+				'label' => __( 'Direction', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'top' => [
-						'title' => __( 'Top', 'htmega-addons' ),
+						'title' => __( 'Top', 'ht-mega-for-elementor' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'bottom' => [
-						'title' => __( 'Bottom', 'htmega-addons' ),
+						'title' => __( 'Bottom', 'ht-mega-for-elementor' ),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -392,7 +392,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->add_control(
             'speed_scroll_time',
             [
-                'label'			=> __( 'Speed', 'htmega-addons' ),
+                'label'			=> __( 'Speed', 'ht-mega-for-elementor' ),
                 'type'			=> Controls_Manager::NUMBER,
                 'min' => 0,
                 'default'		=> 3,
@@ -407,7 +407,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->start_controls_section(
             'scroll_image_style_section',
             [
-                'label' => __( 'Scroll Image Style', 'htmega-addons' ),
+                'label' => __( 'Scroll Image Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -416,7 +416,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'scroll_image_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .ht-scroll-image',
                 ]
@@ -426,7 +426,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'scroll_image_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .ht-scroll-image',
                 ]
             );
@@ -434,7 +434,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_image_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .ht-scroll-image' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -445,7 +445,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_image_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -458,7 +458,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_image_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -472,14 +472,14 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'scroll_image_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .ht-scroll-image',
                 ]
             );
             $this->add_control(
                 'scroll_image_overlay_color',
                 [
-                    'label' => __( 'Overlay Color', 'htmega-addons' ),
+                    'label' => __( 'Overlay Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .ht-scroll-image-overlay' => 'background: {{VALUE}};',
@@ -495,7 +495,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
         $this->start_controls_section(
             'scroll_badge_style_section',
             [
-                'label' => __( 'Badge', 'htmega-addons' ),
+                'label' => __( 'Badge', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_badge' => 'yes',
@@ -506,10 +506,10 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'scroll_badge_offset_toggle',
                 [
-                    'label' => __( 'Offset', 'htmega-addons' ),
+                    'label' => __( 'Offset', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::POPOVER_TOGGLE,
-                    'label_off' => __( 'None', 'htmega-addons' ),
-                    'label_on' => __( 'Custom', 'htmega-addons' ),
+                    'label_off' => __( 'None', 'ht-mega-for-elementor' ),
+                    'label_on' => __( 'Custom', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'condition'=>[
                         'show_badge' => 'yes',
@@ -522,7 +522,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_badge_left_right',
                 [
-                    'label' => __( 'Left', 'htmega-addons' ),
+                    'label' => __( 'Left', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -548,7 +548,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_badge_right',
                 [
-                    'label' => __( 'Right', 'htmega-addons' ),
+                    'label' => __( 'Right', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -574,7 +574,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_badge_top_bottom',
                 [
-                    'label' => __( 'Top-Bottom', 'htmega-addons' ),
+                    'label' => __( 'Top-Bottom', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -600,7 +600,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'scroll_badge_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .ht-scroll-image span.htmega-badge',
                     'condition'=>[
@@ -612,7 +612,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_control(
                 'scroll_badge_text_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .ht-scroll-image span.htmega-badge' => 'color: {{VALUE}};',
@@ -627,7 +627,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'scroll_badge_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .ht-scroll-image span.htmega-badge',
                 ]
             );
@@ -635,7 +635,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_badge_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .ht-scroll-image span.htmega-badge' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -646,7 +646,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_badge_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -659,7 +659,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_badge_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -673,6 +673,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'scroll_badge_box_shadow',
+                    // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Box_Shadow's 'exclude' param removing the box_shadow_position sub-control from the Elementor Style panel, not a WP_Query exclude arg.
                     'exclude' => [
                         'box_shadow_position',
                     ],
@@ -684,7 +685,8 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'scroll_badge_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
+                    // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Typography's 'exclude' param removing the line_height sub-control from the Elementor Style panel, not a WP_Query exclude arg.
                     'exclude' => [
                         'line_height'
                     ],
@@ -729,7 +731,9 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
 
 		}
         if( !empty($settings['scroll_image_link']['url']) || 'lightbox' === $settings['link_type'] || 'link' === $settings['link_type'] ) { ?>
+            <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
             <a <?php echo $this->get_render_attribute_string( 'url' ); ?> >
+                <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
                 <div <?php echo $this->get_render_attribute_string( 'scrollimage_wrapper' ); ?>>
                     <?php if( 'yes'=== $settings['show_badge'] && $settings['badge_text'] ): ?>
                         <span <?php $this->print_render_attribute_string('htbadge'); ?>>
@@ -737,6 +741,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                         </span>
                     <?php endif; ?>
                     <div class="ht-scroll-image-wrapper">
+                        <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
                         <div <?php echo $this->get_render_attribute_string( 'scrollimage' ); ?> >
                         <?php
                             if ( 'yes' == $settings['htmega_enable_overlay'] ) {
@@ -744,9 +749,10 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                             } ?>
                         </div>
                     </div>
-                </div>                        
-            </a>                    
+                </div>
+            </a>
         <?php } else{ ?>
+            <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
             <div <?php echo $this->get_render_attribute_string( 'scrollimage_wrapper' ); ?> >
                 <?php if( 'yes'=== $settings['show_badge'] && $settings['badge_text'] ): ?>
                     <span <?php $this->print_render_attribute_string('htbadge'); ?>>
@@ -754,6 +760,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                     </span>
                 <?php endif; ?>
                 <div class="ht-scroll-image-wrapper">
+                    <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
                     <div <?php echo $this->get_render_attribute_string( 'scrollimage' ); ?> >
                         <?php
                         if ( 'yes' == $settings['htmega_enable_overlay'] ) {
@@ -762,7 +769,7 @@ class HTMega_Elementor_Widget_Scroll_Image extends Widget_Base {
                     </div>
                 </div>
             </div>
-        <?php } 
+        <?php }
     }
     
 }

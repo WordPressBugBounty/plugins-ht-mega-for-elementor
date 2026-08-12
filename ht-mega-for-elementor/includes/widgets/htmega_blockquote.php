@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Blockquote', 'htmega-addons' );
+        return __( 'Blockquote', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -32,19 +32,19 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
         $this->start_controls_section(
             'blockquote_content',
             [
-                'label' => __( 'Blockquote', 'htmega-addons' ),
+                'label' => __( 'Blockquote', 'ht-mega-for-elementor' ),
             ]
         );
         
             $this->add_control(
                 'content_source',
                 [
-                    'label'   => __( 'Select Content Source', 'htmega-addons' ),
+                    'label'   => __( 'Select Content Source', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'    => __( 'Custom', 'htmega-addons' ),
-                        "elementor" => __( 'Elementor Template', 'htmega-addons' ),
+                        'custom'    => __( 'Custom', 'ht-mega-for-elementor' ),
+                        "elementor" => __( 'Elementor Template', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -52,7 +52,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'template_id',
                 [
-                    'label'       => __( 'Content', 'htmega-addons' ),
+                    'label'       => __( 'Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_elementor_template(),
@@ -65,9 +65,9 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'custom_content',
                 [
-                    'label' => __( 'Content', 'htmega-addons' ),
+                    'label' => __( 'Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::WYSIWYG,
-                    'title' => __( 'Blockquote Content', 'htmega-addons' ),
+                    'title' => __( 'Blockquote Content', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'content_source' =>'custom',
                     ],
@@ -77,25 +77,25 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquote_by',
                 [
-                    'label' => __( 'Blockquote By', 'htmega-addons' ),
+                    'label' => __( 'Blockquote By', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Jon Doy', 'htmega-addons' ),
-                    'placeholder' => __( 'Jon Doy', 'htmega-addons' ),
+                    'default' => __( 'Jon Doy', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Jon Doy', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'blockquote_type',
                 [
-                    'label' => __('Blockquote Type','htmega-addons'),
+                    'label' => __('Blockquote Type','ht-mega-for-elementor'),
                     'type' =>Controls_Manager::CHOOSE,
                     'options' =>[
                         'img' =>[
-                            'title' =>__('Image','htmega-addons'),
+                            'title' =>__('Image','ht-mega-for-elementor'),
                             'icon' =>'eicon-image',
                         ],
                         'icon' =>[
-                            'title' =>__('Icon','htmega-addons'),
+                            'title' =>__('Icon','ht-mega-for-elementor'),
                             'icon' =>'eicon-info-circle',
                         ]
                     ],
@@ -106,7 +106,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquote_image',
                 [
-                    'label' => __('Image','htmega-addons'),
+                    'label' => __('Image','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::MEDIA,
                     'dynamic' => [
                         'active' => true,
@@ -132,7 +132,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquote_icon',
                 [
-                    'label' =>__('Icon','htmega-addons'),
+                    'label' =>__('Icon','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fas fa-pencil',
@@ -147,19 +147,19 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquote_position',
                 [
-                    'label' => __( 'Blockquote Position', 'htmega-addons' ),
+                    'label' => __( 'Blockquote Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'righttop',
                     'options' => [
-                        'lefttop'      => __( 'Left Top', 'htmega-addons' ),
-                        'leftcenter'   => __( 'Left Center', 'htmega-addons' ),
-                        'leftbottom'   => __( 'Left Bottom', 'htmega-addons' ),
-                        'centertop'    => __( 'Center Top', 'htmega-addons' ),
-                        'center'       => __( 'Center Center', 'htmega-addons' ),
-                        'centerbottom' => __( 'Center Bottom', 'htmega-addons' ),
-                        'righttop'     => __( 'Right Top', 'htmega-addons' ),
-                        'rightcenter'  => __( 'Right Center', 'htmega-addons' ),
-                        'rightbottom'  => __( 'Right Bottom', 'htmega-addons' ),
+                        'lefttop'      => __( 'Left Top', 'ht-mega-for-elementor' ),
+                        'leftcenter'   => __( 'Left Center', 'ht-mega-for-elementor' ),
+                        'leftbottom'   => __( 'Left Bottom', 'ht-mega-for-elementor' ),
+                        'centertop'    => __( 'Center Top', 'ht-mega-for-elementor' ),
+                        'center'       => __( 'Center Center', 'ht-mega-for-elementor' ),
+                        'centerbottom' => __( 'Center Bottom', 'ht-mega-for-elementor' ),
+                        'righttop'     => __( 'Right Top', 'ht-mega-for-elementor' ),
+                        'rightcenter'  => __( 'Right Center', 'ht-mega-for-elementor' ),
+                        'rightbottom'  => __( 'Right Bottom', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -170,30 +170,30 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
         $this->start_controls_section(
             'htmega_blockquote_style_section',
             [
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => __( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'htmega_blockquote_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -209,7 +209,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_blockquote_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-blockquote blockquote',
                 ]
@@ -218,7 +218,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_blockquote_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -231,7 +231,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_blockquote_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -245,7 +245,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_blockquote_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-blockquote blockquote',
                 ]
             );
@@ -253,7 +253,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_blockquote_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-blockquote blockquote' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -267,7 +267,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
         $this->start_controls_section(
             'htmega_blockquote_content_style_section',
             [
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -275,7 +275,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'htmega_blockquote_content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#5b5b5b',
                     'selectors' => [
@@ -296,7 +296,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_blockquote_content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -309,7 +309,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_blockquote_content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -325,14 +325,14 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
         $this->start_controls_section(
             'htmega_blockquoteby_style_section',
             [
-                'label' => __( 'Quote By', 'htmega-addons' ),
+                'label' => __( 'Quote By', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'htmega_blockquoteby_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#0056ff',
                     'selectors' => [
@@ -352,7 +352,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_blockquoteby_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -365,7 +365,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_blockquoteby_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -379,7 +379,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_blockquoteby_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-blockquote blockquote cite',
                 ]
             );
@@ -387,7 +387,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_blockquoteby_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-blockquote blockquote cite' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -398,13 +398,13 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteby_before_position',
                 [
-                    'label' => __( 'Separator Position', 'htmega-addons' ),
+                    'label' => __( 'Separator Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'before',
                     'options' => [
-                        'before' => __( 'Before', 'htmega-addons' ),
-                        'after'  => __( 'After', 'htmega-addons' ),
-                        'none'   => __( 'None', 'htmega-addons' ),
+                        'before' => __( 'Before', 'ht-mega-for-elementor' ),
+                        'after'  => __( 'After', 'ht-mega-for-elementor' ),
+                        'none'   => __( 'None', 'ht-mega-for-elementor' ),
                     ],
                     'separator'=>'before',
                 ]
@@ -413,7 +413,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteby_before_color',
                 [
-                    'label' => __( 'Separator Color', 'htmega-addons' ),
+                    'label' => __( 'Separator Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#0056ff',
                     'selectors' => [
@@ -428,7 +428,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteby_before_width',
                 [
-                    'label' => __( 'Separator Width', 'htmega-addons' ),
+                    'label' => __( 'Separator Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -458,7 +458,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteby_before_height',
                 [
-                    'label' => __( 'Separator Height', 'htmega-addons' ),
+                    'label' => __( 'Separator Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -492,7 +492,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
         $this->start_controls_section(
             'htmega_blockquoteicon_style_section',
             [
-                'label' => __( 'Quote Icon', 'htmega-addons' ),
+                'label' => __( 'Quote Icon', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'blockquote_type' =>'icon',
@@ -504,7 +504,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteicon_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#ffffff',
                     'selectors' => [
@@ -518,7 +518,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'blockquoteicon_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-blockquote blockquote .blockquote_icon',
                 ]
@@ -527,7 +527,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'blockquoteicon_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -540,7 +540,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'blockquoteicon_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -554,7 +554,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'blockquoteicon_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-blockquote blockquote .blockquote_icon',
                 ]
             );
@@ -562,7 +562,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'blockquoteicon_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-blockquote blockquote .blockquote_icon' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -573,7 +573,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteicon_fontsize',
                 [
-                    'label' => __( 'Font Size', 'htmega-addons' ),
+                    'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -601,7 +601,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteicon_line_height',
                 [
-                    'label' => __( 'Line Height', 'htmega-addons' ),
+                    'label' => __( 'Line Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -628,7 +628,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteicon_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -656,7 +656,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteicon_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -687,7 +687,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
         $this->start_controls_section(
             'htmega_blockquoteimage_style_section',
             [
-                'label' => __( 'Quote Image', 'htmega-addons' ),
+                'label' => __( 'Quote Image', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'blockquote_type' => 'img',
@@ -699,7 +699,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'blockquoteimage_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-blockquote blockquote img',
                 ]
@@ -708,7 +708,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'blockquoteimage_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -721,7 +721,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'blockquoteimage_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -734,7 +734,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'blockquoteimage_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-blockquote blockquote img',
                 ]
             );
@@ -742,7 +742,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_responsive_control(
                 'blockquoteimage_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-blockquote blockquote img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -753,7 +753,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
             $this->add_control(
                 'blockquoteimage_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -791,6 +791,7 @@ class HTMega_Elementor_Widget_Blockquote extends Widget_Base {
         $this->add_render_attribute( 'htmega_blockquote_attr', 'class', 'htmega-citeseparator-position-'. esc_attr( $settings['blockquoteby_before_position'] ) );
        
         ?>
+            <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core and returns pre-escaped attribute output. ?>
             <div <?php echo $this->get_render_attribute_string( 'htmega_blockquote_attr' ); ?>>
                 <blockquote>
                     <?php 

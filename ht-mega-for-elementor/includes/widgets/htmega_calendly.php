@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Calendly', 'htmega-addons' );
+        return __( 'Calendly', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -24,6 +24,10 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
         return ['calendly', 'calender', 'booking', 'booked', 'appointment','metting schedule','htmega', 'ht mega'];
     }
 
+    public function get_script_depends() {
+        return [ 'htmega-calendly' ];
+    }
+
     public function get_help_url() {
         return 'https://wphtmega.com/docs/';
     }
@@ -32,16 +36,16 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
         $this->start_controls_section(
             'calendly_source_section',
             [
-                'label' => __( 'Calendly', 'htmega-addons' ),
+                'label' => __( 'Calendly', 'ht-mega-for-elementor' ),
             ]
         );
 		$this->add_control(
 			'calendly_username',
 			[
-				'label'       => __( 'Username', 'htmega-addons' ),
+				'label'       => __( 'Username', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
-				'placeholder' => __( 'Type calendly username here', 'htmega-addons' ),
+				'placeholder' => __( 'Type calendly username here', 'ht-mega-for-elementor' ),
 				'dynamic'     => ['active' => true],
 				'render_type' => 'template',
 				'label_block' => true
@@ -51,13 +55,13 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
 		$this->add_control(
 			'calendly_time',
 			[
-				'label'   => __( 'Select Time', 'htmega-addons' ),
+				'label'   => __( 'Select Time', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'15min' => __( '15 Minutes', 'htmega-addons' ),
-					'30min' => __( '30 Minutes', 'htmega-addons' ),
-					'60min' => __( '60 Minutes', 'htmega-addons' ),
-					'' => __( 'All', 'htmega-addons' ),
+					'15min' => __( '15 Minutes', 'ht-mega-for-elementor' ),
+					'30min' => __( '30 Minutes', 'ht-mega-for-elementor' ),
+					'60min' => __( '60 Minutes', 'ht-mega-for-elementor' ),
+					'' => __( 'All', 'ht-mega-for-elementor' ),
 				],
 				'default' => '30min'
 			]
@@ -66,7 +70,7 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
 		$this->add_control(
 			'event_type_details',
 			[
-				'label'        => __( 'Hide Event Type Details', 'htmega-addons' ),
+				'label'        => __( 'Hide Event Type Details', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 			]
 		);
@@ -74,7 +78,7 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
 		$this->add_responsive_control(
 			'calendly_wrap_height',
 			[
-				'label'      => __( 'Height', 'htmega-addons' ),
+				'label'      => __( 'Height', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -104,7 +108,7 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
 		$this->start_controls_section(
 			'calendly_style_section',
 			[
-				'label' => __( 'Calendly', 'htmega-addons' ),
+				'label' => __( 'Calendly', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -112,7 +116,7 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
 			$this->add_control(
 				'text_color',
 				[
-					'label' => __( 'Text Color', 'htmega-addons' ),
+					'label' => __( 'Text Color', 'ht-mega-for-elementor' ),
 					'type'  => Controls_Manager::COLOR,
 					'alpha' => false,
 				]
@@ -121,7 +125,7 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
 			$this->add_control(
 				'button_link_color',
 				[
-					'label' => __( 'Button & Link Color', 'htmega-addons' ),
+					'label' => __( 'Button & Link Color', 'ht-mega-for-elementor' ),
 					'type'  => Controls_Manager::COLOR,
 					'alpha' => false,
 				]
@@ -130,7 +134,7 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
 			$this->add_control(
 				'background_color',
 				[
-					'label' => __( 'Background Color', 'htmega-addons' ),
+					'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
 					'type'  => Controls_Manager::COLOR,
 					'alpha' => false,
 				]
@@ -167,13 +171,12 @@ class HTMega_Elementor_Widget_Calendly extends Widget_Base {
 			if ( ! empty( $settings['calendly_username'] ) ) {
 				?>
 				<div class="calendly-inline-widget" data-url="<?php echo esc_url( $final_url ); ?>" style="min-width:320px;"></div>
-				<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 				<?php if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) : ?>
 					<div class="calendly-wrapper" style="width:100%; position:absolute; top:0; left:0; z-index:100;"></div>
 				<?php endif; ?>
 				<?php
 			} else {
-				echo '<div class="htmega-error-notice">' . esc_html__( "Please enter a valid Calendly username.", "htmega-addons" ) . '</div>';
+				echo '<div class="htmega-error-notice">' . esc_html__( "Please enter a valid Calendly username.", "ht-mega-for-elementor" ) . '</div>';
 			}
 		}
 

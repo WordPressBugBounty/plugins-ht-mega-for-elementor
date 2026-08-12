@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Download Monitor', 'htmega-addons' );
+        return __( 'Download Monitor', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -35,7 +35,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
         }
         
         $downloadfile = array();
-        array_push( $downloadfile, __('Select Download File','htmega-addons') );
+        array_push( $downloadfile, __('Select Download File','ht-mega-for-elementor') );
         $args      = array( 'post_status' => 'publish' );
         $downloads  = download_monitor()->service( 'download_repository' )->retrieve( $args, -1, false );
         if($downloads ){
@@ -62,7 +62,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
         $this->add_render_attribute( 'htmega_button', 'class', 'htmega-button' );
 
         if ( ! is_plugin_active('download-monitor/download-monitor.php') ) {
-            htmega_plugin_missing_alert( __('Download Monitor', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Download Monitor', 'ht-mega-for-elementor') );
             return;
         }
         
@@ -73,7 +73,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 <a class="htmega-downloadbtn elementor-button" href="<?php echo esc_url( $download->the_download_link() ); ?>">
                     <?php
                         if( !empty( $settings['button_icon']['value'] ) ){
-                            echo '<span class="download_icon">'.HTMega_Icon_manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ).'</span>';
+                            echo '<span class="download_icon">'.HTMega_Icon_manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ).'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor core Icons_Manager::render_icon(), already safe.
                         }
                         if( !empty( $settings['button_text'] ) ){
                             echo esc_html($settings['button_text'] );
@@ -97,7 +97,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
 
                             <?php if ( 'yes' === $settings['download_count_show'] ) : ?>
                                 <span class="file_meta_count">
-                                    <?php esc_html_e('Downloaded', 'htmega-addons'); ?> <?php echo esc_html($download->get_download_count()); ?>
+                                    <?php esc_html_e('Downloaded', 'ht-mega-for-elementor'); ?> <?php echo esc_html($download->get_download_count()); ?>
                                 </span>
                             <?php endif; ?>
                         </div>
@@ -113,7 +113,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Download Monitor', 'htmega-addons' ),
+                'label' => __( 'Download Monitor', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -121,7 +121,8 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: plugin name/link ("Download Monitor"), repeated twice in the sentence */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Download%2520Monitor&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">Download Monitor</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -143,14 +144,14 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
         $this->start_controls_section(
             'download_file_content',
             [
-                'label' => __( 'Download File', 'htmega-addons' ),
+                'label' => __( 'Download File', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'file_id',
                 [
-                    'label'     => esc_html__( 'Select File', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Select File', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SELECT,
                     'options'   => $this->htmega_download_file_list(),
                     'label_block'=>true,
@@ -161,7 +162,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
             $this->add_control(
                 'file_type_show',
                 [
-                    'label'     => esc_html__( 'Show File Type', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Show File Type', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SWITCHER,
                     'default'   => 'yes',
                     'condition' => [
@@ -173,7 +174,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
             $this->add_control(
                 'file_size_show',
                 [
-                    'label'     => esc_html__( 'Show File Size', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Show File Size', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SWITCHER,
                     'default'   => 'yes',
                     'condition' => [
@@ -185,7 +186,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
             $this->add_control(
                 'download_count_show',
                 [
-                    'label'     => esc_html__( 'Show Download Count', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Show Download Count', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SWITCHER,
                     'condition' => [
                         'file_id!' => '',
@@ -199,14 +200,14 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
         $this->start_controls_section(
             'button_content',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'button_text',
                 [
-                    'label' => __( 'Text', 'htmega-addons' ),
+                    'label' => __( 'Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                 ]
             );
@@ -214,7 +215,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
             $this->add_control(
                 'button_icon',
                 [
-                    'label' => __( 'Icon', 'htmega-addons' ),
+                    'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                 ]
             );
@@ -225,7 +226,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
         $this->start_controls_section(
             'button_style_section',
             [
-                'label' => __( 'Button Style', 'htmega-addons' ),
+                'label' => __( 'Button Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -235,7 +236,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 $this->start_controls_tab(
                     'download_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                 $this->add_group_control(
@@ -258,7 +259,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 $this->add_group_control(
                     Group_Control_Border::get_type(), [
                         'name' => 'button_border',
-                        'label' => esc_html__( 'Border', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                         'placeholder' => '1px',
                         'default' => '1px',
                         'selector' => '{{WRAPPER}} a.htmega-downloadbtn',
@@ -268,7 +269,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 $this->add_control(
                     'button_border_radius',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%' ],
                         'selectors' => [
@@ -280,7 +281,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 $this->add_control(
                     'button_padding',
                     [
-                        'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                        'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', 'em', '%' ],
                         'selectors' => [
@@ -291,7 +292,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 $this->add_control(
                     'button_title_heading',
                     [
-                        'label' => __( 'Title Style', 'htmega-addons' ),
+                        'label' => __( 'Title Style', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::HEADING,
                         'separator' => 'before',
                     ]
@@ -300,7 +301,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 $this->add_control(
                     'button_text_color',
                     [
-                        'label' => esc_html__( 'Color', 'htmega-addons' ),
+                        'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '',
                         'selectors' => [
@@ -312,14 +313,14 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                     Group_Control_Typography::get_type(),
                     [
                         'name' => 'button_typography',
-                        'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                        'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} a.htmega-downloadbtn',
                     ]
                 );
                 $this->add_control(
                     'button_meta_heading',
                     [
-                        'label' => __( 'Meta Style', 'htmega-addons' ),
+                        'label' => __( 'Meta Style', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::HEADING,
                         'separator' => 'before',
                         'conditions' => [
@@ -347,7 +348,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 $this->add_control(
                     'button_text_color_meta',
                     [
-                        'label' => esc_html__( 'Color', 'htmega-addons' ),
+                        'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '',
                         'selectors' => [
@@ -379,7 +380,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                     Group_Control_Typography::get_type(),
                     [
                         'name' => 'button_typography_meta',
-                        'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                        'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .file_meta',
                         'conditions' => [
                             'relation' => 'or',
@@ -411,13 +412,13 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                 $this->start_controls_tab(
                     'download_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'button_hover_text_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -446,7 +447,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                     $this->add_group_control(
                         Group_Control_Border::get_type(), [
                             'name' => 'button_hover_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default' => '1px',
                             'selector' => '{{WRAPPER}} a.htmega-downloadbtn:hover',
@@ -457,7 +458,7 @@ class HTMega_Elementor_Widget_Download_Monitor extends Widget_Base {
                     $this->add_control(
                         'button_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [

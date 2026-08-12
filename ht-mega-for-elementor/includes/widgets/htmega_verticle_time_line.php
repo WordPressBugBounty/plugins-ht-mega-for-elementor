@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Vertical Timeline', 'htmega-addons' );
+        return __( 'Vertical Timeline', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -36,22 +36,22 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
         $this->start_controls_section(
             'button_content',
             [
-                'label' => __( 'Vertical Timeline Layout', 'htmega-addons' ),
+                'label' => __( 'Vertical Timeline Layout', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
               'verticle_timeline_layout',
                 [
-                'label'         => esc_html__( 'Layout', 'htmega-addons' ),
+                'label'         => esc_html__( 'Layout', 'ht-mega-for-elementor' ),
                     'type'          => 'htmega-preset-select',
                     'default'       => '1',
                     'label_block'   => false,
                     'options'       => [
-                        '1'    => esc_html__( 'Layout One', 'htmega-addons' ),
-                        '2'   => esc_html__( 'Layout Two', 'htmega-addons' ),
-                        '3'   => esc_html__( 'Layout Three', 'htmega-addons' ),
-                        '4'   => esc_html__( 'Layout Four', 'htmega-addons' ),
+                        '1'    => esc_html__( 'Layout One', 'ht-mega-for-elementor' ),
+                        '2'   => esc_html__( 'Layout Two', 'ht-mega-for-elementor' ),
+                        '3'   => esc_html__( 'Layout Three', 'ht-mega-for-elementor' ),
+                        '4'   => esc_html__( 'Layout Four', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -62,7 +62,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
         $this->start_controls_section(
             'verticle_timeline_content',
             [
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
             ]
         );
 
@@ -71,16 +71,16 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $repeater->add_control(
                 'content_date',
                 [
-                    'label'   => __( 'Content Date', 'htmega-addons' ),
+                    'label'   => __( 'Content Date', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __( 'Sep<br/>2018', 'htmega-addons' ),
+                    'default' => __( 'Sep<br/>2018', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $repeater->add_control(
                 'content_title',
                 [
-                    'label'   => __( 'Title', 'htmega-addons' ),
+                    'label'   => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                 ]
             );
@@ -88,9 +88,9 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $repeater->add_control(
                 'content_text',
                 [
-                    'label' => __( 'Content', 'htmega-addons' ),
+                    'label' => __( 'Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::WYSIWYG,
-                    'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua Ut enim ad min.', 'htmega-addons' ),
+                    'default' => __( 'Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua Ut enim ad min.', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -101,16 +101,16 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                     'fields'  => $repeater->get_controls(),
                     'default' => [
                         [
-                            'content_date' => __( 'Sep<br/>2018', 'htmega-addons' ),
-                            'content_text' => __( 'Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua Ut enim ad min.', 'htmega-addons' ),
+                            'content_date' => __( 'Sep<br/>2018', 'ht-mega-for-elementor' ),
+                            'content_text' => __( 'Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua Ut enim ad min.', 'ht-mega-for-elementor' ),
                         ],
                         [
-                            'content_date' => __( 'Oct<br/>2018', 'htmega-addons' ),
-                            'content_text' => __( 'Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua Ut enim ad min.', 'htmega-addons' ),
+                            'content_date' => __( 'Oct<br/>2018', 'ht-mega-for-elementor' ),
+                            'content_text' => __( 'Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua Ut enim ad min.', 'ht-mega-for-elementor' ),
                         ],
                         [
-                            'content_date' => __( 'Aug<br/>2018', 'htmega-addons' ),
-                            'content_text' => __( 'Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua Ut enim ad min.', 'htmega-addons' ),
+                            'content_date' => __( 'Aug<br/>2018', 'ht-mega-for-elementor' ),
+                            'content_text' => __( 'Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua Ut enim ad min.', 'ht-mega-for-elementor' ),
                         ]
 
                     ],
@@ -124,7 +124,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
         $this->start_controls_section(
             'verticle_timeline_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -132,7 +132,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'content_title_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -143,7 +143,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'content_title_hover_color',
                 [
-                    'label'     => __( 'Hover Color', 'htmega-addons' ),
+                    'label'     => __( 'Hover Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -158,7 +158,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'content_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htc-verctimeline-wrapper > div .timeline-content h6.time_line_title',
                 ]
             );
@@ -166,7 +166,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_responsive_control(
                 'title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -180,7 +180,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
         $this->start_controls_section(
             'verticle_timeline_content_style_section',
             [
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -191,14 +191,14 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->start_controls_tab(
                 'content_style_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'content_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -211,7 +211,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'content_text_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htc-verctimeline-wrapper > div .timeline-content,{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--2 .timeline-content p,{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--3 .timeline-content p',
                 ]
             );
@@ -219,7 +219,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'content_background_color',
                 [
-                    'label'     => __( 'Background Color', 'htmega-addons' ),
+                    'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -235,7 +235,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_responsive_control(
                 'content_box_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--3 .timeline-content .content' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -248,7 +248,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_responsive_control(
                 'content_box_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--3 .timeline-content .content' => 'padding: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -262,7 +262,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'content_boxshadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--3 .timeline-content .content',
                     'condition'=>[
                         'verticle_timeline_layout' =>array( '3'),
@@ -275,13 +275,13 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 $this->start_controls_tab(
                     'content_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                 $this->add_control(
                     'content_text_color_hover',
                     [
-                        'label'     => __( 'Color', 'htmega-addons' ),
+                        'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'default'   =>'',
                         'selectors' => [
@@ -296,7 +296,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 $this->add_control(
                     'content_background_color_hover',
                     [
-                        'label'     => __( 'Background Color', 'htmega-addons' ),
+                        'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'default'   =>'',
                         'selectors' => [
@@ -320,7 +320,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
         $this->start_controls_section(
             'verticle_timeline_date_style_section',
             [
-                'label' => __( 'Date', 'htmega-addons' ),
+                'label' => __( 'Date', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -328,7 +328,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'content_date_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -341,14 +341,14 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'content_date_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htc-verctimeline-wrapper > div .vertical-date span.month',
                 ]
             );
             $this->add_responsive_control(
                 'box_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -363,7 +363,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'date_border_radius',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--3 .vertical-time .vertical-date span.month',
                     'condition' => [
                         'verticle_timeline_layout' =>array( '3'),
@@ -374,7 +374,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_responsive_control(
                 'border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-verticletimeline-style-4 .ht-ver-timeline .vertical-time .vertical-date,
@@ -391,7 +391,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'date_border_heading',
                 [
-                    'label' => __( 'Box Border', 'htmega-addons' ),
+                    'label' => __( 'Box Border', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
@@ -403,7 +403,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'date_background_border',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-verticletimeline-style-4 .ht-ver-timeline .vertical-time .vertical-date:after,{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--2 .vertical-time .vertical-date span.month:after,{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--3 .vertical-time .vertical-date span.month',
                     'condition' => [
@@ -414,7 +414,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'timeline_arrow_color',
                 [
-                    'label'     => __( 'Arrow Color', 'htmega-addons' ),
+                    'label'     => __( 'Arrow Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -432,7 +432,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'date_border_heading2',
                 [
-                    'label' => __( 'Box Style Reverse', 'htmega-addons' ),
+                    'label' => __( 'Box Style Reverse', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
@@ -444,7 +444,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'date_background_border2',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-verticletimeline-style-4 .ht-ver-timeline.vertical-reverse .vertical-time .vertical-date:after,{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--2.vertical-reverse .vertical-time .vertical-date span.month:after',
                     'condition' => [
@@ -455,7 +455,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'timeline_arrow_color2',
                 [
-                    'label'     => __( 'Arrow Color', 'htmega-addons' ),
+                    'label'     => __( 'Arrow Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -473,7 +473,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'date_border_heading_background',
                 [
-                    'label' => __( 'Box Background', 'htmega-addons' ),
+                    'label' => __( 'Box Background', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'condition' => [
                         'verticle_timeline_layout' =>array( '4'),
@@ -484,7 +484,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'date_background_box',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-verticletimeline-style-4 .ht-ver-timeline .vertical-time .vertical-date span.month',
                     'condition' => [
@@ -497,7 +497,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
         $this->start_controls_section(
             'verticle_timelin_style_section',
             [
-                'label' => __( 'Timeline Style', 'htmega-addons' ),
+                'label' => __( 'Timeline Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -505,7 +505,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'timeline_border_color',
                 [
-                    'label'     => __( 'Timeline Primary Color', 'htmega-addons' ),
+                    'label'     => __( 'Timeline Primary Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -523,7 +523,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'timeline_line_color',
                 [
-                    'label'     => __( 'Timeline Line Color', 'htmega-addons' ),
+                    'label'     => __( 'Timeline Line Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -540,7 +540,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'timeline_line_dot_color',
                 [
-                    'label'     => __( 'Timeline Dot Color', 'htmega-addons' ),
+                    'label'     => __( 'Timeline Dot Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -555,7 +555,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'timeline_line_dot_bg_color',
                 [
-                    'label'     => __( 'Timeline Dot BG Color', 'htmega-addons' ),
+                    'label'     => __( 'Timeline Dot BG Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -569,7 +569,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'timeline_line_dot_hover_bg_color',
                 [
-                    'label'     => __( 'Timeline Dot Hover BG Color', 'htmega-addons' ),
+                    'label'     => __( 'Timeline Dot Hover BG Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -584,7 +584,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'timeline_line_hover_color',
                 [
-                    'label'     => __( 'Timeline Hover Line Color', 'htmega-addons' ),
+                    'label'     => __( 'Timeline Hover Line Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'',
                     'selectors' => [
@@ -600,7 +600,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
             $this->add_control(
                 'dot_hover_gradient',
                 [
-                    'label' => __( ' Dot Border Hover Gradient Color', 'htmega-addons' ),
+                    'label' => __( ' Dot Border Hover Gradient Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition' => [
@@ -613,8 +613,9 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'dot_hover_gradient',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
+                    // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image) appear in the Elementor Style panel, not a WP_Query exclude arg.
                     'exclude' => [ 'image' ],
                     'selector' => '{{WRAPPER}} .htc-verctimeline-wrapper .ht-ver-timeline--2::before',
                     'condition' => [
@@ -644,7 +645,7 @@ class HTMega_Elementor_Widget_Verticle_Time_Line extends Widget_Base {
         }
        
         ?>
-        <div <?php echo $this->get_render_attribute_string( 'verticle_timeline_attr' ); ?>>
+        <div <?php echo $this->get_render_attribute_string( 'verticle_timeline_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, values added via add_render_attribute() were esc_attr()'d above ?>>
 
             <?php
                 $i = 0;

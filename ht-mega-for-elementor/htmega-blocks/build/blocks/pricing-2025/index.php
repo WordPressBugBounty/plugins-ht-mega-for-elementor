@@ -54,29 +54,42 @@ $block_id  = $uid;
 $sc   = '.htmega-block-' . $block_id;
 $_css = [];
 
-$_border = function( $type, $width, $color ) {
+$_num = function( $value, $unit = 'px' ) {
+    if ( ! is_numeric( $value ) ) return '';
+    $allowed = [ 'px', 'em', 'rem', '%', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'pt' ];
+    $unit    = in_array( $unit, $allowed, true ) ? $unit : 'px';
+    return ( $value + 0 ) . $unit;
+};
+$_border = function( $type, $width, $color ) use ( $_num ) {
     if ( ! $type || $type === 'none' ) return [];
     $r = [ 'border-style: ' . esc_attr( $type ) ];
     if ( $width && is_array( $width ) ) {
         $u = $width['unit'] ?? 'px';
         if ( isset( $width['link'] ) && $width['link'] === 'yes' && isset( $width['top'] ) ) {
-            $r[] = 'border-width: ' . $width['top'] . $u;
+            $val = $_num( $width['top'], $u );
+            if ( $val !== '' ) $r[] = 'border-width: ' . $val;
         } else {
             foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-                if ( ! empty( $width[ $_s ] ) ) $r[] = "border-{$_s}-width: {$width[$_s]}{$u}";
+                if ( ! empty( $width[ $_s ] ) ) {
+                    $val = $_num( $width[ $_s ], $u );
+                    if ( $val !== '' ) $r[] = "border-{$_s}-width: {$val}";
+                }
             }
         }
     }
     if ( $color ) $r[] = 'border-color: ' . esc_attr( $color );
     return $r;
 };
-$_radius = function( $rv ) {
+$_radius = function( $rv ) use ( $_num ) {
     if ( ! $rv || ! is_array( $rv ) ) return [];
     $u   = $rv['unit'] ?? 'px';
     $map = [ 'top' => 'top-left', 'right' => 'top-right', 'bottom' => 'bottom-right', 'left' => 'bottom-left' ];
     $r   = [];
     foreach ( $map as $_s => $corner ) {
-        if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) $r[] = "border-{$corner}-radius: {$rv[$_s]}{$u}";
+        if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) {
+            $val = $_num( $rv[ $_s ], $u );
+            if ( $val !== '' ) $r[] = "border-{$corner}-radius: {$val}";
+        }
     }
     return $r;
 };
@@ -89,24 +102,30 @@ $_shadow = function( $s ) {
     $sp = is_numeric( $s['spread']     ?? null ) ? floatval( $s['spread'] )     : 0;
     return 'box-shadow: ' . $i . $h . 'px ' . $v . 'px ' . $b . 'px ' . $sp . 'px ' . esc_attr( $s['color'] );
 };
-$_typo = function( $t ) {
+$_typo = function( $t ) use ( $_num ) {
     if ( ! $t || ! is_array( $t ) ) return [];
     $r = [];
-    if ( ! empty( $t['family'] )        ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
-    if ( ! empty( $t['size'] )          ) $r[] = 'font-size: '       . $t['size']       . ( $t['sizeUnit']      ?? 'px' );
-    if ( ! empty( $t['weight'] )        ) $r[] = 'font-weight: '     . esc_attr( $t['weight'] );
-    if ( ! empty( $t['lineHeight'] )    ) $r[] = 'line-height: '     . $t['lineHeight'];
-    if ( ! empty( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: '  . $t['letterSpacing'] . 'px';
-    if ( ! empty( $t['transform'] )     ) $r[] = 'text-transform: '  . esc_attr( $t['transform'] );
+    if ( ! empty( $t['family'] ) ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
+    if ( ! empty( $t['size'] ) ) {
+        $val = $_num( $t['size'], $t['sizeUnit'] ?? 'px' );
+        if ( $val !== '' ) $r[] = 'font-size: ' . $val;
+    }
+    if ( ! empty( $t['weight'] ) ) $r[] = 'font-weight: ' . esc_attr( $t['weight'] );
+    if ( isset( $t['lineHeight'] ) && is_numeric( $t['lineHeight'] ) ) $r[] = 'line-height: ' . ( $t['lineHeight'] + 0 );
+    if ( isset( $t['letterSpacing'] ) && is_numeric( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: ' . ( $t['letterSpacing'] + 0 ) . 'px';
+    if ( ! empty( $t['transform'] ) ) $r[] = 'text-transform: ' . esc_attr( $t['transform'] );
     return $r;
 };
-$_dim = function( $dim, $prop ) {
+$_dim = function( $dim, $prop ) use ( $_num ) {
     if ( ! $dim || ! is_array( $dim ) ) return [];
     $d = isset( $dim['desktop'] ) ? $dim['desktop'] : $dim;
     $u = $d['unit'] ?? $dim['unit'] ?? 'px';
     $r = [];
     foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-        if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) $r[] = "{$prop}-{$_s}: {$d[$_s]}{$u}";
+        if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) {
+            $val = $_num( $d[ $_s ], $u );
+            if ( $val !== '' ) $r[] = "{$prop}-{$_s}: {$val}";
+        }
     }
     return $r;
 };
@@ -259,7 +278,7 @@ $render_plan_card = function( array $item ) {
         <?php if ( $features ) : ?>
         <hr class="htm25-pricing__card-divider" aria-hidden="true">
 
-        <ul class="htm25-pricing__card-features" role="list" aria-label="<?php esc_attr_e( 'Plan features', 'htmega-addons' ); ?>">
+        <ul class="htm25-pricing__card-features" role="list" aria-label="<?php esc_attr_e( 'Plan features', 'ht-mega-for-elementor' ); ?>">
             <?php foreach ( $features as $feature ) : ?>
             <li class="htm25-pricing__card-feature">
                 <span class="htm25-pricing__card-feature-check" aria-hidden="true">
@@ -276,7 +295,7 @@ $render_plan_card = function( array $item ) {
             <a
                 href="<?php echo esc_url( $cta_url ); ?>"
                 class="htm25-btn htm25-btn--<?php echo esc_attr( $cta_variant ); ?> htm25-pricing__card-cta"
-                <?php echo $cta_target; // phpcs:ignore — already sanitized ?>
+                <?php echo $cta_target; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- constrained to a hardcoded literal target/rel attribute string, not user input. ?>
             >
                 <?php echo esc_html( $cta_text ); ?>
             </a>
@@ -292,8 +311,8 @@ $render_plan_card = function( array $item ) {
 <div class="htmega-block-<?php echo esc_attr( $block_id ); ?>">
 <section
     id="htm25-pricing-<?php echo esc_attr( $uid ); ?>"
-    class="htm25-pricing htm25-style--<?php echo $style; ?> htm25-pricing--<?php echo $layout; ?>"
-    aria-label="<?php esc_attr_e( 'Pricing section', 'htmega-addons' ); ?>"
+    class="htm25-pricing htm25-style--<?php echo $style; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $style sanitize_html_class()'d above */ ?> htm25-pricing--<?php echo $layout; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $layout sanitize_html_class()'d above */ ?>"
+    aria-label="<?php esc_attr_e( 'Pricing section', 'ht-mega-for-elementor' ); ?>"
 >
     <?php if ( $style === 'aurora' || $style === 'glass' ) : ?>
     <div class="htm25-pricing__bg-blobs" aria-hidden="true">
@@ -318,7 +337,7 @@ $render_plan_card = function( array $item ) {
             <?php endif; ?>
 
             <?php if ( $headline ) : ?>
-            <<?php echo $headline_tag; ?> class="htm25-pricing__headline"><?php echo $headline; ?></<?php echo $headline_tag; ?>>
+            <<?php echo $headline_tag; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $headline_tag whitelisted to h1/h2/h3 above */ ?> class="htm25-pricing__headline"><?php echo $headline; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- esc_html()'d + esc_html()'d highlight span applied above ?></<?php echo $headline_tag; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $headline_tag whitelisted to h1/h2/h3 above */ ?>>
             <?php endif; ?>
 
             <?php if ( $description ) : ?>
@@ -329,7 +348,7 @@ $render_plan_card = function( array $item ) {
         <?php endif; ?>
 
         <?php if ( $show_toggle ) : ?>
-        <div class="htm25-pricing__toggle-wrap" role="group" aria-label="<?php esc_attr_e( 'Billing period', 'htmega-addons' ); ?>">
+        <div class="htm25-pricing__toggle-wrap" role="group" aria-label="<?php esc_attr_e( 'Billing period', 'ht-mega-for-elementor' ); ?>">
             <span class="htm25-pricing__toggle-label htm25-pricing__toggle-label--monthly" id="<?php echo esc_attr( $toggle_id ); ?>-monthly">
                 <?php echo esc_html( $label_monthly ); ?>
             </span>
@@ -358,7 +377,7 @@ $render_plan_card = function( array $item ) {
         <?php endif; ?>
 
         <?php if ( $plan_items ) : ?>
-        <div class="htm25-pricing__cards htm25-pricing__cards--cols-<?php echo $cols; ?>" role="list">
+        <div class="htm25-pricing__cards htm25-pricing__cards--cols-<?php echo (int) $cols; ?>" role="list">
             <?php foreach ( $plan_items as $item ) :
                 $render_plan_card( (array) $item );
             endforeach; ?>

@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Counter', 'htmega-addons' );
+        return __( 'Counter', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -40,23 +40,23 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         $this->start_controls_section(
             'counter_content',
             [
-                'label' => __( 'Counter', 'htmega-addons' ),
+                'label' => __( 'Counter', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'counter_layout_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default'=>'1',
                     'options' => [
-                        '1' => __( 'Style One', 'htmega-addons' ),
-                        '2' => __( 'Style Two', 'htmega-addons' ),
-                        '3' => __( 'Style Three', 'htmega-addons' ),
-                        '4' => __( 'Style Four', 'htmega-addons' ),
-                        '5' => __( 'Style Five', 'htmega-addons' ),
-                        '6' => __( 'Style Six', 'htmega-addons' ),
+                        '1' => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2' => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3' => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4' => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5' => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6' => __( 'Style Six', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -64,15 +64,15 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_layout_align',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Start', 'htmega-addons' ),
+                            'title' => __( 'Start', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-left',
                         ],
                         'right' => [
-                            'title' => __( 'End', 'htmega-addons' ),
+                            'title' => __( 'End', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-right',
                         ],
                     ],
@@ -88,20 +88,20 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_icon_type',
                 [
-                    'label'   => __( 'Icon Type', 'htmega-addons' ),
+                    'label'   => __( 'Icon Type', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'label_block'=>false,
                     'options' => [
                         'none' => [
-                            'title' => __( 'None', 'htmega-addons' ),
+                            'title' => __( 'None', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-ban',
                         ],
                         'image' => [
-                            'title' => __( 'Image', 'htmega-addons' ),
+                            'title' => __( 'Image', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-image-bold',
                         ],
                         'icon' => [
-                            'title' => __( 'Icon', 'htmega-addons' ),
+                            'title' => __( 'Icon', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-info-circle',
                         ],
                     ],
@@ -112,7 +112,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_icon',
                 [
-                    'label' => __( 'Icon', 'htmega-addons' ),
+                    'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'condition'=>[
                         'counter_icon_type'=>'icon',
@@ -123,7 +123,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_image',
                 [
-                    'label' => __('Image','htmega-addons'),
+                    'label' => __('Image','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -152,10 +152,10 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_title',
                 [
-                    'label' => __( 'Counter Title', 'htmega-addons' ),
+                    'label' => __( 'Counter Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Happy Clients', 'htmega-addons' ),
-                    'placeholder' => __( 'Type your title here', 'htmega-addons' ),
+                    'default' => __( 'Happy Clients', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Type your title here', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -165,7 +165,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'terget_number',
                 [
-                    'label' => __( 'Target Number', 'htmega-addons' ),
+                    'label' => __( 'Target Number', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 100,
                     'dynamic' => [
@@ -177,9 +177,9 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_number_prefix',
                 [
-                    'label' => __( 'Number Prefix', 'htmega-addons' ),
+                    'label' => __( 'Number Prefix', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( '$', 'htmega-addons' ),
+                    'placeholder' => __( '$', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -189,9 +189,9 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_number_suffix',
                 [
-                    'label' => __( 'Number Suffix', 'htmega-addons' ),
+                    'label' => __( 'Number Suffix', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( '+', 'htmega-addons' ),
+                    'placeholder' => __( '+', 'ht-mega-for-elementor' ),
                     'dynamic' => [
                         'active' => true,
                     ],
@@ -204,7 +204,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         $this->start_controls_section(
             'counter_style_section',
             [
-                'label' => __( 'Box Style', 'htmega-addons' ),
+                'label' => __( 'Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -212,7 +212,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_area_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-counter-area',
                 ]
@@ -221,7 +221,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_area_background_overlay',
                 [
-                    'label'     => __( 'Background Overlay', 'htmega-addons' ),
+                    'label'     => __( 'Background Overlay', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-counter-area::before' => 'background-color: {{VALUE}};',
@@ -237,7 +237,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_area_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -250,7 +250,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_area_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -263,7 +263,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'counter_area_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-area',
                 ]
             );
@@ -271,7 +271,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_area_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -285,7 +285,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'title_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-area',
                     'separator' => 'before',
                 ]
@@ -294,23 +294,23 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_area_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -327,23 +327,23 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_area_align_justify',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -360,7 +360,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_area_width',
                 [
-                    'label' => __( 'Box  Width', 'htmega-addons' ),
+                    'label' => __( 'Box  Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -390,7 +390,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_area_height',
                 [
-                    'label' => __( 'Box Height', 'htmega-addons' ),
+                    'label' => __( 'Box Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -423,7 +423,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         $this->start_controls_section(
             'counter_number_style_section',
             [
-                'label' => __( 'Number', 'htmega-addons' ),
+                'label' => __( 'Number', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'terget_number!'=>'',
@@ -433,23 +433,23 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_number_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -466,7 +466,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_number_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#696969',
                     'selectors' => [
@@ -488,7 +488,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_number_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-number,{{WRAPPER}} .htmega-counter-area .htmega-counter-icon .htmega-counter-number',
                 ]
@@ -497,7 +497,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_number_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -511,7 +511,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_number_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -525,7 +525,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'counter_number_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-number,{{WRAPPER}} .htmega-counter-area .htmega-counter-icon .htmega-counter-number',
                 ]
             );
@@ -533,7 +533,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_number_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-number' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -548,7 +548,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         $this->start_controls_section(
             'counter_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'counter_title!'=>'',
@@ -559,23 +559,23 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_title_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -592,7 +592,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#898989',
                     'selectors' => [
@@ -625,7 +625,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_title_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-title',
                 ]
@@ -634,7 +634,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -647,7 +647,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -660,7 +660,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'counter_title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-title',
                 ]
             );
@@ -668,7 +668,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_title_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-counter-title' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -679,7 +679,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_title_after_color',
                 [
-                    'label' => __( 'Title After Border Color', 'htmega-addons' ),
+                    'label' => __( 'Title After Border Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-counter-content h2::before' => 'background-color: {{VALUE}};',
@@ -693,7 +693,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_title_brdr_width',
                 [
-                    'label' => __( 'After Border Width', 'htmega-addons' ),
+                    'label' => __( 'After Border Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -723,7 +723,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_title_brdr_height',
                 [
-                    'label' => __( 'After Border Height', 'htmega-addons' ),
+                    'label' => __( 'After Border Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -753,7 +753,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_title_brdr_position',
                 [
-                    'label' => __( 'After Border Position', 'htmega-addons' ),
+                    'label' => __( 'After Border Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -786,7 +786,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         $this->start_controls_section(
             'counter_title_border_section',
             [
-                'label' => __( 'Border After Color', 'htmega-addons' ),
+                'label' => __( 'Border After Color', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'counter_layout_style'=>'6',
@@ -798,7 +798,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'counter_title_brdr_clr',
-                    'label' => __( 'After Border Color', 'htmega-addons' ),
+                    'label' => __( 'After Border Color', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-style-6 .htmega-counter-content::after',
                 ]
             );
@@ -806,7 +806,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_title_after_brdr_width',
                 [
-                    'label' => __( 'Border Width', 'htmega-addons' ),
+                    'label' => __( 'Border Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -836,14 +836,14 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         $this->start_controls_section(
             'counter_icon_style_section',
             [
-                'label' => __( 'Icon/Image', 'htmega-addons' ),
+                'label' => __( 'Icon/Image', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'counter_icon_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#ed552d',
                     'selectors' => [
@@ -859,7 +859,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_icon_size',
                 [
-                    'label' => __( 'Size', 'htmega-addons' ),
+                    'label' => __( 'Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -891,7 +891,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_icon_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-icon span,{{WRAPPER}} .htmega-counter-area .htmega-counter-img',
                 ]
@@ -900,7 +900,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_icon_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -914,7 +914,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_icon_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -928,7 +928,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'counter_icon_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-icon span,{{WRAPPER}} .htmega-counter-area .htmega-counter-img',
                 ]
             );
@@ -936,7 +936,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_icon_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-counter-area .htmega-counter-icon span, {{WRAPPER}} .htmega-counter-area .htmega-counter-img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -947,7 +947,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'counter_icon_boxshadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-icon span, {{WRAPPER}} .htmega-counter-area .htmega-counter-img',
                 ]
             );
@@ -957,7 +957,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         $this->start_controls_section(
             'counter_prefix_style_section',
             [
-                'label' => __( 'Prefix', 'htmega-addons' ),
+                'label' => __( 'Prefix', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'counter_number_prefix!'=>'',
@@ -967,7 +967,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_prefix_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#696969',
                     'selectors' => [
@@ -988,7 +988,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_prefix_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-prefix',
                 ]
@@ -997,7 +997,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_prefix_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1010,7 +1010,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_prefix_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1023,7 +1023,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'counter_prefix_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-prefix',
                 ]
             );
@@ -1031,7 +1031,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_prefix_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-prefix' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1045,7 +1045,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         $this->start_controls_section(
             'counter_suffix_style_section',
             [
-                'label' => __( 'Suffix', 'htmega-addons' ),
+                'label' => __( 'Suffix', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'counter_number_suffix!'=>'',
@@ -1055,7 +1055,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_control(
                 'counter_suffix_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#696969',
                     'selectors' => [
@@ -1077,7 +1077,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'counter_suffix_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-suffix',
                 ]
@@ -1086,7 +1086,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_suffix_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1100,7 +1100,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_suffix_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1113,7 +1113,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'counter_suffix_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-suffix,.htmega-counter-style-6 .htmega-counter-icon .htmega-suffix',
                 ]
             );
@@ -1121,7 +1121,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
             $this->add_responsive_control(
                 'counter_suffix_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-counter-area .htmega-counter-content .htmega-suffix,.htmega-counter-style-6 .htmega-counter-icon .htmega-suffix' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1151,30 +1151,36 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
         }
     
         ?>
+            <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
             <div <?php echo $this->get_render_attribute_string( 'htmega_counter_attr' ); ?>>
 
-            
+
                 <?php
                     if( $settings['counter_layout_style'] == 6 ){
                         echo '<div class="htmega-counter-icon">';
                             if( isset( $settings['counter_icon']['value'] ) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() wraps Elementor core Icons_Manager::render_icon(), already escaped.
                                 echo '<span>'.HTMega_Icon_manager::render_icon( $settings['counter_icon'], [ 'aria-hidden' => 'true' ] ).'</span>';
                             }
                             if( isset( $settings['counter_image']['url'] ) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Group_Control_Image_Size::get_attachment_image_html() is Elementor core, already escaped.
                                 echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'counter_image_size', 'counter_image' );
                             }
                             if( !empty( $settings['terget_number'] ) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php; get_render_attribute_string() is Elementor core, already escaped.
                                 echo htmega_kses_title( $prefix ).'<span '. $this->get_render_attribute_string( 'counter_active_attr' ).'>0</span>'.htmega_kses_title( $suffix );
                             }
                         echo '</div>';
                     }else{
                         if( isset( $settings['counter_icon']['value'] ) ){
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() wraps Elementor core Icons_Manager::render_icon(), already escaped.
                             echo '<div class="htmega-counter-icon"><span>'.HTMega_Icon_manager::render_icon( $settings['counter_icon'], [ 'aria-hidden' => 'true' ] ).'</span></div>';
                         }
                         if( isset( $settings['counter_image']['url'] ) ){
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Group_Control_Image_Size::get_attachment_image_html() is Elementor core, already escaped.
                             echo '<div class="htmega-counter-img">'.Group_Control_Image_Size::get_attachment_image_html( $settings, 'counter_image_size', 'counter_image' ).'</div>';
                         }
-                    }                    
+                    }
                 ?>
                 <div class="htmega-counter-content">
                     <?php
@@ -1183,6 +1189,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                                 echo '<h2 class="htmega-counter-title">'.esc_html( $settings['counter_title'] ).'</h2>';
                             }
                             if( !empty( $settings['terget_number'] ) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php; get_render_attribute_string() is Elementor core, already escaped.
                                 echo htmega_kses_title( $prefix ).'<span '. $this->get_render_attribute_string( 'counter_active_attr' ).'>0</span>'.htmega_kses_title( $suffix );
                             }
                         }elseif($settings['counter_layout_style'] == 6 ){
@@ -1191,6 +1198,7 @@ class HTMega_Elementor_Widget_Counter extends Widget_Base {
                             }
                         }else{
                             if( !empty( $settings['terget_number'] ) ){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php; get_render_attribute_string() is Elementor core, already escaped.
                                 echo htmega_kses_title( $prefix ).'<span '. $this->get_render_attribute_string( 'counter_active_attr' ).'>0</span>'.htmega_kses_title( $suffix );
                             }
                             if( !empty( $settings['counter_title'] ) ){

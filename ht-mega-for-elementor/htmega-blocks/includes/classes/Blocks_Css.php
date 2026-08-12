@@ -68,6 +68,75 @@ class Blocks_Css {
 } )();
 </script>';
         }
+        if ( $block_name === 'htmega/faq-2025' ) {
+            $uid_js = esc_js( $uid );
+            return '<script>
+( function () {
+	var wrap = document.querySelector( \'.htmega-block-' . $uid_js . '\' );
+	if ( ! wrap ) return;
+
+	var duration     = 300;
+	var reduceMotion = window.matchMedia( \'(prefers-reduced-motion: reduce)\' ).matches;
+
+	wrap.querySelectorAll( \'.htm25-faq__item\' ).forEach( function ( details ) {
+		var summary = details.querySelector( \'.htm25-faq__item-summary\' );
+		var body    = details.querySelector( \'.htm25-faq__item-body\' );
+		if ( ! summary || ! body ) return;
+
+		var canAnimate = ! reduceMotion && typeof body.animate === \'function\';
+		if ( ! canAnimate ) return;
+
+		var anim = null;
+
+		function currentHeight() {
+			return body.getBoundingClientRect().height;
+		}
+
+		function openItem() {
+			if ( anim ) anim.cancel();
+			var from = currentHeight();
+			details.setAttribute( \'open\', \'\' );
+			var to = body.scrollHeight;
+			anim = body.animate(
+				[ { height: from + \'px\' }, { height: to + \'px\' } ],
+				{ duration: duration, easing: \'ease\' }
+			);
+			anim.onfinish = anim.oncancel = function () {
+				body.style.height = \'\';
+				anim = null;
+			};
+		}
+
+		function closeItem() {
+			if ( anim ) anim.cancel();
+			var from = currentHeight();
+			anim = body.animate(
+				[ { height: from + \'px\' }, { height: \'0px\' } ],
+				{ duration: duration, easing: \'ease\' }
+			);
+			anim.onfinish = function () {
+				details.removeAttribute( \'open\' );
+				body.style.height = \'\';
+				anim = null;
+			};
+			anim.oncancel = function () {
+				body.style.height = \'\';
+				anim = null;
+			};
+		}
+
+		summary.addEventListener( \'click\', function ( e ) {
+			e.preventDefault();
+			if ( details.hasAttribute( \'open\' ) ) {
+				closeItem();
+			} else {
+				openItem();
+			}
+		} );
+	} );
+} )();
+</script>';
+        }
         if ( $block_name === 'htmega/pricing-2025' && ! empty( $attrs['showBillingToggle'] ) ) {
             $uid_js = esc_js( $uid );
             return '<script>
@@ -87,16 +156,33 @@ class Blocks_Css {
 
     // ── Shared helpers ────────────────────────────────────────────
 
+    /**
+     * Validate a numeric CSS value + unit pair before interpolating it
+     * into a generated stylesheet. Returns '' for anything non-numeric,
+     * so untrusted values can never break out of the property they're
+     * assigned to (CSS/style-tag injection).
+     */
+    private static function _num( $value, $unit = 'px' ) {
+        if ( ! is_numeric( $value ) ) return '';
+        $allowed = [ 'px', 'em', 'rem', '%', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'pt' ];
+        $unit    = in_array( $unit, $allowed, true ) ? $unit : 'px';
+        return ( $value + 0 ) . $unit;
+    }
+
     private static function _border( $type, $width, $color ) {
         if ( ! $type || $type === 'none' ) return [];
         $r = [ 'border-style: ' . esc_attr( $type ) ];
         if ( $width && is_array( $width ) ) {
             $u = $width['unit'] ?? 'px';
             if ( isset( $width['link'] ) && $width['link'] === 'yes' && isset( $width['top'] ) ) {
-                $r[] = 'border-width: ' . $width['top'] . $u;
+                $val = self::_num( $width['top'], $u );
+                if ( $val !== '' ) $r[] = 'border-width: ' . $val;
             } else {
                 foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-                    if ( ! empty( $width[ $_s ] ) ) $r[] = "border-{$_s}-width: {$width[$_s]}{$u}";
+                    if ( ! empty( $width[ $_s ] ) ) {
+                        $val = self::_num( $width[ $_s ], $u );
+                        if ( $val !== '' ) $r[] = "border-{$_s}-width: {$val}";
+                    }
                 }
             }
         }
@@ -110,7 +196,10 @@ class Blocks_Css {
         $map = [ 'top' => 'top-left', 'right' => 'top-right', 'bottom' => 'bottom-right', 'left' => 'bottom-left' ];
         $r   = [];
         foreach ( $map as $_s => $corner ) {
-            if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) $r[] = "border-{$corner}-radius: {$rv[$_s]}{$u}";
+            if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) {
+                $val = self::_num( $rv[ $_s ], $u );
+                if ( $val !== '' ) $r[] = "border-{$corner}-radius: {$val}";
+            }
         }
         return $r;
     }
@@ -140,12 +229,15 @@ class Blocks_Css {
     private static function _typo( $t ) {
         if ( ! $t || ! is_array( $t ) ) return [];
         $r = [];
-        if ( ! empty( $t['family'] )        ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
-        if ( ! empty( $t['size'] )          ) $r[] = 'font-size: '       . $t['size']       . ( $t['sizeUnit']      ?? 'px' );
-        if ( ! empty( $t['weight'] )        ) $r[] = 'font-weight: '     . esc_attr( $t['weight'] );
-        if ( ! empty( $t['lineHeight'] )    ) $r[] = 'line-height: '     . $t['lineHeight'];
-        if ( ! empty( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: '  . $t['letterSpacing'] . 'px';
-        if ( ! empty( $t['transform'] )     ) $r[] = 'text-transform: '  . esc_attr( $t['transform'] );
+        if ( ! empty( $t['family'] ) ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
+        if ( ! empty( $t['size'] ) ) {
+            $val = self::_num( $t['size'], $t['sizeUnit'] ?? 'px' );
+            if ( $val !== '' ) $r[] = 'font-size: ' . $val;
+        }
+        if ( ! empty( $t['weight'] ) ) $r[] = 'font-weight: ' . esc_attr( $t['weight'] );
+        if ( isset( $t['lineHeight'] ) && is_numeric( $t['lineHeight'] ) ) $r[] = 'line-height: ' . ( $t['lineHeight'] + 0 );
+        if ( isset( $t['letterSpacing'] ) && is_numeric( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: ' . ( $t['letterSpacing'] + 0 ) . 'px';
+        if ( ! empty( $t['transform'] ) ) $r[] = 'text-transform: ' . esc_attr( $t['transform'] );
         return $r;
     }
 
@@ -155,7 +247,10 @@ class Blocks_Css {
         $u = $d['unit'] ?? $dim['unit'] ?? 'px';
         $r = [];
         foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-            if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) $r[] = "{$prop}-{$_s}: {$d[$_s]}{$u}";
+            if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) {
+                $val = self::_num( $d[ $_s ], $u );
+                if ( $val !== '' ) $r[] = "{$prop}-{$_s}: {$val}";
+            }
         }
         return $r;
     }

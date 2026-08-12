@@ -22,7 +22,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'FAQ 2026', 'htmega-addons' );
+		return esc_html__( 'FAQ 2026', 'ht-mega-for-elementor' );
 	}
 
 	public function get_icon() {
@@ -45,7 +45,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_design_style',
 			[
-				'label' => esc_html__( 'Design Style', 'htmega-addons' ),
+				'label' => esc_html__( 'Design Style', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -53,15 +53,15 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'design_style',
 			[
-				'label'   => esc_html__( 'Style Preset', 'htmega-addons' ),
+				'label'   => esc_html__( 'Style Preset', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'bento',
 				'options' => [
-					'bento'  => esc_html__( 'Bento Grid',    'htmega-addons' ),
-					'glass'  => esc_html__( 'Glassmorphism', 'htmega-addons' ),
-					'dark'   => esc_html__( 'Dark Minimal',  'htmega-addons' ),
-					'aurora' => esc_html__( 'Aurora',        'htmega-addons' ),
-					'neo'    => esc_html__( 'Neo-Brutalist', 'htmega-addons' ),
+					'bento'  => esc_html__( 'Bento Grid',    'ht-mega-for-elementor' ),
+					'glass'  => esc_html__( 'Glassmorphism', 'ht-mega-for-elementor' ),
+					'dark'   => esc_html__( 'Dark Minimal',  'ht-mega-for-elementor' ),
+					'aurora' => esc_html__( 'Aurora',        'ht-mega-for-elementor' ),
+					'neo'    => esc_html__( 'Neo-Brutalist', 'ht-mega-for-elementor' ),
 				],
 			]
 		);
@@ -69,13 +69,13 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'layout',
 			[
-				'label'   => esc_html__( 'Layout', 'htmega-addons' ),
+				'label'   => esc_html__( 'Layout', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'simple',
 				'options' => [
-					'simple' => esc_html__( 'Simple',  'htmega-addons' ),
-					'grid'   => esc_html__( 'Two-Column Grid', 'htmega-addons' ),
-					'boxed'  => esc_html__( 'Boxed Cards', 'htmega-addons' ),
+					'simple' => esc_html__( 'Simple',  'ht-mega-for-elementor' ),
+					'grid'   => esc_html__( 'Two-Column Grid', 'ht-mega-for-elementor' ),
+					'boxed'  => esc_html__( 'Boxed Cards', 'ht-mega-for-elementor' ),
 				],
 			]
 		);
@@ -86,7 +86,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_header',
 			[
-				'label' => esc_html__( 'Section Header', 'htmega-addons' ),
+				'label' => esc_html__( 'Section Header', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -94,10 +94,10 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'show_section_label',
 			[
-				'label'        => esc_html__( 'Show Section Label', 'htmega-addons' ),
+				'label'        => esc_html__( 'Show Section Label', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'htmega-addons' ),
-				'label_off'    => esc_html__( 'No',  'htmega-addons' ),
+				'label_on'     => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+				'label_off'    => esc_html__( 'No',  'ht-mega-for-elementor' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -106,9 +106,9 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'section_label_text',
 			[
-				'label'     => esc_html__( 'Label Text', 'htmega-addons' ),
+				'label'     => esc_html__( 'Label Text', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'FAQ', 'htmega-addons' ),
+				'default'   => esc_html__( 'FAQ', 'ht-mega-for-elementor' ),
 				'condition' => [ 'show_section_label' => 'yes' ],
 			]
 		);
@@ -116,25 +116,25 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'headline',
 			[
-				'label'   => esc_html__( 'Headline', 'htmega-addons' ),
+				'label'   => esc_html__( 'Headline', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Frequently Asked Questions', 'htmega-addons' ),
+				'default' => esc_html__( 'Frequently Asked Questions', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'headline_highlight',
 			[
-				'label'   => esc_html__( 'Headline Highlight', 'htmega-addons' ),
+				'label'   => esc_html__( 'Headline Highlight', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Asked', 'htmega-addons' ),
+				'default' => esc_html__( 'Asked', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$this->add_control(
 			'headline_tag',
 			[
-				'label'   => esc_html__( 'Headline Tag', 'htmega-addons' ),
+				'label'   => esc_html__( 'Headline Tag', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'h2',
 				'options' => [
@@ -149,10 +149,10 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'description',
 			[
-				'label'   => esc_html__( 'Description', 'htmega-addons' ),
+				'label'   => esc_html__( 'Description', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'rows'    => 3,
-				'default' => esc_html__( "Can't find what you're looking for? We've compiled answers to our most common questions below.", 'htmega-addons' ),
+				'default' => esc_html__( "Can't find what you're looking for? We've compiled answers to our most common questions below.", 'ht-mega-for-elementor' ),
 			]
 		);
 
@@ -162,7 +162,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'section_faq_items',
 			[
-				'label' => esc_html__( 'FAQ Items', 'htmega-addons' ),
+				'label' => esc_html__( 'FAQ Items', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -172,39 +172,39 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$repeater->add_control(
 			'faq_question',
 			[
-				'label'   => esc_html__( 'Question', 'htmega-addons' ),
+				'label'   => esc_html__( 'Question', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'How do I get started?', 'htmega-addons' ),
+				'default' => esc_html__( 'How do I get started?', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'faq_answer',
 			[
-				'label'   => esc_html__( 'Answer', 'htmega-addons' ),
+				'label'   => esc_html__( 'Answer', 'ht-mega-for-elementor' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'rows'    => 4,
-				'default' => esc_html__( 'Getting started is easy. Simply sign up for a free account, choose your plan, and follow the onboarding guide. Our team is available to help you at every step.', 'htmega-addons' ),
+				'default' => esc_html__( 'Getting started is easy. Simply sign up for a free account, choose your plan, and follow the onboarding guide. Our team is available to help you at every step.', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'faq_category',
 			[
-				'label'       => esc_html__( 'Category Tag', 'htmega-addons' ),
+				'label'       => esc_html__( 'Category Tag', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
-				'placeholder' => esc_html__( 'e.g. Billing', 'htmega-addons' ),
+				'placeholder' => esc_html__( 'e.g. Billing', 'ht-mega-for-elementor' ),
 			]
 		);
 
 		$repeater->add_control(
 			'faq_open',
 			[
-				'label'        => esc_html__( 'Open by Default', 'htmega-addons' ),
+				'label'        => esc_html__( 'Open by Default', 'ht-mega-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'htmega-addons' ),
-				'label_off'    => esc_html__( 'No',  'htmega-addons' ),
+				'label_on'     => esc_html__( 'Yes', 'ht-mega-for-elementor' ),
+				'label_off'    => esc_html__( 'No',  'ht-mega-for-elementor' ),
 				'return_value' => 'yes',
 				'default'      => '',
 			]
@@ -213,7 +213,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'faq_items',
 			[
-				'label'       => esc_html__( 'FAQ Items', 'htmega-addons' ),
+				'label'       => esc_html__( 'FAQ Items', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'title_field' => '{{{ faq_question }}}',
@@ -261,7 +261,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_section',
 			[
-				'label' => esc_html__( 'Section', 'htmega-addons' ),
+				'label' => esc_html__( 'Section', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -269,7 +269,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'section_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -282,7 +282,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'section_bg',
-				'label'    => esc_html__( 'Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-faq',
 			]
@@ -294,7 +294,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_section_label',
 			[
-				'label'     => esc_html__( 'Section Label', 'htmega-addons' ),
+				'label'     => esc_html__( 'Section Label', 'ht-mega-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [ 'show_section_label' => 'yes' ],
 			]
@@ -304,7 +304,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'section_label_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__section-label',
 			]
 		);
@@ -312,7 +312,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'section_label_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__section-label' => 'color: {{VALUE}};',
@@ -323,7 +323,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'section_label_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__section-label' => 'background-color: {{VALUE}};',
@@ -334,7 +334,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'section_label_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -346,7 +346,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'section_label_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -361,7 +361,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_headline',
 			[
-				'label' => esc_html__( 'Headline', 'htmega-addons' ),
+				'label' => esc_html__( 'Headline', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -370,7 +370,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'headline_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__headline',
 			]
 		);
@@ -378,7 +378,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'headline_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__headline' => 'color: {{VALUE}};',
@@ -389,7 +389,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'headline_margin',
 			[
-				'label'      => esc_html__( 'Margin', 'htmega-addons' ),
+				'label'      => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -401,7 +401,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'headline_accent_heading',
 			[
-				'label'     => esc_html__( 'Headline Accent', 'htmega-addons' ),
+				'label'     => esc_html__( 'Headline Accent', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -410,7 +410,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'headline_accent_color',
 			[
-				'label'     => esc_html__( 'Accent Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Accent Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__headline-accent' => 'background-color: {{VALUE}}; background-image: none;',
@@ -422,12 +422,12 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'           => 'headline_accent_gradient',
-				'label'          => esc_html__( 'Accent Gradient', 'htmega-addons' ),
+				'label'          => esc_html__( 'Accent Gradient', 'ht-mega-for-elementor' ),
 				'types'          => [ 'gradient' ],
 				'selector'       => '{{WRAPPER}} .htm25-faq__headline-accent',
 				'fields_options' => [
 					'background' => [
-						'label' => esc_html__( 'Gradient Color', 'htmega-addons' ),
+						'label' => esc_html__( 'Gradient Color', 'ht-mega-for-elementor' ),
 					],
 				],
 			]
@@ -439,7 +439,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_description',
 			[
-				'label' => esc_html__( 'Description', 'htmega-addons' ),
+				'label' => esc_html__( 'Description', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -448,7 +448,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'description_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__description',
 			]
 		);
@@ -456,7 +456,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'description_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__description' => 'color: {{VALUE}};',
@@ -470,7 +470,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_faq_item',
 			[
-				'label' => esc_html__( 'FAQ Item', 'htmega-addons' ),
+				'label' => esc_html__( 'FAQ Item', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -479,7 +479,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'faq_item_bg',
-				'label'    => esc_html__( 'Background', 'htmega-addons' ),
+				'label'    => esc_html__( 'Background', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-faq__item',
 			]
@@ -488,7 +488,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_item_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'htmega-addons' ),
+				'label'      => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -500,7 +500,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'faq_item_border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'htmega-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -513,7 +513,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'faq_item_border',
-				'label'    => esc_html__( 'Border', 'htmega-addons' ),
+				'label'    => esc_html__( 'Border', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__item',
 			]
 		);
@@ -522,7 +522,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'faq_item_box_shadow',
-				'label'    => esc_html__( 'Box Shadow', 'htmega-addons' ),
+				'label'    => esc_html__( 'Box Shadow', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__item',
 			]
 		);
@@ -530,7 +530,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'faq_item_open_heading',
 			[
-				'label'     => esc_html__( 'Open / Active State', 'htmega-addons' ),
+				'label'     => esc_html__( 'Open / Active State', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -540,7 +540,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'faq_item_open_bg',
-				'label'    => esc_html__( 'Background (Open)', 'htmega-addons' ),
+				'label'    => esc_html__( 'Background (Open)', 'ht-mega-for-elementor' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .htm25-faq__item[open]',
 			]
@@ -550,7 +550,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'faq_item_open_border',
-				'label'    => esc_html__( 'Border (Open)', 'htmega-addons' ),
+				'label'    => esc_html__( 'Border (Open)', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__item[open]',
 			]
 		);
@@ -559,7 +559,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'faq_item_open_box_shadow',
-				'label'    => esc_html__( 'Box Shadow (Open)', 'htmega-addons' ),
+				'label'    => esc_html__( 'Box Shadow (Open)', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__item[open]',
 			]
 		);
@@ -570,7 +570,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_question',
 			[
-				'label' => esc_html__( 'Question', 'htmega-addons' ),
+				'label' => esc_html__( 'Question', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -579,7 +579,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'question_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__item-question',
 			]
 		);
@@ -587,7 +587,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'question_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__item-question' => 'color: {{VALUE}};',
@@ -598,7 +598,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'question_hover_color',
 			[
-				'label'     => esc_html__( 'Hover Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Hover Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__item-summary:hover .htm25-faq__item-question' => 'color: {{VALUE}};',
@@ -609,7 +609,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'question_active_color',
 			[
-				'label'     => esc_html__( 'Active / Open Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Active / Open Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__item[open] .htm25-faq__item-question' => 'color: {{VALUE}};',
@@ -620,7 +620,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'question_category_heading',
 			[
-				'label'     => esc_html__( 'Category Tag', 'htmega-addons' ),
+				'label'     => esc_html__( 'Category Tag', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -630,7 +630,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'category_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__item-category',
 			]
 		);
@@ -638,7 +638,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'category_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__item-category' => 'color: {{VALUE}};',
@@ -649,7 +649,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'category_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__item-category' => 'background-color: {{VALUE}};',
@@ -663,7 +663,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_answer',
 			[
-				'label' => esc_html__( 'Answer', 'htmega-addons' ),
+				'label' => esc_html__( 'Answer', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -672,7 +672,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'answer_typography',
-				'label'    => esc_html__( 'Typography', 'htmega-addons' ),
+				'label'    => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
 				'selector' => '{{WRAPPER}} .htm25-faq__item-answer',
 			]
 		);
@@ -680,7 +680,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'answer_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__item-answer' => 'color: {{VALUE}};',
@@ -694,7 +694,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->start_controls_section(
 			'style_toggle_icon',
 			[
-				'label' => esc_html__( 'Toggle Icon', 'htmega-addons' ),
+				'label' => esc_html__( 'Toggle Icon', 'ht-mega-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -702,7 +702,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_responsive_control(
 			'toggle_icon_size',
 			[
-				'label'      => esc_html__( 'Size', 'htmega-addons' ),
+				'label'      => esc_html__( 'Size', 'ht-mega-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em' ],
 				'range'      => [
@@ -718,7 +718,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'toggle_icon_color',
 			[
-				'label'     => esc_html__( 'Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__item-icon'           => 'color: {{VALUE}};',
@@ -731,7 +731,7 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 		$this->add_control(
 			'toggle_icon_active_color',
 			[
-				'label'     => esc_html__( 'Active / Open Color', 'htmega-addons' ),
+				'label'     => esc_html__( 'Active / Open Color', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .htm25-faq__item[open] .htm25-faq__item-icon'          => 'color: {{VALUE}};',
@@ -780,8 +780,10 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 
 		// Chevron SVG
 		$chevron_svg = '<svg class="htm25-faq__item-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+		$uid = $this->get_id();
 		?>
-		<section class="htm25-faq htm25-style--<?php echo esc_attr( $design_style ); ?> htm25-faq--<?php echo esc_attr( $layout ); ?>">
+		<section id="htm25-faq-<?php echo esc_attr( $uid ); ?>" class="htm25-faq htm25-style--<?php echo esc_attr( $design_style ); ?> htm25-faq--<?php echo esc_attr( $layout ); ?>">
 
 				<?php if ( in_array( $design_style, [ 'glass', 'aurora' ], true ) ) : ?>
 				<div class="htm25-faq__bg-blobs" aria-hidden="true">
@@ -821,6 +823,74 @@ class HTMega_Elementor_Widget_FAQ_2025 extends Widget_Base {
 
 				</div><!-- .htm25-faq__inner -->
 		</section><!-- .htm25-faq -->
+		<?php if ( ! empty( $items ) ) : ?>
+		<script>
+		( function () {
+			var section = document.getElementById( 'htm25-faq-<?php echo esc_js( $uid ); ?>' );
+			if ( ! section ) return;
+
+			var duration     = 300;
+			var reduceMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+
+			section.querySelectorAll( '.htm25-faq__item' ).forEach( function ( details ) {
+				var summary = details.querySelector( '.htm25-faq__item-summary' );
+				var body    = details.querySelector( '.htm25-faq__item-body' );
+				if ( ! summary || ! body ) return;
+
+				var canAnimate = ! reduceMotion && typeof body.animate === 'function';
+				if ( ! canAnimate ) return; /* let the native <details> toggle handle it instantly */
+
+				var anim = null;
+
+				function currentHeight() {
+					return body.getBoundingClientRect().height;
+				}
+
+				function openItem() {
+					if ( anim ) anim.cancel();
+					var from = currentHeight(); /* measure BEFORE opening, else [open]{height:auto} already applied */
+					details.setAttribute( 'open', '' );
+					var to = body.scrollHeight;
+					anim = body.animate(
+						[ { height: from + 'px' }, { height: to + 'px' } ],
+						{ duration: duration, easing: 'ease' }
+					);
+					anim.onfinish = anim.oncancel = function () {
+						body.style.height = '';
+						anim = null;
+					};
+				}
+
+				function closeItem() {
+					if ( anim ) anim.cancel();
+					var from = currentHeight();
+					anim = body.animate(
+						[ { height: from + 'px' }, { height: '0px' } ],
+						{ duration: duration, easing: 'ease' }
+					);
+					anim.onfinish = function () {
+						details.removeAttribute( 'open' );
+						body.style.height = '';
+						anim = null;
+					};
+					anim.oncancel = function () {
+						body.style.height = '';
+						anim = null;
+					};
+				}
+
+				summary.addEventListener( 'click', function ( e ) {
+					e.preventDefault();
+					if ( details.hasAttribute( 'open' ) ) {
+						closeItem();
+					} else {
+						openItem();
+					}
+				} );
+			} );
+		} )();
+		</script>
+		<?php endif; ?>
 		<?php
 	}
 

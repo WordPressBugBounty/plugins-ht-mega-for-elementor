@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="htm-weather-wraper layout-2">
     <div class="htm-current-weather">
         <div class="htm-current-1">
@@ -11,7 +12,7 @@
         ?>
         <div class="forcast-day">
             <?php if($i == 0): ?>
-                <p class="week-day"><?php echo esc_html__('Today','htmega-addons'); ?></p>
+                <p class="week-day"><?php echo esc_html__('Today','ht-mega-for-elementor'); ?></p>
                 <?php echo wp_kses_post( $weather['current']['icon'] ); ?>
                 <p class="forcast-temp"><?php echo esc_html( $weather['current']['temp'] ); ?><sup>&deg;</sup><?php echo esc_html( $units ); ?></p>
             <?php else: ?>

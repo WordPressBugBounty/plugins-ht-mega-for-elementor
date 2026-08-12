@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Image Marker / Hotspots', 'htmega-addons' );
+        return __( 'Image Marker / Hotspots', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -43,7 +43,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->start_controls_section(
             'image_marker_content_section',
             [
-                'label' => __( 'Marker', 'htmega-addons' ),
+                'label' => __( 'Marker', 'ht-mega-for-elementor' ),
             ]
         );
 
@@ -51,7 +51,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'marker_bg_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-marker-wrapper',
                 ]
@@ -60,7 +60,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
                 'hotspot_bg_image',
                 [
-                    'label' => __('Choose Image','htmega-addons'),
+                    'label' => __('Choose Image','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::MEDIA,
                     'dynamic' => [
                         'active' => true,
@@ -80,7 +80,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
                 'marker_bg_opacity_color',
                 [
-                    'label' => __( 'Opacity Color', 'htmega-addons' ),
+                    'label' => __( 'Opacity Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-marker-wrapper:before' => 'content:"";position:absolute;width:100%;height:100%;left:0;top:0;background-color: {{VALUE}}',
@@ -94,7 +94,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
             'marker_bg_opacity_slider',
             [
-                'label'   => __( 'Opacity (%)', 'htmega-addons' ),
+                'label'   => __( 'Opacity (%)', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 0.8,
@@ -119,7 +119,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->add_responsive_control(
             'image_marker_area_padding',
             [
-                'label' => __( 'Area padding', 'htmega-addons' ),
+                'label' => __( 'Area padding', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -131,7 +131,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->add_control(
             'marker_section',
             [
-                'label' => __( 'Marker Items', 'htmega-addons' ),
+                'label' => __( 'Marker Items', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' =>'before',
             ]
@@ -140,16 +140,16 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
                 'marker_style',
                 [
-                    'label'   => __( 'Style', 'htmega-addons' ),
+                    'label'   => __( 'Style', 'ht-mega-for-elementor' ),
                     'type'    => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
-                        '6'   => __( 'Style Six', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6'   => __( 'Style Six', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -159,13 +159,13 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'indicator_type',
                 [
-                    'label' => esc_html__( 'Indicator Type', 'htmega-addons' ),
+                    'label' => esc_html__( 'Indicator Type', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'icon',
                     'options' => [
-                        'icon'   => esc_html__( 'Icon', 'htmega-addons' ),
-                        'image'   => esc_html__( 'Image (Pro)', 'htmega-addons' ),
-                        'text'   => esc_html__( 'Text (Pro)', 'htmega-addons' ),
+                        'icon'   => esc_html__( 'Icon', 'ht-mega-for-elementor' ),
+                        'image'   => esc_html__( 'Image (Pro)', 'ht-mega-for-elementor' ),
+                        'text'   => esc_html__( 'Text (Pro)', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -174,7 +174,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'marker_indicator_icon',
                 [
-                    'label' =>esc_html__('Marker Indicator Icon','htmega-addons'),
+                    'label' =>esc_html__('Marker Indicator Icon','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-info',
@@ -185,12 +185,12 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'content_type',
                 [
-                    'label' => esc_html__( 'Content Type', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Type', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'   => esc_html__( 'Custom', 'htmega-addons' ),
-                        'template'   => esc_html__( 'Elementor Template (Pro)', 'htmega-addons' ),
+                        'custom'   => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
+                        'template'   => esc_html__( 'Elementor Template (Pro)', 'ht-mega-for-elementor' ),
                     ],
                     'separator' =>'before'
                 ]
@@ -201,16 +201,16 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'marker_title',
                 [
-                    'label'   => __( 'Marker Title', 'htmega-addons' ),
+                    'label'   => __( 'Marker Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __( 'Marker #1', 'htmega-addons' ),
+                    'default' => __( 'Marker #1', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $repeater->add_control(
                 'marker_placeholder_text',
                 [
-                    'label' => __( 'Marker Placeholder Text', 'htmega-addons' ),
+                    'label' => __( 'Marker Placeholder Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
                     'label_block' => true,
                 ]
@@ -219,32 +219,32 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'marker_content',
                 [
-                    'label'   => __( 'Marker Content', 'htmega-addons' ),
+                    'label'   => __( 'Marker Content', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXTAREA,
-                    'default' => __( 'Lorem ipsum pisaci volupt atem accusa saes ntisdumtiu loperm asaerks.', 'htmega-addons' ),
+                    'default' => __( 'Lorem ipsum pisaci volupt atem accusa saes ntisdumtiu loperm asaerks.', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $repeater->add_control(
                 'marker_content_position_offset',
                 [
-                    'label' => __( 'Marker Content Position', 'htmega-addons' ),
+                    'label' => __( 'Marker Content Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-h-align-left',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-h-align-right',
                         ],
                         'top' => [
-                            'title' => __( 'Top', 'htmega-addons' ),
+                            'title' => __( 'Top', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-v-align-top',
                         ],
                         'bottom' => [
-                            'title' => __( 'Bottom', 'htmega-addons' ),
+                            'title' => __( 'Bottom', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-v-align-bottom',
                         ],
                     ],
@@ -257,10 +257,10 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'marker_icon_position_offset_toggle',
                 [
-                    'label' => __( 'Marker Icon Position', 'htmega-addons' ),
+                    'label' => __( 'Marker Icon Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::POPOVER_TOGGLE,
-                    'label_off' => __( 'None', 'htmega-addons' ),
-                    'label_on' => __( 'Custom', 'htmega-addons' ),
+                    'label_off' => __( 'None', 'ht-mega-for-elementor' ),
+                    'label_on' => __( 'Custom', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                 ]
             );
@@ -270,7 +270,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $repeater->add_responsive_control(
                     'marker_x_position',
                     [
-                        'label' => __( 'X Position', 'htmega-addons' ),
+                        'label' => __( 'X Position', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'default' => [
                             'size' => 66,
@@ -293,7 +293,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $repeater->add_responsive_control(
                     'marker_y_position',
                     [
-                        'label' => __( 'Y Position', 'htmega-addons' ),
+                        'label' => __( 'Y Position', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'default' => [
                             'size' => 15,
@@ -320,10 +320,10 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'marker_content_position_offset_toggle',
                 [
-                    'label' => __( 'Marker Content Position', 'htmega-addons' ),
+                    'label' => __( 'Marker Content Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::POPOVER_TOGGLE,
-                    'label_off' => __( 'None', 'htmega-addons' ),
-                    'label_on' => __( 'Custom', 'htmega-addons' ),
+                    'label_off' => __( 'None', 'ht-mega-for-elementor' ),
+                    'label_on' => __( 'Custom', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                 ]
             );
@@ -333,7 +333,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $repeater->add_responsive_control(
                     'marker_content_position_x',
                     [
-                        'label' => __( 'Marker Content Position(X)', 'htmega-addons' ),
+                        'label' => __( 'Marker Content Position(X)', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'range' => [
@@ -356,7 +356,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $repeater->add_responsive_control(
                     'marker_content_position_y',
                     [
-                        'label' => __( 'Marker Content Position(Y)', 'htmega-addons' ),
+                        'label' => __( 'Marker Content Position(Y)', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'range' => [
@@ -381,7 +381,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_responsive_control(
                 'content_width',
                 [
-                    'label' => esc_html__( 'Content Box Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content Box Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -398,7 +398,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'content_indicator_section', 
                 [
-                    'label'         => __( 'Content Indicator', 'htmega-addons' ),
+                    'label'         => __( 'Content Indicator', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -408,13 +408,13 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'indicator_styles',
                 [
-                    'label' => esc_html__( 'Indicator Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Indicator Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'caret',
                     'options' => [
-                        'caret'   => esc_html__( 'Caret', 'htmega-addons' ),
-                        'arrow'   => esc_html__( 'Arrow (Pro)', 'htmega-addons' ),
-                        'line'   => esc_html__( 'Line (Pro)', 'htmega-addons' ),
+                        'caret'   => esc_html__( 'Caret', 'ht-mega-for-elementor' ),
+                        'arrow'   => esc_html__( 'Arrow (Pro)', 'ht-mega-for-elementor' ),
+                        'line'   => esc_html__( 'Line (Pro)', 'ht-mega-for-elementor' ),
                     ],
                     'condition' => [
                         'content_indicator_section' =>'yes',
@@ -426,7 +426,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_responsive_control(
                 'marker_indicator_position',
                 [
-                    'label' => __( 'Indicator Position(X)', 'htmega-addons' ),
+                    'label' => __( 'Indicator Position(X)', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ '%' ],
                     'range' => [
@@ -452,7 +452,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_responsive_control(
                 'marker_indicator_position_y',
                 [
-                    'label' => __( 'Indicator Position(Y)', 'htmega-addons' ),
+                    'label' => __( 'Indicator Position(Y)', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ '%' ],
                     'range' => [
@@ -478,7 +478,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_responsive_control(
                 'marker_indicator_rotated_deg',
                 [
-                    'label' => __( 'Indicator Rotated', 'htmega-addons' ),
+                    'label' => __( 'Indicator Rotated', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px' ],
                     'range' => [
@@ -500,7 +500,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'progressbar_value_before_after_color', 
                 [
-                    'label'     => __( 'Indicator color', 'htmega-addons' ),
+                    'label'     => __( 'Indicator color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default' => '#ff0000',
                     'selectors' => [
@@ -521,7 +521,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'tooltip_active', 
                 [
-                    'label'         => __( 'Active Tooltip (Pro)', 'htmega-addons' ),
+                    'label'         => __( 'Active Tooltip (Pro)', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -532,7 +532,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $repeater->add_control(
                 'tooltip_hide_on_mobile', 
                 [
-                    'label'         => __( 'Hide On Mobile(Pro)', 'htmega-addons' ),
+                    'label'         => __( 'Hide On Mobile(Pro)', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -547,8 +547,8 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                     'prevent_empty'=>false,
                     'default' => [
                         [
-                            'marker_title' => __( 'Marker #1', 'htmega-addons' ),
-                            'marker_content' => __( 'Lorem ipsum pisaci volupt atem accusa saes ntisdumtiu loperm asaerks.','htmega-addons' ),
+                            'marker_title' => __( 'Marker #1', 'ht-mega-for-elementor' ),
+                            'marker_content' => __( 'Lorem ipsum pisaci volupt atem accusa saes ntisdumtiu loperm asaerks.','ht-mega-for-elementor' ),
                             'marker_x_position' => [
                                 'size' => 66,
                                 'unit' => '%',
@@ -565,7 +565,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
                 'pulse_shadow', 
                 [
-                    'label'         => __( 'Pulse Shadow', 'htmega-addons' ),
+                    'label'         => __( 'Pulse Shadow', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -575,12 +575,12 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
                 'marker_animation',
                 [
-                    'label' => esc_html__( 'Marker Icon Animation', 'htmega-addons' ),
+                    'label' => esc_html__( 'Marker Icon Animation', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'rotated',
                     'options' => [
-                        'none'   => esc_html__( 'None', 'htmega-addons' ),
-                        'rotated'   => esc_html__( 'Rotated', 'htmega-addons' ),
+                        'none'   => esc_html__( 'None', 'ht-mega-for-elementor' ),
+                        'rotated'   => esc_html__( 'Rotated', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -590,7 +590,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->start_controls_section(
             'image_marker_style_section',
             [
-                'label' => __( 'Marker', 'htmega-addons' ),
+                'label' => __( 'Marker', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -598,7 +598,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $this->add_responsive_control(
                     'marker_icon_width',
                     [
-                        'label' => __( 'Marker Width', 'htmega-addons' ),
+                        'label' => __( 'Marker Width', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'range' => [
@@ -626,7 +626,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $this->add_responsive_control(
                     'marker_icon_height',
                     [
-                        'label' => __( 'Marker Height', 'htmega-addons' ),
+                        'label' => __( 'Marker Height', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'range' => [
@@ -653,7 +653,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $this->add_responsive_control(
                     'marker_icon_font_size',
                     [
-                        'label' => __( 'Icon Size', 'htmega-addons' ),
+                        'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px', '%' ],
                         'range' => [
@@ -688,7 +688,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $this->add_control(
                     'image_marker_icon_color',
                     [
-                        'label'     => __( 'Color', 'htmega-addons' ),
+                        'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-marker-style-6 .htmega-image-marker-icon i' => 'color: {{VALUE}};',
@@ -703,7 +703,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
                 'image_marker_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-image-marker-icon i,{{WRAPPER}} .htmega-image-marker-icon' => 'color: {{VALUE}};',
@@ -720,7 +720,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'image_marker_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer , {{WRAPPER}} .htmega-marker-style-3 .htmega_image_pointer::after',
                 ]
@@ -730,7 +730,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'image_marker_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer',
                 ]
             );
@@ -738,7 +738,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_responsive_control(
                 'image_marker_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer,{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega-image-marker-icon img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -749,14 +749,14 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'image_marker_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer',
                 ]
             );
             $this->add_responsive_control(
                 'image_marker_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -767,7 +767,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_control(
                 'pulse_shadow_color',
                 [
-                    'label'     => __( 'Pulse Shadow Color', 'htmega-addons' ),
+                    'label'     => __( 'Pulse Shadow Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-shadow-wrapper::before, {{WRAPPER}} .htmega-shadow-wrapper::after' => 'border-color: {{VALUE}}; background-color:{{VALUE}};',
@@ -784,7 +784,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->start_controls_section(
             'image_marker_content_style_section',
             [
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -792,19 +792,19 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_responsive_control(
                 'image_marker_content_alignment_box',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -819,7 +819,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'image_marker_content_area_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box',
                 ]
@@ -829,7 +829,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'image_marker_content_area_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box',
                 ]
             );
@@ -837,7 +837,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_responsive_control(
                 'image_marker_content_area_border_radius',
                 [
-                    'label' => esc_html__( 'Content area border radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Content area border radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -848,7 +848,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             $this->add_responsive_control(
                 'image_marker_content_area_padding',
                 [
-                    'label' => __( 'Content area padding', 'htmega-addons' ),
+                    'label' => __( 'Content area padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -860,7 +860,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'content_box_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega_image_pointer .htmega_pointer_box',
                     'separator' => 'after',
                 ]
@@ -871,17 +871,17 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $this->start_controls_tab(
                     'style_title_tab',
                     [
-                        'label' => __( 'Title', 'htmega-addons' ),
+                        'label' => __( 'Title', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'image_marker_title_style_toggle',
                         [
-                            'label' => __( 'Title Bottom Border Style', 'htmega-addons' ),
+                            'label' => __( 'Title Bottom Border Style', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::POPOVER_TOGGLE,
-                            'label_off' => __( 'None', 'htmega-addons' ),
-                            'label_on' => __( 'Custom', 'htmega-addons' ),
+                            'label_off' => __( 'None', 'ht-mega-for-elementor' ),
+                            'label_on' => __( 'Custom', 'ht-mega-for-elementor' ),
                             'return_value' => 'yes',
                         ]
                     );
@@ -891,7 +891,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                         $this->add_control(
                             'marker_title_bottom_background',
                             [
-                                'label'     => __( 'Border Background', 'htmega-addons' ),
+                                'label'     => __( 'Border Background', 'ht-mega-for-elementor' ),
                                 'type'      => Controls_Manager::COLOR,
                                 'selectors' => [
                                     '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box h4:before' => 'background: {{VALUE}}',
@@ -902,7 +902,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                         $this->add_responsive_control(
                             'marker_border_bottom_width',
                             [
-                                'label' => __( 'Width', 'htmega-addons' ),
+                                'label' => __( 'Width', 'ht-mega-for-elementor' ),
                                 'type' => Controls_Manager::SLIDER,
                                 'size_units' => [ '%'],
                                 'range' => [
@@ -924,7 +924,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                         $this->add_responsive_control(
                             'marker_border_bottom_height',
                             [
-                                'label' => __( 'Height', 'htmega-addons' ),
+                                'label' => __( 'Height', 'ht-mega-for-elementor' ),
                                 'type' => Controls_Manager::SLIDER,
                                 'size_units' => [ 'px'],
                                 'range' => [
@@ -949,7 +949,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                     $this->add_control(
                         'image_marker_title_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box h4' => 'color: {{VALUE}};',
@@ -970,7 +970,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'image_marker_title_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box h4',
                         ]
                     );
@@ -978,7 +978,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                     $this->add_responsive_control(
                         'image_marker_title_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box h4' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -989,7 +989,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                     $this->add_responsive_control(
                         'image_marker_title_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1001,7 +1001,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                     $this->add_responsive_control(
                         'marker_title_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1016,14 +1016,14 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                 $this->start_controls_tab(
                     'style_description_tab',
                     [
-                        'label' => __( 'Description', 'htmega-addons' ),
+                        'label' => __( 'Description', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'image_marker_description_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box p' => 'color: {{VALUE}};',
@@ -1043,7 +1043,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                     $this->add_responsive_control(
                         'image_marker_description_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1062,7 +1062,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->start_controls_section(
             'image_marker_placeholder_section',
             [
-                'label' => __( 'Placeholder Text Style', 'htmega-addons' ),
+                'label' => __( 'Placeholder Text Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1070,7 +1070,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->add_control(
             'image_marker_placeholder_color',
             [
-                'label'     => __( 'Color', 'htmega-addons' ),
+                'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-marker-wrapper .htmega_image_pointer .htmega_pointer_box h4:after' => 'color: {{VALUE}};',
@@ -1091,7 +1091,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->add_responsive_control(
             'marker_placeholder_position_ashim',
             [
-                'label' => __( 'Position Top-Bottom (Y)', 'htmega-addons' ),
+                'label' => __( 'Position Top-Bottom (Y)', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1118,7 +1118,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
         $this->add_responsive_control(
             'marker_placeholder_position_sweet',
             [
-                'label' => __( 'Position Left-Right (X)', 'htmega-addons' ),
+                'label' => __( 'Position Left-Right (X)', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1155,10 +1155,10 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
        
         ?>
         
-            <div <?php echo $this->get_render_attribute_string('htmega_image_marker_attr'); ?> >
+            <div <?php echo $this->get_render_attribute_string('htmega_image_marker_attr'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string. ?> >
             <?php
                     if( !empty( $settings['hotspot_bg_image']['url'] ) ){
-                        echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'hotspot_bg_image_size', 'hotspot_bg_image' );
+                        echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'hotspot_bg_image_size', 'hotspot_bg_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core helper, outputs an already-escaped <img> tag.
                     }
                     foreach ( $settings['image_marker_list'] as $item ):
 
@@ -1176,7 +1176,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                                 <div class="htmega-image-marker-icon">
                                     <?php
                                     if( !empty( $item['marker_indicator_icon']['value'] ) ){
-                                        echo HTMega_Icon_manager::render_icon( $item['marker_indicator_icon'], [ 'aria-hidden' => 'true' ] ); 
+                                        echo HTMega_Icon_manager::render_icon( $item['marker_indicator_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's own Icons_Manager::render_icon(), already escaped.
                                     }?>
                                 </div>
                             
@@ -1186,11 +1186,11 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
                                         <h4 <?php if ($item['marker_placeholder_text'] !== ''): ?>
                                             data-pltext="<?php echo esc_attr($item['marker_placeholder_text']) ?>" 
                                         <?php endif ?> >
-                                            <?php echo htmega_kses_title($item['marker_title']); ?>
+                                            <?php echo htmega_kses_title($item['marker_title']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php. ?>
                                         </h4>
                                     <?php }
                                     if (!empty($item['marker_content'])) {
-                                        echo '<p>' . htmega_kses_desc($item['marker_content']) . '</p>';
+                                        echo '<p>' . htmega_kses_desc($item['marker_content']) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php.
                                     }
                                     ?>
                             </div>
@@ -1213,7 +1213,7 @@ class HTMega_Elementor_Widget_ImageMarker extends Widget_Base {
             [
                 'type' => Controls_Manager::RAW_HTML,
                 'raw' => sprintf(/* translators: 1: Opening strong and anchor tags for Pro Version link, 2: Closing anchor and strong tags */
-                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'htmega-addons'),
+                    __('Upgrade to pro version to use this feature %1$s Pro Version %2$s', 'ht-mega-for-elementor'),
                     '<strong><a href="https://wphtmega.com/pricing/" target="_blank">',
                     '</a></strong>'),
                 'content_classes' => 'htmega-pro-notice',

@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Progress Bar', 'htmega-addons' );
+        return __( 'Progress Bar', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -42,20 +42,20 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
         $this->start_controls_section(
             'progressbar_content',
             [
-                'label' => __( 'Progress Bar', 'htmega-addons' ),
+                'label' => __( 'Progress Bar', 'ht-mega-for-elementor' ),
             ]
         );
         
             $this->add_control(
                 'htmega_progress_bar_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'horizontal',
                     'options' => [
-                        'horizontal' => __( 'Horizontal', 'htmega-addons' ),
-                        'vertical'   => __( 'Vertical', 'htmega-addons' ),
-                        'circle'     => __( 'Circle', 'htmega-addons' ),
+                        'horizontal' => __( 'Horizontal', 'ht-mega-for-elementor' ),
+                        'vertical'   => __( 'Vertical', 'ht-mega-for-elementor' ),
+                        'circle'     => __( 'Circle', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -63,12 +63,12 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'htmega_progress_bar_type',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'normal',
                     'options' => [
-                        'striped' => __( 'Striped', 'htmega-addons' ),
-                        'normal'   => __( 'Normal', 'htmega-addons' ),
+                        'striped' => __( 'Striped', 'ht-mega-for-elementor' ),
+                        'normal'   => __( 'Normal', 'ht-mega-for-elementor' ),
                     ],
                     'condition' =>[
                         'htmega_progress_bar_style!'=>'circle',
@@ -79,7 +79,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'striped_animated',
                 [
-                    'label' => __( 'Striped Animated', 'htmega-addons' ),
+                    'label' => __( 'Striped Animated', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -96,16 +96,16 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater->add_control(
                 'htmega_progressbar_title', 
                 [
-                    'label'       => __( 'Title', 'htmega-addons' ),
+                    'label'       => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
-                    'default'     => __( 'WordPress' , 'htmega-addons' ),
+                    'default'     => __( 'WordPress' , 'ht-mega-for-elementor' ),
                 ]
             );
 
             $repeater->add_control(
                 'htmega_progressbar_value', 
                 [
-                    'label' => __( 'Progress Bar Value', 'htmega-addons' ),
+                    'label' => __( 'Progress Bar Value', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -123,7 +123,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater->add_control(
                 'htmega_progressbar_color', 
                 [
-                    'label'     => __( 'Progress bar color', 'htmega-addons' ),
+                    'label'     => __( 'Progress bar color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}} .htb-progress-bar' => 'background-color: {{VALUE}};',
@@ -134,7 +134,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater->add_control(
                 'htmega_progressbar_value_color', 
                 [
-                    'label'     => __( 'Progress bar value color', 'htmega-addons' ),
+                    'label'     => __( 'Progress bar value color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}} .percent-label' => 'color: {{VALUE}};',
@@ -144,7 +144,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater->add_control(
                 'htmega_progressbar_value_bg_color', 
                 [
-                    'label'     => __( 'Progress bar value background color', 'htmega-addons' ),
+                    'label'     => __( 'Progress bar value background color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}} .percent-label' => 'background-color: {{VALUE}};',
@@ -155,7 +155,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater->add_control(
                 'htmega_progressbar_indicator_color', 
                 [
-                    'label'     => __( 'Progress Indicator', 'htmega-addons' ),
+                    'label'     => __( 'Progress Indicator', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}}.htmega-progress-indicator .htb-progress .htb-progress-bar::after' => 'background-color: {{VALUE}};border-color: {{VALUE}};'
@@ -166,7 +166,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater->add_control(
                 'progressbar_before_after', 
                 [
-                    'label'         => __( 'Value Indicator', 'htmega-addons' ),
+                    'label'         => __( 'Value Indicator', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -175,7 +175,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater->add_control(
                 'progressbar_value_before_after_color', 
                 [
-                    'label'     => __( 'Indicator color', 'htmega-addons' ),
+                    'label'     => __( 'Indicator color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}}.htmega-progressbar-value-bottom .htb-progress span.percent-label::after' => 'border-top: 5px solid {{VALUE}};',
@@ -191,7 +191,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
             'htmega_progressbar_list',
             [
-                'label'     => __( 'Progress Bar', 'htmega-addons' ),
+                'label'     => __( 'Progress Bar', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::REPEATER,
                 'fields'    => $repeater->get_controls(),
                 'prevent_empty'=>false,
@@ -200,18 +200,18 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 ],
                 'default' => [
                     [
-                        'htmega_progressbar_title'         => __('WordPress','htmega-addons'),
+                        'htmega_progressbar_title'         => __('WordPress','ht-mega-for-elementor'),
                         'htmega_progressbar_color'         => '#18012c',
                         'htmega_progressbar_value_color'   => '#000000',
                         
                     ],
                     [
-                        'htmega_progressbar_title'         => __('Joomla','htmega-addons'),
+                        'htmega_progressbar_title'         => __('Joomla','ht-mega-for-elementor'),
                         'htmega_progressbar_color'         => '#18012c',
                         'htmega_progressbar_value_color'   => '#000000',
                     ],
                     [
-                        'htmega_progressbar_title'         => __('Photoshop','htmega-addons'),
+                        'htmega_progressbar_title'         => __('Photoshop','ht-mega-for-elementor'),
                         'htmega_progressbar_color'         => '#18012c',
                         'htmega_progressbar_value_color'   => '#000000',
                     ],
@@ -228,16 +228,16 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'htmega_progressbar_title', 
                 [
-                    'label'       => __( 'Title', 'htmega-addons' ),
+                    'label'       => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
-                    'default'     => __( 'WordPress' , 'htmega-addons' ),
+                    'default'     => __( 'WordPress' , 'ht-mega-for-elementor' ),
                 ]
             );
 
             $repeater_two->add_control(
                 'htmega_progressbar_value', 
                 [
-                    'label' => __( 'Progress Bar Value', 'htmega-addons' ),
+                    'label' => __( 'Progress Bar Value', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -255,7 +255,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'htmega_progressbar_lineweight', 
                 [
-                    'label'     => __( 'Progress Bar Width', 'htmega-addons' ),
+                    'label'     => __( 'Progress Bar Width', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SLIDER,
                     'range'     => [
                         'px'    => [
@@ -278,7 +278,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'htmega_progressbar_size', 
                 [
-                'label' => __( 'Progress Bar Size', 'htmega-addons' ),
+                'label' => __( 'Progress Bar Size', 'ht-mega-for-elementor' ),
                 'type'  => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -301,7 +301,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'htmega_progressbar_two_color', 
                 [
-                'label'     => __( 'Progress bar Background', 'htmega-addons' ),
+                'label'     => __( 'Progress bar Background', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   =>'#1cb9da',
                 ]
@@ -309,7 +309,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'htmega_progressbar_track_color', 
                 [
-                'label'     => __( 'Progress bar track color', 'htmega-addons' ),
+                'label'     => __( 'Progress bar track color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   =>'#dcd9d9',
                 ]
@@ -319,7 +319,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'htmega_progressbar_two_value_color', 
                 [
-                    'label'     => __( 'Progress bar value color', 'htmega-addons' ),
+                    'label'     => __( 'Progress bar value color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}} .radial-progress span' => 'color: {{VALUE}};',
@@ -329,7 +329,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'htmega_progressbar_two_value_bg_color', 
                 [
-                    'label'     => __( 'Progress bar value background color', 'htmega-addons' ),
+                    'label'     => __( 'Progress bar value background color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}}.htmega-progress-value-inner .radial-progress span' => 'background-color: {{VALUE}};',
@@ -340,7 +340,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'progressbar_single_items_padding', 
                 [
-                    'label'      => __( 'Padding', 'htmega-addons' ),
+                    'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors'  => [
@@ -353,7 +353,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'progressbar_single_items_border', 
                 [
-                    'label'      => __( 'Border', 'htmega-addons' ),
+                    'label'      => __( 'Border', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors'  => [
@@ -366,7 +366,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 'progressbar_single_items_border_color', 
                 [
                     
-                'label'     => __( 'Border color', 'htmega-addons' ),
+                'label'     => __( 'Border color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} {{CURRENT_ITEM}} .radial-progressbg' => 'border-color: {{VALUE}};',
@@ -377,7 +377,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $repeater_two->add_control(
                 'progressbar_single_items_border_radius', 
                 [
-                    'label' => esc_html__( 'Border Radius aaa', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius aaa', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} {{CURRENT_ITEM}} .radial-progressbg , {{WRAPPER}} {{CURRENT_ITEM}}.htmega-progress-value-inner .radial-progress span' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -389,7 +389,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
             'htmega_progressbar_list_two',
             [
-                'label'     => __( 'Progress Bar', 'htmega-addons' ),
+                'label'     => __( 'Progress Bar', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::REPEATER,
                 'fields'    => $repeater_two->get_controls(),
                 'prevent_empty'=>false,
@@ -398,7 +398,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 ],
                 'default' => [
                     [
-                        'htmega_progressbar_title'         => __('WordPress','htmega-addons'),
+                        'htmega_progressbar_title'         => __('WordPress','ht-mega-for-elementor'),
                         
                     ],
                 ],
@@ -412,7 +412,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
         $this->start_controls_section(
             'htmega_progressbar_items_style',
             [
-                'label'     => __( 'Items Style', 'htmega-addons' ),
+                'label'     => __( 'Items Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -420,7 +420,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'htmega_progress_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -451,7 +451,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_progress_position',
                 [
-                    'label' => __( 'Progress Position Top-Bottom', 'htmega-addons' ),
+                    'label' => __( 'Progress Position Top-Bottom', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -479,7 +479,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'progressbarbackground',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-single-skill .htb-progress',
                 ]
@@ -489,7 +489,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'progressbar_items_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-skill .htb-progress', 
                 ]
             );
@@ -497,7 +497,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_items_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-single-skill .htb-progress' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -512,7 +512,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'progressbar_items_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-skill .htb-progress',
                     'separator' => 'before',
                 ]
@@ -521,7 +521,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_items_padding',
                 [
-                    'label' => __( 'Item Padding', 'htmega-addons' ),
+                    'label' => __( 'Item Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -535,7 +535,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_items_inner_padding',
                 [
-                    'label' => __( 'Item Inner Padding', 'htmega-addons' ),
+                    'label' => __( 'Item Inner Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -548,7 +548,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'progress_bar_indicator',
                 [
-                    'label' => __( 'Progress Indicator', 'htmega-addons' ),
+                    'label' => __( 'Progress Indicator', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -563,7 +563,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'indicatordimention',
                 [
-                    'label' => __( 'Indicator Size', 'htmega-addons' ),
+                    'label' => __( 'Indicator Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -594,7 +594,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'indicatorbackground',
-                    'label' => __( 'Indicator Background', 'htmega-addons' ),
+                    'label' => __( 'Indicator Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-progress-indicator .htb-progress .htb-progress-bar::after',
                     'condition' => [
@@ -607,7 +607,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'progressbar_indicator_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-progress-indicator .htb-progress .htb-progress-bar::after',
                     'condition' => [
                         'progress_bar_indicator' =>'yes',
@@ -618,7 +618,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_indicator_border_radius',
                 [
-                    'label' => esc_html__( 'Indicator Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Indicator Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-progress-indicator .htb-progress .htb-progress-bar::after' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -636,7 +636,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
         $this->start_controls_section(
             'htmega_progressbar_title_style',
             [
-                'label' => __( 'Title Style', 'htmega-addons' ),
+                'label' => __( 'Title Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -644,10 +644,10 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'progress_text_postion',
                 [
-                    'label' => __( 'Position', 'htmega-addons' ),
+                    'label' => __( 'Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Inner', 'htmega-addons' ),
-                    'label_off' => __( 'Outer', 'htmega-addons' ),
+                    'label_on' => __( 'Inner', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Outer', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'condition'     => [
@@ -660,7 +660,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'titlebackground',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} p.htmega_progress_title',
                 ]
@@ -669,7 +669,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -683,7 +683,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -698,7 +698,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'progressbar_title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} p.htmega_progress_title',
                 ]
             );
@@ -706,7 +706,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_title_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} p.htmega_progress_title' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -720,7 +720,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'progressbar_title_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} p.htmega_progress_title',
                     'separator' => 'before',
                 ]
@@ -729,7 +729,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'progressbar_progressbar_title_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} p.htmega_progress_title' => 'color: {{VALUE}};',
@@ -743,7 +743,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'progressbar_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} p.htmega_progress_title, {{WRAPPER}} .radial-progress-single h5.radial-htmega-',
                     'separator' => 'before',
                 ]
@@ -755,7 +755,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
         $this->start_controls_section(
             'htmega_progressbar_value_style',
             [
-                'label'     => __( 'Value', 'htmega-addons' ),
+                'label'     => __( 'Value', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -763,10 +763,10 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_control(
                 'progress_value_postion',
                 [
-                    'label' => __( 'Position', 'htmega-addons' ),
+                    'label' => __( 'Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Inner', 'htmega-addons' ),
-                    'label_off' => __( 'Outer', 'htmega-addons' ),
+                    'label_on' => __( 'Inner', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Outer', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -775,7 +775,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_value_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -790,7 +790,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'progressbar_value_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htb-progress span.percent-label',
                 ]
             );
@@ -798,7 +798,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_value_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htb-progress span.percent-label' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -812,7 +812,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'progressbar_value_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htb-progress span.percent-label',
                     'separator' => 'before',
                 ]
@@ -822,7 +822,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'progressbar_value_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-single-skill .htb-progress span.percent-label,{{WRAPPER}} .radial-progress-single .radial-progressbg .radial-progress span',
                     'separator' => 'before',
                 ]
@@ -831,7 +831,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
             $this->add_responsive_control(
                 'progressbar_value_position',
                 [
-                    'label' => __( 'Position', 'htmega-addons' ),
+                    'label' => __( 'Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -894,7 +894,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
 
                     $items_value_size = absint( $item['htmega_progressbar_size']['size'] ) - ( absint( $item['htmega_progressbar_lineweight']['size'] ) +8 );
                     ?>  
-                    <div <?php echo $this->get_render_attribute_string( 'htmega_progress_circle' ); ?>>
+                    <div <?php echo $this->get_render_attribute_string( 'htmega_progress_circle' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, self-escaping ?>>
                         <div class="radial-progressbg">
                             <div class="radial-progress" data-percent="<?php echo esc_attr( $item['htmega_progressbar_value']['size'] );?>" data-bar-color="<?php echo esc_attr($item['htmega_progressbar_two_color']);?>" data-track-color="<?php echo esc_attr($item['htmega_progressbar_track_color'] );?>" data-line-width="<?php echo esc_attr($item['htmega_progressbar_lineweight']['size'] );?>" data-size="<?php echo esc_attr($item['htmega_progressbar_size']['size'] );?>">
                                 <span style="<?php echo 'line-height:'. absint( $items_value_size ).'px;'; echo 'width:'. absint( $items_value_size ).'px;'; echo 'height:'. absint( $items_value_size ).'px;';?>"><?php echo esc_html( $item['htmega_progressbar_value']['size'] ).'%';?></span>
@@ -929,7 +929,7 @@ class HTMega_Elementor_Widget_Progress_Bar extends Widget_Base {
                         $this->add_render_attribute( $column_repeater_key, 'class', 'htmega-progress-indicator' );
                     }
                     ?>
-                    <div <?php echo $this->get_render_attribute_string( $column_repeater_key ); ?> >
+                    <div <?php echo $this->get_render_attribute_string( $column_repeater_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, self-escaping ?> >
                         <p class="htmega_progress_title"><?php echo wp_kses_post( $item['htmega_progressbar_title'] );?></p>
                         <div class="htb-progress">
                             <div class="htb-progress-bar wow <?php echo esc_attr( $progress_type_class ).' '; if( $settings['htmega_progress_bar_style'] == 'vertical' ){ echo 'fadeInUp'; }else{ echo 'fadeInLeft'; } ?>" data-wow-duration="0.5s" data-wow-delay=".3s" role="progressbar"

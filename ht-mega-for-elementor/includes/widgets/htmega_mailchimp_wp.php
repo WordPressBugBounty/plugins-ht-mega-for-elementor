@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
     }
     
     public function get_title() {
-        return esc_html__( 'Mailchimp for wp', 'htmega-addons' );
+        return esc_html__( 'Mailchimp for wp', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -40,7 +40,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => esc_html__( 'Mailchimp Wp', 'htmega-addons' ),
+                'label' => esc_html__( 'Mailchimp Wp', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -48,7 +48,8 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: plugin name with install/activate link */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Mailchimp%2520Wp&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">Mailchimp Wp</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -60,7 +61,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                 'parent_plugin_install',
                 [
                     'type' => Controls_Manager::RAW_HTML,
-                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Mailchimp%2520Wp&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate Mailchimp WP', 'htmega-addons' ) . '</a>',
+                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=Mailchimp%2520Wp&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate Mailchimp WP', 'ht-mega-for-elementor' ) . '</a>',
                 ]
             );
             
@@ -72,22 +73,22 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
         $this->start_controls_section(
             'htmega_mailchimp',
             [
-                'label' => esc_html__( 'Mailchimp', 'htmega-addons' ),
+                'label' => esc_html__( 'Mailchimp', 'ht-mega-for-elementor' ),
             ]
         );
         
             $this->add_control(
                 'htmega_mailchimp_form_style',
                 [
-                    'label' => esc_html__( 'Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => esc_html__( 'Style One', 'htmega-addons' ),
-                        '2'   => esc_html__( 'Style Two', 'htmega-addons' ),
-                        '3'   => esc_html__( 'Style Three', 'htmega-addons' ),
-                        '4'   => esc_html__( 'Style Four', 'htmega-addons' ),
-                        '5'   => esc_html__( 'Style Five', 'htmega-addons' ),
+                        '1'   => esc_html__( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => esc_html__( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => esc_html__( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => esc_html__( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => esc_html__( 'Style Five', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -95,10 +96,10 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_control(
                 'htmega_mailchimp_id',
                 [
-                    'label'       => esc_html__( 'Mailchimp ID', 'htmega-addons' ),
+                    'label'       => esc_html__( 'Mailchimp ID', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::TEXT,
-                    'placeholder' => esc_html__( '294', 'htmega-addons' ),
-                    'description' => esc_html__( 'For show ID <a href="admin.php?page=mailchimp-for-wp-forms" target="_blank"> Click here </a>', 'htmega-addons' ),
+                    'placeholder' => esc_html__( '294', 'ht-mega-for-elementor' ),
+                    'description' => esc_html__( 'For show ID <a href="admin.php?page=mailchimp-for-wp-forms" target="_blank"> Click here </a>', 'ht-mega-for-elementor' ),
                     'label_block' => true,
                     'separator'   => 'before',
                 ]
@@ -110,7 +111,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
         $this->start_controls_section(
             'htmega_mailchimp_section_style',
             [
-                'label' => esc_html__( 'Style', 'htmega-addons' ),
+                'label' => esc_html__( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -118,7 +119,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_mailchimp_section_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -131,7 +132,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_mailchimp_section_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -145,7 +146,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_mailchimp_section_background',
-                    'label' => esc_html__( 'Background', 'htmega-addons' ),
+                    'label' => esc_html__( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-input-box',
                 ]
@@ -154,23 +155,23 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_mailchimp_section_align',
                 [
-                    'label' => esc_html__( 'Alignment', 'htmega-addons' ),
+                    'label' => esc_html__( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => esc_html__( 'Left', 'htmega-addons' ),
+                            'title' => esc_html__( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => esc_html__( 'Center', 'htmega-addons' ),
+                            'title' => esc_html__( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => esc_html__( 'Right', 'htmega-addons' ),
+                            'title' => esc_html__( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => esc_html__( 'Justified', 'htmega-addons' ),
+                            'title' => esc_html__( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -188,7 +189,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
         $this->start_controls_section(
             'htmega_mailchimp_input_style',
             [
-                'label'     => esc_html__( 'Input Box', 'htmega-addons' ),
+                'label'     => esc_html__( 'Input Box', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -196,7 +197,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_input_box_height',
                 [
-                    'label' => esc_html__( 'Height', 'htmega-addons' ),
+                    'label' => esc_html__( 'Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -215,7 +216,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_input_box_width',
                 [
-                    'label' => esc_html__( 'Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
                     'range' => [
@@ -250,7 +251,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_control(
                 'htmega_input_box_background',
                 [
-                    'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .mc4wp-form input[type*="text"]'         => 'background-color: {{VALUE}};',
@@ -263,7 +264,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_control(
                 'htmega_input_box_text_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .mc4wp-form input[type*="text"]'  => 'color: {{VALUE}};',
@@ -275,7 +276,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_control(
                 'htmega_input_box_placeholder_color',
                 [
-                    'label'     => esc_html__( 'Placeholder Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Placeholder Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .mc4wp-form input[type*="text"]::-webkit-input-placeholder'  => 'color: {{VALUE}};',
@@ -293,7 +294,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_input_box_border',
-                    'label' => esc_html__( 'Border', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .mc4wp-form input[type*="email"]',
                 ]
             );
@@ -301,7 +302,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_input_box_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .mc4wp-form input[type*="text"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -314,7 +315,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_input_box_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -328,7 +329,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_input_box_margin',
                 [
-                    'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                    'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -345,7 +346,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
         $this->start_controls_section(
             'htmega_mailchimp_inputsubmit_style',
             [
-                'label'     => esc_html__( 'Button', 'htmega-addons' ),
+                'label'     => esc_html__( 'Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -356,14 +357,14 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                 $this->start_controls_tab(
                     'htmega_submit_style_normal_tab',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_responsive_control(
                         'htmega_input_submit_height',
                         [
-                            'label' => esc_html__( 'Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -382,7 +383,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_width',
                         [
-                            'label' => esc_html__( 'Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Width', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -397,7 +398,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_position',
                         [
-                            'label' => esc_html__( 'Position', 'htmega-addons' ),
+                            'label' => esc_html__( 'Position', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -427,7 +428,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                     $this->add_control(
                         'htmega_input_submit_text_color',
                         [
-                            'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .mc4wp-form input[type*="submit"]'  => 'color: {{VALUE}};',
@@ -438,7 +439,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                     $this->add_control(
                         'htmega_input_submit_background_color',
                         [
-                            'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .mc4wp-form input[type*="submit"]'  => 'background-color: {{VALUE}};',
@@ -449,7 +450,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -462,7 +463,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_margin',
                         [
-                            'label' => esc_html__( 'Margin', 'htmega-addons' ),
+                            'label' => esc_html__( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -476,7 +477,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_input_submit_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .mc4wp-form input[type*="submit"]',
                         ]
                     );
@@ -484,7 +485,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .mc4wp-form input[type*="submit"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -497,7 +498,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'htmega_input_submit_box_shadow',
-                            'label' => esc_html__( 'Box Shadow', 'htmega-addons' ),
+                            'label' => esc_html__( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .mc4wp-form input[type*="submit"]',
                         ]
                     );
@@ -508,14 +509,14 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                 $this->start_controls_tab(
                     'htmega_submit_style_hover_tab',
                     [
-                        'label' => esc_html__( 'Hover', 'htmega-addons' ),
+                        'label' => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'htmega_input_submithover_text_color',
                         [
-                            'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .mc4wp-form input[type*="submit"]:hover'  => 'color: {{VALUE}};',
@@ -526,7 +527,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                     $this->add_control(
                         'htmega_input_submithover_background_color',
                         [
-                            'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .mc4wp-form input[type*="submit"]:hover'  => 'background-color: {{VALUE}};',
@@ -538,7 +539,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_input_submithover_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .mc4wp-form input[type*="submit"]:hover',
                         ]
                     );
@@ -553,7 +554,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
 
     protected function render( $instance = [] ) {
         if ( ! is_plugin_active('mailchimp-for-wp/mailchimp-for-wp.php') ) {
-            htmega_plugin_missing_alert( __('Mailchimp Wp', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Mailchimp Wp', 'ht-mega-for-elementor') );
             return;
         }
         $settings   = $this->get_settings_for_display();
@@ -562,6 +563,7 @@ class HTMega_Elementor_Widget_Mailchimp_Wp extends Widget_Base {
         $this->add_render_attribute( 'mailchimp_area_attr', 'class', 'htmega-mailchimp-style-' . esc_attr( $settings['htmega_mailchimp_form_style'] ) );
        
         ?>
+            <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core and returns pre-escaped attribute output. ?>
             <div <?php echo $this->get_render_attribute_string( 'mailchimp_area_attr' ); ?> >
                 <div class="htmega-input-box">
                     <?php echo do_shortcode( '[mc4wp_form  id="'. esc_attr( $settings['htmega_mailchimp_id'] ) . '"]' ); ?>

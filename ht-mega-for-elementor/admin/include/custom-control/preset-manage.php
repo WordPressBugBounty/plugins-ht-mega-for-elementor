@@ -11,16 +11,18 @@ class Preset_Manage {
 
     public static function get_preset_design(){
 
-        if ( ! isset( $_GET['nonce'] ) || ! wp_verify_nonce( $_GET['nonce'], 'htmega_preset_select' ) ) {
-            wp_send_json_error( __( 'Invalid preset request', 'htmega-addons' ), 403 );
+        if ( ! isset( $_GET['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['nonce'] ) ), 'htmega_preset_select' ) ) {
+            wp_send_json_error( __( 'Invalid preset request', 'ht-mega-for-elementor' ), 403 );
         }
 
         if ( empty( $_GET['widget'] ) ) {
-            wp_send_json_error( __( 'Incomplete preset request', 'htmega-addons' ), 404 );
+            wp_send_json_error( __( 'Incomplete preset request', 'ht-mega-for-elementor' ), 404 );
         }
 
-        if ( ! ( $preset_designs = self::get_presets_option( $_GET['widget'] ) ) ) {
-            wp_send_json_error( __( 'Preset not found', 'htmega-addons' ), 404 );
+        $widget = sanitize_text_field( wp_unslash( $_GET['widget'] ) );
+
+        if ( ! ( $preset_designs = self::get_presets_option( $widget ) ) ) {
+            wp_send_json_error( __( 'Preset not found', 'ht-mega-for-elementor' ), 404 );
         }
 
         wp_send_json_success( $preset_designs, 200 );

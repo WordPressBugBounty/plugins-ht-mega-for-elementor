@@ -12,7 +12,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Testimonial Carousel', 'htmega-addons' );
+        return __( 'Testimonial Carousel', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -49,30 +49,30 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_content_section',
             [
-                'label' => __( 'Testimonial Carousel', 'htmega-addons' ),
+                'label' => __( 'Testimonial Carousel', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'htmega_testimonial_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
-                        '6'   => __( 'Style Six', 'htmega-addons' ),
-                        '7'   => __( 'Style Seven', 'htmega-addons' ),
-                        '8'   => __( 'Style Eight', 'htmega-addons' ),
-                        '9'   => __( 'Style Nine', 'htmega-addons' ),
-                        '10'   => __( 'Style Ten', 'htmega-addons' ),
-                        '11'   => __( 'Style Eleven', 'htmega-addons' ),
-                        '12'   => __( 'Style Twelve', 'htmega-addons' ),
-                        '13'   => __( 'Style Thirteen', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6'   => __( 'Style Six', 'ht-mega-for-elementor' ),
+                        '7'   => __( 'Style Seven', 'ht-mega-for-elementor' ),
+                        '8'   => __( 'Style Eight', 'ht-mega-for-elementor' ),
+                        '9'   => __( 'Style Nine', 'ht-mega-for-elementor' ),
+                        '10'   => __( 'Style Ten', 'ht-mega-for-elementor' ),
+                        '11'   => __( 'Style Eleven', 'ht-mega-for-elementor' ),
+                        '12'   => __( 'Style Twelve', 'ht-mega-for-elementor' ),
+                        '13'   => __( 'Style Thirteen', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -80,7 +80,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slider_on',
                 [
-                    'label' => esc_html__( 'Slider', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -90,9 +90,9 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'column_gap',
                 [
-                    'label' => esc_html__( 'Column Gap', 'htmega-addons' ),
+                    'label' => esc_html__( 'Column Gap', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
-                    'description' => esc_html__( 'Add Column gap Ex. 15px', 'htmega-addons' ),
+                    'description' => esc_html__( 'Add Column gap Ex. 15px', 'ht-mega-for-elementor' ),
                     'range' => [
                         'px' => [
                             'min' => 0,
@@ -112,25 +112,25 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $repeater->add_control(
                 'client_name',
                 [
-                    'label'   => __( 'Name', 'htmega-addons' ),
+                    'label'   => __( 'Name', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __('Carolina Monntoya','htmega-addons'),
+                    'default' => __('Carolina Monntoya','ht-mega-for-elementor'),
                 ]
             );
 
             $repeater->add_control(
                 'client_designation',
                 [
-                    'label'   => __( 'Designation', 'htmega-addons' ),
+                    'label'   => __( 'Designation', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __('Managing Director','htmega-addons'),
+                    'default' => __('Managing Director','ht-mega-for-elementor'),
                 ]
             );
             
             $repeater->add_control(
                 'client_image',
                 [
-                    'label' => __( 'Image', 'htmega-addons' ),
+                    'label' => __( 'Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                 ]
             );
@@ -147,15 +147,15 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $repeater->add_control(
                 'client_say',
                 [
-                    'label'   => __( 'Client Say', 'htmega-addons' ),
+                    'label'   => __( 'Client Say', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXTAREA,
-                    'default' => __('Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','htmega-addons'),
+                    'default' => __('Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','ht-mega-for-elementor'),
                 ]
             );
             $repeater->add_control(
                 'client_rating',
                 [
-                    'label' => __( 'Client Rating', 'htmega-addons' ),
+                    'label' => __( 'Client Rating', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 5,
@@ -171,21 +171,21 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     'default' => [
 
                         [
-                            'client_name'           => __('Carolina Monntoya','htmega-addons'),
-                            'client_designation'    => __( 'Managing Director','htmega-addons' ),
-                            'client_say'            => __( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'htmega-addons' ),
+                            'client_name'           => __('Carolina Monntoya','ht-mega-for-elementor'),
+                            'client_designation'    => __( 'Managing Director','ht-mega-for-elementor' ),
+                            'client_say'            => __( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'ht-mega-for-elementor' ),
                         ],
 
                         [
-                            'client_name'           => __('Peter Rose','htmega-addons'),
-                            'client_designation'    => __( 'Manager','htmega-addons' ),
-                            'client_say'            => __( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'htmega-addons' ),
+                            'client_name'           => __('Peter Rose','ht-mega-for-elementor'),
+                            'client_designation'    => __( 'Manager','ht-mega-for-elementor' ),
+                            'client_say'            => __( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'ht-mega-for-elementor' ),
                         ],
 
                         [
-                            'client_name'           => __('Gerald Gilbert','htmega-addons'),
-                            'client_designation'    => __( 'Developer','htmega-addons' ),
-                            'client_say'            => __( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'htmega-addons' ),
+                            'client_name'           => __('Gerald Gilbert','ht-mega-for-elementor'),
+                            'client_designation'    => __( 'Developer','ht-mega-for-elementor' ),
+                            'client_say'            => __( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'ht-mega-for-elementor' ),
                         ],
                     ],
                     'title_field' => '{{{ client_name }}}',
@@ -195,7 +195,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'client_image_divider',
                 [
-                    'label' => __( 'Divider image', 'htmega-addons' ),
+                    'label' => __( 'Divider image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'separator' => 'before',
                     'condition'=>[
@@ -223,7 +223,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'testimonial-slider-option',
             [
-                'label' => esc_html__( 'Slider Option', 'htmega-addons' ),
+                'label' => esc_html__( 'Slider Option', 'ht-mega-for-elementor' ),
                 'condition' => [
                     'slider_on' => 'yes',
                 ]
@@ -233,7 +233,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slitems',
                 [
-                    'label' => esc_html__( 'Slider Items', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Items', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 10,
@@ -248,7 +248,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slarrows',
                 [
-                    'label' => esc_html__( 'Slider Arrow', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Arrow', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -260,13 +260,13 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slarrows_style',
                 [
-                    'label' => __( 'Arrow Style', 'htmega-addons' ),
+                    'label' => __( 'Arrow Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
                     ],
                     'condition' => [
                         'slider_on' => 'yes',
@@ -278,7 +278,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slprevicon',
                 [
-                    'label' => __( 'Previous icon', 'htmega-addons' ),
+                    'label' => __( 'Previous icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-left',
@@ -294,7 +294,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slnexticon',
                 [
-                    'label' => __( 'Next icon', 'htmega-addons' ),
+                    'label' => __( 'Next icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-angle-right',
@@ -310,7 +310,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'sldots',
                 [
-                    'label' => esc_html__( 'Slider dots', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider dots', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -324,11 +324,11 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 'slpause_on_hover',
                 [
                     'type' => Controls_Manager::SWITCHER,
-                    'label_off' => __('No', 'htmega-addons'),
-                    'label_on' => __('Yes', 'htmega-addons'),
+                    'label_off' => __('No', 'ht-mega-for-elementor'),
+                    'label_on' => __('Yes', 'ht-mega-for-elementor'),
                     'return_value' => 'yes',
                     'default' => 'yes',
-                    'label' => __('Pause on Hover?', 'htmega-addons'),
+                    'label' => __('Pause on Hover?', 'ht-mega-for-elementor'),
                     'condition' => [
                         'slider_on' => 'yes',
                     ]
@@ -338,7 +338,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slcentermode',
                 [
-                    'label' => esc_html__( 'Center Mode', 'htmega-addons' ),
+                    'label' => esc_html__( 'Center Mode', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -351,7 +351,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slcenterpadding2',
                 [
-                    'label' => esc_html__( 'Center padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Center padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 500,
@@ -367,7 +367,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slautolay',
                 [
-                    'label' => esc_html__( 'Slider auto play', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider auto play', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'separator' => 'before',
@@ -381,7 +381,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slautoplay_speed',
                 [
-                    'label' => __('Autoplay speed', 'htmega-addons'),
+                    'label' => __('Autoplay speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 3000,
                     'condition' => [
@@ -395,7 +395,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slanimation_speed',
                 [
-                    'label' => __('Slide animation speed', 'htmega-addons'),
+                    'label' => __('Slide animation speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 300,
                     'condition' => [
@@ -407,7 +407,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slscroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 10,
@@ -422,7 +422,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'heading_tablet',
                 [
-                    'label' => __( 'Tablet', 'htmega-addons' ),
+                    'label' => __( 'Tablet', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition' => [
@@ -434,7 +434,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'sltablet_display_columns',
                 [
-                    'label' => __('Slider Items', 'htmega-addons'),
+                    'label' => __('Slider Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 8,
@@ -449,7 +449,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'sltablet_scroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 8,
@@ -464,8 +464,8 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'sltablet_width',
                 [
-                    'label' => __('Tablet Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to tablet.', 'htmega-addons'),
+                    'label' => __('Tablet Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to tablet.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 750,
                     'condition' => [
@@ -477,7 +477,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'heading_mobile',
                 [
-                    'label' => __( 'Mobile Phone', 'htmega-addons' ),
+                    'label' => __( 'Mobile Phone', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'after',
                     'condition' => [
@@ -489,7 +489,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slmobile_display_columns',
                 [
-                    'label' => __('Slider Items', 'htmega-addons'),
+                    'label' => __('Slider Items', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -504,7 +504,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slmobile_scroll_columns',
                 [
-                    'label' => __('Slider item to scroll', 'htmega-addons'),
+                    'label' => __('Slider item to scroll', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 1,
                     'max' => 4,
@@ -519,8 +519,8 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'slmobile_width',
                 [
-                    'label' => __('Mobile Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to mobile.', 'htmega-addons'),
+                    'label' => __('Mobile Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to mobile.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 480,
                     'condition' => [
@@ -535,7 +535,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_style_area',
             [
-                'label' => __( 'Section Style', 'htmega-addons' ),
+                'label' => __( 'Section Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -543,7 +543,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -556,7 +556,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -571,7 +571,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'testimonial_style_section',
             [
-                'label' => __( 'Item Box Style', 'htmega-addons' ),
+                'label' => __( 'Item Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -582,14 +582,14 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->start_controls_tab(
                 'box_tab_normal_style',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_responsive_control(
                 'box_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -602,7 +602,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'box_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -616,7 +616,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'box_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .testimonal',
                 ]
@@ -625,7 +625,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'box_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .testimonal',
                 ]
             );
@@ -633,7 +633,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'box_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .testimonal,.testimonal:before' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -644,14 +644,14 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .testimonal',
                 ]
             );
             $this->add_responsive_control(
                 'image_nave_max_width',
                 [
-                    'label' => __( 'Image slider Max Width(%)', 'htmega-addons' ),
+                    'label' => __( 'Image slider Max Width(%)', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         '%' => [
@@ -673,14 +673,14 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->start_controls_tab(
                 'box_tabs_hover_style',
                 [
-                    'label' => __( 'Hover', 'htmega-addons' ),
+                    'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_group_control(
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'box_background_hover',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .testimonal:before',
                 ]
@@ -689,14 +689,14 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'box_border_hover',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .testimonal:hover',
                 ]
             );
             $this->add_control(
                 'box_hover_content_color',
                 [
-                    'label' => __( 'All Content Color', 'htmega-addons' ),
+                    'label' => __( 'All Content Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-testimonial-area .testimonal:hover .content p,
@@ -714,7 +714,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'box_shadow_hover',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .testimonal:hover',
                 ]
             );
@@ -726,7 +726,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_image_style',
             [
-                'label'     => __( 'Image', 'htmega-addons' ),
+                'label'     => __( 'Image', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -735,14 +735,14 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_testimonial_image_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .testimonal-image img',
                 ]
             );
             $this->add_control(
                 'htmega_testimonial_border_color',
                 [
-                    'label' => __( 'Border Color', 'htmega-addons' ),
+                    'label' => __( 'Border Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-testimonial-style-4 .testimonal .testimonal-image::after' => 'border-left-color: {{VALUE}};',
@@ -756,7 +756,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'image_arrow_shape',
                 [
-                    'label' => esc_html__( 'Arrow Shape', 'htmega-addons' ),
+                    'label' => esc_html__( 'Arrow Shape', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -769,7 +769,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_image_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .testimonal-image img' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -780,7 +780,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'image_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .slick-slide.slick-active.slick-center .testimonal-img img',
                     'condition' =>[
                         'htmega_testimonial_style' => array( '5','11' ),
@@ -790,7 +790,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_image_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -806,7 +806,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_image_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -818,7 +818,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'image_box_width',
                 [
-                    'label' => __( 'Image Box Width', 'htmega-addons' ),
+                    'label' => __( 'Image Box Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         '%' => [
@@ -840,7 +840,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_name_style',
             [
-                'label'     => __( 'Name', 'htmega-addons' ),
+                'label'     => __( 'Name', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -848,23 +848,23 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_name_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -879,7 +879,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'htmega_testimonial_name_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#3e3e3e',
                     'selectors' => [
@@ -900,7 +900,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_name_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -914,7 +914,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_name_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -931,7 +931,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_designation_style',
             [
-                'label'     => __( 'Designation', 'htmega-addons' ),
+                'label'     => __( 'Designation', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -939,23 +939,23 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_designation_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -970,7 +970,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'htmega_testimonial_designation_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#3e3e3e',
                     'selectors' => [
@@ -991,7 +991,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_designation_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1005,7 +1005,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_designation_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1018,7 +1018,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'designation_border',
                 [
-                    'label' => esc_html__( 'Border On Left ', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border On Left ', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -1031,7 +1031,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'designation_border_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1052,7 +1052,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'designation_border_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1073,7 +1073,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'designation_shape_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-testimonial-area .testimonal .content span:before',
                     'condition' =>[
@@ -1089,7 +1089,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_clientsay_style',
             [
-                'label'     => __( 'Client say', 'htmega-addons' ),
+                'label'     => __( 'Client say', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1097,23 +1097,23 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_clientsay_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1128,7 +1128,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'htmega_testimonial_clientsay_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#3e3e3e',
                     'selectors' => [
@@ -1149,7 +1149,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'clientsay_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .testimonial-desc,{{WRAPPER}} .htmega-testimonial-style-6 .testimonal .content',
                     'condition'=>[
@@ -1160,7 +1160,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'htmega_testimonialclient_say_arrrow_color',
                 [
-                    'label' => __( 'Arrow Color', 'htmega-addons' ),
+                    'label' => __( 'Arrow Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-testimonial-style-6 .testimonal .content .triangle' => 'border-top-color: {{VALUE}};',
@@ -1173,7 +1173,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'htmega_testimonialclient_say_quote_color',
                 [
-                    'label' => __( 'Quote Color', 'htmega-addons' ),
+                    'label' => __( 'Quote Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-testimonial-style-7 .testimonal p::before' => 'color: {{VALUE}};',
@@ -1187,7 +1187,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'content_boxshadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-testimonial-style-6 .testimonal .content',
                     'condition'=>[
                         'htmega_testimonial_style' => array('6'),
@@ -1197,7 +1197,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_clientsay_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1211,7 +1211,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_clientsay_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -1225,7 +1225,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_clientsa_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-testimonial-area .htmega-testimonial-for .testimonial-desc' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1238,7 +1238,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'client_say_quote_style',
                 [
-                    'label' => __( 'Quote/ Divider Style', 'htmega-addons' ),
+                    'label' => __( 'Quote/ Divider Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                     'condition'=>[
@@ -1249,7 +1249,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'client_say_quote_position',
                 [
-                    'label' => __( 'Position', 'htmega-addons' ),
+                    'label' => __( 'Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -1278,7 +1278,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_borderstyle',
             [
-                'label'     => __( 'Border Shape Style', 'htmega-addons' ),
+                'label'     => __( 'Border Shape Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'htmega_testimonial_style' => array('3','10'),
@@ -1288,7 +1288,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->add_control(
             'shape_position',
             [
-                'label' => esc_html__( 'Shape On Top', 'htmega-addons' ),
+                'label' => esc_html__( 'Shape On Top', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'no',
@@ -1300,7 +1300,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->add_responsive_control(
             'line_border_width',
             [
-                'label' => __( 'Width', 'htmega-addons' ),
+                'label' => __( 'Width', 'ht-mega-for-elementor' ),
                 'type'  => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1323,7 +1323,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->add_responsive_control(
             'line_border_height',
             [
-                'label' => __( 'Height', 'htmega-addons' ),
+                'label' => __( 'Height', 'ht-mega-for-elementor' ),
                 'type'  => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1344,7 +1344,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'testimonial_shape_background',
-                'label' => __( 'Background', 'htmega-addons' ),
+                'label' => __( 'Background', 'ht-mega-for-elementor' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htmega-testimonial-style-3 .testimonal .content .clint-info::before',
                 'condition'=>[
@@ -1357,14 +1357,14 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_clientrating_style',
             [
-                'label'     => __( 'Rating', 'htmega-addons' ),
+                'label'     => __( 'Rating', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'rating_position',
             [
-                'label' => esc_html__( 'Rating On Right', 'htmega-addons' ),
+                'label' => esc_html__( 'Rating On Right', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'no',
@@ -1376,7 +1376,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_control(
                 'htmega_testimonial_clientrating_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-testimonial-rating' => 'color: {{VALUE}};',
@@ -1386,7 +1386,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_clientrating_margin',
                 [
-                    'label' => __( 'Inner spacing', 'htmega-addons' ),
+                    'label' => __( 'Inner spacing', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1405,7 +1405,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_testimonial_clientrating_size',
                 [
-                    'label' => __( 'Font Size', 'htmega-addons' ),
+                    'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1427,7 +1427,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_arrow_style',
             [
-                'label'     => __( 'Arrow', 'htmega-addons' ),
+                'label'     => __( 'Arrow', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'slider_on' => 'yes',
@@ -1442,14 +1442,14 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 $this->start_controls_tab(
                     'testimonial_arrow_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'htmega_testimonial_arrow_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#7d7d7d',
                             'selectors' => [
@@ -1462,7 +1462,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_testimonial_arrow_fontsize',
                         [
-                            'label' => __( 'Font Size', 'htmega-addons' ),
+                            'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1491,7 +1491,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'testimonial_arrow_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-testimonial-area .slick-arrow',
                         ]
@@ -1501,7 +1501,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_testimonial_arrow_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-testimonial-area .slick-arrow',
                         ]
                     );
@@ -1509,7 +1509,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_testimonial_arrow_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-testimonial-area .slick-arrow' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1520,7 +1520,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_control(
                         'htmega_testimonial_arrow_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1547,7 +1547,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_control(
                         'htmega_testimonial_arrow_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1574,7 +1574,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_testimonial_arrow_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1586,7 +1586,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_horizontal_postion',
                         [
-                            'label' => __( 'Horizontal Position', 'htmega-addons' ),
+                            'label' => __( 'Horizontal Position', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1615,7 +1615,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'slider_arrow_vertical_postion',
                         [
-                            'label' => __( 'Vertical Position', 'htmega-addons' ),
+                            'label' => __( 'Vertical Position', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1643,7 +1643,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'slider_arrow_boxshadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '.htmega-testimonial-area .slick-arrow',
                             
                         ]
@@ -1654,14 +1654,14 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 $this->start_controls_tab(
                     'testimonial_arrow_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'htmega_testimonial_arrow_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -1675,7 +1675,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'testimonial_arrow_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-testimonial-area .slick-arrow:hover',
                         ]
@@ -1685,7 +1685,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_testimonial_arrow_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-testimonial-area .slick-arrow:hover',
                         ]
                     );
@@ -1693,7 +1693,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_testimonial_arrow_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-testimonial-area .slick-arrow:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1704,7 +1704,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'slider_arrow_boxshadow_hover',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '.htmega-testimonial-area .slick-arrow:hover',
                             
                         ]
@@ -1720,7 +1720,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         $this->start_controls_section(
             'htmega_testimonial_dots_style',
             [
-                'label'     => __( 'Pagination', 'htmega-addons' ),
+                'label'     => __( 'Pagination', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'slider_on' => 'yes',
@@ -1735,13 +1735,13 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 $this->start_controls_tab(
                     'testimonial_dots_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                 $this->add_control(
                     'testimonial_dots_color',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-testimonial-area .slick-dots li button,{{WRAPPER}} .htmega-testimonial-style-4 ul.slick-dots li button::before' => 'color: {{VALUE}};',
@@ -1755,7 +1755,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'testimonial_dots_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-testimonial-area .slick-dots li button',
                         ]
@@ -1765,7 +1765,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_testimonial_dots_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-testimonial-area .slick-dots li button',
                         ]
                     );
@@ -1773,7 +1773,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_testimonial_dots_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-testimonial-area .slick-dots li button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1784,7 +1784,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_control(
                         'htmega_testimonial_dots_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1811,7 +1811,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_control(
                         'htmega_testimonial_dots_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1837,7 +1837,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega-testimonial_dots_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1849,7 +1849,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_testimonial_vertical_width',
                         [
-                            'label' => __( 'Vertical Space', 'htmega-addons' ),
+                            'label' => __( 'Vertical Space', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1874,13 +1874,13 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 $this->start_controls_tab(
                     'testimonial_dots_style_hover_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
                 $this->add_control(
                     'testimonial_dots_active_color',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-testimonial-area .slick-dots li.slick-active button,{{WRAPPER}} .htmega-testimonial-style-4 ul.slick-dots li.slick-active button::before' => 'color: {{VALUE}};',
@@ -1895,7 +1895,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'testimonial_dots_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-testimonial-area .slick-dots li.slick-active button',
                         ]
@@ -1905,7 +1905,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_testimonial_dots_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-testimonial-area .slick-dots li.slick-active button',
                         ]
                     );
@@ -1913,7 +1913,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_testimonial_dots_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-testimonial-area .slick-dots li.slick-active button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1991,9 +1991,16 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         }
 
         $s_display_none = ( 'yes' == $settings['slider_on'] ) ? ' style="display:none;"':'';
-       
+
 
         ?>
+            <?php
+            // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- All dynamic output in this block is already safe:
+            // $this->get_render_attribute_string() is Elementor core (self-escaping); Group_Control_Image_Size::get_attachment_image_html()
+            // is Elementor core (self-escaping); htmega_kses_title()/htmega_kses_desc() sanitize via wp_kses() (see includes/helper-function.php);
+            // client_say uses wp_kses_post(); client_designation uses esc_html(); $s_display_none is constrained to the hardcoded literal
+            // ' style="display:none;"' or '' based on a boolean toggle, never raw user input.
+            ?>
             <div <?php echo $this->get_render_attribute_string( 'testimonial_area_attr' ).$s_display_none; ?>>
 
                 <?php if( $settings['htmega_testimonial_style'] == 5 ): ?>
@@ -2524,8 +2531,9 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
                 endif;
                 ?>
             </div>
+            <?php // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 
-            <?php 
+            <?php
                  $htmega_print_css = '';
             ?>
              <!-- Border style  -->

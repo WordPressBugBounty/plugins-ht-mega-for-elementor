@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * [htmegaopt_data_clean] clean array data
  *
@@ -82,64 +85,23 @@ function htmegaopt_get_options( $registered_settings = [] ) {
 }
 }
 /**
- * Get list of elements for the onboarding
+ * NOTE: get_elements_list(), get_modules_list(), and extractElementData() were previously
+ * duplicated here as bare global functions, left behind after this logic was moved into
+ * Onboarding::get_elements_list() / ::get_modules_list() / ::extractElementData(). They were
+ * never called anywhere as bare functions (confirmed: only Onboarding's own `$this->...()`
+ * calls exist, which resolve to the class methods). The global get_elements_list()/
+ * get_modules_list() versions also referenced `$this` outside any object context, so calling
+ * them directly would have fatal-errored. Removed as dead, unreachable code.
  */
-if ( ! function_exists( 'get_elements_list' ) ) {
-    function get_elements_list() {
-        $elements_all_settings = Options_Field::instance()->get_registered_settings();
-        $elements_all_settings = $elements_all_settings['htmega_element_tabs'];
-        $elements = $this->extractElementData($elements_all_settings);
-        $defaults = array_column($elements, 'default', 'key');
-        return $defaults;
-    }
-}
-/**
- * Get list of modules for the onboarding
- */
-if ( ! function_exists( 'get_modules_list' ) ) {
-function get_modules_list() {
-    $module_all_settings = Options_Field::instance()->get_registered_settings();
-    $module_all_settings = $module_all_settings['htmega_advance_element_tabs'];
-    $modules = $this->extractElementData($module_all_settings);
-    $defaults = array_column($modules, 'default', 'key');
-    return $defaults;
-}
-}
-
-/**
- * Extract element data from an array
- */
-if ( ! function_exists( 'extractElementData' ) ) {
-function extractElementData($array) {
-    $result = [];
-
-    // Loop through each element in the array
-    foreach ($array as $item) {
-        // Initialize default values for each item
-        $key = $item['key'] ?? $item['id'] ?? '';
-        $name = $item['name'] ?? $item['name'] ?? '';
-        $status =  $item['is_pro'] ?? $item['is_pro'] ?? false;
-        $default =  $item['default'] ?? $item['default'] ?? false;
-        $result[] = [
-            'key' => $key,
-            'name' => $name,
-            'is_pro' => $status,
-            'default' => $default,
-        ];
-    }
-
-    return $result;
-}
-}
-add_action( 'wp_ajax_htmega_get_sidebar_content', 'get_sidebar_content' );
+add_action( 'wp_ajax_htmega_get_sidebar_content', 'htmega_get_sidebar_content' );
     /**
      * AJAX handler for getting sidebar banner content
      */
-     function get_sidebar_content() {
+     function htmega_get_sidebar_content() {
         try {
             // Prevent any unwanted output
-            @error_reporting(0);
-            @ini_set('display_errors', 0);
+            @error_reporting(0); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.prevent_path_disclosure_error_reporting -- disables (not enables) error display for this AJAX handler only, to stop a stray notice/warning from an unrelated plugin/theme corrupting the JSON response body.
+            @ini_set('display_errors', 0); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged -- same reasoning as above; scoped to this request only, restores nothing globally.
 
             if (!current_user_can('manage_options')) {
                 wp_send_json_error(array('message' => 'Unauthorized access'));
@@ -158,7 +120,7 @@ add_action( 'wp_ajax_htmega_get_sidebar_content', 'get_sidebar_content' );
             $template_path = HTMEGA_ADDONS_PL_PATH . 'admin/include/settings-panel/includes/templates/sidebar-banner.php';
             
             if (!file_exists($template_path)) {
-                wp_send_json_error(array('message' => esc_html__('Template file not found', 'htmega-addons')));
+                wp_send_json_error(array('message' => esc_html__('Template file not found', 'ht-mega-for-elementor')));
                 return;
             }
 
@@ -172,7 +134,7 @@ add_action( 'wp_ajax_htmega_get_sidebar_content', 'get_sidebar_content' );
             }
 
             if (empty($content)) {
-                wp_send_json_error(array('message' => esc_html__('Empty content', 'htmega-addons')));
+                wp_send_json_error(array('message' => esc_html__('Empty content', 'ht-mega-for-elementor')));
                 return;
             }
 

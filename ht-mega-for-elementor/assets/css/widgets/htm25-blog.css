@@ -365,6 +365,7 @@
   height: 28px;
   border-radius: 50%;
   object-fit: cover;
+  box-sizing: border-box;
   flex-shrink: 0;
 }
 

@@ -278,7 +278,7 @@ if ( ! class_exists( 'HTMega_Diagnostic_Data' ) ) {
         private function get_server_info() {
             global $wpdb;
 
-            $software = ( ( isset( $_SERVER['SERVER_SOFTWARE'] ) && ! empty( $_SERVER['SERVER_SOFTWARE'] ) ) ? $_SERVER['SERVER_SOFTWARE'] : '' );
+            $software = ( ( isset( $_SERVER['SERVER_SOFTWARE'] ) && ! empty( $_SERVER['SERVER_SOFTWARE'] ) ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : '' );
             $php_version = ( function_exists( 'phpversion' ) ? phpversion() : '' );
             $mysql_version = ( method_exists( $wpdb, 'db_version' ) ? $wpdb->db_version() : '' );
             $php_max_upload_size = size_format( wp_max_upload_size() );
@@ -579,17 +579,21 @@ if ( ! class_exists( 'HTMega_Diagnostic_Data' ) ) {
         private function show_core_notice() {
             $ajax_nonce = wp_create_nonce( "htmega-diagonstic-data-ajax-request" );
 
-            $message_l2 = sprintf( esc_html__( 'Server information (Web server, PHP version, MySQL version), WordPress information, site name, site URL, number of plugins, number of users, your name, and email address. You can rest assured that no sensitive data will be collected or tracked. %1$sPrivacy Policy%2$s', 'htmega-addons' ), '<a target="_blank" href="' . esc_url( $this->privacy_policy ) . '">', '</a>' );
+            /* translators: %1$s: Opening anchor tag linking to the privacy policy, %2$s: Closing anchor tag */
+            $message_l2 = sprintf( esc_html__( 'Server information (Web server, PHP version, MySQL version), WordPress information, site name, site URL, number of plugins, number of users, your name, and email address. You can rest assured that no sensitive data will be collected or tracked. %1$sPrivacy Policy%2$s', 'ht-mega-for-elementor' ), '<a target="_blank" href="' . esc_url( $this->privacy_policy ) . '">', '</a>' );
 
-            $button_text_1 = esc_html__( 'Count Me In', 'htmega-addons' );
+            $button_text_1 = esc_html__( 'Count Me In', 'ht-mega-for-elementor' );
             $button_link_1 = add_query_arg( array( 'htmega-diagnostic-data-agreed' => 1 ) );
 
-            $button_text_2 = esc_html__( 'No, Thanks', 'htmega-addons' );
+            $button_text_2 = esc_html__( 'No, Thanks', 'ht-mega-for-elementor' );
             $button_link_2 = add_query_arg( array( 'htmega-diagnostic-data-agreed' => 0 ) );
             ?>
             <div class="htmega-diagnostic-data-style"><style>.htmega-diagnostic-data-notice,.woocommerce-embed-page .htmega-diagnostic-data-notice{padding-top:.75em;padding-bottom:.75em;}.htmega-diagnostic-data-notice .htmega-diagnostic-data-buttons,.htmega-diagnostic-data-notice .htmega-diagnostic-data-list,.htmega-diagnostic-data-notice .htmega-diagnostic-data-message{padding:.25em 2px;margin:0;}.htmega-diagnostic-data-notice .htmega-diagnostic-data-list{display:none;color:#646970;}.htmega-diagnostic-data-notice .htmega-diagnostic-data-buttons{padding-top:.75em;}.htmega-diagnostic-data-notice .htmega-diagnostic-data-buttons .button{margin-right:5px;box-shadow:none;}.htmega-diagnostic-data-loading{position:relative;}.htmega-diagnostic-data-loading::before{position:absolute;content:"";width:100%;height:100%;top:0;left:0;background-color:rgba(255,255,255,.5);z-index:999;}.htmega-diagnostic-data-disagree{border-width:0px !important;background-color: transparent!important; padding: 0!important;}.htmega-diagnostic-data-list-toogle{cursor:pointer;color:#2271b1;text-decoration:none;}</style></div>
             <div class="htmega-diagnostic-data-notice notice notice-info">
-                <p class="htmega-diagnostic-data-message"><?php echo wp_kses_post( sprintf( esc_html__( 'Want to help make %2$s%1$s%3$s even more awesome? Allow %1$s to collect diagnostic data and usage information. (%4$swhat we collect%5$s)', 'htmega-addons' ), esc_html( $this->project_name ), '<strong>', '</strong>', '<a href="#" class="htmega-diagnostic-data-list-toogle">', '</a>' ) ); ?></p>
+                <p class="htmega-diagnostic-data-message"><?php
+                    /* translators: %1$s: Plugin name, %2$s: Opening <strong> tag, %3$s: Closing </strong> tag, %4$s: Opening anchor tag toggling the collected-data list, %5$s: Closing anchor tag */
+                    echo wp_kses_post( sprintf( esc_html__( 'Want to help make %2$s%1$s%3$s even more awesome? Allow %1$s to collect diagnostic data and usage information. (%4$swhat we collect%5$s)', 'ht-mega-for-elementor' ), esc_html( $this->project_name ), '<strong>', '</strong>', '<a href="#" class="htmega-diagnostic-data-list-toogle">', '</a>' ) );
+                ?></p>
                 <p class="htmega-diagnostic-data-list"><?php echo wp_kses_post( $message_l2 ); ?></p>
                 <p class="htmega-diagnostic-data-buttons">
                     <a href="<?php echo esc_url( $button_link_1 ); ?>" class="htmega-diagnostic-data-button htmega-diagnostic-data-agree button button-primary"><?php echo esc_html( $button_text_1 ); ?></a>
@@ -604,7 +608,7 @@ if ( ! class_exists( 'HTMega_Diagnostic_Data' ) ) {
          * Get thanks notice.
          */
         private function get_thanks_notice() {
-            $message = sprintf(/* translators: 1: Project Name, 2: Opening strong tag, 3: Closing strong tag */ esc_html__( 'Thank you very much for supporting %2$s%1$s%3$s.', 'htmega-addons' ), $this->project_name, '<strong>', '</strong>' );
+            $message = sprintf(/* translators: 1: Project Name, 2: Opening strong tag, 3: Closing strong tag */ esc_html__( 'Thank you very much for supporting %2$s%1$s%3$s.', 'ht-mega-for-elementor' ), $this->project_name, '<strong>', '</strong>' );
             $notice = sprintf( '<div class="htmega-diagnostic-data-thanks notice notice-success is-dismissible"><p>%1$s</p><button type="button" class="notice-dismiss"><span class="screen-reader-text"></span></button></div>', wp_kses_post( $message ) );
 
             return $notice;

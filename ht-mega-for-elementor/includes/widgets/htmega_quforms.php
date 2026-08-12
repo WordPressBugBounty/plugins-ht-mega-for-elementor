@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'QU Form', 'htmega-addons' );
+        return __( 'QU Form', 'ht-mega-for-elementor' );
     }
 
     public function get_keywords() {
@@ -33,14 +33,14 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         if ( class_exists( 'Quform' ) ) {
             $quform = \Quform::getService('repository');
             $quform = $quform->formsToSelectArray();
-            $form_options = ['0' => esc_html__( 'Select Form', 'htmega-addons' )];
+            $form_options = ['0' => esc_html__( 'Select Form', 'ht-mega-for-elementor' )];
             if ( ! empty( $quform ) && ! is_wp_error( $quform ) ) {
                 foreach ( $quform as $id => $name ) {
                     $form_options[esc_attr( $id )] = esc_html( $name );
                 }
             }
         } else {
-            $form_options = ['0' => esc_html__( 'Form Not Found!', 'htmega-addons' ) ];
+            $form_options = ['0' => esc_html__( 'Form Not Found!', 'ht-mega-for-elementor' ) ];
         }
         return $form_options;
     }
@@ -56,7 +56,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'QUforms', 'htmega-addons' ),
+                'label' => __( 'QUforms', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -64,7 +64,8 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: Linked plugin name (QUforms), repeated twice in the sentence */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=QUforms&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">QUforms</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -76,7 +77,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 'parent_plugin_install',
                 [
                     'type' => Controls_Manager::RAW_HTML,
-                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=QUforms&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate QUforms', 'htmega-addons' ) . '</a>',
+                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=QUforms&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate QUforms', 'ht-mega-for-elementor' ) . '</a>',
                 ]
             );
             
@@ -88,14 +89,14 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         $this->start_controls_section(
             'quform_content',
             [
-                'label' => __( 'QU Form', 'htmega-addons' ),
+                'label' => __( 'QU Form', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'contact_form_list',
                 [
-                    'label'   => esc_html__( 'Select Form', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Form', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => '0',
                     'options' => $this->htmega_quform_list(),
@@ -108,26 +109,26 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         $this->start_controls_section(
             'quform_label_style',
             [
-                'label'     => __( 'Label', 'htmega-addons' ),
+                'label'     => __( 'Label', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
             'label_align',
             [
-                'label' => __( 'Alignment', 'htmega-addons' ),
+                'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'htmega-addons' ),
+                        'title' => __( 'Left', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'htmega-addons' ),
+                        'title' => __( 'Center', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'htmega-addons' ),
+                        'title' => __( 'Right', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-text-align-right',
                     ]
                 ],
@@ -139,7 +140,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'quform_label_background',
                 [
-                    'label'     => __( 'Background', 'htmega-addons' ),
+                    'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-form-inner .quform-label-text,{{WRAPPER}} .quform-option .quform-option-label'   => 'background-color: {{VALUE}};',
@@ -150,7 +151,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'quform_label_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-form-inner .quform-label-text,{{WRAPPER}} .quform-option .quform-option-label'   => 'color: {{VALUE}};',
@@ -160,7 +161,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'label_required_color',
                 [
-                    'label'     => __( 'Required Symbol Color', 'htmega-addons' ),
+                    'label'     => __( 'Required Symbol Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} label>.quform-required'   => 'color: {{VALUE}}!important;',
@@ -179,7 +180,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'quform_label_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .quform-form-inner .quform-label-text,{{WRAPPER}} .quform-option .quform-option-label',
                 ]
             );
@@ -187,7 +188,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_responsive_control(
                 'quform_label_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .quform-form-inner .quform-label-text,{{WRAPPER}} .quform-option .quform-option-label' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -199,7 +200,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_responsive_control(
                 'quform_label_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -212,7 +213,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_responsive_control(
                 'quform_label_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -228,26 +229,26 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         $this->start_controls_section(
             'quform_sublabel_style',
             [
-                'label'     => __( 'Sub Label', 'htmega-addons' ),
+                'label'     => __( 'Sub Label', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'sublabel_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -259,7 +260,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'quform_sublabel_background',
                 [
-                    'label'     => __( 'Background', 'htmega-addons' ),
+                    'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-form-inner .quform-description'   => 'background-color: {{VALUE}};',
@@ -270,7 +271,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'quform_sublabel_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-form-inner .quform-description'   => 'color: {{VALUE}};',
@@ -290,7 +291,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'quform_sublabel_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .quform-form-inner .quform-description',
                 ]
             );
@@ -298,7 +299,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_responsive_control(
                 'quform_sublabel_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .quform-form-inner .quform-description' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -310,7 +311,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_responsive_control(
                 'quform_sublabel_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -323,7 +324,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_responsive_control(
                 'quform_sublabel_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -339,7 +340,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         $this->start_controls_section(
             'quform_input_style_section',
             [
-                'label' => __( 'Input', 'htmega-addons' ),
+                'label' => __( 'Input', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -350,25 +351,25 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->start_controls_tab(
                 'style_input_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_responsive_control(
                 'input_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -380,7 +381,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_control(
                     'quform_input_background_color',
                     [
-                        'label' => __( 'Background Color', 'htmega-addons' ),
+                        'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '#ffffff',
                         'selectors'         => [
@@ -392,7 +393,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_control(
                     'quform_input_color',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '#212529',
                         'selectors'         => [
@@ -403,7 +404,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_control(
                     'htmega_input_placeholder_color',
                     [
-                        'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                        'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors'         => [
                             '{{WRAPPER}} .quform-form-inner .quform-input input::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -423,7 +424,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_input_height',
                     [
-                        'label'             => __( 'Height', 'htmega-addons' ),
+                        'label'             => __( 'Height', 'ht-mega-for-elementor' ),
                         'type'              => Controls_Manager::SLIDER,
                         'range'             => [
                             'px' => [
@@ -442,7 +443,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_input_padding',
                     [
-                        'label' => __( 'Padding', 'htmega-addons' ),
+                        'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -456,7 +457,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_input_margin',
                     [
-                        'label' => __( 'Margin', 'htmega-addons' ),
+                        'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -470,7 +471,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'quform_input_border',
-                        'label' => __( 'Border', 'htmega-addons' ),
+                        'label' => __( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .quform-form-inner .quform-input input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quform-form-inner .quform-input select',
                     ]
                 );
@@ -478,7 +479,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_input_border_radius',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'selectors' => [
                             '{{WRAPPER}} .quform-form-inner .quform-input input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file])' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -490,7 +491,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'htmega_input_box_shadow',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .quform-form-inner .quform-input input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quform-form-inner .quform-input select',
                     ]
                 );
@@ -499,13 +500,13 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->start_controls_tab(
                 'style_input_foucs_tab',
                 [
-                    'label' => __( 'Focus', 'htmega-addons' ),
+                    'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                 ]
             );
                 $this->add_control(
                     'quform_input_background_color_focus',
                     [
-                        'label' => __( 'Background Color', 'htmega-addons' ),
+                        'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors'         => [
                             '{{WRAPPER}} .quform-form-inner .quform-input input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .quform-form-inner .quform-input select:focus' => 'background-color: {{VALUE}}',
@@ -516,7 +517,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_control(
                     'quform_input_color_focus',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors'         => [
                             '{{WRAPPER}} .quform-form-inner .quform-input input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus,{{WRAPPER}} .quform-form-inner .quform-input select:focus' => 'color: {{VALUE}}',
@@ -528,7 +529,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'quform_input_border_focus',
-                        'label' => __( 'Border', 'htmega-addons' ),
+                        'label' => __( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .quform-form-inner .quform-input input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .quform-form-inner .quform-input select:focus',
                     ]
                 );
@@ -536,7 +537,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_input_border_radius_focus',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'selectors' => [
                             '{{WRAPPER}} .quform-form-inner .quform-input input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus,{{WRAPPER}} .quform-form-inner .quform-input select:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -547,7 +548,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'htmega_input_box_shadow_focus',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .quform-form-inner .quform-input input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .quform-form-inner .quform-input select:focus',
                     ]
                 );
@@ -559,7 +560,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         $this->start_controls_section(
             'quform_textarea_style_section',
             [
-                'label' => __( 'Textarea', 'htmega-addons' ),
+                'label' => __( 'Textarea', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -570,25 +571,25 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->start_controls_tab(
                 'style_textarea_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
                 $this->add_responsive_control(
                     'textarea_align',
                     [
-                        'label' => __( 'Alignment', 'htmega-addons' ),
+                        'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::CHOOSE,
                         'options' => [
                             'left' => [
-                                'title' => __( 'Left', 'htmega-addons' ),
+                                'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                 'icon' => 'eicon-text-align-left',
                             ],
                             'center' => [
-                                'title' => __( 'Center', 'htmega-addons' ),
+                                'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                 'icon' => 'eicon-text-align-center',
                             ],
                             'right' => [
-                                'title' => __( 'Right', 'htmega-addons' ),
+                                'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                 'icon' => 'eicon-text-align-right',
                             ]
                         ],
@@ -600,7 +601,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_control(
                     'quform_textarea_background_color',
                     [
-                        'label' => __( 'Background Color', 'htmega-addons' ),
+                        'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '#ffffff',
                         'selectors'         => [
@@ -612,7 +613,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_control(
                     'quform_textarea_color',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '#212529',
                         'selectors'  => [
@@ -623,7 +624,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_control(
                     'quform_textarea_placeholder_color',
                     [
-                        'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                        'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'selectors'         => [
                             '{{WRAPPER}} .quform-form-inner .quform-input-textarea textarea::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -643,7 +644,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_textarea_height',
                     [
-                        'label'             => __( 'Height', 'htmega-addons' ),
+                        'label'             => __( 'Height', 'ht-mega-for-elementor' ),
                         'type'              => Controls_Manager::SLIDER,
                         'range'             => [
                             'px' => [
@@ -662,7 +663,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_textarea_padding',
                     [
-                        'label' => __( 'Padding', 'htmega-addons' ),
+                        'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -675,7 +676,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_textarea_margin',
                     [
-                        'label' => __( 'Margin', 'htmega-addons' ),
+                        'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -688,7 +689,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'quform_textarea_border',
-                        'label' => __( 'Border', 'htmega-addons' ),
+                        'label' => __( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .quform-form-inner .quform-input-textarea textarea',
                     ]
                 );
@@ -696,7 +697,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_textarea_border_radius',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'selectors' => [
                             '{{WRAPPER}} .quform-form-inner .quform-input-textarea textarea' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -707,7 +708,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'htmega_textarea_box_shadow',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .quform-form-inner .quform-input-textarea textarea',
                     ]
                 );
@@ -716,13 +717,13 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->start_controls_tab(
                 'style_textarea_focus_tab',
                 [
-                    'label' => __( 'Focus', 'htmega-addons' ),
+                    'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                 ]
             );
                 $this->add_control(
                     'quform_textarea_background_color_focus',
                     [
-                        'label' => __( 'Background Color', 'htmega-addons' ),
+                        'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '#ffffff',
                         'selectors'         => [
@@ -734,7 +735,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_control(
                     'quform_textarea_color_focus',
                     [
-                        'label' => __( 'Color', 'htmega-addons' ),
+                        'label' => __( 'Color', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::COLOR,
                         'default' => '#212529',
                         'selectors'  => [
@@ -746,7 +747,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'quform_textarea_border_focus',
-                        'label' => __( 'Border', 'htmega-addons' ),
+                        'label' => __( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .quform-form-inner .quform-input-textarea textarea:focus',
                     ]
                 );
@@ -754,7 +755,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->add_responsive_control(
                     'quform_textarea_border_radius_focus',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'selectors' => [
                             '{{WRAPPER}} .quform-form-inner .quform-input-textarea textarea:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -765,7 +766,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'htmega_textarea_box_shadow_focus',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .quform-form-inner .quform-input-textarea textarea:focus',
                     ]
                 );
@@ -778,7 +779,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         $this->start_controls_section(
             'quform_inputsubmit_style',
             [
-                'label'     => __( 'Button', 'htmega-addons' ),
+                'label'     => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -788,25 +789,25 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->start_controls_tab(
                     'quform_submit_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_responsive_control(
                         'submit_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ]
                             ],
@@ -819,7 +820,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     $this->add_control(
                         'quform_input_submit_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -834,7 +835,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_input_submit_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -867,7 +868,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     $this->add_control(
                         'quform_input_submit_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .quform-form-inner button.quform-submit'  => 'color: {{VALUE}};',
@@ -878,7 +879,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     $this->add_control(
                         'quform_input_submit_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .quform-form-inner button.quform-submit'  => 'background-color: {{VALUE}};',
@@ -889,7 +890,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     $this->add_responsive_control(
                         'quform_input_submit_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -902,7 +903,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     $this->add_responsive_control(
                         'quform_input_submit_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -916,7 +917,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'quform_input_submit_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .quform-form-inner button.quform-submit',
                         ]
                     );
@@ -924,7 +925,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     $this->add_responsive_control(
                         'quform_input_submit_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .quform-form-inner button.quform-submit' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -936,7 +937,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'quform_input_submit_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .quform-form-inner button.quform-submit',
                         ]
                     );
@@ -947,14 +948,14 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                 $this->start_controls_tab(
                     'quform_submit_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'quform_input_submithover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .quform-form-inner button.quform-submit:hover'  => 'color: {{VALUE}};',
@@ -965,7 +966,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                     $this->add_control(
                         'quform_input_submithover_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .quform-form-inner button.quform-submit:hover'  => 'background-color: {{VALUE}};',
@@ -977,7 +978,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'quform_input_submithover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .quform-form-inner button.quform-submit:hover',
                         ]
                     );
@@ -985,7 +986,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'quform_input_submit_box_shadow_hover',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .quform-form-inner button.quform-submit:hover',
                         ]
                     );
@@ -998,7 +999,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
         $this->start_controls_section(
             'htmega_input_error_style',
             [
-                'label'     => __( 'Errors and Success Style', 'htmega-addons' ),
+                'label'     => __( 'Errors and Success Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1006,7 +1007,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'htmega_error_text_color',
                 [
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-error>.quform-error-inner,{{WRAPPER}} .quform-error-text'  => 'color: {{VALUE}};',
@@ -1023,7 +1024,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'htmega_error_border_color',
                 [
-                    'label'     => __( 'Border Color', 'htmega-addons' ),
+                    'label'     => __( 'Border Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-error>.quform-error-inner'  => 'border-color: {{VALUE}}!important;',
@@ -1033,7 +1034,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'error_background_hover_color',
                 [
-                    'label'     => __( 'Background Color', 'htmega-addons' ),
+                    'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-error>.quform-error-inner' => 'background-color: {{VALUE}};',
@@ -1044,7 +1045,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'htmega_confirmation_style',
                 [
-                    'label' => __( 'Confirmation Style', 'htmega-addons' ),
+                    'label' => __( 'Confirmation Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1052,7 +1053,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'htmega__confirmation_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-success-message'  => 'color: {{VALUE}};',
@@ -1062,7 +1063,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'htmega_confirmation_border_color',
                 [
-                    'label'     => __( 'Border Color', 'htmega-addons' ),
+                    'label'     => __( 'Border Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-success-message'  => 'border-color: {{VALUE}}!important;',
@@ -1072,7 +1073,7 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
             $this->add_control(
                 'confirmation_background_color',
                 [
-                    'label'     => __( 'Background Color', 'htmega-addons' ),
+                    'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .quform-success-message' => 'background-color: {{VALUE}};',
@@ -1091,12 +1092,12 @@ class HTMega_Elementor_Widget_QUforms extends Widget_Base {
 
     protected function render( $instance = [] ) {
         if ( ! is_plugin_active('quform/quform.php') ) {
-            htmega_plugin_missing_alert( __('QUforms', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('QUforms', 'ht-mega-for-elementor') );
             return;
         }
         $settings   = $this->get_settings_for_display();
         if (!$settings['contact_form_list']) {
-            echo '<p>'.esc_html__('Please select Contact Form', 'htmega-addons').'</p>';
+            echo '<p>'.esc_html__('Please select Contact Form', 'ht-mega-for-elementor').'</p>';
         }else{
             $form_attributes = [
                 'id' => sanitize_text_field( $settings['contact_form_list'] ),

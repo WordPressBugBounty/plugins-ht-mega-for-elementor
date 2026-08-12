@@ -85,19 +85,19 @@
         <ul>
             <li>
                 <a href="https://hasthemes.com/blog/" target="_blank">
-                    <?php esc_html_e( 'Blog', 'htmega-addons' ); ?>
+                    <?php esc_html_e( 'Blog', 'ht-mega-for-elementor' ); ?>
                     <span aria-hidden="true" class="dashicons dashicons-external"></span>
                 </a>
             </li>
             <li>
                 <a href="https://wphtmega.com/docs/" target="_blank">
-                    <?php esc_html_e( 'Documentation', 'htmega-addons' ); ?>
+                    <?php esc_html_e( 'Documentation', 'ht-mega-for-elementor' ); ?>
                     <span aria-hidden="true" class="dashicons dashicons-external"></span>
                 </a>
             </li>
             <li>
                 <a href="https://wphtmega.com/contact/" target="_blank">
-                    <?php esc_html_e( 'Support', 'htmega-addons' ); ?>
+                    <?php esc_html_e( 'Support', 'ht-mega-for-elementor' ); ?>
                     <span aria-hidden="true" class="dashicons dashicons-external"></span>
                 </a>
             </li>

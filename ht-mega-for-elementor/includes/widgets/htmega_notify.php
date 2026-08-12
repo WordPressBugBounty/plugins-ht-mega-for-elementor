@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Notify', 'htmega-addons' );
+        return __( 'Notify', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -43,16 +43,16 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         $this->start_controls_section(
             'notify_button',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'notification_button_txt',
                 [
-                    'label' => __( 'Button Text', 'htmega-addons' ),
+                    'label' => __( 'Button Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Show Info', 'htmega-addons' ),
+                    'default' => __( 'Show Info', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -63,16 +63,16 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         $this->start_controls_section(
             'notify_content',
             [
-                'label' => __( 'Notification Content', 'htmega-addons' ),
+                'label' => __( 'Notification Content', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'notification_content',
                 [
-                    'label' => __( 'Notification Message', 'htmega-addons' ),
+                    'label' => __( 'Notification Message', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'default' => __( '<strong>Welcome,</strong>to Notification.', 'htmega-addons' ),
+                    'default' => __( '<strong>Welcome,</strong>to Notification.', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -82,18 +82,18 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         $this->start_controls_section(
             'notification_option',
             [
-                'label' => __( 'Notification Option', 'htmega-addons' ),
+                'label' => __( 'Notification Option', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'notification_element_container',
                 [
-                    'label'   => __( 'Element Container', 'htmega-addons' ),
+                    'label'   => __( 'Element Container', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'self',
                     'options' => [
-                        'body'   => __( 'Body', 'htmega-addons' ),
-                        'self'   => __( 'Self', 'htmega-addons' ),
+                        'body'   => __( 'Body', 'ht-mega-for-elementor' ),
+                        'self'   => __( 'Self', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -101,18 +101,18 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_control(
                 'notification_position',
                 [
-                    'label'   => __( 'Notification Position', 'htmega-addons' ),
+                    'label'   => __( 'Notification Position', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'topcenter',
                     'options' => [
-                        'topleft'           => __( 'Top Left', 'htmega-addons' ),
-                        'topcenter'         => __( 'Top Center', 'htmega-addons' ),
-                        'topright'          => __( 'Top Right', 'htmega-addons' ),
-                        'bottomleft'        => __( 'Bottom Left', 'htmega-addons' ),
-                        'bottomcenter'      => __( 'Bottom Center', 'htmega-addons' ),
-                        'bottomright'       => __( 'Bottom Right', 'htmega-addons' ),
-                        'topfullwidth'      => __( 'Top Fullwidth', 'htmega-addons' ),
-                        'bottomfullwidth'   => __( 'Bottom Fullwidth', 'htmega-addons' ),
+                        'topleft'           => __( 'Top Left', 'ht-mega-for-elementor' ),
+                        'topcenter'         => __( 'Top Center', 'ht-mega-for-elementor' ),
+                        'topright'          => __( 'Top Right', 'ht-mega-for-elementor' ),
+                        'bottomleft'        => __( 'Bottom Left', 'ht-mega-for-elementor' ),
+                        'bottomcenter'      => __( 'Bottom Center', 'ht-mega-for-elementor' ),
+                        'bottomright'       => __( 'Bottom Right', 'ht-mega-for-elementor' ),
+                        'topfullwidth'      => __( 'Top Fullwidth', 'ht-mega-for-elementor' ),
+                        'bottomfullwidth'   => __( 'Bottom Fullwidth', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -120,14 +120,14 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_control(
                 'notification_type',
                 [
-                    'label'   => __( 'Notification Type', 'htmega-addons' ),
+                    'label'   => __( 'Notification Type', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'info',
                     'options' => [
-                        'info'   => __( 'Info', 'htmega-addons' ),
-                        'danger'   => __( 'Danger', 'htmega-addons' ),
-                        'success'   => __( 'Success', 'htmega-addons' ),
-                        'warning'   => __( 'Warning', 'htmega-addons' ),
+                        'info'   => __( 'Info', 'ht-mega-for-elementor' ),
+                        'danger'   => __( 'Danger', 'ht-mega-for-elementor' ),
+                        'success'   => __( 'Success', 'ht-mega-for-elementor' ),
+                        'warning'   => __( 'Warning', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -135,34 +135,34 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_control(
                 'notification_enter_animation',
                 [
-                    'label'   => __( 'Show Animation', 'htmega-addons' ),
+                    'label'   => __( 'Show Animation', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'fadeInUp',
                     'options' => [
-                        'none'           => __('None','htmega-addons'),
-                        'bounceOut'      => __('bounceOut','htmega-addons'),
-                        'bounceOutDown'  => __('bounceOutDown','htmega-addons'),
-                        'bounceOutLeft'  => __('bounceOutLeft','htmega-addons'),
-                        'bounceOutRight' => __('bounceOutRight','htmega-addons'),
-                        'bounceOutUp'    => __('bounceOutUp','htmega-addons'),
-                        'fadeIn'         => __('fadeIn','htmega-addons'),
-                        'fadeInDown'     => __('fadeInDown','htmega-addons'),
-                        'fadeInDownBig'  => __('fadeInDownBig','htmega-addons'),
-                        'fadeInLeft'     => __('fadeInLeft','htmega-addons'),
-                        'fadeInLeftBig'  => __('fadeInLeftBig','htmega-addons'),
-                        'fadeInRight'    => __('fadeInRight','htmega-addons'),
-                        'fadeInRightBig' => __('fadeInRightBig','htmega-addons'),
-                        'fadeOutRight'   => __('fadeOutRight','htmega-addons'),
-                        'fadeOutLeft'    => __('fadeOutLeft','htmega-addons'),
-                        'fadeInUp'       => __('fadeInUp','htmega-addons'),
-                        'fadeOutUp'      => __('fadeOutUp','htmega-addons'),
-                        'fadeOutDown'    => __('fadeOutDown','htmega-addons'),
-                        'fadeInUpBig'    => __('fadeInUpBig','htmega-addons'),
-                        'bounceIn'       => __('bounceIn','htmega-addons'),
-                        'bounceInDown'   => __('bounceInDown','htmega-addons'),
-                        'bounceInLeft'   => __('bounceInLeft','htmega-addons'),
-                        'bounceInRight'  => __('bounceInRight','htmega-addons'),
-                        'bounceInUp'     => __('bounceInUp','htmega-addons'),
+                        'none'           => __('None','ht-mega-for-elementor'),
+                        'bounceOut'      => __('bounceOut','ht-mega-for-elementor'),
+                        'bounceOutDown'  => __('bounceOutDown','ht-mega-for-elementor'),
+                        'bounceOutLeft'  => __('bounceOutLeft','ht-mega-for-elementor'),
+                        'bounceOutRight' => __('bounceOutRight','ht-mega-for-elementor'),
+                        'bounceOutUp'    => __('bounceOutUp','ht-mega-for-elementor'),
+                        'fadeIn'         => __('fadeIn','ht-mega-for-elementor'),
+                        'fadeInDown'     => __('fadeInDown','ht-mega-for-elementor'),
+                        'fadeInDownBig'  => __('fadeInDownBig','ht-mega-for-elementor'),
+                        'fadeInLeft'     => __('fadeInLeft','ht-mega-for-elementor'),
+                        'fadeInLeftBig'  => __('fadeInLeftBig','ht-mega-for-elementor'),
+                        'fadeInRight'    => __('fadeInRight','ht-mega-for-elementor'),
+                        'fadeInRightBig' => __('fadeInRightBig','ht-mega-for-elementor'),
+                        'fadeOutRight'   => __('fadeOutRight','ht-mega-for-elementor'),
+                        'fadeOutLeft'    => __('fadeOutLeft','ht-mega-for-elementor'),
+                        'fadeInUp'       => __('fadeInUp','ht-mega-for-elementor'),
+                        'fadeOutUp'      => __('fadeOutUp','ht-mega-for-elementor'),
+                        'fadeOutDown'    => __('fadeOutDown','ht-mega-for-elementor'),
+                        'fadeInUpBig'    => __('fadeInUpBig','ht-mega-for-elementor'),
+                        'bounceIn'       => __('bounceIn','ht-mega-for-elementor'),
+                        'bounceInDown'   => __('bounceInDown','ht-mega-for-elementor'),
+                        'bounceInLeft'   => __('bounceInLeft','ht-mega-for-elementor'),
+                        'bounceInRight'  => __('bounceInRight','ht-mega-for-elementor'),
+                        'bounceInUp'     => __('bounceInUp','ht-mega-for-elementor'),
                     ],
                 ]
             );
@@ -170,34 +170,34 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_control(
                 'notification_exit_animation',
                 [
-                    'label'   => __( 'Exit Animation', 'htmega-addons' ),
+                    'label'   => __( 'Exit Animation', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'fadeOutDown',
                     'options' => [
-                        'none'           => __('None','htmega-addons'),
-                        'bounceOut'      => __('bounceOut','htmega-addons'),
-                        'bounceOutDown'  => __('bounceOutDown','htmega-addons'),
-                        'bounceOutLeft'  => __('bounceOutLeft','htmega-addons'),
-                        'bounceOutRight' => __('bounceOutRight','htmega-addons'),
-                        'bounceOutUp'    => __('bounceOutUp','htmega-addons'),
-                        'fadeIn'         => __('fadeIn','htmega-addons'),
-                        'fadeInDown'     => __('fadeInDown','htmega-addons'),
-                        'fadeInDownBig'  => __('fadeInDownBig','htmega-addons'),
-                        'fadeInLeft'     => __('fadeInLeft','htmega-addons'),
-                        'fadeInLeftBig'  => __('fadeInLeftBig','htmega-addons'),
-                        'fadeInRight'    => __('fadeInRight','htmega-addons'),
-                        'fadeInRightBig' => __('fadeInRightBig','htmega-addons'),
-                        'fadeOutRight'   => __('fadeOutRight','htmega-addons'),
-                        'fadeOutLeft'    => __('fadeOutLeft','htmega-addons'),
-                        'fadeInUp'       => __('fadeInUp','htmega-addons'),
-                        'fadeOutUp'      => __('fadeOutUp','htmega-addons'),
-                        'fadeOutDown'    => __('fadeOutDown','htmega-addons'),
-                        'fadeInUpBig'    => __('fadeInUpBig','htmega-addons'),
-                        'bounceIn'       => __('bounceIn','htmega-addons'),
-                        'bounceInDown'   => __('bounceInDown','htmega-addons'),
-                        'bounceInLeft'   => __('bounceInLeft','htmega-addons'),
-                        'bounceInRight'  => __('bounceInRight','htmega-addons'),
-                        'bounceInUp'     => __('bounceInUp','htmega-addons'),
+                        'none'           => __('None','ht-mega-for-elementor'),
+                        'bounceOut'      => __('bounceOut','ht-mega-for-elementor'),
+                        'bounceOutDown'  => __('bounceOutDown','ht-mega-for-elementor'),
+                        'bounceOutLeft'  => __('bounceOutLeft','ht-mega-for-elementor'),
+                        'bounceOutRight' => __('bounceOutRight','ht-mega-for-elementor'),
+                        'bounceOutUp'    => __('bounceOutUp','ht-mega-for-elementor'),
+                        'fadeIn'         => __('fadeIn','ht-mega-for-elementor'),
+                        'fadeInDown'     => __('fadeInDown','ht-mega-for-elementor'),
+                        'fadeInDownBig'  => __('fadeInDownBig','ht-mega-for-elementor'),
+                        'fadeInLeft'     => __('fadeInLeft','ht-mega-for-elementor'),
+                        'fadeInLeftBig'  => __('fadeInLeftBig','ht-mega-for-elementor'),
+                        'fadeInRight'    => __('fadeInRight','ht-mega-for-elementor'),
+                        'fadeInRightBig' => __('fadeInRightBig','ht-mega-for-elementor'),
+                        'fadeOutRight'   => __('fadeOutRight','ht-mega-for-elementor'),
+                        'fadeOutLeft'    => __('fadeOutLeft','ht-mega-for-elementor'),
+                        'fadeInUp'       => __('fadeInUp','ht-mega-for-elementor'),
+                        'fadeOutUp'      => __('fadeOutUp','ht-mega-for-elementor'),
+                        'fadeOutDown'    => __('fadeOutDown','ht-mega-for-elementor'),
+                        'fadeInUpBig'    => __('fadeInUpBig','ht-mega-for-elementor'),
+                        'bounceIn'       => __('bounceIn','ht-mega-for-elementor'),
+                        'bounceInDown'   => __('bounceInDown','ht-mega-for-elementor'),
+                        'bounceInLeft'   => __('bounceInLeft','ht-mega-for-elementor'),
+                        'bounceInRight'  => __('bounceInRight','ht-mega-for-elementor'),
+                        'bounceInUp'     => __('bounceInUp','ht-mega-for-elementor'),
                     ],
                 ]
             );
@@ -205,7 +205,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_control(
                 'notification_offset',
                 [
-                    'label' => __('Offset', 'htmega-addons'),
+                    'label' => __('Offset', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 80,
                 ]
@@ -214,7 +214,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_control(
                 'notification_delay',
                 [
-                    'label' => __('Delay', 'htmega-addons'),
+                    'label' => __('Delay', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 5000,
                 ]
@@ -223,23 +223,23 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_control(
                 'notification_width',
                 [
-                    'label'   => __( 'Bootstrap Column Width', 'htmega-addons' ),
+                    'label'   => __( 'Bootstrap Column Width', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'auto',
                     'options' => [
-                        'auto'   => __( 'Auto', 'htmega-addons' ),
-                        'htb-col-md-12'  => __( 'col-md-12', 'htmega-addons' ),
-                        'htb-col-md-11'  => __( 'col-md-11', 'htmega-addons' ),
-                        'htb-col-md-10'  => __( 'col-md-10', 'htmega-addons' ),
-                        'htb-col-md-9'   => __( 'col-md-9', 'htmega-addons' ),
-                        'htb-col-md-8'   => __( 'col-md-8', 'htmega-addons' ),
-                        'htb-col-md-7'   => __( 'col-md-7', 'htmega-addons' ),
-                        'htb-col-md-6'   => __( 'col-md-6', 'htmega-addons' ),
-                        'htb-col-md-5'   => __( 'col-md-5', 'htmega-addons' ),
-                        'htb-col-md-4'   => __( 'col-md-4', 'htmega-addons' ),
-                        'htb-col-md-3'   => __( 'col-md-3', 'htmega-addons' ),
-                        'htb-col-md-2'   => __( 'col-md-2', 'htmega-addons' ),
-                        'htb-col-md-1'   => __( 'col-md-1', 'htmega-addons' ),
+                        'auto'   => __( 'Auto', 'ht-mega-for-elementor' ),
+                        'htb-col-md-12'  => __( 'col-md-12', 'ht-mega-for-elementor' ),
+                        'htb-col-md-11'  => __( 'col-md-11', 'ht-mega-for-elementor' ),
+                        'htb-col-md-10'  => __( 'col-md-10', 'ht-mega-for-elementor' ),
+                        'htb-col-md-9'   => __( 'col-md-9', 'ht-mega-for-elementor' ),
+                        'htb-col-md-8'   => __( 'col-md-8', 'ht-mega-for-elementor' ),
+                        'htb-col-md-7'   => __( 'col-md-7', 'ht-mega-for-elementor' ),
+                        'htb-col-md-6'   => __( 'col-md-6', 'ht-mega-for-elementor' ),
+                        'htb-col-md-5'   => __( 'col-md-5', 'ht-mega-for-elementor' ),
+                        'htb-col-md-4'   => __( 'col-md-4', 'ht-mega-for-elementor' ),
+                        'htb-col-md-3'   => __( 'col-md-3', 'ht-mega-for-elementor' ),
+                        'htb-col-md-2'   => __( 'col-md-2', 'ht-mega-for-elementor' ),
+                        'htb-col-md-1'   => __( 'col-md-1', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -247,7 +247,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_control(
                 'notification_icon',
                 [
-                    'label' => __('Icon', 'htmega-addons'),
+                    'label' => __('Icon', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-info-circle',
@@ -262,7 +262,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         $this->start_controls_section(
             'notify_style_section',
             [
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => __( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -270,23 +270,23 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
             $this->add_responsive_control(
                 'buttonalign',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -303,7 +303,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         $this->start_controls_section(
             'notify_button_style',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -314,13 +314,13 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'button_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' =>'#ffffff',
                             'selectors' => [
@@ -333,7 +333,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'button_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} button.htmega-notify-button',
                         ]
                     );
@@ -342,7 +342,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} button.htmega-notify-button',
                         ]
                     );
@@ -350,7 +350,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} button.htmega-notify-button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -362,7 +362,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} button.htmega-notify-button',
                             'separator' => 'before',
@@ -373,7 +373,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} button.htmega-notify-button',
                         ]
                     );
@@ -381,7 +381,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -394,7 +394,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -410,13 +410,13 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'button_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' =>'#ffffff',
                             'selectors' => [
@@ -429,7 +429,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} button.htmega-notify-button:hover',
                             'separator' => 'before',
@@ -440,7 +440,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} button.htmega-notify-button:hover',
                         ]
                     );
@@ -455,7 +455,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         $this->start_controls_section(
             'notify_notifycontent_style',
             [
-                'label' => __( 'Notify Content', 'htmega-addons' ),
+                'label' => __( 'Notify Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -465,13 +465,13 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                 $this->start_controls_tab(
                     'notify_content_style_tab',
                     [
-                        'label' => __( 'Content', 'htmega-addons' ),
+                        'label' => __( 'Content', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'notify_content_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' =>'#ffffff',
                             'selectors' => [
@@ -485,7 +485,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'notify_content_typography',
-                            'label' => __( 'Hello Typography', 'htmega-addons' ),
+                            'label' => __( 'Hello Typography', 'ht-mega-for-elementor' ),
                             'selector' => '.htmega-alert-wrap-{{ID}}.alert',
                         ]
                     );
@@ -494,7 +494,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'notify_content_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '.htmega-alert-wrap-{{ID}}.alert',
                         ]
                     );
@@ -502,7 +502,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'notify_content_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '.htmega-alert-wrap-{{ID}}.alert' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -514,7 +514,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'notify_content_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '.htmega-alert-wrap-{{ID}}.alert',
                             'separator' => 'before',
@@ -524,7 +524,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'notify_content_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -537,7 +537,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'notify_content_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -550,23 +550,23 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'notify_content_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ],
                                 'justify' => [
-                                    'title' => __( 'Justified', 'htmega-addons' ),
+                                    'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-justify',
                                 ],
                             ],
@@ -580,7 +580,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'notify_content_position',
                         [
-                            'label' => __( 'Top', 'htmega-addons' ),
+                            'label' => __( 'Top', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -610,13 +610,13 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                 $this->start_controls_tab(
                     'close_button_style_tab',
                     [
-                        'label' => __( 'Close Button', 'htmega-addons' ),
+                        'label' => __( 'Close Button', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'close_button_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' =>'#ffffff',
                             'selectors' => [
@@ -631,14 +631,14 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                 $this->start_controls_tab(
                     'info_icon_button_style_tab',
                     [
-                        'label' => __( 'Info Icon', 'htmega-addons' ),
+                        'label' => __( 'Info Icon', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_responsive_control(
                         'info_icon_typography',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-alert-wrap-{{ID}}.alert > i' => 'font-size: {{SIZE}}{{UNIT}};',
@@ -649,7 +649,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_control(
                         'info_button_color',
                         [
-                            'label' => __( 'Icon Color', 'htmega-addons' ),
+                            'label' => __( 'Icon Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' =>'#ffffff',
                             'selectors' => [
@@ -663,7 +663,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'info_icon_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '.htmega-alert-wrap-{{ID}}.alert > i , .htmega-alert-wrap-{{ID}}.alert > svg',
                         ]
@@ -672,7 +672,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'info_icon_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -699,7 +699,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'info_icon_line_height',
                         [
-                            'label' => __( 'Line Height', 'htmega-addons' ),
+                            'label' => __( 'Line Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -726,7 +726,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'info_icon_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -753,7 +753,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'info_icon_position',
                         [
-                            'label' => __( 'Top', 'htmega-addons' ),
+                            'label' => __( 'Top', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -780,7 +780,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'info_icon_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -793,7 +793,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'info_icon_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -805,7 +805,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'info_icon_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '.htmega-alert-wrap-{{ID}}.alert > i, .htmega-alert-wrap-{{ID}}.alert > svg' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -816,23 +816,23 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
                     $this->add_responsive_control(
                         'info_icon_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ],
                                 'justify' => [
-                                    'title' => __( 'Justified', 'htmega-addons' ),
+                                    'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-justify',
                                 ],
                             ],
@@ -899,7 +899,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         $this->add_render_attribute( 'notify_attr', 'data-notifyopt', wp_json_encode( $notify_options ) );
 
         ?>
-            <div <?php echo $this->get_render_attribute_string('notify_attr'); ?> >
+            <div <?php echo $this->get_render_attribute_string('notify_attr'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
 
                 <div class="htmega-notify-alert-<?php echo esc_attr( $id );?>">
                     <button class="htmega-notify-button show-info-<?php echo esc_attr( $id );?> alert-<?php echo esc_attr( $notify_options['type'] ); ?>"><?php echo esc_html( $settings['notification_button_txt'] );?></button>

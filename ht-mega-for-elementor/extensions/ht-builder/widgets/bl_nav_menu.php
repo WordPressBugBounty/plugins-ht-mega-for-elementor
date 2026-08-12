@@ -20,7 +20,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Nav Menu', 'htmega-addons' );
+        return __( 'Nav Menu', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -64,7 +64,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
         $this->start_controls_section(
             'nav_menu_content',
             [
-                'label' => __( 'Navigation', 'htmega-addons' ),
+                'label' => __( 'Navigation', 'ht-mega-for-elementor' ),
             ]
         );
             
@@ -72,13 +72,13 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 $this->add_control(
                     'nav_menu_id',
                     [
-                        'label'   => __( 'Menu', 'htmega-addons' ),
+                        'label'   => __( 'Menu', 'ht-mega-for-elementor' ),
                         'type'    => Controls_Manager::SELECT,
                         'options' => $this->get_available_menus(),
                         'default' => array_keys( $this->get_available_menus() )[0],
                         'save_default' => true,
                         'separator' => 'after',
-                        'description' => sprintf( /* translators: %s: URL to the Menus Option page */ __( 'Go to the <a href="%s" target="_blank">Menus Option</a> to manage your menus.', 'htmega-addons' ), admin_url( 'nav-menus.php' ) ),
+                        'description' => sprintf( /* translators: %s: URL to the Menus Option page */ __( 'Go to the <a href="%s" target="_blank">Menus Option</a> to manage your menus.', 'ht-mega-for-elementor' ), admin_url( 'nav-menus.php' ) ),
                     ]
                 );
             } else {
@@ -86,7 +86,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                     'nav_menu_id',
                     [
                         'type' => Controls_Manager::RAW_HTML,
-                        'raw' => sprintf( /* translators: %s: URL to the Menus Option page */ __( '<strong>There are no menus in your site.</strong><br>Go to the <a href="%s" target="_blank">Menus Option</a> to create one.', 'htmega-addons' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
+                        'raw' => sprintf( /* translators: %s: URL to the Menus Option page */ __( '<strong>There are no menus in your site.</strong><br>Go to the <a href="%s" target="_blank">Menus Option</a> to create one.', 'ht-mega-for-elementor' ), admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
                         'separator' => 'after',
                     ]
                 );
@@ -99,7 +99,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
         $this->start_controls_section(
             'nav_menu_style_section',
             [
-                'label' => __( 'Main Menu', 'htmega-addons' ),
+                'label' => __( 'Main Menu', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -114,19 +114,19 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'menu_alignment',
                 [
-                    'label'        => __( 'Alignment', 'htmega-addons' ),
+                    'label'        => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::CHOOSE,
                     'options'      => [
                         'left'   => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right'  => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],
@@ -140,7 +140,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'menu_area_padding',
                 [
-                    'label' => __( 'Menu Wrapper Padding', 'htmega-addons' ),
+                    'label' => __( 'Menu Wrapper Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -152,7 +152,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
             $this->add_control(
                 'menu_items_heading',
                 [
-                    'label' => __( 'Menu Items', 'htmega-addons' ),
+                    'label' => __( 'Menu Items', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -164,13 +164,13 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'menu_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'menu_normal_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li a,{{WRAPPER}} .htbuilder-mobile-menu ul li a, {{WRAPPER}} .htbuilder-mobile-menu-area .menu-expand' => 'color: {{VALUE}};',
@@ -183,7 +183,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'menu_normal_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li a',
                         ]
@@ -192,7 +192,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'menu_normal_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -206,7 +206,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'menu_normal_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li a',
                         ]
                     );
@@ -214,7 +214,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'menu_normal_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -227,7 +227,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'menu_normal_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li a',
                             'separator' => 'before',
                         ]
@@ -237,7 +237,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Text_Shadow::get_type(),
                         [
                             'name' => 'menu_normal_text_shadow',
-                            'label' => __( 'Text Shadow', 'htmega-addons' ),
+                            'label' => __( 'Text Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li a',
                         ]
                     );
@@ -248,14 +248,14 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'menu_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'menu_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu > li:hover > a,{{WRAPPER}} .htbuilder-mobile-menu ul li:hover > a, {{WRAPPER}} .htbuilder-mobile-menu-area .menu-expand:hover' => 'color: {{VALUE}};',
@@ -268,7 +268,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'menu_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu > li:hover > a',
                         ]
@@ -278,7 +278,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'menu_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu > li:hover > a',
                         ]
                     );
@@ -286,7 +286,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'menu_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu > li:hover > a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -301,14 +301,14 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'menu_style_active_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'menu_active_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li.current-menu-item a, {{WRAPPER}} .htbuilder-mobile-menu ul li.current_page_item > a' => 'color: {{VALUE}};',
@@ -321,7 +321,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'menu_active_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li.current-menu-item a',
                         ]
@@ -331,7 +331,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'menu_active_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li.current-menu-item a',
                         ]
                     );
@@ -339,7 +339,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'menu_active_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li.current-menu-item a' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -358,7 +358,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
         $this->start_controls_section(
             'submenu_style_section',
             [
-                'label' => __( 'Sub Menu', 'htmega-addons' ),
+                'label' => __( 'Sub Menu', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -374,7 +374,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'submenu_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htbuilder-nav ul > li > ul',
                 ]
@@ -384,7 +384,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'submenu_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htbuilder-nav ul > li > ul',
                 ]
             );
@@ -396,14 +396,14 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'submenu_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                    
                     $this->add_control(
                         'submenu_normal_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li > ul > li > a' => 'color: {{VALUE}};',
@@ -416,7 +416,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'submenu_normal_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li > ul > li > a',
                         ]
@@ -425,7 +425,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'submenu_normal_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -439,7 +439,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'submenu_normal_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li > ul > li > a',
                         ]
                     );
@@ -450,13 +450,13 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'submenu_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'submenu_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li > ul > li:hover > a' => 'color: {{VALUE}};',
@@ -469,7 +469,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'submenu_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li > ul > li:hover > a',
                         ]
@@ -479,7 +479,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'submenu_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-nav ul.htbuilder-mainmenu li > ul > li:hover > a',
                         ]
                     );
@@ -495,14 +495,14 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
         $this->start_controls_section(
             'mobilemenu_style_section',
             [
-                'label' => __( 'Mobile Menu', 'htmega-addons' ),
+                'label' => __( 'Mobile Menu', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'mobilemenu_icon_color',
             [
-                'label'     => __( 'Icon Color', 'htmega-addons' ),
+                'label'     => __( 'Icon Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htbuilder-menu-area .htbuilder-mobile-button' => 'color: {{VALUE}};',
@@ -514,7 +514,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'menu_button_background',
-                'label' => __( 'Background', 'htmega-addons' ),
+                'label' => __( 'Background', 'ht-mega-for-elementor' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htbuilder-menu-area .htbuilder-mobile-button',
             ]
@@ -522,7 +522,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
         $this->add_responsive_control(
             'menu_area_icon_padding',
             [
-                'label' => __( 'Padding', 'htmega-addons' ),
+                'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -534,14 +534,14 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'menu_icon_border',
-                'label' => __( 'Border', 'htmega-addons' ),
+                'label' => __( 'Border', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htbuilder-menu-area .htbuilder-mobile-button',
             ]
         );
         $this->add_responsive_control(
             'menu_icon_border_radius',
             [
-                'label' => __( 'Border Radius', 'htmega-addons' ),
+                'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -552,15 +552,15 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
         $this->add_control(
             'mobilemenu_icon_align',
             [
-                'label'     => __( 'Icon Align', 'htmega-addons' ),
+                'label'     => __( 'Icon Align', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::SELECT,
                 'selectors' => [
                     '{{WRAPPER}} .htbuilder-menu-area' => 'text-align: {{VALUE}};',
                 ],
                 'options'	=> [
-                	'left'	=> __('Left', 'htmega-addons'),
-                	'center'	=> __('Center', 'htmega-addons'),
-                	'right'	=> __('Right', 'htmega-addons'),
+                	'left'	=> __('Left', 'ht-mega-for-elementor'),
+                	'center'	=> __('Center', 'ht-mega-for-elementor'),
+                	'right'	=> __('Right', 'ht-mega-for-elementor'),
                 ],
                 'default' =>'Left',
             ]
@@ -568,7 +568,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
         $this->add_control(
             'mobilemenu_close_icon_color',
             [
-                'label'     => __( 'Close Icon Color', 'htmega-addons' ),
+                'label'     => __( 'Close Icon Color', 'ht-mega-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htbuilder-mobile-close' => 'color: {{VALUE}};',
@@ -580,7 +580,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'close_icon_background',
-                'label' => __( 'Background', 'htmega-addons' ),
+                'label' => __( 'Background', 'ht-mega-for-elementor' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htbuilder-mobile-close',
             ]
@@ -589,7 +589,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
         $this->add_control(
             'menu_area_bg_heading',
             [
-                'label' => __( 'Menu inner Background', 'htmega-pro' ),
+                'label' => __( 'Menu inner Background', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -598,7 +598,7 @@ class Bl_Nav_Menu_ELement extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'inside_area_background',
-                'label' => __( 'Background', 'htmega-addons' ),
+                'label' => __( 'Background', 'ht-mega-for-elementor' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .htbuilder-mobile-menu-area',
             ]

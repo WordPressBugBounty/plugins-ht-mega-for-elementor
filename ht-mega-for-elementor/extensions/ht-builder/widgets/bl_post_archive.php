@@ -20,7 +20,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Archive Posts', 'htmega-addons' );
+        return __( 'Archive Posts', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -39,19 +39,19 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'post-layout-setting',
             [
-                'label' => __( 'Settings', 'htmega-addons' ),
+                'label' => __( 'Settings', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'post_layout',
                 [
-                    'label' => __( 'Layout', 'htmega-addons' ),
+                    'label' => __( 'Layout', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'one',
                     'options' => [
-                        'one' => __( 'Layout One', 'htmega-addons' ),
-                        'two' => __( 'Layout Two', 'htmega-addons' ),
+                        'one' => __( 'Layout One', 'ht-mega-for-elementor' ),
+                        'two' => __( 'Layout Two', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -59,14 +59,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'post_grid_column',
                 [
-                    'label' => __( 'Columns', 'htmega-addons' ),
+                    'label' => __( 'Columns', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '4',
                     'options' => [
-                        '1' => __( '1', 'htmega-addons' ),
-                        '2' => __( '2', 'htmega-addons' ),
-                        '3' => __( '3', 'htmega-addons' ),
-                        '4' => __( '4', 'htmega-addons' ),
+                        '1' => __( '1', 'ht-mega-for-elementor' ),
+                        '2' => __( '2', 'ht-mega-for-elementor' ),
+                        '3' => __( '3', 'ht-mega-for-elementor' ),
+                        '4' => __( '4', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -74,10 +74,10 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'read_more_btn_text',
                 [
-                    'label' => __( 'Read More Button Text', 'htmega-addons' ),
+                    'label' => __( 'Read More Button Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Read more', 'htmega-addons' ),
-                    'placeholder' => __( 'Enter Your Text', 'htmega-addons' ),
+                    'default' => __( 'Read more', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Enter Your Text', 'ht-mega-for-elementor' ),
                 ]
             );
 
@@ -93,7 +93,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'post_more_options',
                 [
-                    'label' => __( 'Additional Options', 'htmega-addons' ),
+                    'label' => __( 'Additional Options', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -102,10 +102,10 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'show_title',
                 [
-                    'label' => __( 'Show Title', 'htmega-addons' ),
+                    'label' => __( 'Show Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -114,10 +114,10 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'show_category',
                 [
-                    'label' => __( 'Show Category', 'htmega-addons' ),
+                    'label' => __( 'Show Category', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -126,10 +126,10 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'show_meta_info',
                 [
-                    'label' => __( 'Show Post Meta', 'htmega-addons' ),
+                    'label' => __( 'Show Post Meta', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -138,10 +138,10 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'show_read_more',
                 [
-                    'label' => __( 'Show Read More Button', 'htmega-addons' ),
+                    'label' => __( 'Show Read More Button', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -153,14 +153,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'posts-query',
             [
-                'label' => __( 'Query Settings', 'htmega-addons' ),
+                'label' => __( 'Query Settings', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'content_length',
                 [
-                    'label' => __( 'Content Length', 'htmega-addons' ),
+                    'label' => __( 'Content Length', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 1000,
@@ -172,7 +172,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'title_length',
                 [
-                    'label' => __( 'Title Length', 'htmega-addons' ),
+                    'label' => __( 'Title Length', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'min' => 0,
                     'max' => 1000,
@@ -187,7 +187,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'post_custom_order',
                 [
-                    'label' => __( 'Custom order', 'htmega-addons' ),
+                    'label' => __( 'Custom order', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -197,17 +197,17 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'orderby',
                 [
-                    'label' => __( 'Orderby', 'htmega-addons' ),
+                    'label' => __( 'Orderby', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'none',
                     'options' => [
-                        'none'          => __('None','htmega-addons'),
-                        'ID'            => __('ID','htmega-addons'),
-                        'date'          => __('Date','htmega-addons'),
-                        'name'          => __('Name','htmega-addons'),
-                        'title'         => __('Title','htmega-addons'),
-                        'comment_count' => __('Comment count','htmega-addons'),
-                        'rand'          => __('Random','htmega-addons'),
+                        'none'          => __('None','ht-mega-for-elementor'),
+                        'ID'            => __('ID','ht-mega-for-elementor'),
+                        'date'          => __('Date','ht-mega-for-elementor'),
+                        'name'          => __('Name','ht-mega-for-elementor'),
+                        'title'         => __('Title','ht-mega-for-elementor'),
+                        'comment_count' => __('Comment count','ht-mega-for-elementor'),
+                        'rand'          => __('Random','ht-mega-for-elementor'),
                     ],
                     'condition' => [
                         'post_custom_order' => 'yes',
@@ -218,12 +218,12 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'order',
                 [
-                    'label' => __( 'order', 'htmega-addons' ),
+                    'label' => __( 'order', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'DESC',
                     'options' => [
-                        'DESC'  => __('Descending','htmega-addons'),
-                        'ASC'   => __('Ascending','htmega-addons'),
+                        'DESC'  => __('Descending','ht-mega-for-elementor'),
+                        'ASC'   => __('Ascending','ht-mega-for-elementor'),
                     ],
                     'condition' => [
                         'post_custom_order' => 'yes',
@@ -234,7 +234,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_control(
                 'hide_pagination_button',
                 [
-                    'label' => __( 'Hide Pagination', 'htmega-addons' ),
+                    'label' => __( 'Hide Pagination', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'selectors' => [
                         '{{WRAPPER}} .htbuilder-pagination' => 'display: none;',
@@ -248,7 +248,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_item_style_section',
             array(
-                'label' => __( 'Item', 'htmega-addons' ),
+                'label' => __( 'Item', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -256,7 +256,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'post_item_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -268,7 +268,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'post_item_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -281,7 +281,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'post_item_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htbuilder-single-post',
                 ]
             );
@@ -289,7 +289,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'post_item_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -301,19 +301,19 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'post_item_align',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options'      => [
                         'left'   => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right'  => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],                    
@@ -329,7 +329,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_title_style_section',
             array(
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=> [
                     'show_title' => 'yes'
@@ -343,14 +343,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'style_title_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'post_title_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-post-title a' => 'color: {{VALUE}};',
@@ -362,7 +362,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         array(
                             'name'      => 'post_title_typography',
-                            'label'     => __( 'Typography', 'htmega-addons' ),
+                            'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector'  => '{{WRAPPER}} .htbuilder-post-title',
                         )
                     );
@@ -370,7 +370,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_title_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -382,19 +382,19 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_title_align',
                         [
-                            'label'   => __( 'Alignment', 'htmega-addons' ),
+                            'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::CHOOSE,
                             'options'      => [
                                 'left'   => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-center',
                                 ],
                                 'right'  => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-right',
                                 ],
                             ],   
@@ -410,14 +410,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'style_title_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_title_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-post-title a:hover' => 'color: {{VALUE}};',
@@ -435,7 +435,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_meta_info_style_section',
             array(
-                'label' => __( 'Meta Info', 'htmega-addons' ),
+                'label' => __( 'Meta Info', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=> [
                     'show_meta_info' => 'yes'
@@ -449,14 +449,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'post_meta_info_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_meta_info_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-post-meta-info' => 'color: {{VALUE}};',
@@ -469,7 +469,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         array(
                             'name'      => 'post_meta_info_typography',
-                            'label'     => __( 'Typography', 'htmega-addons' ),
+                            'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector'  => '{{WRAPPER}} .htbuilder-post-meta-info',
                         )
                     );
@@ -477,7 +477,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_meta_info_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -489,19 +489,19 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_meta_info_align',
                         [
-                            'label'   => __( 'Alignment', 'htmega-addons' ),
+                            'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::CHOOSE,
                             'options'      => [
                                 'left'   => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-center',
                                 ],
                                 'right'  => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-right',
                                 ],
                             ],   
@@ -517,14 +517,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'post_meta_info_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_meta_info_hover_color',
                         [
-                            'label'     => __( 'Link Color', 'htmega-addons' ),
+                            'label'     => __( 'Link Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-post-meta-info a:hover' => 'color: {{VALUE}};',
@@ -542,7 +542,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_meta_category_style_section',
             array(
-                'label' => __( 'Category', 'htmega-addons' ),
+                'label' => __( 'Category', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=> [
                     'show_category' => 'yes'
@@ -556,14 +556,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'post_meta_category_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_meta_category_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-post-cat a' => 'color: {{VALUE}};',
@@ -575,7 +575,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         array(
                             'name'      => 'post_meta_category_typography',
-                            'label'     => __( 'Typography', 'htmega-addons' ),
+                            'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector'  => '{{WRAPPER}} .htbuilder-post-cat a',
                         )
                     );
@@ -583,7 +583,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_meta_category_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -595,19 +595,19 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_meta_category_align',
                         [
-                            'label'   => __( 'Alignment', 'htmega-addons' ),
+                            'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type'    => Controls_Manager::CHOOSE,
                             'options'      => [
                                 'left'   => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-center',
                                 ],
                                 'right'  => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon'  => 'eicon-text-align-right',
                                 ],
                             ],   
@@ -623,14 +623,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'post_meta_category_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_meta_category_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-post-cat a:hover' => 'color: {{VALUE}};',
@@ -648,14 +648,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_content_style_section',
             array(
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
             $this->add_control(
                 'post_content_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htbuilder-post-content p' => 'color: {{VALUE}};',
@@ -667,7 +667,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 array(
                     'name'      => 'post_content_typography',
-                    'label'     => __( 'Typography', 'htmega-addons' ),
+                    'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector'  => '{{WRAPPER}} .htbuilder-post-content p',
                 )
             );
@@ -675,19 +675,19 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'post_content_align',
                 [
-                    'label'   => __( 'Alignment', 'htmega-addons' ),
+                    'label'   => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options'      => [
                         'left'   => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right'  => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ],
                     ],   
@@ -703,7 +703,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_readmore_style_section',
             array(
-                'label' => __( 'Read More', 'htmega-addons' ),
+                'label' => __( 'Read More', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=> [
                     'show_read_more' => 'yes'
@@ -717,14 +717,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'post_readmore_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_readmore_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-read-more-btn' => 'color: {{VALUE}};',
@@ -736,7 +736,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         array(
                             'name'      => 'post_readmore_typography',
-                            'label'     => __( 'Typography', 'htmega-addons' ),
+                            'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector'  => '{{WRAPPER}} .htbuilder-read-more-btn',
                         )
                     );
@@ -745,7 +745,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'post_readmore_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-read-more-btn',
                         ]
                     );
@@ -753,7 +753,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_readmore_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -765,7 +765,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_readmore_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -777,7 +777,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_readmore_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -792,14 +792,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'post_readmore_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'post_readmore_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-read-more-btn:hover' => 'color: {{VALUE}};',
@@ -811,7 +811,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'post_readmore_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-read-more-btn:hover',
                         ]
                     );
@@ -819,7 +819,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_readmore_hover_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -838,7 +838,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_pagination_style_section',
             array(
-                'label' => __( 'Pagination', 'htmega-addons' ),
+                'label' => __( 'Pagination', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'hide_pagination_button!'=>'yes'
@@ -852,14 +852,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'post_pagination_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'post_pagination_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-pagination ul li a' => 'color: {{VALUE}};',
@@ -872,7 +872,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         array(
                             'name'      => 'post_pagination_typography',
-                            'label'     => __( 'Typography', 'htmega-addons' ),
+                            'label'     => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector'  => '{{WRAPPER}} .htbuilder-pagination ul li a',
                         )
                     );
@@ -881,7 +881,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'post_pagination_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-pagination ul li a',
                         ]
                     );
@@ -889,7 +889,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_pagination_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -901,7 +901,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_pagination_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -916,14 +916,14 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                 $this->start_controls_tab(
                     'post_pagination_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'post_pagination_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htbuilder-pagination ul li span.current' => 'color: {{VALUE}};',
@@ -936,7 +936,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'post_pagination_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htbuilder-pagination ul li:hover a, {{WRAPPER}} .htbuilder-pagination ul li span.current',
                         ]
                     );
@@ -944,7 +944,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                     $this->add_responsive_control(
                         'post_pagination_hover_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -998,6 +998,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             if( is_category() ){
                 $termobj = get_queried_object();
                 $field_name = 'term_id';
+                // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- intentional: this is the 'Archive Posts' (bl-post-archive) widget's core behavior — it must filter posts by the current category archive term (get_queried_object()) to mirror the native WordPress archive template it's placed on.
                 $args['tax_query'] = array(
                     array(
                         'taxonomy' => 'category',
@@ -1009,6 +1010,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
             }elseif( is_tag() ){
                 $termobj = get_queried_object();
                 $field_name = 'term_id';
+                // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- intentional: this is the 'Archive Posts' (bl-post-archive) widget's core behavior — it must filter posts by the current tag archive term (get_queried_object()) to mirror the native WordPress archive template it's placed on.
                 $args['tax_query'] = array(
                     array(
                         'taxonomy' => 'post_tag',
@@ -1074,7 +1076,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
 
                                         <?php if( $settings['show_meta_info'] == 'yes' ): ?>
                                             <div class="htbuilder-post-meta-info">
-                                                <?php the_time( esc_html__('M d, Y','htmega-addons') );?>
+                                                <?php the_time( esc_html__('M d, Y','ht-mega-for-elementor') );?>
                                                 <span class="htbuilder-meta-separator"> -</span>
                                                 <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>" class="htauthor">
                                                     <?php the_author();?>
@@ -1092,7 +1094,7 @@ class Bl_Post_Archive_ELement extends Widget_Base {
                                                     if( !empty( $settings['read_more_btn_text'] ) ){
                                                         echo esc_html( $settings['read_more_btn_text'] );
                                                     }else{
-                                                        echo esc_html__( 'Read more', 'htmega-addons' );
+                                                        echo esc_html__( 'Read more', 'ht-mega-for-elementor' );
                                                     }
                                                 ?>
                                             </a>

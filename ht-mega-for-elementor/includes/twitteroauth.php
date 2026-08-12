@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if( class_exists('TwitterOAuth') ){
 	return;
 }
@@ -202,9 +203,6 @@ if( class_exists('TwitterOAuth') ){
 			// Sign using the key
 			$ok = openssl_sign($base_string, $signature, $privatekeyid);
 
-			// Release the key resource
-			openssl_free_key($privatekeyid);
-
 			return base64_encode($signature);
 		  }
 
@@ -221,9 +219,6 @@ if( class_exists('TwitterOAuth') ){
 
 			// Check the computed signature against the one passed in the query
 			$ok = openssl_verify($base_string, $decoded_sig, $publickeyid);
-
-			// Release the key resource
-			openssl_free_key($publickeyid);
 
 			return $ok == 1;
 		  }
@@ -254,12 +249,14 @@ if( class_exists('TwitterOAuth') ){
 			$scheme = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on")
 					  ? 'http'
 					  : 'https';
+			// phpcs:disable WordPress.Security.ValidatedSanitizedInput -- values are sanitized inline below; wrapping in isset() ternaries to avoid altering the @-suppressed fallback logic.
 			@$http_url or $http_url = $scheme .
-									  '://' . $_SERVER['HTTP_HOST'] .
+									  '://' . ( isset( $_SERVER['HTTP_HOST'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_HOST'] ) ) : '' ) .
 									  ':' .
-									  $_SERVER['SERVER_PORT'] .
-									  $_SERVER['REQUEST_URI'];
-			@$http_method or $http_method = $_SERVER['REQUEST_METHOD'];
+									  ( isset( $_SERVER['SERVER_PORT'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_PORT'] ) ) : '' ) .
+									  ( isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '' );
+			@$http_method or $http_method = isset( $_SERVER['REQUEST_METHOD'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_METHOD'] ) ) : '';
+			// phpcs:enable WordPress.Security.ValidatedSanitizedInput
 
 			// We weren't handed any parameters, so let's find the ones relevant to
 			// this request.
@@ -270,7 +267,7 @@ if( class_exists('TwitterOAuth') ){
 			  $request_headers = OAuthUtil::get_headers();
 
 			  // Parse the query-string to find GET parameters
-			  $parameters = OAuthUtil::parse_parameters($_SERVER['QUERY_STRING']);
+			  $parameters = OAuthUtil::parse_parameters( isset( $_SERVER['QUERY_STRING'] ) ? sanitize_text_field( wp_unslash( $_SERVER['QUERY_STRING'] ) ) : '' );
 
 			  // It's a POST request of the proper content-type, so parse POST
 			  // parameters and add those overriding any duplicates from GET
@@ -575,7 +572,8 @@ if( class_exists('TwitterOAuth') ){
 			}
 			if ($version !== $this->version) {
 				$error_message = sprintf(
-					esc_html__('OAuth version \'%s\' not supported', 'htmega-addons'),
+					/* translators: %s: OAuth version number that was requested */
+					esc_html__('OAuth version \'%s\' not supported', 'ht-mega-for-elementor'),
 					esc_html($version)
 				);
 			  throw new OAuthException($error_message); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
@@ -601,7 +599,8 @@ if( class_exists('TwitterOAuth') ){
 			
 				// Translate and format the error message
 				$error_message = sprintf(
-					esc_html__('Signature method \'%1$s\' not supported. Try one of the following: %2$s', 'htmega-addons'),
+					/* translators: %1$s: Requested signature method, %2$s: Comma-separated list of supported signature methods */
+					esc_html__('Signature method \'%1$s\' not supported. Try one of the following: %2$s', 'ht-mega-for-elementor'),
 					esc_html($signature_method), // Escape the signature method
 					esc_html($supported_methods) // Escape the list of supported methods
 				);
@@ -644,7 +643,8 @@ if( class_exists('TwitterOAuth') ){
 			if (!$token) {
 				// Translate and format the error message
 				$error_message = sprintf(
-					esc_html__('Invalid %1$s token: %2$s', 'htmega-addons'),
+					/* translators: %1$s: Token type (e.g. request or access), %2$s: Invalid token value */
+					esc_html__('Invalid %1$s token: %2$s', 'ht-mega-for-elementor'),
 					ucfirst($token_type), // Capitalize the token type
 					esc_html($token_field) // Escape the token field
 				);
@@ -679,7 +679,7 @@ if( class_exists('TwitterOAuth') ){
 			);
 
 			if (!$valid_sig) {
-			  throw new OAuthException( esc_html__( 'Invalid signature','htmega-addons') );
+			  throw new OAuthException( esc_html__( 'Invalid signature','ht-mega-for-elementor') );
 			}
 		  }
 
@@ -689,7 +689,7 @@ if( class_exists('TwitterOAuth') ){
 		  private function check_timestamp($timestamp) {
 			if (! $timestamp ) {
 				throw new OAuthException(
-					esc_html__('Missing timestamp parameter. The parameter is required', 'htmega-addons')
+					esc_html__('Missing timestamp parameter. The parameter is required', 'ht-mega-for-elementor')
 				);
 			}
 			
@@ -698,7 +698,8 @@ if( class_exists('TwitterOAuth') ){
 			if (abs($now - $timestamp) > $this->timestamp_threshold) {
 				// Translate and format the error message
 				$error_message = sprintf(
-					esc_html__('Expired timestamp, yours %1$s, ours %2$s', 'htmega-addons'),
+					/* translators: %1$s: Timestamp provided by the request, %2$s: Current server timestamp */
+					esc_html__('Expired timestamp, yours %1$s, ours %2$s', 'ht-mega-for-elementor'),
 					esc_html($timestamp), // Escape the timestamp
 					esc_html($now) // Escape the current time
 				);
@@ -715,7 +716,7 @@ if( class_exists('TwitterOAuth') ){
 		  private function check_nonce($consumer, $token, $nonce, $timestamp) {
 			if (! $nonce ) {
 				throw new OAuthException(
-					esc_html__('Missing nonce parameter. The parameter is required', 'htmega-addons')
+					esc_html__('Missing nonce parameter. The parameter is required', 'ht-mega-for-elementor')
 				);
 			}
 		
@@ -730,7 +731,8 @@ if( class_exists('TwitterOAuth') ){
 			if ($found) {
 				// Translate and format the error message
 				$error_message = sprintf(
-					esc_html__('Nonce already used: %s', 'htmega-addons'),
+					/* translators: %s: OAuth nonce value that was already used */
+					esc_html__('Nonce already used: %s', 'ht-mega-for-elementor'),
 					esc_html($nonce) // Escape the nonce
 				);
 		
@@ -839,9 +841,10 @@ if( class_exists('TwitterOAuth') ){
 			  // that $_SERVER actually contains what we need
 			  $out = array();
 			  if( isset($_SERVER['CONTENT_TYPE']) )
-				$out['Content-Type'] = $_SERVER['CONTENT_TYPE'];
+				$out['Content-Type'] = sanitize_text_field( wp_unslash( $_SERVER['CONTENT_TYPE'] ) );
+			  // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- $_ENV is not subject to WP magic-quote slashing (wp_magic_quotes() only touches $_GET/$_POST/$_COOKIE/$_SERVER), so wp_unslash() is not applicable here.
 			  if( isset($_ENV['CONTENT_TYPE']) )
-				$out['Content-Type'] = $_ENV['CONTENT_TYPE'];
+				$out['Content-Type'] = sanitize_text_field( $_ENV['CONTENT_TYPE'] );
 
 			  foreach ($_SERVER as $key => $value) {
 				if (substr($key, 0, 5) == "HTTP_") {
@@ -954,7 +957,7 @@ class TwitterOAuth {
   /* Set connect timeout. */
   public $connecttimeout = 30; 
   /* Verify SSL Cert. */
-  public $ssl_verifypeer = FALSE;
+  public $ssl_verifypeer = TRUE;
   /* Respons format. */
   public $format = 'json';
   /* Decode returned json data. */

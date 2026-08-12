@@ -16,7 +16,7 @@ ob_start();
 ?>
 <div class="<?php echo esc_attr(implode(' ', $card_classes)); ?>">
 	<div class="htmega-accordion-card-header">
-		<?php echo "<" . htmegaBlocks_sanitize_tag($settings['titleTag']) ." class='htmega-accordion-card-title'>" . esc_html($settings['title']) . "</" . htmegaBlocks_sanitize_tag($settings['titleTag']) . ">"; ?>
+		<?php echo "<" . htmegaBlocks_sanitize_tag($settings['titleTag']) ." class='htmega-accordion-card-title'>" . esc_html($settings['title']) . "</" . htmegaBlocks_sanitize_tag($settings['titleTag']) . ">"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmegaBlocks_sanitize_tag() whitelists against a fixed tag array, see htmega-blocks/includes/helper-functions.php. ?>
 		<div class="htmega-accordion-card-indicator">
 			<span class="inactive <?php echo esc_attr($settings['iconInActive']); ?>"></span>
 			<span class="active <?php echo esc_attr($settings['iconActive']); ?>"></span>

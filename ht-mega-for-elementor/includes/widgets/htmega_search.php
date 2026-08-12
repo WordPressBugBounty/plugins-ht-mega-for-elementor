@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Search', 'htmega-addons' );
+        return __( 'Search', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -33,22 +33,22 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
         $this->start_controls_section(
             'search_content',
             [
-                'label' => __( 'Search', 'htmega-addons' ),
+                'label' => __( 'Search', 'ht-mega-for-elementor' ),
             ]
         );
         
             $this->add_control(
                 'search_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -56,25 +56,25 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_control(
                 'inpur_placeholder',
                 [
-                    'label' => __( 'Placeholder Text', 'htmega-addons' ),
+                    'label' => __( 'Placeholder Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Search', 'htmega-addons' ),
-                    'placeholder' => __( 'Search', 'htmega-addons' ),
+                    'default' => __( 'Search', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Search', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'search_btn_icon_type',
                 [
-                    'label' => esc_html__('Button Icon Type','htmega-addons'),
+                    'label' => esc_html__('Button Icon Type','ht-mega-for-elementor'),
                     'type' =>Controls_Manager::CHOOSE,
                     'options' =>[
                         'buttontext' =>[
-                            'title' =>__('Text','htmega-addons'),
+                            'title' =>__('Text','ht-mega-for-elementor'),
                             'icon' =>'eicon-font',
                         ],
                         'icon' =>[
-                            'title' =>__('Icon','htmega-addons'),
+                            'title' =>__('Icon','ht-mega-for-elementor'),
                             'icon' =>'eicon-info-circle',
                         ]
                     ],
@@ -88,10 +88,10 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_control(
                 'search_button_text',
                 [
-                    'label' => __( 'Search Button Text', 'htmega-addons' ),
+                    'label' => __( 'Search Button Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Search', 'htmega-addons' ),
-                    'placeholder' => __( 'Search', 'htmega-addons' ),
+                    'default' => __( 'Search', 'ht-mega-for-elementor' ),
+                    'placeholder' => __( 'Search', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'search_btn_icon_type' => 'buttontext',
                         'search_style!' => '4',
@@ -102,7 +102,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_control(
                 'search_button_icon',
                 [
-                    'label' =>__('Icon','htmega-addons'),
+                    'label' =>__('Icon','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::ICONS,
                     'default' => [
                         'value'=>'fas fa-search',
@@ -117,9 +117,9 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_control(
                 'close_button_text',
                 [
-                    'label' => __( 'Close Button Text', 'htmega-addons' ),
+                    'label' => __( 'Close Button Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'close', 'htmega-addons' ),
+                    'default' => __( 'close', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'search_style' => '5',
                     ]
@@ -128,7 +128,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_control(
                 'hide_close_icon',
                 [
-                    'label' => esc_html__( 'Hide Close Icon', 'htmega-addons' ),
+                    'label' => esc_html__( 'Hide Close Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -143,30 +143,30 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
         $this->start_controls_section(
             'htmega_search_style_section',
             [
-                'label' => __( 'Search Box Style', 'htmega-addons' ),
+                'label' => __( 'Search Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'search_style_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -181,7 +181,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_responsive_control(
                 'search_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -194,7 +194,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_responsive_control(
                 'search_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -210,7 +210,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
         $this->start_controls_section(
             'htmega_search_style_input',
             [
-                'label' => __( 'Input', 'htmega-addons' ),
+                'label' => __( 'Input', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -221,13 +221,13 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->start_controls_tab(
                 'style_normal_tab',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_control(
                 'search_input_text_color',
                 [
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-search-box input'   => 'color: {{VALUE}};',
@@ -238,7 +238,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_control(
                 'search_input_placeholder_color',
                 [
-                    'label'     => __( 'Placeholder Color', 'htmega-addons' ),
+                    'label'     => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-search-box input[type*="text"]::-webkit-input-placeholder'  => 'color: {{VALUE}};',
@@ -260,7 +260,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-search-box input,{{WRAPPER}} .htmega-search-style-4',
                 ]
@@ -268,7 +268,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_control(
                 'search_submicon__color',
                 [
-                    'label'     => __( 'Icon Color', 'htmega-addons' ),
+                    'label'     => __( 'Icon Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-search-style-4 .search-icon'   => 'border-color: {{VALUE}};',
@@ -282,7 +282,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_responsive_control(
                 'search_input_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -295,7 +295,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_responsive_control(
                 'search_input_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -307,7 +307,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_responsive_control(
                 'search_input_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -334,7 +334,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_responsive_control(
                 'search_input_width',
                 [
-                    'label' => __( 'Min Width', 'htmega-addons' ),
+                    'label' => __( 'Min Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -367,7 +367,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'search_input_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-search-box input',
                     'separator' =>'before',
                 ]
@@ -376,7 +376,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->add_responsive_control(
                 'search_input_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-search-box input,{{WRAPPER}} .htmega-search-style-1 input,{{WRAPPER}} .htmega-search-style-4' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -389,14 +389,14 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
             $this->start_controls_tab(
                 'filter_menu_hover_tab',
                 [
-                    'label' => __( 'Focus', 'htmega-addons' ),
+                    'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                 ]
             );
             $this->add_group_control(
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'search_input_border_focus',
-                    'label' => __( 'Border Focus Color', 'htmega-addons' ),
+                    'label' => __( 'Border Focus Color', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-search-box input:focus',
                     'separator' =>'before',
                 ]
@@ -405,8 +405,9 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'background_hover',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
+                    // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image) appear in the Elementor Style panel, not a WP_Query exclude arg.
                     'exclude' => [ 'image' ],
                     'selector' => '{{WRAPPER}} .htmega-search-box input:focus',
                 ]
@@ -418,7 +419,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
         $this->start_controls_section(
             'htmega_search_style_submit_button',
             [
-                'label' => __( 'Submit Button', 'htmega-addons' ),
+                'label' => __( 'Submit Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'search_style!' => '4',
@@ -433,14 +434,14 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                 $this->start_controls_tab(
                     'search_style_submit_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'search_submitbutton_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-search-box button.btn-search'   => 'color: {{VALUE}};',
@@ -462,7 +463,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_fontsize',
                         [
-                            'label' => __( 'Font Size', 'htmega-addons' ),
+                            'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -492,7 +493,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'search_submitbutton_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-search-box button.btn-search',
                         ]
@@ -501,7 +502,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -514,7 +515,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -526,7 +527,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -552,7 +553,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -580,7 +581,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'search_submitbutton_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-search-box button.btn-search',
                             'separator' =>'before',
                         ]
@@ -589,7 +590,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-search-box button.btn-search' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -602,14 +603,14 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                 $this->start_controls_tab(
                     'search_style_submit_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'search_submitbutton_hover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-search-box button.btn-search:hover'   => 'color: {{VALUE}};',
@@ -622,7 +623,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'search_submitbutton_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-search-box button.btn-search:hover',
                         ]
@@ -632,7 +633,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'search_submitbutton_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-search-box button.btn-search:hover,{{WRAPPER}} .htmega-search-box button.btn-search:focus',
                             'separator' =>'before',
                         ]
@@ -641,7 +642,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-search-box button.btn-search:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -656,7 +657,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
         $this->start_controls_section(
             'htmega_search_style_popup_button',
             [
-                'label' => __( 'Popup style', 'htmega-addons' ),
+                'label' => __( 'Popup style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'search_style' => '5',
@@ -671,13 +672,13 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                 $this->start_controls_tab(
                     'search_style_popup_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'popup_search_button_heading',
                         [
-                            'label' => __( 'Popup Button Style', 'htmega-addons' ),
+                            'label' => __( 'Popup Button Style', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::HEADING,
                             'separator' => 'before',
                             'condition' => [
@@ -688,7 +689,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_control(
                         'search_submitbutton_text_color_popup',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-search-box .action button.btn-search'   => 'color: {{VALUE}};',
@@ -714,7 +715,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_fontsize_popup',
                         [
-                            'label' => __( 'Font Size', 'htmega-addons' ),
+                            'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -746,7 +747,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'search_submitbutton_background_popup',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-search-box .action button.btn-search',
                             'condition' => [
@@ -757,7 +758,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_height_popup',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -787,7 +788,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_width_popup',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -818,7 +819,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'search_submitbutton_border_popup',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-search-box .action button.btn-search',
                             'separator' =>'before',
                             'condition' => [
@@ -830,7 +831,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_border_radius_popup',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-search-box .action button.btn-search' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -843,7 +844,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_control(
                         'popup_search_button_close_heading',
                         [
-                            'label' => __( 'Close Button Style', 'htmega-addons' ),
+                            'label' => __( 'Close Button Style', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::HEADING,
                             'separator' => 'before',
                             'condition' => [
@@ -854,7 +855,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_control(
                         'search_submit_close_color_popup',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .block-bg .close__wrap,{{WRAPPER}} .block-bg .close__wrap::after'   => 'color: {{VALUE}};',
@@ -879,7 +880,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'close_icon_font_size',
                         [
-                            'label' => __( 'Icon Font Size', 'htmega-addons' ),
+                            'label' => __( 'Icon Font Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -908,7 +909,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_control(
                         'popupbackground_bg',
                         [
-                            'label' => __( 'Popup Background', 'htmega-addons' ),
+                            'label' => __( 'Popup Background', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::HEADING,
                             'separator' => 'before',
                             'condition' => [
@@ -920,7 +921,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'search_background_popup',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .block-bg',
                             'condition' => [
@@ -934,13 +935,13 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                 $this->start_controls_tab(
                     'search_style__popup_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'popup_search_button_heading_hover',
                         [
-                            'label' => __( 'Popup Button Style', 'htmega-addons' ),
+                            'label' => __( 'Popup Button Style', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::HEADING,
                             'separator' => 'before',
                             'condition' => [
@@ -951,7 +952,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_control(
                         'search_submitbutton_text_color_popup_hover',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-search-box .action button.btn-search:hover'   => 'color: {{VALUE}};',
@@ -967,7 +968,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'search_submitbutton_background_popup_hover',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-search-box .action button.btn-search:hover',
                             'condition' => [
@@ -980,7 +981,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'search_submitbutton_border_popup_hover',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-search-box .action button.btn-search:hover',
                             'separator' =>'before',
                             'condition' => [
@@ -992,7 +993,7 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                     $this->add_responsive_control(
                         'search_submitbutton_border_radius_popup_hover',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-search-box .action button.btn-search:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1022,27 +1023,29 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                 'placeholder' => esc_html( $settings['inpur_placeholder'] ),
                 'type' => 'text',
                 'name' => 's',
-                'title' => esc_html__( 'Search', 'htmega-addons' ),
+                'title' => esc_html__( 'Search', 'ht-mega-for-elementor' ),
                 'value' => get_search_query(),
             ]
         );
        
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_search_attr' ); ?> >
+            <div <?php echo $this->get_render_attribute_string( 'htmega_search_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >
                 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" role="search">
 
                     <?php
                         if( $settings['search_style'] == '4' ){
                             $this->add_render_attribute( 'input_attr', 'class', 'search-box' );
-                            echo '<input '.$this->get_render_attribute_string( 'input_attr' ).' >';
+                            echo '<input '.$this->get_render_attribute_string( 'input_attr' ).' >'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                             echo '<span class="search-button"><span class="search-icon"></span></span>';
                         } elseif ( $settings['search_style'] == '5' ) {
                             ?>
                                 
                                 <?php 
                                     if( $settings['search_btn_icon_type'] == 'icon' ) {
+                                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(); htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                         echo sprintf( '<button type="submit" class="btn-search search-trigger">%1$s %2$s</button>',HTMega_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ),htmega_kses_desc( $settings['search_button_text'] ) );
                                     }else{
+                                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                         echo sprintf( '<button type="submit" class="btn-search search-trigger">%1$s</button>', htmega_kses_desc( $settings['search_button_text'] ) );
                                     }
                                 ?>
@@ -1050,19 +1053,24 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                                 <!-- Start Search Popup -->
                                 <div class="box-search-content search_active block-bg close__top minisearch" style="opacity:0">
                                     <div class="field__search">
-                                        <input <?php echo $this->get_render_attribute_string( 'input_attr' ); ?> />
+                                        <input <?php echo $this->get_render_attribute_string( 'input_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> />
                                         <div class="action">
                                             <?php 
                                                 if( $settings['search_btn_icon_type'] == 'icon' ) {
+                                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(); htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                                     echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s %2$s</button>',HTMega_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ), htmega_kses_desc( $settings['search_button_text'] ) );
                                                 }else{
+                                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                                     echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s</button>', htmega_kses_desc( $settings['search_button_text'] ));
                                                 }
                                             ?>
                                         </div>
                                     </div>
                                     <div class="close__wrap">
-                                        <span><?php echo htmega_kses_desc( $settings['close_button_text'] );?></span>
+                                        <span><?php
+                                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
+                                            echo htmega_kses_desc( $settings['close_button_text'] );
+                                        ?></span>
                                     </div>
                                 </div>
                                 <!-- End Search Popup -->
@@ -1071,10 +1079,12 @@ class HTMega_Elementor_Widget_Search extends Widget_Base {
                         }
 
                         else{
-                            echo '<input '.$this->get_render_attribute_string( 'input_attr' ).' >';
+                            echo '<input '.$this->get_render_attribute_string( 'input_attr' ).' >'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                             if( $settings['search_btn_icon_type'] == 'icon' ) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(); htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s %2$s</button>',HTMega_Icon_manager::render_icon( $settings['search_button_icon'], [ 'aria-hidden' => 'true' ] ), htmega_kses_desc( $settings['search_button_text'] ));
                             }else{
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo sprintf( '<button type="submit" class="htb-btn btn-search">%1$s</button>', htmega_kses_desc( $settings['search_button_text'] ) );
                             }
                         }

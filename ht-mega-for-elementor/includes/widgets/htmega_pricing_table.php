@@ -14,7 +14,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
 
     public function get_title()
     {
-        return esc_html__('Pricing Table', 'htmega-addons');
+        return esc_html__('Pricing Table', 'ht-mega-for-elementor');
     }
 
     public function get_icon()
@@ -45,25 +45,25 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_pricing_layout',
             [
-                'label' => esc_html__('Layout', 'htmega-addons'),
+                'label' => esc_html__('Layout', 'ht-mega-for-elementor'),
             ]
         );
         $this->add_control(
             'htmega_pricing_style',
             [
-                'label' => esc_html__('Style', 'htmega-addons'),
+                'label' => esc_html__('Style', 'ht-mega-for-elementor'),
                 'type' => 'htmega-preset-select',
                 'default' => '1',
                 'options' => [
-                    '1'   => esc_html__('Style One', 'htmega-addons'),
-                    '2'   => esc_html__('Style Two', 'htmega-addons'),
-                    '3'   => esc_html__('Style Three', 'htmega-addons'),
-                    '4'   => esc_html__('Style Four', 'htmega-addons'),
-                    '5'   => esc_html__('Style Five', 'htmega-addons'),
-                    '6'   => esc_html__('Style Six', 'htmega-addons'),
-                    '7'   => esc_html__('Style Seven', 'htmega-addons'),
-                    '8'   => esc_html__('Style Eight', 'htmega-addons'),
-                    '9'   => esc_html__('Style Nine', 'htmega-addons'),
+                    '1'   => esc_html__('Style One', 'ht-mega-for-elementor'),
+                    '2'   => esc_html__('Style Two', 'ht-mega-for-elementor'),
+                    '3'   => esc_html__('Style Three', 'ht-mega-for-elementor'),
+                    '4'   => esc_html__('Style Four', 'ht-mega-for-elementor'),
+                    '5'   => esc_html__('Style Five', 'ht-mega-for-elementor'),
+                    '6'   => esc_html__('Style Six', 'ht-mega-for-elementor'),
+                    '7'   => esc_html__('Style Seven', 'ht-mega-for-elementor'),
+                    '8'   => esc_html__('Style Eight', 'ht-mega-for-elementor'),
+                    '9'   => esc_html__('Style Nine', 'ht-mega-for-elementor'),
                 ],
             ]
         );
@@ -71,10 +71,10 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_show_badge',
             [
-                'label' => esc_html__('Show Badge', 'htmega-addons'),
+                'label' => esc_html__('Show Badge', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'htmega-addons'),
-                'label_off' => esc_html__('Hide', 'htmega-addons'),
+                'label_on' => esc_html__('Show', 'ht-mega-for-elementor'),
+                'label_off' => esc_html__('Hide', 'ht-mega-for-elementor'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -83,16 +83,16 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_badge_position',
             [
-                'label' => esc_html__('Position', 'htmega-addons'),
+                'label' => esc_html__('Position', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::CHOOSE,
                 'label_block' => false,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'htmega-addons'),
+                        'title' => esc_html__('Left', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'htmega-addons'),
+                        'title' => esc_html__('Right', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
@@ -107,7 +107,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_badge_position_left',
             [
-                'label' => esc_html__('Left', 'htmega-addons'),
+                'label' => esc_html__('Left', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -139,7 +139,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_badge_position_right',
             [
-                'label' => esc_html__('Right', 'htmega-addons'),
+                'label' => esc_html__('Right', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -171,7 +171,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_badge_position_top',
             [
-                'label' => esc_html__('Top', 'htmega-addons'),
+                'label' => esc_html__('Top', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -202,11 +202,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_badge_title',
             [
-                'label' => esc_html__('Badge Text', 'htmega-addons'),
+                'label' => esc_html__('Badge Text', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::TEXT,
-                'placeholder' => esc_html__('New', 'htmega-addons'),
-                'default' => esc_html__('New', 'htmega-addons'),
-                'title' => esc_html__('Enter your service title', 'htmega-addons'),
+                'placeholder' => esc_html__('New', 'ht-mega-for-elementor'),
+                'default' => esc_html__('New', 'ht-mega-for-elementor'),
+                'title' => esc_html__('Enter your service title', 'ht-mega-for-elementor'),
                 'dynamic' => [
                     'active' => true
                 ],
@@ -222,22 +222,22 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_pricing_header',
             [
-                'label' => esc_html__('Header', 'htmega-addons'),
+                'label' => esc_html__('Header', 'ht-mega-for-elementor'),
             ]
         );
 
         $this->add_control(
             'htmega_pricing_header_top',
             [
-                'label' => esc_html__('Icon Type','htmega-addons'),
+                'label' => esc_html__('Icon Type','ht-mega-for-elementor'),
                 'type' =>Controls_Manager::CHOOSE,
                 'options' =>[
                     'img' =>[
-                        'title' =>__('Image','htmega-addons'),
+                        'title' =>__('Image','ht-mega-for-elementor'),
                         'icon' =>'eicon-image-bold',
                     ],
                     'icon' =>[
-                        'title' =>__('Icon','htmega-addons'),
+                        'title' =>__('Icon','ht-mega-for-elementor'),
                         'icon' =>'eicon-info-circle',
                     ]
                 ],
@@ -250,7 +250,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'titleimage',
             [
-                'label' => esc_html__('Image','htmega-addons'),
+                'label' => esc_html__('Image','ht-mega-for-elementor'),
                 'type'=>Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -278,7 +278,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'titleicon',
             [
-                'label' =>__('Icon','htmega-addons'),
+                'label' =>__('Icon','ht-mega-for-elementor'),
                 'type'=>Controls_Manager::ICONS,
                 'default' => [
                     'value'=>'fas fa-pencil-alt',
@@ -294,12 +294,12 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_title',
             [
-                'label' => esc_html__('Title', 'htmega-addons'),
+                'label' => esc_html__('Title', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'placeholder' => esc_html__('Standard', 'htmega-addons'),
-                'default' => esc_html__('Standard', 'htmega-addons'),
-                'title' => esc_html__('Enter your pricing title', 'htmega-addons'),
+                'placeholder' => esc_html__('Standard', 'ht-mega-for-elementor'),
+                'default' => esc_html__('Standard', 'ht-mega-for-elementor'),
+                'title' => esc_html__('Enter your pricing title', 'ht-mega-for-elementor'),
                 'dynamic' => [
                     'active' => true,
                 ]
@@ -309,11 +309,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_plan_title',
             [
-                'label' => esc_html__('Price Plan Name', 'htmega-addons'),
+                'label' => esc_html__('Price Plan Name', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'placeholder' => esc_html__('SIMPLE PLAN', 'htmega-addons'),
-                'title' => esc_html__('Enter your pricing plan name here', 'htmega-addons'),
+                'placeholder' => esc_html__('SIMPLE PLAN', 'ht-mega-for-elementor'),
+                'title' => esc_html__('Enter your pricing plan name here', 'ht-mega-for-elementor'),
                 'condition' => [
                     'htmega_pricing_style!' => array('1','7','9'),
                 ],
@@ -323,7 +323,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_ribon_pricing_table',
             [
-                'label'        => esc_html__('Ribon', 'htmega-addons'),
+                'label'        => esc_html__('Ribon', 'ht-mega-for-elementor'),
                 'type'         => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
             ]
@@ -333,7 +333,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'pricing_table_ribon_background',
-                'label' => esc_html__('Ribon Background', 'htmega-addons'),
+                'label' => esc_html__('Ribon Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .htmega-pricing-panel',
                 'condition' => [
@@ -345,7 +345,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_table_ribon_image',
             [
-                'label' => esc_html__('Ribon image', 'htmega-addons'),
+                'label' => esc_html__('Ribon image', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -366,15 +366,15 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_header_icon_type',
             [
-                'label' => esc_html__('Image or Icon', 'htmega-addons'),
+                'label' => esc_html__('Image or Icon', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'img' => [
-                        'title' => esc_html__('Image', 'htmega-addons'),
+                        'title' => esc_html__('Image', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-image-bold',
                     ],
                     'icon' => [
-                        'title' => esc_html__('Icon', 'htmega-addons'),
+                        'title' => esc_html__('Icon', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-info-circle',
                     ]
                 ],
@@ -388,7 +388,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'headerimage',
             [
-                'label' => esc_html__('Image', 'htmega-addons'),
+                'label' => esc_html__('Image', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -420,7 +420,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'headericon',
             [
-                'label' => esc_html__('Icon', 'htmega-addons'),
+                'label' => esc_html__('Icon', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-pencil',
@@ -436,7 +436,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_header_alignment_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -452,19 +452,19 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_header_alignment',
             [
-                'label' => esc_html__('Alignment', 'htmega-addons'),
+                'label' => esc_html__('Alignment', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'htmega-addons'),
+                        'title' => esc_html__('Left', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'htmega-addons'),
+                        'title' => esc_html__('Center', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'htmega-addons'),
+                        'title' => esc_html__('Right', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -483,34 +483,34 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_pricing_price',
             [
-                'label' => esc_html__('Pricing', 'htmega-addons'),
+                'label' => esc_html__('Pricing', 'ht-mega-for-elementor'),
             ]
         );
         $this->add_control(
             'htmega_currency_symbol',
             [
-                'label'   => esc_html__('Currency Symbol', 'htmega-addons'),
+                'label'   => esc_html__('Currency Symbol', 'ht-mega-for-elementor'),
                 'type'    => Controls_Manager::SELECT,
                 'options' => [
-                    ''             => esc_html__('None', 'htmega-addons'),
-                    'dollar'       => '&#36; ' . esc_html__('Dollar', 'htmega-addons'),
-                    'euro'         => '&#128; ' . esc_html__('Euro', 'htmega-addons'),
-                    'baht'         => '&#3647; ' . esc_html__('Baht', 'htmega-addons'),
-                    'franc'        => '&#8355; ' . esc_html__('Franc', 'htmega-addons'),
-                    'guilder'      => '&fnof; ' . esc_html__('Guilder', 'htmega-addons'),
-                    'krona'        => 'kr ' . esc_html__('Krona', 'htmega-addons'),
-                    'lira'         => '&#8356; ' . esc_html__('Lira', 'htmega-addons'),
-                    'peseta'       => '&#8359 ' . esc_html__('Peseta', 'htmega-addons'),
-                    'peso'         => '&#8369; ' . esc_html__('Peso', 'htmega-addons'),
-                    'pound'        => '&#163; ' . esc_html__('Pound Sterling', 'htmega-addons'),
-                    'real'         => 'R$ ' . esc_html__('Real', 'htmega-addons'),
-                    'ruble'        => '&#8381; ' . esc_html__('Ruble', 'htmega-addons'),
-                    'rupee'        => '&#8360; ' . esc_html__('Rupee', 'htmega-addons'),
-                    'indian_rupee' => '&#8377; ' . esc_html__('Rupee (Indian)', 'htmega-addons'),
-                    'shekel'       => '&#8362; ' . esc_html__('Shekel', 'htmega-addons'),
-                    'yen'          => '&#165; ' . esc_html__('Yen/Yuan', 'htmega-addons'),
-                    'won'          => '&#8361; ' . esc_html__('Won', 'htmega-addons'),
-                    'custom'       => esc_html__('Custom', 'htmega-addons'),
+                    ''             => esc_html__('None', 'ht-mega-for-elementor'),
+                    'dollar'       => '&#36; ' . esc_html__('Dollar', 'ht-mega-for-elementor'),
+                    'euro'         => '&#128; ' . esc_html__('Euro', 'ht-mega-for-elementor'),
+                    'baht'         => '&#3647; ' . esc_html__('Baht', 'ht-mega-for-elementor'),
+                    'franc'        => '&#8355; ' . esc_html__('Franc', 'ht-mega-for-elementor'),
+                    'guilder'      => '&fnof; ' . esc_html__('Guilder', 'ht-mega-for-elementor'),
+                    'krona'        => 'kr ' . esc_html__('Krona', 'ht-mega-for-elementor'),
+                    'lira'         => '&#8356; ' . esc_html__('Lira', 'ht-mega-for-elementor'),
+                    'peseta'       => '&#8359 ' . esc_html__('Peseta', 'ht-mega-for-elementor'),
+                    'peso'         => '&#8369; ' . esc_html__('Peso', 'ht-mega-for-elementor'),
+                    'pound'        => '&#163; ' . esc_html__('Pound Sterling', 'ht-mega-for-elementor'),
+                    'real'         => 'R$ ' . esc_html__('Real', 'ht-mega-for-elementor'),
+                    'ruble'        => '&#8381; ' . esc_html__('Ruble', 'ht-mega-for-elementor'),
+                    'rupee'        => '&#8360; ' . esc_html__('Rupee', 'ht-mega-for-elementor'),
+                    'indian_rupee' => '&#8377; ' . esc_html__('Rupee (Indian)', 'ht-mega-for-elementor'),
+                    'shekel'       => '&#8362; ' . esc_html__('Shekel', 'ht-mega-for-elementor'),
+                    'yen'          => '&#165; ' . esc_html__('Yen/Yuan', 'ht-mega-for-elementor'),
+                    'won'          => '&#8361; ' . esc_html__('Won', 'ht-mega-for-elementor'),
+                    'custom'       => esc_html__('Custom', 'ht-mega-for-elementor'),
                 ],
                 'default' => 'dollar',
             ]
@@ -519,7 +519,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_currency_symbol_custom',
             [
-                'label'     => esc_html__('Custom Symbol', 'htmega-addons'),
+                'label'     => esc_html__('Custom Symbol', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::TEXT,
                 'condition' => [
                     'htmega_currency_symbol' => 'custom',
@@ -530,7 +530,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_price',
             [
-                'label'   => esc_html__('Price', 'htmega-addons'),
+                'label'   => esc_html__('Price', 'ht-mega-for-elementor'),
                 'type'    => Controls_Manager::TEXT,
                 'default' => '35.50',
             ]
@@ -539,7 +539,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_offer_price',
             [
-                'label'        => esc_html__('Offer', 'htmega-addons'),
+                'label'        => esc_html__('Offer', 'ht-mega-for-elementor'),
                 'type'         => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
             ]
@@ -548,7 +548,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_original_price',
             [
-                'label'     => esc_html__('Original Price', 'htmega-addons'),
+                'label'     => esc_html__('Original Price', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::NUMBER,
                 'default'   => '49',
                 'condition' => [
@@ -560,16 +560,16 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_period',
             [
-                'label'   => esc_html__('Period', 'htmega-addons'),
+                'label'   => esc_html__('Period', 'ht-mega-for-elementor'),
                 'type'    => Controls_Manager::TEXT,
-                'default' => esc_html__('Monthly', 'htmega-addons'),
+                'default' => esc_html__('Monthly', 'ht-mega-for-elementor'),
             ]
         );
 
         $this->add_responsive_control(
             'htmega_price_alignment_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -582,19 +582,19 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_pricing_alignment',
             [
-                'label' => esc_html__('Alignment', 'htmega-addons'),
+                'label' => esc_html__('Alignment', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'htmega-addons'),
+                        'title' => esc_html__('Left', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'htmega-addons'),
+                        'title' => esc_html__('Center', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'htmega-addons'),
+                        'title' => esc_html__('Right', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -610,7 +610,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_pricing_features',
             [
-                'label' => esc_html__('Features', 'htmega-addons'),
+                'label' => esc_html__('Features', 'ht-mega-for-elementor'),
             ]
         );
 
@@ -619,9 +619,9 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $repeater->add_control(
             'htmega_features_title',
             [
-                'label'   => esc_html__('Title', 'htmega-addons'),
+                'label'   => esc_html__('Title', 'ht-mega-for-elementor'),
                 'type'    => Controls_Manager::TEXT,
-                'default' => esc_html__('Features Tilte', 'htmega-addons'),
+                'default' => esc_html__('Features Tilte', 'ht-mega-for-elementor'),
                 'label_block' => true,
                 'dynamic' => [
                     'active' => true,
@@ -632,7 +632,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $repeater->add_control(
             'htmega_old_features',
             [
-                'label'        => esc_html__('Old Features', 'htmega-addons'),
+                'label'        => esc_html__('Old Features', 'ht-mega-for-elementor'),
                 'type'         => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
             ]
@@ -641,7 +641,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $repeater->add_control(
             'htmega_features_icon',
             [
-                'label'   => esc_html__('Icon', 'htmega-addons'),
+                'label'   => esc_html__('Icon', 'ht-mega-for-elementor'),
                 'type'    => Controls_Manager::ICONS,
                 'default' => [
                     'value' => 'fas fa-angle-double-right',
@@ -653,7 +653,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $repeater->add_control(
             'htmega_features_icon_color',
             [
-                'label'     => esc_html__('Icon Color', 'htmega-addons'),
+                'label'     => esc_html__('Icon Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-panel {{CURRENT_ITEM}} i' => 'color: {{VALUE}}',
@@ -668,7 +668,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $repeater->add_responsive_control(
             'htmega_badge_position_right',
             [
-                'label' => esc_html__('Icon Size', 'htmega-addons'),
+                'label' => esc_html__('Icon Size', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -700,7 +700,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $repeater->add_responsive_control(
             'htmega_badge_position_margin',
             [
-                'label' => esc_html__('Icon Position', 'htmega-addons'),
+                'label' => esc_html__('Icon Position', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -732,17 +732,17 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 'prevent_empty' => false,
                 'default' => [
                     [
-                        'htmega_features_title' => esc_html__('Features Title One', 'htmega-addons'),
+                        'htmega_features_title' => esc_html__('Features Title One', 'ht-mega-for-elementor'),
                         'htmega_features_icon' => 'fas fa-angle-double-right',
                     ],
 
                     [
-                        'htmega_features_title' => esc_html__('Features Title Two', 'htmega-addons'),
+                        'htmega_features_title' => esc_html__('Features Title Two', 'ht-mega-for-elementor'),
                         'htmega_features_icon' => 'fas fa-angle-double-right',
                     ],
 
                     [
-                        'htmega_features_title' => esc_html__('Features Title Three', 'htmega-addons'),
+                        'htmega_features_title' => esc_html__('Features Title Three', 'ht-mega-for-elementor'),
                         'htmega_features_icon' => 'fas fa-angle-double-right',
                     ],
                 ],
@@ -753,7 +753,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_features_list_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -766,19 +766,19 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_pricing_feature_alignment',
             [
-                'label' => esc_html__('Alignment', 'htmega-addons'),
+                'label' => esc_html__('Alignment', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'htmega-addons'),
+                        'title' => esc_html__('Left', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'htmega-addons'),
+                        'title' => esc_html__('Center', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'htmega-addons'),
+                        'title' => esc_html__('Right', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-right',
                     ]
                 ],
@@ -796,23 +796,23 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_pricing_footer',
             [
-                'label' => esc_html__('Footer', 'htmega-addons'),
+                'label' => esc_html__('Footer', 'ht-mega-for-elementor'),
             ]
         );
 
         $this->add_control(
             'htmega_button_text',
             [
-                'label'   => esc_html__('Button Text', 'htmega-addons'),
+                'label'   => esc_html__('Button Text', 'ht-mega-for-elementor'),
                 'type'    => Controls_Manager::TEXT,
-                'default' => esc_html__('Sign Up', 'htmega-addons'),
+                'default' => esc_html__('Sign Up', 'ht-mega-for-elementor'),
             ]
         );
 
         $this->add_control(
             'htmega_button_link',
             [
-                'label'       => esc_html__('Link', 'htmega-addons'),
+                'label'       => esc_html__('Link', 'ht-mega-for-elementor'),
                 'type'        => Controls_Manager::URL,
                 'placeholder' => 'http://your-link.com',
                 'default'     => [
@@ -823,19 +823,19 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_footer_alignment',
             [
-                'label' => esc_html__('Alignment', 'htmega-addons'),
+                'label' => esc_html__('Alignment', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'htmega-addons'),
+                        'title' => esc_html__('Left', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'htmega-addons'),
+                        'title' => esc_html__('Center', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'htmega-addons'),
+                        'title' => esc_html__('Right', 'ht-mega-for-elementor'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -852,14 +852,14 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_pricing_style_section',
             [
-                'label' => esc_html__('Style', 'htmega-addons'),
+                'label' => esc_html__('Style', 'ht-mega-for-elementor'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'htmega_heighlight_pricing_table',
             [
-                'label'        => esc_html__('High Light Pricing Table', 'htmega-addons'),
+                'label'        => esc_html__('High Light Pricing Table', 'ht-mega-for-elementor'),
                 'type'         => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
             ]
@@ -869,7 +869,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'pricing_table_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .htmega-pricing-panel',
             ]
@@ -879,7 +879,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'pricing_table_box_shadow',
-                'label' => esc_html__('Box Shadow', 'htmega-addons'),
+                'label' => esc_html__('Box Shadow', 'ht-mega-for-elementor'),
                 'selector' => '{{WRAPPER}} .htmega-pricing-panel',
             ]
         );
@@ -888,7 +888,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Border::get_type(),
             [
                 'name' => 'pricing_table_border',
-                'label' => esc_html__('Border', 'htmega-addons'),
+                'label' => esc_html__('Border', 'ht-mega-for-elementor'),
                 'selector' => '{{WRAPPER}} .htmega-pricing-panel',
             ]
         );
@@ -896,7 +896,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_table_margin',
             [
-                'label' => esc_html__('Margin', 'htmega-addons'),
+                'label' => esc_html__('Margin', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -909,7 +909,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_table_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -922,7 +922,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_table_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-panel' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -936,7 +936,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_header_top_style',
             [
-                'label'     => esc_html__('Header Top', 'htmega-addons'),
+                'label'     => esc_html__('Header Top', 'ht-mega-for-elementor'),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'htmega_pricing_style' => '9'
@@ -947,9 +947,10 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'htmega_header_top_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .header-top-image',
+                // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- false positive: this is Group_Control_Background's 'exclude' param restricting which background type options (image) appear in the Elementor Style panel, not a WP_Query exclude arg.
                 'exclude' =>['image']
             ]
         );
@@ -957,7 +958,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_header_top_icon_color',
             [
-                'label'     => esc_html__('Icon Color', 'htmega-addons'),
+                'label'     => esc_html__('Icon Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .header-top-image i' => 'color: {{VALUE}}',
@@ -971,7 +972,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_header_top_icon_fontsize',
             [
-                'label' => __( 'Icon Size', 'htmega-addons' ),
+                'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1001,7 +1002,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_header_top_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -1013,14 +1014,14 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Border::get_type(),
             [
                 'name' => 'htmega_header_topborder',
-                'label' => __( 'Border', 'htmega-addons' ),
+                'label' => __( 'Border', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .header-top-image',
             ]
         );
         $this->add_responsive_control(
             'htmega_header_top_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .header-top-image' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1033,7 +1034,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_header_style',
             [
-                'label'     => esc_html__('Header', 'htmega-addons'),
+                'label'     => esc_html__('Header', 'ht-mega-for-elementor'),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1041,10 +1042,10 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_border_style_toggle',
             [
-                'label' => esc_html__('Price Border', 'htmega-addons'),
+                'label' => esc_html__('Price Border', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
-                'label_off' => esc_html__('None', 'htmega-addons'),
-                'label_on' => esc_html__('Custom', 'htmega-addons'),
+                'label_off' => esc_html__('None', 'ht-mega-for-elementor'),
+                'label_on' => esc_html__('Custom', 'ht-mega-for-elementor'),
                 'return_value' => 'yes',
                 'condition' => [
                     'htmega_pricing_style' => '4',
@@ -1057,7 +1058,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_control(
                 'pricing_header_border_background',
                 [
-                    'label'     => esc_html__('Border Color', 'htmega-addons'),
+                    'label'     => esc_html__('Border Color', 'ht-mega-for-elementor'),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-heading .title h2::before' => 'background: {{VALUE}}',
@@ -1068,7 +1069,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_header_border_width',
                 [
-                    'label' => esc_html__('Border Width', 'htmega-addons'),
+                    'label' => esc_html__('Border Width', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px', '%'],
                     'range' => [
@@ -1092,7 +1093,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_header_border_height',
                 [
-                    'label' => esc_html__('Border Height', 'htmega-addons'),
+                    'label' => esc_html__('Border Height', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px', '%'],
                     'range' => [
@@ -1116,7 +1117,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_header_border_position',
                 [
-                    'label' => esc_html__('Border Position Y', 'htmega-addons'),
+                    'label' => esc_html__('Border Position Y', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px', '%'],
                     'range' => [
@@ -1143,7 +1144,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'pricing_header_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .htmega-pricing-heading',
             ]
@@ -1152,7 +1153,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -1164,7 +1165,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_margin',
             [
-                'label' => esc_html__('Margin', 'htmega-addons'),
+                'label' => esc_html__('Margin', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -1177,14 +1178,14 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Border::get_type(),
             [
                 'name' => 'pricing_price_border',
-                'label' => esc_html__('Border', 'htmega-addons'),
+                'label' => esc_html__('Border', 'ht-mega-for-elementor'),
                 'selector' => '{{WRAPPER}} .htmega-pricing-heading',
             ]
         );
         $this->add_responsive_control(
             'pricing_price_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1198,7 +1199,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_header_title_style',
             [
-                'label'     => esc_html__('Header Title', 'htmega-addons'),
+                'label'     => esc_html__('Header Title', 'ht-mega-for-elementor'),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'pricing_title!' => ''
@@ -1209,7 +1210,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_heading_title',
             [
-                'label'     => esc_html__('Title', 'htmega-addons'),
+                'label'     => esc_html__('Title', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1218,7 +1219,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_title_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .title h2' => 'color: {{VALUE}}',
@@ -1238,7 +1239,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'pricing_header_title_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['gradient'],
                 'selector' => '{{WRAPPER}} .htmega-pricing-heading .title h2',
                 'condition' => [
@@ -1250,7 +1251,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_title_margin',
             [
-                'label' => esc_html__('Margin', 'htmega-addons'),
+                'label' => esc_html__('Margin', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .title h2 , {{WRAPPER}} .htmega-pricing-style-3 .htmega-pricing-heading .title' => 'margin: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1261,7 +1262,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_title_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .title h2' => 'padding: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1272,7 +1273,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_title_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .title h2' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1286,7 +1287,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_header_price_plan_style',
             [
-                'label'     => esc_html__('Price Plan', 'htmega-addons'),
+                'label'     => esc_html__('Price Plan', 'ht-mega-for-elementor'),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'pricing_plan_title!' => '',
@@ -1298,7 +1299,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_plan_title_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .pricing-plan h1' => 'color: {{VALUE}}',
@@ -1321,7 +1322,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'pricing_header_plan_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .htmega-pricing-heading .pricing-plan h1',
                 'condition' => [
@@ -1333,7 +1334,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_plan_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .pricing-plan h1' => 'padding: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1344,7 +1345,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_plan_margin',
             [
-                'label' => esc_html__('Margin', 'htmega-addons'),
+                'label' => esc_html__('Margin', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .pricing-plan h1' => 'margin: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1355,7 +1356,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_plan_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .pricing-plan h1' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1369,7 +1370,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_header_price_style',
             [
-                'label'     => esc_html__('Header Price', 'htmega-addons'),
+                'label'     => esc_html__('Header Price', 'ht-mega-for-elementor'),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'htmega_price!' => ''
@@ -1381,7 +1382,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'pricing_header_price_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .htmega-pricing-heading .price , {{WRAPPER}} .htmega-pricing-panel .price-label',
             ]
@@ -1391,7 +1392,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Border::get_type(),
             [
                 'name' => 'pricing_header_price_border',
-                'label' => esc_html__('Border', 'htmega-addons'),
+                'label' => esc_html__('Border', 'ht-mega-for-elementor'),
                 'selector' => '{{WRAPPER}} .htmega-pricing-heading .price , {{WRAPPER}} .htmega-pricing-panel .price-label',
             ]
         );
@@ -1399,7 +1400,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_width',
             [
-                'label' => esc_html__('Price Label Width', 'htmega-addons'),
+                'label' => esc_html__('Price Label Width', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -1430,7 +1431,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_position',
             [
-                'label' => esc_html__('Price Label Position ( Left-Right )', 'htmega-addons'),
+                'label' => esc_html__('Price Label Position ( Left-Right )', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -1461,7 +1462,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .price , {{WRAPPER}} .htmega-pricing-panel .price-label' => 'padding: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1472,7 +1473,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_margin',
             [
-                'label' => esc_html__('Margin', 'htmega-addons'),
+                'label' => esc_html__('Margin', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .price , {{WRAPPER}} .htmega-pricing-panel .price-label' => 'margin: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1483,7 +1484,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-heading .price , {{WRAPPER}} .htmega-pricing-panel .price-label' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1494,7 +1495,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_heading_price_symbol',
             [
-                'label'     => esc_html__('Price Symbol', 'htmega-addons'),
+                'label'     => esc_html__('Price Symbol', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -1506,7 +1507,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_price_symbol_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-heading .price h4 sub , {{WRAPPER}} .htmega-pricing-panel .price-label h4 sub' => 'color: {{VALUE}}',
@@ -1525,7 +1526,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_symbol_position_x',
             [
-                'label' => esc_html__('Position ( Left-Right )', 'htmega-addons'),
+                'label' => esc_html__('Position ( Left-Right )', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -1552,7 +1553,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_symbol_position_y',
             [
-                'label' => esc_html__('Position ( Top-Bottom )', 'htmega-addons'),
+                'label' => esc_html__('Position ( Top-Bottom )', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -1579,7 +1580,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_heading_price',
             [
-                'label'     => esc_html__('Price', 'htmega-addons'),
+                'label'     => esc_html__('Price', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1588,7 +1589,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_price_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-heading .price h4 span.pricing_new , {{WRAPPER}} .htmega-pricing-panel .price-label h4 span.pricing_new , {{WRAPPER}} .htmega-pricing-panel .price-label h4' => 'color: {{VALUE}}',
@@ -1607,7 +1608,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_heading_price_offer',
             [
-                'label'     => esc_html__('Offer Price', 'htmega-addons'),
+                'label'     => esc_html__('Offer Price', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -1619,7 +1620,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_price_color_offer',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-heading .price h4 span.pricing_old' => 'color: {{VALUE}}',
@@ -1644,7 +1645,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_offer_space',
             [
-                'label' => __( 'Inner Space', 'htmega-addons' ),
+                'label' => __( 'Inner Space', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px',],
                 'range' => [
@@ -1665,7 +1666,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_heading_prce_period',
             [
-                'label'     => esc_html__('Price Period', 'htmega-addons'),
+                'label'     => esc_html__('Price Period', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -1677,10 +1678,10 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_price_separator_toggle',
             [
-                'label' => esc_html__('Price Separator Settings', 'htmega-addons'),
+                'label' => esc_html__('Price Separator Settings', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
-                'label_off' => esc_html__('None', 'htmega-addons'),
-                'label_on' => esc_html__('Custom', 'htmega-addons'),
+                'label_off' => esc_html__('None', 'ht-mega-for-elementor'),
+                'label_on' => esc_html__('Custom', 'ht-mega-for-elementor'),
                 'return_value' => 'yes',
                 'condition' => [
                     'htmega_period!' => '',
@@ -1693,7 +1694,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_price_separator_period_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-heading .price h4 span.separator , {{WRAPPER}} .htmega-pricing-panel .price-label h4 span.separator' => 'color: {{VALUE}}',
@@ -1704,7 +1705,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_period_separator_font_size',
             [
-                'label' => esc_html__('Separator Size', 'htmega-addons'),
+                'label' => esc_html__('Separator Size', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -1724,7 +1725,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_period_separator_position',
             [
-                'label' => esc_html__('Price Separator Position', 'htmega-addons'),
+                'label' => esc_html__('Price Separator Position', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -1747,7 +1748,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_header_price_period_position',
             [
-                'label' => esc_html__('Separator Position Right', 'htmega-addons'),
+                'label' => esc_html__('Separator Position Right', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -1774,7 +1775,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_header_price_period_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-heading .price h4 span.period-txt , {{WRAPPER}} .htmega-pricing-panel .price-label h4 span.period-txt' => 'color: {{VALUE}}',
@@ -1803,7 +1804,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_features_style',
             [
-                'label'     => esc_html__('Features', 'htmega-addons'),
+                'label'     => esc_html__('Features', 'ht-mega-for-elementor'),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1811,10 +1812,10 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_bottom_border_style_toggle',
             [
-                'label' => esc_html__('Price Border', 'htmega-addons'),
+                'label' => esc_html__('Price Border', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
-                'label_off' => esc_html__('None', 'htmega-addons'),
-                'label_on' => esc_html__('Custom', 'htmega-addons'),
+                'label_off' => esc_html__('None', 'ht-mega-for-elementor'),
+                'label_on' => esc_html__('Custom', 'ht-mega-for-elementor'),
                 'return_value' => 'yes',
                 'condition' => [
                     'htmega_pricing_style' => '4',
@@ -1827,7 +1828,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_control(
                 'pricing_bottom_border_background',
                 [
-                    'label'     => esc_html__('Border Color', 'htmega-addons'),
+                    'label'     => esc_html__('Border Color', 'ht-mega-for-elementor'),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-body::before' => 'background: {{VALUE}}',
@@ -1838,7 +1839,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_bottom_border_width',
                 [
-                    'label' => esc_html__('Border Width', 'htmega-addons'),
+                    'label' => esc_html__('Border Width', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px', '%'],
                     'range' => [
@@ -1862,7 +1863,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_bottom_border_height',
                 [
-                    'label' => esc_html__('Border Height', 'htmega-addons'),
+                    'label' => esc_html__('Border Height', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px', '%'],
                     'range' => [
@@ -1886,7 +1887,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_bottom_border_position',
                 [
-                    'label' => esc_html__('Border Position Y', 'htmega-addons'),
+                    'label' => esc_html__('Border Position Y', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px', '%'],
                     'range' => [
@@ -1912,10 +1913,10 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_features_area_toggle',
             [
-                'label' => esc_html__('Price Features Box Area', 'htmega-addons'),
+                'label' => esc_html__('Price Features Box Area', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
-                'label_off' => esc_html__('None', 'htmega-addons'),
-                'label_on' => esc_html__('Custom', 'htmega-addons'),
+                'label_off' => esc_html__('None', 'ht-mega-for-elementor'),
+                'label_on' => esc_html__('Custom', 'ht-mega-for-elementor'),
                 'return_value' => 'yes',
             ]
         );
@@ -1926,7 +1927,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'pricing_features_area_background',
-                    'label' => esc_html__('Background', 'htmega-addons'),
+                    'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                     'types' => ['classic', 'gradient'],
                     'selector' => '{{WRAPPER}} .htmega-pricing-body',
                 ]
@@ -1935,7 +1936,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_features_area_padding',
                 [
-                    'label' => esc_html__('Padding', 'htmega-addons'),
+                    'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => ['px', '%', 'em'],
                     'selectors' => [
@@ -1947,7 +1948,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_features_area_margin',
                 [
-                    'label' => esc_html__('Margin', 'htmega-addons'),
+                    'label' => esc_html__('Margin', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => ['px', '%', 'em'],
                     'selectors' => [
@@ -1959,7 +1960,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             $this->add_responsive_control(
                 'pricing_features_area_border_radius',
                 [
-                    'label' => esc_html__('Border Radius', 'htmega-addons'),
+                    'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => ['px', '%', 'em'],
                     'selectors' => [
@@ -1973,7 +1974,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_features_item_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-body ul li' => 'color: {{VALUE}}',
@@ -1992,7 +1993,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_features_icon_size',
             [
-                'label' => esc_html__( 'Icon Size', 'htmega-pro' ),
+                'label' => esc_html__( 'Icon Size', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -2019,7 +2020,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_featues_icon_gap',
             [
-                'label' => esc_html__('Icon Space', 'htmega-addons'),
+                'label' => esc_html__('Icon Space', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -2043,7 +2044,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Border::get_type(),
             [
                 'name' => 'pricing_features_item_border',
-                'label' => esc_html__('Border', 'htmega-addons'),
+                'label' => esc_html__('Border', 'ht-mega-for-elementor'),
                 'selector' => '{{WRAPPER}} .htmega-pricing-body ul li',
             ]
         );
@@ -2051,7 +2052,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_features_item_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -2063,7 +2064,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_features_item_margin',
             [
-                'label' => esc_html__('Margin', 'htmega-addons'),
+                'label' => esc_html__('Margin', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -2079,7 +2080,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_badge_style',
             [
-                'label'     => esc_html__('Badge', 'htmega-addons'),
+                'label'     => esc_html__('Badge', 'ht-mega-for-elementor'),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'htmega_show_badge' => 'yes'
@@ -2090,7 +2091,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'htmega_badge_style_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}}.elementor-widget-htmega-pricing-table-addons span.htmega-price-badge' => 'color: {{VALUE}}',
@@ -2110,7 +2111,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'htmega_badge_style_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}}.elementor-widget-htmega-pricing-table-addons span.htmega-price-badge',
             ]
@@ -2119,7 +2120,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_badge_style_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -2131,7 +2132,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'htmega_badge_style_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -2146,7 +2147,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_section(
             'htmega_pricing_footer_style',
             [
-                'label'     => esc_html__('Footer', 'htmega-addons'),
+                'label'     => esc_html__('Footer', 'ht-mega-for-elementor'),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -2157,7 +2158,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_tab(
             'style_pricing_normal_tab',
             [
-                'label' => esc_html__('Normal', 'htmega-addons'),
+                'label' => esc_html__('Normal', 'ht-mega-for-elementor'),
             ]
         );
 
@@ -2165,7 +2166,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'style_pricing_normal_box_shadow',
-                'label' => __( 'Box Shadow', 'htmega-addons' ),
+                'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn',
             ]
         );
@@ -2181,7 +2182,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_control(
             'pricing_footer_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-body a.price_btn, {{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn , {{WRAPPER}} .htmega-pricing-style-4 .htmega-pricing-footer a.price_btn' => 'color: {{VALUE}}',
@@ -2193,7 +2194,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'pricing_footer_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .htmega-pricing-body a.price_btn,{{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn span,{{WRAPPER}} .htmega-pricing-style-4 .htmega-pricing-footer a.price_btn, {{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn',
             ]
@@ -2203,7 +2204,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Border::get_type(),
             [
                 'name' => 'pricing_footer_border',
-                'label' => esc_html__('Border', 'htmega-addons'),
+                'label' => esc_html__('Border', 'ht-mega-for-elementor'),
                 'selector' => '{{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn , {{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn',
             ]
         );
@@ -2211,7 +2212,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_footer_padding',
             [
-                'label' => esc_html__('Padding', 'htmega-addons'),
+                'label' => esc_html__('Padding', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -2223,7 +2224,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_footer_margin',
             [
-                'label' => esc_html__('Margin', 'htmega-addons'),
+                'label' => esc_html__('Margin', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -2235,7 +2236,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_footer_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-footer a.price_btn , {{WRAPPER}} .htmega-pricing-panel .htmega-pricing-footer a.price_btn , {{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn span , {{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -2246,7 +2247,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_footer_width',
             [
-                'label' => esc_html__('Width', 'htmega-addons'),
+                'label' => esc_html__('Width', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em'],
                 'range' => [
@@ -2272,14 +2273,14 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->start_controls_tab(
             'style_pricing_hover_tab',
             [
-                'label' => esc_html__('Hover', 'htmega-addons'),
+                'label' => esc_html__('Hover', 'ht-mega-for-elementor'),
             ]
         );
 
         $this->add_control(
             'pricing_footer_hover_color',
             [
-                'label'     => esc_html__('Color', 'htmega-addons'),
+                'label'     => esc_html__('Color', 'ht-mega-for-elementor'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-footer a.price_btn:hover,
@@ -2294,7 +2295,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Background::get_type(),
             [
                 'name' => 'pricing_footer_hover_background',
-                'label' => esc_html__('Background', 'htmega-addons'),
+                'label' => esc_html__('Background', 'ht-mega-for-elementor'),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .htmega-pricing-footer a.price_btn:hover,{{WRAPPER}} .htmega-pricing-body a.price_btn:hover,{{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn:hover span',
             ]
@@ -2304,7 +2305,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
             Group_Control_Border::get_type(),
             [
                 'name' => 'pricing_footer_hover_border',
-                'label' => esc_html__('Border', 'htmega-addons'),
+                'label' => esc_html__('Border', 'ht-mega-for-elementor'),
                 'selector' => '{{WRAPPER}} .htmega-pricing-footer a.price_btn:hover , {{WRAPPER}} .htmega-pricing-style-5 .htmega-pricing-body a.price_btn:hover',
             ]
         );
@@ -2312,7 +2313,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         $this->add_responsive_control(
             'pricing_footer_hover_radius',
             [
-                'label' => esc_html__('Border Radius', 'htmega-addons'),
+                'label' => esc_html__('Border Radius', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'selectors' => [
                     '{{WRAPPER}} .htmega-pricing-footer a.price_btn:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -2388,7 +2389,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
         }
 
 ?>
-        <div <?php echo $this->get_render_attribute_string('pricing_area_attr'); ?>>
+        <div <?php echo $this->get_render_attribute_string('pricing_area_attr'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
 
             <?php if ('yes' == $settings['htmega_show_badge']) : ?>
                 <span <?php $this->print_render_attribute_string('pricing_badge_attr'); ?>><?php echo esc_html($settings['pricing_badge_title']); ?></span>
@@ -2399,17 +2400,19 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                     <div class="icon">
                         <?php
                         if ($settings['htmega_header_icon_type'] == 'img') {
-                            echo Group_Control_Image_Size::get_attachment_image_html($settings, 'headerimagesize', 'headerimage');
+                            echo Group_Control_Image_Size::get_attachment_image_html($settings, 'headerimagesize', 'headerimage'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                         } else {
-                            echo HTMega_Icon_manager::render_icon($settings['headericon'], ['aria-hidden' => 'true']);
+                            echo HTMega_Icon_manager::render_icon($settings['headericon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                         }
                         ?>
                     </div>
                     <?php
                         if (!empty($settings['pricing_title'])) {
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             echo '<div class="title"><h2>' . htmega_kses_title( $settings['pricing_title'] ) . '</h2></div>';
                         }
                         if (!empty($settings['pricing_plan_title'])) {
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             echo '<div class="pricing-plan"><h1>' . htmega_kses_title( $settings['pricing_plan_title'] ) . '</h1></div>';
                         }
                     ?>
@@ -2417,9 +2420,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
-                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . $currencysymbol . esc_html($settings['htmega_price']) . '</span>';
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php; esc_html() used for plain text parts.
+                                echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2427,9 +2432,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol . $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2446,7 +2453,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off'; } ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
                                     echo esc_html( $features['htmega_features_title'] );
                                     ?>
@@ -2457,7 +2464,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 <?php endif; ?>
                 <?php
                 if (!empty($settings['htmega_button_text'])) {
-                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>';
+                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                 }
                 ?>
 
@@ -2467,9 +2474,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2477,9 +2486,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2491,9 +2502,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                     <div class="htmega-pricing-header-align">
                         <?php
                             if (!empty($settings['pricing_title'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<div class="title"><h2>' . htmega_kses_title( $settings['pricing_title'] ) . '</h2></div>';
                             }
                             if (!empty($settings['pricing_plan_title'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<div class="pricing-plan"><h1>' . htmega_kses_title( $settings['pricing_plan_title'] ) . '</h1></div>';
                             }
                         ?>
@@ -2508,8 +2521,9 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off'; } ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
+                                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                     echo htmega_kses_title( $features['htmega_features_title'] );
                                     ?>
                                 </li>
@@ -2519,7 +2533,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 <?php endif; ?>
                 <?php
                 if (!empty($settings['htmega_button_text'])) {
-                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>';
+                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                 }
                 ?>
 
@@ -2527,9 +2541,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 <div class="htmega-pricing-heading">
                     <?php
                         if (!empty($settings['pricing_title'])) {
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             echo '<div class="title"><h2>' . htmega_kses_title( $settings['pricing_title'] ) . '</h2></div>';
                         }
                         if (!empty($settings['pricing_plan_title'])) {
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             echo '<div class="pricing-plan"><h1>' . htmega_kses_title( $settings['pricing_plan_title'] ) . '</h1></div>';
                         }
                     ?>
@@ -2537,9 +2553,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2547,9 +2565,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2567,7 +2587,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off'; } ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
                                     echo esc_html( $features['htmega_features_title'] );
                                     ?>
@@ -2579,7 +2599,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
 
                 <?php
                 if (!empty($settings['htmega_button_text'])) {
-                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>';
+                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                 }
                 ?>
 
@@ -2587,9 +2607,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 <div class="htmega-pricing-heading">
                     <?php
                         if (!empty($settings['pricing_title'])) {
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             echo '<div class="title"><h2>' . htmega_kses_title( $settings['pricing_title'] ) . '</h2></div>';
                         }
                         if (!empty($settings['pricing_plan_title'])) {
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             echo '<div class="pricing-plan"><h1>' . htmega_kses_title( $settings['pricing_plan_title'] ) . '</h1></div>';
                         }
                     ?>
@@ -2597,9 +2619,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2607,9 +2631,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . htmega_kses_title($settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2626,7 +2652,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off'; } ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
                                     echo esc_html( $features['htmega_features_title'] );
                                     ?>
@@ -2635,7 +2661,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         </ul>
                     <?php endif;
                     if (!empty($settings['htmega_button_text'])) {
-                        echo sprintf('<a %1$s><span>%2$s</span></a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text']) );
+                        echo sprintf('<a %1$s><span>%2$s</span></a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text']) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                     }
                     ?>
                 </div>
@@ -2645,9 +2671,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                     <div class="htmega-pricing-header-align">
                         <?php
                             if (!empty($settings['pricing_title'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<div class="title"><h2>' . htmega_kses_title( $settings['pricing_title'] ) . '</h2></div>';
                             }
                             if (!empty($settings['pricing_plan_title'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<div class="pricing-plan"><h1>' . htmega_kses_title( $settings['pricing_plan_title'] ) . '</h1></div>';
                             }
                         ?>
@@ -2656,9 +2684,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html( $settings['htmega_original_price'] ) . '</del></span><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title( $settings['htmega_period'] ) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2666,9 +2696,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html( $settings['htmega_price'] ) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2685,7 +2717,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off'; } ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
                                     echo esc_html( $features['htmega_features_title'] );
                                     ?>
@@ -2696,7 +2728,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 <?php endif; ?>
                 <?php
                 if (!empty($settings['htmega_button_text'])) {
-                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>';
+                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                 }
                 ?>
 
@@ -2706,9 +2738,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2716,9 +2750,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2729,6 +2765,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                     </div>
                     <?php
                     if (!empty($settings['pricing_title'])) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                         echo '<div class="title"><h2>' . htmega_kses_title($settings['pricing_title']) . '</h2></div>';
                     }
                     ?>
@@ -2740,7 +2777,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off'; } ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
                                     echo esc_html( $features['htmega_features_title'] );
                                     ?>
@@ -2751,7 +2788,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 <?php endif; ?>
                 <?php
                 if (!empty($settings['htmega_button_text'])) {
-                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>';
+                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                 }
                 ?>
             <?php elseif ($settings['htmega_pricing_style'] == 8) : ?>
@@ -2760,9 +2797,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                     <div class="htmega-pricing-header-align">
                         <?php
                             if (!empty($settings['pricing_title'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<div class="title"><h2>' . htmega_kses_title($settings['pricing_title']) . '</h2></div>';
                             }
                             if (!empty($settings['pricing_plan_title'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<div class="pricing-plan"><h1>' . htmega_kses_title($settings['pricing_plan_title']) . '</h1></div>';
                             }
                         ?>
@@ -2771,9 +2810,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if ( !empty($settings['htmega_price']) ) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price']) ) {
@@ -2781,9 +2822,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2801,7 +2844,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off';} ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
                                     echo esc_html( $features['htmega_features_title'] );
                                     ?>
@@ -2812,7 +2855,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 <?php endif; ?>
                 <?php
                 if (!empty($settings['htmega_button_text'])) {
-                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>';
+                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                 }
                 ?>          
             <?php elseif ($settings['htmega_pricing_style'] == 9) : ?>    
@@ -2821,20 +2864,22 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                     <div class="header-top-image">
                         <?php 
                         if( !empty( $settings['titleimage'] ) ){
-                            echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'iconimagesize', 'titleimage' );
+                            echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'iconimagesize', 'titleimage' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core, builds output via wp_get_attachment_image().
                         }
 
                         if( !empty( $settings['titleicon']['value'] ) ){
-                            echo HTMega_Icon_manager::render_icon( $settings['titleicon'], [ 'aria-hidden' => 'true' ] );
+                            echo HTMega_Icon_manager::render_icon( $settings['titleicon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                         }
                         ?>
                     </div>
                     <div class="htmega-pricing-header-align">
                         <?php
                             if (!empty($settings['pricing_title'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<div class="title"><h2>' . htmega_kses_title($settings['pricing_title']) . '</h2></div>';
                             }
                             if (!empty($settings['pricing_plan_title'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<div class="pricing-plan"><h1>' . htmega_kses_title($settings['pricing_plan_title']) . '</h1></div>';
                             }
                         ?>
@@ -2843,9 +2888,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if ( !empty($settings['htmega_price']) ) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price']) ) {
@@ -2853,9 +2900,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title( $currencysymbol ) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2873,7 +2922,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off'; } ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
                                     echo esc_html( $features['htmega_features_title'] );
                                     ?>
@@ -2884,13 +2933,14 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                 <?php endif; ?>
                 <?php
                 if (!empty($settings['htmega_button_text'])) {
-                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>';
+                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                 }
                 ?>
             <?php else : ?>
                 <div class="htmega-pricing-heading">
                     <?php
                     if (!empty($settings['pricing_title'])) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                         echo '<div class="title"><h2>' . htmega_kses_title($settings['pricing_title']) . '</h2></div>';
                     }
                     ?>
@@ -2898,9 +2948,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                         <?php
                         if ($settings['htmega_offer_price'] == 'yes' && !empty($settings['htmega_original_price'])) {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_old">' . htmega_kses_title( $currencysymbol ) . '<del>' . esc_html($settings['htmega_original_price']) . '</del></span><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2908,9 +2960,11 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                             }
                         } else {
                             if (!empty($settings['htmega_price'])) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<h4><span class="pricing_new">' . htmega_kses_title($currencysymbol) . esc_html($settings['htmega_price']) . '</span>';
                             }
                             if(!empty($settings['htmega_period'])){
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                                 echo '<span class="separator">/</span> <span class="period-txt">' . htmega_kses_title($settings['htmega_period']) . '</span>';
                             }
                             if ( !empty($settings['htmega_price'])) {
@@ -2928,7 +2982,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
                                 <li class="<?php if ($features['htmega_old_features'] == 'yes') { echo 'off'; } ?> elementor-repeater-item-<?php echo esc_attr($features['_id']); ?>">
                                     <?php
                                     if (!empty($features['htmega_features_icon']['value'])) {
-                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']);
+                                        echo HTMega_Icon_manager::render_icon($features['htmega_features_icon'], ['aria-hidden' => 'true']); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's Icons_Manager::render_icon(), which escapes output.
                                     }
                                     echo esc_html( $features['htmega_features_title'] );
                                     ?>
@@ -2940,7 +2994,7 @@ class HTMega_Elementor_Widget_Pricing_Table extends Widget_Base
 
                 <?php
                 if (!empty($settings['htmega_button_text'])) {
-                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>';
+                    echo '<div class="htmega-pricing-footer">' . sprintf('<a %1$s>%2$s</a>', $this->get_render_attribute_string('url'), wp_kses_post( $settings['htmega_button_text'] ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string().
                 }
                 ?>
 

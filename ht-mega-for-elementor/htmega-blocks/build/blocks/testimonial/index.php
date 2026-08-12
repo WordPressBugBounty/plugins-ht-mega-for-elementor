@@ -105,7 +105,7 @@ ob_start();
 						<?php if ($showName) {
 							printf(
 								'<%1$s class="htmega-testimonial-name">%2$s</%1$s>',
-								htmegaBlocks_sanitize_tag($titleTag),
+								htmegaBlocks_sanitize_tag($titleTag), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmegaBlocks_sanitize_tag() whitelists against a fixed tag array, see htmega-blocks/includes/helper-functions.php.
 								esc_html($testimonial['name'])
 							);
 						} ?>

@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Call To Action', 'htmega-addons' );
+        return __( 'Call To Action', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -34,24 +34,24 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'callto_action_content',
             [
-                'label' => __( 'Call To Action', 'htmega-addons' ),
+                'label' => __( 'Call To Action', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'callto_action_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
-                        '6'   => __( 'Style Six', 'htmega-addons' ),
-                        '7'   => __( 'Style Seven', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6'   => __( 'Style Six', 'ht-mega-for-elementor' ),
+                        '7'   => __( 'Style Seven', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -59,9 +59,9 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'callto_action_sub_title',
                 [
-                    'label' => __( 'Sub Title', 'htmega-addons' ),
+                    'label' => __( 'Sub Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Type your sub title here...', 'htmega-addons' ),
+                    'placeholder' => __( 'Type your sub title here...', 'ht-mega-for-elementor' ),
                     'condition'=>[
                         'callto_action_style'=>array('4','5','6'),
                     ]
@@ -71,7 +71,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'callto_action_sub_title_tag',
                 [
-                    'label' => __( 'Sub Title Tag', 'htmega-addons' ),
+                    'label' => __( 'Sub Title Tag', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'options' => htmega_html_tag_lists(),
                     'default' => 'h4',
@@ -84,17 +84,17 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'callto_action_title',
                 [
-                    'label' => __( 'Title', 'htmega-addons' ),
+                    'label' => __( 'Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Type your title here...', 'htmega-addons' ),
-                    'default' =>  __( 'Call to Action Title', 'htmega-addons' ),
+                    'placeholder' => __( 'Type your title here...', 'ht-mega-for-elementor' ),
+                    'default' =>  __( 'Call to Action Title', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'callto_action_title_tag',
                 [
-                    'label' => __( 'Title Tag', 'htmega-addons' ),
+                    'label' => __( 'Title Tag', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'options' => htmega_html_tag_lists(),
                     'default' => 'h2',
@@ -107,17 +107,17 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'callto_action_description',
                 [
-                    'label' => __( 'Description', 'htmega-addons' ),
+                    'label' => __( 'Description', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXTAREA,
-                    'placeholder' => __( 'Type your description here...', 'htmega-addons' ),
-                    'default' =>  __( 'HT Mega Addons', 'htmega-addons' ),
+                    'placeholder' => __( 'Type your description here...', 'ht-mega-for-elementor' ),
+                    'default' =>  __( 'HT Mega Addons', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'callto_action_description_tag',
                 [
-                    'label' => __( 'Description Tag', 'htmega-addons' ),
+                    'label' => __( 'Description Tag', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'options' => htmega_html_tag_lists(),
                     'default' => 'p',
@@ -133,26 +133,26 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'call_action_button_one_content',
             [
-                'label' => __( 'Primary Button', 'htmega-addons' ),
+                'label' => __( 'Primary Button', 'ht-mega-for-elementor' ),
             ]
         );
 
         $this->add_control(
             'callto_action_buttontxt',
             [
-                'label' => __( 'Primary Button Text', 'htmega-addons' ),
+                'label' => __( 'Primary Button Text', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
-                'placeholder' => __( 'Button Text', 'htmega-addons' ),
-                'default' =>  __( 'Contact Us', 'htmega-addons' ),
+                'placeholder' => __( 'Button Text', 'ht-mega-for-elementor' ),
+                'default' =>  __( 'Contact Us', 'ht-mega-for-elementor' ),
             ]
         );
 
         $this->add_control(
             'callto_action_button_link',
             [
-                'label' => __( 'Primary Button Link', 'htmega-addons' ),
+                'label' => __( 'Primary Button Link', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                 'show_external' => true,
                 'default' => [
                     'url' => '#',
@@ -168,7 +168,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->add_control(
             'call_to_action_button_one_icon',
             [
-                'label' => __( 'Icon', 'htmega-addons' ),
+                'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::ICONS,
                 'condition'=>[
                     'callto_action_buttontxt!'=>'',
@@ -179,7 +179,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->add_control(
             'htmega_call_action_icon_one_specing',
             [
-                'label' => __( 'Icon Spacing', 'htmega-addons' ),
+                'label' => __( 'Icon Spacing', 'ht-mega-for-elementor' ),
                 'type'  => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -201,15 +201,15 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->add_responsive_control(
             'htmega_call_to_action_button_icon_one_position',
             [
-                'label' => __( 'Icon Position', 'htmega-addons' ),
+                'label' => __( 'Icon Position', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'htmega-addons' ),
+                        'title' => __( 'Left', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'htmega-addons' ),
+                        'title' => __( 'Right', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
@@ -228,25 +228,25 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'call_action_button_two_content',
             [
-                'label' => __( 'Secondary Button', 'htmega-addons' ),
+                'label' => __( 'Secondary Button', 'ht-mega-for-elementor' ),
             ]
         );
 
         $this->add_control(
             'callto_action_buttontxt_second',
             [
-                'label' => __( 'Secondary Button Text', 'htmega-addons' ),
+                'label' => __( 'Secondary Button Text', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
-                'placeholder' => __( 'Button Text', 'htmega-addons' ),
+                'placeholder' => __( 'Button Text', 'ht-mega-for-elementor' ),
             ]
         );
 
         $this->add_control(
             'callto_action_button_link_second',
             [
-                'label' => __( 'Button Link', 'htmega-addons' ),
+                'label' => __( 'Button Link', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                 'show_external' => true,
                 'default' => [
                     'url' => '#',
@@ -262,7 +262,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->add_control(
             'call_to_action_button_two_icon',
             [
-                'label' => __( 'Icon', 'htmega-addons' ),
+                'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::ICONS,
                 'condition'=>[
                     'callto_action_buttontxt_second!'=>'',
@@ -273,7 +273,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->add_control(
             'htmega_call_action_icon_two_specing',
             [
-                'label' => __( 'Icon Spacing', 'htmega-addons' ),
+                'label' => __( 'Icon Spacing', 'ht-mega-for-elementor' ),
                 'type'  => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -295,15 +295,15 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->add_responsive_control(
             'htmega_call_to_action_button_icon_two_position',
             [
-                'label' => __( 'Icon Position', 'htmega-addons' ),
+                'label' => __( 'Icon Position', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'htmega-addons' ),
+                        'title' => __( 'Left', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'htmega-addons' ),
+                        'title' => __( 'Right', 'ht-mega-for-elementor' ),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
@@ -323,7 +323,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'callto_action_style_section',
             [
-                'label' => __( 'Box Style', 'htmega-addons' ),
+                'label' => __( 'Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -331,23 +331,23 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_section_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -363,7 +363,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'callto_section_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-call-to-action',
                 ]
@@ -372,7 +372,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -384,7 +384,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -397,7 +397,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'callto_section_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-call-to-action',
                 ]
             );
@@ -406,7 +406,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'callto_section_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-call-to-action',
                 ]
             );
@@ -414,7 +414,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_section_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-call-to-action' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -428,7 +428,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'callto_action_inner_style_section',
             [
-                'label' => __( 'Inner Box Style', 'htmega-addons' ),
+                'label' => __( 'Inner Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'callto_action_style'=>'7',
@@ -440,7 +440,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'callto_inner_section_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .callto-action-style-7 .call-to-action-inner',
                 ]
@@ -449,7 +449,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_inner_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -461,7 +461,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_inner_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -474,7 +474,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'callto_inner_section_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .callto-action-style-7 .call-to-action-inner',
                 ]
             );
@@ -483,7 +483,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'callto_inner_section_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .callto-action-style-7 .call-to-action-inner',
                 ]
             );
@@ -491,7 +491,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_inner_section_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .callto-action-style-7 .call-to-action-inner' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -505,7 +505,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'callto_action_sub_title_style_section',
             [
-                'label' => __( 'Sub Title', 'htmega-addons' ),
+                'label' => __( 'Sub Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'callto_action_sub_title!'=>'',
@@ -516,7 +516,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'callto_action_sub_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#f7ca18',
                     'selectors' => [
@@ -529,7 +529,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'callto_action_sub_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content .htmega-callto-action-sub-title',
                 ]
             );
@@ -537,7 +537,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_action_sub_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -549,7 +549,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_action_sub_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -564,7 +564,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'callto_action_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'callto_action_title!'=>'',
@@ -575,7 +575,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'callto_action_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#f7ca18',
                     'selectors' => [
@@ -588,7 +588,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'callto_action_title_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content .htmega-callto-action-title',
                 ]
             );
@@ -596,7 +596,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_action_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -608,7 +608,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_action_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -619,10 +619,10 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'title_border',
                 [
-                    'label'         => __( 'Title Border', 'htmega-addons' ),
+                    'label'         => __( 'Title Border', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
-                    'label_on'      => __( 'On', 'htmega-addons' ),
-                    'label_off'     => __( 'Off', 'htmega-addons' ),
+                    'label_on'      => __( 'On', 'ht-mega-for-elementor' ),
+                    'label_off'     => __( 'Off', 'ht-mega-for-elementor' ),
                     'return_value'  => 'yes',
                     'default'       => 'no',
                 ]
@@ -631,7 +631,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'title_top_border_color',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-callto-action-title:after,{{WRAPPER}} .htmega-callto-action-title:before',
                     'condition' =>[
@@ -642,7 +642,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'title_top_border_width',
                 [
-                    'label' => __( 'Border Width', 'htmega-addons' ),
+                    'label' => __( 'Border Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -667,7 +667,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'title_top_border_height',
                 [
-                    'label' => __( 'Border Height', 'htmega-addons' ),
+                    'label' => __( 'Border Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -692,10 +692,10 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'title_bottom_top',
                 [
-                    'label'         => __( 'Border On Top', 'htmega-addons' ),
+                    'label'         => __( 'Border On Top', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
-                    'label_on'      => __( 'On', 'htmega-addons' ),
-                    'label_off'     => __( 'Off', 'htmega-addons' ),
+                    'label_on'      => __( 'On', 'ht-mega-for-elementor' ),
+                    'label_off'     => __( 'Off', 'ht-mega-for-elementor' ),
                     'return_value'  => 'yes',
                     'default'       => 'no',
                     'condition' =>[
@@ -709,10 +709,10 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'title_bottom_border',
                 [
-                    'label'         => __( 'Border On Bottom', 'htmega-addons' ),
+                    'label'         => __( 'Border On Bottom', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
-                    'label_on'      => __( 'On', 'htmega-addons' ),
-                    'label_off'     => __( 'Off', 'htmega-addons' ),
+                    'label_on'      => __( 'On', 'ht-mega-for-elementor' ),
+                    'label_off'     => __( 'Off', 'ht-mega-for-elementor' ),
                     'return_value'  => 'yes',
                     'default'       => 'no',
                     'condition' =>[
@@ -730,7 +730,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'callto_action_description_style_section',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'callto_action_description!'=>'',
@@ -741,7 +741,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_control(
                 'callto_action_description_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#5D532BE6',
                     'selectors' => [
@@ -754,7 +754,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'callto_action_description_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content .htmega-callto-action-description',
                 ]
             );
@@ -762,7 +762,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_action_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -774,7 +774,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
             $this->add_responsive_control(
                 'callto_action_description_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -789,7 +789,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'callto_action_button_style_section',
             [
-                'label' => __( 'Primary Button', 'htmega-addons' ),
+                'label' => __( 'Primary Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'callto_action_buttontxt!'=>'',
@@ -802,7 +802,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -810,7 +810,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'button_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn',
                         ]
                     );
@@ -818,7 +818,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_control(
                         'button_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#000000',
                             'selectors' => [
@@ -832,7 +832,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn',
                             'separator' => 'before',
@@ -842,7 +842,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_responsive_control(
                         'button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -855,7 +855,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_responsive_control(
                         'button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -869,7 +869,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn',
                         ]
                     );
@@ -877,7 +877,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_responsive_control(
                         'button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -889,7 +889,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn',
                         ]
                     );
@@ -897,7 +897,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_control(
                         'call_to_action_btn_extra_size_opt',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -928,14 +928,14 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'button_hover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#000000',
                             'selectors' => [
@@ -949,7 +949,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn:hover',
                         ]
                     );
@@ -957,7 +957,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_responsive_control(
                         'button_hover_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -969,7 +969,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn:hover',
                             'separator' => 'before',
@@ -980,7 +980,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'button_hover_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn:hover',
                         ]
                     );
@@ -995,7 +995,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         $this->start_controls_section(
             'callto_action_button_secondary_style_section',
             [
-                'label' => __( 'Secondary Button', 'htmega-addons' ),
+                'label' => __( 'Secondary Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'callto_action_buttontxt_second!'=>'',
@@ -1008,7 +1008,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 $this->start_controls_tab(
                     'secondary_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -1016,7 +1016,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'secondary_button_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn',
                         ]
                     );
@@ -1024,7 +1024,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_control(
                         'secondary_button_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#000000',
                             'selectors' => [
@@ -1038,7 +1038,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'secondary_button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn',
                             'separator' => 'before',
@@ -1048,7 +1048,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_responsive_control(
                         'secondary_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1061,7 +1061,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_responsive_control(
                         'secondary_button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1075,7 +1075,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'secondary_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn',
                         ]
                     );
@@ -1083,7 +1083,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_responsive_control(
                         'secondary_button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1095,7 +1095,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'secondary_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn',
                         ]
                     );
@@ -1103,7 +1103,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_control(
                         'call_to_action_btn_secnd_extra_size_opt',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1134,14 +1134,14 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                 $this->start_controls_tab(
                     'secondary_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'secondary_button_hover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#000000',
                             'selectors' => [
@@ -1155,7 +1155,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'secondary_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn:hover',
                         ]
                     );
@@ -1163,7 +1163,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     $this->add_responsive_control(
                         'secondary_button_hover_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'htmega-addons' ),
+                            'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1175,7 +1175,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'secondary_button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn:hover',
                             'separator' => 'before',
@@ -1186,7 +1186,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'secondary_button_hover_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-call-to-action .htmega-content a.call_btn.secondary_btn:hover',
                         ]
                     );
@@ -1249,7 +1249,7 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
         );
 
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_callto_action_attr' ); ?>>
+            <div <?php echo $this->get_render_attribute_string( 'htmega_callto_action_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string(). ?>>
                 <div class="htmega-content">
 
                     <?php if( $settings['callto_action_style'] == 2 ): ?>
@@ -1259,10 +1259,10 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                                     <div class="content">
                                         <?php
                                             if( !empty( $settings['callto_action_title'] ) ){
-                                                echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) );
+                                                echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                             }
                                             if( !empty( $settings['callto_action_description'] ) ){
-                                                echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) );
+                                                echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                             }
                                         ?>
                                     </div>
@@ -1272,9 +1272,9 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                                 <div class="text-right">
                                     <?php
                                         if( !empty( $settings['callto_action_buttontxt'] ) ){
-                                            echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) );
+                                            echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                         }if( !empty( $settings['callto_action_buttontxt_second'] ) ){
-                                            echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) );
+                                            echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                         }
                                     ?>
                                 </div>
@@ -1285,19 +1285,19 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         <div class="content">
                             <?php
                                 if( !empty( $settings['callto_action_description'] ) ){
-                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) );
+                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }
                                 if( !empty( $settings['callto_action_title'] ) ){
-                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) );
+                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }
                             ?>
                         </div>
                         <div class="action-btn">
                             <?php
                                 if( !empty( $settings['callto_action_buttontxt'] ) ){
-                                    echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) );
+                                    echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }if( !empty( $settings['callto_action_buttontxt_second'] ) ){
-                                    echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) );
+                                    echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }
                             ?>
                         </div>
@@ -1306,22 +1306,22 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                         <div class="content">
                             <?php
                                 if( !empty( $settings['callto_action_sub_title'] ) ){
-                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $sub_title_tag, $this->get_render_attribute_string( 'callto_title_sub_attr' ), wp_kses_post( $settings['callto_action_sub_title'] ) );
+                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $sub_title_tag, $this->get_render_attribute_string( 'callto_title_sub_attr' ), wp_kses_post( $settings['callto_action_sub_title'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }
                                 if( !empty( $settings['callto_action_title'] ) ){
-                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) );
+                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }
                                 if( !empty( $settings['callto_action_description'] ) ){
-                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) );
+                                    echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }
                             ?>
                         </div>
                         <div class="action-btn">
                             <?php
                                 if( !empty( $settings['callto_action_buttontxt'] ) ){
-                                    echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) );
+                                    echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }if( !empty( $settings['callto_action_buttontxt_second'] ) ){
-                                    echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) );
+                                    echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                 }
                             ?>
                         </div>
@@ -1331,19 +1331,19 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                             <div class="content">
                                 <?php
                                     if( !empty( $settings['callto_action_title'] ) ){
-                                        echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) );
+                                        echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                     }
                                     if( !empty( $settings['callto_action_description'] ) ){
-                                        echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) );
+                                        echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                     }
                                 ?>
                             </div>
                             <div class="action-btn">
                                 <?php
                                     if( !empty( $settings['callto_action_buttontxt'] ) ){
-                                        echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) );
+                                        echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                     }if( !empty( $settings['callto_action_buttontxt_second'] ) ){
-                                        echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) );
+                                        echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                                     }
                                 ?>
                             </div>
@@ -1352,16 +1352,16 @@ class HTMega_Elementor_Widget_Call_To_Action extends Widget_Base {
                     <?php else:?>
                         <?php
                             if( !empty( $settings['callto_action_description'] ) ){
-                                echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) );
+                                echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $description_tag, $this->get_render_attribute_string( 'callto_description_attr' ), wp_kses_post( $settings['callto_action_description'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                             }
                             if( !empty( $settings['callto_action_title'] ) ){
-                                echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) );
+                                echo sprintf( '<%1$s %2$s>%3$s</%1$s>', $title_tag, $this->get_render_attribute_string( 'callto_title_attr' ), wp_kses_post( $settings['callto_action_title'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                             }
                             if( !empty( $settings['callto_action_buttontxt'] ) ){
-                                echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) );
+                                echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'url' ), $call_to_action_button_one_icon, $call_to_action_button_one_text, wp_kses_post( $settings['callto_action_buttontxt'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                             }
                             if( !empty( $settings['callto_action_buttontxt_second'] ) ){
-                                echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) );
+                                echo sprintf('<a %1$s>%2$s%3$s</a>', $this->get_render_attribute_string( 'urlscnd' ), $call_to_action_button_two_icon, $call_to_action_button_two_text, wp_kses_post( $settings['callto_action_buttontxt_second'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- title/description tag whitelisted via htmega_validate_html_tag(), icon via HTMega_Icon_manager (Elementor core), text via wp_kses_post(), attrs via get_render_attribute_string().
                             }
                         ?>
                     <?php endif;?>

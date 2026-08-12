@@ -81,49 +81,34 @@ class HTMegaScrollToTop_Elementor {
         $htmega_stt_module_settings = htmega_get_option( 'htmega_stt', 'htmega_stt_module_settings' );
         $htmega_stt_module_settings = json_decode( $htmega_stt_module_settings,true );
 
-        $stt_global = isset( $htmega_stt_module_settings['stt_global'] ) ? $htmega_stt_module_settings['stt_global'] : 'off';
-        $stt_enable_label =  ( 'on' == $stt_global && htmega_is_pro_active() ) ? __('Enable to Custom Style', 'htmega-addons') : __('Enable Scroll To Top', 'htmega-addons');
-        
 		$tabs = Controls_Manager::TAB_SETTINGS;
 
 		$element->start_controls_section(
 			'section_htmega_stt_section',
 			array(
-				'label' => __( 'HTMega Scroll To Top', 'htmega-addons' ),
+				'label' => __( 'HTMega Scroll To Top', 'ht-mega-for-elementor' ),
 				'tab'   => $tabs,
 			)
 		);
 
-        if( 'on' == $stt_global && htmega_is_pro_active() ) {
-            $element->add_control(
-                'htmega_stt_disable',
-                [
-                    'label' => __('Disable Scroll To Top', 'htmega-addons'),
-                    'description' => __('Disable Scroll To Top for this  pages', 'htmega-addons'),
-                    'type' => Controls_Manager::SWITCHER,
-                    'default' => 'no',
-                    'label_on' => __('Yes', 'htmega-addons'),
-                    'label_off' => __('No', 'htmega-addons'),
-                    'return_value' => 'yes',
-                ]
-            );
-
-        } 
+        // Sitewide auto-enable (pro-only) injects its own "Disable for this page"
+        // control here via Elementor's start_injection/end_injection API — see
+        // htmega-pro/extensions/scroll-to-top/class.scroll-to-top-pro.php
         $element->add_control(
             'htmega_stt_enable',
             [
-                'label' =>  $stt_enable_label,
+                'label' =>  __('Enable Scroll To Top', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'no',
-                'label_on' => __('Yes', 'htmega-addons'),
-                'label_off' => __('No', 'htmega-addons'),
+                'label_on' => __('Yes', 'ht-mega-for-elementor'),
+                'label_off' => __('No', 'ht-mega-for-elementor'),
                 'return_value' => 'yes',
             ]
         );
         $element->add_control(
             'htmega_stt_notice',
             [
-                'raw'             => __( 'The <b>Scroll To Top settings</b> are not functional in Editor mode. Please preview the page  & Scroll to see the desired result.', 'htmega-addons' ),
+                'raw'             => __( 'The <b>Scroll To Top settings</b> are not functional in Editor mode. Please preview the page  & Scroll to see the desired result.', 'ht-mega-for-elementor' ),
                 'type'            => Controls_Manager::RAW_HTML,
                 'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 'condition'   => [
@@ -134,13 +119,13 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'htmega_stt_position',
             [
-                'label' => esc_html__('Position', 'htmega-addons'),
+                'label' => esc_html__('Position', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'bottom_left',
                 'label_block' => false,
                 'options' => [
-                    'bottom_left' => esc_html__('Bottom Left', 'htmega-addons'),
-                    'bottom_right' => esc_html__('Bottom Right', 'htmega-addons'),
+                    'bottom_left' => esc_html__('Bottom Left', 'ht-mega-for-elementor'),
+                    'bottom_right' => esc_html__('Bottom Right', 'ht-mega-for-elementor'),
                 ],
                 'separator' => 'before',
                 'condition' => [
@@ -159,9 +144,9 @@ class HTMegaScrollToTop_Elementor {
             'stt_offset',
             [
                 'type' =>Controls_Manager::POPOVER_TOGGLE,
-                'label' => esc_html__( 'Offsets', 'htmega-addons' ),
-                'label_off' => esc_html__( 'Default', 'htmega-addons' ),
-                'label_on' => esc_html__( 'Custom', 'htmega-addons' ),
+                'label' => esc_html__( 'Offsets', 'ht-mega-for-elementor' ),
+                'label_off' => esc_html__( 'Default', 'ht-mega-for-elementor' ),
+                'label_on' => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
                 'condition' => [
                     'htmega_stt_enable' => 'yes',
@@ -173,8 +158,8 @@ class HTMegaScrollToTop_Elementor {
             $element->add_control(
                 'offset_x',
                 [
-                    'label' => __('Offset X', 'htmega-addons'),
-                    'description' => __('Add the position X  Offest of the button', 'htmega-addons'),
+                    'label' => __('Offset X', 'ht-mega-for-elementor'),
+                    'description' => __('Add the position X  Offest of the button', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px'],
                     'range' => [
@@ -200,8 +185,8 @@ class HTMegaScrollToTop_Elementor {
             $element->add_control(
                 'offset_x2',
                 [
-                    'label' => __('Offset X', 'htmega-addons'),
-                    'description' => __('Add the position X  Offest of the button', 'htmega-addons'),
+                    'label' => __('Offset X', 'ht-mega-for-elementor'),
+                    'description' => __('Add the position X  Offest of the button', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px'],
                     'range' => [
@@ -228,8 +213,8 @@ class HTMegaScrollToTop_Elementor {
             $element->add_control(
                 'offset_Y',
                 [
-                    'label' => __('Offset Y', 'htmega-addons'),
-                    'description' => __('Add the position Y  Offest of the button', 'htmega-addons'),
+                    'label' => __('Offset Y', 'ht-mega-for-elementor'),
+                    'description' => __('Add the position Y  Offest of the button', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => ['px'],
                     'range' => [
@@ -255,7 +240,7 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'htmega_stt_width',
             [
-                'label' => __('Width', 'htmega-addons'),
+                'label' => __('Width', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -280,7 +265,7 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'htmega_stt_height',
             [
-                'label' => __('Height', 'htmega-addons'),
+                'label' => __('Height', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -305,7 +290,7 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'stt_z_index',
             [
-                'label' => __('Z Index', 'htmega-addons'),
+                'label' => __('Z Index', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 999,
                 'selectors' => [
@@ -319,19 +304,19 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'stt_icon_type',
             [
-                'label'   => __( 'Icon Type', 'htmega-addons' ),
+                'label'   => __( 'Icon Type', 'ht-mega-for-elementor' ),
                 'type'    => Controls_Manager::CHOOSE,
                 'options' => [
                     'none' => [
-                        'title' => __( 'None', 'htmega-addons' ),
+                        'title' => __( 'None', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-ban',
                     ],
                     'icon' => [
-                        'title' => __( 'Icon', 'htmega-addons' ),
+                        'title' => __( 'Icon', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-info-circle',
                     ],
                     'image' => [
-                        'title' => __( 'Image', 'htmega-addons' ),
+                        'title' => __( 'Image', 'ht-mega-for-elementor' ),
                         'icon'  => 'eicon-image-bold',
                     ],
                 ],
@@ -344,7 +329,7 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'stt_icon',
             [
-                'label'         => __( 'Icon', 'htmega-addons' ),
+                'label'         => __( 'Icon', 'ht-mega-for-elementor' ),
                 'type'          => Controls_Manager::ICONS,
                 'condition'=>[
                     'stt_icon_type'=>'icon',
@@ -356,7 +341,7 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'stt_image',
             [
-                'label' => __('Image','htmega-addons'),
+                'label' => __('Image','ht-mega-for-elementor'),
                 'type'=>Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -370,7 +355,7 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'stt_icon_size',
             [
-                'label' => __('Icon size', 'htmega-addons'),
+                'label' => __('Icon size', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -396,7 +381,7 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'stt_button_text',
             [
-                'label'         => __( 'Button Text', 'htmega-addons' ),
+                'label'         => __( 'Button Text', 'ht-mega-for-elementor' ),
                 'type'          => Controls_Manager::TEXT,
                 'default'       => '',
                 'condition' => [
@@ -407,7 +392,7 @@ class HTMegaScrollToTop_Elementor {
         $element->add_control(
             'stt_colors_borders',
             [
-                'label' => __( 'Colors and Border', 'htmega-addons' ),
+                'label' => __( 'Colors and Border', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -427,13 +412,13 @@ class HTMegaScrollToTop_Elementor {
             $element->start_controls_tab(
                 'input_normal',
                 [
-                    'label' => __( 'Normal', 'htmega-addons' ),
+                    'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                 ]
             );
                 $element->add_control(
                     'stt_text_color',
                     [
-                        'label'     => __( 'Color', 'htmega-addons' ),
+                        'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-stt-wrap,{{WRAPPER}} .htmega-stt-wrap i' => 'color: {{VALUE}} !important;',
@@ -458,7 +443,7 @@ class HTMegaScrollToTop_Elementor {
                 $element->add_control(
                     'stt_bacground_color',
                     [
-                        'label'     => __( 'Background Color', 'htmega-addons' ),
+                        'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-stt-wrap'  => 'background-color: {{VALUE}} !important;',
@@ -472,7 +457,7 @@ class HTMegaScrollToTop_Elementor {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'stt_border',
-                        'label' => __( 'Border', 'htmega-addons' ),
+                        'label' => __( 'Border', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-stt-wrap',
                         'condition' => [
                             'htmega_stt_enable' => 'yes',
@@ -483,7 +468,7 @@ class HTMegaScrollToTop_Elementor {
                 $element->add_responsive_control(
                     'stt_border_radius',
                     [
-                        'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                        'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'selectors' => [
                             '{{WRAPPER}} .htmega-stt-wrap' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -497,7 +482,7 @@ class HTMegaScrollToTop_Elementor {
                     Group_Control_Box_Shadow::get_type(),
                     [
                         'name' => 'stt_boxshadow',
-                        'label' => __( 'Box Shadow', 'htmega-addons' ),
+                        'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                         'selector' => '{{WRAPPER}} .htmega-stt-wrap',
                         'condition' => [
                             'htmega_stt_enable' => 'yes',
@@ -511,13 +496,13 @@ class HTMegaScrollToTop_Elementor {
             $element->start_controls_tab(
                 'input_focus',
                 [
-                    'label' => __( 'Hover', 'htmega-addons' ),
+                    'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                 ]
             );
             $element->add_control(
                 'stt_text_color_hover',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-stt-wrap:hover,{{WRAPPER}} .htmega-stt-wrap:hover i' => 'color: {{VALUE}} !important;',
@@ -531,7 +516,7 @@ class HTMegaScrollToTop_Elementor {
             $element->add_control(
                 'stt_bacground_color_hover',
                 [
-                    'label'     => __( 'Background Color', 'htmega-addons' ),
+                    'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-stt-wrap:hover'  => 'background-color: {{VALUE}} !important;',
@@ -545,7 +530,7 @@ class HTMegaScrollToTop_Elementor {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'stt_border_hover',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-stt-wrap:hover',
                     'condition' => [
                         'htmega_stt_enable' => 'yes',
@@ -556,7 +541,7 @@ class HTMegaScrollToTop_Elementor {
             $element->add_responsive_control(
                 'stt_border_radius_hover',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-stt-wrap:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -570,7 +555,7 @@ class HTMegaScrollToTop_Elementor {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'stt_boxshadow_hover',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-stt-wrap:hover',
                     'condition' => [
                         'htmega_stt_enable' => 'yes',

@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Custom Event', 'htmega-addons' );
+        return __( 'Custom Event', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -33,23 +33,23 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
         $this->start_controls_section(
             'customevent_content',
             [
-                'label' => __( 'Event', 'htmega-addons' ),
+                'label' => __( 'Event', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'event_title',
                 [
-                    'label'   => __( 'Title', 'htmega-addons' ),
+                    'label'   => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'placeholder' => __('Event Title.','htmega-addons'),
+                    'placeholder' => __('Event Title.','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'event_image',
                 [
-                    'label' => __( 'Image', 'htmega-addons' ),
+                    'label' => __( 'Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                 ]
             );
@@ -66,7 +66,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_control(
                 'event_time',
                 [
-                    'label' => __( 'Event Time', 'htmega-addons' ),
+                    'label' => __( 'Event Time', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DATE_TIME,
                 ]
             );
@@ -74,16 +74,16 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_control(
                 'event_location',
                 [
-                    'label'   => __( 'Event Location', 'htmega-addons' ),
+                    'label'   => __( 'Event Location', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'placeholder' => __('Location.','htmega-addons'),
+                    'placeholder' => __('Location.','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'event_description',
                 [
-                    'label'   => __( 'Event description', 'htmega-addons' ),
+                    'label'   => __( 'Event description', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXTAREA,
                 ]
             );
@@ -91,18 +91,18 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_control(
                 'event_button',
                 [
-                    'label'   => __( 'Event Button text', 'htmega-addons' ),
+                    'label'   => __( 'Event Button text', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'placeholder' => __('Read More.','htmega-addons'),
+                    'placeholder' => __('Read More.','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'event_link',
                 [
-                    'label' => __( 'Event Button Link', 'htmega-addons' ),
+                    'label' => __( 'Event Button Link', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                    'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                     'show_external' => true,
                     'default' => [
                         'url' => '#',
@@ -121,7 +121,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
         $this->start_controls_section(
             'event_card_style_section',
             [
-                'label' => __( 'Card', 'htmega-addons' ),
+                'label' => __( 'Card', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -129,7 +129,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_control(
                 'event_card_bg_color',
                 [
-                    'label' => __( 'Background Color', 'htmega-addons' ),
+                    'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .ht-event' => 'background-color: {{VALUE}};',
@@ -141,7 +141,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'event_card_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .ht-event',
                 ]
             );
@@ -149,7 +149,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_responsive_control(
                 'event_card_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -161,7 +161,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_responsive_control(
                 'event_card_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -172,7 +172,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_responsive_control(
                 'event_card_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -194,7 +194,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
         $this->start_controls_section(
             'event_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'event_title!'=>'',
@@ -207,14 +207,14 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                 $this->start_controls_tab(
                     'event_title_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 ); 
 
                     $this->add_control(
                         'event_title_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#000000',
                             'selectors' => [
@@ -234,7 +234,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                     $this->add_responsive_control(
                         'event_title_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -247,7 +247,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                     $this->add_responsive_control(
                         'event_title_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -262,14 +262,14 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                 $this->start_controls_tab(
                     'event_title_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'event_title_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#000000',
                             'selectors' => [
@@ -288,7 +288,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
         $this->start_controls_section(
             'event_description_style_section',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'event_description!'=>'',
@@ -299,7 +299,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_control(
                 'event_description_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#727272',
                     'selectors' => [
@@ -319,7 +319,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_responsive_control(
                 'event_description_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -332,7 +332,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_responsive_control(
                 'event_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -348,7 +348,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
         $this->start_controls_section(
             'event_timelocation_style_section',
             [
-                'label' => __( 'Time / Location', 'htmega-addons' ),
+                'label' => __( 'Time / Location', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -356,7 +356,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_control(
                 'event_timelocation_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#909090',
                     'selectors' => [
@@ -376,7 +376,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_responsive_control(
                 'event_timelocation_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -393,7 +393,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
         $this->start_controls_section(
             'event_eventdate_style_section',
             [
-                'label' => __( 'Date', 'htmega-addons' ),
+                'label' => __( 'Date', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -401,7 +401,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_control(
                 'event_eventdate_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#fff',
                     'selectors' => [
@@ -413,7 +413,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_control(
                 'event_eventdate_bg_color',
                 [
-                    'label' => __( 'Background Color', 'htmega-addons' ),
+                    'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#141414',
                     'selectors' => [
@@ -433,7 +433,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
             $this->add_responsive_control(
                 'event_eventdate_padding',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -449,7 +449,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
         $this->start_controls_section(
             'event_button_style_section',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'event_button!'=>'',
@@ -462,14 +462,14 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                 $this->start_controls_tab(
                     'event_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'event_button_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#727272',
                             'selectors' => [
@@ -490,7 +490,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'event_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .ht-event .content .event-btn a',
                         ]
                     );
@@ -498,7 +498,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                     $this->add_responsive_control(
                         'event_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -512,14 +512,14 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                 $this->start_controls_tab(
                     'event_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'event_button_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#727272',
                             'selectors' => [
@@ -532,7 +532,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'event_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .ht-event .content .event-btn a:hover',
                         ]
                     );
@@ -562,11 +562,11 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
         $timeformate = get_option('time_format');
        
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'custom_event_attr' ); ?>>
+            <div <?php echo $this->get_render_attribute_string( 'custom_event_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core get_render_attribute_string() already escapes attributes. ?>>
                 <div class="ht-event">
                     <div class="thumb">
-                        <a <?php echo $this->get_render_attribute_string( 'url' ); ?> >
-                            <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'event_imagesize', 'event_image' ); ?>
+                        <a <?php echo $this->get_render_attribute_string( 'url' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core get_render_attribute_string() already escapes attributes. ?> >
+                            <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'event_imagesize', 'event_image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core Group_Control_Image_Size::get_attachment_image_html() already escapes output. ?>
                         </a>
                         <div class="event-date">
                             <?php $formated_time = strtotime( $settings['event_time'] );?>
@@ -579,7 +579,7 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                     <div class="content">
                         <?php
                             if( !empty( $settings['event_title'] ) ){
-                                echo '<h4><a href="#">'.htmega_kses_title( $settings['event_title'] ).'</a></h4>';
+                                echo '<h4><a href="#">'.htmega_kses_title( $settings['event_title'] ).'</a></h4>';  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php
                             }
                             if( !empty( $settings['event_time'] ) || !empty( $settings['event_location'] ) ):
                         ?>
@@ -589,19 +589,19 @@ class HTMega_Elementor_Widget_Custom_Event extends Widget_Base {
                                     echo '<li><i class="fa fa-clock-o"></i>'.esc_html( date_i18n( $timeformate, $formated_time ) ).'</li>';
                                 }
                                 if( !empty( $settings['event_location'] ) ){
-                                    echo '<li><i class="fa fa-map-marker""></i>'.htmega_kses_desc( $settings['event_location'] ).'</li>';
+                                    echo '<li><i class="fa fa-map-marker""></i>'.htmega_kses_desc( $settings['event_location'] ).'</li>';  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                                 }
                             ?>
                         </ul>
                         <?php 
                             endif;
                             if( !empty( $settings['event_description'] ) ){
-                                echo '<p>'.htmega_kses_desc( $settings['event_description'] ).'</p>';
+                                echo '<p>'.htmega_kses_desc( $settings['event_description'] ).'</p>';  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_desc() sanitizes via wp_kses(), see includes/helper-function.php
                             }
                         ?>
                         <?php if( !empty( $settings['event_button'] ) ):?>
                             <div class="event-btn">
-                                <a <?php echo $this->get_render_attribute_string( 'url' ); ?> > <?php echo htmega_kses_desc( $settings['event_button'] ); ?></a>
+                                <a <?php echo $this->get_render_attribute_string( 'url' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor core get_render_attribute_string() already escapes attributes; htmega_kses_desc() below sanitizes via wp_kses(). ?> > <?php echo htmega_kses_desc( $settings['event_button'] ); ?></a>
                             </div>
                         <?php endif;?>
                     </div>

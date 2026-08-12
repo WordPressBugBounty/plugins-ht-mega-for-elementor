@@ -1,10 +1,12 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Custom Walker
  *
  * @access      public
- * @since       1.0 
+ * @since       1.0
  * @return      void
 */
 

@@ -36,8 +36,8 @@ class HTMegaBuilder_Admin_Settings {
         if ( isset( $subtabs['elements']['elementor'] ) ) {
             $subtabs['elements']['elementor']['panels'][] = [
                 'id'     => 'htmega_themebuilder_element_tabs',
-                'title'  => __( 'Theme Builder Widgets List', 'htmega-addons' ),
-                'desc'   => __( 'Freely use these elements to create your site. You can enable which you are not using, and all associated assets will be disabled to improve your site loading speed.', 'htmega-addons' ),
+                'title'  => __( 'Theme Builder Widgets List', 'ht-mega-for-elementor' ),
+                'desc'   => __( 'Freely use these elements to create your site. You can enable which you are not using, and all associated assets will be disabled to improve your site loading speed.', 'ht-mega-for-elementor' ),
                 'column' => 3,
             ];
         }
@@ -55,7 +55,7 @@ class HTMegaBuilder_Admin_Settings {
                     <span><i class="dashicons dashicons-warning"></i></span>
                     <p>
                         <?php
-                            echo esc_html__('Purchase our','htmega-addons').' <strong><a href="'.esc_url( 'https://wphtmega.com/pricing/' ).'" target="_blank" rel="nofollow">'.esc_html__( 'premium version', 'htmega-addons' ).'</a></strong> '.esc_html__('to unlock these pro elements!','htmega-addons');
+                            echo esc_html__('Purchase our','ht-mega-for-elementor').' <strong><a href="'.esc_url( 'https://wphtmega.com/pricing/' ).'" target="_blank" rel="nofollow">'.esc_html__( 'premium version', 'ht-mega-for-elementor' ).'</a></strong> '.esc_html__('to unlock these pro elements!','ht-mega-for-elementor');
                         ?>
                     </p>
                 </div>
@@ -88,7 +88,7 @@ class HTMegaBuilder_Admin_Settings {
     function plugin_page() {
 
         echo '<div class="wrap">';
-            echo '<h2>'.esc_html__( 'HT Builder Settings','htmega-addons' ).'</h2>';
+            echo '<h2>'.esc_html__( 'HT Builder Settings','ht-mega-for-elementor' ).'</h2>';
             $this->save_message();
             $this->settings_api->show_navigation();
             $this->settings_api->show_forms();
@@ -100,7 +100,7 @@ class HTMegaBuilder_Admin_Settings {
     function save_message() {
         if( isset($_GET['settings-updated']) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
             <div class="updated notice is-dismissible"> 
-                <p><strong><?php esc_html_e('Successfully Settings Saved.', 'htmega-addons') ?></strong></p>
+                <p><strong><?php esc_html_e('Successfully Settings Saved.', 'ht-mega-for-elementor') ?></strong></p>
             </div>
             <?php
         }

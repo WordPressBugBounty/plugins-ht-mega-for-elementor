@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /*
  * Plugisn Options value
  * return on/off
@@ -49,15 +52,15 @@ function htmegaBlocks_any_block_enabled() {
 * Woocommerce Product last product id return
 */
 function htmegaBlocks_get_last_product_id(){
-    global $wpdb;
-    
-    // Getting last Product ID (max value)
-    $results = $wpdb->get_col( "
-        SELECT MAX(ID) FROM {$wpdb->prefix}posts
-        WHERE post_type LIKE 'product'
-        AND post_status = 'publish'" 
-    );
-    return reset($results);
+    $products = get_posts( array(
+        'post_type'      => 'product',
+        'post_status'    => 'publish',
+        'posts_per_page' => 1,
+        'orderby'        => 'ID',
+        'order'          => 'DESC',
+        'fields'         => 'ids',
+    ) );
+    return ! empty( $products ) ? $products[0] : null;
 }
 
 /**
@@ -86,10 +89,14 @@ function htmegaBlocks_get_last_order_id(){
 * Template Editor Mode
 */
 function htmegaBlocks_edit_mode(){
-    // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-    if( !empty( $_GET['post'] ) && $_GET['action'] === 'edit' ){ // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        $post_obj = get_post( $_GET['post'] );  // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if( $post_obj->post_type === 'htmega-template' ) {
+    // Read-only check of the current admin screen/action (no data is written),
+    // used only to decide editor-mode behaviour — nonce verification is not
+    // applicable here.
+    $action = isset( $_GET['action'] ) ? sanitize_text_field( wp_unslash( $_GET['action'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    if( !empty( $_GET['post'] ) && $action === 'edit' ){ // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $post_id  = absint( wp_unslash( $_GET['post'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $post_obj = get_post( $post_id );
+        if( $post_obj && $post_obj->post_type === 'htmega-template' ) {
             return true;
         }else{
             return false;
@@ -346,7 +353,7 @@ function htmegaBlocks_reusable_id( $post_id ){
  */
 function htmegaBlocks_get_image_size() {
     $sizes = get_intermediate_image_sizes();
-    $filter = [ 'full' => __( 'Full','htmega-addons') ];
+    $filter = [ 'full' => __( 'Full','ht-mega-for-elementor') ];
     foreach ( $sizes as $value ) {
         $filter[$value] = ucwords( str_replace( array('_', '-'), array(' ', ' '), $value ) );
     }
@@ -492,7 +499,7 @@ function htmegaBlocks_Product_Query( $params ){
             'include_children' => false
         );
     }
-    $query_args['tax_query'] = $tax_query;
+    $query_args['tax_query'] = $tax_query; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- intentional: implements the Products block's "categories"/"tags" query params (REST `products` route, see Api.php get_post_data()), letting the block builder filter products by category/tag.
 
     if( isset( $params['offset'] ) && $params['offset'] && !( $query_args['paged'] > 1 ) ){
         $query_args['offset'] = isset( $params['offset'] ) ? $params['offset'] : 0;
@@ -503,7 +510,7 @@ function htmegaBlocks_Product_Query( $params ){
     }
 
     if( isset( $params['exclude'] ) && $params['exclude'] ){
-        $query_args['post__not_in'] = explode( ',', $params['exclude'] );
+        $query_args['post__not_in'] = explode( ',', $params['exclude'] ); // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in -- intentional: implements the Products block's "exclude" query param (REST `products` route), letting the block builder exclude specific product IDs.
     }
 
     if( isset( $params['filterBy'] ) ){
@@ -515,7 +522,7 @@ function htmegaBlocks_Product_Query( $params ){
             break;
     
             case 'best_selling':
-                $query_args['meta_key']   = 'total_sales';
+                $query_args['meta_key']   = 'total_sales'; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- intentional: implements the Products block's "filterBy=best_selling" query param (REST `products` route), sorting by WooCommerce's total_sales meta as WC core itself does for its Best Selling widget.
                 $query_args['orderby']    = 'meta_value_num';
                 $query_args['order']      = 'desc';
             break;
@@ -524,10 +531,10 @@ function htmegaBlocks_Product_Query( $params ){
                 $query_args['post__in'] = array_merge( array( 0 ), wc_get_product_ids_on_sale() );
             break;
     
-            case 'top_rated': 
-                $query_args['meta_key']   = '_wc_average_rating';
+            case 'top_rated':
+                $query_args['meta_key']   = '_wc_average_rating'; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- intentional: implements the Products block's "filterBy=top_rated" query param (REST `products` route), sorting by WooCommerce's _wc_average_rating meta as WC core itself does for its Top Rated widget.
                 $query_args['orderby']    = 'meta_value_num';
-                $query_args['order']      = 'desc';          
+                $query_args['order']      = 'desc';
             break;
     
             case 'mixed_order':
@@ -575,9 +582,9 @@ function htmegaBlocks_compare_button( $button_arg = array() ){
 
     if( class_exists('Ever_Compare') || class_exists('Htmega_Ever_Compare') ){
 
-        $button_title       = !empty( $button_arg['title'] ) ? $button_arg['title'] : esc_html__('Add to Compare','htmega-addons');
-        $button_text        = !empty( $button_arg['btn_text'] ) ? $button_arg['btn_text'] : esc_html__('Add to Compare','htmega-addons');
-        $button_added_text  = !empty( $button_arg['btn_added_txt'] ) ? $button_arg['btn_added_txt'] : esc_html__( 'Product Added','htmega-addons' );
+        $button_title       = !empty( $button_arg['title'] ) ? $button_arg['title'] : esc_html__('Add to Compare','ht-mega-for-elementor');
+        $button_text        = !empty( $button_arg['btn_text'] ) ? $button_arg['btn_text'] : esc_html__('Add to Compare','ht-mega-for-elementor');
+        $button_added_text  = !empty( $button_arg['btn_added_txt'] ) ? $button_arg['btn_added_txt'] : esc_html__( 'Product Added','ht-mega-for-elementor' );
 
         $comp_link = \EverCompare\Frontend\Manage_Compare::instance()->get_compare_page_url();
         $output = '<a title="'.esc_attr( $button_title ).'" href="'.esc_url( $comp_link ).'" class="htcompare-btn htmega-compare" data-added-text="'.esc_attr( $button_added_text ).'" data-product_id="'.esc_attr( $product_id ).'">'.$button_text.'</a>';
@@ -592,7 +599,7 @@ function htmegaBlocks_compare_button( $button_arg = array() ){
                 $output = do_shortcode('[yith_compare_button]');
             }
         }else{
-            $output = '<a title="'. esc_attr__('Add to Compare', 'htmega-addons') .'" href="'. esc_url( $comp_link ) .'" class="htmega-compare compare" data-product_id="'. esc_attr( $product_id ) .'" rel="nofollow">'.esc_html__( 'Compare', 'htmega-addons' ).'</a>';
+            $output = '<a title="'. esc_attr__('Add to Compare', 'ht-mega-for-elementor') .'" href="'. esc_url( $comp_link ) .'" class="htmega-compare compare" data-product_id="'. esc_attr( $product_id ) .'" rel="nofollow">'.esc_html__( 'Compare', 'ht-mega-for-elementor' ).'</a>';
         }
         return $output;
     }else{

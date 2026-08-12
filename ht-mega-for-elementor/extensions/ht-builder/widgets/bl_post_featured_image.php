@@ -20,7 +20,7 @@ class Bl_Post_Featured_Image_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Post Featured Image', 'htmega-addons' );
+        return __( 'Post Featured Image', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -44,7 +44,7 @@ class Bl_Post_Featured_Image_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_featured_image_section',
             array(
-                'label' => __( 'Post Featured Image', 'htmega-addons' ),
+                'label' => __( 'Post Featured Image', 'ht-mega-for-elementor' ),
             )
         );
 
@@ -63,7 +63,7 @@ class Bl_Post_Featured_Image_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_featured_image_style_section',
             array(
-                'label' => __( 'Post Featured Image', 'htmega-addons' ),
+                'label' => __( 'Post Featured Image', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
@@ -71,19 +71,19 @@ class Bl_Post_Featured_Image_ELement extends Widget_Base {
             $this->add_responsive_control(
                 'post_featured_image_align',
                 [
-                    'label'        => __( 'Alignment', 'htmega-addons' ),
+                    'label'        => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::CHOOSE,
                     'options'      => [
                         'left'   => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-center',
                         ],
                         'right'  => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-text-align-right',
                         ]
                     ],                    
@@ -101,7 +101,7 @@ class Bl_Post_Featured_Image_ELement extends Widget_Base {
         $settings   = $this->get_settings_for_display();
 
         if( Elementor::instance()->editor->is_edit_mode() ){ ?>
-            <img src="<?php echo esc_url( HTMEGA_ADDONS_PL_URL . 'assets/images/image-placeholder.png' ); ?>" alt="<?php echo esc_html__( 'HT Mega Placeholder Image', 'htmega-addons' ); ?>">
+            <img src="<?php echo esc_url( HTMEGA_ADDONS_PL_URL . 'assets/images/image-placeholder.png' ); ?>" alt="<?php echo esc_html__( 'HT Mega Placeholder Image', 'ht-mega-for-elementor' ); ?>">
         <?php
         }else{
             if ( has_post_thumbnail() ){

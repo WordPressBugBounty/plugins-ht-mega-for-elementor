@@ -25,6 +25,7 @@
 			
 			<div class='htmega-team-content'>
 				<div class='htmega-team-content-inner'>
+					<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmegaBlocks_sanitize_tag() whitelists tag names (falls back to 'div'), see htmega-blocks/includes/helper-functions.php ?>
 					<<?php echo htmegaBlocks_sanitize_tag($settings['nameTag']); ?> class='htmega-team-name'><?php echo esc_html($settings['name']); ?></<?php echo htmegaBlocks_sanitize_tag($settings['nameTag']); ?>>
 					<span class='htmega-team-designation'><?php echo esc_html($settings['designation']) ?></span>
 					<?php echo $settings['showBio'] ? "<p class='htmega-team-bio'>" . esc_html($settings['bio']) ."</p>" : ''; ?>

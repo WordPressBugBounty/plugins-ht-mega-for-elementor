@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Weather', 'htmega-addons' );
+        return __( 'Weather', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -38,14 +38,14 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
         $this->start_controls_section(
             'weather_content',
             [
-                'label' => __( 'Weather', 'htmega-addons' ),
+                'label' => __( 'Weather', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'overridetitle',
                 [
-                    'label'   => __( 'Override Title', 'htmega-addons' ),
+                    'label'   => __( 'Override Title', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                     'default' => '',
                 ]
@@ -54,12 +54,12 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'units',
                 [
-                    'label'   => __( 'Units', 'htmega-addons' ),
+                    'label'   => __( 'Units', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'C',
                     'options' => [
-                        'F'   => __( 'F', 'htmega-addons' ),
-                        'C'   => __( 'C', 'htmega-addons' ),
+                        'F'   => __( 'F', 'ht-mega-for-elementor' ),
+                        'C'   => __( 'C', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -67,14 +67,14 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'layout',
                 [
-                    'label'   => __( 'Style', 'htmega-addons' ),
+                    'label'   => __( 'Style', 'ht-mega-for-elementor' ),
                     'type'    => 'htmega-preset-select',
                     'default' => 'layout-1',
                     'options' => [
-                        'layout-1'  => __( 'Style One', 'htmega-addons' ),
-                        'layout-2'  => __( 'Style Two', 'htmega-addons' ),
-                        'layout-3'  => __( 'Style Three', 'htmega-addons' ),
-                        'layout-4'  => __( 'Style Four', 'htmega-addons' ),
+                        'layout-1'  => __( 'Style One', 'ht-mega-for-elementor' ),
+                        'layout-2'  => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        'layout-3'  => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        'layout-4'  => __( 'Style Four', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -82,14 +82,14 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'forecast',
                 [
-                    'label'   => __( 'Forecast', 'htmega-addons' ),
+                    'label'   => __( 'Forecast', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => '4',
                     'options' => [
-                        '3' => __( '3 Days', 'htmega-addons' ),
-                        '4' => __( '4 Days', 'htmega-addons' ),
-                        '5' => __( '5 Days', 'htmega-addons' ),
-                        '6' => __( '6 Days', 'htmega-addons' ),
+                        '3' => __( '3 Days', 'ht-mega-for-elementor' ),
+                        '4' => __( '4 Days', 'ht-mega-for-elementor' ),
+                        '5' => __( '5 Days', 'ht-mega-for-elementor' ),
+                        '6' => __( '6 Days', 'ht-mega-for-elementor' ),
                     ],
                     'conditions'=>[
                         'relation' => 'or',
@@ -117,7 +117,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'hidecurrentstate',
                 [
-                    'label'   => __( 'Hide Current Status', 'htmega-addons' ),
+                    'label'   => __( 'Hide Current Status', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'yes',
                     'conditions'=>[
@@ -141,7 +141,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'hidesunstate',
                 [
-                    'label'   => __( 'Hide Sun Status', 'htmega-addons' ),
+                    'label'   => __( 'Hide Sun Status', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'yes',
                     'condition'=>[
@@ -153,7 +153,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'hide_forcast',
                 [
-                    'label'   => __( 'Hide Forecast', 'htmega-addons' ),
+                    'label'   => __( 'Hide Forecast', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'yes',
                     'conditions'=>[
@@ -177,7 +177,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'custom_giolocation',
                 [
-                    'label'   => __( 'Custom Geolocation', 'htmega-addons' ),
+                    'label'   => __( 'Custom Geolocation', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SWITCHER,
                     'default' => 'no',
                 ]
@@ -186,7 +186,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'custom_lat',
                 [
-                    'label'   => __( 'Latitude', 'htmega-addons' ),
+                    'label'   => __( 'Latitude', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                     'default' => '',
                     'condition'=>[
@@ -198,7 +198,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'custom_long',
                 [
-                    'label'   => __( 'Longitude', 'htmega-addons' ),
+                    'label'   => __( 'Longitude', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
                     'default' => '',
                     'condition'=>[
@@ -211,7 +211,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'custom_bg_color',
-                    'label' => __( 'Custom Background Color', 'htmega-addons' ),
+                    'label' => __( 'Custom Background Color', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htm-weather-wraper,{{WRAPPER}} .htm-weather-wraper.layout-4',
                 ]
@@ -220,7 +220,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'custom_bg_overlay',
                 [
-                    'label' => __( 'Background Overlay', 'htmega-addons' ),
+                    'label' => __( 'Background Overlay', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'condition'=>[
                         'custom_bg_color_background' => 'classic'
@@ -234,7 +234,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'text_color',
                 [
-                    'label' => __( 'Text Color', 'htmega-addons' ),
+                    'label' => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htm-weather-wraper' => 'color: {{VALUE}}',
@@ -249,7 +249,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
         $this->start_controls_section(
             'weather_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -257,7 +257,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_control(
                 'weather_title_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#fff',
                     'selectors' => [
@@ -277,7 +277,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             $this->add_responsive_control(
                 'weather_title_padding',
                 [
-                    'label'      => __( 'Padding', 'htmega-addons' ),
+                    'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -290,7 +290,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'weather_title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htm-weather-wraper h3',
                 ]
             );
@@ -299,7 +299,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'weather_title_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htm-weather-wraper h3',
                 ]
@@ -309,7 +309,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name'     => 'weather_title_shadow',
-                    'label'     => __( 'Box Shadow', 'htmega-addons' ),
+                    'label'     => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htm-weather-wraper h3',
                 ]
             );
@@ -319,7 +319,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
         $this->start_controls_section(
             'weather_forcast_style_section',
             [
-                'label' => __( 'Forcast', 'htmega-addons' ),
+                'label' => __( 'Forcast', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -328,7 +328,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'weather_forcast_border',
-                'label' => __( 'Border', 'htmega-addons' ),
+                'label' => __( 'Border', 'ht-mega-for-elementor' ),
                 'selector' => '{{WRAPPER}} .htm-weather-wraper .htm-weather-forcast',
             ]
         );
@@ -336,7 +336,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
         $this->add_responsive_control(
             'weather_forcast_padding',
             [
-                'label'      => __( 'Padding', 'htmega-addons' ),
+                'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
@@ -374,7 +374,7 @@ class HTMega_Elementor_Widget_Weather extends Widget_Base {
         if(empty($api_key) ) {
             ?>
                 <div class="htm-api-notice">
-                    <p><?php echo esc_html__('Please Insert Weather Map API Key from "HTMega Addons > Settings > Other options > Weather Map API Key".','htmega-addons'); ?></p>
+                    <p><?php echo esc_html__('Please Insert Weather Map API Key from "HTMega Addons > Settings > Other options > Weather Map API Key".','ht-mega-for-elementor'); ?></p>
                 </div>
             <?php
             return;

@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'WP Form', 'htmega-addons' );
+        return __( 'WP Form', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -38,7 +38,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 $formlist[$form->ID] = $form->post_title;
             }
         }else{
-            $formlist[ __( 'Form not found', 'htmega-addons' ) ] = 0;
+            $formlist[ __( 'Form not found', 'ht-mega-for-elementor' ) ] = 0;
         }
         return $formlist;
     }
@@ -54,7 +54,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'WPforms', 'htmega-addons' ),
+                'label' => __( 'WPforms', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -62,7 +62,8 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: plugin name/link, repeated twice in the sentence */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=wpforms&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">WPforms</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -74,7 +75,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 'parent_plugin_install',
                 [
                     'type' => Controls_Manager::RAW_HTML,
-                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=wpforms&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate WPforms', 'htmega-addons' ) . '</a>',
+                    'raw' => '<a href="' . esc_url( admin_url( 'plugin-install.php?s=wpforms&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Click to install or activate WPforms', 'ht-mega-for-elementor' ) . '</a>',
                 ]
             );
             
@@ -86,13 +87,13 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'wpforms_content',
             [
-                'label' => __( 'WP Form', 'htmega-addons' ),
+                'label' => __( 'WP Form', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'contact_form_list',
                 [
-                    'label'             => esc_html__( 'Select Form', 'htmega-addons' ),
+                    'label'             => esc_html__( 'Select Form', 'ht-mega-for-elementor' ),
                     'type'              => Controls_Manager::SELECT,
                     'label_block'       => true,
                     'options'           => $this->htmega_wpforms_forms(),
@@ -103,11 +104,11 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'show_form_title',
                 [
-                    'label'                 => __( 'Title', 'htmega-addons' ),
+                    'label'                 => __( 'Title', 'ht-mega-for-elementor' ),
                     'type'                  => Controls_Manager::SWITCHER,
                     'default'               => 'no',
-                    'label_on'              => __( 'Show', 'htmega-addons' ),
-                    'label_off'             => __( 'Hide', 'htmega-addons' ),
+                    'label_on'              => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off'             => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value'          => 'yes',
                 ]
             );
@@ -115,11 +116,11 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'show_form_description',
                 [
-                    'label'                 => __( 'Description', 'htmega-addons' ),
+                    'label'                 => __( 'Description', 'ht-mega-for-elementor' ),
                     'type'                  => Controls_Manager::SWITCHER,
                     'default'               => 'no',
-                    'label_on'              => __( 'Show', 'htmega-addons' ),
-                    'label_off'             => __( 'Hide', 'htmega-addons' ),
+                    'label_on'              => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off'             => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value'          => 'yes',
                 ]
             );
@@ -130,7 +131,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'wpforms_title_style_section',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_form_title'=>'yes',
@@ -141,7 +142,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_title_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#212529',
                     'selectors' => [
@@ -161,7 +162,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_title_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -174,7 +175,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_title_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -187,7 +188,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'wpforms_title_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .wpforms-container .wpforms-title',
                 ]
             );
@@ -195,7 +196,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_title_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .wpforms-container .wpforms-title' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -205,19 +206,19 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'title_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -232,7 +233,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'wpforms_description_style_section',
             [
-                'label' => __( 'Description', 'htmega-addons' ),
+                'label' => __( 'Description', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_form_description'=>'yes',
@@ -243,7 +244,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_description_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#212529',
                     'selectors' => [
@@ -263,7 +264,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_description_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -276,7 +277,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -289,7 +290,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'wpforms_description_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .wpforms-container .wpforms-description',
                 ]
             );
@@ -297,7 +298,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_description_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .wpforms-container .wpforms-description' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -307,19 +308,19 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'description_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -335,26 +336,26 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'wpforms_label_style',
             [
-                'label'     => __( 'Labels', 'htmega-addons' ),
+                'label'     => __( 'Labels', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'wpforms_label_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ]
                     ],
@@ -366,7 +367,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_label_background',
                 [
-                    'label'     => __( 'Background', 'htmega-addons' ),
+                    'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .wpforms-form .wpforms-field-label'   => 'background-color: {{VALUE}};',
@@ -377,7 +378,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_label_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .wpforms-form .wpforms-field-label,{{WRAPPER}} .wpforms-form .wpforms-field label'   => 'color: {{VALUE}};',
@@ -397,7 +398,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'wpforms_label_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .wpforms-form .wpforms-field-label',
                 ]
             );
@@ -405,7 +406,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_label_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .wpforms-form .wpforms-field-label' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -417,7 +418,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_label_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -430,7 +431,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_label_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -443,7 +444,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_description_heading',
                 [
-                    'label' => __( 'Description Style', 'htmega-addons' ),
+                    'label' => __( 'Description Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -451,7 +452,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_description_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .wpforms-field-description,{{WRAPPER}} .wpforms-field-number-slider-hint'   => 'color: {{VALUE}};',
@@ -469,7 +470,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_responsive_control(
                 'wpforms_input_description_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -482,7 +483,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_required_heading',
                 [
-                    'label' => __( 'Required Label Style', 'htmega-addons' ),
+                    'label' => __( 'Required Label Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -490,7 +491,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_required_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .wpforms-required-label'   => 'color: {{VALUE}};',
@@ -503,7 +504,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'wpforms_input_style_section',
             [
-                'label' => __( 'Input', 'htmega-addons' ),
+                'label' => __( 'Input', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -514,7 +515,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 $this->start_controls_tab(
                     'style_input_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -522,7 +523,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_input_background_color',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors'         => [
@@ -534,7 +535,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_input_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#212529',
                             'selectors'         => [
@@ -545,7 +546,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_input_placeholder_color',
                         [
-                            'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .wpforms-field input::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -565,7 +566,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_input_height',
                         [
-                            'label'             => __( 'Height', 'htmega-addons' ),
+                            'label'             => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'              => Controls_Manager::SLIDER,
                             'range'             => [
                                 'px' => [
@@ -584,7 +585,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_input_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -598,7 +599,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_input_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -612,7 +613,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'wpforms_input_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .wpforms-field select',
                         ]
                     );
@@ -620,7 +621,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_input_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file])' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -632,26 +633,26 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'wpforms_input_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .wpforms-field select',
                         ]
                     );
                     $this->add_responsive_control(
                         'wpforms_input_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ]
                             ],
@@ -666,13 +667,13 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 $this->start_controls_tab(
                     'style_input_foucs_tab',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'wpforms_input_background_color_focus',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors'         => [
@@ -684,7 +685,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_input_color_focus',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#212529',
                             'selectors'         => [
@@ -696,14 +697,14 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'wpforms_input_border_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .wpforms-field select:focus',
                         ]
                     );
                     $this->add_responsive_control(
                         'wpforms_input_border_radius_focus',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -715,7 +716,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'wpforms_input_box_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-field input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .wpforms-field select:focus',
                         ]
                     );
@@ -727,7 +728,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'wpforms_textarea_style_section',
             [
-                'label' => __( 'Textarea', 'htmega-addons' ),
+                'label' => __( 'Textarea', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -738,13 +739,13 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 $this->start_controls_tab(
                     'style_textarea_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'wpforms_textarea_background_color',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors'         => [
@@ -756,7 +757,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_textarea_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#212529',
                             'selectors'         => [
@@ -767,7 +768,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_textarea_placeholder_color',
                         [
-                            'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .wpforms-field textarea::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -787,7 +788,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_textarea_height',
                         [
-                            'label'             => __( 'Height', 'htmega-addons' ),
+                            'label'             => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'              => Controls_Manager::SLIDER,
                             'range'             => [
                                 'px' => [
@@ -806,7 +807,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_textarea_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -819,7 +820,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_textarea_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -832,7 +833,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'wpforms_textarea_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-field textarea',
                         ]
                     );
@@ -840,7 +841,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_textarea_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-field textarea' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -851,26 +852,26 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'wpforms_textarea_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-field textarea',
                         ]
                     );
                     $this->add_responsive_control(
                         'wpforms_textarea_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ]
                             ],
@@ -884,13 +885,13 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 $this->start_controls_tab(
                     'style_textarea_focus_tab',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'wpforms_textarea_background_color_focus',
                         [
-                            'label' => __( 'Background Color', 'htmega-addons' ),
+                            'label' => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors'         => [
@@ -902,7 +903,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_textarea_color_focus',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#212529',
                             'selectors'         => [
@@ -914,14 +915,14 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'wpforms_textarea_border_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-field textarea:focus',
                         ]
                     );
                     $this->add_responsive_control(
                         'wpforms_textarea_border_radius_focus',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-field textarea:focus' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -932,7 +933,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'wpforms_textarea_box_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-field textarea:focus',
                         ]
                     );
@@ -945,7 +946,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'wpforms_inputsubmit_style',
             [
-                'label'     => __( 'Button', 'htmega-addons' ),
+                'label'     => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -955,14 +956,14 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 $this->start_controls_tab(
                     'wpforms_submit_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'wpforms_input_submit_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -977,7 +978,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_input_submit_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -1010,7 +1011,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_input_submit_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-form button[type="submit"]'  => 'color: {{VALUE}};',
@@ -1021,7 +1022,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_input_submit_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-form button[type="submit"]'  => 'background-color: {{VALUE}};',
@@ -1032,7 +1033,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_input_submit_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1045,7 +1046,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_input_submit_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1059,7 +1060,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'wpforms_input_submit_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-form button[type="submit"]',
                         ]
                     );
@@ -1067,7 +1068,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_responsive_control(
                         'wpforms_input_submit_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-form button[type="submit"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -1079,26 +1080,26 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'wpforms_input_submit_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-form button[type="submit"]',
                         ]
                     );
                     $this->add_responsive_control(
                         'wpforms_input_submit_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ]
                             ],
@@ -1113,14 +1114,14 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 $this->start_controls_tab(
                     'wpforms_submit_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'wpforms_input_submithover_text_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-form button[type="submit"]:hover'  => 'color: {{VALUE}};',
@@ -1131,7 +1132,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                     $this->add_control(
                         'wpforms_input_submithover_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wpforms-form button[type="submit"]:hover'  => 'background-color: {{VALUE}};',
@@ -1143,7 +1144,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'wpforms_input_submithover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-form button[type="submit"]:hover',
                         ]
                     );
@@ -1151,7 +1152,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'wpforms_input_submit_box_shadow_hover',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wpforms-form button[type="submit"]:hover',
                         ]
                     );
@@ -1165,7 +1166,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
         $this->start_controls_section(
             'wpforms_input_error_style',
             [
-                'label'     => __( 'Errors Style', 'htmega-addons' ),
+                'label'     => __( 'Errors Style', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1173,7 +1174,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
             $this->add_control(
                 'wpforms_error_text_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .wpforms-error'  => 'color: {{VALUE}};',
@@ -1185,7 +1186,7 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'wpforms_error_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .wpforms-form .wpforms-field textarea.wpforms-error,{{WRAPPER}} .wpforms-form .wpforms-field input.wpforms-error',
                 ]
             );
@@ -1196,12 +1197,12 @@ class HTMega_Elementor_Widget_WPforms extends Widget_Base {
 
     protected function render( $instance = [] ) {
         if ( ! is_plugin_active('wpforms-lite/wpforms.php') ) {
-            htmega_plugin_missing_alert( __('WPforms', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('WPforms', 'ht-mega-for-elementor') );
             return;
         }
         $settings   = $this->get_settings_for_display();
         if ( !$settings['contact_form_list'] ) {
-            echo '<p>'.esc_html__('Please Select form.','htmega-addons').'</p>';
+            echo '<p>'.esc_html__('Please Select form.','ht-mega-for-elementor').'</p>';
         }else{
             $show_form_title = $settings['show_form_title'];
             $show_form_description = $settings['show_form_description'];

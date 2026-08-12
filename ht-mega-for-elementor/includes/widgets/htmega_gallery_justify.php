@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Gallery Justify', 'htmega-addons' );
+        return __( 'Gallery Justify', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -50,14 +50,14 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
         $this->start_controls_section(
             'gallery_content',
             [
-                'label' => __( 'Gallery Justify', 'htmega-addons' ),
+                'label' => __( 'Gallery Justify', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'gallery_images',
                 [
-                    'label' => __( 'Add Images', 'htmega-addons' ),
+                    'label' => __( 'Add Images', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::GALLERY,
                 ]
             );
@@ -65,7 +65,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
             $this->add_control(
                 'row_height',
                 [
-                    'label' => __( 'Row Height', 'htmega-addons' ),
+                    'label' => __( 'Row Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 300,
                 ]
@@ -74,7 +74,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
             $this->add_control(
                 'space_margin',
                 [
-                    'label' => __( 'Space', 'htmega-addons' ),
+                    'label' => __( 'Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 20,
                 ]
@@ -84,7 +84,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'justify_image_area_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-justify-single-image',
                 ]
             );
@@ -92,7 +92,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
             $this->add_responsive_control(
                 'justify_image_area_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -105,7 +105,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'justify_image_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-justify-single-image',
                     'separator' => 'before',
                 ]
@@ -113,20 +113,20 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
             $this->add_control(
                 'popup_options',
                 [
-                    'label' => __( 'Popup options', 'htmega-addons' ),
+                    'label' => __( 'Popup options', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '2',
                     'options' => [
-                        '1'   => __( 'Popup None', 'htmega-addons' ),
-                        '2'   => __( 'Default Popup', 'htmega-addons' ),
-                        '3'   => __( 'Gallery Popup ', 'htmega-addons' ),
+                        '1'   => __( 'Popup None', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Default Popup', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Gallery Popup ', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
             $this->add_control(
                 'gallery_title_on_off', 
                 [
-                    'label'         => __( 'Show Gallery Title', 'htmega-addons' ),
+                    'label'         => __( 'Show Gallery Title', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -138,7 +138,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
             $this->add_control(
                 'gallery_counter_on_off', 
                 [
-                    'label'         => __( 'Show Image Counter', 'htmega-addons' ),
+                    'label'         => __( 'Show Image Counter', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
                     'return_value'  => 'yes',
                     'default'       => 'no',
@@ -150,7 +150,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
             $this->add_control(
                 'title_color',
                 [
-                    'label' => __( 'Title Color', 'htmega-addons' ),
+                    'label' => __( 'Title Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '.htmega.mfp-title' => 'color: {{VALUE}};',
@@ -176,7 +176,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
             $this->add_control(
                 'counter_color',
                 [
-                    'label' => __( 'Counter Color', 'htmega-addons' ),
+                    'label' => __( 'Counter Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '.htmega.mfp-counter' => 'color: {{VALUE}};',
@@ -215,7 +215,8 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
  
     
         if( isset( $settings['gallery_images'] ) ):
-           
+
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core and returns pre-escaped attribute output.
             echo '<div '.$this->get_render_attribute_string( 'justify_gallery_attr' ).'style="display:none;">';
                 foreach ( $settings['gallery_images'] as $image ) {
                     $image_src = wp_get_attachment_image_url( $image['id'], 'full' );
@@ -238,6 +239,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
                     ?>
                         <div class="htmega-justify-single-image">
                             <div class="thumb">
+                                <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core and returns pre-escaped attribute output. ?>
                                 <a <?php echo $this->get_render_attribute_string( $image["id"] ); ?> rel="npgallery">
                                     <img src="<?php echo esc_url( $image_src );?>" alt="<?php echo esc_attr( get_post_meta( $image['id'], '_wp_attachment_image_alt', true) ) ;?>">
                                 </a>

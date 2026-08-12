@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Double Button', 'htmega-addons' );
+        return __( 'Double Button', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -36,22 +36,22 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         $this->start_controls_section(
             'dualbutton_content',
             [
-                'label' => __( 'Double Button', 'htmega-addons' ),
+                'label' => __( 'Double Button', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'double_button_size',
                 [
-                    'label'   => __( 'Button Size', 'htmega-addons' ),
+                    'label'   => __( 'Button Size', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'md',
                     'options' => [
-                        'sm' => __( 'Small', 'htmega-addons' ),
-                        'md' => __( 'Medium', 'htmega-addons' ),
-                        'lg' => __( 'Large', 'htmega-addons' ),
-                        'xl' => __( 'Extra Large', 'htmega-addons' ),
-                        'xs' => __( 'Extra Small', 'htmega-addons' ),
+                        'sm' => __( 'Small', 'ht-mega-for-elementor' ),
+                        'md' => __( 'Medium', 'ht-mega-for-elementor' ),
+                        'lg' => __( 'Large', 'ht-mega-for-elementor' ),
+                        'xl' => __( 'Extra Large', 'ht-mega-for-elementor' ),
+                        'xs' => __( 'Extra Small', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -59,7 +59,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'show_button_middle_text',
                 [
-                    'label' => __( 'Middle Text', 'htmega-addons' ),
+                    'label' => __( 'Middle Text', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SWITCHER,
                 ]
             );
@@ -67,9 +67,9 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'button_middle_text',
                 [
-                    'label' => __( 'Middle Text', 'htmega-addons' ),
+                    'label' => __( 'Middle Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Or', 'htmega-addons' ),
+                    'default' => __( 'Or', 'ht-mega-for-elementor' ),
                     'condition'   => [
                         'show_button_middle_text' => 'yes',
                     ],
@@ -79,10 +79,10 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'double_button_before_bg',
                 [
-                    'label' => __( 'Skew Background', 'htmega-addons' ),
+                    'label' => __( 'Skew Background', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                 ]
@@ -94,24 +94,24 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         $this->start_controls_section(
             'button_one_content',
             [
-                'label' => __( 'Button One', 'htmega-addons' ),
+                'label' => __( 'Button One', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'button_one_text',
                 [
-                    'label' => __( 'Text', 'htmega-addons' ),
+                    'label' => __( 'Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Button', 'htmega-addons' ),
+                    'default' => __( 'Button', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'button_one_link',
                 [
-                    'label' => __( 'Link', 'htmega-addons' ),
+                    'label' => __( 'Link', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                    'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                     'show_external' => true,
                     'default' => [
                         'url' => '#',
@@ -124,7 +124,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'button_one_icon',
                 [
-                    'label' => __( 'Icon', 'htmega-addons' ),
+                    'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                 ]
             );
@@ -132,7 +132,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'icon_one_specing',
                 [
-                    'label' => __( 'Icon Spacing', 'htmega-addons' ),
+                    'label' => __( 'Icon Spacing', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -154,15 +154,15 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'double_button_icon_position_1',
                 [
-                    'label' => __( 'Icon Position', 'htmega-addons' ),
+                    'label' => __( 'Icon Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-h-align-left',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-h-align-right',
                         ],
                     ],
@@ -181,24 +181,24 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         $this->start_controls_section(
             'button_two_content',
             [
-                'label' => __( 'Button Two', 'htmega-addons' ),
+                'label' => __( 'Button Two', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'button_two_text',
                 [
-                    'label' => __( 'Text', 'htmega-addons' ),
+                    'label' => __( 'Text', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Button', 'htmega-addons' ),
+                    'default' => __( 'Button', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'button_two_link',
                 [
-                    'label' => __( 'Link', 'htmega-addons' ),
+                    'label' => __( 'Link', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'htmega-addons' ),
+                    'placeholder' => __( 'https://your-link.com', 'ht-mega-for-elementor' ),
                     'show_external' => true,
                     'default' => [
                         'url' => '#',
@@ -211,7 +211,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'button_two_icon',
                 [
-                    'label' => __( 'Icon', 'htmega-addons' ),
+                    'label' => __( 'Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                 ]
             );
@@ -219,7 +219,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'icon_two_specing',
                 [
-                    'label' => __( 'Icon Spacing', 'htmega-addons' ),
+                    'label' => __( 'Icon Spacing', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -241,15 +241,15 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'double_button_icon_position_2',
                 [
-                    'label' => __( 'Icon Position', 'htmega-addons' ),
+                    'label' => __( 'Icon Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-h-align-left',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-h-align-right',
                         ],
                     ],
@@ -269,7 +269,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         $this->start_controls_section(
             'double_button_area_style_section',
             [
-                'label' => __( 'Button Area', 'htmega-addons' ),
+                'label' => __( 'Button Area', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -277,7 +277,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'double_button_area_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'separator' => 'after',
                     'selectors' => [
@@ -290,7 +290,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'double_button_area_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-doublebutton',
                 ]
             );
@@ -298,7 +298,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'double_button_area_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -315,26 +315,26 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         $this->start_controls_section(
             'double_button_style_section',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_responsive_control(
                 'double_button_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'start' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'end' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                     ],
@@ -348,7 +348,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'double_button_width',
                 [
-                    'label' => __( 'Button Width', 'htmega-addons' ),
+                    'label' => __( 'Button Width', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         '%' => [
@@ -381,7 +381,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'double_button_height',
                 [
-                    'label' => __( 'Button Height', 'htmega-addons' ),
+                    'label' => __( 'Button Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -397,7 +397,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'button_icon_size',
                 [
-                    'label' => __( 'Font Size', 'htmega-addons' ),
+                    'label' => __( 'Font Size', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -423,7 +423,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 $this->start_controls_tab(
                     'doule_button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -431,7 +431,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'doule_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn',
                         ]
                     );
@@ -439,7 +439,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -453,7 +453,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 $this->start_controls_tab(
                     'doule_button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -461,7 +461,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'doule_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn:hover',
                         ]
                     );
@@ -469,7 +469,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -487,7 +487,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         $this->start_controls_section(
             'double_button_one_style_section',
             [
-                'label' => __( 'Button One', 'htmega-addons' ),
+                'label' => __( 'Button One', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -498,14 +498,14 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 $this->start_controls_tab(
                     'doule_button_one_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'doule_button_one_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#ffffff',
                             'selectors' => [
@@ -519,7 +519,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'doule_button_one_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one',
                         ]
                     );
@@ -528,7 +528,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'doule_button_one_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one',
                         ]
                     );
@@ -536,7 +536,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_one_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -548,7 +548,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'doule_button_one_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one,{{WRAPPER}} .before_bg a.htmega-doule-btn.btn-one::before, {{WRAPPER}} .htmega-double-button-area a.btn-one::before',
                             'separator' => 'before',
@@ -559,7 +559,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'doule_button_one_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one',
                         ]
                     );
@@ -567,7 +567,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_one_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -580,7 +580,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_one_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -595,14 +595,14 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 $this->start_controls_tab(
                     'doule_button_one_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'doule_button_one_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#ffffff',
                             'selectors' => [
@@ -616,7 +616,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'doule_button_one_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one:hover',
                         ]
                     );
@@ -624,7 +624,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_one_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -636,7 +636,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'doule_button_one_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one:hover, {{WRAPPER}} .before_bg a.htmega-doule-btn.btn-one:hover::before,{{WRAPPER}} .htmega-double-button-area a.btn-one::after',
                             'separator' => 'before',
@@ -647,7 +647,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'doule_button_one_hover_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-one:hover',
                         ]
                     );
@@ -662,7 +662,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         $this->start_controls_section(
             'double_button_two_style_section',
             [
-                'label' => __( 'Button Two', 'htmega-addons' ),
+                'label' => __( 'Button Two', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -673,14 +673,14 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 $this->start_controls_tab(
                     'doule_button_two_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'doule_button_two_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#ffffff',
                             'selectors' => [
@@ -694,7 +694,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'doule_button_two_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two',
                         ]
                     );
@@ -703,7 +703,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'doule_button_two_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two',
                         ]
                     );
@@ -711,7 +711,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_two_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -723,7 +723,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'doule_button_two_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two, {{WRAPPER}} .before_bg a.htmega-doule-btn.btn-two::before, {{WRAPPER}} .htmega-double-button-area a.btn-two::before',
                             'separator' => 'before',
@@ -734,7 +734,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'doule_button_two_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two',
                         ]
                     );
@@ -742,7 +742,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_two_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -755,7 +755,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_two_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -770,13 +770,13 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 $this->start_controls_tab(
                     'doule_button_two_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'doule_button_two_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'   =>'#ffffff',
                             'selectors' => [
@@ -790,7 +790,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'doule_button_two_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two:hover',
                         ]
                     );
@@ -798,7 +798,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                     $this->add_responsive_control(
                         'doule_button_two_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two:hover' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -810,7 +810,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'doule_button_two_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two:hover, {{WRAPPER}} .before_bg a.htmega-doule-btn.btn-two:hover::before,{{WRAPPER}} .htmega-double-button-area a.btn-two::after',
                             'separator' => 'before',
@@ -821,7 +821,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'doule_button_two_hover_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-doublebutton a.htmega-doule-btn.btn-two:hover',
                         ]
                     );
@@ -836,7 +836,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
         $this->start_controls_section(
             'double_button_middletext_style_section',
             [
-                'label' => __( 'Middle Text', 'htmega-addons' ),
+                'label' => __( 'Middle Text', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'=>[
                     'show_button_middle_text'=>'yes',
@@ -848,7 +848,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'double_button_middle_box_size',
                 [
-                    'label' => __( 'Box Size', 'htmega-addons' ),
+                    'label' => __( 'Box Size', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -865,7 +865,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_control(
                 'doule_button_middletext_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   =>'#000000',
                     'selectors' => [
@@ -878,7 +878,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'doule_button_middletext_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} span.htmega-middle-text',
                 ]
             );
@@ -887,7 +887,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'doule_button_middletext_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} span.htmega-middle-text',
                 ]
             );
@@ -895,7 +895,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'doule_button_middletext_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} span.htmega-middle-text' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -907,7 +907,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'doule_button_middletext_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} span.htmega-middle-text',
                     'separator' => 'before',
@@ -918,7 +918,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'doule_button_middletext_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} span.htmega-middle-text',
                 ]
             );
@@ -926,7 +926,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'doule_button_middletext_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -939,7 +939,7 @@ class HTMega_Elementor_Widget_Double_Button extends Widget_Base {
             $this->add_responsive_control(
                 'doule_button_middletext_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [

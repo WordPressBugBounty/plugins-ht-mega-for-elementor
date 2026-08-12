@@ -11,7 +11,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'News Ticker', 'htmega-addons' );
+        return __( 'News Ticker', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -39,24 +39,24 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->start_controls_section(
             'news_ticker',
             [
-                'label' => __( 'News Ticker', 'htmega-addons' ),
+                'label' => __( 'News Ticker', 'ht-mega-for-elementor' ),
             ]
         );
         
             $this->add_control(
                 'news_ticker_style',
                 [
-                    'label' => __( 'Style', 'htmega-addons' ),
+                    'label' => __( 'Style', 'ht-mega-for-elementor' ),
                     'type' => 'htmega-preset-select',
                     'default' => '1',
                     'options' => [
-                        '1'   => __( 'Style One', 'htmega-addons' ),
-                        '2'   => __( 'Style Two', 'htmega-addons' ),
-                        '3'   => __( 'Style Three', 'htmega-addons' ),
-                        '4'   => __( 'Style Four', 'htmega-addons' ),
-                        '5'   => __( 'Style Five', 'htmega-addons' ),
-                        '6'   => __( 'Style Six', 'htmega-addons' ),
-                        '7'   => __( 'Style Seven', 'htmega-addons' ),
+                        '1'   => __( 'Style One', 'ht-mega-for-elementor' ),
+                        '2'   => __( 'Style Two', 'ht-mega-for-elementor' ),
+                        '3'   => __( 'Style Three', 'ht-mega-for-elementor' ),
+                        '4'   => __( 'Style Four', 'ht-mega-for-elementor' ),
+                        '5'   => __( 'Style Five', 'ht-mega-for-elementor' ),
+                        '6'   => __( 'Style Six', 'ht-mega-for-elementor' ),
+                        '7'   => __( 'Style Seven', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -64,9 +64,9 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'ticker_label',
                 [
-                    'label' => __( 'Ticker Label', 'htmega-addons' ),
+                    'label' => __( 'Ticker Label', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'placeholder' => __( 'Breaking News', 'htmega-addons' ),
+                    'placeholder' => __( 'Breaking News', 'ht-mega-for-elementor' ),
                     'separator'=>'after',
                 ]
             );
@@ -74,7 +74,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'label_icon',
                 [
-                    'label' => __( 'Label Icon', 'htmega-addons' ),
+                    'label' => __( 'Label Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                 ]
             );
@@ -82,7 +82,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'rowheight',
                 [
-                    'label' => __('Row Height', 'htmega-addons'),
+                    'label' => __('Row Height', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 50,
                 ]
@@ -91,7 +91,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'maxrow',
                 [
-                    'label' => __('Maximum Row', 'htmega-addons'),
+                    'label' => __('Maximum Row', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 1,
                 ]
@@ -100,7 +100,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'animationspeed',
                 [
-                    'label' => __('Animation Speed', 'htmega-addons'),
+                    'label' => __('Animation Speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 600,
                 ]
@@ -109,7 +109,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'animateduration',
                 [
-                    'label' => __('Animated duration', 'htmega-addons'),
+                    'label' => __('Animated duration', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 5000,
                 ]
@@ -118,12 +118,12 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'direction',
                 [
-                    'label' => __( 'Direction', 'htmega-addons' ),
+                    'label' => __( 'Direction', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'up',
                     'options' => [
-                        'up'   => __( 'Up', 'htmega-addons' ),
-                        'down'   => __( 'Down', 'htmega-addons' ),
+                        'up'   => __( 'Up', 'ht-mega-for-elementor' ),
+                        'down'   => __( 'Down', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -131,7 +131,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'news_ticker_date',
                 [
-                    'label' => esc_html__( 'Date', 'htmega-addons' ),
+                    'label' => esc_html__( 'Date', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -140,7 +140,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'news_ticker_date_position',
                 [
-                    'label' => esc_html__( 'Date Position In Left', 'htmega-addons' ),
+                    'label' => esc_html__( 'Date Position In Left', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -154,7 +154,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'autostart',
                 [
-                    'label' => esc_html__( 'Auto Start', 'htmega-addons' ),
+                    'label' => esc_html__( 'Auto Start', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -165,7 +165,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'pauseonhover',
                 [
-                    'label' => esc_html__( 'Pause on hover', 'htmega-addons' ),
+                    'label' => esc_html__( 'Pause on hover', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -177,14 +177,14 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->start_controls_section(
             'news_ticker_content',
             [
-                'label' => __( 'Content Option', 'htmega-addons' ),
+                'label' => __( 'Content Option', 'ht-mega-for-elementor' ),
             ]
         );
             $this->show_post_source();
             $this->add_control(
                 'title_length',
                 [
-                    'label' => __( 'Title Length', 'htmega-addons' ),
+                    'label' => __( 'Title Length', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::NUMBER,
                     'max' => 1000,
                     'step' => 1,
@@ -197,14 +197,14 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->start_controls_section(
             'news_navigation',
             [
-                'label' => __( 'Navigation Button', 'htmega-addons' ),
+                'label' => __( 'Navigation Button', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'navigation_show',
                 [
-                    'label' => esc_html__( 'Show', 'htmega-addons' ),
+                    'label' => esc_html__( 'Show', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -214,7 +214,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'button_prev_icon',
                 [
-                    'label' => __( 'Previous Icon', 'htmega-addons' ),
+                    'label' => __( 'Previous Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default'=>[
                         'value'=>'fas fa-angle-left',
@@ -229,7 +229,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'button_next_icon',
                 [
-                    'label' => __( 'Next Icon', 'htmega-addons' ),
+                    'label' => __( 'Next Icon', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::ICONS,
                     'default'=>[
                         'value'=>'fas fa-angle-right',
@@ -247,7 +247,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->start_controls_section(
             'htmega_newsticker_style_section',
             [
-                'label' => __( 'News Box Style', 'htmega-addons' ),
+                'label' => __( 'News Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -256,7 +256,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_newsticker_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .breaking-news-default::before,{{WRAPPER}} .htmega-newsticker-style-2.breaking-news-default,{{WRAPPER}} .htmega-newsticker-style-4,{{WRAPPER}} .htmega-newsticker-style-6,{{WRAPPER}} .htmega-newsticker-style-5,{{WRAPPER}} .htmega-newsticker-style-7',
                 ]
@@ -266,7 +266,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_newsticker_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .breaking-news-default',
                 ]
             );
@@ -274,7 +274,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .breaking-news-default' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -285,7 +285,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_section_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -298,7 +298,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_section_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -314,14 +314,14 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->start_controls_section(
             'htmega_newsticker_contnet_style',
             [
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'htmega_newsticker_contnet_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .breaking-news-ticker li a' => 'color: {{VALUE}};',
@@ -339,7 +339,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_contnet_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -351,23 +351,23 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'title_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -384,7 +384,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->start_controls_section(
             'htmega_newsticker_label_style',
             [
-                'label' => __( 'Label', 'htmega-addons' ),
+                'label' => __( 'Label', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'ticker_label!' =>'',
@@ -395,7 +395,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'htmega_newsticker_label_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .breaking-news-default .breaking-news-title h5' => 'color: {{VALUE}};',
@@ -415,7 +415,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_newsticker_label_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .breaking-news-default .breaking-news-title h5::before, {{WRAPPER}} .htmega-newsticker-style-2 .breaking-news-title h5,{{WRAPPER}} .htmega-newsticker-style-3 .breaking-news-title,{{WRAPPER}} .htmega-newsticker-style-4 .breaking-news-title,{{WRAPPER}} .htmega-newsticker-style-5 .breaking-news-title,{{WRAPPER}} .htmega-newsticker-style-6 .breaking-news-title::before,{{WRAPPER}} .htmega-newsticker-style-7 .breaking-news-title::before', 
                 ]
@@ -423,7 +423,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'htmega_newsticker_label_shap_color',
                 [
-                    'label' => __( 'Shape Color', 'htmega-addons' ),
+                    'label' => __( 'Shape Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-newsticker-style-2 .breaking-news-title h5::before,{{WRAPPER}} .htmega-newsticker-style-5 .breaking-news-title::before' => 'border-left-color: {{VALUE}};',
@@ -438,7 +438,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_newsticker_label_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .breaking-news-default .breaking-news-title h5,{{WRAPPER}} .htmega-newsticker-style-3 .breaking-news-title',
                     'condition' => [
                         'news_ticker_style!' =>array('1','2'),
@@ -449,7 +449,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_border_label_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .breaking-news-default .breaking-news-title h5,{{WRAPPER}} .htmega-newsticker-style-3 .breaking-news-title,{{WRAPPER}} .htmega-newsticker-style-7 .breaking-news-title::before' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -462,7 +462,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'label_height',
                 [
-                    'label' => __( 'Label Height', 'htmega-addons' ),
+                    'label' => __( 'Label Height', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -482,7 +482,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_label_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -495,7 +495,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'label_heading',
                 [
-                    'label' => __( 'Icon Style', 'htmega-addons' ),
+                    'label' => __( 'Icon Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' =>'before',
                     'condition' => [
@@ -507,7 +507,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'label_icon_size',
                 [
-                    'label' => __( 'Icon Size', 'htmega-addons' ),
+                    'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -529,7 +529,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'label_icon_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-newsticker-style-1 .breaking-news-title h5 i,{{WRAPPER}} .breaking-news-title h5 i' => 'color: {{VALUE}};',
@@ -544,7 +544,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'label_icon_color_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-newsticker-style-1 .breaking-news-title h5 i,{{WRAPPER}} .htmega-newsticker-style-1 .breaking-news-title h5 .htmega-news-tickr-svg-icon-box',
                     'condition' => [
@@ -556,7 +556,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'label_icon_box_height_widht',
                 [
-                    'label' => __( 'Box Height and Width', 'htmega-addons' ),
+                    'label' => __( 'Box Height and Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -586,7 +586,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'label_icon_box_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-newsticker-style-1 .breaking-news-title h5 i,{{WRAPPER}} .htmega-newsticker-style-1 .breaking-news-title h5 .htmega-news-tickr-svg-icon-box' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -600,7 +600,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'label_icon_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -618,7 +618,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->start_controls_section(
             'htmega_newsticker_navigation_style',
             [
-                'label' => __( 'Navigation', 'htmega-addons' ),
+                'label' => __( 'Navigation', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'navigation_show' =>'yes',
@@ -631,14 +631,14 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'htmega_newsticker_button_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .breaking-news-default .breaking-news-nav button i' => 'color: {{VALUE}};',
@@ -651,7 +651,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'htmega_newsticker_button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .breaking-news-default .breaking-news-nav button',
                         ]
@@ -659,7 +659,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     $this->add_control(
                         'navigation_icon_size',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -679,7 +679,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     $this->add_control(
                         'navigation_icon_box_height_widht',
                         [
-                            'label' => __( 'Icon Box Height/Width', 'htmega-addons' ),
+                            'label' => __( 'Icon Box Height/Width', 'ht-mega-for-elementor' ),
                             'type'  => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -697,7 +697,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_newsticker_button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .breaking-news-default .breaking-news-nav button',
                         ]
                     );
@@ -705,7 +705,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_newsticker_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .breaking-news-default .breaking-news-nav button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -715,8 +715,8 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_newsticker_button_border_radius_next',
                         [
-                            'label' => esc_html__( 'Border Radius Next Button', 'htmega-addons' ),
-                            'description' => esc_html__( 'If need to different from prev button', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius Next Button', 'ht-mega-for-elementor' ),
+                            'description' => esc_html__( 'If need to different from prev button', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .breaking-news-default .breaking-news-nav button.news-ticker-next' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -727,7 +727,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_newsticker_button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -740,7 +740,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     $this->add_responsive_control(
                         'htmega_newsticker_button_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -756,13 +756,13 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'htmega_newsticker_button_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .breaking-news-default .breaking-news-nav button:hover i' => 'color: {{VALUE}};',
@@ -775,7 +775,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'htmega_newsticker_button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .breaking-news-default .breaking-news-nav button:hover',
                         ]
@@ -785,7 +785,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'htmega_newsticker_button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .breaking-news-default .breaking-news-nav button:hover',
                         ]
                     );
@@ -801,7 +801,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->start_controls_section(
             'htmega_newsticker_date_style',
             [
-                'label' => __( 'Date', 'htmega-addons' ),
+                'label' => __( 'Date', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>[
                     'news_ticker_date' =>'yes',
@@ -812,7 +812,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_control(
                 'htmega_newsticker_date_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .breaking-news-default .breaking-news-ticker li span.news_date' => 'color: {{VALUE}};',
@@ -832,7 +832,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'htmega_newsticker_date_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .breaking-news-default .breaking-news-ticker li span.news_date',
                 ]
@@ -842,7 +842,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'htmega_newsticker_date_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .breaking-news-default .breaking-news-ticker li span.news_date',
                 ]
             );
@@ -850,7 +850,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_border_date_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .breaking-news-default .breaking-news-ticker li span.news_date' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -861,7 +861,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_date_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -873,7 +873,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
             $this->add_responsive_control(
                 'htmega_newsticker_date_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -941,6 +941,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 $category_name['0'] = 'product_cat';
             }
             $field_name = is_numeric( $post_categorys[0] ) ? 'term_id' : 'slug';
+            // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- intentional: implements the widget's '{post_type}_post_category' (Select Categories) control, letting the site builder filter ticker items by taxonomy term.
             $args['tax_query'] = array(
                 array(
                     'taxonomy' => $category_name[0],
@@ -984,6 +985,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         // Exclude posts check
         if ( !empty( $exclude_posts ) ) {
             $exclude_posts = explode( ',', $exclude_posts );
+            // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in -- intentional: implements the widget's 'exclude_posts' (Exclude Posts) control, letting the site builder omit specific post IDs from the ticker.
             $args['post__not_in'] =  $exclude_posts;
         }
 
@@ -994,7 +996,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $news_ticker = \HTMega_Query_Cache::query( $args );
        
         ?>
-            <div <?php echo $this->get_render_attribute_string( 'htmega_newsticker_section_attr' ); ?> style="display:none;">
+            <div <?php echo $this->get_render_attribute_string( 'htmega_newsticker_section_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string. ?> style="display:none;">
                 <?php
                 if( !empty( $settings['ticker_label'] ) ){ ?>
                 <div class="breaking-news-title float-left">
@@ -1002,9 +1004,9 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                             if( !empty($settings['label_icon']['value']) ){
 
                                 if( 'svg' == $settings['label_icon']['library']){
-                                    echo '<h5>'.esc_html($settings['ticker_label'] ).'<div class="htmega-news-tickr-svg-icon-box">'. HTMega_Icon_manager::render_icon( $settings['label_icon'], [ 'aria-hidden' => 'true' ] ).'</div></h5>';
+                                    echo '<h5>'.esc_html($settings['ticker_label'] ).'<div class="htmega-news-tickr-svg-icon-box">'. HTMega_Icon_manager::render_icon( $settings['label_icon'], [ 'aria-hidden' => 'true' ] ).'</div></h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's own Icons_Manager::render_icon(), already escaped.
                                 }else{
-                                        echo '<h5>'.esc_html($settings['ticker_label'] ).HTMega_Icon_manager::render_icon( $settings['label_icon'], [ 'aria-hidden' => 'true' ] ).'</h5>';
+                                        echo '<h5>'.esc_html($settings['ticker_label'] ).HTMega_Icon_manager::render_icon( $settings['label_icon'], [ 'aria-hidden' => 'true' ] ).'</h5>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's own Icons_Manager::render_icon(), already escaped.
                                 }
                             }else{
                                 echo '<h5>'.esc_html( $settings['ticker_label'] ).'</h5>';
@@ -1013,7 +1015,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                     ?>
                 </div>
                 <?php } ?>
-                <ul <?php echo $this->get_render_attribute_string( 'htmega_newsticker_options_attr' ); ?>  >
+                <ul <?php echo $this->get_render_attribute_string( 'htmega_newsticker_options_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string. ?>  >
                     <?php
                         if( $news_ticker->have_posts() ){
                             while ( $news_ticker->have_posts() ) {
@@ -1037,7 +1039,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                             }
                         }else{
                             ?>
-                                <li><a href="#"><?php esc_html_e('Content Not Found','htmega-addons') ?></a></li>
+                                <li><a href="#"><?php esc_html_e('Content Not Found','ht-mega-for-elementor') ?></a></li>
                             <?php
                         }
                         wp_reset_postdata();
@@ -1045,8 +1047,8 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 </ul>
                 <?php if( $settings['navigation_show'] == 'yes' ): ?>
                     <div class="breaking-news-nav">
-                        <button class="news-ticker-prev"><?php echo HTMega_Icon_manager::render_icon( $settings['button_prev_icon'], [ 'aria-hidden' => 'true' ] ); ?></button>
-                        <button class="news-ticker-next"><?php echo HTMega_Icon_manager::render_icon( $settings['button_next_icon'], [ 'aria-hidden' => 'true' ] ); ?></button>
+                        <button class="news-ticker-prev"><?php echo HTMega_Icon_manager::render_icon( $settings['button_prev_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's own Icons_Manager::render_icon(), already escaped. ?></button>
+                        <button class="news-ticker-next"><?php echo HTMega_Icon_manager::render_icon( $settings['button_next_icon'], [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTMega_Icon_manager::render_icon() delegates to Elementor's own Icons_Manager::render_icon(), already escaped. ?></button>
                     </div>
                 <?php endif; ?>
 
@@ -1068,7 +1070,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->add_control(
             'news_post_type',
             [
-                'label' => esc_html__( 'Post Type', 'htmega-addons' ),
+                'label' => esc_html__( 'Post Type', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'label_block' => true,
                 'options' => htmega_get_post_types(),
@@ -1080,21 +1082,21 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->add_control(
             'include_by',
             [
-                'label' => __( 'Include By', 'htmega-addons' ),
+                'label' => __( 'Include By', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
                 'multiple' => true,
                 'default' =>'in_category',
                 'options' => [
-                    'in_author'      => __( 'Author', 'htmega-addons' ),
-                    'in_category'      => __( 'Category', 'htmega-addons' ),
+                    'in_author'      => __( 'Author', 'ht-mega-for-elementor' ),
+                    'in_category'      => __( 'Category', 'ht-mega-for-elementor' ),
                 ],
             ]
         );
         $this->add_control(
             'post_author',
             [
-                'label' => esc_html__( 'Authors', 'htmega-addons' ),
+                'label' => esc_html__( 'Authors', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
                 'multiple' => true,
@@ -1111,7 +1113,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 $this->add_control(
                     'news_categories',
                     [
-                        'label' => esc_html__( 'Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -1126,7 +1128,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 $this->add_control(
                     'news_prod_categories',
                     [
-                        'label' => esc_html__( 'Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -1142,7 +1144,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
                 $this->add_control(
                     "{$post_key}_post_category",
                     [
-                        'label' => esc_html__( 'Select Categories', 'htmega-addons' ),
+                        'label' => esc_html__( 'Select Categories', 'ht-mega-for-elementor' ),
                         'type' => Controls_Manager::SELECT2,
                         'label_block' => true,
                         'multiple' => true,
@@ -1159,17 +1161,17 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->add_control(
             "exclude_posts",
             [
-                'label' => esc_html__( 'Exclude Posts', 'htmega-addons' ),
+                'label' => esc_html__( 'Exclude Posts', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'placeholder' => esc_html__( 'Example: 10,11,105', 'htmega-addons' ),
-                'description' => esc_html__( "To Exclude Post, Enter  the post id separated by ','", 'htmega-addons' ),
+                'placeholder' => esc_html__( 'Example: 10,11,105', 'ht-mega-for-elementor' ),
+                'description' => esc_html__( "To Exclude Post, Enter  the post id separated by ','", 'ht-mega-for-elementor' ),
             ]
         );
         $this->add_control(
             'newslimit',
             [
-                'label' => __('Limit', 'htmega-addons'),
+                'label' => __('Limit', 'ht-mega-for-elementor'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 5,
                 'separator'=>'before',
@@ -1179,23 +1181,23 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->add_control(
             'orderby',
             [
-                'label' => esc_html__( 'Order By', 'htmega-addons' ),
+                'label' => esc_html__( 'Order By', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'date',
                 'options' => [
-                    'ID'            => esc_html__('ID','htmega-addons'),
-                    'date'          => esc_html__('Date','htmega-addons'),
-                    'name'          => esc_html__('Name','htmega-addons'),
-                    'title'         => esc_html__('Title','htmega-addons'),
-                    'comment_count' => esc_html__('Comment count','htmega-addons'),
-                    'rand'          => esc_html__('Random','htmega-addons'),
+                    'ID'            => esc_html__('ID','ht-mega-for-elementor'),
+                    'date'          => esc_html__('Date','ht-mega-for-elementor'),
+                    'name'          => esc_html__('Name','ht-mega-for-elementor'),
+                    'title'         => esc_html__('Title','ht-mega-for-elementor'),
+                    'comment_count' => esc_html__('Comment count','ht-mega-for-elementor'),
+                    'rand'          => esc_html__('Random','ht-mega-for-elementor'),
                 ],
             ]
         );
         $this->add_control(
             'custom_order_by_date',
             [
-                'label' => esc_html__( 'Custom Date', 'htmega-addons' ),
+                'label' => esc_html__( 'Custom Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'default' => 'no',
@@ -1207,7 +1209,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->add_control(
             'order_by_date_before',
             [
-                'label' => __( 'Before Date', 'htmega-addons' ),
+                'label' => __( 'Before Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DATE_TIME,
                 'condition' =>[
                     'orderby'=>'date',
@@ -1218,7 +1220,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->add_control(
             'order_by_date_after',
             [
-                'label' => __( 'After Date', 'htmega-addons' ),
+                'label' => __( 'After Date', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::DATE_TIME,
                 'condition' =>[
                     'orderby'=>'date',
@@ -1229,12 +1231,12 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         $this->add_control(
             'order',
             [
-                'label' => esc_html__( 'Order', 'htmega-addons' ),
+                'label' => esc_html__( 'Order', 'ht-mega-for-elementor' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'DESC',
                 'options' => [
-                    'DESC'  => esc_html__('Descending','htmega-addons'),
-                    'ASC'   => esc_html__('Ascending','htmega-addons'),
+                    'DESC'  => esc_html__('Descending','ht-mega-for-elementor'),
+                    'ASC'   => esc_html__('Ascending','ht-mega-for-elementor'),
                 ],
                 'separator' => 'after'
 

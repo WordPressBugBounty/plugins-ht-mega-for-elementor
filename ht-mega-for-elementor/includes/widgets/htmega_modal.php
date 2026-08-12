@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Modal', 'htmega-addons' );
+        return __( 'Modal', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -33,28 +33,28 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
         $this->start_controls_section(
             'modal_content',
             [
-                'label' => __( 'Modal', 'htmega-addons' ),
+                'label' => __( 'Modal', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'modal_header_text',
                 [
-                    'label'   => __( 'Header Content', 'htmega-addons' ),
+                    'label'   => __( 'Header Content', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXTAREA,
-                    'default' => __('Modal Header Content','htmega-addons'),
+                    'default' => __('Modal Header Content','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'content_source',
                 [
-                    'label'   => esc_html__( 'Select Content Source', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Select Content Source', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'    => esc_html__( 'Custom', 'htmega-addons' ),
-                        "elementor" => esc_html__( 'Elementor Template', 'htmega-addons' ),
+                        'custom'    => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
+                        "elementor" => esc_html__( 'Elementor Template', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -62,7 +62,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
              $this->add_control(
                 'template_id',
                 [
-                    'label'       => __( 'Content', 'htmega-addons' ),
+                    'label'       => __( 'Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_elementor_template(),
@@ -75,23 +75,23 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
              $this->add_control(
                 'custom_content',
                 [
-                    'label' => __( 'Content', 'htmega-addons' ),
+                    'label' => __( 'Content', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::WYSIWYG,
-                    'title' => __( 'Content', 'htmega-addons' ),
+                    'title' => __( 'Content', 'ht-mega-for-elementor' ),
                     'show_label' => false,
                     'condition' => [
                         'content_source' =>'custom',
                     ],
-                    'default' => __('Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati ulla laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate velit esse cillum dolore eu.','htmega-addons'),
+                    'default' => __('Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati ulla laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repre in voluptate velit esse cillum dolore eu.','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'modal_footer_text',
                 [
-                    'label'   => __( 'Footer Text', 'htmega-addons' ),
+                    'label'   => __( 'Footer Text', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXTAREA,
-                    'default' => __('Modal Footer Content','htmega-addons'),
+                    'default' => __('Modal Footer Content','ht-mega-for-elementor'),
                 ]
             );
 
@@ -101,31 +101,31 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
         $this->start_controls_section(
             'modal_button',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'button_text',
                 [
-                    'label'   => __( 'Text', 'htmega-addons' ),
+                    'label'   => __( 'Text', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::TEXT,
-                    'default' => __('Modal Design','htmega-addons'),
+                    'default' => __('Modal Design','ht-mega-for-elementor'),
                 ]
             );
 
             $this->add_control(
                 'button_icon_type',
                 [
-                    'label' => esc_html__('Icon Type','htmega-addons'),
+                    'label' => esc_html__('Icon Type','ht-mega-for-elementor'),
                     'type' =>Controls_Manager::CHOOSE,
                     'options' =>[
                         'img' =>[
-                            'title' =>__('Image','htmega-addons'),
+                            'title' =>__('Image','ht-mega-for-elementor'),
                             'icon' =>'eicon-image-bold',
                         ],
                         'icon' =>[
-                            'title' =>__('Icon','htmega-addons'),
+                            'title' =>__('Icon','ht-mega-for-elementor'),
                             'icon' =>'eicon-info-circle',
                         ]
                     ],
@@ -135,7 +135,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_control(
                 'button_image',
                 [
-                    'label' => __('Image','htmega-addons'),
+                    'label' => __('Image','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::MEDIA,
                     'dynamic' => [
                         'active' => true,
@@ -161,7 +161,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_control(
                 'button_icon',
                 [
-                    'label' =>__('Icon','htmega-addons'),
+                    'label' =>__('Icon','ht-mega-for-elementor'),
                     'type'=>Controls_Manager::ICONS,
                     'condition' => [
                         'button_icon_type' => 'icon',
@@ -172,15 +172,15 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'modal_icon_position',
                 [
-                    'label' => __( 'Icon Position', 'htmega-addons' ),
+                    'label' => __( 'Icon Position', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-h-align-left',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-h-align-right',
                         ],
                     ],
@@ -200,7 +200,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
         $this->start_controls_section(
             'modal_button_style',
             [
-                'label' => __( 'Button', 'htmega-addons' ),
+                'label' => __( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -209,13 +209,13 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'button_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -238,7 +238,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'button_box_shadow',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-modal-btn button',
                         ]
                     );
@@ -247,7 +247,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-modal-btn button',
                         ]
@@ -257,7 +257,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-modal-btn button',
                         ]
                     );
@@ -265,7 +265,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                     $this->add_responsive_control(
                         'button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .htmega-modal-btn button' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -276,7 +276,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                     $this->add_responsive_control(
                         'button_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -289,7 +289,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                     $this->add_control(
                         'button_image_distance',
                         [
-                            'label' => esc_html__( 'Image space', 'htmega-addons' ),
+                            'label' => esc_html__( 'Image space', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -310,7 +310,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                     $this->add_control(
                         'button_width',
                         [
-                            'label' => esc_html__( 'Width', 'htmega-addons' ),
+                            'label' => esc_html__( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -327,7 +327,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                     $this->add_control(
                         'button_height',
                         [
-                            'label' => esc_html__( 'Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -344,23 +344,23 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                     $this->add_responsive_control(
                         'button_align',
                         [
-                            'label' => __( 'Alignment', 'htmega-addons' ),
+                            'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::CHOOSE,
                             'options' => [
                                 'left' => [
-                                    'title' => __( 'Left', 'htmega-addons' ),
+                                    'title' => __( 'Left', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-left',
                                 ],
                                 'center' => [
-                                    'title' => __( 'Center', 'htmega-addons' ),
+                                    'title' => __( 'Center', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-center',
                                 ],
                                 'right' => [
-                                    'title' => __( 'Right', 'htmega-addons' ),
+                                    'title' => __( 'Right', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-right',
                                 ],
                                 'justify' => [
-                                    'title' => __( 'Justified', 'htmega-addons' ),
+                                    'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                                     'icon' => 'eicon-text-align-justify',
                                 ],
                             ],
@@ -375,7 +375,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                     $this->add_control(
                         'modal_icon_size_opt',
                         [
-                            'label' => __( 'Icon Size', 'htmega-addons' ),
+                            'label' => __( 'Icon Size', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -407,7 +407,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                     $this->add_control(
                         'button_icon_distance',
                         [
-                            'label' => esc_html__( 'Icon Space', 'htmega-addons' ),
+                            'label' => esc_html__( 'Icon Space', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'range' => [
                                 'px' => [
@@ -432,14 +432,14 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     
                     $this->add_control(
                         'button_hover_color',
                         [
-                            'label' => __( 'Color', 'htmega-addons' ),
+                            'label' => __( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '#ffffff',
                             'selectors' => [
@@ -453,7 +453,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'button_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .htmega-modal-btn button:hover',
                         ]
@@ -463,7 +463,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'button_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .htmega-modal-btn button:hover',
                         ]
                     );
@@ -478,7 +478,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
         $this->start_controls_section(
             'modal_content_box_style',
             [
-                'label' => __( 'Modal Box Style', 'htmega-addons' ),
+                'label' => __( 'Modal Box Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -486,7 +486,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'modal_content_box_top_spacing',
                 [
-                    'label' => __( 'Modal Top Space', 'htmega-addons' ),
+                    'label' => __( 'Modal Top Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -514,7 +514,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'modal_content_box_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htb-modal-content',
                 ]
@@ -523,7 +523,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'modal_content_box_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -536,7 +536,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'modal_content_box_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -550,7 +550,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'modal_content_box_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htb-modal-content',
                 ]
             );
@@ -558,7 +558,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'modal_content_box_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htb-modal-content' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -572,7 +572,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
         $this->start_controls_section(
             'modal_header_style',
             [
-                'label' => __( 'Header', 'htmega-addons' ),
+                'label' => __( 'Header', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -580,7 +580,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_control(
                 'header_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#444444',
                     'selectors' => [
@@ -602,7 +602,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'header_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htb-modal-header',
                 ]
             );
@@ -611,7 +611,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'header_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htb-modal-header',
                 ]
@@ -621,7 +621,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'header_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htb-modal-header',
                 ]
             );
@@ -629,7 +629,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'header_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htb-modal-header' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -640,7 +640,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'header_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -653,7 +653,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'header_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -668,7 +668,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        esc_html__( 'Note: Below, This CSS style to use on your header close button ', 'htmega-addons' )
+                        esc_html__( 'Note: Below, This CSS style to use on your header close button ', 'ht-mega-for-elementor' )
                     ),
                     'content_classes' => 'elementor-panel-alert',
                     'separator' =>'before',
@@ -678,7 +678,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_control(
                 'header_close_btn_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htb-modal-header .htb-close' => 'color: {{VALUE}};',
@@ -699,7 +699,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'header_close_btn_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htb-modal-header .htb-close',
                 ]
@@ -708,7 +708,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'header_close_btn_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -722,7 +722,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'header_close_btn_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htb-modal-header .htb-close',
                 ]
             );
@@ -730,7 +730,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'header_close_btn_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htb-modal-header .htb-close' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -744,7 +744,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
         $this->start_controls_section(
             'modal_footer_style',
             [
-                'label' => __( 'Footer', 'htmega-addons' ),
+                'label' => __( 'Footer', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -752,7 +752,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_control(
                 'footer_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#444444',
                     'selectors' => [
@@ -774,7 +774,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'footer_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htb-modal-footer',
                 ]
@@ -784,7 +784,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'footer_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htb-modal-footer',
                 ]
             );
@@ -792,7 +792,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'footer_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htb-modal-footer' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -803,7 +803,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'footer_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -816,7 +816,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'footer_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -829,16 +829,16 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_control(
                 'footer_close_txt',
                 [
-                    'label' => __( 'Footer Close Button', 'htmega-addons' ),
+                    'label' => __( 'Footer Close Button', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::TEXT,
-                    'default' => __( 'Close', 'htmega-addons' ),
+                    'default' => __( 'Close', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'footer_close_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#ffffff',
                     'selectors' => [
@@ -866,7 +866,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'footer_close_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega-modal-area .htb-btn-secondary',
                     'condition' =>[
@@ -878,7 +878,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'footer_close_btn_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -892,7 +892,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'footer_close_btn_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega-modal-area .htb-btn-secondary',
                 ]
             );
@@ -900,7 +900,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'footer_close_btn_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega-modal-area .htb-btn-secondary' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -914,7 +914,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
         $this->start_controls_section(
             'modal_content_style',
             [
-                'label' => __( 'Modal Content', 'htmega-addons' ),
+                'label' => __( 'Modal Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -922,7 +922,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_control(
                 'content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#444444',
                     'selectors' => [
@@ -944,7 +944,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'content_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htb-modal-body',
                 ]
@@ -954,7 +954,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'content_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htb-modal-body',
                 ]
             );
@@ -962,7 +962,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'content_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htb-modal-body' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -973,7 +973,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -986,7 +986,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -999,23 +999,23 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_responsive_control(
                 'content_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -1030,7 +1030,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             $this->add_control(
                 'content_width',
                 [
-                    'label' => esc_html__( 'Modal Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Modal Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -1072,7 +1072,7 @@ class HTMega_Elementor_Widget_Modal extends Widget_Base {
             </div>
 
             <!-- Modal -->
-            <div <?php echo $this->get_render_attribute_string( 'htmega_modal_attr' ); ?>>
+            <div <?php echo $this->get_render_attribute_string( 'htmega_modal_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?>>
 
                 <div class="htb-modal-dialog htb-modal-dialog-centered">
                     <div class="htb-modal-content">

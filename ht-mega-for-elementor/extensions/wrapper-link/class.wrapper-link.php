@@ -62,7 +62,7 @@ class HTMegaWrapperLink_Elementor {
 		$element->start_controls_section(
 			'section_htmega_wrapper_link',
 			array(
-				'label' => __( 'Wrapper Link', 'htmega-addons' ).htmega_get_elementor_section_icon(),
+				'label' => __( 'Wrapper Link', 'ht-mega-for-elementor' ).htmega_get_elementor_section_icon(),
 				'tab'   => $tabs,
 			)
 		);
@@ -70,7 +70,7 @@ class HTMegaWrapperLink_Elementor {
 		$element->add_control(
 			'htmega_element_link',
 			[
-				'label'       => __( 'Link', 'htmega-addons' ),
+				'label'       => __( 'Link', 'ht-mega-for-elementor' ),
 				'type'        => Controls_Manager::URL,
 				'dynamic'     => [
 					'active' => true,

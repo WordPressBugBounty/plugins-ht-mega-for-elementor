@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Image Magnifier', 'htmega-addons' );
+        return __( 'Image Magnifier', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -48,14 +48,14 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
         $this->start_controls_section(
             'magifier_content',
             [
-                'label' => __( 'Magnifier', 'htmega-addons' ),
+                'label' => __( 'Magnifier', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'magnifier_image',
                 [
-                    'label' => __( 'Thumbnail Image', 'htmega-addons' ),
+                    'label' => __( 'Thumbnail Image', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::MEDIA,
                     'default' => [
                         'url' => Utils::get_placeholder_image_src(),
@@ -78,7 +78,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
             $this->add_control(
                 'lens_speed',
                 [
-                    'label' => __( 'Speed', 'htmega-addons' ),
+                    'label' => __( 'Speed', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -95,7 +95,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
             $this->add_responsive_control(
                 'lens_width',
                 [
-                    'label' => __( 'Lens Width', 'htmega-addons' ),
+                    'label' => __( 'Lens Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -122,7 +122,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
             $this->add_responsive_control(
                 'lens_height',
                 [
-                    'label' => __( 'Lens Height', 'htmega-addons' ),
+                    'label' => __( 'Lens Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -149,7 +149,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'lens_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .magnify-lens',
                     'separator' => 'before',
                 ]
@@ -158,7 +158,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
             $this->add_responsive_control(
                 'lens_border_radius',
                 [
-                    'label' => __( 'Box Radius', 'htmega-addons' ),
+                    'label' => __( 'Box Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'default' => [
@@ -181,7 +181,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
         $this->start_controls_section(
             'imagemagnifier_style_section',
             [
-                'label' => __( 'Style', 'htmega-addons' ),
+                'label' => __( 'Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -190,7 +190,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'imagemagnifier_area_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .zoom_thumbnail_area',
                 ]
             );
@@ -198,7 +198,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
             $this->add_responsive_control(
                 'imagemagnifier_area_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .zoom_thumbnail_area' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -212,7 +212,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'imagemagnifier_area_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .zoom_thumbnail_area',
                     'separator' => 'before',
                 ]
@@ -221,7 +221,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
             $this->add_responsive_control(
                 'imagemagnifier_area_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .zoom_thumbnail_area' => 'padding: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -233,7 +233,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
             $this->add_responsive_control(
                 'imagemagnifier_area_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .zoom_thumbnail_area' => 'margin: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -265,7 +265,7 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
         ?>
             <div class="zoom_image_area">
                 <div class="zoom_thumbnail_area">
-                    <a class="magnifier-thumb-wrapper"><img <?php echo $this->get_render_attribute_string( 'zoomimgattr' ); ?>></a>
+                    <a class="magnifier-thumb-wrapper"><img <?php echo $this->get_render_attribute_string( 'zoomimgattr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>></a>
                 </div>
             </div>
         <?php

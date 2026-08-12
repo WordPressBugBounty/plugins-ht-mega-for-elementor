@@ -23,7 +23,7 @@ class Single_Product_Ajax_Add_To_Cart{
         check_ajax_referer( 'htmega-woocommerce-ajax-request', 'security' );
 
         if ( ! isset( $_POST['product_id'] ) ) {
-            wp_send_json_error( array( 'message' => __( 'Missing product.', 'htmega-addons' ) ), 400 );
+            wp_send_json_error( array( 'message' => __( 'Missing product.', 'ht-mega-for-elementor' ) ), 400 );
             return;
         }
 

@@ -1,6 +1,8 @@
 <?php
 namespace HTMegaOpt\Admin;
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 class Menu {
 
     /**
@@ -76,8 +78,8 @@ class Menu {
         $capability  = 'manage_options';
 
         $hook = add_menu_page(
-            esc_html__( 'HTMega Addons', 'htmega-addons' ),
-            esc_html__( 'HTMega Addons', 'htmega-addons' ),
+            esc_html__( 'HTMega Addons', 'ht-mega-for-elementor' ),
+            esc_html__( 'HTMega Addons', 'ht-mega-for-elementor' ),
             $capability,
             $slug,
             [ $this, 'plugin_page' ],
@@ -95,7 +97,7 @@ class Menu {
                 $default_hash = '#/general';
                 update_option('htmega_onboarding_completed', true);
             }
-            $submenu[ $slug ][] = array( esc_html__( 'Settings', 'htmega-addons' ), $capability, 'admin.php?page=' . $slug . $default_hash );
+            $submenu[ $slug ][] = array( esc_html__( 'Settings', 'ht-mega-for-elementor' ), $capability, 'admin.php?page=' . $slug . $default_hash );
         }
 
         add_action( 'load-' . $hook, [ $this, 'init_hooks'] );
@@ -135,40 +137,40 @@ class Menu {
             'onboarding_asset_url' => HTMEGA_ADDONS_PL_URL.'admin/include/settings-panel/assets/images/',
             'options'       => htmegaopt_get_options( Options_Field::instance()->get_registered_settings() ),
             'labels'        => [
-                'pro' => __( 'Pro', 'htmega-addons' ),
+                'pro' => __( 'Pro', 'ht-mega-for-elementor' ),
                 'modal' => [
-                    'title' => __( 'BUY PRO', 'htmega-addons' ),
-                    'buynow' => __( 'Buy Now', 'htmega-addons' ),
-                    'desc' => __( 'Our free version is great, but it doesn\'t have all our advanced features. The best way to unlock all of the features in our plugin is by purchasing the pro version.', 'htmega-addons' )
+                    'title' => __( 'BUY PRO', 'ht-mega-for-elementor' ),
+                    'buynow' => __( 'Buy Now', 'ht-mega-for-elementor' ),
+                    'desc' => __( 'Our free version is great, but it doesn\'t have all our advanced features. The best way to unlock all of the features in our plugin is by purchasing the pro version.', 'ht-mega-for-elementor' )
                 ],
                 'saveButton' => [
-                    'text'   => __( 'Save Settings', 'htmega-addons' ),
-                    'saving' => __( 'Saving...', 'htmega-addons' ),
-                    'saved'  => __( 'Data Saved', 'htmega-addons' ),
+                    'text'   => __( 'Save Settings', 'ht-mega-for-elementor' ),
+                    'saving' => __( 'Saving...', 'ht-mega-for-elementor' ),
+                    'saved'  => __( 'Data Saved', 'ht-mega-for-elementor' ),
                     'alert' => [
-                        'title'=> __( 'Success', 'htmega-addons' ),
-                        'text' => __( 'All data has been saved successfully!', 'htmega-addons' )
+                        'title'=> __( 'Success', 'ht-mega-for-elementor' ),
+                        'text' => __( 'All data has been saved successfully!', 'ht-mega-for-elementor' )
                     ]
                 ],
                 'enableAllButton' => [
-                    'enable'   => __( 'Enable All', 'htmega-addons' ),
-                    'disable'  => __( 'Disable All', 'htmega-addons' ),
+                    'enable'   => __( 'Enable All', 'ht-mega-for-elementor' ),
+                    'disable'  => __( 'Disable All', 'ht-mega-for-elementor' ),
                 ],
                 'resetButton' => [
-                    'text'   => __( 'Reset All Settings', 'htmega-addons' ),
-                    'reseting'  => __( 'Resetting...', 'htmega-addons' ),
-                    'reseted'  => __( 'All Data Restored', 'htmega-addons' ),
+                    'text'   => __( 'Reset All Settings', 'ht-mega-for-elementor' ),
+                    'reseting'  => __( 'Resetting...', 'ht-mega-for-elementor' ),
+                    'reseted'  => __( 'All Data Restored', 'ht-mega-for-elementor' ),
                     'alert' => [
                         'one'=>[
-                            'title' => __( 'Are you sure?', 'htmega-addons' ),
-                            'text' => __( 'It will reset all the settings to default, and all the changes you made will be deleted.', 'htmega-addons' ),
-                            'confirm' => __( 'Yes', 'htmega-addons' ),
-                            'cancel' => __( 'No', 'htmega-addons' ),
+                            'title' => __( 'Are you sure?', 'ht-mega-for-elementor' ),
+                            'text' => __( 'It will reset all the settings to default, and all the changes you made will be deleted.', 'ht-mega-for-elementor' ),
+                            'confirm' => __( 'Yes', 'ht-mega-for-elementor' ),
+                            'cancel' => __( 'No', 'ht-mega-for-elementor' ),
                         ],
                         'two'=>[
-                            'title' => __( 'Reset!', 'htmega-addons' ),
-                            'text' => __( 'All settings has been reset successfully.', 'htmega-addons' ),
-                            'confirm' => __( 'OK', 'htmega-addons' ),
+                            'title' => __( 'Reset!', 'ht-mega-for-elementor' ),
+                            'text' => __( 'All settings has been reset successfully.', 'ht-mega-for-elementor' ),
+                            'confirm' => __( 'OK', 'ht-mega-for-elementor' ),
                         ]
                     ],
                 ],
@@ -193,123 +195,124 @@ class Menu {
         return [
             'onboarding' => [
                 'steps'=> [
-                    'welcome'   => esc_html__('Welcome', 'htmega-addons'),
-                    'elements'  => esc_html__('Elements', 'htmega-addons'),
-                    'modules'   => esc_html__('Modules', 'htmega-addons'),
-                    'gopro'      => esc_html__('Go Pro', 'htmega-addons'),
-                    'templates' => esc_html__('Templates', 'htmega-addons'),
-                    'finalize' => esc_html__('Finalize', 'htmega-addons'),
+                    'welcome'   => esc_html__('Welcome', 'ht-mega-for-elementor'),
+                    'elements'  => esc_html__('Elements', 'ht-mega-for-elementor'),
+                    'modules'   => esc_html__('Modules', 'ht-mega-for-elementor'),
+                    'gopro'      => esc_html__('Go Pro', 'ht-mega-for-elementor'),
+                    'templates' => esc_html__('Templates', 'ht-mega-for-elementor'),
+                    'finalize' => esc_html__('Finalize', 'ht-mega-for-elementor'),
                 ],
                 'buttons' => [
-                    'next' => __( 'Next', 'htmega-addons' ),
-                    'skip' => __( 'Skip', 'htmega-addons' ),
-                    'back' => __( 'Back', 'htmega-addons' ),
-                    'go_to_dashboard' => __( 'Go To Dashboard', 'htmega-addons' ),
-                    'enable_all' => __( 'Enable All', 'htmega-addons' ),
-                    'disable_all' => __( 'Disable All', 'htmega-addons' ),
+                    'next' => __( 'Next', 'ht-mega-for-elementor' ),
+                    'skip' => __( 'Skip', 'ht-mega-for-elementor' ),
+                    'back' => __( 'Back', 'ht-mega-for-elementor' ),
+                    'go_to_dashboard' => __( 'Go To Dashboard', 'ht-mega-for-elementor' ),
+                    'enable_all' => __( 'Enable All', 'ht-mega-for-elementor' ),
+                    'disable_all' => __( 'Disable All', 'ht-mega-for-elementor' ),
                 ],
                 'welcome' => [
-                    'title' => __( 'Welcome To HT Mega', 'htmega-addons' ),
-                    'description' => __( 'Thank You for choosing HT Mega for Elementor. Follow these simple steps of easy setup wizard & enjoy your Elementor web-building experience now!', 'htmega-addons' ),
+                    'title' => __( 'Welcome To HT Mega', 'ht-mega-for-elementor' ),
+                    'description' => __( 'Thank You for choosing HT Mega for Elementor. Follow these simple steps of easy setup wizard & enjoy your Elementor web-building experience now!', 'ht-mega-for-elementor' ),
                     'options' => [
                         'basic' => [
-                            'title' => __( 'Basic', 'htmega-addons' ),
+                            'title' => __( 'Basic', 'ht-mega-for-elementor' ),
                             'recommended' => [
                                 'status' => true,
-                                'text' => __( 'Recommended', 'htmega-addons' )
+                                'text' => __( 'Recommended', 'ht-mega-for-elementor' )
                             ],
-                            'description' => __( 'General widgets will be activated to build your website. Best suited for lightweight-fast starter websites.', 'htmega-addons' ),
+                            'description' => __( 'General widgets will be activated to build your website. Best suited for lightweight-fast starter websites.', 'ht-mega-for-elementor' ),
                         ],
                         'advanced' => [
-                            'title' => __( 'Advanced', 'htmega-addons' ),
+                            'title' => __( 'Advanced', 'ht-mega-for-elementor' ),
                             'recommended' => [
                                 'status' => false,
-                                'text' => __( 'Recommended', 'htmega-addons' )
+                                'text' => __( 'Recommended', 'ht-mega-for-elementor' )
                             ],
-                            'description' => __( 'Build complex websites with the advance functionalities of HT Mega. All dynamic elements will be activated in this option.', 'htmega-addons' ),
+                            'description' => __( 'Build complex websites with the advance functionalities of HT Mega. All dynamic elements will be activated in this option.', 'ht-mega-for-elementor' ),
                         ],
                         'custom' => [
-                            'title' => __( 'Custom', 'htmega-addons' ),
+                            'title' => __( 'Custom', 'ht-mega-for-elementor' ),
                             'recommended' => [
                                 'status' => false,
-                                'text' => __( 'Recommended', 'htmega-addons' )
+                                'text' => __( 'Recommended', 'ht-mega-for-elementor' )
                             ],
-                            'description' => __( 'Configure the elements of HT mega according to your preferences to make your website engaging & stand out.', 'htmega-addons' ),
+                            'description' => __( 'Configure the elements of HT mega according to your preferences to make your website engaging & stand out.', 'ht-mega-for-elementor' ),
                         ],
                     ],
-                    'data_collection_text' => __( 'By continuing, you agree to allow this plugin to collect some of your data for the purpose of improving your experience.', 'htmega-addons' ),
-                    'what_we_collect' => __( 'What We Collect', 'htmega-addons' ),
-                    'data_collection_info' => __( 'We gather basic, non-sensitive information to ensure the plugin works smoothly on your site. This includes your site\'s URL, the versions of WordPress and PHP you\'re using, and a list of your installed plugins and themes. Additionally, we collect your email address to send you exclusive discounts and important updates. This data helps us ensure that HT Mega stays up-to-date and compatible with the most popular plugins and themes. Your privacy is important to us. We will never send you spam, and we handle your data with the utmost care.', 'htmega-addons' ),
+                    'data_collection_text' => __( 'By continuing, you agree to allow this plugin to collect some of your data for the purpose of improving your experience.', 'ht-mega-for-elementor' ),
+                    'what_we_collect' => __( 'What We Collect', 'ht-mega-for-elementor' ),
+                    'data_collection_info' => __( 'We gather basic, non-sensitive information to ensure the plugin works smoothly on your site. This includes your site\'s URL, the versions of WordPress and PHP you\'re using, and a list of your installed plugins and themes. Additionally, we collect your email address to send you exclusive discounts and important updates. This data helps us ensure that HT Mega stays up-to-date and compatible with the most popular plugins and themes. Your privacy is important to us. We will never send you spam, and we handle your data with the utmost care.', 'ht-mega-for-elementor' ),
                     'privacy_policy_link' => 'https://wphtmega.com/privacy-policy/',
-                    'privacy_policy_text' => __( 'Privacy Policy', 'htmega-addons' ),
-                    'proceed_button' => __( 'Proceed to Next', 'htmega-addons' ),
-                    'skip_button' => __( 'Skip & Go to Dashboard', 'htmega-addons' ),
+                    'privacy_policy_text' => __( 'Privacy Policy', 'ht-mega-for-elementor' ),
+                    'proceed_button' => __( 'Proceed to Next', 'ht-mega-for-elementor' ),
+                    'skip_button' => __( 'Skip & Go to Dashboard', 'ht-mega-for-elementor' ),
                 ],
                 'elements' => [
-                    'title' => __( 'Activate the Elements You Require', 'htmega-addons' ),
-                    'description' => __( 'Select the elements you want to use in your website. You can enable or disable them anytime later.', 'htmega-addons' ),
-                    'view_all' => __( 'View All Elements', 'htmega-addons' ),
-                    'less_all' => __( 'Show Less Elements', 'htmega-addons' ),
+                    'title' => __( 'Activate the Elements You Require', 'ht-mega-for-elementor' ),
+                    'description' => __( 'Select the elements you want to use in your website. You can enable or disable them anytime later.', 'ht-mega-for-elementor' ),
+                    'view_all' => __( 'View All Elements', 'ht-mega-for-elementor' ),
+                    'less_all' => __( 'Show Less Elements', 'ht-mega-for-elementor' ),
                 ],
                 'modules' => [
-                    'title' => __( 'Select the Modules You Require Now', 'htmega-addons' ),
-                    'description' => __( 'Enable/Disable the Modules anytime you want from the HT Mega Dashboard.', 'htmega-addons' ),
+                    'title' => __( 'Select the Modules You Require Now', 'ht-mega-for-elementor' ),
+                    'description' => __( 'Enable/Disable the Modules anytime you want from the HT Mega Dashboard.', 'ht-mega-for-elementor' ),
                 ],
                 'gopro' => [
-                    'title' => __( '🚀 Experience the Full Power of HT Mega Pro for Your Elementor Design!', 'htmega-addons' ),
-                    'subtitle' => __( '💡 All Features. More Flexibility. Build Better, Faster, and Smarter.', 'htmega-addons' ),
-                    'offer_badge' => __( '⭐ Upgrade to HT Mega Pro – Get Full Access Anytime!', 'htmega-addons' ),
-                    'section_title' => __( 'Explore Premium Features', 'htmega-addons' ),
-                    'description' => __( 'You can get a lot more out of it upgrading to premium. Get all features', 'htmega-addons' ),
+                    'title' => __( '🚀 Experience the Full Power of HT Mega Pro for Your Elementor Design!', 'ht-mega-for-elementor' ),
+                    'subtitle' => __( '💡 All Features. More Flexibility. Build Better, Faster, and Smarter.', 'ht-mega-for-elementor' ),
+                    'offer_badge' => __( '⭐ Upgrade to HT Mega Pro – Get Full Access Anytime!', 'ht-mega-for-elementor' ),
+                    'section_title' => __( 'Explore Premium Features', 'ht-mega-for-elementor' ),
+                    'description' => __( 'You can get a lot more out of it upgrading to premium. Get all features', 'ht-mega-for-elementor' ),
                     'features' => [
-                        'advanced_slider' => __( 'Advanced Slider', 'htmega-addons' ),
-                        'conditional_display' => __( 'Conditional Display', 'htmega-addons' ),
-                        'theme_builder' => __( 'Theme Builder', 'htmega-addons' ),
-                        'megamenu_builder' => __( 'Megamenu Builder', 'htmega-addons' ),
-                        'floating_effects' => __( 'Floating Effects', 'htmega-addons' ),
-                        'custom_css' => __( 'Custom CSS', 'htmega-addons' ),
-                        'dynamic_gallery' => __( 'Dynamic Gallery', 'htmega-addons' ),
-                        'cross_domain_copy' => __( 'Live Copy Paste', 'htmega-addons' ),
+                        'advanced_slider' => __( 'Advanced Slider', 'ht-mega-for-elementor' ),
+                        'conditional_display' => __( 'Conditional Display', 'ht-mega-for-elementor' ),
+                        'theme_builder' => __( 'Theme Builder', 'ht-mega-for-elementor' ),
+                        'megamenu_builder' => __( 'Megamenu Builder', 'ht-mega-for-elementor' ),
+                        'floating_effects' => __( 'Floating Effects', 'ht-mega-for-elementor' ),
+                        'custom_css' => __( 'Custom CSS', 'ht-mega-for-elementor' ),
+                        'dynamic_gallery' => __( 'Dynamic Gallery', 'ht-mega-for-elementor' ),
+                        'cross_domain_copy' => __( 'Live Copy Paste', 'ht-mega-for-elementor' ),
                     ],
-                    'more_features_text' => __( '& Many More Features...', 'htmega-addons' ),
+                    'more_features_text' => __( '& Many More Features...', 'ht-mega-for-elementor' ),
                     'value_props' => [
                         'widget_experience' => [
-                            'title' => __( 'Experience 135+ Widgets & 14 Modules', 'htmega-addons' ),
-                            'desc'  => __( 'Go beyond Elementor limits and unlock endless customization options.', 'htmega-addons' )
+                            'title' => __( 'Experience 135+ Widgets & 14 Modules', 'ht-mega-for-elementor' ),
+                            'desc'  => __( 'Go beyond Elementor limits and unlock endless customization options.', 'ht-mega-for-elementor' )
                         ],
                         'risk_free' => [
-                            'title' => __( 'Risk-Free & Affordable', 'htmega-addons' ),
-                            'desc'  => __( 'Explore all premium features and see how HT Mega Pro enhances your workflow.', 'htmega-addons' )
+                            'title' => __( 'Risk-Free & Affordable', 'ht-mega-for-elementor' ),
+                            'desc'  => __( 'Explore all premium features and see how HT Mega Pro enhances your workflow.', 'ht-mega-for-elementor' )
                         ],
                         'lifetime_access' => [
-                            'title' => __( 'Full Access & Updates', 'htmega-addons' ),
-                            'desc'  => __( 'Enjoy continuous improvements, automatic updates, and premium support—all included.', 'htmega-addons' )
+                            'title' => __( 'Full Access & Updates', 'ht-mega-for-elementor' ),
+                            'desc'  => __( 'Enjoy continuous improvements, automatic updates, and premium support—all included.', 'ht-mega-for-elementor' )
                         ]
                     ],
-                    'upgrade_button' => __( 'UPGRADE TO HT MEGA PRO', 'htmega-addons' ),
+                    'upgrade_button' => __( 'UPGRADE TO HT MEGA PRO', 'ht-mega-for-elementor' ),
                     'upgrade_url' => 'https://wphtmega.com/pricing/#ht-mega-pricing',
                 ],
                 'templates' => [
-                    'title' => sprintf( __( 'Explore %s Templates', 'htmega-addons' ), '<span class="gradient-text">900+</span>' ),
-                    'description' => __( 'Design stunning websites effortlessly with HT Mega\'s exclusive collection of templates.', 'htmega-addons' ),
+                    /* translators: %s: "900+" wrapped in a <span> highlight */
+                    'title' => sprintf( __( 'Explore %s Templates', 'ht-mega-for-elementor' ), '<span class="gradient-text">900+</span>' ),
+                    'description' => __( 'Design stunning websites effortlessly with HT Mega\'s exclusive collection of templates.', 'ht-mega-for-elementor' ),
                     'features' => [
                         'professionally_designed' => [
-                            'title' => __( 'Professionally Designed Templates', 'htmega-addons' ),
-                            'description' => __( 'Access a variety of ready-to-use templates for every niche, from business to e-commerce, blogs, and more.', 'htmega-addons' ),
+                            'title' => __( 'Professionally Designed Templates', 'ht-mega-for-elementor' ),
+                            'description' => __( 'Access a variety of ready-to-use templates for every niche, from business to e-commerce, blogs, and more.', 'ht-mega-for-elementor' ),
                         ],
                         'one_click_import' => [
-                            'title' => __( 'One-Click Import', 'htmega-addons' ),
-                            'description' => __( 'Import complete pages or sections in seconds to kickstart your website design with minimal effort.', 'htmega-addons' ),
+                            'title' => __( 'One-Click Import', 'ht-mega-for-elementor' ),
+                            'description' => __( 'Import complete pages or sections in seconds to kickstart your website design with minimal effort.', 'ht-mega-for-elementor' ),
                         ],
                         'fully_customizable' => [
-                            'title' => __( 'Fully Customizable', 'htmega-addons' ),
-                            'description' => __( 'Modify every template to match your branding, ensuring a unique and personalized website.', 'htmega-addons' ),
+                            'title' => __( 'Fully Customizable', 'ht-mega-for-elementor' ),
+                            'description' => __( 'Modify every template to match your branding, ensuring a unique and personalized website.', 'ht-mega-for-elementor' ),
                         ],
                     ],
                 ],
                 'congrats' => [
-                    'title' => __( 'You Have Completed Your Setup for HT Mega', 'htmega-addons' ),
-                    'go_to_dashboard' => __( 'Go To Dashboard', 'htmega-addons' ),
+                    'title' => __( 'You Have Completed Your Setup for HT Mega', 'ht-mega-for-elementor' ),
+                    'go_to_dashboard' => __( 'Go To Dashboard', 'ht-mega-for-elementor' ),
                 ],
             ],
         ];

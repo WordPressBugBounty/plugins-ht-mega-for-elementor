@@ -101,14 +101,14 @@ class Elementor_Library_Manage{
                 $editor_post_id = absint( $data['editor_post_id'] );
 
                 if ( ! get_post( $editor_post_id ) ) {
-                    throw new \Exception( esc_html__( 'Post not found', 'htmega-addons' ) );
+                    throw new \Exception( esc_html__( 'Post not found', 'ht-mega-for-elementor' ) );
                 }
 
                 htmega_get_elementor()->db->switch_to_post( $editor_post_id );
             }
 
             if ( empty( $data['template_id'] ) ) {
-                throw new \Exception( esc_html__( 'Template id missing', 'htmega-addons' ) );
+                throw new \Exception( esc_html__( 'Template id missing', 'ht-mega-for-elementor' ) );
             }
 
             $result = $this->get_template_data( $data );

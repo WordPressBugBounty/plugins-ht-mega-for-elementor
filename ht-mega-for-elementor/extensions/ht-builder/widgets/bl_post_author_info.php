@@ -19,7 +19,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'Author Info', 'htmega-addons' );
+        return __( 'Author Info', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -42,16 +42,16 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
         $this->start_controls_section(
             'post_author_info_box',
             [
-                'label' => __( 'Author Info', 'htmega-addons' ),
+                'label' => __( 'Author Info', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'show_name',
                 [
-                    'label' => __( 'Show Title', 'htmega-addons' ),
+                    'label' => __( 'Show Title', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                 ]
@@ -60,7 +60,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'name_html_tag',
                 [
-                    'label'   => __( 'Name HTML Tag', 'htmega-addons' ),
+                    'label'   => __( 'Name HTML Tag', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'options' => htmega_html_tag_lists(),
                     'default' => 'h5',
@@ -73,10 +73,10 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'show_avater_image',
                 [
-                    'label'         => __( 'Show Avatar Image', 'htmega-addons' ),
+                    'label'         => __( 'Show Avatar Image', 'ht-mega-for-elementor' ),
                     'type'          => Controls_Manager::SWITCHER,
-                    'label_on'      => __( 'Show', 'htmega-addons' ),
-                    'label_off'     => __( 'Hide', 'htmega-addons' ),
+                    'label_on'      => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off'     => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value'  => 'yes',
                     'default'       => 'yes',
                 ]
@@ -85,10 +85,10 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'show_biography',
                 [
-                    'label'        => __( 'Show Biography', 'htmega-addons' ),
+                    'label'        => __( 'Show Biography', 'ht-mega-for-elementor' ),
                     'type'         => Controls_Manager::SWITCHER,
-                    'label_on'     => __( 'Show', 'htmega-addons' ),
-                    'label_off'    => __( 'Hide', 'htmega-addons' ),
+                    'label_on'     => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off'    => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default'      => 'yes',
                 ]
@@ -97,37 +97,37 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'author_link_to',
                 [
-                    'label' => __( 'Link', 'htmega-addons' ),
+                    'label' => __( 'Link', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SELECT,
                     'options' => [
-                        ''              => __( 'None', 'htmega-addons' ),
-                        'website'       => __( 'Website', 'htmega-addons' ),
-                        'admin_archive' => __( 'Admin Posts', 'htmega-addons' ),
+                        ''              => __( 'None', 'ht-mega-for-elementor' ),
+                        'website'       => __( 'Website', 'ht-mega-for-elementor' ),
+                        'admin_archive' => __( 'Admin Posts', 'ht-mega-for-elementor' ),
                     ],
-                    'description'       => __( 'Link for the Author Name and Image', 'htmega-addons' ),
+                    'description'       => __( 'Link for the Author Name and Image', 'ht-mega-for-elementor' ),
                 ]
             );
 
             $this->add_control(
                 'avater_image_position',
                 [
-                    'label'   => __( 'Avater Image Position', 'htmega-addons' ),
+                    'label'   => __( 'Avater Image Position', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-left',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-h-align-right',
                         ],
                         'top' => [
-                            'title' => __( 'Top', 'htmega-addons' ),
+                            'title' => __( 'Top', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-v-align-top',
                         ],
                         'bottom' => [
-                            'title' => __( 'Bottom', 'htmega-addons' ),
+                            'title' => __( 'Bottom', 'ht-mega-for-elementor' ),
                             'icon'  => 'eicon-v-align-bottom',
                         ],
                     ],
@@ -142,14 +142,14 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
         $this->start_controls_section(
             'avatar_style_section',
             array(
-                'label' => __( 'Image', 'htmega-addons' ),
+                'label' => __( 'Image', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
             $this->add_control(
                 'avatar_width',
                 [
-                    'label' => __( 'Width', 'htmega-addons' ),
+                    'label' => __( 'Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -177,7 +177,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'avatar_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htavatar img',
                 ]
             );
@@ -185,7 +185,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'avatar_border_radius',
                 [
-                    'label' => __( 'Border Radius', 'htmega-addons' ),
+                    'label' => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -197,7 +197,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'avatar_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -212,14 +212,14 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
         $this->start_controls_section(
             'content_style_section',
             array(
-                'label' => __( 'Content', 'htmega-addons' ),
+                'label' => __( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             )
         );
             $this->add_control(
                 'heading_name_style',
                 [
-                    'label' => __( 'Name', 'htmega-addons' ),
+                    'label' => __( 'Name', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -228,7 +228,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'author_name_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htauthor-info .htauthor-name' => 'color: {{VALUE}}',
@@ -247,7 +247,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'author_name_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -259,7 +259,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'heading_bio_style',
                 [
-                    'label' => __( 'Biography', 'htmega-addons' ),
+                    'label' => __( 'Biography', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -268,7 +268,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'author_bio_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .htauthor-info .htbuilder-bio' => 'color: {{VALUE}}',
@@ -287,7 +287,7 @@ class Bl_Post_Author_Info_ELement extends Widget_Base {
             $this->add_control(
                 'author_bio_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [

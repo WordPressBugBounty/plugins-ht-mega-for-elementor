@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Template_Selector extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Template Selector', 'htmega-addons' );
+        return __( 'Template Selector', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -34,14 +34,14 @@ class HTMega_Elementor_Widget_Template_Selector extends Widget_Base {
         $this->start_controls_section(
             'template_selector_content',
             [
-                'label' => esc_html__( 'Template', 'htmega-addons' ),
+                'label' => esc_html__( 'Template', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'template_id',
                 [
-                    'label' => __( 'Select Your template', 'htmega-addons' ),
+                    'label' => __( 'Select Your template', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => '0',
                     'options' => htmega_elementor_template(),
@@ -59,7 +59,7 @@ class HTMega_Elementor_Widget_Template_Selector extends Widget_Base {
         if ( !empty( $settings['template_id'] )) {
             echo htmega_get_template_content_by_id( $settings['template_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }else{
-            echo '<div class="htmega_error">'.esc_html__( 'No selected template', 'htmega-addons' ).'<div/>';
+            echo '<div class="htmega_error">'.esc_html__( 'No selected template', 'ht-mega-for-elementor' ).'<div/>';
         }
         
     }

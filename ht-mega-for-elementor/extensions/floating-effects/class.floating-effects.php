@@ -33,7 +33,9 @@ class HTMegaFloatingEffects_Elementor {
 	public static function enqueue_scripts() {
         // JS File
         wp_enqueue_script( 'htmega-floating-effects', HTMEGA_ADDONS_PL_URL . 'extensions/floating-effects/assets/js/htmega-floating-effects.js', array('jquery'),HTMEGA_VERSION );
+        // phpcs:disable WordPress.WP.EnqueuedResourceParameters.NotInFooter -- 'anime' is already registered with in_footer=true in includes/class.assests.php's shared script-registration loop; this call just enqueues the already-registered handle by name (no src passed), so it already loads in the footer at runtime.
         wp_enqueue_script( 'anime' );
+        // phpcs:enable WordPress.WP.EnqueuedResourceParameters.NotInFooter
 
 	}
 
@@ -73,7 +75,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->start_controls_section(
 			'section_floating_effects',
 			[
-				'label' => __( 'HTMega Floating Effects', 'htmega-addons' ),
+				'label' => __( 'HTMega Floating Effects', 'ht-mega-for-elementor' ),
 				'tab' => Controls_Manager::TAB_ADVANCED,
 			]
 		);
@@ -81,7 +83,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe',
 			[
-				'label' => __( 'Enable', 'htmega-addons' ),
+				'label' => __( 'Enable', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default' => 'no',
@@ -91,7 +93,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_motion_toggle',
 			[
-				'label' => __( 'Motion', 'htmega-addons' ),
+				'label' => __( 'Motion', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default' => 'yes',
@@ -105,7 +107,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_translate_toggle',
 			[
-				'label' => __( 'Translate', 'htmega-addons' ),
+				'label' => __( 'Translate', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
 				'return_value' => 'yes',
 				'frontend_available' => true,
@@ -121,7 +123,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_translate_x',
 			[
-				'label' => __( 'Translate X', 'htmega-addons' ),
+				'label' => __( 'Translate X', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'sizes' => [
@@ -137,8 +139,8 @@ class HTMegaFloatingEffects_Elementor {
 					]
 				],
 				'labels' => [
-					__( 'From', 'htmega-addons' ),
-					__( 'To', 'htmega-addons' ),
+					__( 'From', 'ht-mega-for-elementor' ),
+					__( 'To', 'ht-mega-for-elementor' ),
 				],
 				'scales' => 1,
 				'handles' => 'range',
@@ -154,7 +156,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_translate_y',
 			[
-				'label' => __( 'Translate Y', 'htmega-addons' ),
+				'label' => __( 'Translate Y', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'sizes' => [
@@ -170,8 +172,8 @@ class HTMegaFloatingEffects_Elementor {
 					]
 				],
 				'labels' => [
-					__( 'From', 'htmega-addons' ),
-					__( 'To', 'htmega-addons' ),
+					__( 'From', 'ht-mega-for-elementor' ),
+					__( 'To', 'ht-mega-for-elementor' ),
 				],
 				'scales' => 1,
 				'handles' => 'range',
@@ -187,7 +189,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_translate_duration',
 			[
-				'label' => __( 'Duration', 'htmega-addons' ),
+				'label' => __( 'Duration', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -212,7 +214,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_translate_delay',
 			[
-				'label' => __( 'Delay', 'htmega-addons' ),
+				'label' => __( 'Delay', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -236,7 +238,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_rotate_toggle',
 			[
-				'label' => __( 'Rotate', 'htmega-addons' ),
+				'label' => __( 'Rotate', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
 				'return_value' => 'yes',
 				'frontend_available' => true,
@@ -252,7 +254,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_rotate_x',
 			[
-				'label' => __( 'Rotate X', 'htmega-addons' ),
+				'label' => __( 'Rotate X', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'sizes' => [
@@ -268,8 +270,8 @@ class HTMegaFloatingEffects_Elementor {
 					]
 				],
 				'labels' => [
-					__( 'From', 'htmega-addons' ),
-					__( 'To', 'htmega-addons' ),
+					__( 'From', 'ht-mega-for-elementor' ),
+					__( 'To', 'ht-mega-for-elementor' ),
 				],
 				'scales' => 1,
 				'handles' => 'range',
@@ -285,7 +287,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_rotate_y',
 			[
-				'label' => __( 'Rotate Y', 'htmega-addons' ),
+				'label' => __( 'Rotate Y', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'sizes' => [
@@ -301,8 +303,8 @@ class HTMegaFloatingEffects_Elementor {
 					]
 				],
 				'labels' => [
-					__( 'From', 'htmega-addons' ),
-					__( 'To', 'htmega-addons' ),
+					__( 'From', 'ht-mega-for-elementor' ),
+					__( 'To', 'ht-mega-for-elementor' ),
 				],
 				'scales' => 1,
 				'handles' => 'range',
@@ -318,7 +320,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_rotate_z',
 			[
-				'label' => __( 'Rotate Z', 'htmega-addons' ),
+				'label' => __( 'Rotate Z', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'sizes' => [
@@ -334,8 +336,8 @@ class HTMegaFloatingEffects_Elementor {
 					]
 				],
 				'labels' => [
-					__( 'From', 'htmega-addons' ),
-					__( 'To', 'htmega-addons' ),
+					__( 'From', 'ht-mega-for-elementor' ),
+					__( 'To', 'ht-mega-for-elementor' ),
 				],
 				'scales' => 1,
 				'handles' => 'range',
@@ -351,7 +353,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_rotate_duration',
 			[
-				'label' => __( 'Duration', 'htmega-addons' ),
+				'label' => __( 'Duration', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -376,7 +378,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_rotate_delay',
 			[
-				'label' => __( 'Delay', 'htmega-addons' ),
+				'label' => __( 'Delay', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -400,7 +402,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_scale_toggle',
 			[
-				'label' => __( 'Scale', 'htmega-addons' ),
+				'label' => __( 'Scale', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
 				'return_value' => 'yes',
 				'frontend_available' => true,
@@ -416,7 +418,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_scale_x',
 			[
-				'label' => __( 'Scale X', 'htmega-addons' ),
+				'label' => __( 'Scale X', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'sizes' => [
@@ -433,8 +435,8 @@ class HTMegaFloatingEffects_Elementor {
 					]
 				],
 				'labels' => [
-					__( 'From', 'htmega-addons' ),
-					__( 'To', 'htmega-addons' ),
+					__( 'From', 'ht-mega-for-elementor' ),
+					__( 'To', 'ht-mega-for-elementor' ),
 				],
 				'scales' => 1,
 				'handles' => 'range',
@@ -450,7 +452,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_scale_y',
 			[
-				'label' => __( 'Scale Y', 'htmega-addons' ),
+				'label' => __( 'Scale Y', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'sizes' => [
@@ -467,8 +469,8 @@ class HTMegaFloatingEffects_Elementor {
 					]
 				],
 				'labels' => [
-					__( 'From', 'htmega-addons' ),
-					__( 'To', 'htmega-addons' ),
+					__( 'From', 'ht-mega-for-elementor' ),
+					__( 'To', 'ht-mega-for-elementor' ),
 				],
 				'scales' => 1,
 				'handles' => 'range',
@@ -484,7 +486,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_scale_duration',
 			[
-				'label' => __( 'Duration', 'htmega-addons' ),
+				'label' => __( 'Duration', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -509,7 +511,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_scale_delay',
 			[
-				'label' => __( 'Delay', 'htmega-addons' ),
+				'label' => __( 'Delay', 'ht-mega-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'range' => [
@@ -533,7 +535,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_skew_togglep',
 			[
-				'label' => __( 'Skew', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+				'label' => __( 'Skew', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
 				'type' => Controls_Manager::POPOVER_TOGGLE,
 				'return_value' => 'yes',
 				'frontend_available' => true,
@@ -548,7 +550,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_style_togglep',
 			array(
-				'label'        => __( 'Style', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+				'label'        => __( 'Style', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
 				'type'         => Controls_Manager::SWITCHER,
 				'separator'    => 'before',
 				'condition'    => array(
@@ -563,7 +565,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_filters_togglep',
 			array(
-				'label'        => __( 'Filters', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+				'label'        => __( 'Filters', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
 				'type'         => Controls_Manager::SWITCHER,
 				'separator'    => 'before',
 				'condition'    => array(
@@ -578,7 +580,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_general_settings_heading',
 			array(
-				'label'     => __( 'General Settings', 'htmega-addons' ),
+				'label'     => __( 'General Settings', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -590,13 +592,13 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_direction',
 			array(
-				'label'     => __( 'Direction', 'htmega-addons' ),
+				'label'     => __( 'Direction', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'alternate',
 				'options'   => array(
-					'normal'    => __( 'Normal', 'htmega-addons' ),
-					'reverse'   => __( 'Reverse', 'htmega-addons' ),
-					'alternate' => __( 'Alternate', 'htmega-addons' ),
+					'normal'    => __( 'Normal', 'ht-mega-for-elementor' ),
+					'reverse'   => __( 'Reverse', 'ht-mega-for-elementor' ),
+					'alternate' => __( 'Alternate', 'ht-mega-for-elementor' ),
 				),
 				'condition' => array(
 					'htmega_fe' => 'yes',
@@ -608,12 +610,12 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_loop',
 			array(
-				'label'     => __( 'Loop', 'htmega-addons' ),
+				'label'     => __( 'Loop', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'default',
 				'options'   => array(
-					'default' => __( 'Infinite', 'htmega-addons' ),
-					'number'  => __( 'Custom', 'htmega-addons' ),
+					'default' => __( 'Infinite', 'ht-mega-for-elementor' ),
+					'number'  => __( 'Custom', 'ht-mega-for-elementor' ),
 				),
 				'condition' => array(
 					'htmega_fe' => 'yes',
@@ -625,7 +627,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_loop_number',
 			array(
-				'label'     => __( 'Number', 'htmega-addons' ),
+				'label'     => __( 'Number', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 3,
 				'condition' => array(
@@ -639,20 +641,20 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_easing',
 			array(
-				'label'     => __( 'Easing', 'htmega-addons' ) . ' <i class="eicon-pro-icon"></i>',
+				'label'     => __( 'Easing', 'ht-mega-for-elementor' ) . ' <i class="eicon-pro-icon"></i>',
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'easeInOutSine',
 				'options'   => array(
-					'linear'                  => __( 'Linear', 'htmega-addons' ),
-					'easeInOutSine'           => __( 'easeInOutSine', 'htmega-addons' ),
-					'easeInOutExpo'           => __( 'easeInOutExpo', 'htmega-addons' ),
-					'easeInOutQuart'          => __( 'easeInOutQuart', 'htmega-addons' ),
-					'easeInOutCirc'           => __( 'easeInOutCirc', 'htmega-addons' ),
-					'easeInOutBack'           => __( 'easeInOutBack', 'htmega-addons' ),
-					'steps'                   => __( 'Steps', 'htmega-addons' ),
-					'easeInElastic(1, .6)'    => __( 'Elastic In', 'htmega-addons' ),
-					'easeOutElastic(1, .6)'   => __( 'Elastic Out', 'htmega-addons' ),
-					'easeInOutElastic(1, .6)' => __( 'Elastic In Out', 'htmega-addons' ),
+					'linear'                  => __( 'Linear', 'ht-mega-for-elementor' ),
+					'easeInOutSine'           => __( 'easeInOutSine', 'ht-mega-for-elementor' ),
+					'easeInOutExpo'           => __( 'easeInOutExpo', 'ht-mega-for-elementor' ),
+					'easeInOutQuart'          => __( 'easeInOutQuart', 'ht-mega-for-elementor' ),
+					'easeInOutCirc'           => __( 'easeInOutCirc', 'ht-mega-for-elementor' ),
+					'easeInOutBack'           => __( 'easeInOutBack', 'ht-mega-for-elementor' ),
+					'steps'                   => __( 'Steps', 'ht-mega-for-elementor' ),
+					'easeInElastic(1, .6)'    => __( 'Elastic In', 'ht-mega-for-elementor' ),
+					'easeOutElastic(1, .6)'   => __( 'Elastic Out', 'ht-mega-for-elementor' ),
+					'easeInOutElastic(1, .6)' => __( 'Elastic In Out', 'ht-mega-for-elementor' ),
 				),
 				'condition' => array(
 					'htmega_fe' => 'yes',
@@ -666,7 +668,7 @@ class HTMegaFloatingEffects_Elementor {
 		$element->add_control(
 			'htmega_fe_ease_step',
 			array(
-				'label'     => __( 'Steps', 'htmega-addons' ),
+				'label'     => __( 'Steps', 'ht-mega-for-elementor' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 5,
 				'condition' => array(

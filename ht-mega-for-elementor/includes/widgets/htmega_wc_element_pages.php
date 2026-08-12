@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'WC : Pages', 'htmega-addons' );
+        return __( 'WC : Pages', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -39,21 +39,21 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'wcpages_content',
             [
-                'label' => __( 'Element', 'htmega-addons' ),
+                'label' => __( 'Element', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
                 'element',
                 [
-                    'label' => __( 'Page', 'htmega-addons' ),
+                    'label' => __( 'Page', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'options' => [
-                        '' => '— ' . __( 'Select', 'htmega-addons' ) . ' —',
-                        'woocommerce_cart' => __( 'Cart Page', 'htmega-addons' ),
-                        'product_page' => __( 'Single Product Page', 'htmega-addons' ),
-                        'woocommerce_checkout' => __( 'Checkout Page', 'htmega-addons' ),
-                        'woocommerce_order_tracking' => __( 'Order Tracking Form', 'htmega-addons' ),
-                        'woocommerce_my_account' => __( 'My Account', 'htmega-addons' ),
+                        '' => '— ' . __( 'Select', 'ht-mega-for-elementor' ) . ' —',
+                        'woocommerce_cart' => __( 'Cart Page', 'ht-mega-for-elementor' ),
+                        'product_page' => __( 'Single Product Page', 'ht-mega-for-elementor' ),
+                        'woocommerce_checkout' => __( 'Checkout Page', 'ht-mega-for-elementor' ),
+                        'woocommerce_order_tracking' => __( 'Order Tracking Form', 'ht-mega-for-elementor' ),
+                        'woocommerce_my_account' => __( 'My Account', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -61,7 +61,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'product_id',
                 [
-                    'label'       => esc_html__( 'Choose Product', 'htmega-addons' ),
+                    'label'       => esc_html__( 'Choose Product', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'options'     => htmega_post_name('product'),
                     'label_block' => true,
@@ -78,7 +78,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'cart_page_style_header',
             [
-                'label' => esc_html__( 'Table Heading', 'htmega-addons' ),
+                'label' => esc_html__( 'Table Heading', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_cart' ],
@@ -88,7 +88,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'cart_table_header_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce table.shop_table th' => 'color: {{VALUE}};',
@@ -99,7 +99,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'cart_table_header_background',
                 [
-                    'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce table.shop_table th' => 'background-color: {{VALUE}};',
@@ -112,7 +112,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'cart_table_body_style',
             [
-                'label' => esc_html__( 'Table Body', 'htmega-addons' ),
+                'label' => esc_html__( 'Table Body', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_cart' ],
@@ -123,7 +123,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'cart_table_body_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce table.shop_table td *' => 'color: {{VALUE}};',
@@ -134,7 +134,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'cart_table_body_background',
                 [
-                    'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce table.shop_table' => 'background-color: {{VALUE}};',
@@ -145,7 +145,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'cart_table_body_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -158,7 +158,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'cart_table_body_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .woocommerce table.shop_table, {{WRAPPER}} .woocommerce table.shop_table td',
                 ]
             );
@@ -166,7 +166,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_responsive_control(
                 'cart_table_body_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce .input-text, 
@@ -182,7 +182,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'section_style_cart_button',
             [
-                'label' => esc_html__( 'Coupon / Update Button', 'htmega-addons' ),
+                'label' => esc_html__( 'Coupon / Update Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_cart' ],
@@ -196,14 +196,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_cart_button_normal',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'cart_button_text_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -215,7 +215,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_button_background_color',
                         [
-                            'label' => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .woocommerce-cart-form button.button' => 'background-color: {{VALUE}};',
@@ -227,7 +227,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'cart_button_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce-page table.cart td.actions .button, .woocommerce-page #content table.cart td.actions .button',
                             'separator' => 'before',
                         ]
@@ -236,7 +236,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -256,7 +256,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_button_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -270,7 +270,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'cart_button_typography',
-                            'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
     
                             'selector' => '{{WRAPPER}} .woocommerce button.button',
                             'separator' => 'before',
@@ -282,14 +282,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_cart_button_hover',
                     [
-                        'label' => esc_html__( 'Hover', 'htmega-addons' ),
+                        'label' => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'cart_button_hover_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce button.button:hover' => 'color: {{VALUE}};',
@@ -300,7 +300,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_button_background_hover_color',
                         [
-                            'label' => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce button.button:hover' => 'background-color: {{VALUE}};',
@@ -311,7 +311,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_button_hover_border_color',
                         [
-                            'label' => esc_html__( 'Border Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'condition' => [
                                 'cart_button_border!' => '',
@@ -326,7 +326,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'cart_button_border_hover_color',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce-page table.cart td.actions .button, .woocommerce-page #content table.cart td.actions .button:hover',
                             'separator' => 'before',
                         ]
@@ -335,7 +335,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_button_border_radius_hover',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -362,7 +362,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'section_style_cart_checkout_button',
             [
-                'label' => esc_html__( 'Checkout Button', 'htmega-addons' ),
+                'label' => esc_html__( 'Checkout Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_cart' ],
@@ -376,14 +376,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'cart_checkout_btn_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'cart_checkout_btn_text_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -396,7 +396,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'cart_checkout_btn_typography',
-                            'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
     
                             'selector' => '{{WRAPPER}} .wc-proceed-to-checkout a.checkout-button',
                             'separator' => 'before',
@@ -406,7 +406,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_checkout_btn_background_color',
                         [
-                            'label' => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wc-proceed-to-checkout a.checkout-button' => 'background-color: {{VALUE}};',
@@ -418,7 +418,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'cart_checkout_btn_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wc-proceed-to-checkout a.checkout-button',
                         ]
                     );
@@ -426,7 +426,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_checkout_btnn_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -446,7 +446,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_checkout_btn_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -462,14 +462,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'cart_checkout_btn_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'cart_checkout_btn_hover_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wc-proceed-to-checkout a.checkout-button:hover' => 'color: {{VALUE}};',
@@ -480,7 +480,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_checkout_btn_hover_background_color',
                         [
-                            'label' => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .wc-proceed-to-checkout a.checkout-button:hover' => 'background-color: {{VALUE}};',
@@ -492,7 +492,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'cart_checkout_btn_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .wc-proceed-to-checkout a.checkout-button:hover',
                         ]
                     );
@@ -500,7 +500,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'cart_checkout_btn_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -526,7 +526,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'woocommerce_cart_style_quantity_input',
             [
-                'label' => esc_html__( 'Quantity Input Box', 'htmega-addons' ),
+                'label' => esc_html__( 'Quantity Input Box', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_cart' ],
@@ -539,14 +539,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'woocommerce_cart_input_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
         
                     $this->add_control(
                         'woocommerce_cart_input_text_color',
                         [
-                            'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .quantity .input-text' => 'color: {{VALUE}};',
@@ -557,7 +557,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'woocommerce_cart_input_text_background',
                         [
-                            'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .quantity .input-text' => 'background-color: {{VALUE}};',
@@ -571,14 +571,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'woocommerce_cart_style_focus_tab',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'woocommerce_cart_background_focus',
                         [
-                            'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .quantity .input-text:focus' => 'background-color: {{VALUE}};',
@@ -590,7 +590,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'woocommerce_cart_input_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .quantity .input-text:focus',
                         ]
                     );
@@ -599,7 +599,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'woocommerce_cart_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce .quantity .input-text:focus',
                             'separator' => 'before',
                         ]
@@ -613,7 +613,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_group_control(
                 Group_Control_Border::get_type(), [
                     'name'        => 'woocommerce_cart_input_border',
-                    'label'       => esc_html__( 'Border', 'htmega-addons' ),
+                    'label'       => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'placeholder' => '1px',
                     'default'     => '1px',
                     'selector'    => '
@@ -624,7 +624,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'woocommerce_cart_input_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [
@@ -639,7 +639,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'page_checkout_style_label',
             [
-                'label' => esc_html__( 'Label', 'htmega-addons' ),
+                'label' => esc_html__( 'Label', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_checkout' ],
@@ -651,7 +651,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'checkout_label_typography',
-                    'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .woocommerce form .form-row label',
                 ]
             );
@@ -659,7 +659,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_label_color',
                 [
-                    'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce form .form-row label' => 'color: {{VALUE}};',
@@ -670,7 +670,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_required_color',
                 [
-                    'label'     => esc_html__( 'Required Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Required Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce form .form-row .required' => 'color: {{VALUE}};',
@@ -683,7 +683,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'page_checkout_style_input',
             [
-                'label' => esc_html__( 'Input', 'htmega-addons' ),
+                'label' => esc_html__( 'Input', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_checkout' ],
@@ -696,14 +696,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'page_checkout_input_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'page_checkout_input_text_color',
                         [
-                            'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .input-text' => 'color: {{VALUE}};',
@@ -716,7 +716,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'page_checkout_input_text_background',
                         [
-                            'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .input-text' => 'background-color: {{VALUE}};',
@@ -729,7 +729,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'page_checkout_input_placeholder_color',
                         [
-                            'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .woocommerce .form-row input::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -745,7 +745,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_responsive_control(
                         'page_checkout_textarea_height',
                         [
-                            'label' => esc_html__( 'Textarea Height', 'htmega-addons' ),
+                            'label' => esc_html__( 'Textarea Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'default' => [
                                 'size' => 120,
@@ -767,7 +767,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'page_checkout_input_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -784,7 +784,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_responsive_control(
                         'page_checkout_input_space',
                         [
-                            'label' => esc_html__( 'Element Space', 'htmega-addons' ),
+                            'label' => esc_html__( 'Element Space', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'default' => [
                                 'size' => 20,
@@ -804,7 +804,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_group_control(
                         Group_Control_Border::get_type(), [
                             'name'        => 'page_checkout_input_border',
-                            'label'       => esc_html__( 'Border', 'htmega-addons' ),
+                            'label'       => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default'     => '1px',
                             'selector'    => '
@@ -817,7 +817,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'page_checkout_input_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -833,7 +833,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'page_checkout_style_focus_tab',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -841,7 +841,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'page_checkout_background_focus',
                         [
-                            'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .input-text:focus' => 'background-color: {{VALUE}};',
@@ -856,7 +856,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'page_checkout_input_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce form .form-row input.input-text:focus',
                         ]
                     );
@@ -865,7 +865,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'page_checkout_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce form .form-row input.input-text:focus',
                             'separator' => 'before',
                         ]
@@ -879,7 +879,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'page_checkout_payment',
             [
-                'label' => esc_html__( 'Payment', 'htmega-addons' ),
+                'label' => esc_html__( 'Payment', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_checkout' ],
@@ -890,7 +890,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'page_checkout_payment_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce-checkout #payment, {{WRAPPER}} .woocommerce-checkout #payment div.payment_box' => 'color: {{VALUE}};',
@@ -901,7 +901,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'page_checkout_payment_background',
                 [
-                    'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce-checkout #payment' => 'background-color: {{VALUE}};',
@@ -914,7 +914,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'page_checkout_payment_button_heading',
                 [
-                    'label' => esc_html__( 'Button Style', 'htmega-addons' ),
+                    'label' => esc_html__( 'Button Style', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -925,7 +925,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_payment_button_normal',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -933,7 +933,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'payment_button_typography',
-                            'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
     
                             'selector' => '{{WRAPPER}} .woocommerce button.button',
                             'separator' => 'before',
@@ -943,7 +943,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'payment_button_text_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -955,7 +955,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'payment_button_background_color',
                         [
-                            'label' => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce button.button' => 'background-color: {{VALUE}};',
@@ -967,7 +967,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'payment_button_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default' => '1px',
                             'selector' => '{{WRAPPER}} .woocommerce button.button',
@@ -978,7 +978,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'payment_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -998,7 +998,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'payment_button_text_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -1013,14 +1013,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_payment_button_hover',
                     [
-                        'label' => esc_html__( 'Hover', 'htmega-addons' ),
+                        'label' => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'payment_button_hover_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce button.button:hover' => 'color: {{VALUE}};',
@@ -1031,7 +1031,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'payment_button_background_hover_color',
                         [
-                            'label' => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce button.button:hover' => 'background-color: {{VALUE}};',
@@ -1042,7 +1042,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'payment_button_hover_border_color',
                         [
-                            'label' => esc_html__( 'Border Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'condition' => [
                                 'border_border!' => '',
@@ -1057,7 +1057,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'payment_button_border_hover_color',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce button.button:hover',
                             'separator' => 'before',
                         ]
@@ -1066,7 +1066,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'payment_button_border_radius_hover',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -1092,7 +1092,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'checkout_page_style_order_review',
             [
-                'label' => esc_html__( 'Order Review', 'htmega-addons' ),
+                'label' => esc_html__( 'Order Review', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_checkout' ],
@@ -1120,7 +1120,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_page_style_order_review_border_radius',
                 [
-                    'label'      => __( 'Border Radius', 'htmega-addons' ),
+                    'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -1140,7 +1140,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_responsive_control(
                 'checkout_page_style_order_review_padding',
                 [
-                    'label'      => __( 'Padding', 'htmega-addons' ),
+                    'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors'  => [
@@ -1152,7 +1152,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_page_style_order_review_table_head_heading',
                 [
-                    'label'     => __( 'Table Head', 'htmega-addons' ),
+                    'label'     => __( 'Table Head', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1161,7 +1161,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_page_style_order_review_table_head_text_color',
                 [
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce .woocommerce-checkout-review-order-table thead th' => 'color: {{VALUE}};',
@@ -1172,7 +1172,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_page_style_order_review_table_head_background_color',
                 [
-                    'label'     => __( 'Background Color', 'htmega-addons' ),
+                    'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce .woocommerce-checkout-review-order-table thead th' => 'background-color: {{VALUE}};',
@@ -1184,7 +1184,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_page_style_order_review_table_body_heading',
                 [
-                    'label'     => __( 'Table Body Row', 'htmega-addons' ),
+                    'label'     => __( 'Table Body Row', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1195,14 +1195,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_checkout_page_style_order_review_even_row',
                     [
-                        'label' => __( 'Even', 'htmega-addons' ),
+                        'label' => __( 'Even', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'checkout_page_style_order_review_even_row_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .woocommerce-checkout-review-order-table .cart_item:nth-child(2n)' => 'color: {{VALUE}};',
@@ -1213,7 +1213,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'checkout_page_style_order_review_even_row_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .woocommerce-checkout-review-order-table .cart_item:nth-child(2n) > td' => 'background-color: {{VALUE}};',
@@ -1226,14 +1226,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_checkout_page_style_order_review_odd_row',
                     [
-                        'label' => __( 'Odd', 'htmega-addons' ),
+                        'label' => __( 'Odd', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'checkout_page_style_order_review_odd_row_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .woocommerce-checkout-review-order-table .cart_item:nth-child(2n+1)' => 'color: {{VALUE}};',
@@ -1244,7 +1244,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'checkout_page_style_order_review_odd_row_background_color',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .woocommerce-checkout-review-order-table .cart_item:nth-child(2n+1) > td' => 'background-color: {{VALUE}};',
@@ -1259,7 +1259,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_page_style_order_review_table_foot_heading',
                 [
-                    'label'     => __( 'Table Footer', 'htmega-addons' ),
+                    'label'     => __( 'Table Footer', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -1268,7 +1268,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_page_style_order_review_table_foot_text_color',
                 [
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce .woocommerce-checkout-review-order-table tfoot tr' => 'color: {{VALUE}};',
@@ -1279,7 +1279,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'checkout_page_style_order_review_table_foot_background_color',
                 [
-                    'label'     => __( 'Background Color', 'htmega-addons' ),
+                    'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce .woocommerce-checkout-review-order-table tfoot tr' => 'background-color: {{VALUE}};',
@@ -1294,7 +1294,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'page_order_tracking_style_label',
             [
-                'label' => esc_html__( 'Label', 'htmega-addons' ),
+                'label' => esc_html__( 'Label', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_order_tracking' ],
@@ -1305,7 +1305,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'page_order_tracking_label_color',
                 [
-                    'label'     => esc_html__( 'Color', 'htmega-addons' ),
+                    'label'     => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce form .form-row label' => 'color: {{VALUE}};',
@@ -1317,7 +1317,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'page_order_tracking_label_typography',
-                    'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .woocommerce form .form-row label',
                 ]
             );
@@ -1327,7 +1327,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'page_order_tracking_style_input',
             [
-                'label' => esc_html__( 'Input', 'htmega-addons' ),
+                'label' => esc_html__( 'Input', 'ht-mega-for-elementor' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_order_tracking' ],
@@ -1340,14 +1340,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'page_order_tracking_input_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'page_order_tracking_input_text_color',
                         [
-                            'label'     => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .input-text' => 'color: {{VALUE}};',
@@ -1360,7 +1360,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'page_order_tracking_input_text_background',
                         [
-                            'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .input-text' => 'background-color: {{VALUE}};',
@@ -1373,7 +1373,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'htmega_page_order_tracking_input_placeholder_color',
                         [
-                            'label' => __( 'Placeholder Color', 'htmega-addons' ),
+                            'label' => __( 'Placeholder Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors'         => [
                                 '{{WRAPPER}} .woocommerce .form-row input::-webkit-input-placeholder' => 'color: {{VALUE}}',
@@ -1391,14 +1391,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'menu_style_focus_tab',
                     [
-                        'label' => __( 'Focus', 'htmega-addons' ),
+                        'label' => __( 'Focus', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'page_order_tracking_background_focus',
                         [
-                            'label'     => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label'     => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce .input-text:focus' => 'background-color: {{VALUE}};',
@@ -1412,7 +1412,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'page_order_tracking_input_focus',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce form .form-row input.input-text:focus',
                         ]
                     );
@@ -1421,7 +1421,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Box_Shadow::get_type(),
                         [
                             'name' => 'page_order_tracking_shadow_focus',
-                            'label' => __( 'Box Shadow', 'htmega-addons' ),
+                            'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce form .form-row input.input-text:focus',
                             'separator' => 'before',
                         ]
@@ -1433,7 +1433,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'page_order_tracking_input_padding',
                 [
-                    'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                    'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -1450,7 +1450,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_responsive_control(
                 'page_order_tracking_input_space',
                 [
-                    'label' => esc_html__( 'Element Space', 'htmega-addons' ),
+                    'label' => esc_html__( 'Element Space', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 25,
@@ -1470,7 +1470,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_group_control(
                 Group_Control_Border::get_type(), [
                     'name'        => 'page_order_tracking_input_border',
-                    'label'       => esc_html__( 'Border', 'htmega-addons' ),
+                    'label'       => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                     'placeholder' => '1px',
                     'default'     => '1px',
                     'selector'    => '
@@ -1483,7 +1483,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'page_order_tracking_input_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors' => [
@@ -1500,7 +1500,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'page_order_button_style_tracking',
             [
-                'label' => esc_html__( 'Button', 'htmega-addons' ),
+                'label' => esc_html__( 'Button', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_order_tracking' ],
@@ -1514,14 +1514,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_tracking_button_normal',
                     [
-                        'label' => esc_html__( 'Normal', 'htmega-addons' ),
+                        'label' => esc_html__( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'tracking_button_text_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -1533,7 +1533,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'tracking_button_background_color',
                         [
-                            'label' => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce button.button' => 'background-color: {{VALUE}};',
@@ -1545,7 +1545,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'tracking_button_border',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default' => '1px',
                             'selector' => '{{WRAPPER}} .woocommerce button.button',
@@ -1556,7 +1556,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'tracking_button_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -1568,7 +1568,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'tracking_button_text_padding',
                         [
-                            'label' => esc_html__( 'Padding', 'htmega-addons' ),
+                            'label' => esc_html__( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -1582,7 +1582,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'tracking_button_typography',
-                            'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
     
                             'selector' => '{{WRAPPER}} .woocommerce button.button',
                             'separator' => 'before',
@@ -1603,14 +1603,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'tab_tracking_button_hover',
                     [
-                        'label' => esc_html__( 'Hover', 'htmega-addons' ),
+                        'label' => esc_html__( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'tracking_button_hover_color',
                         [
-                            'label' => esc_html__( 'Text Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Text Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce button.button:hover' => 'color: {{VALUE}};',
@@ -1621,7 +1621,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'tracking_button_background_hover_color',
                         [
-                            'label' => esc_html__( 'Background Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Background Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce button.button:hover' => 'background-color: {{VALUE}};',
@@ -1632,7 +1632,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'tracking_button_hover_border_color',
                         [
-                            'label' => esc_html__( 'Border Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'condition' => [
                                 'border_border!' => '',
@@ -1647,7 +1647,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'tracking_button_border_hover',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'placeholder' => '1px',
                             'default' => '1px',
                             'selector' => '{{WRAPPER}} .woocommerce button.button:hover',
@@ -1658,7 +1658,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'tracking_button_border_radius_hover',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -1684,7 +1684,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'page_myaccount_style',
             [
-                'label' => esc_html__( 'Menu Style', 'htmega-addons' ),
+                'label' => esc_html__( 'Menu Style', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_my_account' ],
@@ -1697,14 +1697,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'page_myaccount_menu_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'page_myaccount_menu_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce-MyAccount-navigation ul li a' => 'color: {{VALUE}};',
@@ -1716,7 +1716,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'page_myaccount_menu_typography',
-                            'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                            'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
     
                             'selector' => '{{WRAPPER}} .woocommerce-MyAccount-navigation ul li a',
                         ]
@@ -1726,7 +1726,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'page_myaccount_menu_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .woocommerce-MyAccount-navigation ul li a',
                         ]
@@ -1735,7 +1735,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_responsive_control(
                         'page_myaccount_menu_padding',
                         [
-                            'label' => __( 'Padding', 'htmega-addons' ),
+                            'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1747,7 +1747,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_responsive_control(
                         'page_myaccount_menu_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -1761,7 +1761,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'page_myaccount_menu_border_color',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce-MyAccount-navigation ul li a',
                             'separator' => 'before',
                         ]
@@ -1770,7 +1770,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'page_myaccount_menu_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -1784,14 +1784,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 $this->start_controls_tab(
                     'page_myaccount_menu_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'page_myaccount_menu_hover_color',
                         [
-                            'label' => esc_html__( 'Color', 'htmega-addons' ),
+                            'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .woocommerce-MyAccount-navigation ul li a:hover' => 'color: {{VALUE}};',
@@ -1803,7 +1803,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'page_myaccount_menu_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .woocommerce-MyAccount-navigation ul li a:hover',
                         ]
@@ -1813,7 +1813,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'page_myaccount_menu_border_color_hover',
-                            'label' => esc_html__( 'Border', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .woocommerce-MyAccount-navigation ul li a:hover',
                             'separator' => 'before',
                         ]
@@ -1822,7 +1822,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                     $this->add_control(
                         'page_myaccount_menu_border_radius_hover',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors' => [
@@ -1841,7 +1841,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
         $this->start_controls_section(
             'page_myaccount_content_style',
             [
-                'label' => esc_html__( 'Content', 'htmega-addons' ),
+                'label' => esc_html__( 'Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition'   => [
                     'element' => [ 'woocommerce_my_account' ],
@@ -1852,7 +1852,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $this->add_control(
                 'page_myaccount_content_color',
                 [
-                    'label' => esc_html__( 'Color', 'htmega-addons' ),
+                    'label' => esc_html__( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .woocommerce-MyAccount-content' => 'color: {{VALUE}};',
@@ -1864,7 +1864,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'page_myaccount_content_typography',
-                    'label' => esc_html__( 'Typography', 'htmega-addons' ),
+                    'label' => esc_html__( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .woocommerce-MyAccount-content',
                 ]
             );
@@ -1888,7 +1888,7 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
                 }
 
                 if ( empty( $product ) && current_user_can( 'manage_options' ) ) {
-                    return __( 'Please set a valid product', 'htmega-addons' );
+                    return __( 'Please set a valid product', 'ht-mega-for-elementor' );
                 }
 
                 $this->add_render_attribute( 'shortcode', 'id', absint( $settings['product_id'] ) );
@@ -1915,14 +1915,14 @@ class HTMega_Elementor_Widget_WC_Element_Pages extends Widget_Base {
             $html = do_shortcode( $shortcode );
 
             if ( 'woocommerce_checkout' === $this->get_settings( 'element' ) && '<div class="woocommerce"></div>' === $html ) {
-                $html = '<div class="woocommerce">' . __( 'Your cart is currently empty.', 'htmega-addons' ) . '</div>';
+                $html = '<div class="woocommerce">' . __( 'Your cart is currently empty.', 'ht-mega-for-elementor' ) . '</div>';
             }
 
             echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     public function render_plain_content() {
-        echo $this->get_shortcode();
+        echo $this->get_shortcode(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_shortcode() builds its output from esc_attr() and $this->get_render_attribute_string(), both already escaped
     }
 
 }

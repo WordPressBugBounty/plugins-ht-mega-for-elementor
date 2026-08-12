@@ -49,13 +49,13 @@ class Scripts
 		check_ajax_referer( 'htmega_activate_htcf', 'nonce' );
 
 		if ( ! current_user_can( 'activate_plugins' ) ) {
-			wp_send_json_error( [ 'message' => __( 'Permission denied.', 'htmega-addons' ) ] );
+			wp_send_json_error( [ 'message' => __( 'Permission denied.', 'ht-mega-for-elementor' ) ] );
 		}
 
 		$plugin = 'ht-contactform/contact-form-widget-elementor.php';
 
 		if ( ! file_exists( WP_PLUGIN_DIR . '/' . $plugin ) ) {
-			wp_send_json_error( [ 'message' => __( 'Plugin not installed.', 'htmega-addons' ) ] );
+			wp_send_json_error( [ 'message' => __( 'Plugin not installed.', 'ht-mega-for-elementor' ) ] );
 		}
 
 		$result = activate_plugin( $plugin );
@@ -64,7 +64,7 @@ class Scripts
 			wp_send_json_error( [ 'message' => $result->get_error_message() ] );
 		}
 
-		wp_send_json_success( [ 'message' => __( 'HT Contact Form activated.', 'htmega-addons' ) ] );
+		wp_send_json_success( [ 'message' => __( 'HT Contact Form activated.', 'ht-mega-for-elementor' ) ] );
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Scripts
 		check_ajax_referer( 'htmega_activate_htcf', 'nonce' );
 
 		if ( ! current_user_can( 'install_plugins' ) ) {
-			wp_send_json_error( [ 'message' => __( 'Permission denied.', 'htmega-addons' ) ] );
+			wp_send_json_error( [ 'message' => __( 'Permission denied.', 'ht-mega-for-elementor' ) ] );
 		}
 
 		require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
@@ -108,7 +108,7 @@ class Scripts
 			wp_send_json_error( [ 'message' => $activate->get_error_message() ] );
 		}
 
-		wp_send_json_success( [ 'message' => __( 'HT Contact Form installed and activated.', 'htmega-addons' ) ] );
+		wp_send_json_success( [ 'message' => __( 'HT Contact Form installed and activated.', 'ht-mega-for-elementor' ) ] );
 	}
 
 	/**
@@ -360,7 +360,7 @@ class Scripts
 				true
 			);
 
-			wp_set_script_translations( $block['handle'], 'htmega-addons' );
+			wp_set_script_translations( $block['handle'], 'ht-mega-for-elementor' );
 		}
 
 		// FA5 solid — 2025 blocks use fas fa-* classes. Enqueue Elementor's copy in the editor too.

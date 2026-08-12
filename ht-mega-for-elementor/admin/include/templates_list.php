@@ -1,3 +1,4 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div class="httemplates-templates-area">
 
     <!-- PopUp Content Start -->
@@ -10,11 +11,11 @@
             </div>
             <div class="htwptpopupcontent">
                 <ul class="htwptemplata-requiredplugins"></ul>
-                <p><?php esc_html_e( 'Import template to your Library', 'htmega-addons' ); ?></p>
+                <p><?php esc_html_e( 'Import template to your Library', 'ht-mega-for-elementor' ); ?></p>
                 <span class="htwptimport-button-dynamic"></span>
                 <div class="htpageimportarea">
-                    <p> <?php esc_html_e( 'Create a new page from this template', 'htmega-addons' ); ?></p>
-                    <input id="htwptpagetitle" type="text" name="htwptpagetitle" placeholder="<?php echo esc_attr_x( 'Enter a Page Name', 'placeholder', 'htmega-addons' ); ?>">
+                    <p> <?php esc_html_e( 'Create a new page from this template', 'ht-mega-for-elementor' ); ?></p>
+                    <input id="htwptpagetitle" type="text" name="htwptpagetitle" placeholder="<?php echo esc_attr_x( 'Enter a Page Name', 'placeholder', 'ht-mega-for-elementor' ); ?>">
                     <span class="htwptimport-button-dynamic-page"></span>
                 </div>
             </div>
@@ -30,32 +31,32 @@
                     <div class="col-md-auto col">
                         <div class="htwpt-demos-select">
                             <select id="htwpt-demos">
-                                <option value="templates"><?php esc_html_e( 'Templates', 'htmega-addons' ); ?></option>
-                                <option value="blocks"><?php esc_html_e( 'Blocks', 'htmega-addons' ); ?></option>
+                                <option value="templates"><?php esc_html_e( 'Templates', 'ht-mega-for-elementor' ); ?></option>
+                                <option value="blocks"><?php esc_html_e( 'Blocks', 'ht-mega-for-elementor' ); ?></option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-auto col">
                         <div class="htwpt-builder-select">
                             <select id="htwpt-builder">
-                                <option value="all"><?php esc_html_e( 'All Builders', 'htmega-addons' ); ?></option>
-                                <option value="elementor"><?php esc_html_e( 'Elementor', 'htmega-addons' ); ?></option>
+                                <option value="all"><?php esc_html_e( 'All Builders', 'ht-mega-for-elementor' ); ?></option>
+                                <option value="elementor"><?php esc_html_e( 'Elementor', 'ht-mega-for-elementor' ); ?></option>
                             </select>
                         </div>
                     </div>
                     <div class="col-auto mr-auto">
-                        <input id="htwpt-search-field" type="text" placeholder="<?php esc_attr_e( 'Search..', 'htmega-addons' );?>">
+                        <input id="htwpt-search-field" type="text" placeholder="<?php esc_attr_e( 'Search..', 'ht-mega-for-elementor' );?>">
                     </div>
                     <div class="col-auto htmega-tempate-sync-wrapper">
                         <div class="htmega-template-library-page-sync">
-                            <i class="eicon-sync" aria-hidden="true" title="<?php esc_attr_e( 'Sync Library', 'htmega-addons' ); ?>"></i>
-                            <span class="elementor-screen-only"><?php echo esc_html__( 'Sync Library', 'htmega-addons' ); ?></span>
+                            <i class="eicon-sync" aria-hidden="true" title="<?php esc_attr_e( 'Sync Library', 'ht-mega-for-elementor' ); ?>"></i>
+                            <span class="elementor-screen-only"><?php echo esc_html__( 'Sync Library', 'ht-mega-for-elementor' ); ?></span>
                         </div>
                         <div class="htwpt-type-select">
                             <select id="htwpt-type">
-                                <option value="all"><?php esc_html_e( 'ALL', 'htmega-addons' ); ?></option>
-                                <option value="free"><?php esc_html_e( 'Free', 'htmega-addons' ); ?></option>
-                                <option value="pro"><?php esc_html_e( 'Pro', 'htmega-addons' ); ?></option>
+                                <option value="all"><?php esc_html_e( 'ALL', 'ht-mega-for-elementor' ); ?></option>
+                                <option value="free"><?php esc_html_e( 'Free', 'ht-mega-for-elementor' ); ?></option>
+                                <option value="pro"><?php esc_html_e( 'Pro', 'ht-mega-for-elementor' ); ?></option>
                             </select>
                         </div>
                     </div>
@@ -73,14 +74,14 @@
 
     <div id="htwpt-group-section">
         <div id="htwpt-group-bar" class="htwpt-group-bar">
-            <span id="htwpt-group-close" class="back"><i>&#8592;</i> <?php esc_html_e( 'Back to Library', 'htmega-addons' ); ?></span>
+            <span id="htwpt-group-close" class="back"><i>&#8592;</i> <?php esc_html_e( 'Back to Library', 'ht-mega-for-elementor' ); ?></span>
             <h3 id="htwpt-group-name" class="title"></h3>
         </div>
 
         <div id="htwpt-group-grid" class="row"></div>
-        <a href="#top" class="htwpt-groupScrollToTop"><?php echo esc_html__( 'Top', 'htmega-addons' );?></a>
+        <a href="#top" class="htwpt-groupScrollToTop"><?php echo esc_html__( 'Top', 'ht-mega-for-elementor' );?></a>
     </div>
 
-    <a href="#top" class="htwpt-scrollToTop"><?php echo esc_html__( 'Top', 'htmega-addons' );?></a>
+    <a href="#top" class="htwpt-scrollToTop"><?php echo esc_html__( 'Top', 'ht-mega-for-elementor' );?></a>
 
 </div>

@@ -21,7 +21,7 @@ class Library_Source extends Source_Base {
 	 * @return [string] The remote template title.
 	 */
 	public function get_title() {
-		return __( 'HT Mega Library', 'htmega-addons' );
+		return __( 'HT Mega Library', 'ht-mega-for-elementor' );
 	}
 	
 	/**
@@ -126,7 +126,7 @@ class Library_Source extends Source_Base {
 		$data = json_decode( $data, true );
 
 		if ( empty( $data ) || ! is_array( $data ) ) {
-			throw new \Exception( esc_html__( 'Template does not have any content', 'htmega-addons' ) );
+			throw new \Exception( esc_html__( 'Template does not have any content', 'ht-mega-for-elementor' ) );
 		}
 
 		// Resolve Elementor elements tree for widget auto-enable (same shapes as Theme Builder / varied API payloads).
@@ -147,7 +147,7 @@ class Library_Source extends Source_Base {
 		}
 
 		if ( empty( $tpl_elements ) ) {
-			throw new \Exception( esc_html__( 'Template does not have any content', 'htmega-addons' ) );
+			throw new \Exception( esc_html__( 'Template does not have any content', 'ht-mega-for-elementor' ) );
 		}
 
 		if ( ! isset( $data['content'] ) || ! is_array( $data['content'] ) ) {

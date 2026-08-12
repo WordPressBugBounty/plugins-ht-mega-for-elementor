@@ -7,8 +7,8 @@
 
 <script type="text/template" id="tmpl-htmega-template-library-header-actions">
 	<div id="htmega-template-library-header-sync" class="elementor-templates-modal__header__item">
-		<i class="eicon-sync" aria-hidden="true" title="<?php esc_attr_e( 'Sync Library', 'htmega-addons' ); ?>"></i>
-		<span class="elementor-screen-only"><?php echo esc_html__( 'Sync Library', 'htmega-addons' ); ?></span>
+		<i class="eicon-sync" aria-hidden="true" title="<?php esc_attr_e( 'Sync Library', 'ht-mega-for-elementor' ); ?>"></i>
+		<span class="elementor-screen-only"><?php echo esc_html__( 'Sync Library', 'ht-mega-for-elementor' ); ?></span>
 	</div>
 </script>
 
@@ -27,16 +27,16 @@
 
 <script type="text/template" id="tmpl-htmega-template-library-header-menu-responsive">
 	<div class="elementor-component-tab htmega-template-library-responsive-menu-item elementor-active" data-tab="desktop">
-		<i class="eicon-device-desktop" aria-hidden="true" title="<?php esc_attr_e( 'Desktop view', 'htmega-addons' ); ?>"></i>
-		<span class="elementor-screen-only"><?php esc_html_e( 'Desktop view', 'htmega-addons' ); ?></span>
+		<i class="eicon-device-desktop" aria-hidden="true" title="<?php esc_attr_e( 'Desktop view', 'ht-mega-for-elementor' ); ?>"></i>
+		<span class="elementor-screen-only"><?php esc_html_e( 'Desktop view', 'ht-mega-for-elementor' ); ?></span>
 	</div>
 	<div class="elementor-component-tab htmega-template-library-responsive-menu-item" data-tab="tab">
-		<i class="eicon-device-tablet" aria-hidden="true" title="<?php esc_attr_e( 'Tab view', 'htmega-addons' ); ?>"></i>
-		<span class="elementor-screen-only"><?php esc_html_e( 'Tab view', 'htmega-addons' ); ?></span>
+		<i class="eicon-device-tablet" aria-hidden="true" title="<?php esc_attr_e( 'Tab view', 'ht-mega-for-elementor' ); ?>"></i>
+		<span class="elementor-screen-only"><?php esc_html_e( 'Tab view', 'ht-mega-for-elementor' ); ?></span>
 	</div>
 	<div class="elementor-component-tab htmega-template-library-responsive-menu-item" data-tab="mobile">
-		<i class="eicon-device-mobile" aria-hidden="true" title="<?php esc_attr_e( 'Mobile view', 'htmega-addons' ); ?>"></i>
-		<span class="elementor-screen-only"><?php esc_html_e( 'Mobile view', 'htmega-addons' ); ?></span>
+		<i class="eicon-device-mobile" aria-hidden="true" title="<?php esc_attr_e( 'Mobile view', 'ht-mega-for-elementor' ); ?>"></i>
+		<span class="elementor-screen-only"><?php esc_html_e( 'Mobile view', 'ht-mega-for-elementor' ); ?></span>
 	</div>
 </script>
 
@@ -50,7 +50,7 @@
 				<div class="elementor-loader-box"></div>
 			</div>
 		</div>
-		<div class="elementor-loading-title"><?php echo esc_html__( 'Loading', 'htmega-addons' ); ?></div>
+		<div class="elementor-loading-title"><?php echo esc_html__( 'Loading', 'ht-mega-for-elementor' ); ?></div>
 	</div>
 </script>
 
@@ -61,14 +61,14 @@
 <script type="text/template" id="tmpl-htmega-template-library-insert-button">
 	<a class="elementor-template-library-template-action htmega-template-library-template-insert elementor-button">
 		<i class="eicon-file-download" aria-hidden="true"></i>
-		<span class="elementor-button-title"><?php echo esc_html__( 'Insert', 'htmega-addons' ); ?></span>
+		<span class="elementor-button-title"><?php echo esc_html__( 'Insert', 'ht-mega-for-elementor' ); ?></span>
 	</a>
 </script>
 
 <script type="text/template" id="tmpl-htmega-template-library-get-pro-button">
 	<a class="elementor-template-library-template-action elementor-button elementor-go-pro" href="https://wphtmega.com/pricing/" target="_blank">
 		<i class="eicon-external-link-square" aria-hidden="true"></i>
-		<span class="elementor-button-title"><?php echo esc_html__( 'Go Pro', 'htmega-addons' ); ?></span>
+		<span class="elementor-button-title"><?php echo esc_html__( 'Go Pro', 'ht-mega-for-elementor' ); ?></span>
 	</a>
 </script>
 
@@ -80,7 +80,7 @@
 
 <script type="text/template" id="tmpl-htmega-template-library-header-back">
 	<i class="eicon-chevron-left" aria-hidden="true"></i>
-	<span><?php echo esc_html__( 'Back to Library', 'htmega-addons' ); ?></span>
+	<span><?php echo esc_html__( 'Back to Library', 'ht-mega-for-elementor' ); ?></span>
 </script>
 
 <script type="text/template" id="tmpl-htmega-template-library-templates">
@@ -89,7 +89,7 @@
 		<div id="htmega-template-library-filter-area-wrapper">
 			<div id="elementor-template-library-filter-category-wrapper">
 				<select id="elementor-template-library-filter-category">
-					<option value=""><?php esc_html_e( 'All Categories', 'htmega-addons' ); ?></option>
+					<option value=""><?php esc_html_e( 'All Categories', 'ht-mega-for-elementor' ); ?></option>
 					<# _.each( htmega.library.getCategories(), function( category ) { #>
 						<option value="{{{ category }}}">{{{ category }}}</option>
 					<# } ); #>
@@ -98,8 +98,8 @@
 		</div>
 
 		<div id="elementor-template-library-filter-text-wrapper">
-			<label for="htmega-template-library-filter-text" class="elementor-screen-only"><?php esc_html_e( 'Search Templates:', 'htmega-addons' ); ?></label>
-			<input id="htmega-template-library-filter-text" placeholder="<?php esc_attr_e( 'Search', 'htmega-addons' ); ?>">
+			<label for="htmega-template-library-filter-text" class="elementor-screen-only"><?php esc_html_e( 'Search Templates:', 'ht-mega-for-elementor' ); ?></label>
+			<input id="htmega-template-library-filter-text" placeholder="<?php esc_attr_e( 'Search', 'ht-mega-for-elementor' ); ?>">
 			<i class="eicon-search"></i>
 		</div>
 
@@ -123,7 +123,7 @@
 			<i class="eicon-zoom-in-bold" aria-hidden="true"></i>
 		</div>
 		<# if ( obj.isPro ) { #>
-		<span class="htmega-template-library-pro-badge"><?php esc_html_e( 'Pro', 'htmega-addons' ); ?></span>
+		<span class="htmega-template-library-pro-badge"><?php esc_html_e( 'Pro', 'ht-mega-for-elementor' ); ?></span>
 		<# } #>
 	</div>
 
@@ -137,7 +137,7 @@
 			{{{ htmega.library.getModal().getTemplateActionButton( obj ) }}}
 			<a href="#" class="elementor-button htmega-template-library-preview-button">
 				<i class="eicon-device-desktop" aria-hidden="true"></i>
-				<?php esc_html_e( 'Preview', 'htmega-addons' ); ?>
+				<?php esc_html_e( 'Preview', 'ht-mega-for-elementor' ); ?>
 			</a>
 		</div>
 
@@ -152,7 +152,7 @@
 	<div class="elementor-template-library-blank-title"></div>
 	<div class="elementor-template-library-blank-message"></div>
 	<div class="elementor-template-library-blank-footer">
-		<?php echo esc_html__( 'Want to learn more about the HT Mega library?', 'htmega-addons' ); ?>
-		<a class="elementor-template-library-blank-footer-link" href=<?php echo esc_url("https://wphtmega.com"); ?> target="_blank"><?php echo esc_html__( 'Click here', 'htmega-addons' ); ?></a>
+		<?php echo esc_html__( 'Want to learn more about the HT Mega library?', 'ht-mega-for-elementor' ); ?>
+		<a class="elementor-template-library-blank-footer-link" href=<?php echo esc_url("https://wphtmega.com"); ?> target="_blank"><?php echo esc_html__( 'Click here', 'ht-mega-for-elementor' ); ?></a>
 	</div>
 </script>

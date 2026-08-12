@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Scroll Navigation', 'htmega-addons' );
+        return __( 'Scroll Navigation', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -45,7 +45,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
         $this->start_controls_section(
             'scroll_navigation_content',
             [
-                'label' => __( 'Scroll Navigation', 'htmega-addons' ),
+                'label' => __( 'Scroll Navigation', 'ht-mega-for-elementor' ),
             ]
         );
             
@@ -54,12 +54,12 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $repeater->add_control(
                 'content_source',
                 [
-                    'label'   => esc_html__( 'Content Source', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Content Source', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'custom',
                     'options' => [
-                        'custom'    => esc_html__( 'Custom', 'htmega-addons' ),
-                        "elementor" => esc_html__( 'Elementor Template', 'htmega-addons' ),
+                        'custom'    => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
+                        "elementor" => esc_html__( 'Elementor Template', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -67,9 +67,9 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $repeater->add_control(
                 'navigation_content',
                 [
-                    'label'      => __( 'Content', 'htmega-addons' ),
+                    'label'      => __( 'Content', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::WYSIWYG,
-                    'default'    => __( 'Content', 'htmega-addons' ),
+                    'default'    => __( 'Content', 'ht-mega-for-elementor' ),
                     'condition' => [
                         'content_source' =>'custom',
                     ],
@@ -79,7 +79,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $repeater->add_control(
                 'template_id',
                 [
-                    'label'       => __( 'Content', 'htmega-addons' ),
+                    'label'       => __( 'Content', 'ht-mega-for-elementor' ),
                     'type'        => Controls_Manager::SELECT,
                     'default'     => '0',
                     'options'     => htmega_elementor_template(),
@@ -99,7 +99,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                     'default' => [
 
                         [
-                            'navigation_content'    => __( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'htmega-addons' ),
+                            'navigation_content'    => __( 'Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'ht-mega-for-elementor' ),
                             'content_source' => 'custom'
                         ],
 
@@ -113,16 +113,16 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
         $this->start_controls_section(
             'scroll_navigation_slider_options',
             [
-                'label' => __( 'Slider Options', 'htmega-addons' ),
+                'label' => __( 'Slider Options', 'ht-mega-for-elementor' ),
             ]
         );
         $this->add_control(
             'slider_direction_toggle',
             [
                 'type' => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-                'label' => esc_html__( 'Slider Direction', 'htmega-addons' ),
-                'label_off' => esc_html__( 'Default', 'htmega-addons' ),
-                'label_on' => esc_html__( 'Custom', 'htmega-addons' ),
+                'label' => esc_html__( 'Slider Direction', 'ht-mega-for-elementor' ),
+                'label_off' => esc_html__( 'Default', 'ht-mega-for-elementor' ),
+                'label_on' => esc_html__( 'Custom', 'ht-mega-for-elementor' ),
                 'return_value' => 'yes',
             ]
         );
@@ -132,12 +132,12 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_direction',
                 [
-                    'label' => __( 'Desktop Direction', 'htmega-addons' ),
+                    'label' => __( 'Desktop Direction', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'vertical',
                     'options' => [
-                        'horizontal' => __( 'Horizontal', 'htmega-addons' ),
-                        'vertical'  => __( 'Vertical', 'htmega-addons' ),
+                        'horizontal' => __( 'Horizontal', 'ht-mega-for-elementor' ),
+                        'vertical'  => __( 'Vertical', 'ht-mega-for-elementor' ),
                     ],
                     'separator' => 'after',
                 ]
@@ -145,7 +145,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'heading_tablet',
                 [
-                    'label' => __( 'Tablet Device', 'htmega-addons' ),
+                    'label' => __( 'Tablet Device', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                     'separator' => 'before',
                 ]
@@ -154,20 +154,20 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'tablet_direction',
                 [
-                    'label' => __( 'Direction', 'htmega-addons' ),
+                    'label' => __( 'Direction', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'vertical',
                     'options' => [
-                        'horizontal' => __( 'Horizontal', 'htmega-addons' ),
-                        'vertical'  => __( 'Vertical', 'htmega-addons' ),
+                        'horizontal' => __( 'Horizontal', 'ht-mega-for-elementor' ),
+                        'vertical'  => __( 'Vertical', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
             $this->add_control(
                 'tablet_width',
                 [
-                    'label' => __('Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to tablet device.', 'htmega-addons'),
+                    'label' => __('Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to tablet device.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 991,
                     'separator' => 'after',
@@ -176,7 +176,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'heading_mobile',
                 [
-                    'label' => __( 'Mobile Device', 'htmega-addons' ),
+                    'label' => __( 'Mobile Device', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::HEADING,
                 ]
             );
@@ -184,20 +184,20 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'mobile_direction',
                 [
-                    'label' => __( 'Direction', 'htmega-addons' ),
+                    'label' => __( 'Direction', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'vertical',
                     'options' => [
-                        'horizontal' => __( 'Horizontal', 'htmega-addons' ),
-                        'vertical'  => __( 'Vertical', 'htmega-addons' ),
+                        'horizontal' => __( 'Horizontal', 'ht-mega-for-elementor' ),
+                        'vertical'  => __( 'Vertical', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
             $this->add_control(
                 'mobile_width',
                 [
-                    'label' => __('Resolution', 'htmega-addons'),
-                    'description' => __('The resolution to mobile device.', 'htmega-addons'),
+                    'label' => __('Resolution', 'ht-mega-for-elementor'),
+                    'description' => __('The resolution to mobile device.', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 768,
                 ]
@@ -207,12 +207,12 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_height',
                 [
-                    'label' => __( 'Height', 'htmega-addons' ),
+                    'label' => __( 'Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SELECT,
                     'default' => 'full_screen',
                     'options' => [
-                        'full_screen'    => __( 'Full Screen', 'htmega-addons' ),
-                        'custom_height'  => __( 'Custom', 'htmega-addons' ),
+                        'full_screen'    => __( 'Full Screen', 'ht-mega-for-elementor' ),
+                        'custom_height'  => __( 'Custom', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -220,7 +220,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_container_height',
                 [
-                    'label' => __( 'Custom Height', 'htmega-addons' ),
+                    'label' => __( 'Custom Height', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'size_units' => [ 'px', '%' ],
                     'range' => [
@@ -250,7 +250,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_speed',
                 [
-                    'label' => __('Speed', 'htmega-addons'),
+                    'label' => __('Speed', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 300,
                 ]
@@ -259,7 +259,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_item',
                 [
-                    'label' => __('Slider Visible Item', 'htmega-addons'),
+                    'label' => __('Slider Visible Item', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 1,
                 ]
@@ -268,7 +268,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'initial_slider',
                 [
-                    'label' => __('Initial Slide', 'htmega-addons'),
+                    'label' => __('Initial Slide', 'ht-mega-for-elementor'),
                     'type' => Controls_Manager::NUMBER,
                     'default' => 1,
                 ]
@@ -277,7 +277,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_mousewheel',
                 [
-                    'label' => esc_html__( 'Mouse Wheel', 'htmega-addons' ),
+                    'label' => esc_html__( 'Mouse Wheel', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -286,7 +286,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_keyboard_scroll',
                 [
-                    'label' => esc_html__( 'Keyboard Scroll', 'htmega-addons' ),
+                    'label' => esc_html__( 'Keyboard Scroll', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -295,7 +295,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_simulate_touch',
                 [
-                    'label' => esc_html__( 'Simulate Touch', 'htmega-addons' ),
+                    'label' => esc_html__( 'Simulate Touch', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -304,7 +304,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_arrow',
                 [
-                    'label' => esc_html__( 'Slider Navigation', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Navigation', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -314,7 +314,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slider_dots',
                 [
-                    'label' => esc_html__( 'Slider Pagination', 'htmega-addons' ),
+                    'label' => esc_html__( 'Slider Pagination', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'yes',
@@ -323,7 +323,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_control(
                 'slide_custom_menup',
                 [
-                    'label' => esc_html__( 'External menu for Navigation', 'htmega-addons' ),
+                    'label' => esc_html__( 'External menu for Navigation', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
                     'return_value' => 'yes',
                     'default' => 'no',
@@ -336,14 +336,14 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
         $this->start_controls_section(
             'scroll_navigation_style_section',
             [
-                'label' => __( 'Custom Content', 'htmega-addons' ),
+                'label' => __( 'Custom Content', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'scroll_navigation_content_color',
                 [
-                    'label' => __( 'Color', 'htmega-addons' ),
+                    'label' => __( 'Color', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::COLOR,
                     'default' => '#000000',
                     'selectors' => [
@@ -363,7 +363,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_navigation_content_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -376,7 +376,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             $this->add_responsive_control(
                 'scroll_navigation_content_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -393,7 +393,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
         $this->start_controls_section(
             'scroll_navigation_pagination_style',
             [
-                'label'     => __( 'Pagination', 'htmega-addons' ),
+                'label'     => __( 'Pagination', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -404,7 +404,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                 $this->start_controls_tab(
                     'scroll_navigation_pagination_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -412,7 +412,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'scroll_navigation_pagination_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .swiper-pagination-bullet',
                         ]
@@ -422,7 +422,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'scroll_navigation_pagination_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .swiper-pagination-bullet',
                         ]
                     );
@@ -430,7 +430,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                     $this->add_responsive_control(
                         'scroll_navigation_pagination_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .swiper-pagination-bullet' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -441,7 +441,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                     $this->add_control(
                         'scroll_navigation_pagination_height',
                         [
-                            'label' => __( 'Height', 'htmega-addons' ),
+                            'label' => __( 'Height', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -468,7 +468,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                     $this->add_control(
                         'scroll_navigation_pagination_width',
                         [
-                            'label' => __( 'Width', 'htmega-addons' ),
+                            'label' => __( 'Width', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::SLIDER,
                             'size_units' => [ 'px', '%' ],
                             'range' => [
@@ -498,7 +498,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                 $this->start_controls_tab(
                     'scroll_navigation_pagination_style_hover_tab',
                     [
-                        'label' => __( 'Active', 'htmega-addons' ),
+                        'label' => __( 'Active', 'ht-mega-for-elementor' ),
                     ]
                 );
 
@@ -506,7 +506,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                         Group_Control_Background::get_type(),
                         [
                             'name' => 'scroll_navigation_pagination_hover_background',
-                            'label' => __( 'Background', 'htmega-addons' ),
+                            'label' => __( 'Background', 'ht-mega-for-elementor' ),
                             'types' => [ 'classic', 'gradient' ],
                             'selector' => '{{WRAPPER}} .swiper-pagination-bullet-active',
                         ]
@@ -516,7 +516,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                         Group_Control_Border::get_type(),
                         [
                             'name' => 'scroll_navigation_pagination_hover_border',
-                            'label' => __( 'Border', 'htmega-addons' ),
+                            'label' => __( 'Border', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .swiper-pagination-bullet-active',
                         ]
                     );
@@ -524,7 +524,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
                     $this->add_responsive_control(
                         'scroll_navigation_pagination_hover_border_radius',
                         [
-                            'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                            'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .swiper-pagination-bullet-active' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -565,7 +565,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
 
         ?>
             <!-- Swiper -->
-            <div <?php echo $this->get_render_attribute_string( 'swiperslider_area_attr' ); ?>>
+            <div <?php echo $this->get_render_attribute_string( 'swiperslider_area_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string. ?>>
                 <?php if( $settings['slider_arrow'] == 'yes' ){ echo '<div class="swiper-button-next"></div>'; } ?>
                 <div class="swiper-wrapper">
                     <?php foreach ( $settings['navigator_content_list'] as  $navigatorcontent ): ?>

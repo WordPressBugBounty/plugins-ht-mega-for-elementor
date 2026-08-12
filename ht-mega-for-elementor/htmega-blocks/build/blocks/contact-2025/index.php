@@ -86,55 +86,78 @@ $block_id = isset( $attributes['blockUniqId'] ) ? sanitize_html_class( $attribut
 $sc   = '.htmega-block-' . $block_id;
 $_css = [];
 
-$_border = function( $type, $width, $color ) {
+$_num = function( $value, $unit = 'px' ) {
+	if ( ! is_numeric( $value ) ) return '';
+	$allowed = [ 'px', 'em', 'rem', '%', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'pt' ];
+	$unit    = in_array( $unit, $allowed, true ) ? $unit : 'px';
+	return ( $value + 0 ) . $unit;
+};
+$_border = function( $type, $width, $color ) use ( $_num ) {
 	if ( ! $type || $type === 'none' ) return [];
 	$r = [ 'border-style: ' . esc_attr( $type ) ];
 	if ( $width && is_array( $width ) ) {
 		$u = $width['unit'] ?? 'px';
 		if ( isset( $width['link'] ) && $width['link'] === 'yes' && isset( $width['top'] ) ) {
-			$r[] = 'border-width: ' . $width['top'] . $u;
+			$val = $_num( $width['top'], $u );
+			if ( $val !== '' ) $r[] = 'border-width: ' . $val;
 		} else {
 			foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-				if ( ! empty( $width[ $_s ] ) ) $r[] = "border-{$_s}-width: {$width[$_s]}{$u}";
+				if ( ! empty( $width[ $_s ] ) ) {
+					$val = $_num( $width[ $_s ], $u );
+					if ( $val !== '' ) $r[] = "border-{$_s}-width: {$val}";
+				}
 			}
 		}
 	}
 	if ( $color ) $r[] = 'border-color: ' . esc_attr( $color );
 	return $r;
 };
-$_radius = function( $rv ) {
+$_radius = function( $rv ) use ( $_num ) {
 	if ( ! $rv || ! is_array( $rv ) ) return [];
 	$u   = $rv['unit'] ?? 'px';
 	$map = [ 'top' => 'top-left', 'right' => 'top-right', 'bottom' => 'bottom-right', 'left' => 'bottom-left' ];
 	$r   = [];
 	foreach ( $map as $_s => $corner ) {
-		if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) $r[] = "border-{$corner}-radius: {$rv[$_s]}{$u}";
+		if ( isset( $rv[ $_s ] ) && $rv[ $_s ] !== '' ) {
+			$val = $_num( $rv[ $_s ], $u );
+			if ( $val !== '' ) $r[] = "border-{$corner}-radius: {$val}";
+		}
 	}
 	return $r;
 };
 $_shadow = function( $s ) {
 	if ( ! $s || ! is_array( $s ) || empty( $s['color'] ) ) return '';
-	$i = ! empty( $s['inset'] ) ? 'inset ' : '';
-	return 'box-shadow: ' . $i . ( $s['horizontal'] ?? 0 ) . 'px ' . ( $s['vertical'] ?? 0 ) . 'px ' . ( $s['blur'] ?? 0 ) . 'px ' . ( $s['spread'] ?? 0 ) . 'px ' . esc_attr( $s['color'] );
+	$i  = ! empty( $s['inset'] ) ? 'inset ' : '';
+	$h  = is_numeric( $s['horizontal'] ?? null ) ? floatval( $s['horizontal'] ) : 0;
+	$v  = is_numeric( $s['vertical']   ?? null ) ? floatval( $s['vertical'] )   : 0;
+	$b  = is_numeric( $s['blur']       ?? null ) ? floatval( $s['blur'] )       : 0;
+	$sp = is_numeric( $s['spread']     ?? null ) ? floatval( $s['spread'] )     : 0;
+	return 'box-shadow: ' . $i . $h . 'px ' . $v . 'px ' . $b . 'px ' . $sp . 'px ' . esc_attr( $s['color'] );
 };
-$_typo = function( $t ) {
+$_typo = function( $t ) use ( $_num ) {
 	if ( ! $t || ! is_array( $t ) ) return [];
 	$r = [];
-	if ( ! empty( $t['family'] )        ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
-	if ( ! empty( $t['size'] )          ) $r[] = 'font-size: '       . $t['size']       . ( $t['sizeUnit']      ?? 'px' );
-	if ( ! empty( $t['weight'] )        ) $r[] = 'font-weight: '     . esc_attr( $t['weight'] );
-	if ( ! empty( $t['lineHeight'] )    ) $r[] = 'line-height: '     . $t['lineHeight'];
-	if ( ! empty( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: '  . $t['letterSpacing'] . 'px';
-	if ( ! empty( $t['transform'] )     ) $r[] = 'text-transform: '  . esc_attr( $t['transform'] );
+	if ( ! empty( $t['family'] ) ) $r[] = "font-family: '" . esc_attr( $t['family'] ) . "', sans-serif";
+	if ( ! empty( $t['size'] ) ) {
+		$val = $_num( $t['size'], $t['sizeUnit'] ?? 'px' );
+		if ( $val !== '' ) $r[] = 'font-size: ' . $val;
+	}
+	if ( ! empty( $t['weight'] ) ) $r[] = 'font-weight: ' . esc_attr( $t['weight'] );
+	if ( isset( $t['lineHeight'] ) && is_numeric( $t['lineHeight'] ) ) $r[] = 'line-height: ' . ( $t['lineHeight'] + 0 );
+	if ( isset( $t['letterSpacing'] ) && is_numeric( $t['letterSpacing'] ) ) $r[] = 'letter-spacing: ' . ( $t['letterSpacing'] + 0 ) . 'px';
+	if ( ! empty( $t['transform'] ) ) $r[] = 'text-transform: ' . esc_attr( $t['transform'] );
 	return $r;
 };
-$_dim = function( $dim, $prop ) {
+$_dim = function( $dim, $prop ) use ( $_num ) {
 	if ( ! $dim || ! is_array( $dim ) ) return [];
 	$d = isset( $dim['desktop'] ) ? $dim['desktop'] : $dim;
 	$u = $d['unit'] ?? $dim['unit'] ?? 'px';
 	$r = [];
 	foreach ( [ 'top', 'right', 'bottom', 'left' ] as $_s ) {
-		if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) $r[] = "{$prop}-{$_s}: {$d[$_s]}{$u}";
+		if ( isset( $d[ $_s ] ) && $d[ $_s ] !== '' ) {
+			$val = $_num( $d[ $_s ], $u );
+			if ( $val !== '' ) $r[] = "{$prop}-{$_s}: {$val}";
+		}
 	}
 	return $r;
 };
@@ -379,7 +402,7 @@ $render_info_item = function( $item ) use ( $icons ) {
 <?php if ( $_css_out ) : ?><style><?php echo $_css_out; // phpcs:ignore WordPress.Security.EscapeOutput ?></style><?php endif; ?>
 <div class="htmega-block-<?php echo esc_attr( $block_id ); ?>">
 <div class="htm25-style--<?php echo esc_attr( $design_style ); ?>">
-<section class="htm25-contact htm25-contact--<?php echo esc_attr( $layout ); ?><?php echo esc_attr( $no_map_class ); ?>" aria-label="<?php esc_attr_e( 'Contact section', 'htmega-addons' ); ?>">
+<section class="htm25-contact htm25-contact--<?php echo esc_attr( $layout ); ?><?php echo esc_attr( $no_map_class ); ?>" aria-label="<?php esc_attr_e( 'Contact section', 'ht-mega-for-elementor' ); ?>">
 
 	<?php if ( in_array( $design_style, [ 'glass', 'aurora' ], true ) ) : ?>
 	<div class="htm25-contact__bg-blobs" aria-hidden="true">
@@ -441,7 +464,7 @@ $render_info_item = function( $item ) use ( $icons ) {
 					echo '<div class="' . esc_attr( $wrapper_class ) . '">' . do_shortcode( $shortcodes[ $form_plugin ] ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput
 				} else {
 					echo '<div class="htm25-contact__form-placeholder" style="padding:24px;text-align:center;border:2px dashed var(--htm25-border-color,#ddd);border-radius:8px;color:var(--htm25-text-muted,#888);">'
-					   . esc_html__( 'Select a form plugin and form in the block settings panel.', 'htmega-addons' )
+					   . esc_html__( 'Select a form plugin and form in the block settings panel.', 'ht-mega-for-elementor' )
 					   . '</div>';
 				}
 				?>
@@ -450,7 +473,7 @@ $render_info_item = function( $item ) use ( $icons ) {
 
 			<?php if ( $has_aside ) : ?>
 			<!-- ── Info / Hours / Social / Map / Trust ── -->
-			<aside class="htm25-contact__info-col" aria-label="<?php esc_attr_e( 'Contact information', 'htmega-addons' ); ?>">
+			<aside class="htm25-contact__info-col" aria-label="<?php esc_attr_e( 'Contact information', 'ht-mega-for-elementor' ); ?>">
 
 				<?php if ( ! empty( $info_items ) ) : ?>
 				<div class="htm25-contact__tile htm25-contact__tile--info">
@@ -514,7 +537,7 @@ $render_info_item = function( $item ) use ( $icons ) {
 					        loading="lazy"
 					        allowfullscreen
 					        referrerpolicy="no-referrer-when-downgrade"
-					        title="<?php esc_attr_e( 'Location map', 'htmega-addons' ); ?>"></iframe>
+					        title="<?php esc_attr_e( 'Location map', 'ht-mega-for-elementor' ); ?>"></iframe>
 				</div>
 				<?php endif; ?>
 
@@ -530,7 +553,7 @@ $render_info_item = function( $item ) use ( $icons ) {
 					<div class="htm25-contact__trust-sub"><?php echo esc_html( $trust_subtext ); ?></div>
 					<?php endif; ?>
 					<?php if ( $trust_stars ) : ?>
-					<div class="htm25-contact__trust-stars" aria-label="<?php esc_attr_e( '5 out of 5 stars', 'htmega-addons' ); ?>">★★★★★</div>
+					<div class="htm25-contact__trust-stars" aria-label="<?php esc_attr_e( '5 out of 5 stars', 'ht-mega-for-elementor' ); ?>">★★★★★</div>
 					<?php endif; ?>
 					<?php if ( $trust_footer ) : ?>
 					<div class="htm25-contact__trust-foot"><?php echo esc_html( $trust_footer ); ?></div>
@@ -550,7 +573,7 @@ $render_info_item = function( $item ) use ( $icons ) {
 			        loading="lazy"
 			        allowfullscreen
 			        referrerpolicy="no-referrer-when-downgrade"
-			        title="<?php esc_attr_e( 'Location map', 'htmega-addons' ); ?>"></iframe>
+			        title="<?php esc_attr_e( 'Location map', 'ht-mega-for-elementor' ); ?>"></iframe>
 		</div>
 		<?php endif; ?>
 

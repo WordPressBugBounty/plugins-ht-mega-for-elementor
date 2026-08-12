@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'Booked Calendar', 'htmega-addons' );
+        return __( 'Booked Calendar', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -41,19 +41,19 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_content',
             [
-                'label' => __( 'Booked Calender', 'htmega-addons' ),
+                'label' => __( 'Booked Calender', 'ht-mega-for-elementor' ),
             ]
         );
             
             $this->add_control(
                 'calendar_style',
                 [
-                    'label'   => __( 'Style', 'htmega-addons' ),
+                    'label'   => __( 'Style', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => '',
                     'options' => [
-                        ''     => __('Default', 'htmega-addons') ,
-                        'list' => __('List', 'htmega-addons') ,
+                        ''     => __('Default', 'ht-mega-for-elementor') ,
+                        'list' => __('List', 'ht-mega-for-elementor') ,
                     ],
                 ]
             );
@@ -61,41 +61,41 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'calendar_day',
                 [
-                    'label'   => __( 'Day', 'htmega-addons' ),
+                    'label'   => __( 'Day', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => gmdate('d'),
                     'options' => [
-                        '01'     => __( '01', 'htmega-addons' ),
-                        '02'     => __( '02', 'htmega-addons' ),
-                        '03'     => __( '03', 'htmega-addons' ),
-                        '04'     => __( '04', 'htmega-addons' ),
-                        '05'     => __( '05', 'htmega-addons' ),
-                        '06'     => __( '06', 'htmega-addons' ),
-                        '07'     => __( '07', 'htmega-addons' ),
-                        '08'     => __( '08', 'htmega-addons' ),
-                        '09'     => __( '09', 'htmega-addons' ),
-                        '10'     => __( '10', 'htmega-addons' ),
-                        '11'     => __( '11', 'htmega-addons' ),
-                        '12'     => __( '12', 'htmega-addons' ),
-                        '13'     => __( '13', 'htmega-addons' ),
-                        '14'     => __( '14', 'htmega-addons' ),
-                        '15'     => __( '15', 'htmega-addons' ),
-                        '16'     => __( '16', 'htmega-addons' ),
-                        '17'     => __( '17', 'htmega-addons' ),
-                        '18'     => __( '18', 'htmega-addons' ),
-                        '19'     => __( '19', 'htmega-addons' ),
-                        '20'     => __( '20', 'htmega-addons' ),
-                        '21'     => __( '21', 'htmega-addons' ),
-                        '22'     => __( '22', 'htmega-addons' ),
-                        '23'     => __( '23', 'htmega-addons' ),
-                        '24'     => __( '24', 'htmega-addons' ),
-                        '25'     => __( '25', 'htmega-addons' ),
-                        '26'     => __( '26', 'htmega-addons' ),
-                        '27'     => __( '27', 'htmega-addons' ),
-                        '28'     => __( '28', 'htmega-addons' ),
-                        '29'     => __( '29', 'htmega-addons' ),
-                        '30'     => __( '30', 'htmega-addons' ),
-                        '31'     => __( '31', 'htmega-addons' ),
+                        '01'     => __( '01', 'ht-mega-for-elementor' ),
+                        '02'     => __( '02', 'ht-mega-for-elementor' ),
+                        '03'     => __( '03', 'ht-mega-for-elementor' ),
+                        '04'     => __( '04', 'ht-mega-for-elementor' ),
+                        '05'     => __( '05', 'ht-mega-for-elementor' ),
+                        '06'     => __( '06', 'ht-mega-for-elementor' ),
+                        '07'     => __( '07', 'ht-mega-for-elementor' ),
+                        '08'     => __( '08', 'ht-mega-for-elementor' ),
+                        '09'     => __( '09', 'ht-mega-for-elementor' ),
+                        '10'     => __( '10', 'ht-mega-for-elementor' ),
+                        '11'     => __( '11', 'ht-mega-for-elementor' ),
+                        '12'     => __( '12', 'ht-mega-for-elementor' ),
+                        '13'     => __( '13', 'ht-mega-for-elementor' ),
+                        '14'     => __( '14', 'ht-mega-for-elementor' ),
+                        '15'     => __( '15', 'ht-mega-for-elementor' ),
+                        '16'     => __( '16', 'ht-mega-for-elementor' ),
+                        '17'     => __( '17', 'ht-mega-for-elementor' ),
+                        '18'     => __( '18', 'ht-mega-for-elementor' ),
+                        '19'     => __( '19', 'ht-mega-for-elementor' ),
+                        '20'     => __( '20', 'ht-mega-for-elementor' ),
+                        '21'     => __( '21', 'ht-mega-for-elementor' ),
+                        '22'     => __( '22', 'ht-mega-for-elementor' ),
+                        '23'     => __( '23', 'ht-mega-for-elementor' ),
+                        '24'     => __( '24', 'ht-mega-for-elementor' ),
+                        '25'     => __( '25', 'ht-mega-for-elementor' ),
+                        '26'     => __( '26', 'ht-mega-for-elementor' ),
+                        '27'     => __( '27', 'ht-mega-for-elementor' ),
+                        '28'     => __( '28', 'ht-mega-for-elementor' ),
+                        '29'     => __( '29', 'ht-mega-for-elementor' ),
+                        '30'     => __( '30', 'ht-mega-for-elementor' ),
+                        '31'     => __( '31', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -103,22 +103,22 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'calendar_month',
                 [
-                    'label'   => __( 'Month', 'htmega-addons' ),
+                    'label'   => __( 'Month', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => gmdate('m'),
                     'options' => [
-                        '01' => __('January', 'htmega-addons'),
-                        '02' => __('February', 'htmega-addons'),
-                        '03' => __('March', 'htmega-addons'),
-                        '04' => __('April', 'htmega-addons'),
-                        '05' => __('May', 'htmega-addons'),
-                        '06' => __('June', 'htmega-addons'),
-                        '07' => __('July', 'htmega-addons'),
-                        '08' => __('August', 'htmega-addons'),
-                        '09' => __('September', 'htmega-addons'),
-                        '10' => __('October', 'htmega-addons'),
-                        '11' => __('November', 'htmega-addons'),
-                        '12' => __('December', 'htmega-addons'),
+                        '01' => __('January', 'ht-mega-for-elementor'),
+                        '02' => __('February', 'ht-mega-for-elementor'),
+                        '03' => __('March', 'ht-mega-for-elementor'),
+                        '04' => __('April', 'ht-mega-for-elementor'),
+                        '05' => __('May', 'ht-mega-for-elementor'),
+                        '06' => __('June', 'ht-mega-for-elementor'),
+                        '07' => __('July', 'ht-mega-for-elementor'),
+                        '08' => __('August', 'ht-mega-for-elementor'),
+                        '09' => __('September', 'ht-mega-for-elementor'),
+                        '10' => __('October', 'ht-mega-for-elementor'),
+                        '11' => __('November', 'ht-mega-for-elementor'),
+                        '12' => __('December', 'ht-mega-for-elementor'),
                     ],
                 ]
             );
@@ -126,33 +126,33 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'calendar_year',
                 [
-                    'label'   => __( 'Year', 'htmega-addons' ),
+                    'label'   => __( 'Year', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => gmdate('Y'),
                     'options' => [
-                        '2018'     => __( '2018', 'htmega-addons' ),
-                        '2019'     => __( '2019', 'htmega-addons' ),
-                        '2020'     => __( '2020', 'htmega-addons' ),
-                        '2021'     => __( '2021', 'htmega-addons' ),
-                        '2022'     => __( '2022', 'htmega-addons' ),
-                        '2023'     => __( '2023', 'htmega-addons' ),
-                        '2024'     => __( '2024', 'htmega-addons' ),
-                        '2025'     => __( '2025', 'htmega-addons' ),
-                        '2026'     => __( '2026', 'htmega-addons' ),
-                        '2027'     => __( '2027', 'htmega-addons' ),
-                        '2028'     => __( '2028', 'htmega-addons' ),
-                        '2029'     => __( '2029', 'htmega-addons' ),
-                        '2030'     => __( '2030', 'htmega-addons' ),
-                        '2031'     => __( '2031', 'htmega-addons' ),
-                        '2032'     => __( '2032', 'htmega-addons' ),
-                        '2033'     => __( '2033', 'htmega-addons' ),
-                        '2034'     => __( '2034', 'htmega-addons' ),
-                        '2035'     => __( '2035', 'htmega-addons' ),
-                        '2036'     => __( '2036', 'htmega-addons' ),
-                        '2037'     => __( '2037', 'htmega-addons' ),
-                        '2038'     => __( '2038', 'htmega-addons' ),
-                        '2039'     => __( '2039', 'htmega-addons' ),
-                        '2040'     => __( '2040', 'htmega-addons' ),
+                        '2018'     => __( '2018', 'ht-mega-for-elementor' ),
+                        '2019'     => __( '2019', 'ht-mega-for-elementor' ),
+                        '2020'     => __( '2020', 'ht-mega-for-elementor' ),
+                        '2021'     => __( '2021', 'ht-mega-for-elementor' ),
+                        '2022'     => __( '2022', 'ht-mega-for-elementor' ),
+                        '2023'     => __( '2023', 'ht-mega-for-elementor' ),
+                        '2024'     => __( '2024', 'ht-mega-for-elementor' ),
+                        '2025'     => __( '2025', 'ht-mega-for-elementor' ),
+                        '2026'     => __( '2026', 'ht-mega-for-elementor' ),
+                        '2027'     => __( '2027', 'ht-mega-for-elementor' ),
+                        '2028'     => __( '2028', 'ht-mega-for-elementor' ),
+                        '2029'     => __( '2029', 'ht-mega-for-elementor' ),
+                        '2030'     => __( '2030', 'ht-mega-for-elementor' ),
+                        '2031'     => __( '2031', 'ht-mega-for-elementor' ),
+                        '2032'     => __( '2032', 'ht-mega-for-elementor' ),
+                        '2033'     => __( '2033', 'ht-mega-for-elementor' ),
+                        '2034'     => __( '2034', 'ht-mega-for-elementor' ),
+                        '2035'     => __( '2035', 'ht-mega-for-elementor' ),
+                        '2036'     => __( '2036', 'ht-mega-for-elementor' ),
+                        '2037'     => __( '2037', 'ht-mega-for-elementor' ),
+                        '2038'     => __( '2038', 'ht-mega-for-elementor' ),
+                        '2039'     => __( '2039', 'ht-mega-for-elementor' ),
+                        '2040'     => __( '2040', 'ht-mega-for-elementor' ),
                     ],
                 ]
             );
@@ -160,12 +160,12 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'calendar_size',
                 [
-                    'label'   => __( 'Calendar Size', 'htmega-addons' ),
+                    'label'   => __( 'Calendar Size', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => '',
                     'options' => [
-                        ''      => __('Default', 'htmega-addons') ,
-                        'small' => __('Small', 'htmega-addons') ,
+                        ''      => __('Default', 'ht-mega-for-elementor') ,
+                        'small' => __('Small', 'ht-mega-for-elementor') ,
                     ],
                 ]
             );
@@ -173,7 +173,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'calendar_members_only',
                 [
-                    'label' => __( 'Members Only', 'htmega-addons' ),
+                    'label' => __( 'Members Only', 'ht-mega-for-elementor' ),
                     'type'  => Controls_Manager::SWITCHER,
                 ]
             );
@@ -184,7 +184,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_header_style_section',
             [
-                'label' => __( 'Header', 'htmega-addons' ),
+                'label' => __( 'Header', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'calendar_style!' => 'list',
@@ -195,7 +195,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'header_background',
                 [
-                    'label'     => __( 'Header Background', 'htmega-addons' ),
+                    'label'     => __( 'Header Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} table.booked-calendar thead th' => 'background-color: {{VALUE}} !important;',
@@ -207,7 +207,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'header_color',
                 [
-                    'label'     => __( 'Header Color', 'htmega-addons' ),
+                    'label'     => __( 'Header Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} table.booked-calendar thead th' => 'color: {{VALUE}} !important;',
@@ -218,7 +218,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'header_day_background',
                 [
-                    'label'     => __( 'Day Name Background', 'htmega-addons' ),
+                    'label'     => __( 'Day Name Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} table.booked-calendar tr.days th' => 'background-color: {{VALUE}} !important;',
@@ -230,7 +230,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'header_day_color',
                 [
-                    'label'     => __( 'Day Name Color', 'htmega-addons' ),
+                    'label'     => __( 'Day Name Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} table.booked-calendar tr.days th' => 'color: {{VALUE}} !important;',
@@ -244,7 +244,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_body_style_section',
             [
-                'label' => __( 'Body', 'htmega-addons' ),
+                'label' => __( 'Body', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'calendar_style!' => 'list',
@@ -254,7 +254,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'calender_body_background',
                 [
-                    'label'     => __( 'Background', 'htmega-addons' ),
+                    'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} table.booked-calendar td.prev-month .date'           => 'background-color: {{VALUE}} !important;',
@@ -269,7 +269,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'calender_body_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} table.booked-calendar td.prev-date .date'            => 'color: {{VALUE}} !important;',
@@ -286,7 +286,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_date_style_section',
             [
-                'label' => __( 'Date', 'htmega-addons' ),
+                'label' => __( 'Date', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'calendar_style!' => 'list',
@@ -300,14 +300,14 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                 $this->start_controls_tab(
                     'booked_calender_date',
                     [
-                        'label' => __( 'Available Date', 'htmega-addons' ),
+                        'label' => __( 'Available Date', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'booked_calender_date_background',
                         [
-                            'label'     => __( 'Background', 'htmega-addons' ),
+                            'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} table.booked-calendar td .date' => 'background-color: {{VALUE}};',
@@ -318,7 +318,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_date_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} table.booked-calendar td' => 'color: {{VALUE}};',
@@ -329,7 +329,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_date_hover_background',
                         [
-                            'label'     => __( 'Hover Background', 'htmega-addons' ),
+                            'label'     => __( 'Hover Background', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} table.booked-calendar td:hover .date span' => 'background-color: {{VALUE}};',
@@ -340,7 +340,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_date_hover_color',
                         [
-                            'label'     => __( 'Hover Color', 'htmega-addons' ),
+                            'label'     => __( 'Hover Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} table.booked-calendar td:hover .date span' => 'color: {{VALUE}};',
@@ -354,14 +354,14 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                 $this->start_controls_tab(
                     'booked_calender_current_date',
                     [
-                        'label' => __( 'Current Date', 'htmega-addons' ),
+                        'label' => __( 'Current Date', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'booked_calender_current_date_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} table.booked-calendar td.today .date span' => 'color: {{VALUE}} !important;',
@@ -372,7 +372,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_current_date_border_color',
                         [
-                            'label'     => __( 'Border Color', 'htmega-addons' ),
+                            'label'     => __( 'Border Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} table.booked-calendar td.today .date span' => 'border-color: {{VALUE}};',
@@ -383,7 +383,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_current_date_hover_background',
                         [
-                            'label'     => __( 'Hover Background', 'htmega-addons' ),
+                            'label'     => __( 'Hover Background', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} table.booked-calendar td.today:hover .date span' => 'background-color: {{VALUE}} !important;',
@@ -394,7 +394,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_current_date_hover_color',
                         [
-                            'label'     => __( 'Hover Color', 'htmega-addons' ),
+                            'label'     => __( 'Hover Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} table.booked-calendar td.today:hover .date span' => 'color: {{VALUE}} !important;',
@@ -412,7 +412,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_style_apointments',
             [
-                'label'     => __( 'Appointments', 'htmega-addons' ),
+                'label'     => __( 'Appointments', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'calendar_style!' => 'list',
@@ -423,7 +423,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'apointments_background',
                 [
-                    'label'     => __( 'Background', 'htmega-addons' ),
+                    'label'     => __( 'Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} table.booked-calendar .booked-appt-list' => 'background-color: {{VALUE}};',
@@ -435,7 +435,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'apointments_text_color',
                 [
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .booked-calendar-wrap .booked-appt-list h2' => 'color: {{VALUE}};',
@@ -447,7 +447,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'active_date_background_color',
                 [
-                    'label'     => __( 'Active Date Background Color', 'htmega-addons' ),
+                    'label'     => __( 'Active Date Background Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} table.booked-calendar tr.week td.active .date' => 'background-color: {{VALUE}};',
@@ -460,7 +460,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'timeslot_time_text_color',
                 [
-                    'label'     => __( 'Time Slot Color', 'htmega-addons' ),
+                    'label'     => __( 'Time Slot Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .booked-calendar-wrap .booked-appt-list .timeslot .spots-available' => 'color: {{VALUE}};',
@@ -473,7 +473,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_section_style_heading',
             [
-                'label'     => __( 'Heading', 'htmega-addons' ),
+                'label'     => __( 'Heading', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'calendar_style' => 'list',
@@ -484,7 +484,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calender_list_heading_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .booked-appt-list > h2' => 'color: {{VALUE}};',
@@ -506,7 +506,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_section_style_time',
             [
-                'label'     => __( 'Time', 'htmega-addons' ),
+                'label'     => __( 'Time', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'calendar_style' => 'list',
@@ -517,7 +517,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calender_list_time_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .timeslot-range' => 'color: {{VALUE}};',
@@ -528,7 +528,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calender_list_time_icon_color',
                 [
-                    'label'     => __( 'Icon Color', 'htmega-addons' ),
+                    'label'     => __( 'Icon Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .timeslot-range .booked-icon.booked-icon-clock' => 'color: {{VALUE}};',
@@ -539,7 +539,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calender_list_text_color',
                 [
-                    'label'     => __( 'Text Color', 'htmega-addons' ),
+                    'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .spots-available,{{WRAPPER}} .booked-calendar-wrap .booked-appt-list .timeslot .spots-available' => 'color: {{VALUE}};',
@@ -561,7 +561,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_section_style_appointment_button',
             [
-                'label'     => __( 'Appointment Button', 'htmega-addons' ),
+                'label'     => __( 'Appointment Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
 
             ]
@@ -572,14 +572,14 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                 $this->start_controls_tab(
                     'booked_calender_tab_appointment_button_normal',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'booked_calender_appointment_button_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .new-appt.button' => 'color: {{VALUE}};',
@@ -611,7 +611,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_appointment_button_radius',
                         [
-                            'label'      => __( 'Border Radius', 'htmega-addons' ),
+                            'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -631,7 +631,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_appointment_button_padding',
                         [
-                            'label'      => __( 'Padding', 'htmega-addons' ),
+                            'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors'  => [
@@ -655,14 +655,14 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                 $this->start_controls_tab(
                     'booked_calender_tab_appointment_button_hover',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'booked_calender_appointment_button_hover_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .new-appt.button:hover' => 'color: {{VALUE}} !important;',
@@ -673,7 +673,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_appointment_button_hover_background',
                         [
-                            'label'     => __( 'Background Color', 'htmega-addons' ),
+                            'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .new-appt.button:hover' => 'background-color: {{VALUE}} !important;',
@@ -707,7 +707,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_section_style_navigation_button',
             [
-                'label'     => __( 'Navigation Button', 'htmega-addons' ),
+                'label'     => __( 'Navigation Button', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
 
             ]
@@ -718,14 +718,14 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                 $this->start_controls_tab(
                     'booked_calender_tab_navigation_button_normal',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'booked_calender_navigation_button_text_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} [class*="booked-list-view-date-"],{{WRAPPER}} table.booked-calendar th .monthName a,{{WRAPPER}} table.booked-calendar thead th .page-left,{{WRAPPER}} table.booked-calendar thead th .page-right' => 'color: {{VALUE}}!important;',
@@ -763,7 +763,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_navigation_button_radius',
                         [
-                            'label'      => __( 'Border Radius', 'htmega-addons' ),
+                            'label'      => __( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%' ],
                             'selectors'  => [
@@ -789,7 +789,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_navigation_button_padding',
                         [
-                            'label'      => __( 'Padding', 'htmega-addons' ),
+                            'label'      => __( 'Padding', 'ht-mega-for-elementor' ),
                             'type'       => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors'  => [
@@ -816,14 +816,14 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->start_controls_tab(
                         'booked_calender_tab_navigation_button_hover',
                         [
-                            'label' => __( 'Hover', 'htmega-addons' ),
+                            'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                         ]
                     );
 
                     $this->add_control(
                         'booked_calender_navigation_button_hover_color',
                         [
-                            'label'     => __( 'Text Color', 'htmega-addons' ),
+                            'label'     => __( 'Text Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} [class*="booked-list-view-date-"]:hover,{{WRAPPER}} table.booked-calendar th .monthName a:hover' => 'color: {{VALUE}};',
@@ -847,7 +847,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                     $this->add_control(
                         'booked_calender_navigation_button_hover_border_color',
                         [
-                            'label'     => __( 'Border Color', 'htmega-addons' ),
+                            'label'     => __( 'Border Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'condition' => [
                                 'navigation_button_border_border!' => '',
@@ -872,7 +872,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'booked_calender_section_style_additional',
             [
-                'label'     => __( 'Calendar', 'htmega-addons' ),
+                'label'     => __( 'Calendar', 'ht-mega-for-elementor' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'calendar_style' => 'list',
@@ -883,7 +883,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calender_calendar_icon_color',
                 [
-                    'label'     => __( 'Calendar Icon Color', 'htmega-addons' ),
+                    'label'     => __( 'Calendar Icon Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .booked-list-view a.booked_list_date_picker_trigger' => 'color: {{VALUE}};',
@@ -894,7 +894,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calendar_icon_background',
                 [
-                    'label'     => __( 'Calendar Icon Background', 'htmega-addons' ),
+                    'label'     => __( 'Calendar Icon Background', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .booked-list-view a.booked_list_date_picker_trigger' => 'background-color: {{VALUE}};',
@@ -916,7 +916,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calendar_icon_radius',
                 [
-                    'label'      => __( 'Calendar Icon Radius', 'htmega-addons' ),
+                    'label'      => __( 'Calendar Icon Radius', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%' ],
                     'selectors'  => [
@@ -936,7 +936,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calendar_icon_padding',
                 [
-                    'label'      => __( 'Calendar Icon Padding', 'htmega-addons' ),
+                    'label'      => __( 'Calendar Icon Padding', 'ht-mega-for-elementor' ),
                     'type'       => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors'  => [
@@ -948,7 +948,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calendar_row_border_color',
                 [
-                    'label'     => __( 'Row Border Color', 'htmega-addons' ),
+                    'label'     => __( 'Row Border Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .booked-calendar-wrap .booked-appt-list .timeslot' => 'border-color: {{VALUE}};',
@@ -959,7 +959,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
             $this->add_control(
                 'booked_calendar_row_border_width',
                 [
-                    'label' => __( 'Row Border Width', 'htmega-addons' ),
+                    'label' => __( 'Row Border Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
                     'range' => [
                         'px' => [
@@ -982,7 +982,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'Booked Calender', 'htmega-addons' ),
+                'label' => __( 'Booked Calender', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -990,7 +990,8 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: plugin name with install/activate link */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=bbpress&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">Booked Calender</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -1012,7 +1013,7 @@ class HTMega_Elementor_Widget_Booked_Calender extends Widget_Base {
 
         $settings   = $this->get_settings_for_display();
         if ( ! is_plugin_active('booked/booked.php') ) {
-            htmega_plugin_missing_alert( __('Booked Calender', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('Booked Calender', 'ht-mega-for-elementor') );
             return;
         }
         $calender_attributes = [

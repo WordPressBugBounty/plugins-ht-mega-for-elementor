@@ -10,7 +10,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
     }
     
     public function get_title() {
-        return __( 'BuddyPress', 'htmega-addons' );
+        return __( 'BuddyPress', 'ht-mega-for-elementor' );
     }
 
     public function get_icon() {
@@ -41,19 +41,19 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
         $this->start_controls_section(
             'buddypress_content',
             [
-                'label' => __( 'BuddyPress', 'htmega-addons' ),
+                'label' => __( 'BuddyPress', 'ht-mega-for-elementor' ),
             ]
         );
 
             $this->add_control(
                 'buddypress_type',
                 [
-                    'label'   => __( 'Type', 'htmega-addons' ),
+                    'label'   => __( 'Type', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'member',
                     'options' => [
-                        'member'    => __('Member', 'htmega-addons'),
-                        'group'     => __('Group', 'htmega-addons'),
+                        'member'    => __('Member', 'ht-mega-for-elementor'),
+                        'group'     => __('Group', 'ht-mega-for-elementor'),
                     ],
                     'label_block'=>true,
                 ]
@@ -62,13 +62,13 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_control(
                 'content_type',
                 [
-                    'label'   => __( 'Content Type', 'htmega-addons' ),
+                    'label'   => __( 'Content Type', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SELECT,
                     'default' => 'newest',
                     'options' => [
-                        'newest'  => __('Newest', 'htmega-addons'),
-                        'popular' => __('Popular', 'htmega-addons'),
-                        'active'  => __('Active', 'htmega-addons'),
+                        'newest'  => __('Newest', 'ht-mega-for-elementor'),
+                        'popular' => __('Popular', 'ht-mega-for-elementor'),
+                        'active'  => __('Active', 'ht-mega-for-elementor'),
                     ],
                     'separator' =>'before',
                 ]
@@ -77,7 +77,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_responsive_control(
                 'max_items',
                 [
-                    'label'   => esc_html__( 'Max Item', 'htmega-addons' ),
+                    'label'   => esc_html__( 'Max Item', 'ht-mega-for-elementor' ),
                     'type'    => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 5,
@@ -95,7 +95,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_control(
                 'avatar_size',
                 [
-                    'label'     => __( 'Image Size', 'htmega-addons' ),
+                    'label'     => __( 'Image Size', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::SLIDER,
                     'default' => [
                         'size' => 80,
@@ -113,10 +113,10 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_control(
                 'show_content_meta',
                 [
-                    'label' => __( 'Show Meta Info', 'htmega-addons' ),
+                    'label' => __( 'Show Meta Info', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'no',
                     'separator' =>'before',
@@ -126,10 +126,10 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_control(
                 'show_active_time',
                 [
-                    'label' => __( 'Show Active Time', 'htmega-addons' ),
+                    'label' => __( 'Show Active Time', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                     'condition'=>[
@@ -141,10 +141,10 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_control(
                 'show_register_time',
                 [
-                    'label' => __( 'Show Register Time', 'htmega-addons' ),
+                    'label' => __( 'Show Register Time', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                     'condition'=>[
@@ -156,10 +156,10 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_control(
                 'show_friend_count',
                 [
-                    'label' => __( 'Show Friend Count', 'htmega-addons' ),
+                    'label' => __( 'Show Friend Count', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __( 'Show', 'htmega-addons' ),
-                    'label_off' => __( 'Hide', 'htmega-addons' ),
+                    'label_on' => __( 'Show', 'ht-mega-for-elementor' ),
+                    'label_off' => __( 'Hide', 'ht-mega-for-elementor' ),
                     'return_value' => 'yes',
                     'default' => 'yes',
                     'condition'=>[
@@ -175,7 +175,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
         $this->start_controls_section(
             'buddypress_style_section',
             [
-                'label' => __( 'Area', 'htmega-addons' ),
+                'label' => __( 'Area', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -184,7 +184,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                 Group_Control_Border::get_type(),
                 [
                     'name' => 'area_button_border',
-                    'label' => __( 'Border', 'htmega-addons' ),
+                    'label' => __( 'Border', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega_buddypress_single',
                 ]
             );
@@ -192,7 +192,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_responsive_control(
                 'area_border_radius',
                 [
-                    'label' => esc_html__( 'Border Radius', 'htmega-addons' ),
+                    'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'selectors' => [
                         '{{WRAPPER}} .htmega_buddypress_single' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
@@ -204,7 +204,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                 Group_Control_Background::get_type(),
                 [
                     'name' => 'area_background',
-                    'label' => __( 'Background', 'htmega-addons' ),
+                    'label' => __( 'Background', 'ht-mega-for-elementor' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .htmega_buddypress_single',
                     'separator' => 'before',
@@ -215,7 +215,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                 Group_Control_Box_Shadow::get_type(),
                 [
                     'name' => 'area_box_shadow',
-                    'label' => __( 'Box Shadow', 'htmega-addons' ),
+                    'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .htmega_buddypress_single',
                 ]
             );
@@ -223,7 +223,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_responsive_control(
                 'area_padding',
                 [
-                    'label' => __( 'Padding', 'htmega-addons' ),
+                    'label' => __( 'Padding', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -236,7 +236,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_responsive_control(
                 'area_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -250,23 +250,23 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_responsive_control(
                 'area_align',
                 [
-                    'label' => __( 'Alignment', 'htmega-addons' ),
+                    'label' => __( 'Alignment', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::CHOOSE,
                     'options' => [
                         'left' => [
-                            'title' => __( 'Left', 'htmega-addons' ),
+                            'title' => __( 'Left', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-left',
                         ],
                         'center' => [
-                            'title' => __( 'Center', 'htmega-addons' ),
+                            'title' => __( 'Center', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-center',
                         ],
                         'right' => [
-                            'title' => __( 'Right', 'htmega-addons' ),
+                            'title' => __( 'Right', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-right',
                         ],
                         'justify' => [
-                            'title' => __( 'Justified', 'htmega-addons' ),
+                            'title' => __( 'Justified', 'ht-mega-for-elementor' ),
                             'icon' => 'eicon-text-align-justify',
                         ],
                     ],
@@ -280,9 +280,9 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_responsive_control(
                 'show_column',
                 [
-                    'label' => esc_html__( 'Column Width', 'htmega-addons' ),
+                    'label' => esc_html__( 'Column Width', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::SLIDER,
-                    'description' => esc_html__( 'Add Column Width Ex. 25%', 'htmega-addons' ),
+                    'description' => esc_html__( 'Add Column Width Ex. 25%', 'ht-mega-for-elementor' ),
                     'size_units' => [ 'px', '%' ],
                     'range' => [
                         'px' => [
@@ -306,7 +306,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
         $this->start_controls_section(
             'buddypress_title_style',
             [
-                'label' => __( 'Title', 'htmega-addons' ),
+                'label' => __( 'Title', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -316,14 +316,14 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                 $this->start_controls_tab(
                     'title_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'htmega-addons' ),
+                        'label' => __( 'Normal', 'ht-mega-for-elementor' ),
                     ]
                 );
 
                     $this->add_control(
                         'buddypress_title_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'default'=>'#000000',
                             'selectors' => [
@@ -336,7 +336,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'buddypress_title_typography',
-                            'label' => __( 'Typography', 'htmega-addons' ),
+                            'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                             'selector' => '{{WRAPPER}} .buddypress_title a',
                         ]
                     );
@@ -344,7 +344,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                     $this->add_responsive_control(
                         'buddypress_title_margin',
                         [
-                            'label' => __( 'Margin', 'htmega-addons' ),
+                            'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
@@ -359,13 +359,13 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                 $this->start_controls_tab(
                     'title_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'htmega-addons' ),
+                        'label' => __( 'Hover', 'ht-mega-for-elementor' ),
                     ]
                 );
                     $this->add_control(
                         'buddypress_title_hover_color',
                         [
-                            'label'     => __( 'Color', 'htmega-addons' ),
+                            'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .buddypress_title a:hover' => 'color: {{VALUE}};',
@@ -384,7 +384,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
         $this->start_controls_section(
             'buddypress_meta_info_style',
             [
-                'label' => __( 'Meta Info', 'htmega-addons' ),
+                'label' => __( 'Meta Info', 'ht-mega-for-elementor' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -392,7 +392,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_control(
                 'buddypress_meta_color',
                 [
-                    'label'     => __( 'Color', 'htmega-addons' ),
+                    'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'=>'#000000',
                     'selectors' => [
@@ -405,7 +405,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                 Group_Control_Typography::get_type(),
                 [
                     'name' => 'buddypress_meta_typography',
-                    'label' => __( 'Typography', 'htmega-addons' ),
+                    'label' => __( 'Typography', 'ht-mega-for-elementor' ),
                     'selector' => '{{WRAPPER}} .buddy_press_meta span',
                 ]
             );
@@ -413,7 +413,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
             $this->add_responsive_control(
                 'buddypress_meta_margin',
                 [
-                    'label' => __( 'Margin', 'htmega-addons' ),
+                    'label' => __( 'Margin', 'ht-mega-for-elementor' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', '%', 'em' ],
                     'selectors' => [
@@ -431,7 +431,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
         $this->start_controls_section(
             'messing_parent_plg_notice_section',
             [
-                'label' => __( 'BuddyPress', 'htmega-addons' ),
+                'label' => __( 'BuddyPress', 'ht-mega-for-elementor' ),
             ]
         );
             $this->add_control(
@@ -439,7 +439,8 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
-                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'htmega-addons' ),
+                        /* translators: %1$s: plugin name/link ("BuddyPress"), repeated twice in the sentence */
+                        __( 'It appears that %1$s is not currently installed on your site. Kindly use the link below to install or activate %1$s. After completing the installation or activation, please refresh this page.', 'ht-mega-for-elementor' ),
                         '<a href="' . esc_url( admin_url( 'plugin-install.php?s=BuddyPress&tab=search&type=term' ) ) . '" target="_blank" rel="noopener">BuddyPress</a>'
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
@@ -461,7 +462,7 @@ class HTMega_Elementor_Widget_Buddy_Press extends Widget_Base {
 
         $settings   = $this->get_settings_for_display();
         if ( ! is_plugin_active('buddypress/bp-loader.php') ) {
-            htmega_plugin_missing_alert( __('BuddyPress', 'htmega-addons') );
+            htmega_plugin_missing_alert( __('BuddyPress', 'ht-mega-for-elementor') );
             return;
         }
         // Member Query Args.

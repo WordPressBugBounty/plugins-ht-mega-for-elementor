@@ -26,7 +26,7 @@ class HTMegaMenu_Admin_Settings {
 
             array(
                 'id'    => 'htmegamenu_setting_tabs',
-                'title' => esc_html__( 'HT Menu Settings', 'htmega-addons' )
+                'title' => esc_html__( 'HT Menu Settings', 'ht-mega-for-elementor' )
             ),
 
         );
@@ -38,7 +38,7 @@ class HTMegaMenu_Admin_Settings {
     function plugin_page() {
 
         echo '<div class="wrap">';
-            echo '<h2>'.esc_html__( 'HT Menu Settings','htmega-addons' ).'</h2>';
+            echo '<h2>'.esc_html__( 'HT Menu Settings','ht-mega-for-elementor' ).'</h2>';
             $this->save_message();
             $this->settings_api->show_navigation();
             $this->settings_api->show_forms();
@@ -50,7 +50,7 @@ class HTMegaMenu_Admin_Settings {
     function save_message() {
         if( isset($_GET['settings-updated']) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
             <div class="updated notice is-dismissible"> 
-                <p><strong><?php esc_html_e('Successfully Settings Saved.', 'htmega-addons') ?></strong></p>
+                <p><strong><?php esc_html_e('Successfully Settings Saved.', 'ht-mega-for-elementor') ?></strong></p>
             </div>
             <?php
         }
