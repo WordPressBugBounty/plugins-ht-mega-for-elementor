@@ -56,14 +56,17 @@
     }
 </style>
 
-<?php $info_data = HTMega_Api::get_remote_data(); ?>
+<?php
+$info_data = HTMega_Api::get_remote_data();
+$banner    = ! empty( $info_data['banner'] ) ? $info_data['banner'] : [];
+?>
 <div class="hastheme-dashboard-widget-area">
     <div class="hastheme-dashboard-widget-header">
-        <?php
-            if ( ! empty( $info_data['banner'] ) ){
-                echo wp_kses_post( $info_data['banner'] );
-            }
-        ?>
+        <?php if ( ! empty( $banner['status'] ) && ! empty( $banner['image'] ) ) : ?>
+            <a href="<?php echo esc_url( $banner['link'] ?? '' ); ?>" target="_blank" rel="noopener">
+                <img src="<?php echo esc_url( $banner['image'] ); ?>" alt="<?php echo esc_attr( $banner['alt'] ?? '' ); ?>" />
+            </a>
+        <?php endif; ?>
     </div>
     <?php if ( ! empty( $info_data['feed'] ) ) : ?>
         <div class="hastheme-dashboard-widget-newsfeed">

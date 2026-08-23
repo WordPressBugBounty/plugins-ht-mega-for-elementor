@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhus
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.9
 Tested up to: 7.0
-Stable tag: 3.2.3
+Stable tag: 3.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -262,8 +262,8 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 
 == Source Code ==
 
-This plugin ships some JavaScript/CSS assets in compiled/minified form. The full human-readable source for those assets, including build instructions, is published at:
-https://github.com/devitemsllc/ht-mega-for-elementor
+You can find the complete source code for this plugin on GitHub.
+🔗 [View on GitHub](https://github.com/devitemsllc/ht-mega-for-elementor)
 
 The bundled `jQuery Countdown` library (`assets/js/jquery-countdown.min.js`) is a third-party project; its source is maintained upstream at https://github.com/hilios/jQuery.countdown.
 
@@ -308,6 +308,12 @@ Service: ip-api.com — [Terms of Use](https://ip-api.com/docs/legal), no separa
 
 
 == Changelog ==
+
+= Version 3.2.4 - Date: 2026-08-23 =
+* Fixed: Gravity Forms submit button style controls not applying when the button renders as `<button>` instead of `<input type="submit">`.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.3 - Date: 2026-08-12 =
 * Updated: AI Writer renamed to AI Builder — generate a full section or an entire multi-section page from a single prompt using HT Mega's section widgets, in addition to improving existing section content with AI.

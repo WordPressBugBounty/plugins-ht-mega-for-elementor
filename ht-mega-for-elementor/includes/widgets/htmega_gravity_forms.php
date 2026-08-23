@@ -673,7 +673,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                                 ],
                             ],
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]' => 'height: {{SIZE}}{{UNIT}};',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]' => 'height: {{SIZE}}{{UNIT}};',
                             ],
                         ]
                     );
@@ -698,7 +698,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                                 'unit' => 'px',
                             ],
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]' => 'width: {{SIZE}}{{UNIT}};',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]' => 'width: {{SIZE}}{{UNIT}};',
                             ],
                         ]
                     );
@@ -706,7 +706,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         Group_Control_Typography::get_type(),
                         [
                             'name' => 'gravityforms_input_submit_typography',
-                            'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]',
+                            'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]',
                         ]
                     );
 
@@ -716,7 +716,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                             'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]'  => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]'  => 'color: {{VALUE}};',
                             ],
                         ]
                     );
@@ -727,7 +727,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                             'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]'  => 'background-color: {{VALUE}};',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]'  => 'background-color: {{VALUE}};',
                             ],
                         ]
                     );
@@ -739,7 +739,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                             ],
                             'separator' =>'before',
                         ]
@@ -752,7 +752,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                             'type' => Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', '%', 'em' ],
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                             ],
                             'separator' =>'before',
                         ]
@@ -763,7 +763,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         [
                             'name' => 'gravityforms_input_submit_border',
                             'label' => __( 'Border', 'ht-mega-for-elementor' ),
-                            'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]',
+                            'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]',
                         ]
                     );
 
@@ -773,7 +773,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                             'label' => esc_html__( 'Border Radius', 'ht-mega-for-elementor' ),
                             'type' => Controls_Manager::DIMENSIONS,
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
                             ],
                         ]
                     );
@@ -783,7 +783,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         [
                             'name' => 'gravityforms_input_submit_box_shadow',
                             'label' => __( 'Box Shadow', 'ht-mega-for-elementor' ),
-                            'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]',
+                            'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"], {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]',
                         ]
                     );
                     $this->add_responsive_control(
@@ -826,7 +826,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                             'label'     => __( 'Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover'  => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover, {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]:hover'  => 'color: {{VALUE}};',
                             ],
                         ]
                     );
@@ -837,7 +837,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                             'label'     => __( 'Background Color', 'ht-mega-for-elementor' ),
                             'type'      => Controls_Manager::COLOR,
                             'selectors' => [
-                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover'  => 'background-color: {{VALUE}};',
+                                '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover, {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]:hover'  => 'background-color: {{VALUE}};',
                             ],
                         ]
                     );
@@ -847,7 +847,7 @@ class HTMega_Elementor_Widget_Gravity_Forms extends Widget_Base {
                         [
                             'name' => 'gravityforms_input_submithover_border',
                             'label' => __( 'Border', 'ht-mega-for-elementor' ),
-                            'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover',
+                            'selector' => '{{WRAPPER}} .gform_wrapper .gform_footer input[type="submit"]:hover, {{WRAPPER}} .gform_wrapper .gform_footer button[type="submit"]:hover',
                         ]
                     );
 
