@@ -36,7 +36,10 @@ final class HTMega_Addons_Elementor {
      */
     private function __construct() {
         if ( ! function_exists('is_plugin_active') ){ include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); }
-        add_action( 'init', [ $this, 'i18n' ] );
+        // Priority 1 — load the text domain before anything else hooked to 'init' can call a
+        // translation function. Anything translating at a later 'init' priority would otherwise
+        // trigger WP 6.7+'s _load_textdomain_just_in_time notice.
+        add_action( 'init', [ $this, 'i18n' ], 1 );
         add_action( 'plugins_loaded', [ $this, 'init' ],15 );
         
         // Register Plugin Active Hook
@@ -110,9 +113,6 @@ final class HTMega_Addons_Elementor {
         // Load Template Manager - this needs to be before init
         $this->load_template_manager();
 
-        // Load components that need translations
-        add_action('init', [$this, 'init_components'], 5);
-
          //elementor editor template library
          if ( is_user_logged_in() && did_action( 'elementor/loaded' ) ) {
             HtMeaga\ElementorTemplate\Elementor_Library_Manage::instance();
@@ -121,17 +121,6 @@ final class HTMega_Addons_Elementor {
         // Plugins Setting Page
         add_filter('plugin_action_links_'.HTMEGA_ADDONS_PLUGIN_BASE, [ $this, 'plugins_setting_links' ] );
         add_filter( 'plugin_row_meta', [ $this, 'htmega_plugin_row_meta' ], 10, 4 );
-    }
-
-    /**
-     * Initialize components that require translations
-     */
-    public function init_components() {
-        // Load Recommended Plugins
-        if( is_admin() ){
-            require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/recommended-plugins/class.recommended-plugins.php' );
-            require_once ( HTMEGA_ADDONS_PL_PATH . 'includes/recommended-plugins/recommended-plugins.php' );
-        }
     }
 
     /**

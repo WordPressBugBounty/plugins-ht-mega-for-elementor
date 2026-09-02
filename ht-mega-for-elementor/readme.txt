@@ -2,8 +2,8 @@
 Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhusudandev
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.9
-Tested up to: 7.0
-Stable tag: 3.2.4
+Tested up to: 7.1
+Stable tag: 3.2.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -265,49 +265,36 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 You can find the complete source code for this plugin on GitHub.
 🔗 [View on GitHub](https://github.com/devitemsllc/ht-mega-for-elementor)
 
-The bundled `jQuery Countdown` library (`assets/js/jquery-countdown.min.js`) is a third-party project; its source is maintained upstream at https://github.com/hilios/jQuery.countdown.
+Bundled `jQuery Countdown` (`assets/js/jquery-countdown.min.js`) is third-party; source upstream at https://github.com/hilios/jQuery.countdown.
 
 == External services ==
 
-This plugin connects to the following third-party services for specific, optional widgets and features. None of these connections are required for the plugin's core functionality; each is only used when the related widget or feature is actively configured by the site owner.
+Used only when the related widget/feature is active. Not required for core functionality.
 
-**AI Builder (AI Writer widget)**
-This plugin can connect to an AI provider chosen by the site admin to generate or improve section/page content from a text prompt. The prompt text and relevant page context you submit are sent to the selected provider's API to generate a response, which is inserted into the editor.
-* OpenAI: [Terms of Use](https://openai.com/policies/row-terms-of-use/), [Privacy Policy](https://openai.com/policies/row-privacy-policy/)
-* Anthropic (Claude): [Terms of Service](https://www.anthropic.com/legal/consumer-terms), [Privacy Policy](https://www.anthropic.com/legal/privacy)
-* Google (Gemini): [Terms of Service](https://policies.google.com/terms), [Privacy Policy](https://policies.google.com/privacy)
-* DeepSeek: [Terms of Use](https://chat.deepseek.com/downloads/DeepSeek%20Terms%20of%20Use.html), [Privacy Policy](https://chat.deepseek.com/downloads/DeepSeek%20Privacy%20Policy.html)
-* Moonshot AI (Kimi): [Terms of Service](https://www.moonshot.ai/agreement), [Privacy Policy](https://www.moonshot.ai/policy/privacy)
-* Z.ai (GLM): [Terms of Service](https://z.ai/help/policies), [Privacy Policy](https://z.ai/help/policies)
-An API key for the chosen provider must be supplied by the site admin; no request is sent unless AI Builder is actively used.
+**AI Builder** — sends prompt + page context to chosen provider:
+* OpenAI ([Terms](https://openai.com/policies/row-terms-of-use/)/[Privacy](https://openai.com/policies/row-privacy-policy/)) · Anthropic ([Terms](https://www.anthropic.com/legal/consumer-terms)/[Privacy](https://www.anthropic.com/legal/privacy)) · Gemini ([Terms](https://policies.google.com/terms)/[Privacy](https://policies.google.com/privacy)) · DeepSeek ([Terms](https://chat.deepseek.com/downloads/DeepSeek%20Terms%20of%20Use.html)/[Privacy](https://chat.deepseek.com/downloads/DeepSeek%20Privacy%20Policy.html)) · Kimi ([Terms](https://www.moonshot.ai/agreement)/[Privacy](https://www.moonshot.ai/policy/privacy)) · Z.ai ([Terms](https://z.ai/help/policies)/[Privacy](https://z.ai/help/policies))
+Needs admin-supplied API key.
 
-**Weather widget**
-When the Weather widget is added to a page, the configured location is sent to OpenWeatherMap to retrieve current weather data for display.
-Service: OpenWeatherMap — [Terms of Service](https://openweathermap.org/terms), [Privacy Policy](https://openweathermap.org/privacy-policy)
+**Weather widget** — location sent to [OpenWeatherMap](https://openweathermap.org/terms) ([Privacy](https://openweathermap.org/privacy-policy)).
 
-**Twitter/X Feed widget**
-When the Twitter/X Feed widget is used, the plugin authenticates with the Twitter/X API (via OAuth, using credentials the site admin supplies) to retrieve and display recent tweets, including author profile images, for the configured account.
-Service: X (Twitter) — [Terms of Service](https://x.com/en/tos), [Privacy Policy](https://x.com/en/privacy)
+**Twitter/X Feed** — OAuth fetch of tweets/avatars via [X API](https://x.com/en/tos) ([Privacy](https://x.com/en/privacy)).
 
-**Instagram Feed widget**
-When the Instagram widget is used, the plugin connects to the Instagram Graph API (using credentials the site admin supplies) to retrieve and display recent media from the configured Instagram account.
-Service: Meta/Instagram — [Terms of Service](https://help.instagram.com/581066165581870), [Privacy Policy](https://privacycenter.instagram.com/policy)
+**Instagram Feed** — media fetched via [Instagram Graph API](https://help.instagram.com/581066165581870) ([Privacy](https://privacycenter.instagram.com/policy)).
 
-**Social share counters**
-When a widget with social share-count display is used, the relevant network is queried to retrieve the current share/like count for the page URL being viewed.
-* Facebook — [Terms](https://www.facebook.com/terms.php), [Privacy Policy](https://www.facebook.com/privacy/policy/)
-* Pinterest — [Terms of Service](https://policy.pinterest.com/en/terms-of-service), [Privacy Policy](https://policy.pinterest.com/en/privacy-policy)
-* Reddit — [User Agreement](https://www.redditinc.com/policies/user-agreement), [Privacy Policy](https://www.reddit.com/policies/privacy-policy)
-* Tumblr — [Terms of Service](https://www.tumblr.com/policy/en/terms-of-service), [Privacy Policy](https://www.tumblr.com/policy/en/privacy)
-* Buffer — [Terms of Service](https://buffer.com/terms), [Privacy Policy](https://buffer.com/privacy)
-* Yahoo (used to retrieve Surfingbird share counts via the YQL API) — [Terms of Service](https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html), [Privacy Policy](https://legal.yahoo.com/us/en/yahoo/privacy/index.html)
+**Social share counters** — queries share/like count for current URL:
+[Facebook](https://www.facebook.com/terms.php)/[Priv](https://www.facebook.com/privacy/policy/) · [Pinterest](https://policy.pinterest.com/en/terms-of-service)/[Priv](https://policy.pinterest.com/en/privacy-policy) · [Reddit](https://www.redditinc.com/policies/user-agreement)/[Priv](https://www.reddit.com/policies/privacy-policy) · [Tumblr](https://www.tumblr.com/policy/en/terms-of-service)/[Priv](https://www.tumblr.com/policy/en/privacy) · [Buffer](https://buffer.com/terms)/[Priv](https://buffer.com/privacy) · Yahoo (Surfingbird via YQL) [Terms](https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html)/[Priv](https://legal.yahoo.com/us/en/yahoo/privacy/index.html)
 
-**Deactivation feedback**
-When the plugin is deactivated, the site's public IP address is sent to ip-api.com to determine the site's approximate country, used only to route anonymous deactivation-survey feedback by region.
-Service: ip-api.com — [Terms of Use](https://ip-api.com/docs/legal), no separate privacy policy published by the service.
+**Deactivation feedback** — site IP sent to [ip-api.com](https://ip-api.com/docs/legal) to route survey by region.
 
 
 == Changelog ==
+
+= Version 3.2.5 - Date: 2026-09-02 =
+* Updated: Recommendations page moved into the HT Mega dashboard.
+* Fixed: Wrapper Link not clickable inside Mega Menu templates on non-Elementor pages, such as the WooCommerce shop page and Gutenberg pages.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.4 - Date: 2026-08-23 =
 * Fixed: Gravity Forms submit button style controls not applying when the button renders as `<button>` instead of `<input type="submit">`.

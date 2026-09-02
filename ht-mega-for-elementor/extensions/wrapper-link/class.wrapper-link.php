@@ -21,9 +21,38 @@ class HTMegaWrapperLink_Elementor {
 		add_action( 'elementor/element/common/_section_style/after_section_end', array( $this, 'register_controls' ), 1 );
 		add_action( 'elementor/frontend/before_render' ,array( $this, 'before_render' ), 1 );
 
+		// Register the handle early so it can be enqueued on demand from before_render(),
+		// on any page, whether or not the page itself is built with Elementor.
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_script' ), 1 );
+
 		// Add this line to enqueue scripts properly
 		add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'enqueue_scripts' ) );
     }
+
+	/**
+	 * Register the wrapper link script handle.
+	 *
+	 * Registering is free — WordPress only prints handles that are actually enqueued —
+	 * so this can run unconditionally and gives enqueue_scripts()/before_render() a single
+	 * source of truth for the file URL, dependencies and version.
+	 *
+	 * @since 2.0.2
+	 * @access public
+	 */
+	public function register_script() {
+		if ( wp_script_is( 'htmega-wrapper-link', 'registered' ) ) {
+			return;
+		}
+
+		wp_register_script(
+			'htmega-wrapper-link',
+			HTMEGA_ADDONS_PL_URL . 'extensions/wrapper-link/assets/js/htmega-wrapper-link.js',
+			array( 'jquery' ),
+			HTMEGA_VERSION,
+			true
+		);
+	}
+
 	/**
 	 * Enqueue scripts.
 	 *
@@ -37,13 +66,46 @@ class HTMegaWrapperLink_Elementor {
 			return;
 		}
 
-			wp_enqueue_script( 
-				'htmega-wrapper-link', 
-				HTMEGA_ADDONS_PL_URL . 'extensions/wrapper-link/assets/js/htmega-wrapper-link.js', 
-				array('jquery'), 
-				HTMEGA_VERSION,
-				true 
-			);
+		$this->register_script();
+		wp_enqueue_script( 'htmega-wrapper-link' );
+	}
+
+	/**
+	 * Enqueue the wrapper link script the moment a wrapper-linked element renders.
+	 *
+	 * The markup half of this feature is element level — it is added by before_render()
+	 * wherever the element renders, including an Elementor template pulled into a mega menu
+	 * dropdown, a theme builder part or a shortcode on a page that is not built with
+	 * Elementor. The page level asset gate (htmega_should_enqueue_global_assets()) returns
+	 * false on those requests, so relying on it alone left the markup in place with no
+	 * behaviour attached. Enqueueing here keeps the script scoped to pages that really need
+	 * it while covering every render context.
+	 *
+	 * @since 2.0.2
+	 * @access protected
+	 */
+	protected function enqueue_script_on_demand() {
+		static $done = false;
+		if ( $done ) {
+			return;
+		}
+		$done = true;
+
+		$this->register_script();
+
+		// Footer scripts have already been printed (element rendered from an unusually late
+		// hook), so wp_enqueue_script() would be a no-op — print the handle directly instead.
+		// WP_Scripts::do_items() is used rather than wp_print_scripts(), because the latter
+		// re-fires the global 'wp_print_scripts' action even when an explicit handle is passed,
+		// which would run third party callbacks (WooCommerce, Gravity Forms, …) a second time.
+		if ( did_action( 'wp_print_footer_scripts' ) ) {
+			if ( ! wp_script_is( 'htmega-wrapper-link', 'done' ) ) {
+				wp_scripts()->do_items( 'htmega-wrapper-link' );
+			}
+			return;
+		}
+
+		wp_enqueue_script( 'htmega-wrapper-link' );
 	}
 
 	/**
@@ -104,6 +166,8 @@ class HTMegaWrapperLink_Elementor {
 					'class' => 'htmega-element-link'
 				]
 			);
+
+			$this->enqueue_script_on_demand();
 		}
 	}
 }

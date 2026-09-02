@@ -10,7 +10,60 @@ class Menu {
      */
     public function init() {
         add_action( 'admin_menu', [ $this, 'admin_menu' ], 220 );
+        // Priority 230 — after AI Builder (226) and before Upgrade to Pro (329),
+        // so "Recommendations" lands at the bottom of the HT Mega submenu list.
+        add_action( 'admin_menu', [ $this, 'recommendations_submenu' ], 230 );
         add_action( 'admin_init', [ $this, 'maybe_migrate_legacy_module_settings' ], 5 );
+        add_action( 'admin_init', [ $this, 'redirect_legacy_recommendations_page' ] );
+    }
+
+    /**
+     * Redirect the retired standalone "Recommendations" page to its new home inside
+     * the dashboard, so existing bookmarks and older doc links don't dead-end on
+     * WordPress's "you are not allowed to access this page" screen.
+     *
+     * @return void
+     */
+    public function redirect_legacy_recommendations_page() {
+        if ( ! is_admin() || wp_doing_ajax() ) {
+            return;
+        }
+
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only page check on a GET request, no state is changed.
+        $page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+
+        if ( 'htmega-addons_extensions' !== $page ) {
+            return;
+        }
+
+        wp_safe_redirect( admin_url( 'admin.php?page=htmega-addons#/recommended-plugins' ) );
+        exit;
+    }
+
+    /**
+     * Add the "Recommendations" submenu item.
+     *
+     * Deep links into the dashboard's own Recommendations tab rather than a
+     * separate admin page, so the list stays inside the settings panel.
+     *
+     * @return void
+     */
+    public function recommendations_submenu() {
+        global $submenu;
+
+        $slug       = 'htmega-addons';
+        $capability = 'manage_options';
+
+        // The parent menu is registered at priority 220; bail if it isn't there.
+        if ( ! isset( $submenu[ $slug ] ) || ! current_user_can( $capability ) ) {
+            return;
+        }
+
+        $submenu[ $slug ][] = array(
+            esc_html__( 'Recommendations', 'ht-mega-for-elementor' ),
+            $capability,
+            'admin.php?page=' . $slug . '#/recommended-plugins',
+        );
     }
 
     /**
@@ -136,6 +189,23 @@ class Menu {
             'onboarding'    => $this->get_localize_data()['onboarding'],
             'onboarding_asset_url' => HTMEGA_ADDONS_PL_URL.'admin/include/settings-panel/assets/images/',
             'options'       => htmegaopt_get_options( Options_Field::instance()->get_registered_settings() ),
+            'recommendedPlugins' => [
+                'title'           => __( 'Recommended Plugins', 'ht-mega-for-elementor' ),
+                'subtitle'        => __( 'Handpicked plugins that work great alongside HT Mega. Install and activate without leaving this page.', 'ht-mega-for-elementor' ),
+                'by'              => __( 'By', 'ht-mega-for-elementor' ),
+                'activeInstalls'  => __( 'Active Installations', 'ht-mega-for-elementor' ),
+                'lessThanTen'     => __( 'Less Than 10', 'ht-mega-for-elementor' ),
+                'install'         => __( 'Install Now', 'ht-mega-for-elementor' ),
+                'activate'        => __( 'Activate', 'ht-mega-for-elementor' ),
+                'activated'       => __( 'Activated', 'ht-mega-for-elementor' ),
+                'installing'      => __( 'Installing...', 'ht-mega-for-elementor' ),
+                'activating'      => __( 'Activating...', 'ht-mega-for-elementor' ),
+                'retry'           => __( 'Try Again', 'ht-mega-for-elementor' ),
+                'installSuccess'  => __( 'Plugin installed and activated.', 'ht-mega-for-elementor' ),
+                'activateSuccess' => __( 'Plugin activated.', 'ht-mega-for-elementor' ),
+                'genericError'    => __( 'Something went wrong. Please try again.', 'ht-mega-for-elementor' ),
+                'loadError'       => __( 'Could not load the recommended plugins list.', 'ht-mega-for-elementor' ),
+            ],
             'labels'        => [
                 'pro' => __( 'Pro', 'ht-mega-for-elementor' ),
                 'modal' => [
