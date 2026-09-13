@@ -476,7 +476,7 @@ if ( !class_exists( 'HTMega_Elementor_Addons_Assests' ) ) {
                     'tmppage'    => esc_html__( 'Import to Page', 'ht-mega-for-elementor' ),
                     'import'     => esc_html__( 'Import', 'ht-mega-for-elementor' ),
                     'buynow'     => esc_html__( 'Buy Now', 'ht-mega-for-elementor' ),
-                    'preview'    => esc_html__( 'Preview', 'ht-mega-for-elementor' ),
+                    'preview'    => esc_html__( 'Live Demo', 'ht-mega-for-elementor' ),
                     'installing' => esc_html__( 'Installing..', 'ht-mega-for-elementor' ),
                     'activating' => esc_html__( 'Activating..', 'ht-mega-for-elementor' ),
                     'active'     => esc_html__( 'Active', 'ht-mega-for-elementor' ),

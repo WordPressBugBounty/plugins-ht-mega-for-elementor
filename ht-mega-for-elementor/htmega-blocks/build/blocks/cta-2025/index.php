@@ -22,7 +22,7 @@ $show_label        = ! empty( $attributes['showSectionLabel'] );
 $label_text        = isset( $attributes['sectionLabelText'] )  ? esc_html( $attributes['sectionLabelText'] )           : '';
 $headline          = isset( $attributes['headline'] )          ? esc_html( $attributes['headline'] )                   : '';
 $headline_hl       = isset( $attributes['headlineHighlight'] ) ? esc_html( $attributes['headlineHighlight'] )           : '';
-$headline_tag      = isset( $attributes['headlineTag'] )       ? tag_escape( $attributes['headlineTag'] )               : 'h2';
+$headline_tag      = isset( $attributes['headlineTag'] )       ? htmega_validate_html_tag( $attributes['headlineTag'] )               : 'h2';
 $description       = isset( $attributes['description'] )       ? esc_html( $attributes['description'] )                : '';
 
 $show_primary      = ! empty( $attributes['showPrimaryCta'] );

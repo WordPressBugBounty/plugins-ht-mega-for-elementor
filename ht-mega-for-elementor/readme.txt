@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhus
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.9
 Tested up to: 7.1
-Stable tag: 3.2.5
+Stable tag: 3.2.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -288,6 +288,19 @@ Needs admin-supplied API key.
 
 
 == Changelog ==
+
+= Version 3.2.6 - Date: 2026-09-13 =
+* Added: "Get started in 3 steps" quick-start guide on the HT Mega dashboard.
+* Added: Quick View and Live Demo/Import preview for templates in the Template Library.
+* Added: Documentation and demo links for 2026 Section widgets and Gutenberg blocks.
+* Improved: Theme Builder "Add New Template" now shows sample designs automatically when a template type is selected.
+* Improved: Various HT Mega dashboard UI/UX refinements.
+* Fixed: Theme Builder "Add New Template" sample design preview not refreshing when switching template type a second time.
+* Fixed: Floating Effects module could interfere with third-party or custom Elementor widgets that update their own settings during rendering.
+* Fixed: Gutenberg block CSS loading on Elementor-built pages, causing style conflicts with Elementor widgets (e.g. duplicate button styles).
+* Security: Hardened section headline tag output validation. Credit: Revanth Hari Narayana Matte.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.5 - Date: 2026-09-02 =
 * Updated: Recommendations page moved into the HT Mega dashboard.

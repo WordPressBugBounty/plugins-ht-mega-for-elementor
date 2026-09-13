@@ -1108,7 +1108,9 @@ margin-left: 10px;
 }
 
 .htmega-banner-content h1 {
-  font-size: 1.5rem;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.25;
   margin: 0;
   color: #fff;
   border-bottom: 1px solid #ffffff96;
@@ -1121,6 +1123,19 @@ margin-left: 10px;
   margin:0;
   color: #fff;
   max-width: 400px;
+}
+
+.htmega-banner-content .htmega-banner-cta {
+  margin-top: 20px;
+  align-self: flex-start;
+  color: #fff;
+  border-color: #fff;
+}
+
+.htmega-banner-content .htmega-banner-cta:hover {
+  background: #fff;
+  color: #681EC8;
+  border-color: #fff;
 }
 
 /* Subscribe css */
@@ -1624,10 +1639,13 @@ border: 1px solid #3489fe;
   border: none;
 }
 .htmega-banner-content h1{
-  font-size: 1.2rem;
+  font-size: 24px;
 }
 .htmega-banner-content p{
   max-width: 100%;
+}
+.htmega-banner-content .htmega-banner-cta{
+  align-self: center;
 }
 .htmega-onboarding-wrap {
     padding: 40px 20px;
@@ -1911,10 +1929,17 @@ display: flex;
 gap: 20px;
 }
 
-/* Quick Links Section */
+/* Support & Community Section (was Quick Links) */
+.htmega-support-heading {
+font-size: 20px;
+color: #000000;
+font-weight: 600;
+margin: 0 0 16px;
+}
+
 .htmega-quick-links {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(2, 1fr);
 gap: 24px;
 margin-bottom: 40px;
 }
@@ -1966,6 +1991,82 @@ color:#3489FE;
 }
 .quick-link-btn:hover svg path{
 fill: #3489FE;
+}
+
+/* Get Started Section */
+.htmega-get-started {
+background: #ffffff;
+border-radius: 12px;
+padding: 40px;
+margin-bottom: 40px;
+border: 1px solid #E1E3FA;
+box-shadow: 0 0 20px #00000005;
+}
+
+.htmega-get-started h2 {
+font-size: 24px;
+color: #000000;
+margin: 0 0 24px;
+font-weight: 600;
+}
+
+.htmega-get-started-steps {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+}
+
+.htmega-get-started-step {
+display: flex;
+flex-direction: column;
+gap: 8px;
+padding: 24px;
+border: 1px solid #E1E3FA;
+border-radius: 10px;
+text-decoration: none;
+color: #434343;
+transition: all 0.3s ease;
+}
+
+.htmega-get-started-step:hover {
+border-color: #3489FE;
+box-shadow: 0 0 20px #00000008;
+}
+
+.htmega-get-started-step--static {
+cursor: default;
+}
+
+.htmega-get-started-step--static:hover {
+border-color: #E1E3FA;
+box-shadow: none;
+}
+
+.htmega-get-started-step strong {
+color: #000000;
+font-size: 15px;
+line-height: 1.4;
+}
+
+.htmega-get-started-step span:not(.htmega-get-started-num),
+.htmega-get-started-desc {
+color: #434343;
+text-decoration: none;
+font-size: 13px;
+line-height: 1.6;
+}
+
+.htmega-get-started-num {
+width: 32px;
+height: 32px;
+border-radius: 50%;
+background: rgba(52, 137, 254, 0.1);
+color: #3489FE;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 600;
+margin-bottom: 8px;
 }
 
 /* Documentation Section */
@@ -2026,16 +2127,6 @@ color: #fff;
 border-color: #3489FE;
 }
 
-/* Video Tutorial Section */
-.htmega-video-tutorial {
-padding: 40px 20px;
-text-align: center;
-background: #ffffff;
-border-radius: 12px;
-margin-bottom: 40px;
-border: 1px solid #E1E3FA;
-box-shadow: 0 0 20px #00000005;
-}
 .htmega-video-badge {
 display: inline-flex;
 align-items: center;
@@ -2059,111 +2150,10 @@ font-size: 14px;
 font-weight: 500;
 }
 
-.htmega-video-title {
-font-size: 28px;
-color: #0A0A0A;
-margin: 0 0 40px;
-font-weight: 600;
-line-height: 1.2;
-}
-
-.htmega-video-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 30px;
-margin-bottom: 35px;
-}
-
-.htmega-video-item {
-text-align: left;
-}
-
-.video-thumbnail {
-position: relative;
-background: #8833FF;
-border-radius: 12px;
-overflow: hidden;
-margin-bottom: 20px;
-aspect-ratio: 16/9;
-}
-
-.video-thumbnail img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: opacity 0.3s ease;
-}
-
-.video-thumbnail:hover img {
-opacity: 0.7;
-}
-
-.play-button {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 60px;
-height: 60px;
-background: #fff;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-transition: all 0.3s ease;
-box-shadow: 0 0 0px 10px #ffffff85;
-}
-
-.play-button:hover {
-transform: translate(-50%, -50%) scale(1.1);
-}
-
-.htmega-video-item h3 {
-font-size: 20px;
-color: #434343;
-margin: 0;
-font-weight: 500;
-line-height: 1.4;
-}
-
 /* Responsive Styles */
-@media (max-width: 768px) {
-.htmega-video-grid {
-    grid-template-columns: 1fr;
-}
-
-.htmega-video-title {
-    font-size: 21px;
-}
-
-.video-thumbnail {
-    margin-bottom: 15px;
-}
-
-.htmega-video-item h3 {
-    font-size: 16px;
-}
-}
-
 @media (max-width: 480px) {
 .htmega-video-badge {
     padding: 6px 12px;
-}
-
-.htmega-video-title {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.play-button {
-    width: 40px;
-    height: 40px;
-}
-
-.play-button svg {
-    width: 20px;
-    height: 20px;
 }
 }
 /* Feature Request Section */
@@ -2338,10 +2328,6 @@ line-height: 1.2;
     grid-template-columns: 1fr;
 }
 
-.htmega-video-grid {
-    grid-template-columns: 1fr;
-}
-
 .htmega-documentation {
     flex-direction: column;
 }
@@ -2497,6 +2483,9 @@ color: #3489FE;
 @media (max-width: 992px) {
   .htmega-onboarding-inner{
     min-height: 200px;
+  }
+  .htmega-get-started-steps {
+    grid-template-columns: 1fr;
   }
   .htmega-dashboard-grid {
       flex-direction: column; 

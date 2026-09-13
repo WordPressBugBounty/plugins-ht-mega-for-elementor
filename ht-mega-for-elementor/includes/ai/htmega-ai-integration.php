@@ -100,7 +100,8 @@ class HTMega_AI_Integration {
             'content' => [
                 'enableall' => false,
                 'title' => __( 'AI Builder Settings', 'ht-mega-for-elementor' ),
-                'desc'  => __( 'Configure AI Builder to generate content, sections, and full pages across your site.', 'ht-mega-for-elementor' ),
+                /* translators: %s: "View Documentation" wrapped in a link to the AI Builder docs page */
+                'desc'  => sprintf( __( 'Configure AI Builder to generate content, sections, and full pages across your site. %s', 'ht-mega-for-elementor' ), '<a href="https://wphtmega.com/docs/modules/ai-builder-write-content-generate-sections-pages/" target="_blank">' . __( 'View Documentation', 'ht-mega-for-elementor' ) . '</a>' ),
                 'wrapper_class'  => 'htmega-integrarion-section',
             ],
         ];

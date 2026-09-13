@@ -141,6 +141,23 @@ class Scripts
 		if ( ! is_admin() && ! htmegaBlocks_any_block_enabled() && ! $any_2025_active ) {
 			return;
 		}
+
+		// On the frontend, skip loading when the current page is confirmed built with
+		// Elementor — that's what was colliding with Elementor widget styles (e.g. duplicate
+		// .htmega-button rules), since enabling any one block in settings otherwise loads this
+		// CSS sitewide regardless of whether the page uses blocks at all. Deliberately checking
+		// "is this an Elementor page" rather than "does this page contain a block" — the latter
+		// (e.g. a post_content scan for block markup) would miss legitimate non-post-content
+		// usage: blocks placed in classic widget areas (see the pagenow === 'widgets.php' check
+		// below, which exists because that's a real supported case), Full Site Editing template
+		// parts, and reusable/synced blocks. Excluding only confirmed-Elementor pages leaves
+		// every other context — including all of those — loading exactly as before.
+		if ( ! is_admin() ) {
+			$post_id = get_the_ID();
+			if ( $post_id && class_exists( '\Elementor\Plugin' ) && \Elementor\Plugin::$instance->db->is_built_with_elementor( $post_id ) ) {
+				return;
+			}
+		}
 		wp_enqueue_style('dashicons');
 		wp_enqueue_style(
 			'htmega-block-common-style',

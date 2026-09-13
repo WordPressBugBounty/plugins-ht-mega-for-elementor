@@ -94,12 +94,27 @@ jQuery(document).ready(function($) {
                 }
             });
 
-            // Handle template type change
+            // Handle template type change — auto-load the sample design box
             $(document).on('change', '#template-type', function() {
-                HTMegaTemplateBuilder.resetSampleDesigns();
+                const templateType = $(this).val();
+
+                if (!templateType) {
+                    // No type selected: fully reset and collapse the wrapper.
+                    HTMegaTemplateBuilder.resetSampleDesigns();
+                    return;
+                }
+
+                // A type is selected: clear the previous selection without animating
+                // the wrapper closed first — loadSampleDesigns() opens it right after,
+                // and queuing slideUp then slideDown back-to-back is what caused the jump.
+                $('#htmega-tb-sample-template-id').val('');
+                $('#template-form').removeData('selected-template');
+                $('.template-item').removeClass('selected');
+
+                HTMegaTemplateBuilder.loadSampleDesigns(templateType);
             });
 
-            // Sample Design button click
+            // Sample Design button click — toggle collapse, or (re)load if hidden
             $(document).on('click', '#htmega-sample-design', function(e) {
                 e.preventDefault();
                 const templateType = $('#template-type').val();
@@ -107,12 +122,10 @@ jQuery(document).ready(function($) {
                     alert('Please select a template type first');
                     return;
                 }
-                
-                const $button = $(this);
+
                 const $wrapper = $('.htmega-sample-designs-wrapper');
-                const $loading = $wrapper.find('.htmega-sample-designs-loading');
                 const $grid = $wrapper.find('.htmega-sample-designs-carousel');
-                
+
                 if ($wrapper.is(':visible')) {
                     $wrapper.slideUp(200);
                     if ($grid.hasClass('slick-initialized')) {
@@ -122,117 +135,8 @@ jQuery(document).ready(function($) {
                     }
                     return;
                 }
-                
-                $wrapper.slideDown(200);
-                $loading.show();
-                $grid.html('');
-                const sample_templates = [];
-                const template_types = {
-                    'single_blog_page' : 'Blog',
-                    'footer_page' : 'Footer',
-                    'header_page' : 'Header',
-                    'archive_blog_page' : 'Blog',
-                    'search_page' : 'Search',
-                    'error_page' : 'Error',
-                    'coming_soon_page' : 'Coming Soon',
-                };
 
-                window.HTMegaTemplateBuilder.templatesInfo.forEach(template => {
-                    if (template.shareId === template_types[templateType]) {
-                        sample_templates.push({
-                            id: template.id,
-                            title: template.title,
-                            thumbnail: template.thumbnail,
-                            type: template_types[templateType],
-                            url: template.url ?? '#',
-                            demoUrl: template.demoUrl ?? '#',
-                            isPro: template.isPro ?? false
-                        });
-                    }
-                });
-
-                if (sample_templates.length === 0) {
-                    $loading.hide();
-                    $grid.html(`
-                        <div class="htmega-no-templates">
-                            <span class="dashicons dashicons-warning"></span>
-                            <p>No templates found for this type. Please create a new template.</p>
-                        </div>
-                    `);
-                } else {
-                    $loading.hide();
-                    sample_templates.forEach(template => {
-                        const isProTemplate = template.isPro || false;
-                        const templateHtml = `
-                            <div class="template-item ${isProTemplate ? 'is-pro' : ''}">
-                                ${isProTemplate ? '<span class="pro-tag">Pro</span>' : ''}
-                                <div class="template-thumb">
-                                    <img src="${template.thumbnail}" alt="${template.title}" loading="lazy">
-                                    <div class="template-actions">
-                                        <a href="#" class="item-preview" data-id="${template.id}" data-demo-url="${template.demoUrl}" title="Preview Template">
-                                            <span class="dashicons dashicons-visibility"></span>
-                                        </a>
-                                        ${isProTemplate ? `
-                                            <a href="https://wphtmega.com/pricing/" target="_blank" class="get-pro" title="Get Pro Version">
-                                                <span class="dashicons dashicons-cart"></span>
-                                            </a>
-                                        ` : `
-                                            <a href="#" class="select-template" data-id="${template.id}" data-title="${template.title}" title="Select Template">
-                                                <span class="dashicons dashicons-yes"></span>
-                                            </a>
-                                        `}
-                                    </div>
-                                </div>
-                                <h4>${template.title}</h4>
-                            </div>`;
-                        $grid.append(templateHtml);
-                    });
-
-                    // Initialize Slick carousel with improved settings
-                    if ($grid.hasClass('slick-initialized')) {
-                        $grid.slick('unslick');
-                    }
-                    
-                    $grid.slick({
-                        dots: false,
-                        infinite: false,
-                        speed: 400,
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        prevArrow: '<button type="button" class="slick-prev"><span class="dashicons dashicons-arrow-left-alt2"></span></button>',
-                        nextArrow: '<button type="button" class="slick-next"><span class="dashicons dashicons-arrow-right-alt2"></span></button>',
-                        responsive: [
-                            {
-                                breakpoint: 1200,
-                                settings: {
-                                    slidesToShow: 2
-                                }
-                            },
-                            {
-                                breakpoint: 768,
-                                settings: {
-                                    slidesToShow: 1
-                                }
-                            }
-                        ]
-                    });
-
-                    // Add lazy loading for images
-                    $grid.find('img[loading="lazy"]').each(function() {
-                        const img = new Image();
-                        img.onload = function() {
-                            $(this).removeClass('loading');
-                        };
-                        img.src = $(this).attr('src');
-                    });
-
-                    // Reinitialize Slick on window resize
-                    $(window).on('resize', function() {
-                        if ($grid.hasClass('slick-initialized')) {
-                            $grid.slick('resize');
-                        }
-                    });
-                }
+                HTMegaTemplateBuilder.loadSampleDesigns(templateType);
             });
 
             // Handle template selection
@@ -558,6 +462,127 @@ jQuery(document).ready(function($) {
             $('#htmega-tb-sample-template-id').val('');
             $('#template-form').removeData('selected-template');
             $('#create-template').prop('disabled', true);
+        },
+
+        loadSampleDesigns: function(templateType) {
+            const $wrapper = $('.htmega-sample-designs-wrapper');
+            const $loading = $wrapper.find('.htmega-sample-designs-loading');
+            const $grid = $wrapper.find('.htmega-sample-designs-carousel');
+
+            $wrapper.slideDown(200);
+            $loading.show();
+            // Unslick before wiping the grid's HTML — Slick owns the .slick-track/.slick-list
+            // DOM it wraps around the items, and clearing html() first (without unslick)
+            // leaves its cached instance state pointing at DOM that no longer exists, so the
+            // re-init further down silently fails and the carousel gets stuck on stale items.
+            if ($grid.hasClass('slick-initialized')) {
+                $grid.slick('unslick');
+            }
+            $grid.html('');
+            const sample_templates = [];
+            const template_types = {
+                'single_blog_page' : 'Blog',
+                'footer_page' : 'Footer',
+                'header_page' : 'Header',
+                'archive_blog_page' : 'Blog',
+                'search_page' : 'Search',
+                'error_page' : 'Error',
+                'coming_soon_page' : 'Coming Soon',
+            };
+
+            window.HTMegaTemplateBuilder.templatesInfo.forEach(template => {
+                if (template.shareId === template_types[templateType]) {
+                    sample_templates.push({
+                        id: template.id,
+                        title: template.title,
+                        thumbnail: template.thumbnail,
+                        type: template_types[templateType],
+                        url: template.url ?? '#',
+                        demoUrl: template.demoUrl ?? '#',
+                        isPro: template.isPro ?? false
+                    });
+                }
+            });
+
+            if (sample_templates.length === 0) {
+                $loading.hide();
+                $grid.html(`
+                    <div class="htmega-no-templates">
+                        <span class="dashicons dashicons-warning"></span>
+                        <p>No templates found for this type. Please create a new template.</p>
+                    </div>
+                `);
+                return;
+            }
+
+            $loading.hide();
+            sample_templates.forEach(template => {
+                const isProTemplate = template.isPro || false;
+                const templateHtml = `
+                    <div class="template-item ${isProTemplate ? 'is-pro' : ''}">
+                        ${isProTemplate ? '<span class="pro-tag">Pro</span>' : ''}
+                        <div class="template-thumb">
+                            <img src="${template.thumbnail}" alt="${template.title}" loading="lazy">
+                            <div class="template-actions">
+                                <a href="#" class="item-preview" data-id="${template.id}" data-demo-url="${template.demoUrl}" title="Preview Template">
+                                    <span class="dashicons dashicons-visibility"></span>
+                                </a>
+                                ${isProTemplate ? `
+                                    <a href="https://wphtmega.com/pricing/" target="_blank" class="get-pro" title="Get Pro Version">
+                                        <span class="dashicons dashicons-cart"></span>
+                                    </a>
+                                ` : `
+                                    <a href="#" class="select-template" data-id="${template.id}" data-title="${template.title}" title="Select Template">
+                                        <span class="dashicons dashicons-yes"></span>
+                                    </a>
+                                `}
+                            </div>
+                        </div>
+                        <h4>${template.title}</h4>
+                    </div>`;
+                $grid.append(templateHtml);
+            });
+
+            // Initialize Slick carousel with improved settings (already unslicked above)
+            $grid.slick({
+                dots: false,
+                infinite: false,
+                speed: 400,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-prev"><span class="dashicons dashicons-arrow-left-alt2"></span></button>',
+                nextArrow: '<button type="button" class="slick-next"><span class="dashicons dashicons-arrow-right-alt2"></span></button>',
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+
+            // Add lazy loading for images
+            $grid.find('img[loading="lazy"]').each(function() {
+                const img = new Image();
+                img.onload = function() {
+                    $(this).removeClass('loading');
+                };
+                img.src = $(this).attr('src');
+            });
+
+            // Reinitialize Slick on window resize
+            $(window).on('resize', function() {
+                if ($grid.hasClass('slick-initialized')) {
+                    $grid.slick('resize');
+                }
+            });
         },
 
         resetSampleDesigns: function() {

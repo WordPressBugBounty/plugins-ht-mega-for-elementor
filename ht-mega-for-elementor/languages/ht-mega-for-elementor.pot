@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: HT Mega Addons for Elementor - Elementor Widgets & "
 "Template Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 10:32+0000\n"
+"POT-Creation-Date: 2026-09-13 10:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1141,11 +1141,11 @@ msgstr ""
 msgid "AI Builder Settings"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:128
+#: includes/ai/htmega-ai-integration.php:129
 msgid "AI Engine"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:387
+#: includes/ai/htmega-ai-integration.php:388
 msgid "AI Engine not configured"
 msgstr ""
 
@@ -1363,7 +1363,7 @@ msgstr ""
 msgid "Alternate"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:390
+#: includes/ai/htmega-ai-integration.php:391
 msgid "An error occurred. Please try again."
 msgstr ""
 
@@ -3676,6 +3676,10 @@ msgstr ""
 msgid "Build with HT Mega AI"
 msgstr ""
 
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:27
+msgid "Build Your First Page"
+msgstr ""
+
 #: includes/widgets/htmega_business_hours.php:64
 msgid "Business Hour Title"
 msgstr ""
@@ -4328,6 +4332,10 @@ msgstr ""
 msgid "Choose"
 msgstr ""
 
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:45
+msgid "Choose a template or generate with AI"
+msgstr ""
+
 #: includes/widgets/htmega_countdown.php:705
 msgid "Choose Area Seperator Image"
 msgstr ""
@@ -4358,27 +4366,27 @@ msgstr ""
 msgid "Circle Range"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:133
+#: includes/ai/htmega-ai-integration.php:134
 msgid "Claude (Anthropic)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:177
+#: includes/ai/htmega-ai-integration.php:178
 msgid "Claude API Key"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:196
+#: includes/ai/htmega-ai-integration.php:197
 msgid "Claude Haiku 4.5 (Fast & Affordable)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:188
+#: includes/ai/htmega-ai-integration.php:189
 msgid "Claude Model"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:197
+#: includes/ai/htmega-ai-integration.php:198
 msgid "Claude Opus 5 (Most Capable)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:195
+#: includes/ai/htmega-ai-integration.php:196
 msgid "Claude Sonnet 5 (Best Performance)"
 msgstr ""
 
@@ -5048,14 +5056,12 @@ msgstr ""
 msgid "Conditional Display"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:102
-msgid "Conditional Display Content In Elementor"
-msgstr ""
-
-#: includes/ai/htmega-ai-integration.php:103
+#. %s: "View Documentation" wrapped in a link to the AI Builder docs page
+#: includes/ai/htmega-ai-integration.php:104
+#, php-format
 msgid ""
 "Configure AI Builder to generate content, sections, and full pages across "
-"your site."
+"your site. %s"
 msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Admin/Menu.php:309
@@ -5554,6 +5560,10 @@ msgstr ""
 msgid "Custom Width"
 msgstr ""
 
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:56
+msgid "Customize"
+msgstr ""
+
 #: includes/widgets/htmega_contact_form_seven.php:397
 msgid "Customize Select Field"
 msgstr ""
@@ -5672,23 +5682,23 @@ msgid ""
 "waiting."
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:135
+#: includes/ai/htmega-ai-integration.php:136
 msgid "DeepSeek"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:239
+#: includes/ai/htmega-ai-integration.php:240
 msgid "DeepSeek API Key"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:250
+#: includes/ai/htmega-ai-integration.php:251
 msgid "DeepSeek Model"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:257
+#: includes/ai/htmega-ai-integration.php:258
 msgid "DeepSeek V4 Flash (Fast & Affordable)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:258
+#: includes/ai/htmega-ai-integration.php:259
 msgid "DeepSeek V4 Pro (Best Performance)"
 msgstr ""
 
@@ -5924,10 +5934,6 @@ msgstr ""
 msgid "Disable Hover Animation"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:82
-msgid "Discover HT Mega Modules?"
-msgstr ""
-
 #: admin/include/class.dynamic-notice.php:279
 msgid "Dismiss this notice."
 msgstr ""
@@ -5990,12 +5996,12 @@ msgstr ""
 
 #: includes/class.htmega.php:299
 #: admin/include/templates/dashboard-widget.php:97
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:60
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:64
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:72
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:76
 msgid "Documentation"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:63
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:75
 msgid "documentation"
 msgstr ""
 
@@ -6122,6 +6128,12 @@ msgstr ""
 #: includes/class.assests.php:487 admin/include/template-library.php:613
 #: admin/include/class.theme-builder.php:95
 msgid "Edit Template"
+msgstr ""
+
+#. %s: "HT Mega AI Builder" wrapped in a link to the AI Builder module page
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:60
+#, php-format
+msgid "Edit text, images, and styles — or generate copy with %s."
 msgstr ""
 
 #: extensions/ht-builder/widgets/bl_post_comments.php:327
@@ -6295,11 +6307,11 @@ msgstr ""
 msgid "Enable"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:118
+#: includes/ai/htmega-ai-integration.php:119
 msgid "Enable AI Builder"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:123
+#: includes/ai/htmega-ai-integration.php:124
 msgid ""
 "Enable AI Builder for content, section, and page generation across HT Mega "
 "widgets."
@@ -6341,7 +6353,7 @@ msgstr ""
 msgid "End"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:39
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:98
 msgid ""
 "Engage with our community to connect & share your ideas. Join a network "
 "where collaboration and growth thrive!"
@@ -6405,7 +6417,7 @@ msgstr ""
 msgid "Enter Your Dropcaps Content."
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:142
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:141
 msgid "Enter your email"
 msgstr ""
 
@@ -6631,12 +6643,6 @@ msgstr ""
 msgid "Explore Features"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:49
-msgid ""
-"Explore our stunning Templates, perfect for any niche. Simply explore and "
-"apply any layout with just a few clicks!"
-msgstr ""
-
 #: admin/include/settings-panel/includes/classes/Admin/Menu.php:334
 msgid "Explore Premium Features"
 msgstr ""
@@ -6829,7 +6835,7 @@ msgstr ""
 msgid "Feature Name"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:111
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:110
 msgid "Feature Request"
 msgstr ""
 
@@ -7134,8 +7140,8 @@ msgid ""
 "target=\"_blank\"> Click here </a>"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:431
-#: includes/ai/htmega-ai-integration.php:478
+#: includes/ai/htmega-ai-integration.php:432
+#: includes/ai/htmega-ai-integration.php:479
 #: includes/ai/section-assistant.php:138 includes/ai/section-assistant.php:196
 #: includes/ai/section-assistant.php:256 admin/include/template-library.php:562
 #: admin/include/class.performance-upgrade-notice.php:93
@@ -7319,15 +7325,15 @@ msgstr ""
 msgid "Gap Between Buttons"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:230
+#: includes/ai/htmega-ai-integration.php:231
 msgid "Gemini 3.5 Flash (Best Performance)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:228
+#: includes/ai/htmega-ai-integration.php:229
 msgid "Gemini 3.5 Flash-Lite (Fast & Affordable)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:229
+#: includes/ai/htmega-ai-integration.php:230
 msgid "Gemini 3.6 Flash (Balanced)"
 msgstr ""
 
@@ -7349,7 +7355,7 @@ msgstr ""
 msgid "Generating {current} of {total}: {slug}…"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:386
+#: includes/ai/htmega-ai-integration.php:387
 msgid "Generating..."
 msgstr ""
 
@@ -7374,7 +7380,7 @@ msgid ""
 "Get more powerful widgets & extensions to elevate your Elementor website"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:66
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:78
 msgid "Get Now"
 msgstr ""
 
@@ -7388,11 +7394,15 @@ msgstr ""
 msgid "Get Started Free"
 msgstr ""
 
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:34
+msgid "Get started in 3 steps"
+msgstr ""
+
 #: includes/widgets/htmega_2025_cta.php:110
 msgid "Get Started Today"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:31
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:90
 msgid "Get Support"
 msgstr ""
 
@@ -7425,15 +7435,15 @@ msgstr ""
 msgid "Glassmorphism"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:325
+#: includes/ai/htmega-ai-integration.php:326
 msgid "GLM-4.7-Flash (Fast & Affordable)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:324
+#: includes/ai/htmega-ai-integration.php:325
 msgid "GLM-5-Turbo (Balanced)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:323
+#: includes/ai/htmega-ai-integration.php:324
 msgid "GLM-5.2 (Best Performance)"
 msgstr ""
 
@@ -7460,7 +7470,7 @@ msgstr ""
 msgid "Go To Dashboard"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:389
+#: includes/ai/htmega-ai-integration.php:390
 msgid "Go to Settings"
 msgstr ""
 
@@ -7477,15 +7487,15 @@ msgstr ""
 msgid "Goggle Map Embed URL"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:134
+#: includes/ai/htmega-ai-integration.php:135
 msgid "Google AI (Gemini)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:206
+#: includes/ai/htmega-ai-integration.php:207
 msgid "Google AI API Key"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:217
+#: includes/ai/htmega-ai-integration.php:218
 msgid "Google AI Model"
 msgstr ""
 
@@ -7503,15 +7513,15 @@ msgstr ""
 msgid "Google+"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:166
+#: includes/ai/htmega-ai-integration.php:167
 msgid "GPT-5.6 Luna (Fast & Affordable)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:168
+#: includes/ai/htmega-ai-integration.php:169
 msgid "GPT-5.6 Sol (Best Performance)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:167
+#: includes/ai/htmega-ai-integration.php:168
 msgid "GPT-5.6 Terra (Balanced)"
 msgstr ""
 
@@ -7641,7 +7651,7 @@ msgstr ""
 msgid "Happy Users"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:27
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:86
 msgid "happy with us"
 msgstr ""
 
@@ -7667,7 +7677,7 @@ msgstr ""
 msgid "Have We Fully Met Your Expectations?"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:118
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:117
 msgid ""
 "Have you ever noticed any missing features? Please notify us if you do. As "
 "soon as possible, our staff will add any necessary features based on your "
@@ -8347,6 +8357,10 @@ msgstr ""
 msgid "HT Mega Addons for Elementor - Elementor Widgets & Template Builder"
 msgstr ""
 
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:60
+msgid "HT Mega AI Builder"
+msgstr ""
+
 #: includes/class.post-duplicator.php:44
 msgid "HT Mega Duplicator"
 msgstr ""
@@ -8356,12 +8370,16 @@ msgid "HT Mega Library"
 msgstr ""
 
 #: admin/include/class-deactivation.php:371
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:16
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:22
 msgid "HT Mega Logo"
 msgstr ""
 
 #: extensions/ht-builder/widgets/bl_post_featured_image.php:104
 msgid "HT Mega Placeholder Image"
+msgstr ""
+
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:49
+msgid "HT Mega Template Library"
 msgstr ""
 
 #: admin/include/class.theme-builder.php:91
@@ -9359,10 +9377,6 @@ msgstr ""
 msgid "Interactive Promo"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:92
-msgid "Introduction to HT Mega Elementor Addons "
-msgstr ""
-
 #. %1$s: Token type (e.g. request or access), %2$s: Invalid token value
 #: includes/twitteroauth.php:647
 #, php-format
@@ -9402,8 +9416,8 @@ msgstr ""
 msgid "Invalid Request"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:436
-#: includes/ai/htmega-ai-integration.php:483
+#: includes/ai/htmega-ai-integration.php:437
+#: includes/ai/htmega-ai-integration.php:484
 #: includes/ai/section-assistant.php:144 includes/ai/section-assistant.php:202
 #: includes/ai/section-assistant.php:262
 msgid "Invalid security token"
@@ -9673,15 +9687,15 @@ msgid ""
 "market. No lock-in, cancel any time."
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:37
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:96
 msgid "join community"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:41
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:100
 msgid "Join Now"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:38
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:97
 msgid "Join Our Community"
 msgstr ""
 
@@ -9788,23 +9802,23 @@ msgstr ""
 msgid "Keyboard Scroll"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:136
+#: includes/ai/htmega-ai-integration.php:137
 msgid "Kimi (Moonshot AI)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:267
+#: includes/ai/htmega-ai-integration.php:268
 msgid "Kimi API Key"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:293
+#: includes/ai/htmega-ai-integration.php:294
 msgid "Kimi K2.6 (Balanced)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:292
+#: includes/ai/htmega-ai-integration.php:293
 msgid "Kimi K3 (Best Performance)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:286
+#: includes/ai/htmega-ai-integration.php:287
 msgid "Kimi Model"
 msgstr ""
 
@@ -10300,6 +10314,10 @@ msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Admin/Menu.php:344
 msgid "Live Copy Paste"
+msgstr ""
+
+#: includes/class.assests.php:479
+msgid "Live Demo"
 msgstr ""
 
 #: includes/widgets/htmega_socialshere.php:67
@@ -11167,11 +11185,11 @@ msgstr ""
 msgid "Minutes"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:117
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:116
 msgid "Missing Any Feature?"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:115
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:114
 msgid "missing feature"
 msgstr ""
 
@@ -11293,7 +11311,7 @@ msgstr ""
 msgid "Monthly Price"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:294
+#: includes/ai/htmega-ai-integration.php:295
 msgid "Moonshot v1 8k (Fast & Affordable)"
 msgstr ""
 
@@ -11393,10 +11411,14 @@ msgstr ""
 msgid "Navigation Button"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:29
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:88
 msgid ""
 "Need help or want a free store set-up? We will get back to you within 12-24 "
 "hours after receiving your inquiry."
+msgstr ""
+
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:83
+msgid "Need more help?"
 msgstr ""
 
 #: includes/widgets/htmega_2025_faq.php:64
@@ -11931,7 +11953,7 @@ msgstr ""
 msgid "Odnoklassniki"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:122
+#: includes/ai/htmega-ai-integration.php:123
 #: includes/widgets/htmega_call_to_action.php:625
 #: includes/widgets/htmega_call_to_action.php:698
 #: includes/widgets/htmega_call_to_action.php:715
@@ -12006,7 +12028,7 @@ msgstr ""
 msgid "Oldest First"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:121
+#: includes/ai/htmega-ai-integration.php:122
 #: includes/widgets/htmega_call_to_action.php:624
 #: includes/widgets/htmega_call_to_action.php:697
 #: includes/widgets/htmega_call_to_action.php:714
@@ -12082,6 +12104,10 @@ msgstr ""
 msgid "Open by Default"
 msgstr ""
 
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:39
+msgid "Open Elementor"
+msgstr ""
+
 #: includes/widgets/htmega_accordion.php:326
 msgid "Open Item Icon"
 msgstr ""
@@ -12090,15 +12116,15 @@ msgstr ""
 msgid "Open now"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:132
+#: includes/ai/htmega-ai-integration.php:133
 msgid "OpenAI"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:146
+#: includes/ai/htmega-ai-integration.php:147
 msgid "OpenAI API Key"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:157
+#: includes/ai/htmega-ai-integration.php:158
 msgid "OpenAI Model"
 msgstr ""
 
@@ -12746,6 +12772,15 @@ msgstr ""
 msgid "PHP"
 msgstr ""
 
+#. %s: "HT Mega Template Library" wrapped in a link to the template browsing page
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:49
+#, php-format
+msgid ""
+"Pick a layout in the editor, or click the sparkle button to build a section "
+"— or full page — from a prompt with HT Mega AI. You can also browse the %s "
+"first."
+msgstr ""
+
 #: includes/ai/section-assistant.php:104
 msgid "Pick a result to insert."
 msgstr ""
@@ -12915,7 +12950,7 @@ msgstr ""
 msgid "Please set a valid product"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:388
+#: includes/ai/htmega-ai-integration.php:389
 msgid ""
 "Please set up your AI Engine in the HT Mega settings before using this "
 "feature."
@@ -13213,7 +13248,6 @@ msgstr ""
 msgid "Preset not found"
 msgstr ""
 
-#: includes/class.assests.php:479
 #: admin/include/templates/library/templates.php:140
 msgid "Preview"
 msgstr ""
@@ -13721,7 +13755,7 @@ msgstr ""
 msgid "Register Link Text"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:65
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:77
 msgid ""
 "Regularly updated and organized, our documentation ensures you have the "
 "latest information. Use this manual to navigate our plugin efficiently and "
@@ -13762,7 +13796,7 @@ msgstr ""
 msgid "Reply Form"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:119
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:118
 msgid "Request Feature "
 msgstr ""
 
@@ -14467,16 +14501,16 @@ msgstr ""
 msgid "Select Template Type"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:140
+#: includes/ai/htmega-ai-integration.php:141
 msgid "Select the AI engine to use for content, section, and page generation."
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:200
+#: includes/ai/htmega-ai-integration.php:201
 msgid ""
 "Select the Claude model to use for content, section, and page generation."
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:261
+#: includes/ai/htmega-ai-integration.php:262
 msgid ""
 "Select the DeepSeek model to use for content, section, and page generation."
 msgstr ""
@@ -14487,12 +14521,12 @@ msgid ""
 "disable them anytime later."
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:233
+#: includes/ai/htmega-ai-integration.php:234
 msgid ""
 "Select the Google AI model to use for content, section, and page generation."
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:297
+#: includes/ai/htmega-ai-integration.php:298
 msgid "Select the Kimi model to use for content, section, and page generation."
 msgstr ""
 
@@ -14500,12 +14534,12 @@ msgstr ""
 msgid "Select the Modules You Require Now"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:171
+#: includes/ai/htmega-ai-integration.php:172
 msgid ""
 "Select the OpenAI model to use for content, section, and page generation."
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:328
+#: includes/ai/htmega-ai-integration.php:329
 msgid "Select the Z.ai model to use for content, section, and page generation."
 msgstr ""
 
@@ -15541,6 +15575,10 @@ msgstr ""
 msgid "Start"
 msgstr ""
 
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:40
+msgid "Start a new page with the Elementor editor."
+msgstr ""
+
 #: includes/widgets/htmega_2025_cta.php:118
 msgid ""
 "Start building faster\n"
@@ -16015,15 +16053,15 @@ msgid "Submitting..."
 msgstr ""
 
 #: admin/include/settings-panel/includes/templates/dashboard-general.php:4
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:143
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:142
 msgid "Subscribe"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:133
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:132
 msgid "Subscribe Our Newsletter"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:137
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:136
 msgid ""
 "Subscribe to receive discount, offer, plugin updates and news in your inbox."
 msgstr ""
@@ -16081,7 +16119,7 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:28
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:87
 msgid "Support & Feedback"
 msgstr ""
 
@@ -16427,12 +16465,7 @@ msgstr ""
 
 #: admin/include/template-library.php:180
 #: admin/include/template-library.php:181
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:48
 msgid "Templates Library"
-msgstr ""
-
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:47
-msgid "templates library"
 msgstr ""
 
 #: extensions/ht-builder/widgets/bl_post_meta_info.php:83
@@ -17830,15 +17863,6 @@ msgstr ""
 msgid "Video Start Time"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:79
-msgid "Video Tutorial"
-msgstr ""
-
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:87
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:97
-msgid "video tutorial"
-msgstr ""
-
 #: includes/widgets/htmega_lightbox.php:84
 msgid "Video URL"
 msgstr ""
@@ -17856,10 +17880,6 @@ msgstr ""
 msgid "View All Elements"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:51
-msgid "View all Layouts"
-msgstr ""
-
 #: includes/widgets/htmega_2025_services.php:255
 msgid "View All Services"
 msgstr ""
@@ -17869,8 +17889,8 @@ msgstr ""
 msgid "View Demo"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:106
-msgid "View More Videos"
+#: includes/ai/htmega-ai-integration.php:104
+msgid "View Documentation"
 msgstr ""
 
 #: admin/include/class.theme-builder.php:98
@@ -18017,7 +18037,7 @@ msgstr ""
 msgid "Welcome To HT Mega"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:19
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:25
 msgid "Welcome To The HT Mega Family!"
 msgstr ""
 
@@ -18183,7 +18203,7 @@ msgstr ""
 msgid "Wrapper Link"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:391
+#: includes/ai/htmega-ai-integration.php:392
 msgid "Write with HT Mega AI"
 msgstr ""
 
@@ -18342,7 +18362,7 @@ msgstr ""
 msgid "You Have Completed Your Setup for HT Mega"
 msgstr ""
 
-#: admin/include/settings-panel/includes/templates/dashboard-general.php:20
+#: admin/include/settings-panel/includes/templates/dashboard-general.php:26
 msgid "You have made a great choice. Let’s build something extraordinary!"
 msgstr ""
 
@@ -18370,15 +18390,15 @@ msgstr ""
 msgid "Z Index"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:137
+#: includes/ai/htmega-ai-integration.php:138
 msgid "Z.ai (GLM)"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:303
+#: includes/ai/htmega-ai-integration.php:304
 msgid "Z.ai API Key"
 msgstr ""
 
-#: includes/ai/htmega-ai-integration.php:314
+#: includes/ai/htmega-ai-integration.php:315
 msgid "Z.ai Model"
 msgstr ""
 

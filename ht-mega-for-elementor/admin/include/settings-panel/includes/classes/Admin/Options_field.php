@@ -1390,6 +1390,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/accordion/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/accordion-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'brand',
@@ -1399,6 +1401,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/brand/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/brand-logo-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'buttons',
@@ -1408,6 +1412,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/buttons/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/buttons-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'cta',
@@ -1417,6 +1423,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/call-to-actions/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/call-to-action-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'image-grid',
@@ -1426,6 +1434,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/image-grid/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/image-grid-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'info-box',
@@ -1435,6 +1445,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/info-box/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/info-box-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'section-title',
@@ -1444,6 +1456,9 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        // No demo page exists for this block on wphtmega.com/gutenberg-blocks/.
+                        'video_link' => '',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/section-title-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'tab',
@@ -1453,6 +1468,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/tabs/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/tab-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'team',
@@ -1462,6 +1479,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/team/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/team-block-for-gutenberg/',
                     ],
                     [
                         'id'  => 'testimonial',
@@ -1471,6 +1490,8 @@ class Options_Field {
                         'label_off' => __( 'Off', 'ht-mega-for-elementor' ),
                         'default'=>'off',
                         'is_pro' => false,
+                        'video_link' => 'https://wphtmega.com/gutenberg-blocks/testimonial/',
+                        'doc_link' => 'https://wphtmega.com/docs/gutenberg-block/testimonial-block-for-gutenberg/',
                     ],
                 ]
             ],
@@ -2610,32 +2631,62 @@ class Options_Field {
             ];
         }
 
+        // Per-widget docs pages (wphtmega.com/docs-category/sections/) and demo pages
+        // (wphtmega.com/sections/ — each card is a JS click-through to its own URL, not a
+        // plain <a href>, so these were captured by actually clicking each card in a browser).
+        $htmega_sections_video_links = [
+            'hero'         => 'https://wphtmega.com/sections/hero-section-2026/',
+            'about'        => 'https://wphtmega.com/sections/about-us-section-2026/',
+            'services'     => 'https://wphtmega.com/sections/services-section-2026/',
+            'pricing'      => 'https://wphtmega.com/sections/pricing-table-section-2026/',
+            'testimonials' => 'https://wphtmega.com/sections/testimonials-section-2026/',
+            'stats'        => 'https://wphtmega.com/sections/stats-counter-section-2026/',
+            'cta'          => 'https://wphtmega.com/sections/cta-section-2026/',
+            'team'         => 'https://wphtmega.com/sections/team-section-2026/',
+            'faq'          => 'https://wphtmega.com/widget/faq-section-2026/',
+            'blog'         => 'https://wphtmega.com/sections/blog-section-2026/',
+            'contact'      => 'https://wphtmega.com/sections/contact-section-2026/',
+        ];
+        $htmega_sections_doc_links  = [
+            'hero'         => 'https://wphtmega.com/docs/sections/hero-section-2026/',
+            'about'        => 'https://wphtmega.com/docs/sections/about-feature-section-2026/',
+            'services'     => 'https://wphtmega.com/docs/sections/services-section-2026/',
+            'pricing'      => 'https://wphtmega.com/docs/sections/pricing-table-2026/',
+            'testimonials' => 'https://wphtmega.com/docs/sections/testimonials-section-2026/',
+            'stats'        => 'https://wphtmega.com/docs/sections/stats-counter-section-2026/',
+            'cta'          => 'https://wphtmega.com/docs/sections/cta-section-2026/',
+            'team'         => 'https://wphtmega.com/docs/sections/team-section-2026/',
+            'faq'          => 'https://wphtmega.com/docs/sections/faq-section-2026/',
+            'blog'         => 'https://wphtmega.com/docs/sections/blog-posts-section-2026/',
+            'contact'      => 'https://wphtmega.com/docs/sections/contact-section-2026/',
+        ];
+
         $settings['htmega_sections_element_tabs'] = apply_filters( 'htmega_sections_element_fields', array(
-            array( 'id' => 'hero',         'name' => __( 'Hero 2026',            'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'about',        'name' => __( 'About / Feature 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'services',     'name' => __( 'Services 2026',        'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'pricing',      'name' => __( 'Pricing Table 2026',   'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'testimonials', 'name' => __( 'Testimonials 2026',    'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'stats',        'name' => __( 'Stats / Counter 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'cta',          'name' => __( 'CTA Section 2026',     'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'team',         'name' => __( 'Team 2026',            'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'faq',          'name' => __( 'FAQ 2026',             'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'blog',         'name' => __( 'Blog / Posts 2026',    'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'contact',      'name' => __( 'Contact Section 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
+            array( 'id' => 'hero',         'name' => __( 'Hero 2026',            'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['hero'], 'doc_link' => $htmega_sections_doc_links['hero'] ),
+            array( 'id' => 'about',        'name' => __( 'About / Feature 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['about'], 'doc_link' => $htmega_sections_doc_links['about'] ),
+            array( 'id' => 'services',     'name' => __( 'Services 2026',        'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['services'], 'doc_link' => $htmega_sections_doc_links['services'] ),
+            array( 'id' => 'pricing',      'name' => __( 'Pricing Table 2026',   'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['pricing'], 'doc_link' => $htmega_sections_doc_links['pricing'] ),
+            array( 'id' => 'testimonials', 'name' => __( 'Testimonials 2026',    'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['testimonials'], 'doc_link' => $htmega_sections_doc_links['testimonials'] ),
+            array( 'id' => 'stats',        'name' => __( 'Stats / Counter 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['stats'], 'doc_link' => $htmega_sections_doc_links['stats'] ),
+            array( 'id' => 'cta',          'name' => __( 'CTA Section 2026',     'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['cta'], 'doc_link' => $htmega_sections_doc_links['cta'] ),
+            array( 'id' => 'team',         'name' => __( 'Team 2026',            'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['team'], 'doc_link' => $htmega_sections_doc_links['team'] ),
+            array( 'id' => 'faq',          'name' => __( 'FAQ 2026',             'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['faq'], 'doc_link' => $htmega_sections_doc_links['faq'] ),
+            array( 'id' => 'blog',         'name' => __( 'Blog / Posts 2026',    'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['blog'], 'doc_link' => $htmega_sections_doc_links['blog'] ),
+            array( 'id' => 'contact',      'name' => __( 'Contact Section 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'on', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['contact'], 'doc_link' => $htmega_sections_doc_links['contact'] ),
         ) );
 
         $settings['htmega_sections_gutenberg_tabs'] = apply_filters( 'htmega_sections_gutenberg_fields', array(
-            array( 'id' => 'hero-2025',         'name' => __( 'Hero 2026',            'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'about-2025',        'name' => __( 'About / Feature 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'services-2025',     'name' => __( 'Services 2026',        'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'pricing-2025',      'name' => __( 'Pricing Table 2026',   'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'testimonials-2025', 'name' => __( 'Testimonials 2026',    'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'stats-2025',        'name' => __( 'Stats / Counter 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'cta-2025',          'name' => __( 'CTA Section 2026',     'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'team-2025',         'name' => __( 'Team 2026',            'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'faq-2025',          'name' => __( 'FAQ 2026',             'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'blog-2025',         'name' => __( 'Blog / Posts 2026',    'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
-            array( 'id' => 'contact-2025',      'name' => __( 'Contact Section 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ) ),
+            array( 'id' => 'hero-2025',         'name' => __( 'Hero 2026',            'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['hero'], 'doc_link' => $htmega_sections_doc_links['hero'] ),
+            array( 'id' => 'about-2025',        'name' => __( 'About / Feature 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['about'], 'doc_link' => $htmega_sections_doc_links['about'] ),
+            array( 'id' => 'services-2025',     'name' => __( 'Services 2026',        'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['services'], 'doc_link' => $htmega_sections_doc_links['services'] ),
+            array( 'id' => 'pricing-2025',      'name' => __( 'Pricing Table 2026',   'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['pricing'], 'doc_link' => $htmega_sections_doc_links['pricing'] ),
+            array( 'id' => 'testimonials-2025', 'name' => __( 'Testimonials 2026',    'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['testimonials'], 'doc_link' => $htmega_sections_doc_links['testimonials'] ),
+            array( 'id' => 'stats-2025',        'name' => __( 'Stats / Counter 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['stats'], 'doc_link' => $htmega_sections_doc_links['stats'] ),
+            array( 'id' => 'cta-2025',          'name' => __( 'CTA Section 2026',     'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['cta'], 'doc_link' => $htmega_sections_doc_links['cta'] ),
+            array( 'id' => 'team-2025',         'name' => __( 'Team 2026',            'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['team'], 'doc_link' => $htmega_sections_doc_links['team'] ),
+            array( 'id' => 'faq-2025',          'name' => __( 'FAQ 2026',             'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['faq'], 'doc_link' => $htmega_sections_doc_links['faq'] ),
+            array( 'id' => 'blog-2025',         'name' => __( 'Blog / Posts 2026',    'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['blog'], 'doc_link' => $htmega_sections_doc_links['blog'] ),
+            array( 'id' => 'contact-2025',      'name' => __( 'Contact Section 2026', 'ht-mega-for-elementor' ), 'type' => 'element', 'default' => 'off', 'label_on' => __( 'On', 'ht-mega-for-elementor' ), 'label_off' => __( 'Off', 'ht-mega-for-elementor' ), 'video_link' => $htmega_sections_video_links['contact'], 'doc_link' => $htmega_sections_doc_links['contact'] ),
         ) );
 
         $allFields = array_merge( $settings, $third_party_element );

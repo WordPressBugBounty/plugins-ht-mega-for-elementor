@@ -1051,7 +1051,7 @@ class HTMega_Elementor_Widget_Blog_2025 extends Widget_Base {
 		$label_text     = ! empty( $settings['section_label_text'] )  ? $settings['section_label_text']  : '';
 		$headline       = ! empty( $settings['headline'] )             ? $settings['headline']             : '';
 		$headline_hl    = ! empty( $settings['headline_highlight'] )   ? $settings['headline_highlight']   : '';
-		$headline_tag   = ! empty( $settings['headline_tag'] )         ? tag_escape( $settings['headline_tag'] ) : 'h2';
+		$headline_tag   = ! empty( $settings['headline_tag'] )         ? htmega_validate_html_tag( $settings['headline_tag'] ) : 'h2';
 		$description    = ! empty( $settings['description'] )          ? $settings['description']          : '';
 
 		$show_image     = ! empty( $settings['show_image'] )     && $settings['show_image']     === 'yes';

@@ -52,7 +52,7 @@ class HTMegaFloatingEffects_Elementor {
 			return;
 		}
 
-		if ( 'yes' == $section->get_settings_for_display( 'htmega_fe' ) ) {
+		if ( 'yes' == $section->get_settings( 'htmega_fe' ) ) {
 			self::enqueue_scripts();
 
 			self::$load_script = true;
