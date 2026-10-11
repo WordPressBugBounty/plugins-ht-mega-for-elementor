@@ -111,7 +111,7 @@ class weatherResource{
         $wind_speed_text 	= __('m/s', 'ht-mega-for-elementor');
         
         $weather_data['current']['wind_speed'] 					= $wind_speed;		
-        $weather_data['current']['wind_direction'] 				= $this->wind_label[ $wind_direction ];
+        $weather_data['current']['wind_direction'] 				= $this->wind_label[ (int) $wind_direction ];
         $weather_data['current']['wind_direction_number'] 		= $wind_direction;
         $weather_data['current']['wind_speed_text'] 			= $wind_speed_text;
 
@@ -141,7 +141,7 @@ class weatherResource{
         $day['pressure'] 		= isset($forecast_item->pressure) ? round($forecast_item->pressure) : false;
         $day['humidity'] 		= isset($forecast_item->humidity) ? round($forecast_item->humidity) : false;
         $day['wind_speed'] 		= isset($forecast_item->wind_speed) ?  $forecast_item->wind_speed : false;
-        $day['wind_direction'] 	= isset($forecast_item->wind_deg) ? $this->wind_label[ fmod((($forecast_item->wind_deg + 11) / 22.5),16) ]  : false;
+        $day['wind_direction'] 	= isset($forecast_item->wind_deg) ? $this->wind_label[ (int) fmod((($forecast_item->wind_deg + 11) / 22.5),16) ]  : false;
             
         // WEATHER DESCRIPTIONS
         if( isset($forecast_item->weather[0]) ){

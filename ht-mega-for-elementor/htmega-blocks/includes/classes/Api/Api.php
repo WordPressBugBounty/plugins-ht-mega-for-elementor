@@ -236,7 +236,8 @@ class Api {
                 ];
 
                 $time           = current_time('timestamp');
-		        $time_to        = strtotime( $product->get_date_on_sale_to() );
+		        $sale_to        = $product->get_date_on_sale_to();
+		        $time_to        = $sale_to ? strtotime( (string) $sale_to ) : false;
                 $item['deal']   = ( $item['price_sale'] && $time_to > $time ) ? gmdate( 'Y/m/d', $time_to ) : '';
 
                 // Images

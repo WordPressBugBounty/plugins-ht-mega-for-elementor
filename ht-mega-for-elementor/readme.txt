@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhus
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.9
 Tested up to: 7.1
-Stable tag: 3.2.6
+Stable tag: 3.2.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -288,6 +288,12 @@ Needs admin-supplied API key.
 
 
 == Changelog ==
+
+= Version 3.2.7 - Date: 2026-10-11 =
+* Fixed: PHP 8.1+ deprecation notices in the Weather widget (wind direction) and the WooCommerce products REST endpoint used by the block editor (products without a sale end date).
+* Fixed: Accordion widget mouse wheel scrolling error with the jQuery version bundled in the latest WordPress.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.6 - Date: 2026-09-13 =
 * Added: "Get started in 3 steps" quick-start guide on the HT Mega dashboard.
