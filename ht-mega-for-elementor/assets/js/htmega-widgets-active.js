@@ -946,26 +946,44 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
         });
     }
   /*=========== Slick Content tab load option =======*/
-    var WidgetTabControll = function tabeCarouselController() {
-        htmegaTabsCarouselRefress( $(".htmega-tab-nav") );
+    var WidgetTabControll = function tabeCarouselController( $scope ) {
+        htmegaTabsCarouselRefress( $scope.find(".htmega-tab-nav") );
     }
- 
+
     /*=========== Switcher content  carousel load option =======*/
-      var WidgetSwithcerControll = function switcherCarouselController() {
-        htmegaTabsCarouselRefress( $(".htmega-switcher-nav") );
+      var WidgetSwithcerControll = function switcherCarouselController( $scope ) {
+        htmegaTabsCarouselRefress( $scope.find(".htmega-switcher-nav") );
     }
-    
+
 
     /*
     * Tab carousel content refress
+    * Security: scoped to the Elementor widget's own $scope (never the whole
+    * document), and the href is only ever resolved as a same-page fragment
+    * id via document.getElementById() — never handed to the jQuery factory
+    * as an HTML string. See HT Mega CVE fix for stored DOM-XSS via
+    * .htmega-tab-nav / .htmega-switcher-nav anchors.
     */
     function htmegaTabsCarouselRefress( $tabmenus ) {
         $tabmenus.on('click', 'a', function(e) {
             e.preventDefault();
-            // slick refresh
-            if ($('.slick-slider').length > 0) {
-                var $id = $(this).attr('href');
-                $($id).find('.slick-slider').slick('refresh');
+
+            var href = $(this).attr('href') || '';
+
+            // Only accept a safe same-document fragment identifier, e.g. "#htmegatab-123".
+            if ( ! /^#[A-Za-z][\w\-:.]*$/.test( href ) ) {
+                return;
+            }
+
+            var targetEl = document.getElementById( href.slice( 1 ) );
+            if ( ! targetEl ) {
+                return;
+            }
+
+            // slick refresh — scoped strictly to the resolved tab/switcher panel.
+            var $slick = $( targetEl ).find('.slick-slider');
+            if ( $slick.length > 0 ) {
+                $slick.slick('refresh');
             }
         });
     }

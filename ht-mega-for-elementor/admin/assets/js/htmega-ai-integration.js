@@ -359,7 +359,7 @@
                                 <div class="htmega-ai-config-steps">
                                     <h4>Quick Setup:</h4>
                                     <ol>
-                                        <li>1. Go to <strong>HT Mega → Settings → AI Writer</strong></li>
+                                        <li>1. Go to <strong>HT Mega → Settings → AI Builder</strong></li>
                                         <li>2. Select <strong>Engine</strong> as your AI Engine</li>
                                         <li>3. Paste your <strong>API Key</strong> and click <strong>Save Settings</strong></li>
                                     </ol>

@@ -386,7 +386,7 @@ class HTMega_AI_Integration {
             'strings' => [
                 'generating' => esc_html__('Generating...', 'ht-mega-for-elementor'),
                 'api_not_configured' => esc_html__('AI Engine not configured', 'ht-mega-for-elementor'),
-                'configure_api' => esc_html__('Please set up your AI Engine in the HT Mega settings before using this feature.', 'ht-mega-for-elementor'),
+                'configure_api' => esc_html__('Please configure your AI Engine API key in AI Builder settings before using this feature.', 'ht-mega-for-elementor'),
                 'go_to_settings' => esc_html__('Go to Settings', 'ht-mega-for-elementor'),
                 'error_occurred' => esc_html__('An error occurred. Please try again.', 'ht-mega-for-elementor'),
                 'write_with_ai' => esc_html__('Write with HT Mega AI', 'ht-mega-for-elementor'),
@@ -446,7 +446,7 @@ class HTMega_AI_Integration {
         
         // Check API key
         if (!$this->is_api_key_configured()) {
-            wp_send_json_error('API key not configured');
+            wp_send_json_error( __( 'Please configure your AI Engine API key in AI Builder settings before using this feature.', 'ht-mega-for-elementor' ) );
             return;
         }
         
@@ -630,7 +630,7 @@ class HTMega_AI_Integration {
 
         // Validate API key
         if (empty($api_key)) {
-            throw new Exception('OpenAI API key is not configured');
+            throw new Exception( __( 'Please configure your OpenAI API key in AI Builder settings before generating content.', 'ht-mega-for-elementor' ) );
         }
 
         $validation_result = $this->validate_openai_key($api_key);
@@ -706,7 +706,7 @@ class HTMega_AI_Integration {
 
         // Validate API key
         if (empty($api_key)) {
-            throw new Exception('Claude API key is not configured');
+            throw new Exception( __( 'Please configure your Claude API key in AI Builder settings before generating content.', 'ht-mega-for-elementor' ) );
         }
 
         $validation_result = $this->validate_claude_key($api_key);
@@ -766,7 +766,7 @@ class HTMega_AI_Integration {
 
         // Validate API key
         if (empty($api_key)) {
-            throw new Exception('Google AI API key is not configured');
+            throw new Exception( __( 'Please configure your Google AI API key in AI Builder settings before generating content.', 'ht-mega-for-elementor' ) );
         }
 
         $validation_result = $this->validate_google_key($api_key, $model);
@@ -840,7 +840,7 @@ class HTMega_AI_Integration {
         }
 
         if (empty($api_key)) {
-            throw new Exception('DeepSeek API key is not configured');
+            throw new Exception( __( 'Please configure your DeepSeek API key in AI Builder settings before generating content.', 'ht-mega-for-elementor' ) );
         }
 
         $validation_result = $this->validate_deepseek_key($api_key, $model);
@@ -904,7 +904,7 @@ class HTMega_AI_Integration {
         }
 
         if (empty($api_key)) {
-            throw new Exception('Kimi API key is not configured');
+            throw new Exception( __( 'Please configure your Kimi API key in AI Builder settings before generating content.', 'ht-mega-for-elementor' ) );
         }
 
         $validation_result = $this->validate_kimi_key($api_key, $model);
@@ -972,7 +972,7 @@ class HTMega_AI_Integration {
         }
 
         if (empty($api_key)) {
-            throw new Exception('Z.ai API key is not configured');
+            throw new Exception( __( 'Please configure your Z.ai API key in AI Builder settings before generating content.', 'ht-mega-for-elementor' ) );
         }
 
         $validation_result = $this->validate_zai_key($api_key, $model);
@@ -1293,7 +1293,7 @@ class HTMega_AI_Integration {
     /**
      * Check if API key is configured for current engine
      */
-    private function is_api_key_configured() {
+    public function is_api_key_configured() {
         switch ($this->current_engine) {
             case 'claude':
                 $api_key = $this->get_ai_option('htmega_claude_api_key');

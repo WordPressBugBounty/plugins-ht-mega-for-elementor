@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: HT Mega Addons for Elementor - Elementor Widgets & "
 "Template Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-13 10:06+0000\n"
+"POT-Creation-Date: 2026-10-18 06:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.8; wp-7.1; php-8.4.18\n"
+"X-Loco-Version: 2.8.9; wp-7.1.3; php-8.4.18\n"
 "X-Domain: ht-mega-for-elementor"
 
 #: includes/widgets/htmega_twitter_feed.php:1688
@@ -996,7 +996,7 @@ msgstr ""
 msgid "Add New Template"
 msgstr ""
 
-#: includes/ai/section-assistant.php:109
+#: includes/ai/section-assistant.php:113
 msgid "Add one section"
 msgstr ""
 
@@ -3656,7 +3656,7 @@ msgstr ""
 msgid "Buffer"
 msgstr ""
 
-#: includes/ai/section-assistant.php:110
+#: includes/ai/section-assistant.php:114
 msgid "Build a full page"
 msgstr ""
 
@@ -3672,7 +3672,7 @@ msgid ""
 "Ship Smarter."
 msgstr ""
 
-#: includes/ai/section-assistant.php:85
+#: includes/ai/section-assistant.php:89
 msgid "Build with HT Mega AI"
 msgstr ""
 
@@ -3963,7 +3963,7 @@ msgid ""
 "common questions below."
 msgstr ""
 
-#: includes/ai/section-assistant.php:99
+#: includes/ai/section-assistant.php:103
 #: admin/include/class.theme-builder.php:699
 msgid "Cancel"
 msgstr ""
@@ -5303,7 +5303,7 @@ msgstr ""
 msgid "Could not determine the installed plugin file."
 msgstr ""
 
-#: includes/ai/section-assistant.php:309
+#: includes/ai/section-assistant.php:330
 msgid "Could not load an editing context for preview."
 msgstr ""
 
@@ -5766,7 +5766,7 @@ msgstr ""
 msgid "Descending"
 msgstr ""
 
-#: includes/ai/section-assistant.php:87
+#: includes/ai/section-assistant.php:91
 msgid ""
 "Describe the section you want — e.g. \"services section for a law firm, dark "
 "and serious\""
@@ -6249,7 +6249,7 @@ msgstr ""
 msgid "Elementor Install Now"
 msgstr ""
 
-#: includes/ai/section-assistant.php:267
+#: includes/ai/section-assistant.php:288
 msgid "Elementor is not active."
 msgstr ""
 
@@ -6380,7 +6380,7 @@ msgstr ""
 msgid "Enter a Page Name"
 msgstr ""
 
-#: includes/ai/section-assistant.php:107
+#: includes/ai/section-assistant.php:111
 msgid "Enter a prompt first."
 msgstr ""
 
@@ -7142,8 +7142,8 @@ msgstr ""
 
 #: includes/ai/htmega-ai-integration.php:432
 #: includes/ai/htmega-ai-integration.php:479
-#: includes/ai/section-assistant.php:138 includes/ai/section-assistant.php:196
-#: includes/ai/section-assistant.php:256 admin/include/template-library.php:562
+#: includes/ai/section-assistant.php:143 includes/ai/section-assistant.php:209
+#: includes/ai/section-assistant.php:277 admin/include/template-library.php:562
 #: admin/include/class.performance-upgrade-notice.php:93
 #: admin/include/class.performance-upgrade-notice.php:114
 #: extensions/ht-menu/classes/class.mega-menu.php:142
@@ -7347,11 +7347,11 @@ msgid ""
 "lightweight-fast starter websites."
 msgstr ""
 
-#: includes/ai/section-assistant.php:97
+#: includes/ai/section-assistant.php:101
 msgid "Generate"
 msgstr ""
 
-#: includes/ai/section-assistant.php:96
+#: includes/ai/section-assistant.php:100
 msgid "Generating {current} of {total}: {slug}…"
 msgstr ""
 
@@ -7359,7 +7359,7 @@ msgstr ""
 msgid "Generating..."
 msgstr ""
 
-#: includes/ai/section-assistant.php:90
+#: includes/ai/section-assistant.php:94
 msgid "Generating…"
 msgstr ""
 
@@ -7463,6 +7463,10 @@ msgid ""
 "Go to <a href=\"https://snazzymaps.com/\" target=_blank>Snazzy Maps</a> and "
 "Choose/Customize your Map Style. Click on your demo and copy JavaScript "
 "Style Array"
+msgstr ""
+
+#: includes/ai/section-assistant.php:115
+msgid "Go to AI Builder settings"
 msgstr ""
 
 #: admin/include/settings-panel/includes/classes/Admin/Menu.php:279
@@ -9288,12 +9292,12 @@ msgstr ""
 msgid "Input Style"
 msgstr ""
 
-#: includes/ai/section-assistant.php:100
+#: includes/ai/section-assistant.php:104
 #: admin/include/templates/library/templates.php:64
 msgid "Insert"
 msgstr ""
 
-#: includes/ai/section-assistant.php:101
+#: includes/ai/section-assistant.php:105
 msgid "Insert all"
 msgstr ""
 
@@ -9301,11 +9305,11 @@ msgstr ""
 msgid "Insert Headers and Footers Code"
 msgstr ""
 
-#: includes/ai/section-assistant.php:103
+#: includes/ai/section-assistant.php:107
 msgid "Inserted"
 msgstr ""
 
-#: includes/ai/section-assistant.php:108
+#: includes/ai/section-assistant.php:112
 msgid "Inserted as a draft — nothing is published until you hit Update."
 msgstr ""
 
@@ -9383,7 +9387,7 @@ msgstr ""
 msgid "Invalid %1$s token: %2$s"
 msgstr ""
 
-#: includes/ai/section-assistant.php:273
+#: includes/ai/section-assistant.php:294
 msgid "Invalid context post."
 msgstr ""
 
@@ -9391,7 +9395,7 @@ msgstr ""
 msgid "Invalid data."
 msgstr ""
 
-#: includes/ai/section-assistant.php:286
+#: includes/ai/section-assistant.php:307
 msgid "Invalid element data."
 msgstr ""
 
@@ -9404,7 +9408,7 @@ msgstr ""
 msgid "Invalid nonce"
 msgstr ""
 
-#: htmega-blocks/includes/classes/Api/Api.php:304
+#: htmega-blocks/includes/classes/Api/Api.php:305
 msgid "Invalid nonce."
 msgstr ""
 
@@ -9418,8 +9422,8 @@ msgstr ""
 
 #: includes/ai/htmega-ai-integration.php:437
 #: includes/ai/htmega-ai-integration.php:484
-#: includes/ai/section-assistant.php:144 includes/ai/section-assistant.php:202
-#: includes/ai/section-assistant.php:262
+#: includes/ai/section-assistant.php:149 includes/ai/section-assistant.php:215
+#: includes/ai/section-assistant.php:283
 msgid "Invalid security token"
 msgstr ""
 
@@ -11665,7 +11669,7 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: includes/ai/section-assistant.php:164
+#: includes/ai/section-assistant.php:177
 msgid ""
 "None of HT Mega's sections match that request yet — try describing a hero, "
 "services, pricing, testimonials, stats, CTA, team, FAQ, blog, about, or "
@@ -12146,7 +12150,7 @@ msgstr ""
 msgid "Optional extra class on the form wrapper div."
 msgstr ""
 
-#: includes/ai/section-assistant.php:89
+#: includes/ai/section-assistant.php:93
 msgid ""
 "Optional. Keeps your business name consistent across every generated section."
 msgstr ""
@@ -12591,7 +12595,7 @@ msgstr ""
 msgid "Page Title"
 msgstr ""
 
-#: includes/ai/section-assistant.php:88
+#: includes/ai/section-assistant.php:92
 msgid "Page/business name — e.g. \"Bella Vista Restaurant\""
 msgstr ""
 
@@ -12781,7 +12785,7 @@ msgid ""
 "first."
 msgstr ""
 
-#: includes/ai/section-assistant.php:104
+#: includes/ai/section-assistant.php:108
 msgid "Pick a result to insert."
 msgstr ""
 
@@ -12862,7 +12866,7 @@ msgstr ""
 msgid "Plan Tagline"
 msgstr ""
 
-#: includes/ai/section-assistant.php:95
+#: includes/ai/section-assistant.php:99
 msgid "Planning page sections…"
 msgstr ""
 
@@ -12892,6 +12896,50 @@ msgstr ""
 
 #: includes/widgets/htmega_audio_player.php:223
 msgid "Player Position On"
+msgstr ""
+
+#: includes/ai/htmega-ai-integration.php:389
+#: includes/ai/htmega-ai-integration.php:449
+#: includes/ai/section-assistant.php:163 includes/ai/section-assistant.php:228
+msgid ""
+"Please configure your AI Engine API key in AI Builder settings before using "
+"this feature."
+msgstr ""
+
+#: includes/ai/htmega-ai-integration.php:709
+msgid ""
+"Please configure your Claude API key in AI Builder settings before "
+"generating content."
+msgstr ""
+
+#: includes/ai/htmega-ai-integration.php:843
+msgid ""
+"Please configure your DeepSeek API key in AI Builder settings before "
+"generating content."
+msgstr ""
+
+#: includes/ai/htmega-ai-integration.php:769
+msgid ""
+"Please configure your Google AI API key in AI Builder settings before "
+"generating content."
+msgstr ""
+
+#: includes/ai/htmega-ai-integration.php:907
+msgid ""
+"Please configure your Kimi API key in AI Builder settings before generating "
+"content."
+msgstr ""
+
+#: includes/ai/htmega-ai-integration.php:633
+msgid ""
+"Please configure your OpenAI API key in AI Builder settings before "
+"generating content."
+msgstr ""
+
+#: includes/ai/htmega-ai-integration.php:975
+msgid ""
+"Please configure your Z.ai API key in AI Builder settings before generating "
+"content."
 msgstr ""
 
 #: admin/include/class-deactivation.php:476
@@ -12948,12 +12996,6 @@ msgstr ""
 #: includes/widgets/htmega_wc_add_to_cart.php:253
 #: includes/widgets/htmega_wc_add_to_cart.php:259
 msgid "Please set a valid product"
-msgstr ""
-
-#: includes/ai/htmega-ai-integration.php:389
-msgid ""
-"Please set up your AI Engine in the HT Mega settings before using this "
-"feature."
 msgstr ""
 
 #: admin/include/class-deactivation.php:495
@@ -13252,7 +13294,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: includes/ai/section-assistant.php:102
+#: includes/ai/section-assistant.php:106
 msgid "Preview full design"
 msgstr ""
 
@@ -13477,7 +13519,7 @@ msgstr ""
 msgid "Projects Built"
 msgstr ""
 
-#: includes/ai/section-assistant.php:152 includes/ai/section-assistant.php:209
+#: includes/ai/section-assistant.php:157 includes/ai/section-assistant.php:222
 msgid "Prompt is required"
 msgstr ""
 
@@ -13729,7 +13771,7 @@ msgstr ""
 msgid "Redirect page after Login"
 msgstr ""
 
-#: includes/ai/section-assistant.php:98
+#: includes/ai/section-assistant.php:102
 msgid "Regenerate"
 msgstr ""
 
@@ -15430,7 +15472,7 @@ msgstr ""
 msgid "Something is wrong please check again!"
 msgstr ""
 
-#: includes/ai/section-assistant.php:106
+#: includes/ai/section-assistant.php:110
 msgid "Something went wrong — try again."
 msgstr ""
 
@@ -16668,7 +16710,7 @@ msgstr ""
 msgid "Thank you very much for supporting %2$s%1$s%3$s."
 msgstr ""
 
-#: includes/ai/section-assistant.php:105
+#: includes/ai/section-assistant.php:109
 msgid "That doesn't match one of HT Mega's AI-ready sections yet."
 msgstr ""
 
@@ -17635,7 +17677,7 @@ msgstr ""
 msgid "Unmute Icon"
 msgstr ""
 
-#: includes/ai/section-assistant.php:303
+#: includes/ai/section-assistant.php:324
 msgid "Unrecognized widget type."
 msgstr ""
 
@@ -18049,7 +18091,7 @@ msgstr ""
 msgid "What We Offer"
 msgstr ""
 
-#: includes/ai/section-assistant.php:86
+#: includes/ai/section-assistant.php:90
 msgid "What would you like to generate?"
 msgstr ""
 

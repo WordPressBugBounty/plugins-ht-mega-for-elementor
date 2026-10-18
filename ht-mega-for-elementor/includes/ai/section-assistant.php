@@ -81,6 +81,10 @@ class HTMega_AI_Section_Assistant {
 			'generateAction'  => 'htmega_ai_generate_section',
 			'selectPageSectionsAction' => 'htmega_ai_select_page_sections',
 			'renderPreviewAction' => 'htmega_ai_render_preview',
+			// Same destination as the field-level AI Writer's "Go to Settings" link
+			// (see getSettingsUrl() in htmega-ai-integration.js) — kept in sync manually,
+			// both point at the one "AI Builder" settings tab.
+			'settingsUrl'     => admin_url( 'admin.php?page=htmega-addons#/htmega_ai' ),
 			'strings'         => [
 				'panelTitle'    => esc_html__( 'Build with HT Mega AI', 'ht-mega-for-elementor' ),
 				'promptLabel'   => esc_html__( 'What would you like to generate?', 'ht-mega-for-elementor' ),
@@ -108,6 +112,7 @@ class HTMega_AI_Section_Assistant {
 				'draftNotice'   => esc_html__( 'Inserted as a draft — nothing is published until you hit Update.', 'ht-mega-for-elementor' ),
 				'oneSection'    => esc_html__( 'Add one section', 'ht-mega-for-elementor' ),
 				'fullPage'      => esc_html__( 'Build a full page', 'ht-mega-for-elementor' ),
+				'goToSettings'  => esc_html__( 'Go to AI Builder settings', 'ht-mega-for-elementor' ),
 			],
 		] );
 	}
@@ -150,6 +155,14 @@ $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['non
 
 		if ( empty( $prompt ) ) {
 			wp_send_json_error( [ 'message' => __( 'Prompt is required', 'ht-mega-for-elementor' ) ] );
+			return;
+		}
+
+		if ( ! HTMega_AI_Integration::instance()->is_api_key_configured() ) {
+			wp_send_json_error( [
+				'message' => __( 'Please configure your AI Engine API key in AI Builder settings before using this feature.', 'ht-mega-for-elementor' ),
+				'code'    => 'api_key_missing',
+			] );
 			return;
 		}
 
@@ -207,6 +220,14 @@ $nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['non
 
 		if ( empty( $prompt ) ) {
 			wp_send_json_error( [ 'message' => __( 'Prompt is required', 'ht-mega-for-elementor' ) ] );
+			return;
+		}
+
+		if ( ! HTMega_AI_Integration::instance()->is_api_key_configured() ) {
+			wp_send_json_error( [
+				'message' => __( 'Please configure your AI Engine API key in AI Builder settings before using this feature.', 'ht-mega-for-elementor' ),
+				'code'    => 'api_key_missing',
+			] );
 			return;
 		}
 

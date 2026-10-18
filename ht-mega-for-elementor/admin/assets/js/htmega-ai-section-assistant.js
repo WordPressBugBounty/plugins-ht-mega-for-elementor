@@ -280,6 +280,41 @@
 				.css( 'color', isError ? '#c4342b' : '' );
 		},
 
+		/**
+		 * Same as setStatus(), but for the one error that has somewhere useful to
+		 * send the user — no API key configured. Appends a "Go to AI Builder
+		 * settings" link right after the message instead of just leaving the user
+		 * stuck on a dead-end error (text/link both come from translated
+		 * wp_localize_script strings — safe to insert as HTML).
+		 */
+		setApiKeyMissingStatus: function ( text ) {
+			var $status = this.$modal.find( '.htmega-ai-section-modal__status' ).css( 'color', '#c4342b' );
+			$status.empty().append( $( '<span>' ).text( text ) );
+			if ( cfg.settingsUrl ) {
+				$status.append( ' ' ).append(
+					$( '<a>', {
+						href: cfg.settingsUrl,
+						target: '_blank',
+						rel: 'noopener noreferrer',
+						text: strings.goToSettings || 'Go to AI Builder settings',
+					} ).css( { color: '#667eea', 'font-weight': '600', 'text-decoration': 'underline' } )
+				);
+			}
+		},
+
+		/**
+		 * Shared by every AJAX failure branch below — shows the link-enabled
+		 * status when the server flagged a missing API key, the plain one otherwise.
+		 */
+		showErrorResponse: function ( response, fallbackText ) {
+			var message = ( response && response.data && response.data.message ) || fallbackText;
+			if ( response && response.data && response.data.code === 'api_key_missing' ) {
+				this.setApiKeyMissingStatus( message );
+			} else {
+				this.setStatus( message, true );
+			}
+		},
+
 		/* ---------------------------------------------------------------
 		 * Generation + insertion
 		 * ------------------------------------------------------------- */
@@ -392,7 +427,7 @@
 				.done( function ( response ) {
 					if ( ! response || ! response.success ) {
 						$btn.prop( 'disabled', false ).text( idleLabel );
-						self.setStatus( ( response && response.data && response.data.message ) || strings.noMatch, true );
+						self.showErrorResponse( response, strings.noMatch );
 						return;
 					}
 
@@ -462,7 +497,7 @@
 					var sections = ( response && response.success && response.data && response.data.sections ) || [];
 					if ( ! sections.length ) {
 						$generateBtn.prop( 'disabled', false ).text( strings.generate || 'Generate' );
-						self.setStatus( ( response && response.data && response.data.message ) || strings.noMatch, true );
+						self.showErrorResponse( response, strings.noMatch );
 						return;
 					}
 					self.runPageSectionQueue( sections, prompt, 0, null, $generateBtn );
