@@ -142,10 +142,11 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                         var data_title = slick.$slides.eq(index).find('.htmega-data-title').data('title');
                         var data_thumbnail = slick.$slides.eq(index).find('.htmega-data-title').data('thumbnail');
                         
+                        // Build nodes via DOM APIs so the title is never parsed as HTML (stored XSS fix).
                         if(data_thumbnail ){
-                            return '<img src="'+data_thumbnail+'" alt="'+data_title+'">';
+                            return jQuery('<img>').attr({ src: String(data_thumbnail), alt: String(data_title === undefined ? '' : data_title) });
                         } else {
-                            return '<h6>'+data_title+'</h6>';
+                            return jQuery('<h6>').text(String(data_title === undefined ? '' : data_title));
                         }
                     },
                     infinite: true,

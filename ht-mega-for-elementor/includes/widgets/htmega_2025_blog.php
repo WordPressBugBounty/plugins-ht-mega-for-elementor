@@ -1235,7 +1235,10 @@ class HTMega_Elementor_Widget_Blog_2025 extends Widget_Base {
 		// Excerpt
 		$excerpt = '';
 		if ( $d['show_excerpt'] ) {
-			if ( $post->post_excerpt ) {
+			// Never expose the excerpt or body of a password-protected post until the visitor has entered the password.
+			if ( post_password_required( $post ) ) {
+				$excerpt = __( 'This content is password protected.', 'htmega-addons' );
+			} elseif ( $post->post_excerpt ) {
 				$excerpt = wp_trim_words( $post->post_excerpt, $d['excerpt_length'], '…' );
 			} else {
 				$excerpt = wp_trim_words( wp_strip_all_tags( $post->post_content ), $d['excerpt_length'], '…' );

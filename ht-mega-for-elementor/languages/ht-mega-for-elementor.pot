@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: HT Mega Addons for Elementor - Elementor Widgets & "
 "Template Builder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-18 06:25+0000\n"
+"POT-Creation-Date: 2026-11-12 10:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.9; wp-7.1.3; php-8.4.18\n"
+"X-Loco-Version: 2.8.9; wp-7.1.4; php-8.4.18\n"
 "X-Domain: ht-mega-for-elementor"
 
 #: includes/widgets/htmega_twitter_feed.php:1688
@@ -41,10 +41,10 @@ msgstr ""
 msgid " min ago"
 msgstr ""
 
-#: includes/widgets/htmega_2025_blog.php:1283
-#: includes/widgets/htmega_2025_blog.php:1290
-#: htmega-blocks/build/blocks/blog-2025/index.php:293
-#: htmega-blocks/src/blocks/blog-2025/index.php:293
+#: includes/widgets/htmega_2025_blog.php:1286
+#: includes/widgets/htmega_2025_blog.php:1293
+#: htmega-blocks/build/blocks/blog-2025/index.php:296
+#: htmega-blocks/src/blocks/blog-2025/index.php:296
 msgid " min read"
 msgstr ""
 
@@ -11582,8 +11582,8 @@ msgid "No matching records found"
 msgstr ""
 
 #: includes/widgets/htmega_2025_blog.php:1203
-#: htmega-blocks/build/blocks/blog-2025/index.php:393
-#: htmega-blocks/src/blocks/blog-2025/index.php:393
+#: htmega-blocks/build/blocks/blog-2025/index.php:396
+#: htmega-blocks/src/blocks/blog-2025/index.php:396
 msgid "No posts found. Publish some posts to see them here."
 msgstr ""
 

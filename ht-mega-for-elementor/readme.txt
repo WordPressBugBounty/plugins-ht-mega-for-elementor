@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhus
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.9
 Tested up to: 7.1
-Stable tag: 3.2.8
+Stable tag: 3.2.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -288,6 +288,11 @@ Needs admin-supplied API key.
 
 
 == Changelog ==
+
+= Version 3.2.9 - Date: 2026-11-12 =
+* Fixed: Security hardening and improvements.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.8 - Date: 2026-10-18 =
 * Improved: AI Writer and AI Section Builder setup experience.
