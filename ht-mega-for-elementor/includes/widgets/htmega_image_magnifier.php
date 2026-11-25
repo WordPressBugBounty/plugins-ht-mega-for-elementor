@@ -252,11 +252,26 @@ class HTMega_Elementor_Widget_Image_Magnifier extends Widget_Base {
         $id = $this->get_id();
         $image_url = wp_get_attachment_image_src( $settings['magnifier_image']['id'], $settings['magnifier_image_size_size'] );
 
+        // Use the attachment's own URL for the zoom image. A stored URL is only a fallback and
+        // is rejected if it holds quotes, angle brackets or HTML entities.
+        $safe_url = static function ( $url ) {
+            $url = esc_url_raw( (string) $url );
+            return preg_match( '/["\'<>`]|&#?[A-Za-z0-9]+;/', $url ) ? '' : $url;
+        };
+        $zoom_src = '';
+        if ( ! empty( $settings['magnifier_image']['id'] ) ) {
+            $full = wp_get_attachment_image_src( $settings['magnifier_image']['id'], 'full' );
+            $zoom_src = isset( $full[0] ) ? $full[0] : '';
+        }
+        if ( '' === $zoom_src ) {
+            $zoom_src = $safe_url( isset( $settings['magnifier_image']['url'] ) ? $settings['magnifier_image']['url'] : '' );
+        }
+
         $magnifierimg_attr = [
             'id'                    => 'thumb-'. esc_attr( $id ),
-            'src'                   => isset( $image_url[0] ) ? esc_url( $image_url[0] ) : $settings['magnifier_image']['url'],
+            'src'                   => isset( $image_url[0] ) ? esc_url( $image_url[0] ) : $safe_url( isset( $settings['magnifier_image']['url'] ) ? $settings['magnifier_image']['url'] : '' ),
             'alt'                   => isset( $settings['magnifier_image']['alt'] ) ? esc_attr( $settings['magnifier_image']['alt'] ) : '',
-            'data-magnify-src'    => esc_url( $settings['magnifier_image']['url'] ),
+            'data-magnify-src'    => $zoom_src,
             'data-speed'             => absint( $settings['lens_speed']['size'] ),
             'class'                 => 'zoom',
         ];

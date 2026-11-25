@@ -271,6 +271,28 @@ if( !function_exists('htmega_get_post_types') ){
 }
 
 /*
+ * Validate a post type value coming from widget settings.
+ *
+ * Widget settings are saved by anyone who can edit a page in Elementor, so the value
+ * can be forged (e.g. flamingo_inbound, shop_coupon). Only the post types the widgets
+ * offer in their "Post Type" select (htmega_get_post_types()) are accepted; anything
+ * else falls back to the default so non-public content is never queried.
+ *
+ * @param  mixed  $post_type Value from widget settings.
+ * @param  string $default   Fallback post type.
+ * @return string
+ */
+if ( ! function_exists( 'htmega_sanitize_post_type' ) ) {
+    function htmega_sanitize_post_type( $post_type, $default = 'post' ) {
+        $post_type = is_string( $post_type ) ? sanitize_key( $post_type ) : '';
+        if ( '' !== $post_type && array_key_exists( $post_type, htmega_get_post_types() ) ) {
+            return $post_type;
+        }
+        return $default;
+    }
+}
+
+/*
  * HTML Tag list
  * return array
  */

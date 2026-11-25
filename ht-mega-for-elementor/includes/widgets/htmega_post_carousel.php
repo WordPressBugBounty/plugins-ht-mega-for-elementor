@@ -2131,7 +2131,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
         $sectionid = "sid". $this-> get_id();
         $post_slider_image_overlay_hover = isset( $settings['post_slider_image_overlay_hover_background'] ) ? $settings['post_slider_image_overlay_hover_background'] : '';
         $htmega_post_image  =  $this->get_settings_for_display('htmega_post_image_size');
-        $post_type =  isset( $settings['carousel_post_type'] ) ? $settings['carousel_post_type'] : 'post';
+        $post_type = htmega_sanitize_post_type( isset( $settings['carousel_post_type'] ) ? $settings['carousel_post_type'] : 'post' );
         $post_categorys = [];
         if( 'post'== $post_type && ! empty( $settings['carousel_categories'] ) && is_array( $settings['carousel_categories'] ) ) {
             $post_categorys = $settings['carousel_categories'];
@@ -2189,7 +2189,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
 
             $slider_settings = array_merge( $slider_settings, $slider_responsive_settings );
 
-            $this->add_render_attribute( 'htmega_post_slider_attr', 'data-settings', wp_json_encode( $slider_settings ) );
+            $this->add_render_attribute( 'htmega_post_slider_attr', 'data-settings', wp_json_encode( $slider_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
         }
 
          // Post query
@@ -2356,7 +2356,7 @@ class HTMega_Elementor_Widget_Post_Carousel extends Widget_Base {
     // Loop Content
     public function htmega_render_loop_content( $contetntstyle = NULL, $post_id = null  ){
         $settings   = $this->get_settings_for_display();
-        $category_name =  get_object_taxonomies($settings['carousel_post_type']);
+        $category_name =  get_object_taxonomies( htmega_sanitize_post_type( isset( $settings['carousel_post_type'] ) ? $settings['carousel_post_type'] : 'post' ) );
         ?>
             <div class="content <?php echo esc_attr( $settings['border_type'] ); ?>">
                 <div class="post-inner">

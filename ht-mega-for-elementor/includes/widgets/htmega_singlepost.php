@@ -509,7 +509,7 @@ class HTMega_Elementor_Widget_SinglePost extends Widget_Base {
         $title_length = $settings['single_post_title_length'];
         $this->add_render_attribute( 'htmega_single_post_attr', 'class', 'htmega-single-post htmega-single-post-style-'. esc_attr( $settings['post_style'] ." ". $sectionid ) );
 
-        $select_post_type =  isset( $settings['select_post_type'] ) ? $settings['select_post_type'] : 'post';
+        $select_post_type = htmega_sanitize_post_type( isset( $settings['select_post_type'] ) ? $settings['select_post_type'] : 'post' );
 
         if( 'post'== $select_post_type ){
             $get_post_name = $settings['post_name'];

@@ -896,7 +896,7 @@ class HTMega_Elementor_Widget_Notify extends Widget_Base {
         }
 
         $this->add_render_attribute( 'notify_attr', 'class', 'htmega_notify_area' );
-        $this->add_render_attribute( 'notify_attr', 'data-notifyopt', wp_json_encode( $notify_options ) );
+        $this->add_render_attribute( 'notify_attr', 'data-notifyopt', wp_json_encode( $notify_options, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
 
         ?>
             <div <?php echo $this->get_render_attribute_string('notify_attr'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Elementor's own escaped attribute string, see get_render_attribute_string(). ?> >

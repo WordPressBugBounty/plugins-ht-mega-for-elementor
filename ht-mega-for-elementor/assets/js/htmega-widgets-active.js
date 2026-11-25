@@ -3,7 +3,70 @@
 
 let areaBtnNext = HTMEGAF['buttion_area_text_next'];
 let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
-    var WidgetTestimonialCarouselHandler = function ($scope, $) {
+
+// Keep only class-name characters (used for values that end up inside a class attribute).
+function htmegaSafeClass(value) {
+    return String(value == null ? '' : value).replace(/[^A-Za-z0-9_\- ]/g, '');
+}
+
+// The bundled YTPlayer eval()s some option strings, so only plain, typed values are handed on.
+function htmegaCleanPlayerOptions(raw) {
+    var src = {};
+    try { src = (raw && typeof raw === 'object') ? raw : JSON.parse(raw); } catch (e) { src = {}; }
+    if (!src || typeof src !== 'object') { src = {}; }
+    var clean = { containment: 'self' };
+    ['autoPlay', 'mute', 'loop', 'showControls', 'showYTLogo', 'optimizeDisplay', 'realfullscreen'].forEach(function (k) {
+        if (typeof src[k] === 'boolean') { clean[k] = src[k]; }
+    });
+    ['startAt', 'opacity'].forEach(function (k) {
+        if (typeof src[k] === 'number' && isFinite(src[k])) { clean[k] = src[k]; }
+    });
+    ['videoURL', 'coverImage'].forEach(function (k) {
+        if (typeof src[k] === 'string' && (src[k] === '' || /^https?:\/\//i.test(src[k]))) { clean[k] = src[k]; }
+    });
+    return clean;
+}
+
+// Magnific Popup reads its source from data-mfp-src or href. Drop the data attributes and
+// any href that is not http(s), so a forged link cannot load a javascript: or data: source.
+function htmegaCleanPopupLink($el) {
+    $el.removeAttr('data-mfp-src').removeAttr('data-mfp-type');
+    var href = $el.attr('href') || '';
+    try {
+        var proto = new URL(href, window.location.href).protocol;
+        if (proto !== 'http:' && proto !== 'https:') { $el.removeAttr('href'); }
+    } catch (e) { $el.removeAttr('href'); }
+}
+
+// Build a slick arrow button with DOM APIs instead of concatenating settings into
+// HTML. Icon markup is limited to icon tags and stripped of event/javascript
+// attributes. Slick only places string arrows, so the finished button is serialized.
+function htmegaArrowButton(className, label, iconHtml, withType) {
+    var btn = document.createElement('button');
+    if (withType) { btn.setAttribute('type', 'button'); }
+    if (label) { btn.setAttribute('aria-label', String(label)); }
+    btn.className = className;
+    if (typeof iconHtml === 'string' && iconHtml !== '') {
+        var doc = new DOMParser().parseFromString('<body>' + iconHtml + '</body>', 'text/html');
+        doc.body.querySelectorAll('*').forEach(function (el) {
+            if (!/^(i|span|svg|path|g|circle|rect|polygon|polyline|line|ellipse|title|defs)$/i.test(el.nodeName)) {
+                el.remove();
+                return;
+            }
+            Array.prototype.slice.call(el.attributes).forEach(function (attr) {
+                if (/^on/i.test(attr.name) || /^\s*(javascript|data|vbscript):/i.test(attr.value)) {
+                    el.removeAttribute(attr.name);
+                }
+            });
+        });
+        Array.prototype.slice.call(doc.body.childNodes).forEach(function (n) {
+            btn.appendChild(document.importNode(n, true));
+        });
+    }
+    return btn.outerHTML;
+}
+
+var WidgetTestimonialCarouselHandler = function ($scope, $) {
 
         var carousel_elem = $scope.find('.htmega-testimonial-activation').eq(0);
         if( carousel_elem.length > 0){ carousel_elem[0].style.display='block'; }
@@ -42,8 +105,8 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                     slidesToShow: 1,
                     slidesToScroll: scroll_columns,
                     arrows: arrows,
-                    prevArrow: '<button aria-label="'+areaBtnPrev+'" type="button" class="slick-prev">'+arrow_prev_txt+'</button>',
-                    nextArrow: '<button aria-label="'+areaBtnNext+'" type="button" class="slick-next">'+arrow_next_txt+'</button>',
+                    prevArrow: htmegaArrowButton('slick-prev', areaBtnPrev, arrow_prev_txt, true),
+                    nextArrow: htmegaArrowButton('slick-next', areaBtnNext, arrow_next_txt, true),
                     dots: dots,
                     fade: true,
                     asNavFor: '.htmega-testimonal-nav'
@@ -63,8 +126,8 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
             }else{
                 carousel_elem.not('.slick-initialized').slick({
                     arrows: arrows,
-                    prevArrow: '<button aria-label="'+areaBtnPrev+'" type="button" class="slick-prev">'+arrow_prev_txt+'</button>',
-                    nextArrow: '<button aria-label="'+areaBtnNext+'" type="button" class="slick-next">'+arrow_next_txt+'</button>',
+                    prevArrow: htmegaArrowButton('slick-prev', areaBtnPrev, arrow_prev_txt, true),
+                    nextArrow: htmegaArrowButton('slick-next', areaBtnNext, arrow_next_txt, true),
                     dots: dots,
                     infinite: true,
                     autoplay: autoplay,
@@ -135,8 +198,8 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
             if( carousel_style_ck == 4 ){
                 carousel_elem.not('.slick-initialized').slick({
                     arrows: arrows,
-                    prevArrow: '<button class="htmega-carosul-prev">'+arrow_prev_txt+'</button>',
-                    nextArrow: '<button class="htmega-carosul-next">'+arrow_next_txt+'</button>',
+                    prevArrow: htmegaArrowButton('htmega-carosul-prev', '', arrow_prev_txt, false),
+                    nextArrow: htmegaArrowButton('htmega-carosul-next', '', arrow_next_txt, false),
                     dots: dots,
                     customPaging: function( slick,index ) {
                         var data_title = slick.$slides.eq(index).find('.htmega-data-title').data('title');
@@ -181,8 +244,8 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
             }else{
                 carousel_elem.not('.slick-initialized').slick({
                     arrows: arrows,
-                    prevArrow: '<button aria-label="'+areaBtnPrev+'" class="htmega-carosul-prev">'+arrow_prev_txt+'</button>',
-                    nextArrow: '<button aria-label="'+areaBtnNext+'" class="htmega-carosul-next">'+arrow_next_txt+'</button>',
+                    prevArrow: htmegaArrowButton('htmega-carosul-prev', areaBtnPrev, arrow_prev_txt, false),
+                    nextArrow: htmegaArrowButton('htmega-carosul-next', areaBtnNext, arrow_next_txt, false),
                     dots: dots,
                     infinite: true,
                     autoplay: autoplay,
@@ -292,8 +355,8 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
 
             thumbnailscarousel_elem_for.not('.slick-initialized').slick({
                 arrows: arrows,
-                prevArrow: '<button aria-label="'+areaBtnPrev+'" class="htmega-carosul-prev">'+arrow_prev_txt+'</button>',
-                nextArrow: '<button aria-label="'+areaBtnNext+'" class="htmega-carosul-next">'+arrow_next_txt+'</button>',
+                prevArrow: htmegaArrowButton('htmega-carosul-prev', areaBtnPrev, arrow_prev_txt, false),
+                nextArrow: htmegaArrowButton('htmega-carosul-next', areaBtnNext, arrow_next_txt, false),
                 asNavFor:thumbnailscarousel_elem_nav,
                 dots: dots,
                 infinite: true,
@@ -355,8 +418,8 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                 focusOnSelect: true,
                 vertical: navvertical,
                 arrows: navarrows,
-                prevArrow: '<button aria-label="'+areaBtnPrev+'" class="htmega-carosul-prev">'+navarrow_prev_txt+'</button>',
-                nextArrow: '<button aria-label="'+areaBtnNext+'" class="htmega-carosul-next">'+navarrow_next_txt+'</button>',
+                prevArrow: htmegaArrowButton('htmega-carosul-prev', areaBtnPrev, navarrow_prev_txt, false),
+                nextArrow: htmegaArrowButton('htmega-carosul-next', areaBtnNext, navarrow_next_txt, false),
                 draggable: true,
                 verticalSwiping: true,
             });
@@ -673,9 +736,10 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
         var lightbox_elem = $scope.find('.image-popup-vertical-fit').eq(0);
 
         if( lightbox_elem.length > 0 ){
-            var popupoption = lightbox_elem.data('popupoption');
+            htmegaCleanPopupLink(lightbox_elem);
+            var popupoption = lightbox_elem.data('popupoption') || {};
             lightbox_elem.magnificPopup({
-                type: popupoption.datatype,
+                type: ( popupoption.datatype === 'iframe' ) ? 'iframe' : 'image',
                 closeOnContentClick: true,
                 mainClass: 'mfp-img-mobile',
                 image: {
@@ -694,9 +758,15 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
 
         if( videotype.videocontainer == 'self' ){
             var videoplayer_elem = $scope.find('.htmega-video-player').eq(0);
-            videoplayer_elem.YTPlayer();
+            // YTPlayer eval()s string options, so pass it a cleaned object instead of the raw attribute.
+            var player_opts = htmegaCleanPlayerOptions(videoplayer_elem.attr('data-property'));
+            if ( player_opts.videoURL ) {
+                videoplayer_elem.data('property', player_opts);
+                videoplayer_elem.YTPlayer();
+            }
         }else{
             var videopopup_elem = $scope.find('.magnify-video-active').eq(0);
+            htmegaCleanPopupLink(videopopup_elem);
             videopopup_elem.magnificPopup({
                 type: 'iframe'
             });
@@ -706,19 +776,84 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
     /*=============Tooltip ==============*/
     var WidgetTooltipHandler = function ($scope, $) {
 
-        $('[data-toggle="tooltip"]').htbtooltip({
+        $scope.find('[data-toggle="tooltip"]').htbtooltip({
             animation: false,
         });
     }
 
+    /*============= Gallery Justify ==============*/
+    // Initialised from the widget's own wrapper ($scope), never from a page-global #id,
+    // so markup written elsewhere in the page can not be picked up as the gallery.
+    var WidgetGalleryJustifyHandler = function ($scope, $) {
+        var $gallery = $scope.find('.htmega-justify-gallery').eq(0);
+        if ( $gallery.length === 0 ) { return; }
+
+        var opt = $gallery.data('justifyopt');
+        if ( ! opt || typeof opt !== 'object' ) { opt = {}; }
+        var widgetId = String( $scope.data('id') || '' ).replace(/[^A-Za-z0-9_-]/g, '');
+
+        $gallery.imagesLoaded( function() {
+            $gallery[0].style.display = 'block';
+            $gallery.justifiedGallery({
+                rowHeight: parseInt( opt.rowHeight, 10 ) || 0,
+                maxRowHeight: null,
+                margins: parseInt( opt.margins, 10 ) || 0,
+                border: 0,
+                rel: 'npgallery' + widgetId,
+                lastRow: 'nojustify',
+                captions: true,
+                randomize: false,
+                sizeRangeSuffixes: {
+                    lt100: '_t',
+                    lt240: '_m',
+                    lt320: '_n',
+                    lt500: '',
+                    lt640: '_z',
+                    lt1024: '_b'
+                }
+            });
+        });
+
+        if ( opt.lightbox ) {
+            var galleryOpt = {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            };
+            if ( ! opt.counter ) { galleryOpt.tCounter = ''; }
+
+            $gallery.magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                tLoading: 'Loading image #%curr%...',
+                mainClass: 'mfp-img-mobile',
+                gallery: galleryOpt,
+                image: {
+                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                    markup: '<div class="mfp-figure">'+
+                                '<div class="mfp-close"></div>'+
+                                '<div class="mfp-img"></div>'+
+                                '<div class="mfp-bottom-bar">'+
+                                '<div class="htmega mfp-title"></div>'+
+                                '<div class="htmega mfp-counter"></div>'+
+                                '</div>'+
+                            '</div>',
+                    titleSrc: function(item) {
+                        return item.el.attr('title');
+                    }
+                }
+            });
+        }
+    }
+
     /*=============Popovers ==============*/
     var WidgetPopoversHandler = function ($scope, $) {
-        $('[data-toggle="popover"]').htbpopover();
-        $('[data-toggle="popover"].show').htbpopover('show');
+        $scope.find('[data-toggle="popover"]').htbpopover();
+        $scope.find('[data-toggle="popover"].show').htbpopover('show');
 
         $('body').on('click', function (e) {
             if ( $(e.target).data('toggle') !== 'popover' && $(e.target).parents('.popover.in').length === 0 ) {
-                $('[data-toggle="popover"]').htbpopover('hide');
+                $scope.find('[data-toggle="popover"]').htbpopover('hide');
             }
         });
     }
@@ -731,18 +866,22 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
         
         if( notify_elem.length > 0 ){
 
-            $(notify_opt.notify_btn_class).on("click", function () {
+            var notify_btn = String( notify_opt.notify_btn_class || '' );
+            // Only a plain CSS class selector is accepted, never HTML.
+            if ( ! /^\.[A-Za-z0-9_-]+$/.test( notify_btn ) ) { return; }
+
+            $(notify_btn).on("click", function () {
                 $.notify({}, {
-                    type: notify_opt.type,
-                    element: notify_opt.notify_class,
+                    type: htmegaSafeClass(notify_opt.type),
+                    element: /^(body|[.#][A-Za-z0-9_-]+)$/.test(String(notify_opt.notify_class)) ? notify_opt.notify_class : 'body',
                     delay: notify_opt.delay,
                     timer: 1000,
                     newest_on_top: true,
                     mouse_over: null,
 
                     animate: {
-                        enter: 'animated '+notify_opt.enter,
-                        exit: 'animated '+notify_opt.exit
+                        enter: 'animated '+htmegaSafeClass(notify_opt.enter),
+                        exit: 'animated '+htmegaSafeClass(notify_opt.exit)
                     },
 
                     placement: {
@@ -753,8 +892,8 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                     offset: notify_opt.offset,
                     spacing: 10,
                     z_index: 99999,
-                    template: '<div class="htmega-alert-wrap-'+notify_opt.wrapid+' '+notify_opt.width+' alert alert-{0}">' +
-                    '<span data-notify="dismiss" class="htmega-close"><i class="fas fa-times"></i></span>' +notify_opt.icon+'<span class="notify-message-content">' + DOMPurify.sanitize(notify_opt.notifymessage) +
+                    template: '<div class="htmega-alert-wrap-'+htmegaSafeClass(notify_opt.wrapid)+' '+htmegaSafeClass(notify_opt.width)+' alert alert-{0}">' +
+                    '<span data-notify="dismiss" class="htmega-close"><i class="fas fa-times"></i></span>' +DOMPurify.sanitize(notify_opt.icon || '')+'<span class="notify-message-content">' + DOMPurify.sanitize(notify_opt.notifymessage) +
                     '</span></div>'
 
                 });
@@ -1030,9 +1169,9 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
                 let playPauseButton = container_elem.find(".mejs-playpause-button button"),
                 volumeButtion = container_elem.find(".mejs-volume-button button");
                 playPauseButton.html(
-                `<i aria-hidden="true" class="htmega-audio-play ${settings.playerIcons.play}"></i><i aria-hidden="true" class="htmega-audio-pause ${settings.playerIcons.pause}"></i><i aria-hidden="true" class="htmega-audio-replay ${settings.playerIcons.replay}"></i>`
+                `<i aria-hidden="true" class="htmega-audio-play ${htmegaSafeClass(settings.playerIcons.play)}"></i><i aria-hidden="true" class="htmega-audio-pause ${htmegaSafeClass(settings.playerIcons.pause)}"></i><i aria-hidden="true" class="htmega-audio-replay ${htmegaSafeClass(settings.playerIcons.replay)}"></i>`
                 ),
-                volumeButtion.html(`<i aria-hidden="true" class="htmega-audio-unmute ${settings.playerIcons.unmute}"></i><i aria-hidden="true" class="htmega-audio-mute ${settings.playerIcons.mute}"></i>`);
+                volumeButtion.html(`<i aria-hidden="true" class="htmega-audio-unmute ${htmegaSafeClass(settings.playerIcons.unmute)}"></i><i aria-hidden="true" class="htmega-audio-mute ${htmegaSafeClass(settings.playerIcons.mute)}"></i>`);
              }
        }
  
@@ -1053,6 +1192,7 @@ let areaBtnPrev = HTMEGAF['buttion_area_text_prev'];
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-instagram-addons.default', WidgetHtmegaCarouselHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-tooltip-addons.default', WidgetTooltipHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-popover-addons.default', WidgetPopoversHandler);
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-galleryjustify-addons.default', WidgetGalleryJustifyHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-notify-addons.default', WidgetNotifyHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-counter-addons.default', WidgetCounterHandler);
         elementorFrontend.hooks.addAction( 'frontend/element_ready/htmega-postslider-addons.default', WidgetHtmegaCarouselHandler);

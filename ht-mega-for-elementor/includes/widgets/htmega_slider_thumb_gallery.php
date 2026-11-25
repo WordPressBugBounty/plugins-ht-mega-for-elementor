@@ -1462,7 +1462,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         ];
 
         $slider_settings = array_merge( $slider_settings, $slider_responsive_settings );
-        $this->add_render_attribute( 'htmega_thumbnails_slider_attr', 'data-settings', wp_json_encode( $slider_settings ) );
+        $this->add_render_attribute( 'htmega_thumbnails_slider_attr', 'data-settings', wp_json_encode( $slider_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
 
 
         // Thumbnails Slider options
@@ -1495,7 +1495,7 @@ class HTMega_Elementor_Widget_Slider_Thumb_Gallery extends Widget_Base {
         ];
 
         $nav_slider_settings = array_merge( $nav_slider_settings, $nav_slider_responsive_settings );
-        $this->add_render_attribute( 'htmega_thumbnails_navslider_attr', 'data-navsettings', wp_json_encode( $nav_slider_settings ) );
+        $this->add_render_attribute( 'htmega_thumbnails_navslider_attr', 'data-navsettings', wp_json_encode( $nav_slider_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
 
        
         ?>

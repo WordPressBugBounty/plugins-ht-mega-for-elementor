@@ -188,9 +188,10 @@
               $container = $image.parent('.magnify');
               // Create the magnifying lens div if necessary
               if ($image.prev('.magnify-lens').length) {
-                $container.children('.magnify-lens').css('background-image', 'url(\'' + sZoomSrc + '\')');
+                // sZoomSrc is only ever used as a quoted CSS string, never parsed as HTML.
+                $container.children('.magnify-lens').css('background-image', 'url(' + JSON.stringify(sZoomSrc) + ')');
               } else {
-                $image.before('<div class="magnify-lens loading" style="background:url(\'' + sZoomSrc + '\') 0 0 no-repeat"></div>');
+                $image.before($('<div class="magnify-lens loading"></div>').css('background', 'url(' + JSON.stringify(sZoomSrc) + ') 0 0 no-repeat'));
               }
               $lens = $container.children('.magnify-lens');
               // Remove the "Loading..." text

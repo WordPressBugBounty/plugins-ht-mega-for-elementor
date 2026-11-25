@@ -557,8 +557,8 @@ class HTMega_Elementor_Widget_GoogleMap extends Widget_Base {
 
         $this->add_render_attribute( 'googlemaps_attr', 'class', 'htmega-google-map' );
         $this->add_render_attribute( 'googlemaps_attr', 'id', 'htmega-google-map-'.$id );
-        $this->add_render_attribute( 'googlemaps_attr', 'data-mapmarkers', wp_json_encode( $all_markerslist ) );
-        $this->add_render_attribute( 'googlemaps_attr', 'data-mapoptions', wp_json_encode( $map_options ) );
+        $this->add_render_attribute( 'googlemaps_attr', 'data-mapmarkers', wp_json_encode( $all_markerslist, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
+        $this->add_render_attribute( 'googlemaps_attr', 'data-mapoptions', wp_json_encode( $map_options, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
         $this->add_render_attribute( 'googlemaps_attr', 'data-mapstyle', esc_attr( $settings['htmega_style_address'] ) );
 
         ?>

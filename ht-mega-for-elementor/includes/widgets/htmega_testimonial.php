@@ -1983,7 +1983,7 @@ class HTMega_Elementor_Widget_Testimonial extends Widget_Base {
         }
         if( $settings['slider_on'] == 'yes'){
             $this->add_render_attribute( 'testimonial_area_attr', 'class', 'htmega-testimonial-activation' );   
-            $this->add_render_attribute( 'testimonial_area_attr', 'data-settings', wp_json_encode( $slider_settings ) );   
+            $this->add_render_attribute( 'testimonial_area_attr', 'data-settings', wp_json_encode( $slider_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );   
         }
 
         if( ( $settings['htmega_testimonial_style'] == 3 || $settings['htmega_testimonial_style'] == 9 || $settings['htmega_testimonial_style'] == 10 ) && $settings['slider_on'] != 'yes' ){

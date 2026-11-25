@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib, madhus
 Tags: elementor addons, mega menu, page builder, elementor widgets, elementor templates
 Requires at least: 5.9
 Tested up to: 7.1
-Stable tag: 3.2.9
+Stable tag: 3.2.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -232,6 +232,7 @@ SaaS, Medical, Construction, Law Firm, Real Estate, Agency, Education, Corporate
 3. **Regular Updates**: New features and improvements every 2 weeks
 4. **Dedicated Support**: Professional team ready to help
 5. **Best Value**: Save hundreds compared to buying multiple addons
+6. **Multilingual Ready**: Compatible with [WPML](https://wpml.org/plugin/ht-mega-absolute-addons-for-elementor/) for translating widget texts and links
 
 ### 📚 Documentation & Support
 
@@ -288,6 +289,15 @@ Needs admin-supplied API key.
 
 
 == Changelog ==
+
+= Version 3.2.10 - Date: 2026-11-26 =
+* Improved: Gallery Justify, Popover and Tooltip widgets now initialise only within their own widget wrapper.
+* Improved: Post type selection in Post Grid, Post Grid Tab, Post Carousel, Post Slider, News Ticker and Single Post widgets is now validated against the available post types.
+* Improved: User Register Form widget now safely re-displays previously entered values.
+* Fixed: WPML compatibility - Section Title subtitle and widget link URLs are now translatable.
+* Fixed: Security hardening and improvements.
+* Tested: Compatibility with the latest version of Elementor.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version 3.2.9 - Date: 2026-11-12 =
 * Fixed: Security hardening and improvements.

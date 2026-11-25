@@ -1007,7 +1007,7 @@ class HTMega_Elementor_Widget_PostGrid extends Widget_Base {
 
         $settings   = $this->get_settings_for_display();
 
-        $post_type =  isset( $settings['grid_post_type'] ) ? $settings['grid_post_type'] : 'post';
+        $post_type = htmega_sanitize_post_type( isset( $settings['grid_post_type'] ) ? $settings['grid_post_type'] : 'post' );
         $post_categorys = [];
         if( 'post'== $post_type && ! empty( $settings['grid_categories'] ) && is_array( $settings['grid_categories'] ) ) {
             $post_categorys = $settings['grid_categories'];

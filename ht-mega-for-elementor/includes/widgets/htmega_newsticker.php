@@ -889,7 +889,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
     protected function render( $instance = [] ) {
 
         $settings           = $this->get_settings_for_display();
-        $post_type =  isset( $settings['news_post_type'] ) ? $settings['news_post_type'] : 'post';
+        $post_type = htmega_sanitize_post_type( isset( $settings['news_post_type'] ) ? $settings['news_post_type'] : 'post' );
         $post_categorys = [];
         if( 'post'== $post_type && ! empty( $settings['news_categories'] ) && is_array( $settings['news_categories'] ) ) {
             $post_categorys = $settings['news_categories'];
@@ -923,7 +923,7 @@ class HTMega_Elementor_Widget_Newsticker extends Widget_Base {
         ];
 
         // List UL attr
-        $this->add_render_attribute('htmega_newsticker_options_attr', 'data-newstrickeropt', wp_json_encode( $newsticker_slider_settings ));
+        $this->add_render_attribute('htmega_newsticker_options_attr', 'data-newstrickeropt', wp_json_encode( $newsticker_slider_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ));
         $this->add_render_attribute( 'htmega_newsticker_options_attr', 'class', 'breaking-news-ticker float-left htmega-newstricker' );
 
         // Post query

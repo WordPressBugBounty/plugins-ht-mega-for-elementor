@@ -670,9 +670,9 @@ class HTMega_Elementor_Widget_VideoPlayer extends Widget_Base {
                 </div>';
             }
         ?>
-            <div class="htmega-player-container" data-videotype="<?php echo esc_attr( wp_json_encode( $videocontainer ) ); ?>">
+            <div class="htmega-player-container" data-videotype="<?php echo esc_attr( wp_json_encode( $videocontainer, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) ); ?>">
                 <?php if($settings['videocontainer'] == 'self'): ?>
-                    <div class="htmega-video-player" data-property="<?php echo esc_attr( wp_json_encode( $player_options_settings ) ); ?> "></div>
+                    <div class="htmega-video-player" data-property="<?php echo esc_attr( wp_json_encode( $player_options_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) ); ?> "></div>
                 <?php else:
                     if( 'icon' == $buttonicon_type && $settings['buttonicon']['value'] != '' ){
                         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- href esc_url()'d, icon delegates to Elementor core Icons_Manager::render_icon(), text via htmega_kses_title() (wp_kses()), $animation_markup is a fixed static HTML string (no dynamic/user data), see htmega_get_html_allowed_tags() in includes/helper-function.php.

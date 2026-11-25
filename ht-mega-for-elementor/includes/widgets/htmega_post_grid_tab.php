@@ -1198,7 +1198,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
 
         $settings   = $this->get_settings_for_display();
 
-        $post_type =  isset( $settings['grid_post_type'] ) ? $settings['grid_post_type'] : 'post';
+        $post_type = htmega_sanitize_post_type( isset( $settings['grid_post_type'] ) ? $settings['grid_post_type'] : 'post' );
         $post_categorys = [];
         if( 'post'== $post_type && ! empty( $settings['grid_categories'] ) && is_array( $settings['grid_categories'] ) ) {
             $post_categorys = $settings['grid_categories'];
@@ -1308,7 +1308,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
 
         $tabs_options = [];
         $tabs_options['wrapid'] = esc_attr( $id );
-        $this->add_render_attribute( 'htmega_post_gridtab', 'data-postgridtab', wp_json_encode( $tabs_options ) );
+        $this->add_render_attribute( 'htmega_post_gridtab', 'data-postgridtab', wp_json_encode( $tabs_options, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
        
         ?>
             <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core, already escaped. ?>
@@ -1489,7 +1489,7 @@ class HTMega_Elementor_Widget_Post_Grid_Tab extends Widget_Base {
     public function render_post_content( $gdc = NULL, $id = NULL, $post_id = null ){
 
         $settings   = $this->get_settings_for_display();
-        $category_name =  get_object_taxonomies($settings['grid_post_type']);
+        $category_name =  get_object_taxonomies( htmega_sanitize_post_type( isset( $settings['grid_post_type'] ) ? $settings['grid_post_type'] : 'post' ) );
         ?>
             <!-- Start Post Slider -->
             <div class="single-post-grid-tab">

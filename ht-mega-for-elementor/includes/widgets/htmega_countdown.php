@@ -1256,7 +1256,7 @@ class HTMega_Elementor_Widget_Countdown extends Widget_Base {
                 <div class="htmega-box-timer">
                     <div class="<?php echo esc_attr( $countdownClassOne ) ?>">
                         <?php
-                            echo '<div class="'.esc_attr( $countdownClassTwo ).'"data-countdown=\'' . esc_attr( htmlspecialchars( wp_json_encode( $data_options ) ) ) . '\' ></div>';
+                            echo '<div class="'.esc_attr( $countdownClassTwo ).'"data-countdown=\'' . esc_attr( htmlspecialchars( wp_json_encode( $data_options, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) ) ) . '\' ></div>';
                         ?>
                         
                         <?php if( $settings['show_event_list'] == 'yes' && $settings['event_id'] != 0 ):?>

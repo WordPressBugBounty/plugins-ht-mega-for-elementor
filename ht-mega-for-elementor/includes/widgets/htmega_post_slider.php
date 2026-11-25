@@ -2008,7 +2008,7 @@ class HTMega_Elementor_Widget_Post_Slider extends Widget_Base {
         $dot_style = $settings['dot_style'];
         $htmega_st_4_class = $dot_style."-st-layout-4";
         
-        $post_type =  isset( $settings['slider_post_type'] ) ? $settings['slider_post_type'] : 'post';
+        $post_type = htmega_sanitize_post_type( isset( $settings['slider_post_type'] ) ? $settings['slider_post_type'] : 'post' );
         $post_categorys = [];
         if( 'post'== $post_type && ! empty( $settings['slider_categories'] ) && is_array( $settings['slider_categories'] ) ) {
             $post_categorys = $settings['slider_categories'];
@@ -2067,7 +2067,7 @@ class HTMega_Elementor_Widget_Post_Slider extends Widget_Base {
 
             $slider_settings = array_merge( $slider_settings, $slider_responsive_settings );
 
-            $this->add_render_attribute( 'htmega_post_slider_attr', 'data-settings', wp_json_encode( $slider_settings ) );
+            $this->add_render_attribute( 'htmega_post_slider_attr', 'data-settings', wp_json_encode( $slider_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
         }
 
         // Post query
@@ -2225,7 +2225,7 @@ class HTMega_Elementor_Widget_Post_Slider extends Widget_Base {
     // Loop Content
     public function htmega_render_loop_content($post_id = null){
         $settings   = $this->get_settings_for_display();
-        $category_name =  get_object_taxonomies($settings['slider_post_type']);
+        $category_name =  get_object_taxonomies( htmega_sanitize_post_type( isset( $settings['slider_post_type'] ) ? $settings['slider_post_type'] : 'post' ) );
         ?>
             <div class="content">
                 <div class="post-inner">

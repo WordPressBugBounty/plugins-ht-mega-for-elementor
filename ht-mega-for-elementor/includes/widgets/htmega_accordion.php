@@ -1462,7 +1462,7 @@ class HTMega_Elementor_Widget_Accordion extends Widget_Base {
             $accordian_options['accordionheight'] = ( $settings['accordion_display_height']['size'] ) ? floatval( $settings['accordion_display_height']['size'] ) : 450;
             
             if( $accordion_list_three ){
-                echo '<div id="va-accordion" class="accordion--5" data-accordionoptions=\'' . wp_json_encode( $accordian_options ) . '\' ><div class="accor_wrapper" >';
+                echo '<div id="va-accordion" class="accordion--5" data-accordionoptions=\'' . wp_json_encode( $accordian_options, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) . '\' ><div class="accor_wrapper" >';
                     foreach ( $accordion_list_three as $itemthree ) {
                         ?>
                             <div class="single_accordion" <?php if( !empty($itemthree['accordion_image']['url']) ){ echo 'style="background-image:url('. esc_url( $itemthree['accordion_image']['url'] ).')"'; } ?>>

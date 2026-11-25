@@ -60,6 +60,8 @@
       <fields>
         <field>error_back_button_text</field>
         <field>htmega_condition_list</field>
+        <field type="Back button link URL" editor_type="LINK">back_button_link>url</field>
+        <field type="Contact button link URL" editor_type="LINK">contact_button_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -180,6 +182,7 @@
         <field>tooltip_button_txt</field>
         <field>tooltip_text</field>
         <field>htmega_condition_list</field>
+        <field type="Button link URL" editor_type="LINK">button_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -319,6 +322,7 @@
     <widget name="htmega-service-addons">
       <fields>
         <field>htmega_condition_list</field>
+        <field type="Service link URL" editor_type="LINK">service_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -328,6 +332,9 @@
       <fields>
         <field>section_title_text</field>
         <field>htmega_condition_list</field>
+        <field type="Section link URL" editor_type="LINK">section_link>url</field>
+        <field type="Subtitle link URL" editor_type="LINK">sectionsubtitle_link>url</field>
+        <field>section_subtitle_text</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -360,6 +367,7 @@
     <widget name="htmega-scrollimage-addons">
       <fields>
         <field>htmega_condition_list</field>
+        <field type="Scroll image link URL" editor_type="LINK">scroll_image_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -396,6 +404,7 @@
         <field>htmega_condition_list</field>
         <field>htmega_show_badge</field>
         <field>htmega_badge_position</field>
+        <field type="Button link URL" editor_type="LINK">htmega_button_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_features_list">
         <field>htmega_features_title</field>
@@ -416,6 +425,7 @@
         <field>list_name</field>
         <field>list_price</field>
         
+        <field type="List cart link URL" editor_type="LINK" key_of="list_cart_link">url</field>
       </fields-in-item>
       <fields-in-item items_of="header_column_list">
         <field>column_name</field>
@@ -424,6 +434,7 @@
       <fields-in-item items_of="content_list">
         
         <field>cell_text</field>
+        <field type="Content link URL" editor_type="LINK" key_of="content_link">url</field>
       </fields-in-item>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -472,6 +483,7 @@
         <field>popover_text</field>
         <field>popover_header_text</field>
         <field>htmega_condition_list</field>
+        <field type="Button link URL" editor_type="LINK">button_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -486,6 +498,7 @@
         <field>slider_title</field>
         <field>slider_sub_title</field>
         
+        <field type="External link URL" editor_type="LINK" key_of="external_link">url</field>
       </fields-in-item>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -566,6 +579,7 @@
         <field>masonryimage_description</field>
         <field>masonryimage_btntxt</field>
         
+        <field type="Button link URL" editor_type="LINK" key_of="masonryimage_btnlink">url</field>
       </fields-in-item>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -608,6 +622,7 @@
         <field>gridimage_description</field>
         <field>gridimage_btntxt</field>
         
+        <field type="Button link URL" editor_type="LINK" key_of="gridimage_btnlink">url</field>
       </fields-in-item>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -661,6 +676,8 @@
         <field>button_one_text</field>
         <field>button_two_text</field>
         <field>htmega_condition_list</field>
+        <field type="Button one link URL" editor_type="LINK">button_one_link>url</field>
+        <field type="Button two link URL" editor_type="LINK">button_two_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -669,6 +686,7 @@
     <widget name="htmega-customevent-addons">
       <fields>
         <field>htmega_condition_list</field>
+        <field type="Event link URL" editor_type="LINK">event_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -700,6 +718,7 @@
       <fields-in-item items_of="carosul_image_list">
         <field>carosul_image_title</field>
         
+        <field type="Image link URL" editor_type="LINK" key_of="carosul_image_link">url</field>
       </fields-in-item>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -711,6 +730,8 @@
         <field>callto_action_description</field>
         <field>callto_action_buttontxt</field>
         <field>htmega_condition_list</field>
+        <field type="Button link URL" editor_type="LINK">callto_action_button_link>url</field>
+        <field type="Second button link URL" editor_type="LINK">callto_action_button_link_second>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -720,6 +741,7 @@
       <fields>
         <field>button_text</field>
         <field>htmega_condition_list</field>
+        <field type="Button link URL" editor_type="LINK">button_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -766,6 +788,7 @@
     <widget name="htmega-specialdaybanner-addons">
       <fields>
         <field>htmega_condition_list</field>
+        <field type="Banner link URL" editor_type="LINK">banner_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         
@@ -774,6 +797,7 @@
     <widget name="htmega-addbanner-addons">
       <fields>
         <field>htmega_condition_list</field>
+        <field type="Banner link URL" editor_type="LINK">banner_link>url</field>
       </fields>
       <fields-in-item items_of="htmega_condition_list">
         

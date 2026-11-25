@@ -851,7 +851,7 @@ function() {
                         var e = t(this.getTipElement());
                         this.setElementContent(e.find(_.TOOLTIP_INNER), this.getTitle()), e.removeClass(p.FADE + " " + p.SHOW)
                     }, a.prototype.setElementContent = function(e, n) {
-                        var o = this.config.html;
+                        var o = !1; // content is always inserted as text; the data-html option is ignored (XSS hardening)
                         "object" === (void 0 === n ? "undefined" : i(n)) && (n.nodeType || n.jquery) ? o ? t(n).parent().is(e) || e.empty().append(n) : e.text(t(n).text()): e[o ? "html" : "text"](n)
                     }, a.prototype.getTitle = function() {
                         var t = this.element.getAttribute("data-original-title");
@@ -898,7 +898,7 @@ function() {
                             if (this._activeTrigger[t]) return !0;
                         return !1
                     }, a.prototype._getConfig = function(n) {
-                        return (n = t.extend({}, this.constructor.Default, t(this.element).data(), n)).delay && "number" == typeof n.delay && (n.delay = {
+                        return (n = t.extend({}, this.constructor.Default, t(this.element).data(), n), n.template = this.constructor.Default.template, n.selector = !1, "string" == typeof n.container && !/^[.#][A-Za-z0-9_-]+$/.test(n.container) && (n.container = !1), n).delay && "number" == typeof n.delay && (n.delay = {
                             show: n.delay,
                             hide: n.delay
                         }), n.title && "number" == typeof n.title && (n.title = n.title.toString()), n.content && "number" == typeof n.content && (n.content = n.content.toString()), r.typeCheckConfig(e, n, this.constructor.DefaultType), n

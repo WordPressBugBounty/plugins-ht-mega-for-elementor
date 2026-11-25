@@ -1828,7 +1828,7 @@ class HTMega_Elementor_Widget_Audio_Player extends Widget_Base {
 			'wrapper',
 			[
 				'class' => 'htmega-audio-player-wrapper', // pro features
-				'data-audio-settings' => esc_attr( wp_json_encode( $data_settings ) ),
+				'data-audio-settings' => esc_attr( wp_json_encode( $data_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) ),
 				'style' => "display:none",
 			]
 		);

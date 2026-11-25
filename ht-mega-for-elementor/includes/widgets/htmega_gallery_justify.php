@@ -208,7 +208,17 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
         $settings   = $this->get_settings_for_display();
         $id         = $this->get_id();
         $this->add_render_attribute( 'justify_gallery_attr', 'id', 'npgallery' . esc_attr( $id ) );
-        $this->add_render_attribute( 'justify_gallery_attr', 'class', 'npgallery_active' . esc_attr( $id ) );
+        $this->add_render_attribute( 'justify_gallery_attr', 'class', array( 'htmega-justify-gallery', 'npgallery_active' . esc_attr( $id ) ) );
+
+        // Options are handed to the widget handler in htmega-widgets-active.js through a data attribute
+        // (no inline script, no page-global #id lookup).
+        $justify_options = array(
+            'rowHeight'      => absint( $settings['row_height'] ),
+            'margins'        => absint( $settings['space_margin'] ),
+            'lightbox'       => ( '3' == $settings['popup_options'] ),
+            'counter'        => ( 'yes' === $settings['gallery_counter_on_off'] ),
+        );
+        $this->add_render_attribute( 'justify_gallery_attr', 'data-justifyopt', wp_json_encode( $justify_options, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
 
 
         // Remove Elementor Lightbox
@@ -217,7 +227,7 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
         if( isset( $settings['gallery_images'] ) ):
 
             // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_render_attribute_string() is Elementor core and returns pre-escaped attribute output.
-            echo '<div '.$this->get_render_attribute_string( 'justify_gallery_attr' ).'style="display:none;">';
+            echo '<div '.$this->get_render_attribute_string( 'justify_gallery_attr' ).' style="display:none;">';
                 foreach ( $settings['gallery_images'] as $image ) {
                     $image_src = wp_get_attachment_image_url( $image['id'], 'full' );
 
@@ -250,72 +260,6 @@ class HTMega_Elementor_Widget_Gallery_Justify extends Widget_Base {
                 }
             echo '</div>';
         endif;
-        ?>
-        <script>
-            jQuery(document).ready(function($) {
-
-                'use strict';                
-                $('#npgallery<?php echo esc_js( $id ); ?>').imagesLoaded( function() {
-                    $('#npgallery<?php echo esc_js( $id ); ?>')[0].style.display='block';
-                    $('#npgallery<?php echo esc_js( $id ); ?>').justifiedGallery({
-                        rowHeight: <?php echo esc_js( absint( $settings['row_height'] ) ); ?>,
-                        maxRowHeight: null,
-                        margins: <?php echo esc_js( absint( $settings['space_margin'] ) ); ?>,
-                        border: 0,
-                        rel: 'npgallery<?php echo esc_js( $id ); ?>',
-                        lastRow: 'nojustify',
-                        captions: true,
-                        randomize: false,
-                        sizeRangeSuffixes: {
-                            lt100: '_t',
-                            lt240: '_m',
-                            lt320: '_n',
-                            lt500: '',
-                            lt640: '_z',
-                            lt1024: '_b'
-                        }
-                    });
-                });
-                <?php
-                if( '3' == $settings['popup_options'] ){
-                    ?>
-                    $('.npgallery_active<?php echo esc_js( $id ); ?>').magnificPopup({
-                        delegate: 'a',
-                        type: 'image',
-                        tLoading: 'Loading image #%curr%...',
-                        mainClass: 'mfp-img-mobile',
-                        gallery: {
-                            enabled: true,
-                            navigateByImgClick: true,
-                            preload: [0,1], // Will preload 0 - before current, and 1 after the current image
-
-                            <?php  if( 'yes' !== $settings['gallery_counter_on_off']) { ?>
-                            tCounter: '',
-                            <?php } ?>
-                        },
-                        image: {
-                            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-
-                            markup: '<div class="mfp-figure">'+
-                                        '<div class="mfp-close"></div>'+
-                                        '<div class="mfp-img"></div>'+
-                                        '<div class="mfp-bottom-bar">'+
-                                        '<div class="htmega mfp-title"></div>'+
-                                        '<div class="htmega mfp-counter"></div>'+
-                                        '</div>'+
-                                    '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
-
-                            titleSrc: function(item) {
-                                return item.el.attr('title');
-                            }
-                        },
-                    });
-
-               <?php } ?>
-            });
-        </script>
-        <?php
-
     }
 
 }

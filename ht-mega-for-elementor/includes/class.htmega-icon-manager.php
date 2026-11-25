@@ -34,7 +34,30 @@ class HTMega_Icon_manager extends Icons_Manager{
         return '<' . $tag . ' ' . Utils::render_html_attributes( $attributes ) . '></' . $tag . '>';
     }
 
+    /**
+     * Allow-list the icon value so a user-supplied string can never carry markup.
+     * Font icon values are CSS class names (e.g. "fas fa-arrow-left"), so only
+     * letters, digits, space, underscore and hyphen are kept. SVG library values
+     * are arrays (attachment id + url) and are left untouched.
+     */
+    public static function sanitize_icon( $icon ) {
+        if ( ! is_array( $icon ) ) {
+            return [ 'value' => '', 'library' => '' ];
+        }
+        if ( isset( $icon['value'] ) && is_string( $icon['value'] ) ) {
+            $icon['value'] = trim( preg_replace( '/[^A-Za-z0-9_\- ]/', '', $icon['value'] ) );
+        }
+        if ( isset( $icon['library'] ) ) {
+            $icon['library'] = is_string( $icon['library'] ) ? preg_replace( '/[^A-Za-z0-9_\-]/', '', $icon['library'] ) : '';
+        }
+        return $icon;
+    }
+
     public static function render_icon( $icon, $attributes = [], $tag = 'i' ) {
+        $icon = self::sanitize_icon( $icon );
+        if ( empty( $icon['value'] ) ) {
+            return '';
+        }
         ob_start();
         Icons_Manager::render_icon( $icon, $attributes, $tag );
 

@@ -1516,7 +1516,7 @@ class HTMega_Elementor_Widget_Twitter_Feed extends Widget_Base {
 
             $slider_settings = array_merge( $slider_settings, $slider_responsive_settings );
 
-            $this->add_render_attribute( 'htmega_twitter_attr', 'data-settings', wp_json_encode( $slider_settings ) );
+            $this->add_render_attribute( 'htmega_twitter_attr', 'data-settings', wp_json_encode( $slider_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
         }
 
         $consumer_key = ( !empty( $settings['consumer_key'] ) ) ? sanitize_text_field( $settings['consumer_key'] ) : '';

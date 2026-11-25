@@ -2557,6 +2557,31 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
         $this->end_controls_section(); 
     }
 
+    /**
+     * Read a previously submitted field (sticky value) for redisplay.
+     *
+     * Square brackets are converted to hexadecimal character references so reflected
+     * request data can never form a shortcode, even though the page output is passed
+     * through do_shortcode() more than once (Elementor, then the_content). The decimal
+     * forms &#91; / &#93; are NOT safe: do_shortcode() turns them back into "[" / "]"
+     * at the end of each pass (unescape_invalid_shortcodes()), so the next pass would
+     * execute them. Browsers render the hex entities as "[" / "]", so the visitor still
+     * sees the value they typed.
+     *
+     * @param string $key Request key.
+     * @param bool   $textarea Whether the value is for a textarea (keeps line breaks).
+     * @return string|null
+     */
+    private function get_sticky_value( $key, $textarea = false ) {
+        if ( ! isset( $_REQUEST[ $key ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, not form processing; registration write is nonce-verified in htmega_ajax_register().
+            return null;
+        }
+        $raw   = wp_unslash( $_REQUEST[ $key ] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized on the next line.
+        $value = is_scalar( $raw ) ? ( $textarea ? sanitize_textarea_field( (string) $raw ) : sanitize_text_field( (string) $raw ) ) : '';
+        $value = esc_html( $value );
+        return str_replace( array( '[', ']' ), array( '&#x5B;', '&#x5D;' ), $value );
+    }
+
     protected function render( $instance = [] ) {
 
         $settings   = $this->get_settings_for_display();
@@ -2623,7 +2648,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_name',
                         'id'    => 'reg_name'. esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_name'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_name'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display (pre-fills the field after a failed submission), not form processing; the actual registration write happens via htmega_ajax_register() in includes/helper-function.php, which does verify a nonce.
+                        'value' => $this->get_sticky_value( 'reg_name' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display (pre-fills the field after a failed submission), not form processing; the actual registration write happens via htmega_ajax_register() in includes/helper-function.php, which does verify a nonce.
                         'placeholder' => isset( $settings['username_placeholder_label'] ) ? esc_attr( $settings['username_placeholder_label'] ) : __('Username', 'ht-mega-for-elementor'),
                     ]
                 );
@@ -2633,7 +2658,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_password',
                         'id'    => 'reg_password' . esc_attr( $id ),
                         'type'  => 'password',
-                        'value' => isset( $_REQUEST['reg_password'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_password'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'value' => $this->get_sticky_value( 'reg_password' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
                         'placeholder' => isset( $settings['password_placeholder_label'] ) ? esc_attr( $settings['password_placeholder_label'] ) : __('Password', 'ht-mega-for-elementor'),
                     ]
                 );
@@ -2643,7 +2668,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_email',
                         'id'    => 'reg_email' . esc_attr( $id ),
                         'type'  => 'email',
-                        'value' => isset( $_REQUEST['reg_email'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_email'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'value' => $this->get_sticky_value( 'reg_email' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
                         'placeholder' => isset( $settings['email_placeholder_label'] ) ? esc_attr( $settings['email_placeholder_label'] ) : __('Email', 'ht-mega-for-elementor'),
                     ]
                 );
@@ -2653,7 +2678,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_fname',
                         'id'    => 'reg_fname' . esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_fname'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_fname'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'value' => $this->get_sticky_value( 'reg_fname' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
                         'placeholder' => isset( $settings['firstname_placeholder_label'] ) ? esc_attr( $settings['firstname_placeholder_label'] ) : __('First Name', 'ht-mega-for-elementor'),
                     ]
                 );
@@ -2663,7 +2688,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_lname',
                         'id'    => 'reg_lname' . esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_lname'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_lname'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'value' => $this->get_sticky_value( 'reg_lname' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
                         'placeholder' => isset( $settings['lastname_placeholder_label'] ) ? esc_attr( $settings['lastname_placeholder_label'] ) : __('Last Name', 'ht-mega-for-elementor'),
                     ]
                 );
@@ -2673,7 +2698,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_nickname',
                         'id'    => 'reg_nickname' . esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_nickname'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_nickname'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'value' => $this->get_sticky_value( 'reg_nickname' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
                         'placeholder' => isset( $settings['nickname_placeholder_label'] ) ? esc_attr( $settings['nickname_placeholder_label'] ) : __('Nick Name', 'ht-mega-for-elementor'),
                     ]
                 );
@@ -2683,7 +2708,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                         'name'  => 'reg_website',
                         'id'    => 'reg_website' . esc_attr( $id ),
                         'type'  => 'text',
-                        'value' => isset( $_REQUEST['reg_website'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST['reg_website'] ) ) ) : null, // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
+                        'value' => $this->get_sticky_value( 'reg_website' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only sticky-value display, see reg_name above; actual registration write is nonce-verified in htmega_ajax_register().
                         'placeholder' => isset( $settings['website_placeholder_label'] ) ? esc_attr( $settings['website_placeholder_label'] ) : __('Website', 'ht-mega-for-elementor'),
                     ]
                 );
@@ -2796,7 +2821,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                             if( $settings['show_label'] == 'yes' ){ 
                                                 echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), ( isset( $settings['bio_label'] )) ? htmega_kses_title( $settings['bio_label'] ) : esc_html__( 'Biographical Info', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
+                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), $this->get_sticky_value( 'reg_bio', true )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                         echo '</div>';
 
                                     }
@@ -2909,7 +2934,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                             if( $settings['show_label'] == 'yes' ){ 
                                                 echo sprintf('<label>%1$s</label>', ( isset( $settings['bio_label'] )) ? htmega_kses_title( $settings['bio_label'] ) : esc_html__('Biographical Info', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
-                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
+                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), $this->get_sticky_value( 'reg_bio', true )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                         echo '</div>';
 
                                     }
@@ -3017,7 +3042,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                     <div class="htb-col-lg-12">
                                         <div class="input_box">
                                             <?php                                            
-                                                echo sprintf( '<textarea %1$s>%2$s</textarea>' ,$this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
+                                                echo sprintf( '<textarea %1$s>%2$s</textarea>' ,$this->get_render_attribute_string( 'bio_textarea_attr' ), $this->get_sticky_value( 'reg_bio', true ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                             ?>
                                         </div>
                                     </div>
@@ -3128,7 +3153,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                                 echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__( 'Nick Name', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
                                             
-                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
+                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), $this->get_sticky_value( 'reg_bio', true ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3244,7 +3269,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                                 echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__( 'Biographical Info', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                             }
                                             
-                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
+                                            echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), $this->get_sticky_value( 'reg_bio', true ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                         ?>
                                     </div>
                                 <?php } ?>
@@ -3328,7 +3353,7 @@ class HTMega_Elementor_Widget_User_Register_Form extends Widget_Base {
                                             echo sprintf('<label for="%1$s">%2$s</label>' ,'reg_bio' . esc_attr( $id ), isset( $settings['bio_label'] ) ? htmega_kses_title( $settings['bio_label'] ) :  esc_html__('Biographical Info', 'ht-mega-for-elementor' ));  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- htmega_kses_title() sanitizes via wp_kses(), see includes/helper-function.php.
                                         }
                                         
-                                        echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), ( isset( $_REQUEST['reg_bio'] ) ? esc_html( sanitize_textarea_field( wp_unslash( $_REQUEST['reg_bio'] ) ) ) : NULL )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
+                                        echo sprintf( '<textarea %1$s>%2$s</textarea>', $this->get_render_attribute_string( 'bio_textarea_attr' ), $this->get_sticky_value( 'reg_bio', true )); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.Security.NonceVerification.Recommended -- Elementor's own escaped attribute string (see get_render_attribute_string()); and read-only sticky-value display, not form processing -- actual registration write is nonce-verified in htmega_ajax_register().
                                     }
 
                                     if( $settings['show_terms'] == 'yes' ){ ?>

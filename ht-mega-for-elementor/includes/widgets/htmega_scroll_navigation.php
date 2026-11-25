@@ -560,7 +560,7 @@ class HTMega_Elementor_Widget_Scroll_Navigation extends Widget_Base {
             'speed'             => absint( $settings['slider_speed'] ),
             'initialslide'      => absint( $settings['initial_slider'] ) - 1,
         ];
-        $this->add_render_attribute( 'swiperslider_area_attr', 'data-settings', wp_json_encode( $slider_settings ) );
+        $this->add_render_attribute( 'swiperslider_area_attr', 'data-settings', wp_json_encode( $slider_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) );
       
 
         ?>

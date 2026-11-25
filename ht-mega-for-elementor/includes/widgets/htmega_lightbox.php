@@ -507,7 +507,7 @@ class HTMega_Elementor_Widget_Lightbox extends Widget_Base {
             $popup_settings['datatype'] = 'iframe';
         }
 
-        $this->add_render_attribute('popup_content_attr', 'data-popupoption', wp_json_encode( $popup_settings ));
+        $this->add_render_attribute('popup_content_attr', 'data-popupoption', wp_json_encode( $popup_settings, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ));
 
         ?>
             <div class="htmega-lightbox <?php if( $settings['lightbox_toggler_type'] != 'image' ){ echo 'lightbox_button_only'; }?>">
